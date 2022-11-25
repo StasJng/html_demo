@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: black;
+    }
+    .countdown-zone {
+        background-color: black;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+    }
+    .countdown-container {
+        text-align: center;
+        color: white;
+        font-family: Courier;
+    }
+    .countdown-container li {
+        display: inline-block;
+        font-size: 1.5em;
+        list-style-type: none;
+        padding: 1em;
+    }
+    .countdown-container li span {
+        display: block;
+        font-size: 4.5rem;
+    }
+    .set-countdown-time {
+        align-items: center;
+        width: 100%;
+    }
+    .countdown-input {
+        width: 55px;
+    }
+</style>
+<script>
+    (function () {
+    const second = 1000,
+          minute = second * 60,
+          hour = minute * 60,
+          day = hour * 24;
+
+    //BEGIN--SET TIME TO COUNT DOWN--
+    let today = new Date(),
+        dd = String(today.getDate()).padStart(2, "0"),
+        mm = String(today.getMonth() + 1).padStart(2, "0"),
+        yyyy = today.getFullYear(),
+
+        startYear = yyyy + 1,
+        startMonth = "10/10/",
+        startDay = startMonth + yyyy + " 17:30";
+    
+    today = mm + "/" + dd + "/" + yyyy;
+    if (today > startDay) {
+        startDay = startMonth + nextYear + " 17:30";
+    }
+    //END--SET TIME TO COUNT DOWN--
+
+    const countDown = new Date(startDay).getTime(),
+        x = setInterval(function() {    
+            const now = new Date().getTime(),
+            distance = countDown - now;
+
+            document.getElementById("days-left").innerText = Math.floor(distance / (day)),
+            document.getElementById("hours-left").innerText = Math.floor((distance % (day)) / (hour)),
+            document.getElementById("minutes-left").innerText = Math.floor((distance % (hour)) / (minute)),
+            document.getElementById("seconds-left").innerText = Math.floor((distance % (minute)) / second);
+
+            if (distance < 0) {
+            document.getElementById("countdown-title").innerText = "SET NEW TIME WITH FORM ABOVE!";
+            document.getElementById("countdown-zone").style.display = "none";
+            clearInterval(x);
+            }
+        }, 0)
+    }());
+    function setTime() {
+        // Get a reference to the last interval + 1
+        const interval_id = window.setInterval(function(){}, Number.MAX_SAFE_INTEGER);
+
+        // Clear any timeout/interval up to that id
+        for (let i = 1; i < interval_id; i++) {
+        window.clearInterval(i);
+        }
+        document.getElementById("countdown-title").innerText = "TIME LEFT:";
+        document.getElementById("countdown-zone").style.display = "block";
+        let MM = document.getElementById("countdown-month").value.toString(),
+            dd = document.getElementById("countdown-day").value.toString(),
+            yyyy = document.getElementById("countdown-year").value.toString(),
+            HH = document.getElementById("countdown-hour").value.toString(),
+            mm = document.getElementById("countdown-minutes").value.toString(),
+            countdownTime = MM + "/" + dd + "/" + yyyy + " " + HH + ":" + mm;
+        if(countdownTime != null)
+        {
+            (function () {
+            const second = 1000,
+                minute = second * 60,
+                hour = minute * 60,
+                day = hour * 24;
+
+            const countDown = new Date(countdownTime).getTime(),
+                s = setInterval(function() {    
+                    const now = new Date().getTime(),
+                    distance = countDown - now;
+
+                    document.getElementById("days-left").innerText = Math.floor(distance / (day)),
+                    document.getElementById("hours-left").innerText = Math.floor((distance % (day)) / (hour)),
+                    document.getElementById("minutes-left").innerText = Math.floor((distance % (hour)) / (minute)),
+                    document.getElementById("seconds-left").innerText = Math.floor((distance % (minute)) / second);
+
+                    if (distance < 0) {
+                    document.getElementById("countdown-title").innerText = "IT'S ALREADY PAST " + startDay;
+                    document.getElementById("countdown-zone").style.display = "none";
+                    clearInterval(s);
+                    }
+                }, 0)
+            }());
+        }     
+    };
+</script>
+<body>
+    <div class="countdown-zone">
+        <div class="set-countdown-time">
+            <input type="text" id="countdown-month" name="countdown-month" class="countdown-input" placeholder="month">
+            <input type="text" id="countdown-day" name="countdown-day" class="countdown-input" placeholder="day">
+            <input type="text" id="countdown-year" name="countdown-year" class="countdown-input" placeholder="year">
+            <input type="text" id="countdown-hour" name="countdown-hour" class="countdown-input" placeholder="hour">
+            <input type="text" id="countdown-minutes" name="countdown-minutes" class="countdown-input" placeholder="minutes">
+            <button id="submit-countdown-time" onclick="setTime();">Set Time</button>
+        </div>
+        <div class="countdown-container">
+            <h1 id="countdown-title">TIME LEFT:</h1>
+            <div id="countdown-zone">
+              <ul>
+                <li><span id="days-left"></span>DAYS</li>
+                <li><span id="hours-left"></span>HOURS</li>
+                <li><span id="minutes-left"></span>MINUTES</li>
+                <li><span id="seconds-left"></span>SECONDS</li>
+              </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,552 @@
+body {
+    font-family: arial;
+    margin: 0;
+    padding: 0;
+    background-color: #ed5cd0;
+}
+
+/* Sets the background image for the wheel */
+td.the_wheel {
+    /*background-image: url(img/marker.png);
+    background-position: center;
+    background-repeat: none;*/
+    position: relative;
+}
+
+    td.the_wheel canvas {
+        background-color: unset !important;
+    }
+
+    td.the_wheel .marker {
+        background-image: url(img/marker-1.png);
+        width: 66px;
+        height: 120px;
+        position: absolute;
+        top: 18px;
+        left: 44%;
+    }
+
+/* Do some css reset on selected elements */
+h1, p {
+    margin: 0;
+}
+
+div.power_controls {
+    margin-right: 70px;
+}
+
+div.html5_logo {
+    margin-left: 70px;
+}
+
+/* Styles for the power selection controls */
+table.power {
+    background-color: #cccccc;
+    cursor: pointer;
+    border: 1px solid #333333;
+}
+
+    table.power th {
+        background-color: white;
+        cursor: default;
+    }
+
+td.pw1 {
+    background-color: #6fe8f0;
+}
+
+td.pw2 {
+    background-color: #86ef6f;
+}
+
+td.pw3 {
+    background-color: #ef6f6f;
+}
+
+/* Style applied to the spin button once a power has been selected */
+.clickable {
+    cursor: pointer;
+}
+
+/* Other misc styles */
+.margin_bottom {
+    margin-bottom: 5px;
+}
+
+.box-luckywheel {
+    background: url('img/bg-lw.png') no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    background-color: #ed5cd0;
+}
+
+    .box-luckywheel .content {
+        width: 1170px;
+        margin: 0 auto;
+    }
+
+.header {
+    overflow: hidden;
+    padding: 40px 0;
+}
+
+.logo-vnm {
+    background: url('img/logo.png') no-repeat;
+    width: 106px;
+    height: 50px;
+    float: left;
+}
+
+.the-le {
+    padding: 5px 20px;
+    background: #fdcc00;
+    border-radius: 10px;
+    float: right;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.bg-text-lw {
+    padding: 100px 0 0;
+}
+
+.text-lw {
+    /*background: url('img/text-lw.png') no-repeat;
+    background-position: center center;*/
+    width: 517px;
+    height: 351px;
+    display: inline-block;
+    /*background-size: 90%;*/
+    float: right;
+}
+
+#mobile-modal .modal-body,
+#otp-modal .modal-body {
+    background: url('img/bg-popup.png') no-repeat;
+    width: 601px;
+    height: 651px;
+}
+
+.modal-content {
+    background: none;
+    box-shadow: none;
+    border: none;
+}
+
+.bg-popup-otp {
+    background: #fff;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.img-text {
+    width: 76%;
+    padding: 40px 0 0;
+}
+
+.text-popup {
+    display: block;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.ip-text {
+    border: 1px solid #fea43d;
+    width: 80%;
+    border-radius: 100px;
+    height: 50px;
+    padding: 0 0 0 30%;
+    outline: unset;
+}
+
+.btn-confirm, .btn-otp {
+    height: 44px;
+    background: #fdc900;
+    padding: 0 40px;
+    border-radius: 50px;
+    display: inline-block;
+    line-height: 44px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.note-popup {
+    display: block;
+    color: #fea43d;
+    padding: 20px 0 0;
+    display: none;
+}
+
+.error-popup {
+    color: #ff3537;
+    font-style: italic;
+    display: none;
+    padding: 15px 0 0;
+}
+
+.box-rule {
+    border: 3px solid #fcddd0;
+    padding: 50px;
+    background: #f64da8;
+    border-radius: 20px;
+    position: relative;
+}
+
+#rule-modal .modal-dialog {
+    width: 900px;
+}
+
+.title-rule {
+    border: 3px solid #fcddd0;
+    padding: 10px 40px;
+    background: #f64da8;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    position: absolute;
+    top: -32px;
+    left: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.text-rule {
+    color: #fff;
+    font-size: 16px;
+}
+
+    .text-rule i {
+        text-transform: uppercase;
+        font-style: normal;
+    }
+
+.table-popup {
+    width: 100%;
+    margin: 10px 0 0;
+    color: #000;
+}
+
+    .table-popup td,
+    .table-popup th {
+        text-align: center;
+        line-height: 34px;
+        border-bottom: 1px solid #000;
+        border-right: 1px solid #000;
+    }
+
+.lh-20 {
+    line-height: 20px !important;
+    padding: 10px;
+}
+
+#rule-modal {
+    top: 65px;
+}
+
+.icon-close {
+    background: url('img/icon-close.png') no-repeat;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.bg-popup-egift {
+    background: url('img/bg-gift.png') no-repeat;
+    width: 630px;
+    height: 964px;
+    background-size: 75%;
+    background-position: center 0;
+    position: relative;
+}
+
+    .bg-popup-egift img {
+        width: 80%;
+    }
+
+.title-gift {
+    color: #fff;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 346px;
+    left: 155px;
+    display: none;
+}
+
+.value-gift {
+    /*color: #fff;
+    font-size: 48px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 386px;
+    left: 42px;*/
+    color: #fff;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    display: block;
+    width: 63%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 60%;
+}
+
+/*.code-egift {
+    font-size: 61px !important;
+    padding-top: 50px !important;
+}*/
+
+.bg-popup-egift .note-egift {
+    position: absolute;
+    top: 600px;
+    left: 155px;
+    font-style: italic;
+    color: #fff8bf;
+    text-align: center;
+}
+
+.close-popup {
+    background: url('img/close-popup.png') no-repeat;
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    top: 160px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.dp-block {
+    display: block;
+}
+
+@media (max-width: 1281px) {
+
+    td.the_wheel canvas {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 1025px) {
+    .table-wheel {
+        width: 100%;
+        text-align: center;
+    }
+
+    .box-luckywheel .content {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+
+    .header {
+        padding: 40px 20px;
+    }
+
+    .row {
+        margin: 0;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bg-text-lw {
+        order: 1;
+        padding: 0;
+        text-align: center;
+    }
+
+    .box-luckywheel .row .col-xs-12 {
+        width: 100%;
+    }
+
+    td.the_wheel .marker {
+        left: 46%;
+    }
+
+    .box-luckywheel .row .col-xs-12:first-child {
+        order: 2;
+    }
+
+    .bg-text-lw .text-lw {
+        float: unset;
+        width: 57%;
+        height: auto;
+    }
+
+    td.the_wheel canvas {
+        width: 85%;
+    }
+}
+
+
+@media (max-width: 769px) {
+    .table-wheel {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header {
+        padding: 30px 20px 0 20px;
+    }
+
+    .box-luckywheel .content {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+
+    .row {
+        margin: 0;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bg-text-lw {
+        order: 1;
+        padding: 0;
+        text-align: center;
+    }
+
+    .box-luckywheel .row .col-xs-12:first-child {
+        order: 2;
+    }
+
+    .bg-text-lw .text-lw {
+        float: unset;
+        width: 57%;
+        height: auto;
+    }
+
+    td.the_wheel canvas {
+        width: 85%;
+    }
+
+    #mobile-modal .modal-body, #otp-modal .modal-body {
+        width: 100%;
+        height: 620px;
+        border-radius: 10px;
+    }
+
+    td.the_wheel .marker {
+        left: 45%;
+    }
+
+    #rule-modal .modal-dialog {
+        width: 100%;
+    }
+
+    .title-rule {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 481px) {
+    .bg-popup-egift {
+        width: auto;
+    }
+
+    .value-gift {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 415px) {
+
+    .bg-text-lw .text-lw {
+        width: 75%;
+    }
+
+    td.the_wheel canvas {
+        width: 100%;
+    }
+
+    td.the_wheel .marker {
+        left: 45%;
+        background-size: 100%;
+        width: 37px;
+        height: 67px;
+    }
+
+    #rule-modal .modal-dialog {
+        width: 100%;
+    }
+
+    .title-rule {
+        font-size: 14px;
+        left: 15%;
+        top: -27px;
+    }
+
+    .box-rule {
+        padding: 53px 20px;
+    }
+
+    #mobile-modal .modal-body, #otp-modal .modal-body {
+        height: 560px;
+    }
+
+    .title-gift {
+        top: 250px;
+        left: 80px;
+    }
+
+    .value-gift {
+        top: 260px;
+        left: 25px;
+        font-size: 22px;
+    }
+
+    .bg-popup-egift .note-egift {
+        top: 377px;
+        left: 90px;
+        width: 66%;
+    }
+
+    .close-popup {
+        top: 80px;
+        right: -5px;
+        background-size: 72%;
+    }
+
+    .bg-popup-egift img {
+        width: 100%;
+    }
+
+    .bg-popup-egift {
+        width: auto;
+    }
+}
+
+
+@media (max-width: 361px) {
+    .bg-popup-egift {
+        width: auto;
+    }
+
+    .value-gift {
+        font-size: 22px;
+    }
+}

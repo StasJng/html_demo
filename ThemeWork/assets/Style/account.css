@@ -1,0 +1,779 @@
+body {
+    background: #f2f2f7;
+    font-size: 14px;
+}
+
+.wrapper .header {
+    background: #fff;
+    height: 60px;
+}
+
+    .wrapper .header .box-header {
+        width: 1170px;
+        margin: auto;
+        overflow: hidden;
+        padding: 15px;
+    }
+
+    .wrapper .header .logo {
+        display: inline-block;
+    }
+
+    .wrapper .header .phone-number {
+        float: right;
+        color: #000;
+        padding-left: 26px;
+        padding-top: 3px;
+        background: url("../Images/icon-phone-black-1.png") no-repeat left center;
+        font-weight: 600;
+        font-size: 16px;
+    }
+/*header for My QR Page*/
+.wrapper .header-qr {
+    background: #fff;
+}
+
+    .wrapper .header-qr .box-header {
+        width: 1170px;
+        margin: auto;
+        overflow: hidden;
+        padding: 10px;
+    }
+
+    .wrapper .header-qr .logo {
+        display: inline-block;
+    }
+
+    .wrapper .header-qr .phone-number {
+        float: right;
+        color: #898989;
+        padding-left: 20px;
+        line-height: 50px;
+        font-weight: 600;
+    }
+
+.list .swiper-slide-1 .item {
+    border: 1px solid #f1efed;
+    padding: 0;
+    border-radius: 0;
+}
+
+.box-content .item {
+    background: #fff;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.item .link-detail {
+    display: block;
+    position: relative;
+}
+
+.box-content .item img {
+    max-width: 100%;
+}
+
+.list .info-item {
+    padding: 10px;
+    margin-top: 10px;
+    color: #333;
+}
+
+    .list .info-item p {
+        position: relative;
+    }
+
+.info-item p {
+    overflow: hidden;
+    height: 40px;
+    display: block;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    font-weight: bold;
+}
+
+.expired-text {
+    color: #9f9f9f;
+    padding-right: 10px;
+}
+
+.content-egift .qrCode {
+    text-align: center;
+}
+
+.btn-exchange {
+    float: right;
+    height: 30px;
+    color: #fff;
+    background: #fe6e00;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 5px;
+    width: 100px;
+    margin-top: -5px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.box-partner-accept, .dksd {
+    padding: 10px 15px;
+    background: #fff;
+    margin: 10px 0 0px 0;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: none !important;
+    display: inline-block;
+}
+
+.brand-acceptance {
+    padding: 10px 15px;
+    background: #fff;
+    margin: 10px 0 0px 0;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: none !important;
+    display: inline-block;
+}
+
+.box-partner-accept h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px !important;
+    padding: 15px 5px !important;
+}
+
+.dksd {
+    position: relative;
+    max-height: 305px;
+    padding-right: 20px;
+}
+
+.brand-acceptance {
+    position: relative;
+    max-height: 500px;
+    padding-right: 20px;
+}
+
+.dksd h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px !important;
+    padding: 15px 5px !important;
+}
+
+.brand-acceptance h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px !important;
+    padding: 15px 5px !important;
+}
+
+.close:active {
+    border: none;
+}
+
+.open {
+    visibility: visible;
+    opacity: 1;
+    height: auto !important;
+    transition: .3s all ease;
+}
+
+.dksd.close {
+    max-height: 305px;
+}
+
+.brand-acceptance.close {
+    max-height: 500px;
+}
+
+.dksd.open {
+    max-height: unset;
+    padding-bottom: 45px;
+}
+
+.brand-acceptance.open {
+    max-height: unset;
+    padding-bottom: 45px;
+}
+
+.content-egift {
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.boxshowqr {
+    padding: 10px 15px;
+    background: #fff;
+    margin: 10px 0 0px 0;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: none !important;
+    display: inline-block;
+    position: relative;
+    padding-right: 20px;
+}
+
+.str-qr {
+    font-weight: bold;
+}
+
+.boxshowqr h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 16px !important;
+    padding: 15px 5px !important;
+}
+
+.title-info-feature {
+    border-bottom: 1px solid #ededed;
+}
+
+.box-partner-accept .inside-accep {
+    background-color: #fff;
+    display: block;
+    padding: 0 10px;
+}
+
+.info-acc-egift .row {
+    margin: 0;
+}
+
+.row-partner {
+    padding: 10px 0;
+    border-bottom: 1px solid #d9d9dc;
+}
+
+.point-egift-acc {
+    background: url(../images/icon-money.svg) no-repeat;
+    padding: 0 0 0 22px;
+    color: #ea1d1d;
+    font-size: 13px;
+    margin-top: 6px;
+    background-size: 20px;
+    text-align: left;
+}
+
+.location-egift-acc {
+    background: url(../images/icon-location.svg) no-repeat;
+    padding: 0 0 0 22px;
+    color: #686666;
+    font-size: 14px;
+    margin-top: 6px;
+    background-size: 20px;
+    cursor: pointer;
+    overflow: hidden;
+    height: 40px;
+    display: block;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.title-partner-egift {
+    padding: 5px 0 0px 0px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.xemthem {
+    position: absolute;
+    bottom: 0px;
+    padding: 22px 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    background: #fff;
+    text-align: center;
+}
+
+    .xemthem span {
+        border: 1px solid #2f80ed;
+        color: #2f80ed;
+        border-radius: 5px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px 20px;
+    }
+
+@media (max-width: 768px) {
+    .wrapper .header-qr .box-header {
+        width: auto;
+    }
+}
+/*end*/
+.wrapper .content {
+    max-width: 100%;
+    width: 530px;
+    padding: 20px 20px 10px 20px;
+    box-shadow: 0 0 10px 0px #ccc;
+    margin: 30px auto 30px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.title-mobile-2 {
+    font-weight: 500;
+}
+
+.wrapper .content .box-content {
+}
+
+.frm-link-account p[class^='title'] {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.frm-link-account .title-1 {
+    color: #ed2024;
+}
+
+.frm-link-account .title-2 {
+    padding: 15px 0;
+}
+
+.frm-link-account .input-control {
+    margin: 20px 0 20px;
+    border: 1px solid #cacaca;
+    background: #fff;
+    border-radius: 3px !important;
+}
+
+.frm-link-account .text-forget-password {
+    font-size: 12px;
+    text-align: left;
+    display: inline-block;
+    color: #000;
+    padding: 10px 0 0;
+}
+
+.frm-link-account .text-quick-login {
+    text-align: right;
+    padding: 10px 0 0;
+    float: right;
+    font-size: 12px;
+}
+
+.frm-link-account .btn-solid {
+    margin-top: 10px;
+    background: #ff3b30;
+}
+
+.frm-link-account .title-3 {
+    padding: 15px 0;
+    color: #acacac;
+}
+
+.frm-link-account .title-or {
+    padding: 10px 0;
+    color: #acacac;
+}
+
+.frm-login .btn-google {
+    background-color: #ff2d55;
+}
+
+.frm-login .btn-google, .frm-login .btn-facebook .btn-dealtoday {
+    position: relative;
+    text-align: center;
+    padding-left: 50px;
+}
+
+.frm-login .btn-google, .frm-login .btn-facebook {
+    position: relative;
+    text-align: center;
+    padding-left: 50px;
+    font-weight: 400;
+}
+
+.frm-login .btn i {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #fff;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    text-align: center;
+}
+
+.frm-login .btn-google i {
+    color: #df4930;
+    left: 143px;
+}
+
+.frm-login .btn-facebook {
+    background-color: #2f80ed;
+    text-align: center;
+}
+
+.frm-login .btn-dealtoday {
+    background-color: #0066ff;
+}
+
+    .frm-login .btn-dealtoday i {
+        color: #507cc0;
+    }
+
+.frm-login .btn-facebook i {
+    color: #507cc0;
+    left: 134px;
+}
+
+.frm-login .title-3 {
+    padding-bottom: 0;
+    border-top: 1px solid #f2f2f4;
+    position: relative;
+    margin: 20px 0 0;
+}
+
+    .frm-login .title-3 i {
+        position: absolute;
+        left: 44%;
+        top: -11px;
+        background: #fff;
+        padding: 0 15px;
+        color: #666;
+        font-style: normal;
+    }
+
+.frm-register .label-register {
+    display: block;
+    font-size: 12px;
+    color: #acacac;
+    margin-top: 10px;
+}
+
+.frm-register .input-control {
+    margin-top: 0;
+}
+
+.frm-register .input-checkbox {
+    margin-top: 20px;
+}
+
+.frm-forget-password h1 {
+    margin: 0 auto 30px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.frm-forget-password .btn-solid {
+    margin: 20px 0 !important;
+}
+
+.frm-forget-password .input-checkbox {
+    margin: 30px 0;
+    text-justify: auto;
+}
+
+.frm-active-phone .group-input-number {
+    overflow: hidden;
+    display: table;
+    margin: auto;
+}
+
+    .frm-active-phone .group-input-number .input-number {
+        float: left;
+        width: 50px;
+        text-align: center;
+        margin-right: 15px;
+        border-bottom-color: #c4c4c4;
+        font-size: 34px;
+        color: #000;
+    }
+
+.text-veryfi-3 {
+    color: #8e8e93;
+    font-size: 12px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.frm-active-phone .btn-solid {
+    margin-bottom: 10px;
+    background: #ff3b30;
+}
+
+@media (max-width: 768px) {
+    .wrapper .header .box-header {
+        width: auto;
+    }
+}
+
+#frm-login-tab {
+}
+
+    #frm-login-tab li {
+        width: 50%;
+    }
+
+        #frm-login-tab li.active a {
+            border-bottom: 2px solid #fd6c20;
+            border-left: 0;
+            border-right: 0;
+            border-top: 0;
+        }
+
+        #frm-login-tab li a {
+            text-align: center;
+            text-transform: uppercase;
+            color: #333;
+        }
+
+/*start update new version 28-07-2021 by HungMT*/
+.title-lg {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 700;
+    color: #000;
+}
+
+    .title-lg span {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+.btn-login {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.lnk-login {
+    display: block;
+    text-align: center;
+    padding: 20px 0 0;
+}
+
+.wrapper .header .logo img {
+    width: 63px;
+}
+
+.footer {
+    overflow: hidden;
+    background: #fff;
+    padding: 15px 0;
+    /*position: fixed;*/
+    bottom: 0px;
+    width: 100%;
+}
+
+    .footer .inside {
+        width: 1170px;
+        margin: 0 auto;
+    }
+
+        .footer .inside p {
+            color: #000;
+        }
+
+
+        .footer .inside b {
+            display: block;
+        }
+
+        .footer .inside a {
+            display: block;
+            color: #000;
+            line-height: 32px;
+        }
+
+.title-footer {
+    padding: 38px 0 15px;
+}
+
+.ic-local {
+    background: url('../Images/icon-localtion.png') no-repeat;
+    background-position: left 3px;
+    display: block;
+    padding: 0 0 10px 18px;
+}
+
+.link-dl-app {
+    padding-bottom: 20px;
+}
+
+#registrationuser,
+#quickloginuser {
+    padding: 15px 0 0px;
+}
+
+.list-step {
+    padding-bottom: 15px;
+}
+
+    .list-step .step {
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid #d1d1d6;
+        border-radius: 50px;
+        color: #d1d1d6;
+        font-weight: bold;
+        display: inline-block;
+        padding-top: 5px;
+    }
+
+        .list-step .step.active {
+            color: #fff;
+            background: #34c759;
+        }
+
+    .list-step .col-md-3,
+    .list-step .col-md-4 {
+        text-align: center;
+    }
+
+    .list-step .col-md-1 {
+        border-top: 2px solid #d1d1d6;
+        margin-top: 25px;
+    }
+
+
+.st-text {
+    padding: 8px 0;
+    font-size: 12px;
+    color: #000;
+    font-weight: 500;
+}
+
+.text-veryfi {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.text-veryfi-2 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.frm-login {
+    position: relative;
+}
+
+#show-pass {
+    background: url('../Images/icon-show-pass.png') no-repeat;
+    background-position: right 0 center;
+    width: 22px;
+    height: 18px;
+    position: absolute;
+    top: 65px;
+    right: 15px;
+    cursor: pointer;
+}
+
+    #show-pass.hide-pass {
+        background: url('../Images/icon-hide-pass.png') no-repeat;
+        background-position: right 0 center;
+        width: 22px;
+        height: 18px;
+        position: absolute;
+        top: 65px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+#show-pass-ql {
+    background: url('../Images/icon-show-pass.png') no-repeat;
+    background-position: right 0 center;
+    width: 22px;
+    height: 18px;
+    position: absolute;
+    top: 80px;
+    right: 15px;
+    cursor: pointer;
+}
+
+    #show-pass-ql.hide-pass {
+        background: url('../Images/icon-hide-pass.png') no-repeat;
+        background-position: right 0 center;
+        width: 22px;
+        height: 18px;
+        position: absolute;
+        top: 80px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+#show-repass-ql {
+    background: url('../Images/icon-show-pass.png') no-repeat;
+    background-position: right 0 center;
+    width: 22px;
+    height: 18px;
+    position: absolute;
+    top: 136px;
+    right: 15px;
+    cursor: pointer;
+}
+
+    #show-repass-ql.hide-pass {
+        background: url('../Images/icon-hide-pass.png') no-repeat;
+        background-position: right 0 center;
+        width: 22px;
+        height: 18px;
+        position: absolute;
+        top: 136px;
+        right: 15px;
+        cursor: pointer;
+    }
+
+.btn-outline {
+    background: #fd9425;
+    color: #fff;
+}
+
+.logo-footer {
+    display: block;
+}
+
+    .logo-footer img {
+        width: 50px;
+    }
+
+.error-otp {
+    text-align: left;
+    border: 1px solid;
+    padding: 8px 0px 8px 42px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background: url(../Images/icon-error-otp.png) no-repeat;
+    background-position: left 10px center;
+}
+
+#quickloginuser {
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .footer {
+        display: none;
+    }
+
+    .wrapper .content {
+        padding-top: 20px;
+        margin: 30px 5% 0px 5%;
+        width: 90%;
+    }
+
+    .frm-login .btn-facebook i {
+        left: 45px;
+    }
+
+    .frm-login .btn-google i {
+        left: 55px;
+    }
+
+    .frm-active-phone .group-input-number .input-number {
+        width: 36px;
+        margin-right: 5px;
+    }
+}
+/*end update new version 28-07-2021 by HungMT*/

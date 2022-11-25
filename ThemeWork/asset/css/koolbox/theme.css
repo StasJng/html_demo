@@ -1,0 +1,337 @@
+﻿
+.kb-container
+{
+    color: #333;
+    font-family: Arial, Tahoma, Verdana;
+    font-size: 12px;
+    display: none;
+    position: absolute;
+    word-wrap: break-word;
+    z-index: 10000;
+}
+
+.kb-facebook .kb-body
+{
+    text-align: left;
+    background: #fff;
+    position: relative;
+}
+
+.kb-facebook .kb-content
+{
+    display: none;
+    position: relative;
+}
+
+.kb-facebook .loading
+{
+    position: absolute;
+    background: #fff url("skins/loading.gif") no-repeat center center;
+    border: solid 1px #999;
+    width: 150px;
+    height: 60px;
+    display: none;
+    z-index: 10001;
+}
+
+.kb-facebook input[type='text'], .kb-facebook input[type='password'], .kb-facebook textarea
+{
+    border: solid 1px #b6bfc6;
+    background-color: #fff;
+    padding: 3px 4px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+    width: 90%;
+}
+
+.kb-facebook .kb-button, .kb-facebook input[type='submit']
+{
+    text-align: center;
+    background: #fff;
+    margin-right: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 3px 15px;
+    border: 1px solid #999;
+    border-bottom-color: #888;
+    color: #333;
+    background-color: #5B74A8;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f6f6), to(#e4e4e3));
+    background-image: -moz-linear-gradient(#f5f6f6, #e4e4e3);
+    background-image: -o-linear-gradient(#f5f6f6, #e4e4e3);
+    background-image: linear-gradient(#f5f6f6, #e4e4e3);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f5f6f6', EndColorStr='#e4e4e3'); /* for IE 6 - 9 */
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+}
+
+.kb-facebook .kb-button:hover
+{
+   /*  border-color: #94A2BF;   
+    -moz-box-shadow: 0 0 3px #999;
+    -webkit-box-shadow: 0 0 3px #999;
+    -khtml-box-shadow: 0 0 3px #999;
+    box-shadow: 0 0 3px #999;*/
+    outline: 0;
+     border-color: #3b6e22 #3b6e22 #2c5115;
+    color: #fff;
+    background-color: #69A74E;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#75ae5c), to(#67a54b));
+    background-image: -moz-linear-gradient(#75ae5c, #67a54b);
+    background-image: -o-linear-gradient(#75ae5c, #67a54b);
+    background-image: linear-gradient(#75ae5c, #67a54b);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#75ae5c', EndColorStr='#67a54b'); /* for IE 6 - 9 */
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #98c286;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #98c286;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #98c286;
+}
+
+
+.kb-facebook table
+{
+    border-collapse: collapse; /* ie 6 hack -- if the global table width is set to anything it could cause us issues*/
+    -width: 0%;
+    padding: 0;
+}
+
+
+.kb-facebook .kb-t-l, .kb-facebook .kb-t-r, .kb-facebook .kb-b-r, .kb-facebook .kb-b-l
+{
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    margin: 0;
+    background: url('skins/sprite.png') no-repeat;
+}
+
+
+.kb-facebook .kb-t-l
+{
+    background-position: top left;
+}
+.kb-facebook .kb-t-r
+{
+    background-position: top right;
+}
+.kb-facebook .kb-b-l
+{
+    background-position: bottom left;
+}
+
+.kb-facebook .kb-b-r
+{
+    background-position: bottom right;
+}
+
+.kb-facebook .kb-m-l, .kb-facebook .kb-m-r
+{
+    background: url('skins/sprite_y.png') repeat-y;
+}
+
+.kb-facebook .kb-m-r
+{
+    background-position: top right;
+}
+.kb-facebook .kb-t-c, .kb-facebook .kb-b-c
+{
+    background: url('skins/sprite_x.png') repeat-x;
+}
+
+.kb-facebook .kb-b-c
+{
+    background-position: bottom left;
+}
+
+.kb-facebook .kb-close
+{
+    background: url('skins/sprite.png') no-repeat -50px -18px;
+    position: absolute;
+    top: 5px;
+    right: -38px;
+    width: 29px;
+    height: 29px;
+    z-index: 1;
+}
+
+.kb-facebook .kb-close:hover
+{
+    background-position: -90px -18px;
+    text-decoration: none;
+}
+
+
+.kb-facebook .mode-image .kb-close
+{
+    right: 5px;
+}
+
+
+.kb-facebook .mode-image img
+{
+    position: relative;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.kb-facebook .mode-html .kb-content
+{
+    overflow: auto;
+}
+.kb-facebook .kb-content-padding
+{
+    padding: 10px;
+}
+
+.kb-facebook .kb-title
+{
+    display: none;    
+}
+
+.kb-facebook .mode-message .kb-close
+{
+    display: none;
+}
+
+.kb-facebook .kb-desc
+{
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    display: none;
+    color: #fff;
+    background: #000;
+    padding: 5px 8px;
+    filter: alpha(opacity=50); /* internet explorer */
+    -khtml-opacity: 0.5; /* khtml, old safari */
+    -moz-opacity: 0.5; /* mozilla, netscape */
+    opacity: 0.5; /* fx, safari, opera */
+}
+
+
+.kb-facebook .kb-controls
+{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    z-index: 1;
+    height: 39px;
+    display: none;
+}
+
+.kb-facebook .kb-controls a:hover
+{
+    text-decoration: none;
+}
+
+.kb-facebook .kb-left, .kb-facebook .kb-right, .kb-facebook .kb-prev, .kb-facebook .kb-next, .kb-facebook .kb-play, .kb-facebook .kb-stop
+{
+    background: url('skins/sprite.png') no-repeat;
+    width: 24px;
+    height: 39px;
+    float: left;
+    display: inline;
+}
+.kb-facebook .kb-left
+{
+    background-position: -19px -56px;
+    width: 8px;
+}
+.kb-facebook .kb-right
+{
+    background-position: -138px -56px;
+    width: 8px;     
+}
+.kb-facebook .kb-prev
+{
+    background-position: -27px -57px;
+}
+
+
+.kb-facebook .kb-prev:hover
+{
+    background-position: -27px -108px;
+}
+
+.kb-facebook .kb-next
+{
+    background-position: -116px -57px;
+}
+
+
+.kb-facebook .kb-next:hover
+{
+    background-position: -116px -108px;
+}
+
+
+
+.kb-facebook .kb-play
+{
+    background-position: -86px -57px;
+}
+
+.kb-facebook .kb-play:hover
+{
+    background-position: -86px -108px;
+}
+
+.kb-facebook .kb-stop
+{
+    background-position: -57px -57px;
+}
+
+.kb-facebook .kb-stop:hover
+{
+    background-position: -57px -108px;
+}
+
+
+/*-----------------------Message Box ------------------------*/
+
+.kb-facebook .mode-message .kb-title
+{
+    display: block;
+    background:#6D84B4;
+    border-color: #3B5998 #3B5998;
+    border-style: solid solid none;
+    border-width: 1px 1px medium;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding:8px;
+    margin: 0;
+    
+}
+
+.kb-facebook .kb-foot
+{    
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+    background-color:#f4f4f4;      
+    text-align: right;     
+}
+
+
+.kb-facebook .mode-message .kb-content
+{
+    text-align: left;
+    min-height: 40px;   
+    padding: 10px 10px 10px 50px;
+    background:#fff url('skins/info.png') no-repeat 10px 10px;  
+}
+
+.kb-facebook .mode-message .confirm
+{
+    background-image: url("skins/warning.png");
+}
+
+.kb-facebook .mode-message .prompt
+{
+    background-image: url("skins/help.png");
+}
+
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<style>
+    body{
+        font-size: 20pt;
+        background-color: rgba(255, 228, 196, 0.062);
+    }
+    .hide {
+      display: none;
+      background-color: #fff
+    }
+    h2:first-of-type:first-letter {
+        color: #3c8857 !important;
+        color: var(--sea-green);
+        padding: 0 0.3rem;
+        margin: 0 0.3rem 0 0;
+        border: 2px solid;
+        border-radius: 8px;
+        font-size: 4rem;
+        float: left;
+        line-height: 1;
+    }
+    .myDIV:hover {
+        display: none;
+    }
+    .myDIV:hover + .hide {
+      display: block;
+      color: #cdcdcd !important;
+    }
+    .key{
+        color: rgba(0, 0, 0, 0.555) !important;
+        font-family: freshman-sans,sans-serif;
+        text-transform: lowercase;
+        margin: 0 0.1em;
+        padding: 0.1em 0.4em;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        line-height: 1.4;
+        font-size: .7rem;
+        display: inline-block;
+        background-color: #f7f7f7;
+        text-shadow: 0 1px 0 #fff;
+        text-shadow: 0 1px 0 var(--white);
+    }
+
+
+
+
+    .container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    margin: 30px;
+    }
+
+    .box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    background: #0057e3;
+    }
+
+    .overlay {
+    z-index: 9;
+    margin: 30px;
+    background: #009938;
+    }
+</style>
+<body>
+    <h2>Display an Element on Hover</h2>
+    <div class="myDIV" id="myDIV"><p><span class="key">Hover</span><span class="key">&nbsp;over me.</span></p></div>
+    <div class="hide" id="hide"><p>I am shown when someone hovers over the div above.</p></div>
+    <div class="container">
+    <div class="box"></div>
+    <div class="box overlay"></div>
+    </div>
+    <label for="disk_c">C:</label>
+    <meter id="disk_c" value="2" min="0" max="10"></meter><br>
+    <label for="disk_d">D:</label>
+    <meter id="disk_d" value="0.6"></meter>
+</body>
+<script>
+    $(document).ready(function (){
+        let box = document.querySelector('.myDIV');
+        let width = box.offsetWidth;
+        let height = box.offsetHeight;
+        console.log({ width, height });
+        var topVal = $("#myDIV").css("height");
+        console.log(topVal);
+        //$('#hide').css("margin-top", (height * (-1)) + "px" );
+    });
+</script>
+</html>

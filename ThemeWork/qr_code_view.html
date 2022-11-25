@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR CODE VIEW</title>
+    <link href="assetQR/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="assets/Plugins/bootstrap-3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/Plugins/MaterialDesign-Webfont-master/css/materialdesignicons.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext,vietnamese"
+          rel="stylesheet">
+    <link rel="stylesheet" href="assets/Style/form-control.css" />
+    <link rel="stylesheet" href="assets/Style/account.css" />
+    <script src="assets/Js/jquery-2.1.4.min.js"></script>
+    <script src="assets/Plugins/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/Js/app.js"></script>
+    <script src="assets/Plugins/bootstrap-datepicker-1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header-qr ">
+            <div class="box-header">
+                <a href="//dealtoday.vn" class="logo">
+                    <img src="assets/Images/logo_tranperent.png" alt="logo">
+                </a>
+                <span class="phone-number">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                    </svg>
+                    <i class="bi bi-telephone"></i> 1900 2065 <span class="hidden-xs">- 0934.661.016</span>
+                </span>
+            </div>
+        </div>
+        <!-- @RenderBody() -->
+        <style>
+            .box-content .item img {
+                width: 100% !important;
+            }
+            .card {
+                background: #ffffff;
+                height: 55px;
+                position: relative;
+                padding: 1em;
+                border-top: 1.5px solid darkgray;
+                border-bottom: 1.5px solid darkgray;
+                margin-bottom: 15px;
+            }
+            .cardLeft {
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+                border-left: 1.5px solid darkgray;
+                width: 75%;
+            }
+            .cardLeft::-webkit-scrollbar {
+                height: 3px;
+                width: 85%;
+            }
+            .cardLeft::-webkit-scrollbar-track {
+                background-color: #f5f4f4;
+            }
+            .cardLeft::-webkit-scrollbar-thumb {
+                border-radius: 250px;
+                background: -webkit-linear-gradient(to bottom, #f7941c, #f7941c);
+                background: linear-gradient(to bottom, #f7941c, #f7941c);
+            }
+            .cardRight {
+                width: 25%;
+                border-left: 1.5px dashed darkgray;
+                border-top-right-radius: 8px;
+                border-bottom-right-radius: 8px;
+                border-right: 1.5px solid darkgray;
+            }
+            .cardRight:before{
+                content: "";
+                position: absolute;
+                display: block;
+                width: 0.9em;
+                height: 0.9em;
+                background: #fff;
+                border-radius: 50%;
+                left: -0.5em;
+                border: 1.5px solid darkgrey;
+                /* Halve the circle */
+                border-top-color: transparent;
+                border-right-color: transparent;
+                /* Rotate the circle */
+                transform: rotate(-45deg);
+            }
+            .cardRight:after {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 0.9em;
+                height: 0.9em;
+                background: #fff;
+                border-radius: 50%;
+                left: -0.5em;
+                border: 1.5px solid darkgrey;
+                /* Halve the circle */
+                border-bottom-color: transparent;
+                border-left-color: transparent;
+                /* Rotate the circle */
+                transform: rotate(-45deg);
+            }
+            .cardRight:before {
+                top: -0.4em;
+            }
+            .cardRight:after {
+                bottom: -0.4em;
+            }
+            input[type=radio]#orange{
+            accent-color: #f7941c;
+            background-color: #ffffff;
+            border: 0px;
+            width: 100%;
+            height: 18px;
+            }
+            input[type='radio']:after {
+                margin: 1px 0 0 0px;
+                width: 15px;
+                height: 15px;
+                border-radius: 15px;
+                position: relative;
+                background-color: #fff;
+                content: '';
+                display: inline-block;
+                visibility: visible;
+                border: 1px solid white;
+            }
+
+            input[type='radio']:checked:after {
+                margin: 1px 0 0 0px;
+                width: 16px;
+                height: 16px;
+                border-radius: 15px;
+                position: relative;
+                background-color: #ff7b00;
+                content: '';
+                display: inline-block;
+                visibility: visible;
+                border: 2px solid white;
+            }
+            .hero-image {
+                display: flex;
+                position: relative;
+                align-items: center;
+            }
+            .hero-image img{
+                width: 65%;
+                margin: 0 auto;
+            }
+
+            .hero-image p {
+                background: transparent none repeat scroll 0 0;
+                color: black;
+                text-align: center;
+                width: 320px;
+                margin: 0px auto;
+                position: absolute;
+                left: 0;
+                right: 0;
+            }
+            .hide_this{
+                display: none;
+            }
+            li {
+                display: block;
+                transition-duration: 0.5s;
+            }
+
+            li:hover {
+                cursor: pointer;
+            }
+
+            ul li ul {
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                transition: all 0.5s ease;
+                margin-top: 1rem;
+                left: 0;
+                display: none;
+            }
+
+            ul li:hover > ul,
+            ul li ul:hover {
+                visibility: visible;
+                opacity: 1;
+                display: block;
+            }
+
+            ul li ul li {
+                clear: both;
+                width: 100%;
+            }
+            .dropDown-wrapperQR{
+                position: relative;
+                margin: 0 auto;
+                height: 42px;
+                width: 160px;
+                z-index: 1;
+                position: absolute;
+                font-weight: 500 !important;
+                padding: 6px 0 0 0;
+            }
+            .dropDown-toggle-labelQR {
+                position: relative;
+                padding: 5px 0px 14px 10px;
+                background-color: white;
+                color: black;
+                border-radius: 3px;
+                font-family: Helvetica;
+                font-size: 14px;
+                transition: opacity .2s ease;
+                letter-spacing: .2px;
+                float: right;
+                border: 1px solid #cdcdcd  ;
+                min-width: 132px;
+                font-weight: 500;
+                max-height: 32px;
+                border-radius:5px;
+            }
+            .dropDown-toggle-labelQR:after{
+                content: "";
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                background: linear-gradient(45deg, black 50%, transparent 0);
+                position: absolute;
+                right: 10px;
+                top: 35%;
+                transform: rotate(-45deg);
+            }
+            .dropDown-wrapperQR input{display: none;}
+            .dropDown-wrapperQR > input:checked + label:after{
+                top: 45%;
+                transform: rotate(135deg);
+            }
+            .dropDown-wrapperQR > input:checked + label + .dropDownQR{
+                display: inline-block;
+            }
+            .dropDownQR{
+                border-radius: 8px !important;
+                position: absolute;
+                right: 0;
+                top: calc(100% - 2px);
+                padding: 0 0 0 0;
+                box-shadow: 0 0 20px rgba(0,0,0,.1);
+                border-radius: 4px 0 4px 4px;
+                min-width: 158px;
+                display: none;
+                opacity: 1 !important;
+                background-color: white !important;
+                position: absolute;
+                z-index: 1;
+            }
+            .dropDownQR label {
+                display: block;
+                padding: 8px 12px;
+                border-left: 0.5px solid transparent;
+                font-family: Arial;
+                font-size: 14px;
+                cursor: pointer;
+                font-weight: 500;
+                transition:
+                        border .3s ease,
+                        padding-left .3s ease,
+                        background-color .3s ease;
+            }
+            .dropDownQR label:hover{
+                background-color: #cdcdcd;
+            }
+            .dropdown_chosen_item {
+                color:limegreen; 
+                float:right; 
+                font-style: normal; 
+                font-weight:bold; 
+                font-size: 12pt;
+            }
+        </style>
+        <div class="wrapper-content">
+            <div class="boxshowqr">
+                <div>
+                    <h2 style="text-align: center; color: #8e969a; font-weight: 400;">
+                        Đưa mã này cho thu ngân
+                    </h2>
+                    </div>
+                    <div>
+                        <div class="content-egift">
+                            <div class="hero-image">
+                                <img src="assetQR/images/qrcode.png" width="260">
+                                <div class="hide_this">
+                                    <p style="font-size:20pt"><b>Vui lòng chọn mã code.</b></p>
+                                </div>
+                            </div>
+                            <p style="font-weight:650; text-align: center; font-size: 15pt;">
+                                Vé vui chơi cho bé tại khu nhà sách Tiến Thọ
+                            </p>
+                            <div class="row" style="border-bottom: 1px dashed black; margin: 0">
+                                <div class="col-xs-6 col-sm-6">
+                                    <p style="text-align: left; font-weight:650; color: #f7941c; font-size: 15pt; margin-left:-8px">45.000 VND</p>
+                                </div>
+                                <div class="col-xs-6 col-sm-6" style="margin: 0 0 15px 0;padding: 5px 0 0 0">
+                                    <p style="text-align: right; font-weight:650; color: dimgray">HSD: 30/12/2022</p>
+                                </div>
+                            </div>
+                            <!--BUTTON-->
+                            <div style="padding: 25px 0 10px 0">
+                                <button class="btn btn success" style="width:100%; background-color: #f7941c; font-size: 15pt; font-weight: 650;color:#ffffff;" onclick="download_qr">Tải mã QR</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="brand-acceptance" style="min-height: 225px">
+                <div class="title-info-feature row" id="thong-tin-noi-bat">
+                    <div class="col-xs-6 col-sm-6">
+                        <h2><b>Danh sách mã code</b></h2>
+                    </div>
+                    <div class="col-xs-6 col-sm-6">
+                        <div class="dropDown-wrapperQR">
+                            <input type="checkbox" id="dropDown-toggleQR">
+                            <label for="dropDown-toggleQR" class="dropDown-toggle-labelQR">Chưa sử dụng</label>
+                            <div class="dropDownQR">
+                              <input id="1" name="options" onclick="item_onclick(this.id);">
+                              <label for="option-1">Chưa sử dụng<span><i class="dropdown_chosen_item">&#10003;</i></span></label>
+                              <input id="2" name="options" onclick="item_onclick(this.id);">
+                              <label for="option-2">Đã sử dụng</label>
+                              <input id="3" name="options" onclick="item_onclick(this.id);">
+                              <label for="option-3">Hết hạn</label>
+                              <input id="4" name="options" onclick="item_onclick(this.id);">
+                              <label for="option-3">Hủy</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="info-acc-egift" onclick="" style="padding-top:15px">
+                        <div class="row">
+                                <div class="col-sm-9 col-xs-9 card cardLeft" style="max-width: 100%; box-sizing: border-box;overflow-x: auto; overflow-y: hidden; white-space: nowrap; display: inline-block">
+                                    <p style="font-size:13pt; text-align:center; vertical-align:middle";>JD3T2-QH36R-X7W3W-&R3XT-QHSAZ</p>
+                                </div>
+                                <div class="col-sm-3 col-xs-3 card cardRight">
+                                    <input style="margin-top: 3px; text-align:center; vertical-align:middle" type="radio" id="orange" name="search_all" id="search_all" onClick="ReportAllNoneClicked()" checked>
+                                </div>
+                                <div class="col-sm-9 col-xs-9 card cardLeft" style="max-width: 100%; box-sizing: border-box;overflow-x: auto; overflow-y: hidden; white-space: nowrap; display: inline-block">
+                                    <p style="font-size:13pt; text-align:center; vertical-align:middle";>JD3T2-QH36R-X7W3W-&R3XT-QHSAZ</p>
+                                </div>
+                                <div class="col-sm-3 col-xs-3 card cardRight">
+                                    <input style="margin-top: 3px; text-align:center; vertical-align:middle" type="radio" id="orange" name="search_all" id="search_all" onClick="ReportAllNoneClicked()" checked>
+                                </div><div class="col-sm-9 col-xs-9 card cardLeft" style="max-width: 100%; box-sizing: border-box;overflow-x: auto; overflow-y: hidden; white-space: nowrap; display: inline-block">
+                                    <p style="font-size:13pt; text-align:center; vertical-align:middle";>JD3T2-QH36R-X7W3W-&R3XT-QHSAZ</p>
+                                </div>
+                                <div class="col-sm-3 col-xs-3 card cardRight">
+                                    <input style="margin-top: 3px; text-align:center; vertical-align:middle" type="radio" id="orange" name="search_all" id="search_all" onClick="ReportAllNoneClicked()" checked>
+                                </div><div class="col-sm-9 col-xs-9 card cardLeft" style="max-width: 100%; box-sizing: border-box;overflow-x: auto; overflow-y: hidden; white-space: nowrap; display: inline-block">
+                                    <p style="font-size:13pt; text-align:center; vertical-align:middle";>JD3T2-QH36R-X7W3W-&R3XT-QHSAZ</p>
+                                </div>
+                                <div class="col-sm-3 col-xs-3 card cardRight">
+                                    <input style="margin-top: 3px; text-align:center; vertical-align:middle" type="radio" id="orange" name="search_all" id="search_all" onClick="ReportAllNoneClicked()" checked>
+                                </div><div class="col-sm-9 col-xs-9 card cardLeft" style="max-width: 100%; box-sizing: border-box;overflow-x: auto; overflow-y: hidden; white-space: nowrap; display: inline-block">
+                                    <p style="font-size:13pt; text-align:center; vertical-align:middle";>JD3T2-QH36R-X7W3W-&R3XT-QHSAZ</p>
+                                </div>
+                                <div class="col-sm-3 col-xs-3 card cardRight">
+                                    <input style="margin-top: 3px; text-align:center; vertical-align:middle" type="radio" id="orange" name="search_all" id="search_all" onClick="ReportAllNoneClicked()" checked>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <p>&nbsp;</p>
+                <div class="xemthem" st="1"><span>Xem thêm</span></div>
+            </div>
+            <!--Move to Popup-->
+            <!-- <div style="background-color:#fff; text-align: left;">
+                <div style="text-align:left; padding: 15px 0 0 20px">
+                    <p style="font-size: 12pt"><b>Địa điểm chấp nhận</b></p>
+                </div>
+                <div class="row" style="border-top: 1px solid #ededed; padding-top:10px; margin:0px 10px 0 10px">
+                    <div class="col-sm-1 col-xs-1">
+                        <img src="assetQR/images/loc_icon.png" width="20">
+                    </div>
+                    <div class="col-sm-10 col-xs-10">
+                        <p style="margin-top: 2px">Số 8 Phạm Ngọc Thạch, Đống Đa, Hà Nội</p>
+                    </div>
+                    <div class="col-sm-1 col-xs-1" style="margin-right: -20px">
+                        <img src="assetQR/images/gt_icon.png" width="20">
+                    </div>
+                </div>
+                <div class="row" style="border-top: 1px solid #ededed; padding-top:10px; margin:0px 10px 0 10px">
+                    <div class="col-sm-1 col-xs-1">
+                        <img src="assetQR/images/loc_icon.png" width="20">
+                    </div>
+                    <div class="col-sm-10 col-xs-10">
+                        <p style="margin-top: 2px">Số 1A Dịch Vọng Hậu, Cầu Giấy, Hà Nội</p>
+                    </div>
+                    <div class="col-sm-1 col-xs-1" style="margin-right: -20px">
+                        <img src="assetQR/images/gt_icon.png" width="20">
+                    </div>
+                </div>
+            </div> -->
+            <div class="brand-acceptance">
+                <div class="title-info-feature" id="thong-tin-noi-bat">
+                    <h2><b>Điều kiện sử dụng</b></h2>
+                </div><div class="content-egift">
+                    <div class="info-acc-egift">
+                        <div class="row row-partner">
+                            <div class="col-xs-12">
+                                <p style="text-align:justify">
+                                    Điều kiện sử dụng
+                                    Thẻ Quà tặng Sinh nhật Hạnh phúc từ Dealtoday.vn là món quà hoàn hảo cho bất kỳ ai kỷ niệm ngày
+                                    đặc biệt của họ. Thẻ quà tặng này có thể được sử dụng tại nhiều thương hiệu, vì vậy bạn không 
+                                    phải lo lắng về việc mua một món quà mà họ không thực sự muốn. Thẻ Happy Birthday có thẻ được sử 
+                                    dụng tại Golden Gate, Food House,...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="google_translate_element" style="display: none;"></div>
+    <script>
+            $('.xemthem').click(function () {
+                if ($(this).attr('st') == 1) {
+                    $(this).parent().addClass('open');
+                    $(this).parent().removeClass('close');
+                    $(this).find('span').text("Thu gọn");
+                    $(this).attr('st', "0");
+                }
+                else {
+                    //$(this).parent().addClass('close');
+                    $(this).parent().removeClass('open');
+                    $(this).find('span').text("Xem thêm");
+                    $(this).attr('st', "1");
+                }
+            });
+        
+    </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'vi', includedLanguages: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false }, 'google_translate_element');
+        }
+    </script>
+    <script>
+        function download_qr() {
+            window.location.href = 'data:application/octet-stream;base64,' + img;
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+</body>
+
+</html>

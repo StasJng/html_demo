@@ -1,0 +1,140 @@
+body {
+    font-family: "Roboto", "Arial";
+    top:0 !important;
+}
+
+.input-control {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+    border-radius: 0!important;
+    display: block;
+    width: 100%;
+    height: 36px;
+    text-indent: 10px;
+}
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #acacac;
+  font-size:13px;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+  color: #acacac;
+  font-size:13px;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+  color: #acacac;
+  font-size:13px;
+}
+input:-moz-placeholder { /* Firefox 18- */
+  color: #acacac;
+  font-size:13px;
+}
+.btn-solid {
+    background: #fd9425;
+    border: none;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    height:40px;
+    min-width:185px;
+    
+}
+
+.btn-outline {
+    background: #fff;
+    border: 1px solid #fd9425;
+    border-radius: 3px;
+    display: block;
+    color: #fd9425;
+    font-weight: bold;
+    height:auto;
+}
+
+.btn-login {
+    font-size: 16px;
+}
+
+.input-control:focus {
+    outline: 0;
+    border-bottom-color: #fd9425;
+}
+.msg-error{
+    font-size:12px;
+    color: red;
+    font-weight: normal;
+    display: none;
+}
+.input-checkbox input[type='checkbox']{
+    display: none;
+}
+.input-checkbox label{
+    position: relative;
+    font-weight: normal;
+    padding-left: 25px;
+    cursor: pointer;
+    
+}
+.input-checkbox label:before{
+    width: 15px;
+    height:15px;
+    content: " ";
+    border: 1px solid #acacac;
+    position: absolute;
+    /*top:3px;*/
+    left: 0;
+}
+.input-checkbox input[type='checkbox']:checked ~ label:before {
+    content: '✓';
+    font-family: "Material Design Icons";
+    line-height: 12px;
+    font-size: 18px;
+    color: #fd6c20;
+    font-weight: bold;
+}
+.input-radio input[type='radio']{
+    display: none;
+}
+.input-radio label:before{
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    top:1px;
+}
+.input-checkbox input[type='radio']:checked ~ label:before{
+    font-family: "Material Design Icons";
+    content: "";
+    font-size: 11px;
+    text-align: center;
+    padding: 0px;
+    color: #fd6c20;
+}
+.input-icon{
+    position: relative;
+}
+.input-icon i{
+    position: absolute;
+    top:3px;
+    left:0;
+    font-size: 20px;
+}
+.input-icon .input-control {
+    text-indent: 30px;
+}
+select{
+    /*for firefox*/
+    -moz-appearance: none;
+    /*for chrome*/
+    -webkit-appearance: none;
+    background: url("../Images/icon-arrow-bottom.png") no-repeat right 5px center;
+    padding-right: 20px;
+}
+
+@media (max-width:768px){
+    .input-control {
+        margin-bottom:10px;
+    }
+}
+.goog-te-banner-frame{display:none;}

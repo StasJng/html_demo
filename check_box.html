@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *, *:before, *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    .new {
+        padding: 50px;
+    }
+
+    .form-group {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .form-group input {
+        content: '';
+        padding: 0;
+        height: initial;
+        width: initial;
+        margin-bottom: 0;
+        display: none;
+        cursor: pointer;
+    }
+
+    .form-group label {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .form-group label:before {
+        content:'';
+        -webkit-appearance: none;
+        background-color: #ffffff;
+        border: 2px solid #e92d00;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+        padding: 10px;
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        border-color:#cdcdcd;
+        border-width: 1.2px;
+        vertical-align: middle;
+        cursor: pointer;
+        margin-right: 5px;
+    }
+
+    .form-group input:checked + label:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 2px;
+        left: 9px;
+        width: 6px;
+        height: 14px;
+        border: solid #ffffff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        background: #e92d00;    
+    }
+
+    .form-group input:checked + label:before{
+        border-color:transparent;
+        background-color: #e92d00;
+    }
+
+    .form-group input:hover {
+        box-shadow: inset 0 2px 1px 0 rgba(0,0,0,.09)
+    }
+
+
+</style>
+<body>
+    <div class="new">
+        <form>
+          <div class="form-group">
+            <input type="checkbox" id="1">
+            <label for="1"></label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="2">
+            <label for="2"></label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="3">
+            <label for="3"></label>
+          </div>
+        </form>
+      </div>
+</body>
+</html>

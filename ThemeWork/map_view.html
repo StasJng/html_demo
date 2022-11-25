@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MAP VIEW</title>
+    <link href="assetQR/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="assets/Plugins/bootstrap-3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/Plugins/MaterialDesign-Webfont-master/css/materialdesignicons.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="assets/Style/form-control.css" />
+    <link rel="stylesheet" href="assets/Style/account.css" />
+    <script src="assets/Js/jquery-2.1.4.min.js"></script>
+    <script src="assets/Plugins/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script src="assets/Js/app.js"></script>
+    <script src="assets/Plugins/bootstrap-datepicker-1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
+</head>
+<body>
+    <!--start map-->
+    <div class="wrapper">
+        <div class="map_overlay"></div>
+        <div class="header-qr">
+            <div class="box-header">
+                <a href="//dealtoday.vn" class="logo">
+                    <img src="assets/Images/logo_tranperent.png" alt="logo">
+                </a>
+                <span class="phone-number">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                    </svg>
+                    <em class="bi bi-telephone"></em> 1900 2065
+                </span>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12" style="background-color:#fff; text-align: center; padding-left:0; font-size: 15pt; border-top: 1px solid #fff; border-top-left-radius: 20px; border-top-right-radius: 20px; padding: 10px 0 10px 0;position: absolute;z-index: 1">
+            <div>
+                <strong>
+                    <span style="margin-left:25px">Điểm chấp nhận</span>
+                </strong>
+                <span style="float:right; margin-right:25px; color:#cdcdcd">
+                    <a onclick="window.history.back();"><p style="color:#cdcdcd;">X</p></a>
+                </span>
+            </div>
+        </div>
+        <div id="map" style="width:100%;height:calc(100% - 130px);bottom: 0;position: absolute;z-index: 2">
+        </div>
+        <div class="row box-location-map">
+            <div class="close-accep"></div>
+            <div class="content-acceptance">
+                <div class="search-accep">
+                    <input type="text" class="txt-search" />
+                </div>
+                <div class="col-xs-12">
+                    <ul class="nav" style="padding-top: 15px;min-height: 210px;">
+                        <li class="li-acc check">
+                            <p class="text-accept" href="/myqr/viewmap?name=@item.POINT_NAME&add=@item.Address&lat=@item.LATITUDE&long=@item.LONGITUDE&id=@dealId&pid=@item.partner_id&apid=@itemACCEPTANCE_POINT_ID">Tầng 2, Tòa nhà Time Tower, số 35 Lê Văn Lương, Cầu Giấy, Hà Nội</p>
+                        </li>
+                        <li class="li-acc">
+                            <p class="text-accept" href="/myqr/viewmap?name=@item.POINT_NAME&add=@item.Address&lat=@item.LATITUDE&long=@item.LONGITUDE&id=@dealId&pid=@item.partner_id&apid=@itemACCEPTANCE_POINT_ID">Tầng 5-6 Tòa nhà Đông Lợi, số 2+4 ngõ 1160 Đường Láng, Đống Đa, Hà Nội</p>
+                        </li>
+                        <li class="li-acc">
+                            <p class="text-accept" href="/myqr/viewmap?name=@item.POINT_NAME&add=@item.Address&lat=@item.LATITUDE&long=@item.LONGITUDE&id=@dealId&pid=@item.partner_id&apid=@itemACCEPTANCE_POINT_ID">Tầng 2, Tòa nhà Time Tower, số 35 Lê Văn Lương, Cầu Giấy, Hà Nội</p>
+                        </li>
+                        <li class="li-acc">
+                            <p class="text-accept" href="/myqr/viewmap?name=@item.POINT_NAME&add=@item.Address&lat=@item.LATITUDE&long=@item.LONGITUDE&id=@dealId&pid=@item.partner_id&apid=@itemACCEPTANCE_POINT_ID">Tầng 2, Tòa nhà Time Tower, số 35 Lê Văn Lương, Cầu Giấy, Hà Nội</p>
+                        </li>
+                        <li class="li-acc">
+                            <p class="text-accept" href="/myqr/viewmap?name=@item.POINT_NAME&add=@item.Address&lat=@item.LATITUDE&long=@item.LONGITUDE&id=@dealId&pid=@item.partner_id&apid=@itemACCEPTANCE_POINT_ID">Tầng 5-6 Tòa nhà Đông Lợi, số 2+4 ngõ 1160 Đường Láng, Đống Đa, Hà Nội</p>
+                        </li>
+                        <li class="li-acc">
+                            <p class="text-accept" href="/myqr/viewmap?name=@item.POINT_NAME&add=@item.Address&lat=@item.LATITUDE&long=@item.LONGITUDE&id=@dealId&pid=@item.partner_id&apid=@itemACCEPTANCE_POINT_ID">Tầng 2, Tòa nhà Time Tower, số 35 Lê Văn Lương, Cầu Giấy, Hà Nội</p>
+                        </li>
+                        <li class="li-acc">
+                            <p class="text-accept" href="/myqr/viewmap?name=@item.POINT_NAME&add=@item.Address&lat=@item.LATITUDE&long=@item.LONGITUDE&id=@dealId&pid=@item.partner_id&apid=@itemACCEPTANCE_POINT_ID">Tầng 5-6 Tòa nhà Đông Lợi, số 2+4 ngõ 1160 Đường Láng, Đống Đa, Hà Nội</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end map-->
+    <div id="google_translate_element" style="display: none;"></div>
+    <script>
+        $(document).ready(function () {
+            $(".box-location-map").each(function (i, value) {
+                var input = $(value).find("input[type='text']");
+                $(input).keyup(function () {
+                    var filter = $(input).val().toUpperCase();
+                    $(value).find(".text-accept").each(function (index, item) {
+                        if ($(item).text().toUpperCase().search(filter) < 0) {
+                            $(this).parents('.li-acc').hide();
+                        } else {
+                            $(this).parents('.li-acc').show();
+                        }
+                    });
+                });
+            });
+        });
+    
+        var marker;
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: { lat: parseFloat('21.0228855'), lng: parseFloat('105.7669237,12') }
+            });
+            marker = new google.maps.Marker({
+                map: map,
+                draggable: false,
+                animation: google.maps.Animation.DROP,
+                position: { lat: parseFloat('21.028511'), lng: parseFloat('105.804817') },
+                title: "dealtoday.vn"
+            });
+            var InfoWindow = new google.maps.InfoWindow({
+                content: "<h5>" + 'Test' + "</h5><p>" + 'Address' + "</p>",
+                maxWidth: 280
+            });
+            //mặc đinh show
+            InfoWindow.open(map, marker);
+            // Hiển thị info window khi click vào maker
+            google.maps.event.addListener(marker, 'click', function () {
+                InfoWindow.open(map, marker);
+            });
+            //marker.addListener('click', toggleBounce);
+            console.log(map.center)
+            console.log(map.center.lat, map.center.lng)
+        }
+        function toggleBounce() {
+            if (marker.getAnimation() !== null) {
+                marker.setAnimation(null);
+            } else {
+                marker.setAnimation(google.maps.Animation.BOUNCE);
+            }
+        }
+    
+        var map;
+        function initialize(lat, lng, content) {
+    
+            lmarker = [];
+            //$("#map").modal("show");
+            setTimeout(function () {
+                var mapOptions = {
+                    zoom: 13,
+                    center: new google.maps.LatLng(lat, lng),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+                map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                var markerBounds = new google.maps.LatLngBounds();
+                var shopMaker = new google.maps.Marker({
+                    position: new google.maps.LatLng(lat, lng),
+                    map: map,
+                    title: "Tiêu đề",
+                    icon: "/asset/images/icon/icon-map-active.png"
+                });
+    
+                var InfoWindow = new google.maps.InfoWindow({
+                    content: content,
+                    maxWidth: 280
+                });
+                // Hiển thị info window khi click vào maker
+                google.maps.event.addListener(shopMaker, 'click', function () {
+                    InfoWindow.open(map, shopMaker);
+                });
+                MapDealCat(0, this, lat, lng);
+            }, 500)
+        }
+    
+        $('.close-accep').click(function () {
+            $('html').toggleClass("state-menu");
+        });
+    
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzaUXnfqFOgi2yTyDuksaGY6Dz4Uk4yoM&callback=initMap">
+    </script>
+    <style>
+        .map_overlay {
+            position: absolute;
+            background: rgba(0,0,0,.3);
+            top: 0; left: 0; right: 0; bottom: 0
+        }
+        .close-accep {
+            height: 7px;
+            width: 40px;
+            background: #c7c7cc;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+    
+        .txt-search {
+            width: 102.5%;
+            height: 35px;
+            border: 1px solid #c4c4c4;
+            border-right: transparent;
+            margin: 10px 0;
+            outline: none;
+            background: url('https://www.dealtoday.vn/asset/images/egift/icon-search.png') no-repeat;
+            background-position: left 10px center;
+            padding: 0 0 0 33px;
+            background-color: #fff;
+        }
+    
+        /*start map*/
+        .box-map {
+            width: 100%;
+            display: block;
+            position: relative;
+        }
+    
+        .title-map {
+            text-align: center;
+            color: #fff;
+            background: #f67232;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: Arial;
+            padding: 10px 10px 10px 62px;
+        }
+    
+        .box-map i {
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            font-family: Arial;
+            font-size: 12px;
+            color: #fff;
+        }
+    
+        .box-location-map {
+            position: fixed;
+            z-index: 9;
+            top: 78px;
+            left: 0;
+            right: 0;
+            -webkit-transform: translateY(195%);
+            -ms-transform: translateY(195%);
+            -o-transform: translateY(195%);
+            transform: translateY(195%);
+            -webkit-transition: all linear .2s;
+            -o-transition: all linear .2s;
+            transition: all linear .2s;
+            overflow-y: scroll;
+            height: 31%;
+            background: #fff;
+            padding: 10px 10px 10px 10px;
+        }
+        .box-location-map::-webkit-scrollbar 
+        {
+            width: 18px;
+        }
+        
+        .box-location-map::-webkit-scrollbar-track 
+        {
+            background-color: #f0f0f0;
+        }
+        
+        .box-location-map::-webkit-scrollbar-thumb
+        {
+            background: -webkit-linear-gradient(to bottom, #cdcdcd, #cdcdcd);
+            background: linear-gradient(to bottom, #cdcdcd, #cdcdcd);
+        }
+        .state-menu .box-location-map {
+            -webkit-transform: translateY(270%);
+            -ms-transform: translateY(270%);
+            -o-transform: translateY(270%);
+            transform: translateY(270%);
+        }
+    
+        .nav {
+            padding-left: 20px;
+        }
+    
+        .nav li {
+            padding-bottom: 10px;
+            list-style: none;
+            background: url('https://www.dealtoday.vn/asset/images/egift/icon-circle-inactive.png') no-repeat; padding-left: 23px;
+            background-size: 4%;
+            background-position: left 2px;
+        }
+    
+        .nav li.check {
+            padding-bottom: 10px;
+            list-style: none;
+            background: url('https://www.dealtoday.vn/asset/images/egift/icon-circle-active.png') no-repeat; padding-left: 23px;
+            background-size: 4%;
+            background-position: left 2px;
+        }
+    
+        .nav li a {
+            text-decoration: none;
+            color: #333;
+        }
+    </style>
+</body>
+</html>

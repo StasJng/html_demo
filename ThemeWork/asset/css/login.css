@@ -1,0 +1,90 @@
+.box-login {
+    width: 380px;
+    margin: 100px auto 0;
+    padding: 50px 70px;
+    background: #f1f2f2;
+    box-shadow: 0px 0px 2px 2px #dcdcdc;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.box-login .logo {
+    display: table;
+    margin: 0 auto;
+}
+
+.box-login .logo a {
+    background: url("../images/logo-login.png");
+    display: block;
+    width: 148px;
+    height: 102px;
+}
+
+.box-login h4 {
+    text-align: center;
+    color: #0288d1;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 35px 0;
+}
+
+.box-login h4 span {
+    margin-top: -11px;
+    display: block;
+}
+
+.box-login .input-login {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.box-login .input-login input {
+    padding-right: 25px;
+}
+
+.box-login .input-login .icon-email {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    width: 23px;
+    height: 17px;
+    background: url("../images/icon/icon-email.png");
+}
+
+.box-login .input-login .icon-lock {
+    position: absolute;
+    right: 0;
+    top: 3px;
+    background: url("../images/icon/icon-lock.png");
+    width: 18px;
+    height: 23px;
+}
+
+.box-login .remember {
+    margin: 10px 0 40px 0;
+}
+
+.box-login .remember label{
+    color: #4d4d4f;
+    font-size: 12px;
+}
+
+.box-login .remember a {
+    color: #4d4d4f;
+    font-size: 12px;
+}
+
+.box-login .button-login .btn {
+    border:1px solid #4d4d4f;
+    color: #4d4d4f;
+    text-transform: uppercase;
+    height: 40px;
+    font-size: 13px;
+    background: transparent;
+
+}
+.captcha{
+    text-align: center;
+    padding: 20px 10px;
+}

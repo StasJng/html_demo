@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" name="" id="fileId" onchange="imageUploaded()">
+	<br/>
+	<button onclick="displayString()">
+		Display String
+	</button>
+    <div style="padding: 25px 0 10px 0">
+        <button id="btnDownload" style="width:100%; background-color: #1c7bf7; font-size: 15pt; font-weight: 650;color:#ffffff;" onClick="downloadImage(this.id)">Download Image</button>
+        <a id="clickDownload" style="display: none" download="image.png" href=""></a>
+        <br/>
+        &nbsp;
+        <img id="imageUploaded" width="360" />
+    </div>
+    <script>
+        let base64String = "";
+
+        function imageUploaded() {
+            var file = document.querySelector(
+            'input[type=file]')['files'][0];
+
+            var reader = new FileReader();
+        
+            reader.onload = function () {
+                base64String = reader.result.replace("data:", "").replace(/^.+,/, "");
+
+                imageBase64Stringsep = base64String;
+
+                // blob convert old -- 
+                // var URL = this.window.URL || this.window.webkitURL;
+                var file = new Blob(
+                    ["image/png;base64," + base64String],
+                    {type : "image/png"});
+                var linkImg = URL.createObjectURL(file);
+                // var value = URL.revokeObjectURL(file); -- care revoke link
+
+                //new blob convert
+                const byteCharacters  = atob(base64String);
+                const byteNumbers = new Array(byteCharacters.length);
+                for (let i = 0; i < byteCharacters.length; i++) {
+                    byteNumbers[i] = byteCharacters.charCodeAt(i);
+                }
+                const byteArray = new Uint8Array(byteNumbers);
+                const blob = new Blob([byteArray], {type: "image/png"});
+                const blobLink = URL.createObjectURL(blob);
+
+                document.getElementById("imageUploaded").setAttribute('src', blobLink); 
+                //set image to display
+                // document.getElementById("imageUploaded").setAttribute('src', "data:image/png;base64," + base64String); 
+                //set link down load for element a
+                document.getElementById("clickDownload").setAttribute('href', blobLink);
+                //log(imageBase64Stringsep) to console;
+            }
+            reader.readAsDataURL(file);
+
+            
+        }
+        
+        function displayString() {
+            alert(base64String);
+        }
+        function downloadImage(id) {
+            document.getElementById("clickDownload").click();
+        }
+    </script>
+</body>
+</html>

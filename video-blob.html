@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="fileinput"/>
+    <video id="video" width="200" height="200" controls />
+    <script>
+        function readSingleFile(evt) {
+            var video=document.getElementById('video')
+            //Retrieve the first (and only!) File from the FileList object
+            var f = evt.target.files[0]; 
+
+            if (f) {
+                var r = new FileReader();
+                r.onload = function(e) { 
+                    var contents = e.target.result;
+                    /*   console.log( "Got the file.n" 
+                        +"name: " + f.name 
+                    );  */
+                    /*    var blob = new Blob([this.result], {type: 'application/octet-stream'}); */
+                    var uint8Array  = new Uint8Array(contents);
+            
+                    var arrayBuffer = uint8Array.buffer;
+                    var blob        = new Blob([arrayBuffer]);
+                    console.log(uint8Array)
+                    video.src = URL.createObjectURL(blob);
+                    console.log(contents)
+                    /*   video.src=contents */
+                }
+                r.readAsArrayBuffer(f);
+            } 
+            else { 
+                alert("Failed to load file");
+            }
+        }
+
+        document.getElementById('fileinput').addEventListener('change', readSingleFile, false);
+    
+        //test blob to url
+        // fetch('https://api.box.com/2.0/files/193985454287/thumbnail.png', {
+        // headers: {
+        //     Authorization: 'Bearer EqFyi1Yq1tD9mxY8F38sxDfp73pFd7FP'
+        // } 
+        // })
+        // .then((response) => response.blob())
+        // .then((blob) => {
+        //     const imageUrl = URL.createObjectURL(blob);
+        //     const img = document.querySelector('img');
+        //     img.addEventListener('load', () => URL.revokeObjectURL(imageUrl));
+        //     document.querySelector('img').src = imageUrl;
+        // });
+    
+    </script>
+</body>
+</html>

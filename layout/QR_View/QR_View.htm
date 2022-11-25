@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="https://id.dealtoday.vn/assetQR/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-itunes-app" content="app-id=1063926571, affiliate-data=myAffiliateData /">
+    <meta name="google-play-app" content="app-id=vn.dealtoday.android">
+    <link rel="stylesheet" href="./assets/style/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <script src="./assets/js/jquery-2.1.4.min.js.download"></script>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header-qr">
+        <div class="box-header">
+            <a href="https://dealtoday.vn/" class="logo">
+                <img src="./assets/img/logo_tranperent.png" alt="logo">
+            </a>
+            <span class="phone-number" onclick="callS()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                    <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
+                </svg>
+                <em class="bi bi-telephone"></em> 1900 2065 <span class="hidden-xs">- 0934.661.016</span>
+            </span>
+        </div>
+    </div>
+    <div id="qr-125" class="wrapper">
+        <div class="wrapper-content">
+            <div class="boxshowqr">
+                <h2>Đưa mã này cho thu ngân</h2>
+                <div class="content-egift">
+                    <div class="hero-image">
+                        <img src="./assets/img/qr_code.png" width="260" alt="qr_code">
+                    </div>
+                    <div class="download-qr">
+                        <button class="btn btn success btn-download-qr" id="" onclick="download_qr(this.id)">Tải mã QR</button>
+                        <a id=""></a>
+                    </div>
+                </div>
+            </div>
+                <div class="brand-acceptance">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6">
+                            <h2><strong>Danh sách mã code</strong></h2>
+                        </div>
+                        <div class="col-xs-6 col-sm-6">
+                            <div class="dropDown-wrapperQR">
+                                <input type="checkbox" id="dropDown-toggleQR">
+                                <label for="dropDown-toggleQR" class="dropDown-toggle-labelQR">Chưa sử dụng</label>
+                                <div class="dropDownQR">
+                                    <input id="1" name="Chưa sử dụng" value="0" onclick="choseStatus(this.name)">
+                                    <a id="Chưa sử dụng" href=""></a>
+                                    <label for="Chưa sử dụng" id="Chưa sử dụng" onclick="choseStatus(this.id)">Chưa sử dụng<span><em class="stt-selected">✓</em></span></label>
+                                    <input id="1" name="Đã sử dụng" value="1" onclick="choseStatus(this.name)">
+                                    <a id="Đã sử dụng" href=""></a>
+                                    <label for="Đã sử dụng" id="Đã sử dụng" onclick="choseStatus(this.id)">Đã sử dụng</label>
+                                    <input id="1" name="Hủy" value="3" onclick="choseStatus(this.name)">
+                                    <a id="Hủy" href=""></a>
+                                    <label for="Hủy" id="Hủy" onclick="choseStatus(this.id)">Hủy</label>
+                                    <input id="1" name="Hết hạn" value="4" onclick="choseStatus(this.name)">
+                                    <a id="Hết hạn" href=""></a>
+                                    <label for="Hết hạn" id="Hết hạn" onclick="choseStatus(this.id)">Hết hạn</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="egift-deals">
+                        <div class="info-acc-egift">
+                            <div class="row" id="" name="">
+                                <div class="col-sm-9 col-xs-9 card cardLeft">
+                                    <p class="deal-code-text">DT9136996022<a></a></p>
+                                        <p class="deal-code-title">
+                                            Smile Gift Sức khỏe làm đẹp
+                                        </p>
+                                        <div class="brand-deal-detail">
+                                            <div class="col-xs-6 col-sm-6 price">
+                                                <p>
+                                                    100,000&nbsp;VND
+                                                </p>
+                                            </div>
+                                            <div class="col-xs-6 col-sm-6 date">
+                                                <p>
+                                                    HSD:&nbsp;31/12/2022
+                                                </p>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 location">
+                                                <a onclick="openPopup('#myPopup')">
+                                                    <img src="./assets/img/loc-icon.png" alt="loc_icon">
+                                                    <span>Nhiều địa điểm</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-3 card cardRight" id="" onclick="getQrCode(this.id)">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="brand-acceptance">
+                <div class="title-info-feature" id="thong-tin-noi-bat">
+                    <h2><strong>Điều kiện sử dụng</strong></h2>
+                </div>
+                <div class="content-egift">
+                    <div class="row row-partner">
+                        <ul>
+                            <li>Mã quà tặng Dealtoday không có giá trị quy đổi thành tiền mặt, không hoàn tiền thừa và không được yêu cầu xuất hóa đơn tài chính cho phần giá trị quy đổi.</li>
+                            <li>Không chia sẻ hoặc tiết lộ thông tin mã quà tặng Dealtoday cho bất kỳ ai.</li>
+                            <li>Mã quà tặng Dealtoday phải còn thời hạn sử dụng.</li>
+                            <li>Có thể kết hợp một hoặc nhiều mã thẻ quà tặng cùng với các phương thức thanh toán khác (Thẻ tín dụng, tiền mặt) để đổi quà có giá trị cao hơn.</li>
+                            <li>Mọi thắc mắc trong quá trình sử dụng vui lòng liên hệ: 1900 2065</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-container" id="myPopup" onclick="if(event.target == this){closePopup('#myPopup');}" aria-hidden="true">
+        <div id="loading">
+            <img src="./assets/img/loading.gif" alt="loading">
+        </div>
+        <div class="popup-wrapper">
+            <div class="popup-title">
+                <h3>Thương hiệu và điểm chấp nhận</h3>
+                <a onclick="closePopup('#myPopup');"><img src="./assets/img/close-icon.png" height="15" alt="close"></a>
+            </div>
+            <div class="title-border"></div>
+            <div class="box-location-map">
+                <div class="close-accep"></div>
+                <div class="popup-map-content">
+                    <div class="search-accep">
+                        <input type="text" class="txt-search">
+                    </div>
+                    <div id="brand-content-125">
+                        <div id="popupInfo-125">
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/24de63b753254536b35dfd07440f8d9f.jpg" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">Spa Trần </p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 6%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;Nhiều địa điểm</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/60fbfc0ef61a449f9160f558b345620a.png" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">Topgym Fitness &amp; Yoga Center</p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 4%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;14 Nguyễn Cảnh Dị, Tòa nhà bưu điện Đại Kim, Hoàng Mai, Hà Nội</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/086bbd4babd847839894a29ecc7d8794.png" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">Thiền Tĩnh Massage Wellness Center </p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 6%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;Số 73B Lý Nam Đế, phường Cửa Đông ,quận Hoàn Kiếm , Hà Nội</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/80b14fb354254d84b436c2754622cb29.png" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">Phòng khám Tai Mũi Họng Thanh Tâm</p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 6%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;Tầng 1 – tòa A3 – SO 15 Khu đô thị Vinhomes Gardenia Hàm Nghi,  Mỹ Đình, quận Nam Từ Liêm, Hà Nội</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/00dc490d01e44c03ab52905328271c68.png" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">New Star Spa</p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 6%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;Nhiều địa điểm</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/f234bbdabab24e22b20542f3fda9c5e8.jpg" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">Ngọc Dương Healthcare &amp; Beauty Central</p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 6%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;số 19 ngõ 210 Đội Cấn, Ba Đình, Hà Nội</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/e67e32e4716a4e37912c050dbf8a40ca.jpg" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">Yoki Beauty</p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 6%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;122 Hào Nam, Phường Ô chợ dừa, Đống Đa, Hà Nội</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/a91343592add409a9333a18536bc1248.jpg" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">Nha Khoa Nhật Linh</p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 7%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;TK28/21 Nguyễn cảnh Chân, Phường Cầu Kho, Quận 1</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/93720ffa345b4fb5b35a31e3044362d1.jpg" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">Nha Khoa Nella</p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 7%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;235 Lê Văn Sỹ, Phường 13, Quận 3</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/524e5d36b67d480eb8d68824d8fe88c2.jpg" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">Nha Khoa Âu Việt</p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 7%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;1065 Cách Mạng Tháng 8, Phường 7,Quận Tân Bình</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/e9355c9d74a64c99a208f755db3e8c5d.png" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">King Studio.</p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 6%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;37 Nguyễn Ngọc Vũ, Trung Hòa, Cầu Giấy, Hà Nội </span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/d71bf8781e2644388458dadfdb566970.jpg" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">La Bonita Spa	</p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 6%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;135/17/60 Nguyễn Hữu Cảnh, Phường 22, Quận Bình Thạnh</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function openPopup(popup) {
+        $("#loading").show();
+        /* Open popup and make accessible screen readers */
+        $(popup).show().attr("aria-hidden", "false");
+        /* Focus on element to guide screen readers to popup */
+        $("#closePopup").focus();
+        $("#loading").hide();
+    }
+
+    function closePopup(popup) {
+        /* Close popup and hide from screen readers */
+        $(popup).hide().attr("aria-hidden", "true");
+        /* Focus screen readers back to button */
+        $("#openMyPopup").focus();
+    }
+
+    $(document).ready(function () {
+        $(".box-location-map").each(function (i, value) {
+            var input = $(value).find("input[type='text']");
+            $(input).keyup(function () {
+                var filter = $(input).val().toUpperCase();
+                $(value).find(".text-accept").each(function (index, item) {
+                    if ($(item).text().toUpperCase().search(filter) < 0) {
+                        $(this).parents('.brand-map-info').hide();
+                    } else {
+                        $(this).parents('.brand-map-info').show();
+                    }
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>

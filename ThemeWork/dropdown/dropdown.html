@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="">
+    <title>Document</title>
+</head>
+<body>
+    <div class="dropDown-wrapper-QR">
+        <input type="checkbox" id="dropDown-toggle">
+        <label for="dropDown-toggle" class="dropDown-toggle-label-QR">Chưa sử dụng</label>
+        <div class="dropDown-QR">
+          <input id="1" name="options" onclick="item_onclick(this.id);">
+          <label for="option-1">Chưa sử dụng</label>
+          <input id="2" name="options" onclick="item_onclick(this.id);">
+          <label for="option-2">Đã sử dụng</label>
+          <input id="3" name="options" onclick="item_onclick(this.id);">
+          <label for="option-3">Hết hạn</label>
+          <input id="4" name="options" onclick="item_onclick(this.id);">
+          <label for="option-3">Hủy</label>
+        </div>
+    </div>
+</body>
+<style>
+    .dropDown-wrapper-QR{
+    position: relative;
+    /* following 3 lines is for codepen presentation only*/
+    margin: 0 auto;
+    height: 42px;
+    width: 160px;
+    border-radius:100px;
+    }
+
+    /* the style for the label */
+    .dropDown-toggle-label-QR {
+        position: relative;
+        padding: 14px 50px 14px 10px;
+        background-color: white;
+        color: black;
+        border-radius: 3px;
+        font-family: Helvetica;
+        font-size: 14px;
+        transition: opacity .2s ease;
+        letter-spacing: .2px;
+        /* force parent to wrap around the label tag */
+        float: left;
+        border: 1px solid #cdcdcd  ;
+        min-width: 100px;
+        max-height: 25px;
+    }
+
+    /* arrow indicator on the button */
+    .dropDown-toggle-label-QR:after{
+        content: "";
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        /* this makes the square appear as a white triangle */
+        background: linear-gradient(45deg, black 50%, transparent 0);
+        position: absolute;
+        right: 15px;
+        top: 35%;
+        transform: rotate(-45deg);
+    }
+
+    /* hide all input fields since the labels are connected to them by the id */
+    .dropDown-wrapper-QR input{display: none;}
+
+    /* rotate the button arrow upwards */
+    .dropDown-wrapper-QR > input:checked + label:after{
+        top: 45%;
+        transform: rotate(135deg);
+    }
+
+    /* this will show dropDown when input is checked */
+    .dropDown-wrapper-QR > input:checked + label + .dropDown-QR{
+        display: inline-block;
+    }
+
+    /* the drop-down style*/
+    .dropDown-QR{
+        position: absolute;
+        right: 0;
+        top: calc(100% + 8px);
+        padding: 0 0 0 0;
+        box-shadow: 0 0 20px rgba(0,0,0,.1);
+        border-radius: 4px 0 4px 4px;
+        min-width: 180px;
+        display: none;
+    }
+
+    /* the drop-down options style*/
+    .dropDown-QR label {
+        display: block;
+        padding: 12px 12px;
+        border-left: 0 solid transparent;
+        font-family: Arial;
+        font-size: 14px;
+        cursor: pointer;
+        opacity: 0.9;
+        transition:
+                border .3s ease,
+                padding-left .3s ease,
+                background-color .3s ease;
+    }
+
+    /* option item on hover */
+    .dropDown-QR label:hover{
+        background-color: #cdcdcd;
+    }
+
+    /* this shows that the list item was selected */
+    .dropDown-QR input:checked + label{
+        opacity: 1;
+        background-color: rgba(180,180,180,.2);
+    }
+</style>
+<script>
+    function item_onclick(id){
+        document.getElementById(id).value = "checked";
+        var input = document.getElementsByTagName("input");
+        for (var x = 0; x < options.length; x++)
+        if (input[x].value == "checked") {
+            input[x].checked = true;
+        }
+    }
+</script>
+</html>
