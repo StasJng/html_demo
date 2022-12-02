@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style> 
+body {
+   font-family: verdana;
+}
+
+.ticket {
+    filter: drop-shadow(3px 2px 5px #003369);
+    width: 255px;
+    position: fixed;
+    left: 5%;
+}
+
+.rip {
+    background-color: #003369;
+    height: 20px;
+    margin: 0 10px;
+    background-repeat: repeat-x;
+    background-position: center;
+    position: relative;
+    /*CENTER TEXT TO SET DASHED BORDER*/
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(3px);
+}
+
+.rip :before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border: 5px solid transparent;
+    border-top-color: #003369a8;
+    border-right-color: #003369a8;
+    border-radius: 100%;
+    left: -10px;
+    box-sizing:initial;
+
+    backdrop-filter: blur(3px);
+}
+      
+.rip :after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border: 5px solid transparent;
+    border-top-color: #003369;
+    border-right-color: #003369;
+    border-radius: 100%;
+    transform: translate(-50%, -50%) rotate(225deg);
+    right: -40px;
+    box-sizing:initial;
+
+    backdrop-filter: blur(3px);
+}
+
+.top-ticket {
+   max-width: 100%;
+   background-color: #003369;
+   border-radius: 12px 12px 0 0;
+   display: inline-block;
+}
+
+.top-ticket img{
+   border-radius: 12px 12px 0 0;
+   margin: 3% 0 0 3%;
+   max-width: 92%;
+   border: 3px solid white;
+}
+
+.bot-ticket {
+   background-color: #003369;
+   min-height: 140px;
+   border-radius: 0 0 18px 18px;
+   display: block;
+}
+
+.top-ticket .title {
+   color: white;
+   text-align: left;
+   padding: 8px;
+   font-weight: bold;
+   line-height: 15px;
+   font-size: 12px;
+   letter-spacing: -0.8px;
+}
+
+.bot-ticket .content{
+   text-align: center;
+   color: white;
+}
+.bot-ticket .content .origin-price {
+   text-decoration: line-through;
+   line-height: 20px;
+}
+.bot-ticket .content .sale-price {
+    transform: translate(50%,-50%);
+    text-transform: uppercase;
+    font-size: 65px;
+    font-weight: 700;
+    color: #ffd300;
+    text-shadow: 1px 1px 1px #005cdc,
+        1px 1px 1px #005cdc,
+        1px 1px 1px #005cdc,
+        1px 1px 1px #005cdc,
+        1px 1px 1px #005cdc,
+        1px 1px 1px #005cdc,
+        1px 1px 1px #005cdc,
+        1px 1px 1px #005cdc,
+        1px 1px 1px #005cdc,
+        1px 1px 1px #005cdc,
+    1px 9px 6px rgba(16,16,16,0.4),
+    1px 11px 10px rgba(16,16,16,0.2),
+    1px 12px 35px rgba(16,16,16,0.2),
+    1px 15px 60px rgba(16,16,16,0.4);
+   line-height: 80px;
+}
+
+.bot-ticket .content .btn-buy {
+   font-weight: bold;
+   background-color: #0062ed;
+   padding: 5px 10px;
+   border-radius: 50px;
+   line-height: 30px;
+}
+</style>
+<body>
+    <!--#region ticket-->
+    <div class="ticket"> 
+        <div class="top-ticket">
+            <img src="https://cdn.dealtoday.vn/img/s236x224/c3668cc67f2d4171bd3a33bd676e0952.jpg?sign=lnwHLZLFzd91L8GMZT9piQ" alt="" />
+            <div class="title">
+                <a>Buffet nướng chuẩn Hàn tại K-MEAT Club - Ưu đãi 10%</a>
+            </div>
+        </div>
+        <div class="rip">
+            <a style="width: 96%;">
+                <div style="border-top: 2px dashed white; width: 100%;"></div>
+            </a>
+        </div>
+        <div class="bot-ticket">
+            <div class="content">
+                <a class="origin-price">409.000Đ</a>
+                <br>
+                <a class="sale-price">355K</a>
+                <br>
+                <a class="btn-buy">Mua ngay</a>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+</body>
+</html>
