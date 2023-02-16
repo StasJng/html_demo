@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<style>
+    .card {
+        background: #ffffff;
+        height: 55px;
+        position: relative;
+        padding: 1em;
+        border-top: 1.5px solid darkgray;
+        border-bottom: 1.5px solid darkgray;
+        margin-bottom: 15px;
+    }
+    .cardLeft {
+        border-left: 1.5px solid darkgray;
+        max-width: 100%; 
+        box-sizing: border-box;
+        overflow-x: auto; 
+        overflow-y: hidden;
+    }
+    .cardCopy {
+        background-color: #cdcdcd4a;
+        width: 15%;
+        border-left: 1.5px solid darkgray;
+        border-radius: 8px 0px 0 8px;
+    }
+    .cardCopy :hover{
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    .iconz {
+        margin: -5px 0px 0px 6px;
+    }
+    .cardRight {
+        border-left: 1.5px dashed darkgray;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-right: 1.5px solid darkgray;
+    }
+    .cardRight :hover{
+        cursor: pointer;
+    }
+    .cardRight:before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0.9em;
+        height: 0.9em;
+        background: #fff;
+        border-radius: 50%;
+        left: -0.5em;
+        border: 1.5px solid darkgrey;
+        /* Halve the circle */
+        border-top-color: transparent;
+        border-right-color: transparent;
+        /* Rotate the circle */
+        transform: rotate(-45deg);
+        top: -0.4em;
+    }
+    .cardRight:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 0.9em;
+        height: 0.9em;
+        background: #fff;
+        border-radius: 50%;
+        left: -0.5em;
+        border: 1.5px solid darkgrey;
+        /* Halve the circle */
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        /* Rotate the circle */
+        transform: rotate(-45deg);
+        bottom: -0.4em;
+    }
+    input[type=radio]#orange {
+        accent-color: #fe6e00;
+        background-color: #ffffff;
+        border: 0px;
+        width: 18px;
+        height: 18px;
+        appearance: none;
+        border: 1px solid #a9a9a9;
+        border-radius: 50px;
+        font-size: 0 !important;
+    }
+    input[type='radio']#orange:checked {
+        border: 1px solid #fe6e00;
+        border-radius: 50px;
+    }
+    input[type='radio']:after {
+        margin: 1px 0 0 0px;
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        position: relative;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid white;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+    input[type='radio']:checked:after {
+        margin: 1px 0 0 0px;
+        width: 16px;
+        height: 16px;
+        border-radius: 15px;
+        position: relative;
+        top: -1px;
+        left: 0;
+        background-color: #fe6e00;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+</style>
+<body>
+    <div class="wrapper" style="margin: 10px 0">
+        <div class="container" style="width: 380px">
+            <div class="row">
+                <div class="col-sm-2 col-xs-2 card cardLeft cardCopy" id="PIN:84740964057826,SERIAL:59500004221328" onclick="copyCode(this.id)">
+                    <div class="iconz">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                            <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                            <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-xs-8 card cardLeft">
+                    <p style="font-size:13pt; text-align:center; vertical-align:middle; white-space: nowrap;display: inline-block">PIN:84740964057826,SERIAL:59500004221328<a></a></p>
+                </div>
+                <div class="col-sm-2 col-xs-2 card cardRight" id="">
+                    <input style="margin: 3px 5px; text-align:center; vertical-align:middle" type="radio" id="orange">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function copyCode(code) {
+            if (code.includes("Ma the:")) {
+                code = code.substring(7, code.indexOf("-Serial:"));
+                navigator.clipboard.writeText(code);
+                alert("Đã copy mã thẻ!");
+            }
+            else if (code.includes(",SERIAL:")) {
+                code = code.substring(4, code.indexOf(",SERIAL:"));
+                navigator.clipboard.writeText(code);
+                alert("Đã copy mã PIN!");
+            }
+            else {
+                navigator.clipboard.writeText(code);
+                alert("Đã copy mã code!");
+            }
+        };
+    </script>
+</body>
+</html>
