@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style> 
+    .ticket {
+        filter: drop-shadow(3px 2px 5px #eee);
+        width: 255px;
+        position: fixed;
+        left: 5%;
+    }
+
+    .top-ticket {
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+    display: inline-block;
+    }
+
+    .top-ticket img{
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+        border-bottom: 2px solid #cdcdcd;
+    }
+
+    .top-ticket .title {
+    color: black;
+    text-align: left;
+    padding: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -0.8px;
+    }
+
+    .slim-note {
+        font-weight: 400;
+        color: #cdcdcd;
+    }
+
+    .rating-point {
+        color: #F0821B;
+    }
+
+    .original-price {
+        font-weight: 400;
+        color: #cdcdcd;
+        text-decoration: line-through;
+    }
+</style>
+<body>
+    <!--#region ticket-->
+    <div class="ticket"> 
+        <div class="top-ticket">
+            <img src="https://cdn.dealtoday.vn/img/s236x224/c3668cc67f2d4171bd3a33bd676e0952.jpg?sign=lnwHLZLFzd91L8GMZT9piQ" alt="" />
+            <div class="title">
+                <a>Phim Spiderman: Far from home</a>
+            </div>
+            <div class="title">
+                <span><span class="rating-point">★ 4.8 </span><span class="slim-note">(558)</span> </span>
+                <span> . </span>
+                <span class="slim-note"> 90K+ đã đặt</span>
+            </div>
+            <div class="title">
+                <span><b>120.000 đ</b></span>
+                <span class="original-price"> 150.000 đ</span>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+</body>
+</html>

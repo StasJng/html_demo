@@ -1,0 +1,534 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+.header {
+    width: 100%;
+    background-color: #fff;
+}
+
+.header-content {
+    height: 72px;
+}
+
+.header-logo {
+    height: 100%;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-search-box {
+    height: 100%;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+#header-search-input {
+    background: url(img/search-icon.png) no-repeat 10px 10px #fcfcfc;
+    border: 0 none;
+    color: #BDBDBD;
+    width: 317.07px;
+    height: 38px;
+    padding: 10px 0px 12px 38px;
+    border-radius: 10px 0px 0px 10px;
+    font-size: 13px;
+    background-color: #eee;
+}
+
+.header-search-box input:focus {
+    outline: none;
+}
+
+.button-search {
+    height: 38px;
+    background-color: #F0821B;
+    border-radius: 0px 10px 10px 0px;
+    vertical-align: middle !important;
+    padding: 8px 15px;
+    color: #fff;
+    width: max-content;
+}
+
+.button-search-container :hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.header-navigating {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+
+.header-navigating :hover{
+    color: black;
+}
+
+.header-navigating :hover img, .header-navigating :hover .count-item {
+    opacity: 0.85;
+}
+
+.header-partner-url {
+    font-size: 17px;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+    padding-right: 26px;
+}
+
+.header-navigating :hover {
+    text-decoration: none;
+    color:#F0821B;
+}
+
+.header-navigating .count-item {
+    position: absolute;
+    padding: 0 3px;
+    color: white;
+    border-radius: 10px;
+    font-size: 12px;
+    height: 15px;
+    width: 15px;
+    line-height: 14px;
+    border: 1px solid #ff1200e6;
+    font-weight: bold;
+    background-color: #ff1200e6;
+    margin: -3px 0 0 -6px;
+}
+
+.header-auth-button {
+    margin-left: 26px;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #fff;
+    border: 2px solid #F0821B;
+    border-radius: 30px;
+    color: #F0821B;
+    text-align: center;
+    padding: 8px;
+}
+
+.header-auth-button-container :hover {
+    cursor: pointer;
+    color: white;
+    background-color: #F0821B;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;
+}
+
+/*Slider*/
+.slider {
+    width: 100%;
+    height: 502px;
+    position: relative;
+    z-index: 3;
+}
+.slider img {
+    width: 100%;
+    height: 502px;
+}
+
+/*Body*/
+.body {
+    background-color: #eee;
+}
+/*Main Categories*/
+.main-category-region {
+    height: 136px;
+    margin: -68px 0 0 0;
+    border-radius: 12px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-size: 13px;
+    position: relative;
+    z-index: 5;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px, 
+                rgba(0, 0, 0, 0.05) 0px 2px 2px, 
+                rgba(0, 0, 0, 0.05) 0px 4px 4px,
+                rgba(0, 0, 0, 0.05) 0px 8px 8px, 
+                rgba(0, 0, 0, 0.05) 0px 16px 16px;
+    margin-bottom: 34px;
+}
+
+.m-cat-detail {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+}
+
+.m-cat-detail p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 0;
+    background-color: #fff;
+    margin-top: 5px;
+}
+
+.m-cat-detail a, .s-cat-detail a {
+    color: black;
+}
+
+.m-cat-detail :hover {
+    cursor: pointer;
+    text-decoration: none;
+    color:#F0821B;
+}
+
+/*Sub Category*/
+.sub-category-region {
+    height: 92px;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.sub-category-region :hover {
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;
+}
+
+.sub-category-region :hover p{
+    color:#F0821B;
+}
+
+.sub-category-region a {
+    pointer-events: none;
+}
+
+.s-cat-detail {
+    margin: 0 auto;
+    width: 12.8%;
+    text-align: center;
+    background-color: #fff;
+    vertical-align: middle;
+    border: 1px solid #cdcdcd;
+    border-radius: 12px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s-cat-detail p {
+    white-space: pre-wrap;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0;
+    background-color: #fff;
+    margin-top: 5px;
+}
+/*Promo ticket*/
+.header-title {
+    margin: 60px 0 35px 0;
+}
+
+.promo-ticket-region {
+    height: 158.33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promo-ticket-region img {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px, 
+                rgba(0, 0, 0, 0.05) 0px 2px 2px, 
+                rgba(0, 0, 0, 0.05) 0px 4px 4px,
+                rgba(0, 0, 0, 0.05) 0px 8px 8px, 
+                rgba(0, 0, 0, 0.05) 0px 16px 16px;
+}
+
+.promo-ticket-region :hover {
+    margin-top: -1px;
+    opacity: 0.9;
+}
+
+.promo-ticket-region .left img{
+    width: 98%;
+    float: left;
+}
+
+.promo-ticket-region .right img{
+    width: 98%;
+    float: right;
+}
+
+.promo-ticket-region .center img{
+    width: 98%;
+}
+
+                
+/*New ticket*/
+.new-ticket-region :hover
+{
+    cursor: pointer;
+    margin-top: -1px;
+    opacity: 0.8;
+}
+
+.new-ticket-region .new-ticket
+{
+    margin: 0 -5px;
+    pointer-events: none;
+}
+
+.new-ticket {
+    max-height: 256.5px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px, 
+                rgba(97, 69, 69, 0.05) 0px 2px 2px, 
+                rgba(0, 0, 0, 0.05) 0px 4px 4px,
+                rgba(0, 0, 0, 0.05) 0px 8px 8px, 
+                rgba(0, 0, 0, 0.05) 0px 16px 16px;
+}
+
+.new-ticket img{
+    width: 100%;
+    max-height: 55%;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.loc-tag {
+    margin-top: 5px;
+    background-color: #FEF3E2;
+    color: #F0821B;
+    font-weight: 500;
+    border-radius: 0 0px 0px 8px;
+    box-sizing: border-box;
+    padding: 1px 5px;
+    font-size: 14px;
+    width: fit-content;
+}
+
+.btn-view-more {
+    background-color: white;
+    color: #F0821B;
+    border: 1px solid #F0821B;
+    border-radius: 10px;
+    padding: 10px 145px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-view-more-container {
+    padding: 20px 0 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-view-more-container :hover {
+    cursor: pointer;
+    background-color: #F0821B;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;
+}
+
+.new-ticket .tk-content {
+    text-align: left;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #fff;
+    border-radius: 0 0 12px 12px;
+    line-height: 23px;
+}
+
+.ticket-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 50px;
+}
+
+.slim-note {
+    font-weight: 400;
+    color: #cdcdcd;
+    font-size: 14px;
+}
+
+.rating-point {
+    color: #F0821B;
+    font-size: 14px;
+}
+
+.price {
+    margin-top: 6px;
+}
+
+.price .original {
+    font-weight: 400;
+    color: #cdcdcd;
+    text-decoration: line-through;
+    font-size: 14px;
+}
+
+/*Hot ticket*/
+.hot-ticket-region :hover {
+    cursor: pointer;
+    margin-top: -1px;
+    opacity: 0.8;
+}
+
+.hot-ticket-region .ticket
+{
+    pointer-events: none;
+}
+
+
+
+.ticket {
+    max-height: 306.5px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 12px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px, 
+                rgba(0, 0, 0, 0.05) 0px 2px 2px, 
+                rgba(0, 0, 0, 0.05) 0px 4px 4px,
+                rgba(0, 0, 0, 0.05) 0px 8px 8px, 
+                rgba(0, 0, 0, 0.05) 0px 16px 16px;
+    margin: 0 -5px 25px -5px;
+}
+
+.ticket img{
+    width: 100%;
+    max-height: 55%;
+    border-radius: 12px 12px 0 0;
+    border-bottom: 1px solid #cdcdcd;
+}
+
+.ticket .tk-content {
+    text-align: left;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #fff;
+    border-radius: 0 0 12px 12px;
+    line-height: 23px;
+}
+
+
+/*Footer*/
+.footer-content {
+    background-color: bisque;
+    max-height: 438px;
+    overflow: hidden;
+}
+
+.footer-above-content {
+    margin-top: 50px;
+    font-size: 22px;
+}
+.footer-middle-content {
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    margin: 20px 0;
+}
+
+.contact-note{
+    color: #F0821B;
+    font-size: 15px;
+}
+
+.footer-middle-content .content-container{
+    padding: 25px 0; 
+    line-height: 30px;
+}
+
+.footer-middle-content .content-container a{
+    color: black;
+}
+
+.footer-middle-content .content-container :hover{
+    text-decoration: none;
+}
+
+.footer-middle-content .content-container .note{
+    color: #757575;
+    font-size: 15px;
+}
+
+.footer-middle-content .content-container .note-title{
+    font-weight: 500;
+}
+
+.footer-middle-content .content-container .note-title :hover{
+    color: #F0821B;
+}
+
+.footer-middle-content .content-container .footer-overview :hover{
+    color: #F0821B;
+}
+
+.social-icons :hover{
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.btn-cooperate {
+    background-color: white;
+    color: #F0821B;
+    border: 1px solid #F0821B;
+    border-radius: 10px;
+    padding: 5px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.btn-cooperate span{
+    pointer-events: none;
+}
+
+.btn-cooperate-container {
+    margin: 15px 0 35px 0;
+    width: max-content;
+}
+
+.btn-cooperate-container :hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;
+}
+
+.footer-under-content {
+    margin: 35px 0 50px 0;
+    font-size: 14px;
+    font-weight: 500
+}
+
+.footer-download {
+    float: right;
+    margin: -10px 0 0 0;
+    font-size: 15px;
+}
+
+.footer-download  :hover {
+    text-decoration: none;
+}

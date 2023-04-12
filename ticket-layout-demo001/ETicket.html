@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="ETicket_Style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,300&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <title>ETicket</title>
+</head>
+<body>
+    <!---->
+    <div class="header">
+        <div class="container">
+            <div class="row header-content">
+                <div class="col-2">
+                    <div class="header-logo">
+                        <a href="#">
+                            <img src="img/eticket-header-logo.png" alt=""/>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="header-search-box">
+                        <input type="text" id="header-search-input" placeholder="Tìm kiếm vé, sự kiện, hoạt động">
+                        <div class="button-search-container">
+                            <div class="button-search">Tìm kiếm</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="header-navigating">
+                        <a href="#" class="header-partner-url"><span>Dành cho doanh nghiệp</span></a>
+                        <a href="#">
+                            <img src="img/cart-icon.png" alt="" />
+                            <span class="count-item" id="orderCount">2</span>
+                        </a>
+                        <div class="header-auth-button-container">
+                            <div class="header-auth-button">Đăng ký/ Đăng nhập</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div class="slider">
+        <img src="img/demo-bg.png" alt="" />
+    </div>
+    <!---->
+    <div class="body">
+        <div class="container">
+            <div class="row main-category-region">
+                <div class="col-3 m-cat-detail">
+                    <a href="#">
+                        <img src="img/wheel-icon.png" alt="" />
+                        <p>Vui chơi giải trí</p>
+                    </a>
+                </div>
+                <div class="col-3 m-cat-detail">
+                    <a href="#">
+                        <img src="img/culture-icon.png" alt="" />
+                        <p>Sự kiện văn hóa</p>
+                    </a>
+                </div>
+                <div class="col-3 m-cat-detail">
+                    <a href="#">
+                        <img src="img/car-icon.png" alt="" />
+                        <p>Di chuyển</p>
+                    </a>
+                </div>
+                <div class="col-3 m-cat-detail">
+                    <a href="#">
+                        <img src="img/ticket-icon.png" alt="" />
+                        <p>Tham quan du lịch</p>
+                    </a>
+                </div>
+            </div>
+            <div class="row sub-category-region">
+                <div class="s-cat-detail">
+                    <a href="#">
+                        <img src="img/Ve-xem-phim.png" alt="" />
+                        <p>Vé xem phim</p>
+                    </a>
+                </div>
+                <div class="s-cat-detail">
+                    <a href="#">
+                        <img src="img/Khu-vui-choi.png" alt="" />
+                        <p>Khu vui chơi</p>
+                    </a>
+                </div>
+                <div class="s-cat-detail">
+                    <a href="#">
+                        <img src="img/Diem-tham-quan.png" alt="" />
+                        <p>Điểm tham quan</p>
+                    </a>
+                </div>
+                <div class="s-cat-detail">
+                    <a href="#">
+                        <img src="img/San-khau-nghe-thuat.png" alt="" />
+                        <p>Sân khấu nghệ thuật</p>
+                    </a>
+                </div>
+                <div class="s-cat-detail">
+                    <a href="#">
+                        <img src="img/Live-show.png" alt="" />
+                        <p>Liveshow</p>
+                    </a>
+                </div>
+                <div class="s-cat-detail">
+                    <a href="#">
+                        <img src="img/The-thao.png" alt="" />
+                        <p>Thể thao</p>
+                    </a>
+                </div>
+                <div class="s-cat-detail">
+                    <a href="#">
+                        <img src="img/Hoi-thao.png" alt="" />
+                        <p>Hội thảo khoa học</p>
+                    </a>
+                </div>
+            </div>
+            <h3 class="header-title">Ưu đãi hấp dẫn</h3>
+            <div class="row promo-ticket-region">
+                <div class="col-4 left">
+                    <a href="#">
+                        <img src="img/promo-1.png" alt="">
+                    </a>
+                </div>
+                <div class="col-4 center">
+                    <a href="#">
+                        <img src="img/promo-2.png" alt="">
+                    </a>
+                </div>
+                <div class="col-4 right">
+                    <a href="#">
+                        <img src="img/promo-1.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <h3 class="header-title">E-ticket có gì mới?</h3>
+            <div class="row new-ticket-region">
+                <div class="col-3">
+                    <div class="new-ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="new-ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="new-ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="new-ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="header-title">Top vé hot nhất E-ticket</h3>
+            <div class="row hot-ticket-region">
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="ticket">
+                        <img src="img/demo-ticket.png" alt="" />
+                        <div class="tk-content">
+                            <div>
+                                <span class="ticket-title">Phim Người Kiến phần 3 Phim Người Kiến phần 3 Phim Người Kiến phần 3</span>
+                            </div>
+                            <div>
+                                <span><span class="rating-point">★&nbsp;4.8&nbsp;</span><span class="slim-note">(558)</span>&nbsp;</span>
+                                <span>&nbsp;&#183;&nbsp;</span>
+                                <span class="slim-note">&nbsp;90K+ đã đặt</span>
+                            </div>
+                            <div class="price">
+                                <span><b>120.000 đ</b></span>
+                                <span class="original">&nbsp;150.000 đ</span>
+                            </div>
+                            <div class="loc-tag">
+                                Hà Nội
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-view-more-container">
+                <div class="btn-view-more">
+                    Xem thêm
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <div class="footer">
+        <div class="wrapper">
+            <div class="container">
+                <h2 class="footer-above-content">Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế EBIS</h2>
+                <div class="footer-middle-content">
+                    <div class="row content-container">
+                        <div class="col-6">
+                            <div>
+                                <b>Liên hệ</b>
+                            </div>
+    
+                            <div>
+                                <span class="note-title">Trụ sở chính:</span>&nbsp;<span class="note">Phòng 301, Tầng 3, Tòa nhà số 18 ngõ 11, Thái Hà, Phường Trung Liệt, Quận Đống Đa, Hà Nội</span>
+                            </div>
+    
+                            <div>
+                                <span class="note-title">Văn phòng HCM:</span>&nbsp;<span class="note">Tầng 9, Tòa nhà L'MAK, Số 70, Phạm Ngọc Thạch, Phường 06, Quận 03, TP.HCM - Tel: 028.6680.8756</span>
+                            </div>
+    
+                            <div>
+                                <span class="note-title">Email:</span>&nbsp;</b><span class="contact-note">hotro@dealtoday.vn</span>
+                            </div>
+    
+                            <div>
+                                <span class="note-title">Phone:</span>&nbsp;<span class="contact-note">024.7304.7749</span>&nbsp;-&nbsp;<span class="note-title">Fax:</span>&nbsp;<span class="contact-note">024.2215.0220</span>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div>
+                                <b>Dịch vụ</b>
+                            </div>
+    
+                            <div class="note-title">
+                                <a href="#">
+                                    <span class="note">E-voucher</span>
+                                </a>
+                            </div>
+    
+                            <div class="note-title">
+                                <a href="#">
+                                    <span class="note">E-gift</span>
+                                </a>
+                            </div>
+    
+                            <div class="note-title">
+                                <a href="#">
+                                    <span class="note">E-ticket</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div class="footer-overview">
+                                <a href="#"><b>Giới thiệu</b></a>
+                            </div>
+                            
+                            <div class="footer-overview">
+                                <a href="#"><b>Chính sách</b></a>
+                            </div>
+    
+                            <div class="footer-overview">
+                                <a href="#"><b>Quy định chung</b></a>
+                            </div>
+    
+                            <div class="footer-overview">
+                                <a href="#"><b>Blog</b></a>
+                            </div>
+    
+                            <div class="social-icons">
+                                <span>
+                                    <a href="#">
+                                        <img src="img/icon-facebook.png" alt="" />
+                                    </a>
+                                </span>
+                                <span>
+                                    &nbsp;
+                                    &nbsp;
+                                    <a href="#">
+                                        <img src="img/incon-youtube.png" alt="" />
+                                    </a>
+                                    &nbsp;
+                                    &nbsp;
+                                </span>
+                                <span>
+                                    <a href="#">
+                                        <img src="img/icon-instagram.png" alt="" />
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <div>
+                                <b>Trở thành đối tác</b>
+                            </div>
+                            
+                            <div class="btn-cooperate-container">
+                                <div class="btn-cooperate">
+                                    <span>
+                                        <img src="img/icon-cooperate.png" alt="" />
+                                    </span>
+                                    <span class="note-title">
+                                        Hợp tác với Dealtoday
+                                    </span>                            
+                                </div>
+                            </div>
+    
+                            <div>
+                                <img src="img/Bo-cong-thuong.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row footer-under-content">
+                    <div class="col-6">&#169; 2021 EBIS. All rights reserved</div>
+                    <div class="col-6">
+                        <div class="footer-download">
+                            <span>Tải ứng dụng</span> 
+                            <span>
+                                <a href="#">
+                                    <img src="img/Download-GooglePlay.png" alt="" />
+                                </a>
+                            </span> 
+                            <span>
+                                <a href="#">
+                                    <img src="img/Download-AppStore.png" alt="" />
+                                </a>
+                            </span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+</body>
+</html>
