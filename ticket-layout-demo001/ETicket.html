@@ -12,7 +12,7 @@
 </head>
 <body>
     <!---->
-    <div class="header">
+    <div class="header" id="header">
         <div class="container">
             <div class="row header-content">
                 <div class="col-2">
@@ -715,5 +715,24 @@
         </div>
     </div>
     <!---->
+    <script>
+        window.onscroll = function() { myFunction() };
+        
+        var header = document.getElementById("header");
+        console.log(header);
+        var sticky = header.offsetTop;
+        
+        function myFunction() {
+            if (window.pageYOffset > sticky) 
+            {
+                header.classList.add("sticky-header");
+            } 
+            else 
+            {
+                header.classList.remove("sticky-header");
+            }
+        }
+    </script>
 </body>
+
 </html>
