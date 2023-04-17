@@ -74,7 +74,7 @@ body {
     color:#F0821B;
 }
 
-.dealtoday-checkbox span {
+.dealtoday-checkbox > span {
     z-index: 5;
     pointer-events: none;
 }
@@ -111,6 +111,7 @@ body {
     border-width: 2px;
     vertical-align: middle;
     cursor: pointer;
+    margin: -2px 0 0 0;
 }
 
 .dealtoday-checkbox input:checked + label:after {
