@@ -1,0 +1,250 @@
+/* Generals */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+}
+
+*:focus {
+    outline: none;
+}
+
+/* Header */
+.header {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.header-content {
+    height: 72px;
+}
+
+/* Body */
+.body {
+    background-color: #FAFAFA;
+    margin-top: 72px;
+    padding: 30px 0;
+}
+
+
+/* Profile and function */
+.profi-and-funcs {
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.profi-and-funcs .profi {
+    margin: 30px;
+    padding: 0;
+}
+
+.profi-and-funcs .profi .name {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.profi-and-funcs .profi .email {
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.profi-and-funcs .profi img {
+    vertical-align: middle;
+    border-style: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.profi-and-funcs .profi .col-12 {
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+}
+
+.profi-and-funcs .funcs .col-12 {
+    vertical-align: middle;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+}
+
+.profi-and-funcs .funcs .detail img {
+    height: 18px;
+    width: 18px;
+    object-fit: cover;
+    margin: 0 5px;
+    padding: 0;
+}
+
+.profi-and-funcs .funcs .detail {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    margin: 6px 0;
+}
+
+.profi-and-funcs .funcs {
+    padding: 16px;
+    border-top: 1px solid #EEEEEE;
+}
+
+/* Items */
+.content {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.content .items {
+
+}
+
+.content .items .title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    text-align: left;
+}
+
+.content .items .title .col-12 {
+    border-bottom: 1px solid #EDEDED;
+    margin: 16px auto 0 auto;
+}
+
+.content .items .panels-selector {
+    vertical-align: middle;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+}
+
+.content .items .panels-selector .panel {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #EEE;
+}
+
+.content .items .panels-selector .panel.selected {
+    color: #FE6E00;
+    border-bottom: 1px solid #FE6E00;
+}
+
+.content .items .detail-info {
+    
+}
+
+.content .items .detail-info .col-6.info {
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    margin: 16px 8px;
+    padding: 16px;
+    max-width: calc(50% - 32px);
+}
+
+.content .items .detail-info .info .detail-title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    text-align: justify;
+    color: #212121;
+}
+
+.content .items .detail-info .info .price {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FE6E00;
+    margin: 3px 0;
+}
+
+.content .items .detail-info .info .exp-date {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    text-align: right;
+    color: #616161;
+    margin: 3px 0;
+}
+
+.content .items .detail-info .info .count, .content .items .detail-info .info .used-count, .content .items .detail-info .info .avai-remain {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 3px 0 16px 0;
+}
+
+.content .items .detail-info .info .used-count {
+    text-align: center;
+    border-left: 1px solid #E0E0E0;
+    border-right: 1px solid #E0E0E0;
+} 
+
+.content .items .detail-info .info .avai-remain {
+    text-align: end;
+}
+
+.btn-white-bg {
+    font-weight: 500;
+    font-size: 14px;
+    color: #F0821B;
+    border: 1px solid #F0821B;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 6px;
+    text-align: center;
+}
+
+.btn-orange-bg {
+    font-weight: 500;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid #F0821B;
+    background-color: #F0821B;
+    border-radius: 8px;
+    padding: 6px;
+    text-align: center;
+}
+/* Footer */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
