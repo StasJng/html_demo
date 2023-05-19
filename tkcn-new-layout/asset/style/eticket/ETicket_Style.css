@@ -253,6 +253,7 @@
     vertical-align: middle;
     align-items: center;
     margin: 0 auto;
+    justify-content: left;
     display: flex;
 }
 
@@ -316,6 +317,7 @@
     padding-top: 8px;
     margin-top: 8px;
     border-top: 1px solid #EEE;
+    justify-content: left;
 }
 
 .content .items .review-info .info .col-12 .create .rating, .content .items .review-info .info .col-12 .create .upload-img, .content .items .review-info .info .col-12 .create .comment {
@@ -328,7 +330,7 @@
     display: flex;
     vertical-align: middle;
     align-items: center;
-    margin: 8px;
+    margin: 8px 0;
 }
 
 .content .items .review-info .info .col-12 .create .upload-img.row, .content .items .review-info .info .col-12 .create .upload-img .row {
@@ -384,7 +386,7 @@
     vertical-align: middle;
     align-items: center;
     justify-content: center;
-    margin: 16px;
+    margin: 8px auto 16px auto;
 }
 
 .content .items .review-info .info .create-bottom .btn-orange-bg {
@@ -449,17 +451,18 @@
 
     .content .items .review-info .info .col-12 {
         margin: 0;
-        padding: 0;
+        padding: 0 8px;
     }
 
     .content .items .review-info .info .col-12 .title, .content .items .review-info .info .col-12 .pack {
         margin-left: 16px;
-        text-align: justify;
+        padding-right: 16px;
+        text-align: left;
+        line-height: 20px;
     }
 
     .content .items .review-info .info .create-bottom .btn-orange-bg {
         width: 100%;
-        margin: 0 16px;
         padding: 10px 20px;
     }
 }
