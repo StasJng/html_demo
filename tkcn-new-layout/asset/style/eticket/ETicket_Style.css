@@ -593,6 +593,7 @@
     color: #EEE;
     text-shadow: 0 0 5px #F0821B;
 }
+
 /*Home account input form*/
 .inp-form {
     
@@ -611,7 +612,7 @@
     color: #000;
 }
 
-.inp-form img {
+.inp-form .inp-value img {
     position: absolute;
     right: 20px;
     bottom: 15px;
@@ -629,8 +630,92 @@
     font-size: 13px;
     line-height: 18px;
     color: #757575;
-    margin-top: 8px;
+    margin-top: 16px;
 }
+
+.inp-form .confirm-mail {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #F0821B;
+    cursor: pointer;
+}
+
+.inp-form .btn-link-ctn {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    width: fit-content;
+}
+
+.inp-form .btn-link-ctn .title{
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #757575;
+    margin-right: 10px;
+}
+
+.inp-form .btn-link-ctn .btn-link-gg, .inp-form .btn-link-ctn .btn-link-fb {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: fit-content;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.inp-form .btn-link-ctn .btn-link-gg {
+    background-color: #E8141F;
+}
+
+.inp-form .btn-link-ctn .btn-link-fb {
+    background-color: #2170E2;
+}
+
+.inp-form .btn-link-ctn .btn-link-gg img, .inp-form .btn-link-ctn .btn-link-fb img {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+}
+
+/*E-point*/
+.point-box-ctn {
+    margin: 16px 0;
+}
+
+.point-box-ctn .point-box {
+    border: 1px solid #EEEEEE;
+    border-radius: 12px;
+    padding: 24px 0 30px 0;
+    display: flex;
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+    transform: scale(0.95);
+}
+
+.point-box-ctn .point-box .point-type {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #757575;
+    margin-top: 12px;
+}
+
+.point-box-ctn .point-box .current-point {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    color: #F0821B;
+} 
+
+
 
 /* Footer */
 
