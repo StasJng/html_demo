@@ -102,11 +102,14 @@
     line-height: 18px;
     letter-spacing: 0px;
     text-align: left;
-    margin: 6px 0;
+    padding: 12px 12px 12px 16px;
+}
+
+.profi-and-funcs .funcs .detail.selected {
+    background-color: #F5F5F5;
 }
 
 .profi-and-funcs .funcs {
-    padding: 16px;
     border-top: 1px solid #EEEEEE;
 }
 
@@ -590,6 +593,44 @@
     color: #EEE;
     text-shadow: 0 0 5px #F0821B;
 }
+/*Home account input form*/
+.inp-form {
+    
+}
+
+.inp-form .inp-value input[type=text], .inp-form .inp-value input[type=password], .inp-form .inp-value select {
+    width: 100%;
+    padding: 8px 16px;
+    display: inline-block;
+    border-bottom: 1px solid transparent;
+    border-color: transparent transparent #eee transparent;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000;
+}
+
+.inp-form img {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    height: 15px;
+    width: 22px;
+}
+  
+.inp-form textarea:focus, .inp-form input:focus {
+    outline: none;
+}
+
+.inp-form .inp-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #757575;
+    margin-top: 8px;
+}
 
 /* Footer */
 
@@ -627,3 +668,8 @@
         padding: 10px 20px;
     }
 }
+
+
+
+
+
