@@ -131,7 +131,7 @@
                         <div class="row items">
                             <!--#region Title-->
                             <div class="col-12 title d-lg-block d-md-block d-sm-none d-none">
-                                Đổi mật khẩu
+                                Thông tin tài khoản
                                 <div class="col-12"></div>
                             </div>
                             <!--#endregion-->
@@ -139,46 +139,131 @@
                             <!--#region Items-->
                             <div class="col-12">
                                 <div class="row inp-form">
-
                                     <div class="col-12">
                                         <div class="inp-title">
-                                            Mật khẩu cũ
+                                            Họ tên
                                         </div>
                                         <div class="inp-value">
-                                            <input id="old-pass" type="text" value="gicungduoc@gmail.com" />
-                                            <img id="old-pass-visible-stt" src="asset/images/eticket/icon-pass-visible.svg" alt="" onclick="changeVisible('old-pass', this.id)">
+                                            <input type="text" value="Nguyễn Huệ" />
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="inp-title">
-                                            Mật khẩu mới
+                                            Email
                                         </div>
                                         <div class="inp-value">
-                                            <input id="new-pass" type="password" value="gicungduoc@gmail.com" />
-                                            <img id="new-pass-visible-stt" src="asset/images/eticket/icon-pass-hidden.svg" alt="" onclick="changeVisible('new-pass', this.id)">
+                                            <input type="text" value="gicungduoc@gmail.com" />
+                                        </div>
+                                        <div class="inp-title">Email chưa xác nhận&nbsp;<span class="confirm-mail">Xác nhận</span></div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="inp-title">
+                                            Số điện thoại
+                                        </div>
+                                        <div class="inp-value">
+                                            <input type="text" value="0123456789" />
                                         </div>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="inp-title">
-                                            Nhập lại mật khẩu
+                                            Ngày sinh
+                                        </div>
+                                        <div class="row inp-value">
+                                            <div class="col-4">
+                                                <select id="selName" name="getElementsByTagName">
+                                                    <option value="australia">Australia</option>
+                                                    <option value="canada">Canada</option>
+                                                    <option value="usa">USA</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-4">
+                                                <select id="selName" name="getElementsByTagName">
+                                                    <option value="australia">Australia</option>
+                                                    <option value="canada">Canada</option>
+                                                    <option value="usa">USA</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-4">
+                                                <select id="selName" name="getElementsByTagName">
+                                                    <option value="australia">Australia</option>
+                                                    <option value="canada">Canada</option>
+                                                    <option value="usa">USA</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                                <div class="inp-title">
+                                                    Tỉnh/Thành phố
+                                                </div>
+                                                <div class="row inp-value">
+                                                    <div class="col-12">
+                                                        <select id="selName" name="getElementsByTagName">
+                                                            <option value="australia">Australia</option>
+                                                            <option value="canada">Canada</option>
+                                                            <option value="usa">USA</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                                <div class="inp-title">
+                                                    Quận/Huyện
+                                                </div>
+                                                <div class="row inp-value">
+                                                    <div class="col-12">
+                                                        <select id="selName" name="getElementsByTagName">
+                                                            <option value="australia">Australia</option>
+                                                            <option value="canada">Canada</option>
+                                                            <option value="usa">USA</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="col-12">
+                                        <div class="inp-title">
+                                            Địa chỉ
                                         </div>
                                         <div class="inp-value">
-                                            <input id="retype-pass" type="password" value="gicungduoc@gmail.com" />
-                                            <img id="retype-pass-visible-stt" src="asset/images/eticket/icon-pass-hidden.svg" alt="" onclick="changeVisible('retype-pass', this.id)">
+                                            <input type="text" value="gicungduoc@gmail.com" />
                                         </div>
                                     </div>
 
                                     <div class="col-12">
-                                        <div class="btn-ctn">
-                                            <div class="btn-update">
+                                        <div class="btn-link-ctn">
+                                            <div class="title">
+                                                Google
+                                            </div>
+                                            <div class="btn-link-gg">
+                                                <img src="asset/images/eticket/icon-google.svg" alt="" />
                                                 <div>
-                                                    Cập nhật
+                                                    Liên kết tài khoản Google
                                                 </div>
                                             </div>
                                         </div>
                                         
+                                        <div class="btn-link-ctn">
+                                            <div class="title">
+                                                Facebook
+                                            </div>
+                                            <div class="btn-link-fb">
+                                                <img src="asset/images/eticket/icon-facebook.svg" alt="" />
+                                                <div>
+                                                    Liên kết tài khoản Facebook
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -200,18 +285,7 @@
     
     <!--#region Script-->
     <script>
-        function changeVisible(inputId, buttonId) {
-            if($("#" + inputId).attr("type") == "password")
-            {
-                $("#" + inputId).attr("type", "text");
-                $("#" + buttonId).attr("src", "asset/images/eticket/icon-pass-visible.svg");
-            }
-            else
-            {
-                $("#" + inputId).attr("type", "password");
-                $("#" + buttonId).attr("src", "asset/images/eticket/icon-pass-hidden.svg");
-            }
-        }
+        
     </script>
     <!--#endregion-->
 </body>

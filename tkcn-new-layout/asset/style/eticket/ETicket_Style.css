@@ -595,10 +595,6 @@
 }
 
 /*Home account input form*/
-.inp-form {
-    
-}
-
 .inp-form .inp-value input[type=text], .inp-form .inp-value input[type=password], .inp-form .inp-value select {
     width: 100%;
     padding: 8px 16px;
@@ -617,6 +613,11 @@
     right: 20px;
     bottom: 15px;
     height: 15px;
+    width: 22px;
+}
+
+.inp-form .inp-value .copy-img {
+    height: 19px;
     width: 22px;
 }
   
@@ -650,6 +651,15 @@
     width: fit-content;
 }
 
+.btn-ctn {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
 .inp-form .btn-link-ctn .title{
     font-weight: 400;
     font-size: 13px;
@@ -658,12 +668,12 @@
     margin-right: 10px;
 }
 
-.inp-form .btn-link-ctn .btn-link-gg, .inp-form .btn-link-ctn .btn-link-fb {
+.inp-form .btn-link-ctn .btn-link-gg, .inp-form .btn-link-ctn .btn-link-fb, .inp-form .btn-ctn .btn-update {
     display: flex;
     vertical-align: middle;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 10px 12px;
     width: fit-content;
     color: #fff;
     border-radius: 8px;
@@ -676,6 +686,10 @@
 
 .inp-form .btn-link-ctn .btn-link-fb {
     background-color: #2170E2;
+}
+
+.inp-form .btn-ctn .btn-update {
+    background-color: #F0821B;
 }
 
 .inp-form .btn-link-ctn .btn-link-gg img, .inp-form .btn-link-ctn .btn-link-fb img {
