@@ -144,8 +144,8 @@
                                             Tên chủ tài khoản
                                         </div>
                                         <div class="inp-value">
-                                            <input id="old-pass" type="text" value="Công ty TNHH Phát Triển Đầu tư Minh Đức" />
-                                            <img id="old-pass-visible-stt" class="copy-img" src="asset/images/eticket/icon-copy.svg" alt="" onclick="changeVisible('old-pass', this.id)">
+                                            <input id="owner-name" type="text" value="Công ty TNHH Phát Triển Đầu tư Minh Đức" />
+                                            <img class="copy-img" src="asset/images/eticket/icon-copy.svg" alt="" onclick="copyValue('owner-name')">
                                         </div>
                                     </div>
 
@@ -154,8 +154,8 @@
                                             Số tài khoản
                                         </div>
                                         <div class="inp-value">
-                                            <input id="new-pass" type="text" value="1027486001" />
-                                            <img id="new-pass-visible-stt" class="copy-img" src="asset/images/eticket/icon-copy.svg" alt="" onclick="changeVisible('new-pass', this.id)">
+                                            <input id="account-number" type="text" value="1027486001" />
+                                            <img class="copy-img" src="asset/images/eticket/icon-copy.svg" alt="" onclick="copyValue('account-number')">
                                         </div>
                                     </div>
 
@@ -164,8 +164,8 @@
                                             Ngân hàng
                                         </div>
                                         <div class="inp-value">
-                                            <input id="retype-pass" type="text" value="Ngân hàng Vietcombank chi nhánh Hà Nội" />
-                                            <img id="retype-pass-visible-stt" class="copy-img" src="asset/images/eticket/icon-copy.svg" alt="" onclick="changeVisible('retype-pass', this.id)">
+                                            <input id="bank-name" type="text" value="Ngân hàng Vietcombank chi nhánh Hà Nội" />
+                                            <img class="copy-img" src="asset/images/eticket/icon-copy.svg" alt="" onclick="copyValue('bank-name')">
                                         </div>
                                     </div>
                                 </div>
@@ -188,7 +188,21 @@
     
     <!--#region Script-->
     <script>
-        
+        function copyValue(itemId) {
+            // Get the text field
+            let txt = document.getElementById(itemId);
+
+            // Select the text field
+            txt.focus();
+            txt.select();
+            txt.setSelectionRange(0, 99999); // For mobile devices
+
+            // Copy the text inside the text field
+            navigator.clipboard.writeText(txt.value);
+            
+            // Alert the copied text
+            alert("Đã sao chép");
+        }
     </script>
     <!--#endregion-->
 </body>

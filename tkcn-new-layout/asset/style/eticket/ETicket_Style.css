@@ -113,6 +113,7 @@
     border-top: 1px solid #EEEEEE;
 }
 
+
 /* Items */
 .content {
     background-color: #fff;
@@ -597,7 +598,7 @@
 /*Home account input form*/
 .inp-form .inp-value input[type=text], .inp-form .inp-value input[type=password], .inp-form .inp-value select {
     width: 100%;
-    padding: 8px 16px;
+    padding: 8px 25px 8px 16px;
     display: inline-block;
     border-bottom: 1px solid transparent;
     border-color: transparent transparent #eee transparent;
@@ -614,6 +615,7 @@
     bottom: 15px;
     height: 15px;
     width: 22px;
+    cursor: pointer;
 }
 
 .inp-form .inp-value .copy-img {
@@ -730,7 +732,52 @@
 } 
 
 
+/* Notify */
+.content .items .notify {
+    border: 1px dashed #cdcdcd;
+    border-radius: 12px;
+    margin: 16px 0 0 0;
+}
 
+.content .items .notify .content-val { 
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 8px;
+}
+
+.content .items .notify .content-val img { 
+    height: 24px;
+    width: 24px;
+}
+
+.content .items .notify .bottom-bar { 
+    background-color: #F5F5F5;
+    padding: 8px;
+}
+
+.content .items .notify .bottom-bar .date { 
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+    color: #666;
+}
+
+.content .items .notify .bottom-bar .show { 
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 14px;
+    color: #000;
+    text-align: end;
+}
+
+.content .items .notify .expanded { 
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000;
+    padding: 8px;
+}
 /* Footer */
 
 /* Responsive */
@@ -765,6 +812,10 @@
     .content .items .review-info .info .create-bottom .btn-orange-bg {
         width: 100%;
         padding: 10px 20px;
+    }
+
+    .profi-and-funcs {
+
     }
 }
 
