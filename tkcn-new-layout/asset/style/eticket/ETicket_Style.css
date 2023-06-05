@@ -88,6 +88,11 @@
     display: flex;
 }
 
+.profi-and-funcs .funcs .e-point-count {
+    position: absolute;
+    left: 60%;
+}
+
 .profi-and-funcs .funcs .detail img {
     height: 18px;
     width: 18px;
@@ -103,6 +108,11 @@
     letter-spacing: 0px;
     text-align: left;
     padding: 12px 12px 12px 16px;
+    cursor: pointer;
+}
+
+.profi-and-funcs .funcs :hover {
+    color: #F0821B;
 }
 
 .profi-and-funcs .funcs .detail.selected {
@@ -166,6 +176,11 @@
     padding: 16px;
 }
 
+.content .items .detail-info .info.used {
+    filter: grayscale(1);
+    opacity: 0.88;
+}
+
 .content .items .detail-info .info .detail-title {
     font-size: 14px;
     font-weight: 400;
@@ -214,6 +229,10 @@
     text-align: end;
 }
 
+.content .items .detail-info .info .btn-ctn {
+    padding: 0 8px;
+}
+
 .btn-white-bg {
     font-weight: 500;
     font-size: 14px;
@@ -225,6 +244,12 @@
     text-align: center;
     width: calc(100% - 2px);
     min-width: max-content;
+    cursor: pointer;
+}
+
+.btn-white-bg.exprired {
+    color: #E8141F;
+    border-color: #E8141F;
 }
 
 .btn-orange-bg {
@@ -239,6 +264,7 @@
     min-width: max-content;
     float: right;
     padding: 6px 15px;
+    cursor: pointer;
 }
 
 /* Review */
@@ -662,12 +688,19 @@
     width: 100%;
 }
 
-.inp-form .btn-link-ctn .title{
+.inp-form .btn-link-ctn .title {
     font-weight: 400;
     font-size: 13px;
     line-height: 18px;
     color: #757575;
     margin-right: 10px;
+}
+
+.inp-form .btn-link-ctn .title.stop-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1E83F6;
 }
 
 .inp-form .btn-link-ctn .btn-link-gg, .inp-form .btn-link-ctn .btn-link-fb, .inp-form .btn-ctn .btn-update {
@@ -789,6 +822,10 @@
 
 @media (max-width: 768px)
 {
+    .container .col-lg-9.col-md-9.col-sm-12.col-12 {
+        padding: 0;
+    }
+
     .content .items .detail-info .col-12.info {
         max-width: calc(100% - 16px);
     }
@@ -814,10 +851,111 @@
         padding: 10px 20px;
     }
 
-    .profi-and-funcs {
+    .mb-head-title {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        color: #000;
+        height: 36px;
+        margin: -30px auto 0 auto;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+    }
 
+    .mb-head-title img {
+        position: absolute;
+        left: 16px;
+        height: 18px;
+        width: 18px;
+    }
+
+    /* Left-bar */
+    .profi-and-funcs .group-title {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        color: #000;
+		margin-bottom: 12px;
+    }
+
+	.profi-and-funcs {
+		background-color: #fafafa;
+	}
+	
+	.profi-and-funcs .profi .name {
+		font-size: 16px;
+        font-weight: 500;
+	}
+	
+	.profi-and-funcs .funcs {
+		border-top: none;
+		background-color: #fff;
+		margin: 12px 0;
+		padding: 0;
+		border-radius: 12px;
+	}
+
+    .profi-and-funcs .funcs .right-icon {
+        position: absolute;
+        right: 8px;
+    }
+	
+	.profi-and-funcs .profi {
+		background-color: #fff;
+		margin: -16px 0 16px 0;
+		padding: 16px;
+		border-radius: 12px;
+	}
+
+    .profi-and-funcs .profi .right-icon {
+		height: 18px; 
+        width: 18px;
+        position: absolute;
+        right: -2px;
+	}
+
+    .profi-and-funcs .profi .col-2 {
+		margin: 0;
+        padding: 0;
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
+	}
+	
+	.profi-and-funcs .profi .col-12 {
+		justify-content: start;
+	}
+	
+	.profi-and-funcs .profi .avatar img {
+		height: 0;
+	}
+
+    .profi-and-funcs .funcs .borderline {
+		border-top: 1px solid #F5F5F5;
+        width: 100%;
+	}
+
+    .profi-and-funcs .btn-log-out {
+        border: 1px solid #F0821B;
+        color: #F0821B;
+        padding: 10px;
+        border-radius: 50px;
+        text-align: center;
+        margin: 16px auto;
+        background-color: #fafafa;
+        cursor: pointer;
+    }
+
+    .profi-and-funcs a {
+        text-decoration: none;
+        font-style: normal;
     }
 }
+
+
+
 
 
 

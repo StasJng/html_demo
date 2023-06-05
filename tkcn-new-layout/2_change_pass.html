@@ -39,6 +39,13 @@
     <div class="body">
         <div class="container">
             <div class="row">
+                <!--#region head-title-->
+                <div class="col-12 mb-head-title d-lg-none d-md-none d-sm-flex d-flex">
+                    <img src="asset/images/eticket/icon-left.svg" alt="">
+                    Đổi mật khẩu
+                </div>
+                <!--#endregion-->
+
                 <!--#region Left-->
                 <div class="col-lg-3 col-md-3 col-sm-12 col-12 profi-and-funcs d-lg-block d-md-block d-sm-none d-none">
                     <div class="row profi">
@@ -196,76 +203,54 @@
                         <div class="row items">
                             <!--#region Title-->
                             <div class="col-12 title d-lg-block d-md-block d-sm-none d-none">
-                                Deal của tôi
+                                Đổi mật khẩu
                                 <div class="col-12"></div>
-                            </div>
-                            <!--#endregion-->
-    
-                            <!--#region Panel selector-->
-                            <div class="col-12">
-                                <div class="row panels-selector"> 
-                                    <div class="col-4 panel selected">
-                                        E-Voucher
-                                    </div>
-                                    <div class="col-4 panel">
-                                        E-Gift
-                                    </div>
-                                    <div class="col-4 panel">
-                                        E-Ticket
-                                    </div>
-                                </div>
                             </div>
                             <!--#endregion-->
     
                             <!--#region Items-->
                             <div class="col-12">
-                                <div class="row notify">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 info">
-                                        <div class="row"> 
-                                            <div class="col-12 content-val">
-                                                <img src="asset/images/eticket/notification-bell-icon.svg" alt="" />
-                                                Bạn đã mua deal tại IMeatU. Vui lòng sử dụng trong thời gian quy định.
-                                            </div>
-                                            <div class="col-12 bottom-bar">
-                                                <div class="row">
-                                                    <div class="col-6 date">
-                                                        08:43 - 03/02/2023
-                                                    </div>
-                                                    <div class="col-6 show">
-                                                        Hiển thị
-                                                        <img src="" alt="" />
-                                                    </div>
-                                                </div>
-                                            </div>
+                                <div class="row inp-form">
+
+                                    <div class="col-12">
+                                        <div class="inp-title">
+                                            Mật khẩu cũ
+                                        </div>
+                                        <div class="inp-value">
+                                            <input id="old-pass" type="text" value="gicungduoc@gmail.com" />
+                                            <img id="old-pass-visible-stt" src="asset/images/eticket/icon-pass-visible.svg" alt="" onclick="changeVisible('old-pass', this.id)">
                                         </div>
                                     </div>
-                                </div>
-                            </div>
 
-                            <div class="col-12">
-                                <div class="row notify">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 info">
-                                        <div class="row"> 
-                                            <div class="col-12 content-val">
-                                                <img src="asset/images/eticket/notification-bell-icon.svg" alt="" />
-                                                Bạn đã mua deal tại IMeatU. Vui lòng sử dụng trong thời gian quy định.
-                                            </div>
-                                            <div class="col-12 bottom-bar">
-                                                <div class="row">
-                                                    <div class="col-6 date">
-                                                        08:43 - 03/02/2023
-                                                    </div>
-                                                    <div class="col-6 show">
-                                                        Hiển thị
-                                                        <img src="" alt="" />
-                                                    </div>
+                                    <div class="col-12">
+                                        <div class="inp-title">
+                                            Mật khẩu mới
+                                        </div>
+                                        <div class="inp-value">
+                                            <input id="new-pass" type="password" value="gicungduoc@gmail.com" />
+                                            <img id="new-pass-visible-stt" src="asset/images/eticket/icon-pass-hidden.svg" alt="" onclick="changeVisible('new-pass', this.id)">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="inp-title">
+                                            Nhập lại mật khẩu
+                                        </div>
+                                        <div class="inp-value">
+                                            <input id="retype-pass" type="password" value="gicungduoc@gmail.com" />
+                                            <img id="retype-pass-visible-stt" src="asset/images/eticket/icon-pass-hidden.svg" alt="" onclick="changeVisible('retype-pass', this.id)">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="btn-ctn">
+                                            <div class="btn-update">
+                                                <div>
+                                                    Cập nhật
                                                 </div>
                                             </div>
-                                            <div class="col-12 expanded">
-                                                Bạn đã mua deal tại IMeatU. Vui lòng sử dụng trong thời gian quy định.
-                                                <img src="" alt="" />
-                                            </div>
                                         </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -287,7 +272,18 @@
     
     <!--#region Script-->
     <script>
-        
+        function changeVisible(inputId, buttonId) {
+            if($("#" + inputId).attr("type") == "password")
+            {
+                $("#" + inputId).attr("type", "text");
+                $("#" + buttonId).attr("src", "asset/images/eticket/icon-pass-visible.svg");
+            }
+            else
+            {
+                $("#" + inputId).attr("type", "password");
+                $("#" + buttonId).attr("src", "asset/images/eticket/icon-pass-hidden.svg");
+            }
+        }
     </script>
     <!--#endregion-->
 </body>
