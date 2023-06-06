@@ -795,6 +795,18 @@
     width: 24px;
 }
 
+.content .items .notify .content-val .isRead ::after{ 
+    content: '';
+    border: 2px solid #FF3F3F;
+    border-radius: 50%;
+    height: 6px;
+    width: 6px;
+    background-color: #FF3F3F;
+    position: absolute;
+    top: 1px;
+    left: 32px;
+}
+
 .content .items .notify .bottom-bar { 
     background-color: #F5F5F5;
     padding: 8px;
@@ -820,7 +832,6 @@
     font-size: 13px;
     line-height: 18px;
     color: #000;
-    padding: 8px;
 }
 
 .content .items .notify .expanded a { 
@@ -837,8 +848,8 @@
 
 /* Code list */
 .content .items .notify .bottom-bar.sale-code { 
-    background-color: #E3F2FF;
-    border-radius: 0px 0 8px 8px;
+    background-color: #BBDDFF;
+    border-radius: 0 0 8px 8px;
 }
 
 .content .items .notify .sale-code .code {
@@ -855,17 +866,30 @@
 	color: #E8141F;
 }	
 
-.content .items .notify .bottom-bar.sale-code.expanded { 
-    background-color: #BBDDFF;
-    border-radius: 0;
-}
-
-.content .items .notify .bottom-bar.expanded { 
+.content .items .notify .sale-code.expanded { 
     background-color: #E3F2FF;
-    border-radius: 0px 0 8px 8px;
+    border-radius: 0 0 8px 8px;
 }
 
+/* Expand */
 
+.col-12.expanded .row {
+    display: none;
+}
+
+.col-12.expanded > input:checked + .row {
+    display: block;
+}
+
+.drop-content {
+    padding: 8px 0;
+    margin: 0 -20px;
+}
+
+.dropDown-trigger {
+    margin: 0;
+    padding: 0;
+}
 /* Footer */
 
 /* Responsive */
@@ -1008,3 +1032,4 @@
         font-style: normal;
     }
 }
+
