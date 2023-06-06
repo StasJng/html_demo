@@ -788,6 +788,23 @@
     font-size: 13px;
     line-height: 18px;
     padding: 8px;
+    display: flex;
+}
+
+.content .items .notify .content-val .icon { 
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 0 6px;
+    display: flex;
+}
+
+.content .items .notify .content-val .noti-content { 
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 0 6px;
+    display: flex;
 }
 
 .content .items .notify .content-val img { 
@@ -803,7 +820,7 @@
     width: 6px;
     background-color: #FF3F3F;
     position: absolute;
-    top: 1px;
+    top: 10px;
     left: 32px;
 }
 
@@ -848,8 +865,7 @@
 
 /* Code list */
 .content .items .notify .bottom-bar.sale-code { 
-    background-color: #BBDDFF;
-    border-radius: 0 0 8px 8px;
+    background-color: #E3F2FF;
 }
 
 .content .items .notify .sale-code .code {
@@ -881,6 +897,10 @@
     display: block;
 }
 
+.col-12.expanded > input:checked + .bottom-bar.sale-code { 
+    background-color: #BBDDFF;
+}
+
 .drop-content {
     padding: 8px 0;
     margin: 0 -20px;
@@ -889,6 +909,36 @@
 .dropDown-trigger {
     margin: 0;
     padding: 0;
+}
+
+/* Used paymnets*/
+.content .used-payments {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+    margin: 0 auto;
+} 
+
+.content .used-payments .used-item .row {
+    border: 1px solid #EDEDED;
+    padding: 8px 16px;
+    margin: 16px 0 8px 0;
+    text-align: justify;
+    width: fit-content;
+    padding-right: 30px;
+    margin: 16px auto 8px auto;
+}
+
+.content .used-payments .used-item .cancel {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #E8141F;
+    background-color: #fafafa;
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
 }
 /* Footer */
 
