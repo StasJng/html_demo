@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="asset/style/eticket/ETicket_Style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,300&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <title>ETicket</title>
+</head>
+<body>
+    <!--#region Header-->
+    <!--#region Header-->
+    <div class="header" id="header">
+        <div class="container">
+            <div class="row header-content">
+                <div class="col-lg-2 col-md-2 col-sm-6 col-6">
+                    <div class="header-menu d-lg-none d-md-none d-sm-flex d-flex" onclick="openMenuPopup('#menuPopup')">
+                        <a href="javascript:void(0);">
+                            <img src="asset/images/eticket/header-menu-icon.svg" alt="" />
+                        </a>
+                    </div>
+                    <div class="header-logo">
+                        <a href="/eticket">
+                            <img src="asset/images/eticket/eticket-header-logo.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 col-6 d-lg-flex d-md-flex d-sm-none d-none">
+
+                    <div class="header-search-box">
+                        <input type="text" id="header-search-input" placeholder="Tìm kiếm vé, sự kiện, hoạt động" value="Keyword">
+                        <div class="button-search-container">
+                            <div class="button-search" id="btn-submit-search">Tìm kiếm</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                    <div class="icon-search-wap">
+                    </div>
+                    <div class="header-navigating">
+                        <a href="https://partner.dealtoday.vn/" class="header-partner-url d-none d-lg-flex d-lg-none"><span>Dành cho doanh nghiệp</span></a>
+                        <a href="/eticket-pay/cart" class="lnk-etk-cart">
+                            <img src="asset/images/eticket/cart-icon.png" alt="" />
+                            <span class="count-item" id="orderCount">5</span>
+                        </a>
+
+                        <div class="header-auth-button-container d-none d-lg-flex d-lg-none">
+                            <div class="header-auth-button"><a href="//id.dealtoday.vn/register">Đăng ký</a>/ <a href="#">Đăng nhập</a></div>
+                            <a class="box-user-login" href="//id.dealtoday.vn">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="etk-srch-box-container">
+            <div class="srch-box">
+                <div class="container">
+                    <input type="text" id="etk-lst-search-input" placeholder="Tìm kiếm vé, sự kiện, hoạt động" value="Keyword"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+    <!--#region Mobile menu-->
+    <div class="mb-menu-container" id="menuPopup" onclick="if(event.target == this){closePopup('#menuPopup');}" aria-hidden="true">
+        <div class="mb-menu-wrapper">
+            <div class="user-info row">
+                <div class="col-3">
+                    <span>
+                        <img src="asset/images/eticket/avatar_empty.png" alt="" />
+                    </span>
+                </div>
+                <div class="col-9">
+                    <a href="//id.dealtoday.vn/register">
+                        Đăng ký
+                    </a>/
+                    <a href="#">Đăng nhập</a>
+                </div>
+            </div>
+            <div class="bold-border"></div>
+            <div class="category-lst row">
+                <div class="col-12">
+                    <a href="#">
+                        <span><img src="asset/images/eticket/car-icon.png" alt="category_name" /></span>
+                        <span>category_name</span>
+                    </a>
+                </div>
+                <div class="slim-border"></div>
+                <div class="col-12">
+                    <a href="#">
+                        <span><img src="asset/images/eticket/car-icon.png" alt="category_name" /></span>
+                        <span>category_name</span>
+                    </a>
+                </div>
+                <div class="slim-border"></div>
+                <div class="col-12">
+                    <a href="#">
+                        <span><img src="asset/images/eticket/car-icon.png" alt="category_name" /></span>
+                        <span>category_name</span>
+                    </a>
+                </div>
+                <div class="slim-border"></div>
+            </div>
+            <div class="row contact">
+                <div class="col-12">
+                    <span><a href="https://partner.dealtoday.vn">Dành cho doanh nghiệp</a></span>
+                </div>
+                <div class="col-12">
+                    <span>Hotline: <span><a class="hotline-menu-wap" href="tel:19002065">1900 2065</a></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+    <!--#region Script-->
+    <script>
+        var width = $(window).width();
+        if (width <= 768) {
+            $('#btn-submit-search').click(function () {
+                var keyword = $('#etk-lst-search-input').val();
+                if (keyword == null || keyword == '' || keyword == 'Tìm kiếm vé, sự kiện, hoạt động') return false;
+                $.ajax({
+                    type: "post",
+                    url: '/EticketDetail/SearchEticketTemp',
+                    data: {
+                        keyword: keyword,
+                    },
+                    success: function (d) {
+                        if (d.code == 0) {
+                            window.location.href = d.url;
+                        }
+                    }
+                });
+            });
+
+            $('.icon-search-wap').click(function () {
+                $('.etk-srch-box-container').slideToggle();
+            });
+        }
+    
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            if (window.pageYOffset > 0) {
+                document.getElementById("header").setAttribute("style", "box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
+            }
+            else {
+                document.getElementById("header").setAttribute("style", "box-shadow: none;");
+            }
+        }
+
+        function openMenuPopup(popup) {
+            $(popup).show().attr("aria-hidden", "false");
+        }
+        function closePopup(popup) {
+            $(popup).hide().attr("aria-hidden", "true");
+        }
+
+    
+
+        $('#btn-submit-search').click(function () {
+            var keyword = $('#header-search-input').val();
+            if (keyword == null || keyword == '' || keyword == 'Tìm kiếm vé, sự kiện, hoạt động') return false;
+            $.ajax({
+                type: "post",
+                url: '/EticketDetail/SearchEticketTemp',
+                data: {
+                    keyword: keyword,
+                },
+                success: function (d) {
+                    if (d.code == 0) {
+                        window.location.href = d.url;
+                    }
+                }
+            });
+        });
+
+        $(document).on('keypress', function (e) {
+            if (e.which == 13) {
+                $('#btn-submit-search').click();
+            }
+        });
+    </script>
+    <!--#endregion-->
+
+    <!--#endregion-->
+    <!--#endregion-->
+    
+    <!--#region Body-->
+    <div class="body">
+        <div class="container">
+            <div class="row">
+                <!--#region Left-->
+                <div class="col-lg-3 col-md-3 col-sm-12 col-12 profi-and-funcs d-lg-block d-md-block d-sm-none d-none">
+                    <div class="row profi">
+                        <div class="col-lg-12 col-md-12 col-sm-10 col-10">
+                            <div class="row">
+                                <div class="col-12 avatar">
+                                    <img src="asset/images/eticket/promo-1.png" alt="" >
+                                </div>
+                                <div class="col-12 name"> 
+                                    Mr. Trần Demo
+                                </div>
+                                <div class="col-12 email"> 
+                                    winwinthepooh@gmail.com
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 d-lg-none d-md-none d-sm-flex d-flex">
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                    </div>
+
+                    <div class="group-title d-lg-none d-sm-none d-sm-block d-block">
+                        Thông tin tài khoản
+                    </div>
+                    <div class="row funcs">
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-1-user.svg" alt="" >
+                            Người dùng
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-2-credit-info.svg" alt="" >
+                            Tài khoản ngân hàng
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-3-change-pass.svg" alt="" >
+                            Đổi mật khẩu
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                    </div>
+                    
+                    <div class="group-title  d-lg-none d-sm-none d-sm-block d-block">
+                        Tài khoản điểm
+                    </div>
+                    <div class="row funcs">
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-4-e-point.svg" alt="" >
+                            Dealtoday E-point<span class="e-point-count">80.000</span>
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-5-vani.svg" alt="" >
+                            Vani xu
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                    </div>
+                    
+                    <div class="group-title d-lg-none d-sm-none d-sm-block d-block">
+                        Tài khoản Deal
+                    </div>
+                    <div class="row funcs">
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-6-deals.svg" alt="" >
+                            Tài khoản Deal
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-7-coupon.svg" alt="" >
+                            Mã giảm giá
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                    </div>
+
+                    <div class="group-title d-lg-none d-sm-none d-sm-block d-block">
+                        Lịch sử giao dịch
+                    </div>
+                    <div class="row funcs">
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-8-transactions.svg" alt="" >
+                            Giao dịch dịch vụ
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-9-reviews.svg" alt="" >
+                            Đánh giá, nhận xét
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                    </div>
+
+                    <div class="group-title d-lg-none d-sm-none d-sm-block d-block">
+                        Thông báo
+                    </div>
+                    <div class="row funcs">
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-10-notification.svg" alt="" >
+                            Tất cả thông báo
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-11-point-account.svg" alt="" >
+                            Tài khoản điểm
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                    </div>
+
+                    <div class="group-title d-lg-none d-sm-none d-sm-block d-block">
+                        Hỗ trợ
+                    </div>
+                    <div class="row funcs">
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-12-intro.svg" alt="" >
+                            Giới thiệu Dealtoday
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                        <div class="borderline"></div>
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-13-terms.svg" alt="" >
+                            Điều khoản sử dụng
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                        <div class="borderline"></div>
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-14-lang.svg" alt="" >
+                            Ngôn ngữ
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <div class="col-12 detail">
+                            <img src="asset/images/eticket/funcs-icon/funcs-icon-15-phone.svg" alt="" >
+                            Hotline: 1900 2065
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                    </div>
+
+                    <a href="#" class="d-lg-none d-md-none d-sm-block d-block"> 
+                        <div class="btn-log-out">
+                            <div>
+                                Đăng xuất
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!--#endregion-->
+
+                <!--#region Right-->
+                <div class="col-lg-9 col-md-9 col-sm-12 col-12">
+                    <div class="container content">
+                        <div class="row items">
+                            <!--#region Title-->
+                            <div class="col-12 title d-lg-block d-md-block d-sm-none d-none">
+                                Deal của tôi
+                                <div class="col-12"></div>
+                            </div>
+                            <!--#endregion-->
+    
+                            <!--#region Panel selector-->
+                            <div class="col-12">
+                                <div class="row panels-selector"> 
+                                    <a href="#" class="col-4 panel selected">
+                                        E-Voucher
+                                    </a>
+                                    <a href="#" class="col-4 panel">
+                                        E-Gift
+                                    </a>
+                                    <a href="#" class="col-4 panel">
+                                        E-Ticket
+                                    </a>
+                                </div>
+                            </div>
+                            <!--#endregion-->
+    
+                            <!--#region Items-->
+                            <div class="col-12">
+                                <div class="row detail-info"> 
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 info used">
+                                        <div class="row"> 
+                                            <div class="col-12 detail-title">
+                                                Buffet thịt nướng menu 299k ăn thỏa thích tại nhà hàng Gumiho
+                                            </div>
+                                            
+                                            <div class="col-6 price">
+                                                500,000 vnd
+                                            </div>
+                                            <div class="col-6 exp-date">
+                                                HSD: 31/12/2025
+                                            </div>
+                                            <div class="col-4 count">
+                                                Số lượng: 0\3
+                                            </div>
+                                            <div class="col-4 used-count">
+                                                Đã dùng: 02
+                                            </div>
+                                            <div class="col-4 avai-remain">
+                                                Chưa dùng: 01
+                                            </div>
+    
+                                            <div class="col-6 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Điểm áp dụng
+                                                </div>
+                                            </div>
+                                            <div class="col-6 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Đã sử dụng
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 info">
+                                        <div class="row"> 
+                                            <div class="col-12 detail-title">
+                                                Buffet thịt nướng menu 299k ăn thỏa thích tại nhà hàng Gumiho
+                                            </div>
+                                            
+                                            <div class="col-6 price">
+                                                500,000 vnd
+                                            </div>
+                                            <div class="col-6 exp-date">
+                                                HSD: 31/12/2025
+                                            </div>
+                                            <div class="col-4 count">
+                                                Số lượng: 0\3
+                                            </div>
+                                            <div class="col-4 used-count">
+                                                Đã dùng: 02
+                                            </div>
+                                            <div class="col-4 avai-remain">
+                                                Chưa dùng: 01
+                                            </div>
+    
+                                            <div class="col-6 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Điểm áp dụng
+                                                </div>
+                                            </div>
+                                            <div class="col-6 btn-ctn">
+                                                <div class="btn-white-bg exprired">
+                                                    Hết hạn
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 info">
+                                        <div class="row"> 
+                                            <div class="col-12 detail-title">
+                                                Buffet thịt nướng menu 299k ăn thỏa thích tại nhà hàng Gumiho
+                                            </div>
+                                            
+                                            <div class="col-6 price">
+                                                500,000 vnd
+                                            </div>
+                                            <div class="col-6 exp-date">
+                                                HSD: 31/12/2025
+                                            </div>
+                                            <div class="col-4 count">
+                                                Số lượng: 0\3
+                                            </div>
+                                            <div class="col-4 used-count">
+                                                Đã dùng: 02
+                                            </div>
+                                            <div class="col-4 avai-remain">
+                                                Chưa dùng: 01
+                                            </div>
+    
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Điểm áp mã
+                                                </div>
+                                            </div>
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Chuyển mã
+                                                </div>
+                                            </div>
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-orange-bg">
+                                                    Sử dụng
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 info">
+                                        <div class="row"> 
+                                            <div class="col-12 detail-title">
+                                                Buffet thịt nướng menu 299k ăn thỏa thích tại nhà hàng Gumiho
+                                            </div>
+                                            
+                                            <div class="col-6 price">
+                                                500,000 vnd
+                                            </div>
+                                            <div class="col-6 exp-date">
+                                                HSD: 31/12/2025
+                                            </div>
+                                            <div class="col-4 count">
+                                                Số lượng: 0\3
+                                            </div>
+                                            <div class="col-4 used-count">
+                                                Đã dùng: 02
+                                            </div>
+                                            <div class="col-4 avai-remain">
+                                                Chưa dùng: 01
+                                            </div>
+                                            
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Điểm áp mã
+                                                </div>
+                                            </div>
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Chuyển mã
+                                                </div>
+                                            </div>
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-orange-bg">
+                                                    Sử dụng
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 info used">
+                                        <div class="row"> 
+                                            <div class="col-12 detail-title">
+                                                Buffet thịt nướng menu 299k ăn thỏa thích tại nhà hàng Gumiho
+                                            </div>
+                                            
+                                            <div class="col-6 price">
+                                                500,000 vnd
+                                            </div>
+                                            <div class="col-6 exp-date">
+                                                HSD: 31/12/2025
+                                            </div>
+                                            <div class="col-4 count">
+                                                Số lượng: 0\3
+                                            </div>
+                                            <div class="col-4 used-count">
+                                                Đã dùng: 02
+                                            </div>
+                                            <div class="col-4 avai-remain">
+                                                Chưa dùng: 01
+                                            </div>
+    
+                                            <div class="col-6 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Điểm áp dụng
+                                                </div>
+                                            </div>
+                                            <div class="col-6 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Đã sử dụng
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 info">
+                                        <div class="row"> 
+                                            <div class="col-12 detail-title">
+                                                Buffet thịt nướng menu 299k ăn thỏa thích tại nhà hàng Gumiho
+                                            </div>
+                                            
+                                            <div class="col-6 price">
+                                                500,000 vnd
+                                            </div>
+                                            <div class="col-6 exp-date">
+                                                HSD: 31/12/2025
+                                            </div>
+                                            <div class="col-4 count">
+                                                Số lượng: 0\3
+                                            </div>
+                                            <div class="col-4 used-count">
+                                                Đã dùng: 02
+                                            </div>
+                                            <div class="col-4 avai-remain">
+                                                Chưa dùng: 01
+                                            </div>
+    
+                                            <div class="col-6 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Điểm áp dụng
+                                                </div>
+                                            </div>
+                                            <div class="col-6 btn-ctn">
+                                                <div class="btn-white-bg exprired">
+                                                    Hết hạn
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 info">
+                                        <div class="row"> 
+                                            <div class="col-12 detail-title">
+                                                Buffet thịt nướng menu 299k ăn thỏa thích tại nhà hàng Gumiho
+                                            </div>
+                                            
+                                            <div class="col-6 price">
+                                                500,000 vnd
+                                            </div>
+                                            <div class="col-6 exp-date">
+                                                HSD: 31/12/2025
+                                            </div>
+                                            <div class="col-4 count">
+                                                Số lượng: 0\3
+                                            </div>
+                                            <div class="col-4 used-count">
+                                                Đã dùng: 02
+                                            </div>
+                                            <div class="col-4 avai-remain">
+                                                Chưa dùng: 01
+                                            </div>
+    
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Điểm áp mã
+                                                </div>
+                                            </div>
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Chuyển mã
+                                                </div>
+                                            </div>
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-orange-bg">
+                                                    Sử dụng
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12 info">
+                                        <div class="row"> 
+                                            <div class="col-12 detail-title">
+                                                Buffet thịt nướng menu 299k ăn thỏa thích tại nhà hàng Gumiho
+                                            </div>
+                                            
+                                            <div class="col-6 price">
+                                                500,000 vnd
+                                            </div>
+                                            <div class="col-6 exp-date">
+                                                HSD: 31/12/2025
+                                            </div>
+                                            <div class="col-4 count">
+                                                Số lượng: 0\3
+                                            </div>
+                                            <div class="col-4 used-count">
+                                                Đã dùng: 02
+                                            </div>
+                                            <div class="col-4 avai-remain">
+                                                Chưa dùng: 01
+                                            </div>
+                                            
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Điểm áp mã
+                                                </div>
+                                            </div>
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-white-bg">
+                                                    Chuyển mã
+                                                </div>
+                                            </div>
+                                            <div class="col-4 btn-ctn">
+                                                <div class="btn-orange-bg">
+                                                    Sử dụng
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--#endregion-->
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion-->
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
+    <!--#region Footer-->
+    <div class="footer">
+        
+    </div>
+    <!--#endregion-->
+    
+    <!--#region Script-->
+    <script>
+        
+    </script>
+    <!--#endregion-->
+</body>
+</html>
