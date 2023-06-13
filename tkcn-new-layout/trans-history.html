@@ -210,19 +210,44 @@
     
                             <!--#region Panel selector-->
                             <div class="col-12">
-                                <div class="row panels-selector"> 
-                                    <div class="col-6 panel selected">
-                                        <img src="" alt="">
-                                        Từ ngày
+                                <div class="row trans-filter"> 
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                                        <div class="row inp-form">
+                                            <div class="col-12">
+                                                <div class="inp-value date">
+                                                    <input type="text" placeholder="Từ ngày" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-6 panel">
-                                        E-Gift
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                                        <div class="row inp-form">
+                                            <div class="col-12">
+                                                <div class="inp-value date">
+                                                    <input type="text" placeholder="Đến ngày" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-12 panel">
-                                        E-Ticket
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                                        <div class="row inp-form">
+                                            <div class="col-12">
+                                                <div class="inp-value">
+                                                    <select id="selName" name="getElementsByTagName">
+                                                        <option value="-1">Loại giao dịch</option>
+                                                        <option value="1">Chuyển điểm</option>
+                                                        <option value="2">Mua hàng</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-12 panel">
-                                        Tìm kiếm
+                                    <div class="col-lg-2 col-md-2 col-sm-12 col-12">
+                                        <div class="btn-ctn">
+                                            <div class="btn-search">
+                                                Tìm kiếm
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -233,26 +258,25 @@
                                 <div class="row notify">
                                     <div class="col-12 info">
                                         <div class="row"> 
-                                            <div class="col-12 bottom-bar">
+                                            <div class="col-12 bottom-bar trans-his">
                                                 <div class="row">
-                                                    <div class="col-6 date">
+                                                    <div class="col-6 trans-his date">
                                                         Mua hàng
                                                     </div>
                                                     <div class="col-6 show">
-                                                        <label for="dropDown-toggle" class="dropDown-trigger">
+                                                        <label for="dropDown-toggle" class="dropDown-trigger trans-his">
                                                             21/09/2020
-                                                            <img src="asset/images/eticket/icon-down.svg" alt="" />
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12 content-val">
+                                            <div class="col-12 trans-content">
                                                 <div class="row">
                                                     <div class="col-12">
-                                                        <span>Tình trạng</span><span>Đơn hàng đã hoàn tất</span>
+                                                        <span class="trans-attr">Tình trạng&nbsp;&nbsp;</span><span class="trans-success">Đơn hàng đã hoàn tất</span>
                                                     </div>
                                                     <div class="col-12">
-                                                        <span>Giá trị</span><span>496.000đ</span>
+                                                        <span class="trans-attr">Giá trị&nbsp;&nbsp;</span><span class="trans-total">496.000đ</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -265,26 +289,25 @@
                                 <div class="row notify">
                                     <div class="col-12 info">
                                         <div class="row"> 
-                                            <div class="col-12 bottom-bar">
+                                            <div class="col-12 bottom-bar trans-his">
                                                 <div class="row">
-                                                    <div class="col-6 date">
-                                                        Mua hàng
+                                                    <div class="col-6 trans-his date">
+                                                        Đổi điểm
                                                     </div>
                                                     <div class="col-6 show">
-                                                        <label for="dropDown-toggle" class="dropDown-trigger">
+                                                        <label for="dropDown-toggle" class="dropDown-trigger trans-his">
                                                             21/09/2020
-                                                            <img src="asset/images/eticket/icon-down.svg" alt="" />
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12 content-val">
+                                            <div class="col-12 trans-content">
                                                 <div class="row">
                                                     <div class="col-12">
-                                                        <span>Tình trạng</span><span>Đơn hàng đã hoàn tất</span>
+                                                        <span class="trans-attr">Tình trạng&nbsp;&nbsp;</span><span class="trans-failed">Đơn hàng thất bại</span>
                                                     </div>
                                                     <div class="col-12">
-                                                        <span>Giá trị</span><span>496.000đ</span>
+                                                        <span class="trans-attr">Giá trị&nbsp;&nbsp;</span><span class="trans-total">496.000đ</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -293,6 +316,104 @@
                                 </div>
                             </div>
 
+                            <div class="col-12">
+                                <div class="row notify">
+                                    <div class="col-12 info">
+                                        <div class="row"> 
+                                            <div class="col-12 bottom-bar trans-his">
+                                                <div class="row">
+                                                    <div class="col-6 trans-his date">
+                                                        Hoàn trả
+                                                    </div>
+                                                    <div class="col-6 show">
+                                                        <label for="dropDown-toggle" class="dropDown-trigger trans-his">
+                                                            21/09/2020
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 trans-content">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="trans-attr">Tình trạng&nbsp;&nbsp;</span><span class="trans-success">Đơn hàng đã hoàn tất</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="trans-attr">Giá trị&nbsp;&nbsp;</span><span class="trans-total">496.000đ</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="row notify">
+                                    <div class="col-12 info">
+                                        <div class="row"> 
+                                            <div class="col-12 bottom-bar trans-his">
+                                                <div class="row">
+                                                    <div class="col-6 trans-his date">
+                                                        Mua và nạp thẻ điện thoại
+                                                    </div>
+                                                    <div class="col-6 show">
+                                                        <label for="dropDown-toggle" class="dropDown-trigger trans-his">
+                                                            21/09/2020
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 trans-content">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="trans-attr">Tình trạng&nbsp;&nbsp;</span><span class="trans-success">Đơn hàng đã hoàn tất</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="trans-attr">Giá trị&nbsp;&nbsp;</span><span class="trans-total">496.000đ</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="row notify">
+                                    <div class="col-12 info">
+                                        <div class="row"> 
+                                            <div class="col-12 bottom-bar trans-his">
+                                                <div class="row">
+                                                    <div class="col-6 trans-his date">
+                                                        Sử dụng deal
+                                                    </div>
+                                                    <div class="col-6 show">
+                                                        <label for="dropDown-toggle" class="dropDown-trigger trans-his">
+                                                            21/09/2020
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 trans-content">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="trans-attr">Tình trạng&nbsp;&nbsp;</span><span class="trans-success">Đơn hàng đã hoàn tất</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="trans-attr">Giá trị&nbsp;&nbsp;</span><span class="trans-total">496.000đ</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btn-ctn">
+                                <div class="btn-view-more">
+                                    Xem thêm
+                                </div>
+                            </div>
                             <!--#endregion-->
                         </div>
                     </div>
