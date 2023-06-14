@@ -15,11 +15,24 @@
     <div class="header" id="header">
         <div class="container">
             <div class="row header-content">
-                
+                <div class="col-6">
+                    <div class="header-logo payment">
+                        <a href="/eticket">
+                            <img src="asset/images/eticket/eticket-header-logo.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 hot-line">
+                    <div class="wrap">
+                        <img src="asset/images/eticket/icon-phone.svg" alt="" />
+                        <a href="tel:19002065">19002065</a>
+                        <a href="tel:0934661016"class="d-lg-flex d-md-flex d-sm-none d-none">&nbsp;-&nbsp;0934.661.016</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <!--#region Script-->
+
     <script>
         window.onscroll = function () { myFunction() };
 
@@ -31,8 +44,14 @@
                 document.getElementById("header").setAttribute("style", "box-shadow: none;");
             }
         }
+
+        function openMenuPopup(popup) {
+            $(popup).show().attr("aria-hidden", "false");
+        }
+        function closePopup(popup) {
+            $(popup).hide().attr("aria-hidden", "true");
+        }
     </script>
-    <!--#endregion-->
     <!--#endregion-->
     
     <!--#region Body-->

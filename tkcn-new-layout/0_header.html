@@ -12,137 +12,28 @@
 </head>
 <body>
     <!--#region Header-->
-    <!--#region Header-->
     <div class="header" id="header">
         <div class="container">
             <div class="row header-content">
-                <div class="col-lg-2 col-md-2 col-sm-6 col-6">
-                    <div class="header-menu d-lg-none d-md-none d-sm-flex d-flex" onclick="openMenuPopup('#menuPopup')">
-                        <a href="javascript:void(0);">
-                            <img src="asset/images/eticket/header-menu-icon.svg" alt="" />
-                        </a>
-                    </div>
-                    <div class="header-logo">
+                <div class="col-6">
+                    <div class="header-logo payment">
                         <a href="/eticket">
                             <img src="asset/images/eticket/eticket-header-logo.png" alt="" />
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6 col-6 d-lg-flex d-md-flex d-sm-none d-none">
-
-                    <div class="header-search-box">
-                        <input type="text" id="header-search-input" placeholder="Tìm kiếm vé, sự kiện, hoạt động" value="Keyword">
-                        <div class="button-search-container">
-                            <div class="button-search" id="btn-submit-search">Tìm kiếm</div>
-                        </div>
+                <div class="col-6 hot-line">
+                    <div class="wrap">
+                        <img src="asset/images/eticket/icon-phone.svg" alt="" />
+                        <a href="tel:19002065">19002065</a>
+                        <a href="tel:0934661016"class="d-lg-flex d-md-flex d-sm-none d-none">&nbsp;-&nbsp;0934.661.016</a>
                     </div>
-
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                    <div class="icon-search-wap">
-                    </div>
-                    <div class="header-navigating">
-                        <a href="https://partner.dealtoday.vn/" class="header-partner-url d-none d-lg-flex d-lg-none"><span>Dành cho doanh nghiệp</span></a>
-                        <a href="/eticket-pay/cart" class="lnk-etk-cart">
-                            <img src="asset/images/eticket/cart-icon.png" alt="" />
-                            <span class="count-item" id="orderCount">5</span>
-                        </a>
-
-                        <div class="header-auth-button-container d-none d-lg-flex d-lg-none">
-                            <div class="header-auth-button"><a href="//id.dealtoday.vn/register">Đăng ký</a>/ <a href="#">Đăng nhập</a></div>
-                            <a class="box-user-login" href="//id.dealtoday.vn">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="etk-srch-box-container">
-            <div class="srch-box">
-                <div class="container">
-                    <input type="text" id="etk-lst-search-input" placeholder="Tìm kiếm vé, sự kiện, hoạt động" value="Keyword"/>
                 </div>
             </div>
         </div>
     </div>
-    <!--#endregion-->
-    <!--#region Mobile menu-->
-    <div class="mb-menu-container" id="menuPopup" onclick="if(event.target == this){closePopup('#menuPopup');}" aria-hidden="true">
-        <div class="mb-menu-wrapper">
-            <div class="user-info row">
-                <div class="col-3">
-                    <span>
-                        <img src="asset/images/eticket/avatar_empty.png" alt="" />
-                    </span>
-                </div>
-                <div class="col-9">
-                    <a href="//id.dealtoday.vn/register">
-                        Đăng ký
-                    </a>/
-                    <a href="#">Đăng nhập</a>
-                </div>
-            </div>
-            <div class="bold-border"></div>
-            <div class="category-lst row">
-                <div class="col-12">
-                    <a href="#">
-                        <span><img src="asset/images/eticket/car-icon.png" alt="category_name" /></span>
-                        <span>category_name</span>
-                    </a>
-                </div>
-                <div class="slim-border"></div>
-                <div class="col-12">
-                    <a href="#">
-                        <span><img src="asset/images/eticket/car-icon.png" alt="category_name" /></span>
-                        <span>category_name</span>
-                    </a>
-                </div>
-                <div class="slim-border"></div>
-                <div class="col-12">
-                    <a href="#">
-                        <span><img src="asset/images/eticket/car-icon.png" alt="category_name" /></span>
-                        <span>category_name</span>
-                    </a>
-                </div>
-                <div class="slim-border"></div>
-            </div>
-            <div class="row contact">
-                <div class="col-12">
-                    <span><a href="https://partner.dealtoday.vn">Dành cho doanh nghiệp</a></span>
-                </div>
-                <div class="col-12">
-                    <span>Hotline: <span><a class="hotline-menu-wap" href="tel:19002065">1900 2065</a></span></span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--#endregion-->
-    <!--#region Script-->
+
     <script>
-        var width = $(window).width();
-        if (width <= 768) {
-            $('#btn-submit-search').click(function () {
-                var keyword = $('#etk-lst-search-input').val();
-                if (keyword == null || keyword == '' || keyword == 'Tìm kiếm vé, sự kiện, hoạt động') return false;
-                $.ajax({
-                    type: "post",
-                    url: '/EticketDetail/SearchEticketTemp',
-                    data: {
-                        keyword: keyword,
-                    },
-                    success: function (d) {
-                        if (d.code == 0) {
-                            window.location.href = d.url;
-                        }
-                    }
-                });
-            });
-
-            $('.icon-search-wap').click(function () {
-                $('.etk-srch-box-container').slideToggle();
-            });
-        }
-    
         window.onscroll = function () { myFunction() };
 
         function myFunction() {
@@ -160,35 +51,7 @@
         function closePopup(popup) {
             $(popup).hide().attr("aria-hidden", "true");
         }
-
-    
-
-        $('#btn-submit-search').click(function () {
-            var keyword = $('#header-search-input').val();
-            if (keyword == null || keyword == '' || keyword == 'Tìm kiếm vé, sự kiện, hoạt động') return false;
-            $.ajax({
-                type: "post",
-                url: '/EticketDetail/SearchEticketTemp',
-                data: {
-                    keyword: keyword,
-                },
-                success: function (d) {
-                    if (d.code == 0) {
-                        window.location.href = d.url;
-                    }
-                }
-            });
-        });
-
-        $(document).on('keypress', function (e) {
-            if (e.which == 13) {
-                $('#btn-submit-search').click();
-            }
-        });
     </script>
-    <!--#endregion-->
-
-    <!--#endregion-->
     <!--#endregion-->
     
     <!--#region Body-->
