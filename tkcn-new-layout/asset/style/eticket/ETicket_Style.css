@@ -1314,6 +1314,7 @@
     line-height: 20px;
     color: #000;
     margin: 0 auto;
+    padding: 0;
 }
 
 .content .used-payments .used-item .row {
@@ -1770,6 +1771,7 @@
 
     .content .used-payments {
         margin: 0 auto;
+        padding: 0 16px;
     } 
 
     .trans-filter .btn-search {
