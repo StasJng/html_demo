@@ -1612,7 +1612,9 @@
     }
 
     .container .col-lg-9.col-md-9.col-sm-12.col-12 {
-        padding: 0;
+        padding: 0; 
+        position: absolute; 
+        margin-top: 8px;
     }
 
     .content .items .detail-info .col-12.info {
@@ -1677,8 +1679,26 @@
 
 	.profi-and-funcs {
 		background-color: #fafafa;
+        transition: all 0.8s;
+        opacity: 0;
+        position: sticky;
+        z-index: 3;
 	}
-	
+
+    .profi-and-funcs.hidden {
+        transform: translate(-100%);
+        opacity: 0;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .profi-and-funcs.visible {
+        transform: unset;
+        opacity: 1;
+        height: fit-content;
+        overflow: visible;
+    }
+    
 	.profi-and-funcs .profi .name {
 		font-size: 16px;
         font-weight: 500;
