@@ -276,7 +276,7 @@
                                             Số dư khả dụng
                                         </div>
                                         <div class="inp-value">
-                                            <input type="text" value="24.000 điểm" disabled/>
+                                            <input type="text" value="24.000 điểm" disabled />
                                         </div>
                                     </div>
 
@@ -285,7 +285,7 @@
                                             Số điểm
                                         </div>
                                         <div class="inp-value">
-                                            <input type="text" value="10000" />
+                                            <input id="input-point" type="number" value="10000" max="24000" />
                                         </div>
                                     </div>
 
@@ -299,9 +299,9 @@
                                     </div>
 
                                     <div class="col-12 btn-ctn">
-                                        <div class="btn-general">
+                                        <label for="step-2" class="btn-general">
                                             Tiếp tục
-                                        </div>
+                                        </label>
                                     </div>
                                 </div>
                             </div>
@@ -321,7 +321,10 @@
                                     </div>
 
                                     <div class="col-12 btn-ctn">
-                                        <div class="btn-general">
+                                        <label for="step-1" class="btn-general back">
+                                            Quay lại
+                                        </label>
+                                        <div class="btn-general next">
                                             Tiếp tục
                                         </div>
                                     </div>
@@ -345,7 +348,20 @@
     
     <!--#region Script-->
     <script>
-        
+        $(document).ready(function () {
+            $('#input-point').keyup(function () {
+                console.log("val: " + $('#input-point').val());
+                console.log("max: " + $('#input-point').attr('max'));
+
+                console.log(parseInt($('#input-point').val()));
+                console.log(parseInt($('#input-point').attr('max')));
+
+                if(parseInt($('#input-point').val()) > parseInt($('#input-point').attr('max')))
+                {
+                    $("#input-point").val(parseInt($('#input-point').attr('max')));
+                }
+            });
+        });
     </script>
     <!--#endregion-->
 </body>

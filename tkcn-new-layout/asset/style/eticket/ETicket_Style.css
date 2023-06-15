@@ -1433,7 +1433,7 @@
     align-items: center;
     justify-content: center;
     padding: 12px;
-    width: fit-content;
+    width: 100%;
     color: #fff;
     background-color: #F0821B;
     font-weight: 500;
@@ -1979,6 +1979,19 @@
     opacity: 0.95;
 }
 
+.btn-ctn .btn-general.next {
+    position: absolute;
+    right: 16px;
+}
+
+.btn-ctn .btn-general.back {
+    border: 1px solid #fafafa;
+    background-color: #fafafa;
+    color:#cdcdcd;
+    position: absolute;
+    left: 16px;
+}
+
 .send-point input {
     display: none;
 }
@@ -2079,6 +2092,21 @@
 .send-point > input[id="step-2"]:checked ~ .items .col-12 .reg .step-2 .no {
     background-color: #F0821B !important;
     color: #fff !important;
+}
+
+.send-point > input[id="step-2"]:checked ~ .items .step-2 .inp-form .btn-ctn {
+    margin: 30px 0 20px 0;
+}
+
+.send-point input::-webkit-outer-spin-button,
+.send-point input::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.send-point input[type=number] {
+  -moz-appearance: textfield;
 }
 
 @media(max-width: 768px) {
