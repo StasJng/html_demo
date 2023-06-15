@@ -2007,9 +2007,9 @@
 }
 
 .btn-ctn .btn-general.back {
-    border: 1px solid #fafafa;
-    background-color: #fafafa;
-    color:#cdcdcd;
+    border: 1px solid #eee;
+    background-color: #eee;
+    color:#757575;
     position: absolute;
     left: 16px;
 }
@@ -2161,3 +2161,4 @@
         margin-top: 8px;
     }
 }
+

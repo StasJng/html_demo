@@ -12,7 +12,7 @@
 </head>
 <body>
     <!--#region Header-->
-    <div class="header" id="header" onclick="showNavBar();">
+    <div class="header" id="header">
         <div class="container">
             <div class="row header-content">
                 <div class="col-6">
@@ -50,7 +50,7 @@
                $("#nav-bar").removeClass("hidden"); 
                $("#nav-bar").addClass("visible"); 
                $("#main-content-reg").attr("style", "height: 0; overflow: hidden;");
-               $("#mb-header-title").attr("style", "opacity: 0;");
+               $("#mb-header-title").attr("style", "opacity: 0; pointer-events: none");
             }
             else
             {
@@ -69,7 +69,7 @@
             <div class="row">
                 <!--#region head-title-->
                 <div id="mb-header-title" class="col-12 mb-head-title d-lg-none d-md-none d-sm-flex d-flex">
-                    <img src="asset/images/eticket/icon-left.svg" alt="">
+                    <img src="asset/images/eticket/icon-left.svg" alt="" onclick="showNavBar();">
                     Thông tin cá nhân
                 </div>
                 <!--#endregion-->
@@ -99,7 +99,7 @@
                         Thông tin tài khoản
                     </div>
                     <div class="row funcs">
-                        <a href="#" class="col-12 detail">
+                        <a href="#" class="col-12 detail" onclick="showNavBar();">
                             <img src="asset/images/eticket/funcs-icon/funcs-icon-1-user.svg" alt="" >
                             Người dùng
                             <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
