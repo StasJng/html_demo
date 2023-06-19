@@ -350,14 +350,15 @@
     <script>
         $(document).ready(function () {
             $('#input-point').keyup(function () {
-                console.log("val: " + $('#input-point').val());
-                console.log("max: " + $('#input-point').attr('max'));
+                // console.log("val: " + $('#input-point').val());
+                // console.log("max: " + $('#input-point').attr('max'));
 
-                console.log(parseInt($('#input-point').val()));
-                console.log(parseInt($('#input-point').attr('max')));
+                // console.log(parseInt($('#input-point').val()));
+                // console.log(parseInt($('#input-point').attr('max')));
 
                 if(parseInt($('#input-point').val()) > parseInt($('#input-point').attr('max')))
                 {
+                    alert("Số điểm đã nhập vượt quá số điểm đang có!");
                     $("#input-point").val(parseInt($('#input-point').attr('max')));
                 }
             });

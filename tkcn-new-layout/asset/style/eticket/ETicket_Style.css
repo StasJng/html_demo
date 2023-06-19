@@ -1080,6 +1080,7 @@
     line-height: 18px;
     color: #757575;
     margin-right: 10px;
+    margin-top: 0;
 }
 
 .inp-form .btn-link-ctn .title.stop-link {
@@ -1087,6 +1088,7 @@
     font-size: 14px;
     line-height: 20px;
     color: #1E83F6;
+    cursor: pointer;
 }
 
 .inp-form .btn-link-ctn .btn-link-gg, .inp-form .btn-link-ctn .btn-link-fb, .inp-form .btn-ctn .btn-update {
@@ -1099,6 +1101,7 @@
     color: #fff;
     border-radius: 8px;
     cursor: pointer;
+    border: none;
 }
 
 .inp-form .btn-link-ctn .btn-link-gg {
@@ -1111,6 +1114,11 @@
 
 .inp-form .btn-ctn .btn-update {
     background-color: #F0821B;
+}
+
+.inp-form .btn-ctn .btn-update:hover, .inp-form .btn-ctn .btn-update:focus {
+    outline: none;
+    border: none;
 }
 
 .inp-form .btn-link-ctn .btn-link-gg img, .inp-form .btn-link-ctn .btn-link-fb img {
@@ -2141,7 +2149,6 @@
         width: 24px;
         height: 24px;
         padding: 2px;
-        margin-bottom: 5px;
     }
 
     .send-point-step.ctn, .send-point-step label {
@@ -2153,12 +2160,89 @@
         display: block;
     }
 
-    .send-point-step .no {
-        margin-bottom: 8px;
-    }
-
     .send-point-step .txt {
         margin-top: 8px;
     }
 }
 
+/* Checkbox */
+.dealtoday-checkbox {
+    display: block;
+}
+
+.dealtoday-checkbox input {
+	display: none;
+}
+
+.dealtoday-checkbox-chil {
+    opacity: 0;
+    display: block !important;
+    position: relative;
+    width: 100%;
+    min-height: 30px;
+    cursor: pointer;
+    margin: 2px 0 -32px 26px;
+}
+
+.dealtoday-checkbox label {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.dealtoday-checkbox label:before {
+	content: '';
+	-webkit-appearance: none;
+	background-color: #ffffff;
+	border: 2px solid #cdcdcd;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+	padding: 8px;
+	display: inline-block;
+	position: relative;
+	border-radius: 5px;
+	border-width: 2px;
+	vertical-align: middle;
+	cursor: pointer;
+	margin: -3px 0 0 0;
+}
+
+.dealtoday-checkbox.round label:before {
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+.dealtoday-checkbox.round input:checked + label:after {
+    top: 4px;
+    left: 6px;
+}
+
+.dealtoday-checkbox input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 7px;
+    width: 7px;
+    height: 12px;
+    border: solid #ffffff;
+    border-width: 0 3px 3px 0;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    background: #F0821B;
+}
+
+.dealtoday-checkbox input:checked + label:before {
+    border-color: transparent;
+    background-color: #F0821B;
+}
+
+.dealtoday-checkbox.minus input:checked + label:after {
+    top: 3px;
+    border: solid #ffffff;
+    border-width: 0 3px 0px 0;
+    transform: rotate(90deg);
+}

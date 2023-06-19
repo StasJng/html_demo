@@ -260,6 +260,32 @@
 
                                     <div class="col-12">
                                         <div class="inp-title">
+                                            Giới tính
+                                        </div>
+                                        <div class="row inp-value">
+                                            <div class="col-4">
+                                                <div class="dealtoday-checkbox round" style="height: 34px;padding-top: 10px;">
+                                                    <input name="gender" type="radio" value="1" id="rdMale" @Html.Raw(Model.member.sex == 1 ? "checked" : "")>
+                                                    <label for="rdMale">&nbsp;Nam</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="dealtoday-checkbox round" style="height: 34px;padding-top: 10px;">
+                                                    <input name="gender" type="radio" value="1" id="rdFemale" @Html.Raw(Model.member.sex == 0 ? "checked" : "")>
+                                                    <label for="rdFemale">&nbsp;Nữ</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="dealtoday-checkbox round" style="height: 34px;padding-top: 10px;">
+                                                    <input name="gender" type="radio" value="1" id="rdOther" @Html.Raw(Model.member.sex == 2 ? "checked" : "")>
+                                                    <label for="rdOther">&nbsp;Khác</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="inp-title">
                                             Ngày sinh
                                         </div>
                                         <div class="row inp-value">
@@ -286,7 +312,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-12">
                                         <div class="row">
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-12">
@@ -378,7 +404,20 @@
     
     <!--#region Script-->
     <script>
-        
+        $(document).ready(function () {
+            $('#input-point').keyup(function () {
+                console.log("val: " + $('#input-point').val());
+                console.log("max: " + $('#input-point').attr('max'));
+
+                console.log(parseInt($('#input-point').val()));
+                console.log(parseInt($('#input-point').attr('max')));
+
+                if(parseInt($('#input-point').val()) > parseInt($('#input-point').attr('max')))
+                {
+                    $("#input-point").val(parseInt($('#input-point').attr('max')));
+                }
+            });
+        });
     </script>
     <!--#endregion-->
 </body>
