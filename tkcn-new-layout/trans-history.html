@@ -227,18 +227,18 @@
                             </div>
                             <!--#endregion-->
     
-                            <!--#region Panel selector-->
-                            <div class="col-12">
+                            <!--#region Filter-->
+                            <div class="col-12 row">
                                 <div class="col-6">
                                     <div class="input-icon">
                                         <i class="mdi mdi-calendar-blank" style="color: #9b9b9b"></i>
-                                        <input type="text" class="input-control datepicker" placeholder="dd/mm/yyyy" name="from" id="from-date" value="@Html.Raw(!string.IsNullOrEmpty(Request.QueryString["from"]) ? Request.QueryString["from"] : DateTime.Now.AddYears(-1).ToString("dd/MM/yyyy"))"  />
+                                        <input type="text" class="input-control datepicker" placeholder="dd/mm/yyyy" name="from" id="from-date" value=""  />
                                     </div>
                                 </div>
                                 <div class="col-6">
                                     <div class="input-icon">
                                         <i class="mdi mdi-calendar-blank" style="color: #9b9b9b"></i>
-                                        <input type="text" class="input-control datepicker" placeholder="dd/mm/yyyy" name="to" id="to-date" value="@Html.Raw(!string.IsNullOrEmpty(Request.QueryString["to"]) ? Request.QueryString["to"] : DateTime.Now.ToString("dd/MM/yyyy"))" />
+                                        <input type="text" class="input-control datepicker" placeholder="dd/mm/yyyy" name="to" id="to-date" value="" />
                                     </div>
                                 </div>
                             </div>

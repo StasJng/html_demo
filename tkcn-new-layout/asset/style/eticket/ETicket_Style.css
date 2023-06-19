@@ -311,8 +311,11 @@
 }
 
 .profi-and-funcs .profi {
-    margin: 30px;
+    margin: 15px 0;
     padding: 0;
+    background: url(../../images/eticket/icon-right.svg) no-repeat;
+    background-position: 100% 50%;
+    background-size: 18px 18px;
 }
 
 .profi-and-funcs .profi .name {
@@ -342,9 +345,6 @@
 
 .profi-and-funcs .profi .col-12 {
     vertical-align: middle;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
     display: flex;
 }
 
@@ -1450,6 +1450,7 @@
     line-height: 20px;
     border: 1px solid #F0821B;
     border-radius: 8px;
+    height: 38px;
 }
 
 .trans-filter .btn-search:hover {
@@ -2246,3 +2247,51 @@
     border-width: 0 3px 0px 0;
     transform: rotate(90deg);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.profi-and-funcs .langs-rg {
+    display: flex; 
+    align-items: center; 
+    vertical-align: middle; 
+    justify-content: end;
+    align-items: center;
+    width: 65%;
+    color: #888;
+    font-size: 16px;
+} 
+.profi-and-funcs .langs-rg:hover {
+    color: #888;
+} 
+.profi-and-funcs .langs-rg .lang-icon
+{
+    filter: grayscale(1);
+}
+.profi-and-funcs .langs-rg .lang-icon.selected
+{
+    filter: grayscale(0);
+}
+.profi-and-funcs .langs-rg .lang-icon img 
+{
+    width:23px; 
+    height: 16px;
+}                                

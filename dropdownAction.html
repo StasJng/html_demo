@@ -8,19 +8,61 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="dropDown-wrapper-ActionButton">
-        <input type="checkbox" id="dropDown-toggle">
-        <label for="dropDown-toggle" class="dropDown-toggle-label-ActionButton"><div class="iconActionButton"></div></label>
-        <div class="dropDown-ActionButton">
-          <input id="1" name="options" onclick="actionButton_onclick(this.id);">
-          <label for="option-1">✓ Đánh dấu là đã đọc tất cả</label>
-          <input id="2" name="options" onclick="actionButton_onclick(this.id);">
-          <label for="option-2">&#x27A5; Mở thông báo</label>
+    <div class="drop-rg">
+        <input id="1" type="radio" name="options" onchange="triggerDropdown();">
+        <input id="2" type="radio" name="options" onchange="triggerDropdown();">
+        <input id="3" type="radio" name="options" onchange="triggerDropdown();">
+        <input id="4" type="radio" name="options" onchange="triggerDropdown();">
+        <input id="5" type="radio" name="options" onchange="triggerDropdown();">
+
+        <div class="dropDown-wrapper-ActionButton">
+            <input type="checkbox" id="dropDown-toggle">
+
+            <label for="dropDown-toggle" class="dropDown-toggle-label-ActionButton">
+                <div class="iconActionButton"></div>
+            </label>
+
+            <div class="dropDown-ActionButton">
+                <label for="1">
+                    <div class="dropdown-label-left-bx active">✓</div> 
+                    Mua hàng
+                </label>
+                <label for="2">
+                    <div class="dropdown-label-left-bx"></div>
+                    Đổi điểm
+                </label>
+                <label for="3">
+                    <div class="dropdown-label-left-bx"></div>
+                    Hoàn trả
+                </label>
+                <label for="4">
+                    <div class="dropdown-label-left-bx"></div>
+                    Mua và nạp thẻ điện thoại
+                </label>
+                <label for="5">
+                    <div class="dropdown-label-left-bx"></div>
+                    Sử dụng Deal/EGift/ETicket
+                </label>
+            </div>
         </div>
     </div>
 </body>
 <style>
-    .dropDown-wrapper-ActionButton{
+    .dropdown-label-left-bx {
+        width: 25px;
+        height: 100%;
+        text-align: center;
+        margin-right: 8px;
+    }
+    .dropdown-label-left-bx.active {
+        color:#F0821B;
+        font-weight:bold;
+        font-size:16px;
+    }
+    .drop-rg input {
+        display: none;
+    }
+    .dropDown-wrapper-ActionButton {
         position: relative;
         float: right;
         width: 48px;
@@ -50,13 +92,15 @@
         padding: 0 0 0 0;
         box-shadow: 0 0 20px rgba(0,0,0,.1);
         border-radius: 8px 8px 8px 8px;
-        min-width: 200px;
+        min-width: 250px;
         display: none;
         z-index:5;
     }
     /* the drop-down options style*/
     .dropDown-ActionButton label {
-        display: block;
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
         padding: 12px 12px;
         border-left: 0 solid transparent;
         font-family: Arial;
@@ -69,8 +113,14 @@
                 background-color .3s ease;
     }
     /* option item on hover */
-    .dropDown-ActionButton label:hover{
-        background-color: #cdcdcd;
+    .dropDown-ActionButton label:hover {
+        background-color: #eaeaea;
+    }
+    .dropDown-ActionButton label:first-child:hover {
+        border-radius: 8px 8px 0 0;
+    }
+    .dropDown-ActionButton label:last-child:hover{
+        border-radius: 0 0 8px 8px;
     }
     /* this shows that the list item was selected */
     .dropDown-ActionButton input:checked + label{
@@ -112,13 +162,8 @@
     }
 </style>
 <script>
-    function actionButton_onclick(id){
-        document.getElementById(id).value = "checked";
-        var input = document.getElementsByTagName("input");
-        for (var x = 0; x < options.length; x++)
-        if (input[x].value == "checked") {
-            input[x].checked = true;
-        }
+     function triggerDropdown() {
+        document.getElementById('dropDown-toggle').click();
     }
 </script>
 </html>
