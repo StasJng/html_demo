@@ -2377,10 +2377,6 @@
     padding: 0;
 }
 
-.bg-fa {
-    background-color: #FAFAFA;
-}
-
 .color-org {
     color: #F0821B;
 } 
@@ -2404,11 +2400,14 @@
     flex: unset;
     border-radius: 12px;
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    border: 1px solid #eee;
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35); */
 }
 
-.detail-ticket-rg .top-rg {
-
+.ticket-inf-borderline {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    border-top: 1px solid #eee;
 }
 
 .detail-ticket-rg .deal-title {
@@ -2421,7 +2420,6 @@
                   
 .detail-ticket-rg .deal-prop {
     color: #9E9E9E;
-    border-top: 1px solid #eee;
     padding: 10px 16px;
 }
 
@@ -2432,31 +2430,72 @@
     line-height: 18px;
 }
 
-.detail-ticket-rg .prop-name {
-    
-}                                             
-
-.detail-ticket-rg > .row:first-child:before {
-    left: 0;
-    margin-left: -10px;
+/* Ticket tear effect */
+.ticket-edge-ctn {
+    height: 33px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
 }
 
-.detail-ticket-rg > .row:first-child:after {
-    right: 0;
-    margin-right: -10px;
+.ticket-edge-ctn .borderline {
+    width: 100%;
+    border-top: 2px dashed #eee;
+    margin-top: -3px;
 }
 
-.detail-ticket-rg > .row:first-child:before, #ticket > .row:first-child:after {
-    background-color: #28334A;
-    position: absolute;
-    content: '';
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    bottom: 0;
-    margin-bottom: -10px;
+.detail-ticket-rg .right,
+.detail-ticket-rg .left {
+  background: #fff;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee; 
+  height: 30px;
+  width: 15px;
+  position: absolute;
+  top: 0;
 }
+
+.detail-ticket-rg .right {
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  border-right: 1px solid #eee; 
+  left: -1px;
+}
+
+.detail-ticket-rg .left {
+  border-bottom-left-radius: 30px;
+  border-top-left-radius: 30px;
+  border-left: 1px solid #eee; 
+  margin-right: -1px;
+  right: 0;
+}
+
+@media(max-width: 768px) {
+    .bg-fa-mb {
+        background-color: #FAFAFA;
+    }
+    .detail-ticket-rg .right,
+    .detail-ticket-rg .left {
+        background: #fafafa;
+    }
+}
+
+@media(min-width: 768px) {
+    .btn-general.ticket-search {
+        width: calc(100% - 32px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2487,3 +2526,12 @@
     width:23px; 
     height: 16px;
 }                                
+
+
+
+
+
+
+
+
+
