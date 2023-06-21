@@ -2248,23 +2248,215 @@
     transform: rotate(90deg);
 }
 
+/* Custom Datetime picker */
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:before,
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:after {
+/*    display: none;*/
+}
+
+.bootstrap-datetimepicker-widget {
+    border-radius: 12px;
+    padding: 12px !important;
+    position: absolute;
+    top: 0;
+}
+
+.bootstrap-datetimepicker-widget th {
+    font-size: 14px !important;
+}
+
+.bootstrap-datetimepicker-widget th, .bootstrap-datetimepicker-widget tr, .bootstrap-datetimepicker-widget td {
+    line-height: 23px !important;
+    font-size: 12px;
+}
+
+.bootstrap-datetimepicker-widget td.active, .bootstrap-datetimepicker-widget td.active:hover {
+    background-color: #F0821B !important;
+    text-shadow: none !important;
+}
+
+.bootstrap-datetimepicker-widget td.active.today:before {
+    border-bottom-color: #fff !important;
+}
+
+.bootstrap-datetimepicker-widget td.today:before {
+    border-bottom: 7px solid #F0821B !important;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    border-radius: 12px;
+}
+
+.datepicker .table-condensed .prev {
+    background: url(../../images/eticket/icon-left.svg) no-repeat !important;
+    background-size: 14px 14px !important;
+    background-position: 50% 30% !important;
+}
+
+.datepicker .table-condensed .next {
+    background: url(../../images/eticket/icon-left.svg) no-repeat !important;
+    background-size: 14px 14px !important;
+    background-position: 0% 50% !important;
+    rotate: 180deg;
+}
+
+/* Popup */
+#warning {
+    display: none;
+}
+
+.warning-container {
+    position: fixed;
+    background: rgba(100, 100, 100, 0.6);
+    display: none;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.warning-wrapper {
+    position: fixed;
+    overflow: auto;
+    overflow-x: hidden;
+    width: fit-content;
+    left: 50%;
+    top: 25%;
+    background: #FFFFFF;
+    transform: translate(-50%, 0);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px, rgba(0, 0, 0, 0.05) 0px 4px 4px, rgba(0, 0, 0, 0.05) 0px 8px 8px, rgba(0, 0, 0, 0.05) 0px 16px 16px;
+}
+
+@media(max-width: 768px) {
+    .warning-wrapper {
+        width: calc(100% - 32px);
+        top: 18%;
+    }
+}
+
+
+/* Search box */
+.etk-srch-box-container {
+    background-color: #fff;
+    padding-right: 0;
+}
+
+.etk-srch-box-container .srch-box {
+    width: 100%;
+    height: 63px;
+}
+
+.etk-srch-box-container .srch-box .container {
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    padding: 0;
+}
+
+.etk-srch-box-container #etk-lst-search-input {
+    background: url(../../images/eticket/icon-search.svg) no-repeat 10px 50% #fcfcfc;
+    border: 0 none;
+    color: #000;
+    width: 100%;
+    padding: 10px 0px 10px 38px;
+    border-radius: 10px;
+    font-size: 13px;
+    background-color: #eee;
+}
 
 
 
 
 
+.space-0 {
+    margin: 0;
+    padding: 0;
+}
 
+.bg-fa {
+    background-color: #FAFAFA;
+}
 
+.color-org {
+    color: #F0821B;
+} 
 
+.color-000 {
+    color: #000 !important;
+} 
 
+.f-w-500 {
+    font-weight: 500 !important;
+}
 
+.txt-end {
+    text-align: end;
+    float: right;
+}
 
+.detail-ticket-rg.col-12 {
+    width: calc(100% - 32px) !important;
+    margin: 16px;
+    flex: unset;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
 
+.detail-ticket-rg .top-rg {
 
+}
 
+.detail-ticket-rg .deal-title {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    color: #000;
+    padding: 12px 16px;
+}
+                  
+.detail-ticket-rg .deal-prop {
+    color: #9E9E9E;
+    border-top: 1px solid #eee;
+    padding: 10px 16px;
+}
 
+.detail-ticket-rg .deal-prop div {
+    display: inline;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+}
 
+.detail-ticket-rg .prop-name {
+    
+}                                             
 
+.detail-ticket-rg > .row:first-child:before {
+    left: 0;
+    margin-left: -10px;
+}
+
+.detail-ticket-rg > .row:first-child:after {
+    right: 0;
+    margin-right: -10px;
+}
+
+.detail-ticket-rg > .row:first-child:before, #ticket > .row:first-child:after {
+    background-color: #28334A;
+    position: absolute;
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    bottom: 0;
+    margin-bottom: -10px;
+}
 
 
 

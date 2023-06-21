@@ -233,7 +233,7 @@
                                     <div class="row"> 
                                         <span>VCB&nbsp;</span>
                                         <span>&nbsp;970436xxxxxxxxx6012&nbsp;</span>
-                                        <span class="cancel">&nbsp;Hủy</span>
+                                        <span class="cancel" onclick="openMenuPopup('#warning')">&nbsp;Hủy</span>
                                     </div>
                                 </div>
 
@@ -241,7 +241,7 @@
                                     <div class="row"> 
                                         <span>VCB&nbsp;</span>
                                         <span>&nbsp;970436xxxxxxxxx6012&nbsp;</span>
-                                        <span class="cancel">&nbsp;Hủy</span>
+                                        <span class="cancel" onclick="openMenuPopup('#warning')">&nbsp;Hủy</span>
                                     </div>
                                 </div>
 
@@ -249,7 +249,7 @@
                                     <div class="row"> 
                                         <span>VCB&nbsp;</span>
                                         <span>&nbsp;970436xxxxxxxxx6012&nbsp;</span>
-                                        <span class="cancel">&nbsp;Hủy</span>
+                                        <span class="cancel" onclick="openMenuPopup('#warning')">&nbsp;Hủy</span>
                                     </div>
                                 </div>
 
@@ -257,7 +257,7 @@
                                     <div class="row"> 
                                         <span>VCB&nbsp;</span>
                                         <span>&nbsp;970436xxxxxxxxx6012&nbsp;</span>
-                                        <span class="cancel">&nbsp;Hủy</span>
+                                        <span class="cancel" onclick="openMenuPopup('#warning')">&nbsp;Hủy</span>
                                     </div>
                                 </div>
 
@@ -265,7 +265,7 @@
                                     <div class="row"> 
                                         <span>VCB&nbsp;</span>
                                         <span>&nbsp;970436xxxxxxxxx6012&nbsp;</span>
-                                        <span class="cancel">&nbsp;Hủy</span>
+                                        <span class="cancel" onclick="openMenuPopup('#warning')">&nbsp;Hủy</span>
                                     </div>
                                 </div>
 
@@ -273,11 +273,65 @@
                                     <div class="row"> 
                                         <span>VCB&nbsp;</span>
                                         <span>&nbsp;970436xxxxxxxxx6012&nbsp;</span>
-                                        <span class="cancel">&nbsp;Hủy</span>
+                                        <span class="cancel" onclick="openMenuPopup('#warning')">&nbsp;Hủy</span>
                                     </div>
                                 </div>
                             </div>
                             <!--#endregion-->
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion-->
+
+                <!--#region Popup-->
+                <div class="wrapper">
+                    <div class="warning-container" id="warning" onclick="if(event.target == this){closePopup('#warning');}" aria-hidden="true">
+                        <div class="warning-wrapper">
+                            <div class="row">
+                                <!--#region Items-->
+                                <div class="col-12">
+                                    <div class="container order-result">
+                                        <div class="row success">
+                                            <div class="col-12"></div>
+                                            <div class="col-12 message">
+                                                <img src="asset/images/eticket/order-success.svg" alt="" />
+                                                <h2>Hủy thành công</h2>
+                                            </div>
+                                            <div class="col-12 btn-ctn">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                                        <div class="btn-continue-shopping" onclick="closePopup('#warning');">
+                                                            <div>
+                                                                Đồng ý
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--#endregion-->
+
+                                <!--#region Items-->
+                                <div class="col-12" style="display: none;">
+                                    <div class="container order-result">
+                                        <div class="row failed">
+                                            <div class="col-12"></div>
+                                            <div class="col-12 message">
+                                                <img src="asset/images/eticket/order-failed.svg" alt="" />
+                                                <h2>Có lỗi xảy ra!</h2>
+                                            </div>
+                                            <div class="col-12 btn-ctn">
+                                                <a class="btn-retry" onclick="closePopup('#warning');" href="#">
+                                                    Thử lại
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--#endregion-->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -292,10 +346,17 @@
         
     </div>
     <!--#endregion-->
-    
+
     <!--#region Script-->
     <script>
-        
+        function openMenuPopup(popup) {
+            /*$("#loading").show();*/
+            $(popup).show().attr("aria-hidden", "false");
+            /*$("#loading").hide();*/
+        }
+        function closePopup(popup) {
+            $(popup).hide().attr("aria-hidden", "true");
+        }
     </script>
     <!--#endregion-->
 </body>
