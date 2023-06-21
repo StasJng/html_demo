@@ -1960,6 +1960,11 @@
 }
 
 @media (max-width: 768px) {
+    .profi-and-funcs .profi {
+        background: none;
+        background-color: #fff;
+    }
+
     .order-result.margin {
         height: 12px;
     }
