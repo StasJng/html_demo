@@ -2305,6 +2305,7 @@
     rotate: 180deg;
 }
 
+
 /* Popup */
 #warning {
     display: none;
@@ -2374,9 +2375,7 @@
 }
 
 
-
-
-
+/* Search Code */
 .space-0 {
     margin: 0;
     padding: 0;
@@ -2492,6 +2491,14 @@
     }
 }
 
+/* Report */
+.trans-filter .inp-form .inp-value.gift select {
+    background: url(../../images/eticket/icon-gift.svg) no-repeat 0% 50%;
+}
+
+.trans-filter .inp-form .inp-value.voucher select {
+    background: url(../../images/eticket/icon-voucher.svg) no-repeat 0% 50%;
+}
 
 
 
@@ -2500,11 +2507,7 @@
 
 
 
-
-
-
-
-
+/* Lang Icon */
 .profi-and-funcs .langs-rg {
     display: flex; 
     align-items: center; 
@@ -2540,3 +2543,47 @@
 
 
 
+
+
+
+/* Point History*/
+.content .items .notify .content-val .noti-content.point {
+    padding: 0;
+    width: 100%;
+    font-weight: 500;
+    display: block;
+    font-size: 16px;
+    padding-top: 3px;
+}
+
+.content .items .notify .content-val .noti-content.point .gain {
+    float: right;
+    font-weight: 500;
+    color: #F0821B;
+    font-size: 18px;
+}
+
+.content .items .notify .content-val .noti-content.point .lose {
+    float: right;
+    font-weight: 500;
+    color: #FF3F3F;
+    font-size: 18px;
+}
+
+.content .items .notify .content-val .point.icon {
+    padding: 0 6px 0 0;
+}
+
+@media(max-width: 768px) {
+    .content .items .notify .content-val .noti-content.point {
+        font-size: 14px;
+    }
+
+    .content .items .notify .content-val .noti-content.point .gain {
+        font-size: 16px;
+    }
+
+    .content .items .notify .content-val .noti-content.point .lose {
+        font-size: 16px;
+    }
+}
