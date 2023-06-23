@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <link href="https://id.dealtoday.vn/assetQR/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-itunes-app" content="app-id=1063926571, affiliate-data=myAffiliateData /">
+    <meta name="google-play-app" content="app-id=vn.dealtoday.android">
+    <link rel="stylesheet" href="./assets/style/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <script src="./assets/js/jquery-2.1.4.min.js.download"></script>
+</head>
+<body>
+<div class="wrapper">
+    <a onclick="openPopup('#myPopup')">
+        <span>Nhiều địa điểm</span>
+    </a>
+    <div class="popup-container" id="myPopup" onclick="if(event.target == this){closePopup('#myPopup');}" aria-hidden="true">
+        <div class="popup-wrapper">
+            <div class="popup-title">
+                <h3>Thương hiệu và điểm chấp nhận</h3>
+                <a onclick="closePopup('#myPopup');"><img src="./assets/img/close-icon.png" height="15" alt="close"></a>
+            </div>
+            <div class="title-border"></div>
+            <div class="box-location-map">
+                <div class="close-accep"></div>
+                <div class="popup-map-content">
+                    <div class="search-accep">
+                        <input type="text" class="txt-search">
+                    </div>
+                    <div id="brand-content-125">
+                        <div id="popupInfo-125">
+                            <!--Item-->
+                            <div class="brand-map-info">
+                                <div class="brand-logo">
+                                    <a>
+                                        <img src="./assets/img/24de63b753254536b35dfd07440f8d9f.jpg" height="auto" alt="brand-logo">
+                                    </a>
+                                </div>
+                                <div class="brand-info">
+                                    <p class="text-accept">Spa Trần </p>
+                                    <p class="text-point"><span><img src="./assets/img/coins-icon.png" height="15" alt="point">&nbsp;Điểm thưởng: 6%</span></p>
+                                        <a class="text-loc" href="">
+                                            <span><img src="./assets/img/pinned-loc-icon.png" height="15" alt="location">&nbsp;Nhiều địa điểm</span>
+                                        </a>
+                                </div>
+                                <div class="item-border"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function openPopup(popup) {
+        $("#loading").show();
+        /* Open popup and make accessible screen readers */
+        $(popup).show().attr("aria-hidden", "false");
+        /* Focus on element to guide screen readers to popup */
+        $("#closePopup").focus();
+        $("#loading").hide();
+    }
+
+    function closePopup(popup) {
+        /* Close popup and hide from screen readers */
+        $(popup).hide().attr("aria-hidden", "true");
+        /* Focus screen readers back to button */
+        $("#openMyPopup").focus();
+    }
+
+    $(document).ready(function () {
+        $(".box-location-map").each(function (i, value) {
+            var input = $(value).find("input[type='text']");
+            $(input).keyup(function () {
+                var filter = $(input).val().toUpperCase();
+                $(value).find(".text-accept").each(function (index, item) {
+                    if ($(item).text().toUpperCase().search(filter) < 0) {
+                        $(this).parents('.brand-map-info').hide();
+                    } else {
+                        $(this).parents('.brand-map-info').show();
+                    }
+                });
+            });
+        });
+    });
+</script>
+</body>
+</html>

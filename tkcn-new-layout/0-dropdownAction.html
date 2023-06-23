@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="">
+    <title>Document</title>
+</head>
+<body>
+    <div class="drop-rg">
+        <input id="1" type="radio" name="options" onchange="triggerDropdown();">
+        <input id="2" type="radio" name="options" onchange="triggerDropdown();">
+        <input id="3" type="radio" name="options" onchange="triggerDropdown();">
+        <input id="4" type="radio" name="options" onchange="triggerDropdown();">
+        <input id="5" type="radio" name="options" onchange="triggerDropdown();">
+
+        <div class="dropDown-wrapper-ActionButton">
+            <input type="checkbox" id="dropDown-toggle">
+
+            <label for="dropDown-toggle" class="dropDown-toggle-label-ActionButton">
+                <div class="iconActionButton"></div>
+            </label>
+
+            <div class="dropDown-ActionButton">
+                <label for="1">
+                    <div class="dropdown-label-left-bx active">✓</div> 
+                    Mua hàng
+                </label>
+                <label for="2">
+                    <div class="dropdown-label-left-bx"></div>
+                    Đổi điểm
+                </label>
+                <label for="3">
+                    <div class="dropdown-label-left-bx"></div>
+                    Hoàn trả
+                </label>
+                <label for="4">
+                    <div class="dropdown-label-left-bx"></div>
+                    Mua và nạp thẻ điện thoại
+                </label>
+                <label for="5">
+                    <div class="dropdown-label-left-bx"></div>
+                    Sử dụng Deal/EGift/ETicket
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    .dropdown-label-left-bx {
+        width: 25px;
+        height: 100%;
+        text-align: center;
+        margin-right: 8px;
+    }
+    .dropdown-label-left-bx.active {
+        color:#F0821B;
+        font-weight:bold;
+        font-size:16px;
+    }
+    .drop-rg input {
+        display: none;
+    }
+    .dropDown-wrapper-ActionButton {
+        position: relative;
+        float: right;
+        width: 48px;
+        background-color: #fff;
+    }
+    .dropDown-wrapper-ActionButton :hover{
+        cursor: pointer;
+    }
+    .dropDown-toggle-label-ActionButton {
+        position: relative;
+        padding: 14px 0px 14px 0px;
+        background-color: #fff;
+        /* force parent to wrap around the label tag */
+        float: left;
+        min-width: 50px;
+    }
+    .dropDown-wrapper-ActionButton input{display: none;}
+    /* this will show dropDown when input is checked */
+    .dropDown-wrapper-ActionButton > input:checked + label + .dropDown-ActionButton{
+        display: inline-block;
+    }
+    /* the drop-down style*/
+    .dropDown-ActionButton{
+        position: absolute;
+        right: 0;
+        top: calc(100% + 10px);
+        padding: 0 0 0 0;
+        box-shadow: 0 0 20px rgba(0,0,0,.1);
+        border-radius: 8px 8px 8px 8px;
+        min-width: 250px;
+        display: none;
+        z-index:5;
+    }
+    /* the drop-down options style*/
+    .dropDown-ActionButton label {
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
+        padding: 12px 12px;
+        border-left: 0 solid transparent;
+        font-family: Arial;
+        font-size: 14px;
+        cursor: pointer;
+        opacity: 0.9;
+        transition:
+                border .3s ease,
+                padding-left .3s ease,
+                background-color .3s ease;
+    }
+    /* option item on hover */
+    .dropDown-ActionButton label:hover {
+        background-color: #eaeaea;
+    }
+    .dropDown-ActionButton label:first-child:hover {
+        border-radius: 8px 8px 0 0;
+    }
+    .dropDown-ActionButton label:last-child:hover{
+        border-radius: 0 0 8px 8px;
+    }
+    /* this shows that the list item was selected */
+    .dropDown-ActionButton input:checked + label{
+        opacity: 1;
+        background-color: rgba(180,180,180,.2);
+    }
+    /*action button icon cútomized*/
+    .iconActionButton {
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+    }
+    .iconActionButton :hover {
+        opacity: 0.75;
+        box-shadow: borderbox;
+    }
+    .iconActionButton:after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        position: absolute;
+        left: 15px;
+        top: 10px;
+        box-shadow: 14px 0px 0px #cdcdcd, -14px 0px 0px #cdcdcd;
+        transition: all 0.4s ease;
+    }
+    .iconActionButton:before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        top: -5px;
+        border-radius: 100%;
+        transform: scale(0.25);
+        background: #cdcdcd;
+        position: absolute;
+    }
+</style>
+<script>
+     function triggerDropdown() {
+        document.getElementById('dropDown-toggle').click();
+    }
+</script>
+</html>

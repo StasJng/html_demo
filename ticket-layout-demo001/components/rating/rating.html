@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @charset "UTF-8";
+    :root {
+    --star-size: 30px;
+    --star-color: #fff;
+    --star-background: #fc0;
+    }
+
+    .Stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: inline-block;
+    font-size: var(--star-size);
+    font-family: Times;
+    line-height: 1;
+    }
+    .Stars::before {
+    content: "★★★★★";
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+
+    body {
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+
+    * {
+    position: relative;
+    box-sizing: border-box;
+    }
+</style>
+<body>
+    <div class="Stars" style="--rating: 2.6;" aria-label="Rating of this product is 2.6 out of 5."></div>
+</body>
+</html>

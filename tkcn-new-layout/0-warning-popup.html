@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="asset/style/eticket/ETicket_Style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,300&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <title>ETicket</title>
+</head>
+<style>
+    body {
+        background: #f2f2f7;
+        position: relative; 
+        min-height: 100%; 
+        top: 0px;
+    }
+
+    /*popup*/
+    #warning {
+        display: none;
+    }
+
+    .warning-container {
+        position: fixed;
+        background: rgba(100, 100, 100, 0.6);
+        display: none;
+        z-index: 999;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+
+    .warning-wrapper {
+        position: fixed;
+        max-height: 100%;
+        overflow: auto;
+        overflow-x: hidden;
+        max-width: 300px;
+        width: 80%;
+        left: 50%;
+        top: 15%;
+        background: #FFFFFF;
+        transform: translate(-50%, 0);
+        padding: 16px 36px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0.25px;
+        text-align: left;
+        background-color: #FFE3E5;
+        color: #E8141F;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px, rgba(0, 0, 0, 0.05) 0px 4px 4px, rgba(0, 0, 0, 0.05) 0px 8px 8px, rgba(0, 0, 0, 0.05) 0px 16px 16px;
+    }
+</style>
+<body>
+<div class="wrapper">
+    <a onclick="openMenuPopup('#warning')">
+        <span>Nhiều địa điểm</span>
+    </a>
+    <div class="warning-container" id="warning" onclick="if(event.target == this){closePopup('#warning');}" aria-hidden="true">
+        <div class="warning-wrapper">
+            <div class="row">
+                Tài khoản vanannguyen@gmail.com đã tồn tại trên hệ thống. Vui lòng đăng nhập để thuận tiện trong quá trình thanh toán
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function openMenuPopup(popup) {
+        /*$("#loading").show();*/
+        $(popup).show().attr("aria-hidden", "false");
+        /*$("#loading").hide();*/
+    }
+    function closePopup(popup) {
+        $(popup).hide().attr("aria-hidden", "true");
+    }
+</script>
+</body>
+</html>
