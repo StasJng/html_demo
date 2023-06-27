@@ -2621,6 +2621,7 @@
     font-size: 14px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px, rgba(0, 0, 0, 0.05) 0px 4px 4px, rgba(0, 0, 0, 0.05) 0px 8px 8px, rgba(0, 0, 0, 0.05) 0px 16px 16px;
     border-radius: 12px;
+    overflow: hidden;
 }
 
 .qr-popup-wrapper .qr-popup-header {
@@ -2631,7 +2632,7 @@
     font-weight: 500;
     color: #000;
     padding: 16px 0;
-    border-bottom: 2px solid #eee;;
+    border-bottom: 2px solid #eee;
 }
 
 .qr-popup-header .qr-image {
@@ -2655,6 +2656,10 @@
 
 .qr-popup-wrapper .qr-lst-code-container {
     margin: 0 auto;
+    padding: 0;
+    max-height: 190px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .qr-popup-wrapper .qr-lst-code-container .qr-code-item {
@@ -2665,42 +2670,36 @@
     color: #000;
     padding-top: 8px;
     padding-bottom: 6px;
-    margin: 5px 8px;
-    flex: none;
-    max-width: unset;
-}
-
-.qr-popup-wrapper .qr-lst-code-container .qr-code-item .col-6 {
-    width: calc(50% - 16px);
+    margin: 5px auto;
 }
 
 .qr-popup-wrapper .qr-lst-code-container .qr-code-item.selected {
-    border-color: orange;
-    color: orange;
+    border-color: #F0821B;
+    color: #F0821B;
 }
 
-.qr-lst-code-container ::-webkit-scrollbar {
+.qr-lst-code-container::-webkit-scrollbar {
     width: 3px;
 }
 
-.qr-lst-code-container ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px #eee; 
+.qr-lst-code-container::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #eee;
     border-radius: 10px;
 }
 
-.qr-lst-code-container ::-webkit-scrollbar-thumb {
-    background: #cdcdcd; 
+.qr-lst-code-container::-webkit-scrollbar-thumb {
+    background: #cdcdcd;
     border-radius: 10px;
 }
 
-.qr-lst-code-container ::-webkit-scrollbar-thumb:hover {
-    background: grey; 
+.qr-lst-code-container::-webkit-scrollbar-thumb:hover {
+    background: grey;
 }
 
 @media(max-width: 768px) {
     .qr-popup-wrapper {
-        width: 100% ;
-        height: 70% ;
+        width: 100%;
+        height: 70%;
         top: unset;
         bottom: 0;
         padding: 0 32px;
@@ -2715,16 +2714,12 @@
     }
 
     .qr-popup-wrapper .qr-image-container img {
-        width: 250px;
-        height: 250px;
+        width: 225px;
+        height: 225px;
     }
 
     .qr-popup-wrapper .qr-popup-header {
         font-size: 15px;
-    }
-
-    .qr-popup-wrapper .qr-lst-code-container .qr-code-item .col-6 {
-        width: 100%;
     }
 
     .qr-popup-wrapper .qr-lst-code-container .qr-code-item input {
