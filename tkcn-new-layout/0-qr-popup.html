@@ -10,84 +10,6 @@
     <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <title>ETicket</title>
 </head>
-<style>
-    body {
-        background: #f2f2f7;
-        position: relative; 
-        min-height: 100%; 
-        top: 0px;
-    }
-
-    /*popup*/
-    #qr-popup {
-        display: none;
-    }
-
-    .qr-popup-container {
-        position: fixed;
-        background: rgba(100, 100, 100, 0.6);
-        display: none;
-        z-index: 999;
-        height: 100%;
-        width: 100%;
-        left: 0;
-        top: 0;
-    }
-
-    .qr-popup-wrapper {
-        position: fixed;
-        overflow: auto;
-        overflow-x: hidden;
-        width: 38%;
-        height: 60%;
-        left: 50%;
-        top: 20%;
-        background: #FFFFFF;
-        transform: translate(-50%, 0);
-        padding: 16px 36px;
-        font-size: 14px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 1px, rgba(0, 0, 0, 0.05) 0px 2px 2px, rgba(0, 0, 0, 0.05) 0px 4px 4px, rgba(0, 0, 0, 0.05) 0px 8px 8px, rgba(0, 0, 0, 0.05) 0px 16px 16px;
-        border-radius: 12px;
-    }
-    
-    .qr-popup-wrapper .qr-popup-header {
-        display: flex;
-        vertical-align: middle;
-        align-items: center;
-        font-size: 15px;
-        font-weight: 500;
-        color: #000;
-        padding: 16px 0;
-        border-bottom: 2px solid #eee;;
-    }
-
-    .qr-popup-wrapper .qr-image-container {
-        display: flex;
-        vertical-align: middle;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-    }
-
-    .qr-popup-wrapper .qr-image-container img {
-        width: 300px;
-        height: 300px;
-    }
-
-    .qr-popup-wrapper .qr-lst-code-container {
-        margin: 0 auto;
-    }
-
-    .qr-popup-wrapper .qr-lst-code-container .qr-code-item {
-        border: 1 px solid #eee;
-        border-radius: 10px;
-    }
-
-    .qr-popup-wrapper .qr-lst-code-container .qr-code-item.selected {
-        border-color: orange;
-        color: orange;
-    }
-</style>
 <body>
     <a onclick="openMenuPopup('#qr-popup')">
         <span>Click here to open popup</span>
@@ -97,40 +19,43 @@
             <div class="row">
                 <div class="col-12 qr-popup-header">
                     Quét mã QR để sử dụng
-                    <img src="asset/images/eticket/icon-up.svg" alt="" class="qr-image"/>
+                    <img src="asset/images/eticket/close-icon.svg" alt="" class="qr-image" onclick="closePopup('#qr-popup');" />
                 </div>
                 <div class="col-12 qr-image-container">
                     <img src="asset/images/eticket/demo-qr-img.png" alt="" class="qr-image"/>
                 </div>
                 <div class="col-12 qr-lst-code-container">
                     <div class="row">
-                        <div class="col-12 qr-code-item">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12 qr-code-item">
                             <input type="checkbox" />
                             Sử dụng tất cả
                         </div>
 
+                        <div class="col-6 d-lg-flex d-md-flex d-sm-none d-none">
+                        </div>
+
                         <!--#region Items-->
-                        <div class="col-6 qr-code-item selected">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12 qr-code-item selected">
                             <input type="checkbox" />
                             210158865325
                         </div>
 
-                        <div class="col-6 qr-code-item">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12 qr-code-item">
                             <input type="checkbox" />
                             210158865325
                         </div>
 
-                        <div class="col-6 qr-code-item">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12 qr-code-item">
                             <input type="checkbox" />
                             210158865325
                         </div>
 
-                        <div class="col-6 qr-code-item">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12 qr-code-item">
                             <input type="checkbox" />
                             210158865325
                         </div>
 
-                        <div class="col-6 qr-code-item">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12 qr-code-item">
                             <input type="checkbox" />
                             210158865325
                         </div>
