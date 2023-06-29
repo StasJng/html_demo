@@ -14,44 +14,41 @@
     <a onclick="openMenuPopup('#qr-popup')">
         <span>Click here to open popup</span>
     </a>
-    <div class="qr-popup-container" id="qr-popup" onclick="if(event.target == this){closePopup('#qr-popup');}" aria-hidden="true">
+    <input type="hidden" id="isEticket" value="@ViewBag.isEticket" />
+
+    <div class="qr-popup-container" id="qr-popup" onclick="if(event.target == this){closePopup();}" aria-hidden="true">
+        <input type="hidden" id="hfQRCode" value="Code-001, Code-002, Code-003, Code-004, Code-005, Code-006, Code-007, Code-008," />
         <div class="qr-popup-wrapper">
             <div class="row">
                 <div class="col-12 qr-popup-header">
                     Quét mã QR để sử dụng
-                    <img src="asset/images/eticket/close-icon.svg" alt="" class="qr-image" onclick="closePopup('#qr-popup');" />
+                    <img src="asset/images/eticket/close-icon.svg" alt="" class="qr-image" onclick="closePopup();" />
                 </div>
                 <div class="col-12 qr-image-container">
-                    <img src="asset/images/eticket/demo-qr-img.png" alt="" class="qr-image"/>
+                    <img id="qr-img" src="asset/images/eticket/demo-qr-img.png" alt="" class="qr-image" />
                 </div>
-                <div class="col-12" style="border: 1px dashed #000000d1; margin-bottom: 15px;"></div>
-                <div class="col-12 qr-lst-code-container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <div class="btn-ctn qr" style="margin: -16px 32px 16px 0; justify-content: start ">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="row">
                             <div class="col-12 qr-code-item selected">
                                 <div class="dealtoday-checkbox">
                                     <input name="selectAll" type="checkbox" id="selectAll" class="check-all-value" checked />
-                                    <label for="selectAll">&nbsp;&nbsp;&nbsp;Sử dụng tất cả</label>
+                                    <label for="selectAll" style="color: #000 !important">&nbsp;&nbsp;&nbsp;Sử dụng tất cả</label>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 d-lg-flex d-md-flex d-sm-none d-none"></div>
-
-                        <!--#region Items-->
+                    </div>
+                </div>
+                <div class="col-12" style="border: 1px dashed #000000d1; margin-bottom: 15px;"></div>
+                <div class="col-12 qr-lst-code-container">
+                    <div class="row list-code">
+                        <input type="hidden" id="pos-code-detector" />
+                        <!--#region Code List-->
                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="col-12 qr-code-item selected">
                                 <div class="dealtoday-checkbox">
-                                    <input name="code" type="checkbox" id="@item.code" class="cb-code" data-code="@item.code" checked />
-                                    <label for="@item.code">&nbsp;&nbsp;&nbsp;210158865325</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
-                            <div class="col-12 qr-code-item selected">
-                                <div class="dealtoday-checkbox">
-                                    <input name="code" type="checkbox" id="@item.code" class="cb-code" data-code="@item.code" checked />
-                                    <label for="@item.code">&nbsp;&nbsp;&nbsp;210158865325</label>
+                                    <input name="code" type="checkbox" id="Code-001" class="cb-code" data-code="Code-001" checked />
+                                    <label for="Code-001">&nbsp;&nbsp;&nbsp;Code-001</label>
                                 </div>
                             </div>
                         </div>
@@ -59,8 +56,8 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="col-12 qr-code-item selected">
                                 <div class="dealtoday-checkbox">
-                                    <input name="code" type="checkbox" id="@item.code" class="cb-code" data-code="@item.code" checked />
-                                    <label for="@item.code">&nbsp;&nbsp;&nbsp;210158865325</label>
+                                    <input name="code" type="checkbox" id="Code-002" class="cb-code" data-code="Code-002" checked />
+                                    <label for="Code-002">&nbsp;&nbsp;&nbsp;Code-002</label>
                                 </div>
                             </div>
                         </div>
@@ -68,8 +65,8 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="col-12 qr-code-item selected">
                                 <div class="dealtoday-checkbox">
-                                    <input name="code" type="checkbox" id="@item.code" class="cb-code" data-code="@item.code" checked />
-                                    <label for="@item.code">&nbsp;&nbsp;&nbsp;210158865325</label>
+                                    <input name="code" type="checkbox" id="Code-003" class="cb-code" data-code="Code-003" checked />
+                                    <label for="Code-003">&nbsp;&nbsp;&nbsp;Code-003</label>
                                 </div>
                             </div>
                         </div>
@@ -77,8 +74,44 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="col-12 qr-code-item selected">
                                 <div class="dealtoday-checkbox">
-                                    <input name="code" type="checkbox" id="@item.code" class="cb-code" data-code="@item.code" checked />
-                                    <label for="@item.code">&nbsp;&nbsp;&nbsp;210158865325</label>
+                                    <input name="code" type="checkbox" id="Code-004" class="cb-code" data-code="Code-004" checked />
+                                    <label for="Code-004">&nbsp;&nbsp;&nbsp;Code-004</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-12 qr-code-item selected">
+                                <div class="dealtoday-checkbox">
+                                    <input name="code" type="checkbox" id="Code-005" class="cb-code" data-code="Code-005" checked />
+                                    <label for="Code-005">&nbsp;&nbsp;&nbsp;Code-005</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-12 qr-code-item selected">
+                                <div class="dealtoday-checkbox">
+                                    <input name="code" type="checkbox" id="Code-006" class="cb-code" data-code="Code-006" checked />
+                                    <label for="Code-006">&nbsp;&nbsp;&nbsp;Code-006</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-12 qr-code-item selected">
+                                <div class="dealtoday-checkbox">
+                                    <input name="code" type="checkbox" id="Code-007" class="cb-code" data-code="Code-007" checked />
+                                    <label for="Code-007">&nbsp;&nbsp;&nbsp;Code-007</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-12 qr-code-item selected">
+                                <div class="dealtoday-checkbox">
+                                    <input name="code" type="checkbox" id="Code-008" class="cb-code" data-code="Code-008" checked />
+                                    <label for="Code-008">&nbsp;&nbsp;&nbsp;Code-008</label>
                                 </div>
                             </div>
                         </div>
@@ -88,15 +121,151 @@
             </div>
         </div>
     </div>
-<script>
-    function openMenuPopup(popup) {
+    <script>
+        //Select all
+        $('.check-all-value').change(function () {
+            if (this.checked) {
+                //Select all checkbox
+                $("#pos-code-detector").parents('.list-code').find('.col-md-6 .qr-code-item').addClass("selected");
+                $("#selectAll").parents('.btn-ctn').find('.col-md-6 .qr-code-item').addClass("selected");
+                $("#pos-code-detector").parents('.list-code').find('.col-md-6 input[type=checkbox]').prop("checked", true);
+
+                //Build list code
+                var code = "";
+                $('.list-code input[name=code]:checked').each(function () {
+                    code = code + $(this).attr('data-code') + ",";
+                });
+
+                //Set QR value
+                $('#hfQRCode').val(code);
+            }
+            else {
+                //Uncheck all checkbox
+                $("#pos-code-detector").parents('.list-code').find('.col-md-6 .qr-code-item').removeClass("selected");
+                $("#pos-code-detector").parents('.list-code').find('.col-md-6 input[type=checkbox]').prop("checked", false);
+                $("#pos-code-detector").parents('.list-code').find('.col-md-6 input[type=checkbox]').removeAttr("checked");
+                $("#selectAll").parents('.btn-ctn').find('.col-md-6 .qr-code-item').removeClass("selected");
+
+                //Reset QR value
+                $('#hfQRCode').val("");
+            }
+            GenerateQRCode($('#hfQRCode').val());
+        });
+
+        //Select a checkbox
+        $('.cb-code').change(function () {
+            //Get current QR value
+            var qrText = $('#hfQRCode').val();
+            //Get checkbox's QR value
+            var code = $(this).attr('data-code');
+
+            if (this.checked) {
+                if (qrText == null || qrText == 'undefined' || qrText == "") { //If current QR is null or empty/whitespace
+                    //Set QR value
+                    $('#hfQRCode').val(code);
+
+                    //Get QR text for generate
+                    qrText = $('#hfQRCode').val();
+                }
+                else {
+                    //Add QR to current value
+                    if (qrText.slice(-1) == ",") {
+                        qrText = qrText.substring(0, qrText.length - 1);
+                    }
+                    $('#hfQRCode').val(qrText + "," + code);
+
+                    //Get QR text for generate
+                    qrText = $('#hfQRCode').val();
+                }
+
+                var numItems = $('.qr-code-item').length - 1;
+                var numSelItems = $('.col-md-6 input[type=checkbox]:checked').length;
+
+                $(this).parents('.qr-code-item').addClass("selected");
+
+                if (numSelItems == numItems) {
+                    $('#hfQRCode').val(code);
+                    $('.check-all-value').prop("checked", true);
+                    $("#selectAll").parents('.btn-ctn').find('.col-md-6 .qr-code-item').addClass("selected");
+
+                    $(this).parents('.list-code').find('.col-md-6 .qr-code-item').addClass("selected");
+                    $(this).parents('.list-code').find('.col-md-6 input[type=checkbox]').prop("checked", true);
+                }
+            }
+            else {
+                //Get QR array list
+                var splQrText = qrText.split(',');
+                //Count item number
+                var splQrTextLength = splQrText.length;
+
+                if (code == splQrText[splQrTextLength - 1]) { //Check if is first item
+                    //Remove from list
+                    qrText = qrText.replace(code, "");
+                    $('#hfQRCode').val(qrText);
+                }
+                else {
+                    //Remove from list
+                    qrText = qrText.replace(code + ",", "");
+                    $('#hfQRCode').val(qrText);
+                }
+
+                $('.check-all-value').prop("checked", false);
+
+                $(this).parents('.qr-code-item').removeClass("selected");
+
+                //Remove "selected" class
+                $('.check-all-value').parents(".qr-code-item").removeClass("selected");
+                $(this).parents(".qr-code-item").removeClass("selected");
+            }
+            GenerateQRCode(qrText);
+        });
+
+        // function GenerateQRCode(qrText) {
+        //     $("#loading").show();
+        //     if ($('#isEticket').val() > 0) {
+        //         $.ajax({
+        //             type: "post",
+        //             url: "/v2/Deal/GenerateTicketQRCodeJson",
+        //             data: {
+        //                 qrText: qrText,
+        //             },
+        //             success: function (data) {
+        //                 $("#loading").hide();
+        //                 $("#qr-img").attr("src", data.data);
+        //             },
+        //             error: function () {
+        //                 $("#loading").hide();
+        //                 alert("Có lỗi hệ thống,bạn hãy liên hệ theo số 1900 2065 để được hỗ trợ");
+        //             }
+        //         });
+        //     }
+        //     else {
+        //         $.ajax({
+        //             type: "post",
+        //             url: "/v2/Deal/GenerateQRCodeJson",
+        //             data: {
+        //                 qrText: qrText,
+        //             },
+        //             success: function (data) {
+        //                 $("#loading").hide();
+        //                 $("#qr-img").attr("src", data.data);
+        //             },
+        //             error: function () {
+        //                 $("#loading").hide();
+        //                 alert("Có lỗi hệ thống,bạn hãy liên hệ theo số 1900 2065 để được hỗ trợ");
+        //             }
+        //         });
+        //     }
+        // }
+
+        function openMenuPopup(popup) {
         /*$("#loading").show();*/
         $(popup).show().attr("aria-hidden", "false");
         /*$("#loading").hide();*/
     }
-    function closePopup(popup) {
-        $(popup).hide().attr("aria-hidden", "true");
+    function closePopup() {
+        $('#qr-popup').hide().attr("aria-hidden", "true");
     }
-</script>
+    </script>
 </body>
 </html>
