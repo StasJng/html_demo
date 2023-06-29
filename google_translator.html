@@ -171,8 +171,9 @@ body {
             // $('.goog-te-menu-frame:first').contents().find('a span.text').get(1).click();
 
             $('.goog-te-combo option[value=en]').each(function () {
-                console.log($(this).parents('.container').find('.goog-te-combo option[value=en]').html);
+                //console.log($(this).parents('.container').find('.goog-te-combo option[value=en]').html);
                 //$(this).parents('.container').find('.goog-te-combo option[value=en]').get(1).click();
+                $('.goog-te-combo').val('en').get(1).click;
                 $('.goog-te-combo').val('en');
                 $('.goog-te-combo').change();
             });

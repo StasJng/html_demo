@@ -115,6 +115,42 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-12 qr-code-item selected">
+                                <div class="dealtoday-checkbox">
+                                    <input name="code" type="checkbox" id="Code-009" class="cb-code" data-code="Code-009" checked />
+                                    <label for="Code-009">&nbsp;&nbsp;&nbsp;Code-009</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-12 qr-code-item selected">
+                                <div class="dealtoday-checkbox">
+                                    <input name="code" type="checkbox" id="Code-010" class="cb-code" data-code="Code-010" checked />
+                                    <label for="Code-010">&nbsp;&nbsp;&nbsp;Code-010</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-12 qr-code-item selected">
+                                <div class="dealtoday-checkbox">
+                                    <input name="code" type="checkbox" id="Code-011" class="cb-code" data-code="Code-011" checked />
+                                    <label for="Code-011">&nbsp;&nbsp;&nbsp;Code-011</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="col-12 qr-code-item selected">
+                                <div class="dealtoday-checkbox">
+                                    <input name="code" type="checkbox" id="Code-012" class="cb-code" data-code="Code-012" checked />
+                                    <label for="Code-012">&nbsp;&nbsp;&nbsp;Code-012</label>
+                                </div>
+                            </div>
+                        </div>
                         <!--#endregion-->
                     </div>
                 </div>
@@ -143,13 +179,12 @@
                 //Uncheck all checkbox
                 $("#pos-code-detector").parents('.list-code').find('.col-md-6 .qr-code-item').removeClass("selected");
                 $("#pos-code-detector").parents('.list-code').find('.col-md-6 input[type=checkbox]').prop("checked", false);
-                $("#pos-code-detector").parents('.list-code').find('.col-md-6 input[type=checkbox]').removeAttr("checked");
                 $("#selectAll").parents('.btn-ctn').find('.col-md-6 .qr-code-item').removeClass("selected");
 
                 //Reset QR value
                 $('#hfQRCode').val("");
             }
-            GenerateQRCode($('#hfQRCode').val());
+            //GenerateQRCode($('#hfQRCode').val());
         });
 
         //Select a checkbox
