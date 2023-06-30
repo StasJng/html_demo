@@ -2949,3 +2949,98 @@
 .g-recaptcha {
     margin-top: 20px;
 }
+
+/* New ticket list*/
+.loc-accept {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1E83F6;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.loc-accept:hover {
+    background-color: #E0E0E0;
+}
+
+.loc-icon {
+    margin-top: -3px;
+}
+
+.right-icon {
+    position: absolute;
+    right: 16px;
+}
+
+.sv-inf-btm {
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.sv-inf-btm .date {
+    color: #616161;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.sv-inf-btm .btn-general {
+    border: 1px solid #F0821B;
+    background-color: #F0821B;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 32px;
+    border-radius: 50px;
+    width: fit-content;
+    cursor: pointer;
+    float: right;
+}
+
+.sv-inf-btm .btn-general:hover {
+    opacity: 0.95;
+}
+
+.sv-detail-inf {
+    margin-top: 16px;
+}
+
+.sv-detail-inf img {
+    width: 80px;
+    height: 80px;
+}
+
+.sv-detail-inf .sv-title {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+
+.sv-detail-inf .sv-price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #FE6E00
+}
+
+.sv-detail-inf .sv-quantity {
+    font-size: 13px;
+    font-weight: 400;
+    color: #757575;
+}
+
+@media(max-width: 768px) {
+    .sv-detail-inf img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media(min-width: 768px) {
+    .sv-detail-inf .sv-info {
+        margin: 0 0 0 -45px;
+        line-height: 28px;
+    }
+}
