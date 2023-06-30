@@ -2945,3 +2945,7 @@
     padding: 0 10px;
     color: #9E9E9E;
 }
+
+.g-recaptcha {
+    margin-top: 20px;
+}
