@@ -434,6 +434,26 @@
     border-top: 1px solid #EEEEEE;
 }
 
+.profi-and-funcs .btn-log-out {
+    border: 1px solid #F0821B;
+    color: #F0821B;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 16px auto;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.profi-and-funcs .btn-log-out:hover {
+    color: #fff;
+    background-color: #F0821B;
+}
+
+.profi-and-funcs a:hover {
+    text-decoration: none;
+}
 
 /* Items */
 .content {
@@ -1810,14 +1830,8 @@
 	}
 
     .profi-and-funcs .btn-log-out {
-        border: 1px solid #F0821B;
-        color: #F0821B;
-        padding: 10px;
         border-radius: 50px;
-        text-align: center;
-        margin: 16px auto;
         background-color: #fafafa;
-        cursor: pointer;
     }
 
     .profi-and-funcs a {
@@ -2483,11 +2497,13 @@
 
 /* Ticket tear effect */
 .ticket-edge-ctn {
-    height: 33px;
+    height: 32px;
     display: flex;
     align-items: center;
     vertical-align: middle;
     justify-content: center;
+    padding: 0 25px;
+    margin: 0;
 }
 
 .ticket-edge-ctn .borderline {
@@ -2820,3 +2836,112 @@
     }
 }
 
+
+
+
+
+/* Login form*/
+.login-form-container {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    max-width: 516px !important;
+}
+
+.login-form-container .login-form-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
+
+.login-form-container .inp-form .err-msg {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: red;
+}
+
+.login-form-container .terms-of-use {
+    margin: 16px 0;
+    font-size: 14px;
+}
+
+.login-form-container .terms-of-use .terms, .login-form-container .terms-of-use .terms:hover {
+    color: #F0821B;
+    text-decoration: underline;
+}
+
+.login-form-container .btn-general {
+    width: 100%;
+    border-radius: 50px;
+}
+
+.login-form-container .btn-general:focus {
+    outline: none;
+}
+
+.login-form-container .btn-ctn {
+    font-size: 14px;
+}
+
+.login-form-container .login-choices {
+    margin-top: 16px;
+}
+
+.login-form-container .forget-pass {
+    text-align: start;
+    font-size: 14px;
+    color: #000;
+    padding-right: 0;
+}
+
+.login-form-container .quick-sms {
+    color: #1E83F6;
+    font-size: 14px;
+    text-align: end;
+    width: max-content;
+}
+
+.btn-general.login-gg {
+    background-color: #fff !important;
+    color: #000;
+    border-color: #E0E0E0;
+    font-weight: 600;
+}
+
+.btn-general.login-gg img {
+    height: 20px;
+    width: 20px;
+    margin-top: -2px;
+}
+
+.btn-general.login-fb {
+    background-color: #2170E2 !important;
+    border-color: #2170E2;
+}
+
+.btn-general.login-fb img {
+    height: 20px;
+    width: 20px;
+    margin-top: -2px;
+}
+
+.btn-ctn.line {
+    display: block; 
+    margin: 16px auto 38px auto;
+}
+
+.btn-ctn.line h2 {
+    font-size:15px; 
+    text-align:center; 
+    border-bottom:1px solid #EEE; 
+}
+
+.btn-ctn.line h2 span { 
+    background-color: white; 
+    position: relative; 
+    top: 10px; 
+    padding: 0 10px;
+    color: #9E9E9E;
+}
