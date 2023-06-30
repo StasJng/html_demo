@@ -19,34 +19,58 @@
     <title>ETicket</title>
 </head>
 <body>
-    <!-- <div style="position: relative; min-height: 220px;">
-        <div>
-            <input id="select_date" type="text" style="display: none" />
+    <div class="wrapper">
+        <div class="calender-popup-container" id="warning" onclick="if(event.target == this){closePopup('#warning');}" aria-hidden="true">
+            <div class="calender-popup-wrapper">
+                <div class="row">
+                    <div class="col-12 calendar-header">
+                        Chọn ngày
+                        <img src="asset/images/eticket/close-icon.svg" alt="" class="qr-image" onclick="closePopup('#warning');" />
+                    </div>
+                    <div class="col-12">
+                        <div style="position: relative; min-height: fit-content; ">
+                            <input id="select_date" type="text" style="display: none;"/>
+                            <script>
+                                //Declare datepicker
+                                $(function () {
+                                    $('#select_date').datetimepicker({
+                                        locale: 'vi',
+                                        keepOpen: true,
+                                        format: 'DD/MM/YYYY',
+                                        minDate: moment()
+                                    });
+                        
+                                    $("#select_date").data("DateTimePicker").show();
+                                    console.log($("#select_date").data("DateTimePicker").viewDate);
+                                    document.getElementsByClassName('bootstrap-datetimepicker-widget dropdown-menu usetwentyfour')[0].setAttribute('style', 'display: block; position: absolute; z-index: 1; top: 0;');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-12 row btn-rg">
+                        <div class="col-6">
+                            <div class="btn-general back"> 
+                                Quay lại
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="btn-general"> 
+                                Chọn ngày
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <script>
-            //Declare datepicker
-            $(function () {
-                $('#select_date').datetimepicker({
-                    locale: 'vi',
-                    keepOpen: true,
-                    format: 'DD/MM/YYYY',
-                    minDate: moment()
-                });
-    
-                $("#select_date").data("DateTimePicker").show();
-                console.log($("#select_date").data("DateTimePicker").viewDate);
-                document.getElementsByClassName('bootstrap-datetimepicker-widget dropdown-menu usetwentyfour')[0].setAttribute('style', 'display: block; position: absolute; z-index: 1; top: 0;');
-            });
-        </script>
-    </div> -->
+    </div>
     <!--#region Header-->
     <div class="header" id="header">
         <div class="container">
             <div class="row header-content">
                 <div class="col-6">
                     <div class="header-logo payment">
-                        <a href="/eticket">
-                            <img src="asset/images/eticket/eticket-header-logo.png" alt="" />
+                        <a href="#">
+                            <img src="asset/images/eticket/eticket-header-logo.png" alt="" onclick="openMenuPopup('#warning')"/>
                         </a>
                     </div>
                 </div>
@@ -75,9 +99,11 @@
 
         function openMenuPopup(popup) {
             $(popup).show().attr("aria-hidden", "false");
+            $('body').attr('style','overflow: hidden');
         }
         function closePopup(popup) {
             $(popup).hide().attr("aria-hidden", "true");
+            $('body').attr('style','overflow: auto');
         }
     </script>
     <!--#endregion-->
