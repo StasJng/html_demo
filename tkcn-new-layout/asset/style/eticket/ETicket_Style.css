@@ -57,7 +57,7 @@
     background-color: #fff;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 1001;
 }
 
 .header-content {
@@ -208,7 +208,174 @@
     }
 }
 
-/*popup munu mobile*/
+/*Footer*/
+.footer-content {
+    background-color: bisque;
+    max-height: 438px;
+    overflow: hidden;
+}
+
+.footer-above-content {
+    margin-top: 50px;
+    font-size: 22px;
+}
+
+.footer-middle-content {
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    margin: 20px 0;
+}
+
+.contact-note {
+    color: #F0821B;
+    font-size: 15px;
+}
+
+.footer-middle-content .content-container {
+    padding: 20px 0;
+    line-height: 25px;
+}
+
+.footer-middle-content .content-container a {
+    color: black;
+}
+
+.footer-middle-content .content-container :hover {
+    text-decoration: none;
+}
+
+.footer-middle-content .content-container .note {
+    color: #757575;
+    font-size: 15px;
+}
+
+.footer-middle-content .content-container .note-title {
+    font-weight: 500;
+}
+
+.footer-middle-content .content-container .note-title :hover {
+    color: #F0821B;
+}
+
+.footer-middle-content .content-container .footer-overview :hover {
+    color: #F0821B;
+}
+
+.social-icons :hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.btn-cooperate {
+    background-color: white;
+    color: #F0821B;
+    border: 1px solid #F0821B;
+    border-radius: 10px;
+    padding: 5px 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width: max-content;
+}
+
+.btn-cooperate span {
+    pointer-events: none;
+}
+
+.btn-cooperate-container {
+    width: max-content;
+    margin: -8px;
+}
+
+.btn-cooperate-container :hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;
+}
+
+.footer-under-content {
+    margin: 25px 0 30px 0;
+    font-size: 14px;
+    font-weight: 500
+}
+
+.footer-download {
+    float: right;
+    margin: -10px 0 0 0;
+    font-size: 15px;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.footer-download img {
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.footer-download :hover {
+    text-decoration: none;
+}
+
+.footer-download a :hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;
+}
+
+.mobile-download-container {
+    background-color: #F0821B;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.mobile-download {
+    margin: 0 auto;
+    text-align: center;
+    background-color: #F0821B;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.mobile-download span {
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 5px;
+}
+
+@media(max-width: 768px) {
+    .footer .content-container div {
+        margin-bottom: 5px;
+    }
+
+    .footer-above-content {
+        margin-top: 10px !important;
+    }
+
+    .footer-popup {
+        position: absolute;
+        bottom: 0;
+        height: 60px;
+        border-top: 1px solid #E0E0E0;
+        width: 100%;
+        padding: 10px 15px;
+    }
+
+    #footer {
+        margin-top: 72px;
+        border-top: 32px solid #F5F5F5;
+        padding-top: 12px;
+    }
+}
+
+@media(min-width: 768px) {
+    .mobile-download-container {
+        display: none !important;
+    }
+}
+/*popup menu mobile*/
 #menuPopup {
     display: none;
 }
@@ -416,7 +583,7 @@
     line-height: 18px;
     letter-spacing: 0px;
     text-align: left;
-    padding: 12px 12px 12px 16px;
+    padding: 12px 12px 12px 38px;
     cursor: pointer;
     color: #000;
 }
@@ -428,10 +595,7 @@
 
 .profi-and-funcs .funcs .detail.selected {
     background-color: #F5F5F5;
-}
-
-.profi-and-funcs .funcs {
-    border-top: 1px solid #EEEEEE;
+    color: #F0821B;
 }
 
 .profi-and-funcs .btn-log-out {
@@ -453,6 +617,39 @@
 
 .profi-and-funcs a:hover {
     text-decoration: none;
+}
+
+.profi-and-funcs .group-title {
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+.profi-and-funcs .group-title img {
+    height: 20px;
+    width: 20px;
+    margin-top: -3px;
+}
+
+.profi-and-funcs .group-title span {
+    margin: 3px 0 0 3px;
+}
+
+.gen-ful-border {
+    width: 100%;
+    margin: 0 auto;
+    border-top: 1px solid #eee;
+}
+
+.gen-mg-16-ful-border {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+    border-top: 1px solid #eee;
+}
+
+.gen-80-border {
+    width: 80%;
+    margin: 0 auto;
+    border-top: 1px solid #eee;
 }
 
 /* Items */
@@ -2332,8 +2529,14 @@
 }
 
 .bootstrap-datetimepicker-widget th, .bootstrap-datetimepicker-widget tr, .bootstrap-datetimepicker-widget td {
-    line-height: 23px !important;
+    line-height: 25px !important;
     font-size: 12px;
+}
+
+@media(max-width: 768px) {
+    .bootstrap-datetimepicker-widget th, .bootstrap-datetimepicker-widget tr, .bootstrap-datetimepicker-widget td {
+        line-height: 30px !important;
+    }
 }
 
 .bootstrap-datetimepicker-widget td.active, .bootstrap-datetimepicker-widget td.active:hover {
@@ -2541,10 +2744,6 @@
 @media(max-width: 768px) {
     .bg-fa-mb {
         background-color: #FAFAFA;
-    }
-    .detail-ticket-rg .right,
-    .detail-ticket-rg .left {
-        background: #fafafa;
     }
 }
 
@@ -2998,6 +3197,27 @@
     width: fit-content;
     cursor: pointer;
     float: right;
+    width: max-content;
+}
+
+.detail-ticket-rg.exprired .btn-general {
+    border: 1px solid #E8141F;
+    background-color: #fff;
+    color: #E8141F;
+}
+
+.detail-ticket-rg.used .sv-info, .detail-ticket-rg.used .loc-accept, .detail-ticket-rg.used .sv-inf-btm {
+    filter: grayscale(1);
+    opacity: 0.8;
+}
+
+.detail-ticket-rg.cancelled .sv-info, .detail-ticket-rg.cancelled .loc-accept, .detail-ticket-rg.cancelled .sv-inf-btm {
+    filter: grayscale(1);
+    opacity: 0.8;
+}
+
+.detail-ticket-rg.used .btn-general, .detail-ticket-rg.cancelled .btn-general {
+    pointer-events: none;
 }
 
 .sv-inf-btm .btn-general:hover {
@@ -3052,7 +3272,7 @@
     position: fixed;
     background: rgba(100, 100, 100, 0.6);
     display: none;
-    z-index: 999;
+    z-index: 1002;
     height: 100%;
     width: 100%;
     left: 0;
@@ -3130,4 +3350,87 @@
     .bootstrap-datetimepicker-widget.dropdown-menu.pull-right:after {
         display: none !important;
     }
+}
+
+/* Dropdown customized */
+.dropdown-label-left-bx {
+    width: 25px;
+    height: 100%;
+    text-align: center;
+    margin-right: 8px;
+}
+.dropdown-label-left-bx.active::before {
+    content: '✓';
+    color:#F0821B !important;
+    font-weight:bold;
+    font-size:18px;
+}
+.drop-rg input {
+    display: none;
+}
+.dropDown-wrapper-ActionButton {
+    position: relative;
+    float: right;
+    width: 48px;
+    background-color: #fff;
+}
+.dropDown-wrapper-ActionButton :hover{
+    cursor: pointer;
+}
+.dropDown-toggle-label-ActionButton {
+    position: relative;
+    padding: 14px 0px 14px 0px;
+    background-color: #fff;
+    /* force parent to wrap around the label tag */
+    float: left;
+    min-width: 50px;
+}
+
+.drop-rg label {
+    margin-bottom: 0;
+    width: 100%;
+}
+/* this will show dropDown when input is checked */
+.drop-rg > input:checked ~ .dropDown-wrapper-ActionButton .dropDown-ActionButton {
+    display: inline-block;
+    background-color: #fff;
+}
+/* the drop-down style*/
+.dropDown-ActionButton{
+    position: absolute;
+    right: 0;
+    top: calc(100% - 10px);
+    padding: 0 0 0 0;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    border-radius: 8px 8px 8px 8px;
+    min-width: 250px;
+    display: none;
+    z-index:5;
+}
+/* the drop-down options style*/
+.dropDown-ActionButton label {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+    padding: 12px 12px;
+    border-left: 0 solid transparent;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: border .3s ease, padding-left .3s ease, background-color .3s ease;
+}
+/* option item on hover */
+.dropDown-ActionButton label:hover {
+    background-color: #eaeaea;
+}
+.dropDown-ActionButton label:first-child:hover {
+    border-radius: 8px 8px 0 0;
+}
+.dropDown-ActionButton label:last-child:hover{
+    border-radius: 0 0 8px 8px;
+}
+/* this shows that the list item was selected */
+.dropDown-ActionButton input:checked + label{
+    opacity: 1;
+    background-color: rgba(180,180,180,.2);
 }
