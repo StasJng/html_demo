@@ -3407,6 +3407,12 @@
     display: none;
     z-index:5;
 }
+
+@media(max-width: 768px) {
+    .dropDown-ActionButton{
+        display: none !important;
+    }
+}
 /* the drop-down options style*/
 .dropDown-ActionButton label {
     display: flex;
@@ -3433,4 +3439,19 @@
 .dropDown-ActionButton input:checked + label{
     opacity: 1;
     background-color: rgba(180,180,180,.2);
+}
+
+
+@media(min-width: 768px) {
+    #popup-trans-type {
+        display: none !important;
+    }
+}
+
+#popup-trans-type .dealtoday-checkbox, #popup-trans-type .dealtoday-checkbox label {
+	width: 100%;
+}
+
+#popup-trans-type .trans-type-ctn {
+    margin: 2px 8px;
 }

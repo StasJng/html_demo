@@ -18,7 +18,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 </head>
 <body>
-    <!--#region Popup calendar-->
+    <!--#region Popups-->
     <div class="wrapper">
         <div class="calender-popup-container" id="popup-calendar-from" onclick="if(event.target == this){closePopup('#popup-calendar-from');}" aria-hidden="true">
             <div class="calender-popup-wrapper">
@@ -104,6 +104,50 @@
             </div>
         </div>
     </div>
+
+    <div class="calender-popup-container" id="popup-trans-type" aria-hidden="true">
+        <div class="calender-popup-wrapper">
+            <div class="row">
+                <div class="col-12 calendar-header">
+                    Trạng thái
+                    <img src="asset/images/eticket/close-icon.svg" alt="" class="qr-image" onclick="closePopup('#popup-trans-type');" />
+                </div>
+
+                <div class="trans-type-ctn">
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-0" name="trans-type-mb" type="radio" value="-1" onchange="setTransValue(this.value)" />
+                        <label for="val-0">&nbsp;Tất cả</label>
+                    </div>
+
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-1" name="trans-type-mb" type="radio" value="22,27,23,100,200,400" onchange="setTransValue(this.value)" />
+                        <label for="val-1">&nbsp;Mua hàng</label>
+                    </div>
+    
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-2" name="trans-type-mb" type="radio" value="220,280,240,260" onchange="setTransValue(this.value)" />
+                        <label for="val-2">&nbsp;Đổi điểm</label>
+                    </div>
+    
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-3" name="trans-type-mb" type="radio" value="180" onchange="setTransValue(this.value)" />
+                        <label for="val-3">&nbsp;Hoàn trả</label>
+                    </div>
+    
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-4" name="trans-type-mb" type="radio" value="320,321,322,340,341,342" onchange="setTransValue(this.value)" />
+                        <label for="val-4">&nbsp;Mua và nạp thẻ điện thoại</label>
+                    </div>
+    
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-5" name="trans-type-mb" type="radio" value="43" onchange="setTransValue(this.value)" />
+                        <label for="val-5">&nbsp;Sử dụng dịch vụ</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <script>
         function openMenuPopup(popup) {
             $(popup).show().attr("aria-hidden", "false");
@@ -118,6 +162,11 @@
         function fillDate(type, value) {
             $('#' + type + "-date").val($('#' + 'select_date_' + type).val());
             $('#' + type + "-date-mb").val($('#' + 'select_date_' + type).val());
+        }
+
+        function setTransValue(value) {
+            $('#transtype').val(value);
+            $('#transtype').change();
         }
     </script>
     <!--#endregion-->
@@ -417,7 +466,7 @@
                                                 <div class="inp-value drop-rg">
                                                     <input type="checkbox" id="dropDown-toggle">
 
-                                                    <label for="dropDown-toggle" class="dropDown-toggle-label-ActionButton">
+                                                    <label for="dropDown-toggle" class="dropDown-toggle-label-ActionButton" onclick="openMenuPopup('#popup-trans-type')">
                                                         <select id="transtype" name="transtype" style="pointer-events: none">
                                                             <option value="-1">Chọn loại giao dịch</option>
                                                             <option value="22,27,23,100,200,400">Mua hàng</option>
