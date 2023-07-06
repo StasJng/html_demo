@@ -3172,18 +3172,10 @@
 }
 
 .sv-inf-btm {
-    margin-top: 16px;
     margin-bottom: 16px;
-
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-}
-
-.sv-inf-btm .date {
-    color: #616161;
-    font-weight: 400;
-    font-size: 14px;
 }
 
 .sv-inf-btm .btn-general {
@@ -3191,13 +3183,21 @@
     background-color: #F0821B;
     color: #fff;
     font-weight: 500;
-    font-size: 14px;
-    padding: 10px 32px;
+    font-size: 14px;    
+    padding: 10px 0;
     border-radius: 50px;
     width: fit-content;
     cursor: pointer;
     float: right;
-    width: max-content;
+    width: 138px;
+    text-align: center;
+}
+
+.sv-inf-btm .btn-general.accep {
+    border: 1px solid #F0821B !important;
+    background-color: #fff;
+    color: #F0821B !important;
+    text-decoration: none;
 }
 
 .detail-ticket-rg.exprired .btn-general {
@@ -3206,17 +3206,17 @@
     color: #E8141F;
 }
 
-.detail-ticket-rg.used .sv-info, .detail-ticket-rg.used .loc-accept, .detail-ticket-rg.used .sv-inf-btm {
+.detail-ticket-rg.used .sv-info, .detail-ticket-rg.used .loc-accept, .detail-ticket-rg.used .sv-inf-btm .color-000 {
     filter: grayscale(1);
     opacity: 0.8;
 }
 
-.detail-ticket-rg.cancelled .sv-info, .detail-ticket-rg.cancelled .loc-accept, .detail-ticket-rg.cancelled .sv-inf-btm {
+.detail-ticket-rg.cancelled .sv-info, .detail-ticket-rg.cancelled .loc-accept, .detail-ticket-rg.cancelled .sv-inf-btm .color-000 {
     filter: grayscale(1);
     opacity: 0.8;
 }
 
-.detail-ticket-rg.used .btn-general, .detail-ticket-rg.cancelled .btn-general {
+.detail-ticket-rg.used .color-000 .btn-general, .detail-ticket-rg.cancelled .color-000 .btn-general, .detail-ticket-rg.exprired .color-000 .btn-general {
     pointer-events: none;
 }
 
@@ -3245,6 +3245,12 @@
     color: #FE6E00
 }
 
+.sv-detail-inf .sv-date {
+    color: #616161;
+    font-weight: 400;
+    font-size: 14px;
+}
+
 .sv-detail-inf .sv-quantity {
     font-size: 13px;
     font-weight: 400;
@@ -3256,15 +3262,26 @@
         width: 40px;
         height: 40px;
     }
+
+    .sv-detail-inf .sv-date {
+        font-size: 13px;
+        width: max-content;
+        display: flex;
+        vertical-align: middle;
+        align-items: center;
+    }
 }
 
 @media(min-width: 768px) {
     .sv-detail-inf .sv-info {
-        margin: 0 0 0 -45px;
-        line-height: 28px;
+        position: absolute;
+        left: 100px;
+    }
+
+    .sv-inf-btm .col-lg-10 {
+        padding: 0 38px;
     }
 }
-
 
 /* Popup calendar */
 
@@ -3454,4 +3471,35 @@
 
 #popup-trans-type .trans-type-ctn {
     margin: 2px 8px;
+    width: 100%;
+}
+
+
+#popup-trans-type .popup-opt {
+    position: absolute;
+    top: 0;
+    right: 16px;
+}
+
+.btn-ctn:hover {
+    text-decoration: none;
+}
+
+#popup-trans-type .dealtoday-checkbox input:checked + label:before {
+    margin: -2px 6px 0px -12px;
+}
+
+#popup-trans-type .dealtoday-checkbox input:checked + label:after {
+	display: block;
+	float: right;
+	position: unset;
+}
+
+#popup-trans-type .dealtoday-checkbox input:checked + label:before {
+	float: right;
+}
+
+#popup-trans-type .dealtoday-checkbox.round label:before {
+    float: right;
+    margin: -2px 6px 0 -12px;
 }
