@@ -3274,8 +3274,8 @@
 
 @media(min-width: 768px) {
     .sv-detail-inf .sv-info {
-        position: absolute;
-        left: 100px;
+        position: static;
+        left: -38px;
     }
 
     .sv-inf-btm .col-lg-10 {
@@ -3478,7 +3478,6 @@
 #popup-trans-type .popup-opt {
     position: absolute;
     top: 0;
-    right: 16px;
 }
 
 .btn-ctn:hover {
@@ -3502,4 +3501,62 @@
 #popup-trans-type .dealtoday-checkbox.round label:before {
     float: right;
     margin: -2px 6px 0 -12px;
+}
+
+
+
+/* Confirm phone OTP */
+.confirm-mb-otp {
+    margin: 0 32px;
+}
+
+.confirm-mb-otp .col-2 {
+    padding: 0 5px;
+}
+
+
+.confirm-mb-otp .inp-value.full-box input[type=text] {
+    padding: 6px 0 !important;
+    font-weight: 500 !important;
+    text-align: center;
+}
+
+
+/* Search Code */
+.inp-form .head-title {
+    font-style: normal;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 16px;
+    margin-top: 16px;
+}
+
+.inp-form .inp-value.full-box input[type=text], .inp-form .inp-value.full-box input[type=number], .inp-form .inp-value.full-box input[type=password], .inp-form .inp-value.full-box select {
+    width: 100%;
+    padding: 6px 25px 6px 12px;
+    display: inline-block;
+    border: 1px solid #eee;
+    border-color: #eee;
+    border-radius: 12px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000;
+}
+
+.stt-useable {
+    color:#1591FF;
+}
+
+.stt-used {
+    color: #00C344;
+}
+
+.stt-xpr {
+    color: #E8141F;
+}
+
+.stt-cancelled {
+	color: #F4B100;
 }
