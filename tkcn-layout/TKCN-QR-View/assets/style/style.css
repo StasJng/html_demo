@@ -172,8 +172,6 @@ body {
     margin: 16px auto;
 }
 
-
-
 /* User guide + Terms of use */
 .addition-info {
     background-color: #fff;
@@ -198,26 +196,41 @@ body {
     
 }
 
-
-
-
-
-
+/* Body */
+.qr-wrapper {
+    margin: 0 16px;
+    background-color: #fff;
+    border-radius: 18px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
 
 /* Box QR*/
-.boxshowqr img {
+.box-show-qr {
+    padding: 15px;
+    background: #fff;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: none;
+    display: inline-block;
+    position: relative;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+
+.box-show-qr img {
     width: 65%;
     margin: 0 auto;
 }
 
-.boxshowqr .sub-text {
+.box-show-qr .sub-text {
 	color: #757575;
 	font-size: 14px;
 	font-weight: 400;
     text-align: center;
 }
 
-.boxshowqr .main-text {
+.box-show-qr .main-text {
 	color: #000;
 	font-size: 16px;
 	font-weight: 600;
@@ -230,322 +243,9 @@ body {
     font-weight: 700;
     text-align: center;
 }
-/* Not check yet*/
 
 
-
-
-
-/* Body */
-.qr-wrapper {
-    margin: 0 16px;
-    background-color: #fff;
-    border-radius: 18px;
+/* Box QR*/
+.box-show-info {
 }
 
-.brand-acceptance {
-    overflow: unset !important;
-    padding: 10px 15px;
-    background: #fff;
-    margin: 10px 0 0px 0;
-    width: 100%;
-    box-shadow: none !important;
-    display: inline-block;
-    text-align:left;
-    max-height: 1000px;
-    position: relative;
-    padding-right: 20px;
-}
-
-.brand-acceptance h2 {
-    margin: 0;
-    font-weight: bold;
-    font-size: 16px !important;
-    padding: 15px 5px !important;
-    min-width: 151px; 
-    width: max-content; 
-    max-width: 125%;
-}
-
-.content-deal {
-    text-align: center;
-}
-
-.boxshowqr {
-    padding: 10px 15px;
-    background: #fff;
-    margin: 10px 0 0px 0;
-    overflow: hidden;
-    width: 100%;
-    box-shadow: none;
-    display: inline-block;
-    position: relative;
-    padding-right: 20px;
-    border-radius: 20px;
-}
-
-.boxshowqr h2 {
-    margin: 0;
-    font-weight: bold;
-    font-size: 16px;
-    padding: 15px 5px;
-}
-
-.download-qr {
-    padding: 25px 0 10px 0;
-}
-
-.btn-download-qr{
-    width:100%; 
-    background-color: #f7941c; 
-    font-size: 15pt; 
-    font-weight: 650;
-    color:#ffffff;
-}
-
-.info-acc-egift .row {
-    margin: 0;
-}
-
-.card {
-    background: #ffffff;
-    height: 125px;
-    position: relative;
-    padding: 1em;
-    border-top: 1.5px solid darkgray;
-    border-bottom: 1.5px solid darkgray;
-    margin-bottom: 15px;
-}
-.cardLeft {
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-left: 1.5px solid darkgray;
-    width: 75%;
-    max-width: 100%;
-    box-sizing: border-box;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-.cardRight {
-    width: 25%;
-    border-left: 1.5px dashed darkgray;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border-right: 1.5px solid darkgray;
-    text-align: center;
-    vertical-align: middle;
-    padding: 48px 20px 0 0;
-}
-
-.cardRight input {
-    margin: 0 auto;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.cardRight:before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 0.9em;
-    height: 0.9em;
-    background: #fff;
-    border-radius: 50%;
-    left: -0.5em;
-    border: 1.5px solid darkgrey;
-    /* Halve the circle */
-    border-top-color: transparent;
-    border-right-color: transparent;
-    /* Rotate the circle */
-    transform: rotate(-45deg);
-}
-.cardRight:after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 0.9em;
-    height: 0.9em;
-    background: #fff;
-    border-radius: 50%;
-    left: -0.5em;
-    border: 1.5px solid darkgrey;
-    /* Halve the circle */
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-    /* Rotate the circle */
-    transform: rotate(-45deg);
-}
-.cardRight:before {
-    top: calc(-0.4em - 1.5px);
-}
-
-.cardRight:after {
-    bottom: calc(-0.4em - 1.5px);
-}
-
-.dropDown-wrapperQR {
-    padding: 8px 0 0 0;
-}
-
-.dropDown-toggle-labelQR {
-    position: relative;
-    padding: 5px 0px 14px 10px;
-    float: right;
-    border: 1px solid #cdcdcd;
-    min-width: 132px;
-    font-weight: 500;
-    max-height: 32px;
-    border-radius: 5px;
-}
-
-.dropDown-toggle-labelQR:after {
-    content: "";
-    width: 6px;
-    height: 6px;
-    background: linear-gradient(45deg, black 50%, transparent 0);
-    position: absolute;
-    right: 10px;
-    top: 35%;
-    transform: rotate(-45deg);
-}
-
-.dropDown-wrapperQR input {
-    display: none;
-}
-
-.dropDown-wrapperQR > input:checked + label:after {
-    top: 45%;
-    transform: rotate(135deg);
-}
-
-.dropDown-wrapperQR > input:checked + label + .dropDownQR {
-    display: inline-block;
-}
-
-.dropDownQR {
-    border-radius: 8px !important;
-    position: absolute;
-    right: 15px;
-    top: calc(100% - 2px);
-    padding: 0 0 0 0;
-    box-shadow: 0 0 20px rgba(0,0,0,.1);
-    border-radius: 4px;
-    min-width: 158px;
-    display: none;
-    opacity: 1 !important;
-    background-color: white !important;
-    position: absolute;
-    z-index: 1;
-}
-
-.dropDownQR a {
-    display: none;
-}
-
-.dropDownQR label {
-    display: block;
-    padding: 8px 12px;
-    border-left: 0.5px solid transparent;
-    font-family: Arial;
-    font-size: 14px;
-    cursor: pointer;
-    font-weight: 500;
-    transition: border .3s ease, padding-left .3s ease, background-color .3s ease;
-}
-
-.dropDownQR label:hover {
-    background-color: #cdcdcd;
-}
-
-.stt-selected {
-    color:limegreen; 
-    float:right; 
-    font-style: normal;
-    font-weight:bold; 
-    font-size: 12pt;
-}
-
-.info-acc-egift {
-    margin: 15px 0 15px 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* The container */
-.checkbox-container {
-    position: relative;
-    cursor: pointer;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    display: unset;
-    margin: 0 auto;
-    align-items: center;
-    vertical-align: middle;
-}
-
-/* Hide the browser's default checkbox */
-.checkbox-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
-
-/* Create a custom checkbox */
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 23px;
-    width: 23px;
-    background-color: #fff;
-    border: 1px solid #cdcdcd;
-    border-radius: 5px;
-}
-
-/* On mouse-over, add a effect */
-.checkbox-container:hover input ~ .checkmark {
-    opacity: 1;
-}
-
-/* When the checkbox is checked, add a orange background */
-.checkbox-container input:checked ~ .checkmark {
-    background-color: #f7891c;
-    border: 1px solid #f7891c;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.checkbox-container input:checked ~ .checkmark:after {
-    display: block;
-}
-
-/* Style the checkmark/indicator */
-.checkbox-container .checkmark:after {
-    left: 8px;
-    top: 3px;
-    width: 5px;
-    height: 12px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
