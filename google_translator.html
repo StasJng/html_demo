@@ -173,14 +173,45 @@ body {
             $('.goog-te-combo option[value=en]').each(function () {
                 //console.log($(this).parents('.container').find('.goog-te-combo option[value=en]').html);
                 //$(this).parents('.container').find('.goog-te-combo option[value=en]').get(1).click();
-                $('.goog-te-combo').val('en').get(1).click;
-                $('.goog-te-combo').val('en');
-                $('.goog-te-combo').change();
+                // $('.goog-te-combo').val('en');
+                // $('.goog-te-combo').change();
+                // $('.goog-te-combo option[value=en]').attr('selected','selected');
+                $('.goog-te-combo').attr('id','selectBox');
+
+                document.getElementById("selectBox").click();
+                $("#selectBox").show();
+                $("#selectBox").select();
+
+
+                $('.goog-te-combo option[value=en]').attr('id','selectedLang');
+                document.getElementById("selectedLang").focus();
+                document.getElementById("selectedLang").click();
+                $('#selectedLang').show();
+                $('#selectedLang').select();
+                keypress();
             });
 
             document.querySelector('.goog-te-combo option[value=en]').click();
+            document.getElementById("inputDemo").focus();
+            document.getElementById("selectBox").focus();
 
+            const event = new KeyboardEvent('keydown', { key });
+  textField.dispatchEvent(event);
             return false;
+        }
+
+        function keypress() {
+            // let e = jQuery.Event("keypress");
+            // let e = jQuery.Event("keyup");
+            let e = jQuery.Event("keyup");
+            e.which = 13; 
+            e.keyCode = 13;
+            $("#inputDemo").trigger(e);
+
+            const ke = new KeyboardEvent('keydown', {
+                bubbles: true, cancelable: true, keyCode: 13
+            });
+            document.body.dispatchEvent(ke);
         }
 
         //Translate

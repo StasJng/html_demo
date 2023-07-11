@@ -3522,6 +3522,11 @@
 }
 
 
+.btn-ctn .btn-general.disabled {
+    background-color: #cdcdcd;
+    border-color: #cdcdcd;
+}
+
 /* Search Code */
 .inp-form .head-title {
     font-style: normal;
@@ -3560,3 +3565,5 @@
 .stt-cancelled {
 	color: #F4B100;
 }
+
+
