@@ -57,84 +57,176 @@
                 Buffet Premium nướng thượng hạng tại nhà hàng Jeonbok ẩm thực Hàn Quốc số 1 tại Hà Nội - Áp dụng cuối tuần
             </div>
 
-            <div class="sub-text">HSD: 01/01/2025</div>
+            <div class="exp-text">HSD: 01/01/2025</div>
+
+            <div class="row">
+                <div class="col-12 ticket-edge-ctn">
+                    <div class="right"></div>
+                    <div class="left"></div> 
+                    <div class="borderline"></div>
+                </div>
+            </div>
 
             <div class="price-text">
                 800,000đ
             </div>
+
             <div class="download-qr">
-                <button class="btn btn success btn-download-qr" id="" onclick="download_qr(this.id)">Tải mã QR</button>
+                <button class="btn-download-qr" id="" onclick="download_qr(this.id)">Tải mã QR</button>
                 <a id=""></a>
             </div>
         </div>
 
         <div class="box-show-info">
             <div class="row">
-                <div class="col-6">
-                    Danh sách mã code
-                </div>
-                <div class="col-6">
-                    <div class="dropDown-wrapperQR">
-                        <input type="checkbox" id="dropDown-toggleQR">
-                        <label for="dropDown-toggleQR" class="dropDown-toggle-labelQR">Chưa sử dụng</label>
-                        <!-- <div class="dropDownQR">
+                <div class="col-12 box-filter">
+                    <div class="row">
+                        <div class="col-6 main-text">
+                            Danh sách mã code
+                        </div>
+                        <div class="col-6 drop-status-rg">
+                            <input id="stt-1" value="Chưa sử dụng" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);">
+                            <input id="stt-2" value="Đã sử dụng" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);">
+                            <input id="stt-3" value="Hết hạn" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);">
+                            <input id="stt-4" value="Hủy" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);">
+                    
+                            <div class="dropDown-wrapper-ActionButton">
+                                <input type="checkbox" id="dropDown-toggle">
+                    
+                                <label for="dropDown-toggle" class="dropDown-toggle-label-ActionButton">
+                                    <span id="status">Chưa sử dụng</span>
+                                </label>
+                    
+                                <div class="dropDown-ActionButton">
+                                    <div id="pos-detector" class="d-none"></div>
 
-                            <input id="1" name="Chưa sử dụng" value="0" onclick="choseStatus(this.name)">
-                            <a id="Chưa sử dụng" href=""></a>
-                            <label for="Chưa sử dụng" id="Chưa sử dụng" onclick="choseStatus(this.id)">Chưa sử dụng<span><em class="stt-selected">✓</em></span></label>
-
-
-                            <input id="1" name="Đã sử dụng" value="1" onclick="choseStatus(this.name)">
-                            <a id="Đã sử dụng" href=""></a>
-                            <label for="Đã sử dụng" id="Đã sử dụng" onclick="choseStatus(this.id)">Đã sử dụng</label>
-
-
-                            <input id="1" name="Hủy" value="3" onclick="choseStatus(this.name)">
-                            <a id="Hủy" href=""></a>
-                            <label for="Hủy" id="Hủy" onclick="choseStatus(this.id)">Hủy</label>
-
-
-                            <input id="1" name="Hết hạn" value="4" onclick="choseStatus(this.name)">
-                            <a id="Hết hạn" href=""></a>
-                            <label for="Hết hạn" id="Hết hạn" onclick="choseStatus(this.id)">Hết hạn</label>
-                       
-                        </div> -->
+                                    <label for="stt-1">
+                                        <div id="stt-1-lbl" class="dropdown-label-left-bx active">✓</div> 
+                                        Chưa sử dụng
+                                    </label>
+                                    <label for="stt-2">
+                                        <div id="stt-2-lbl" class="dropdown-label-left-bx">✓</div>
+                                        Đã sử dụng
+                                    </label>
+                                    <label for="stt-3">
+                                        <div id="stt-3-lbl" class="dropdown-label-left-bx">✓</div>
+                                        Hết hạn
+                                    </label>
+                                    <label for="stt-4">
+                                        <div id="stt-4-lbl" class="dropdown-label-left-bx">✓</div>
+                                        Hủy
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="egift-deals">
-                <div class="info-acc-egift">
-                    <div class="row" id="" name="">
-                        <div class="col-sm-9 col-xs-9 card cardLeft">
-                            <p class="deal-code-text">DT9136996022<a></a></p>
-                                <p class="deal-code-title">
-                                    Smile Gift Sức khỏe làm đẹp
-                                </p>
-                                <div class="brand-deal-detail">
-                                    <div class="col-xs-6 col-sm-6 price">
-                                        <p>
+    
+                <div class="col-12 box-deal">
+                    <div class="deal-card-rg">
+                        <div class="deal-detail">
+                            <div class="row">
+                                <div class="col-9 card-left">
+                                    <div class="deal-code">DT9136996022</div>
+        
+                                    <div class="deal-name">Smile Gift Sức khỏe làm đẹp</div>
+        
+                                    <div class="row deal-inf">
+                                        <div class="col-6 deal-price">
                                             100,000&nbsp;VND
-                                        </p>
-                                    </div>
-                                    <div class="col-xs-6 col-sm-6 date">
-                                        <p>
+                                        </div>
+        
+                                        <div class="col-6 deal-exp">
                                             HSD:&nbsp;31/12/2022
-                                        </p>
+                                        </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-12 location">
-                                        <a onclick="openPopup('#myPopup')">
-                                            <img src="./assets/img/loc-icon.png" alt="loc_icon">
-                                            <span>Nhiều địa điểm</span>
-                                        </a>
+                                    <div class="deal-loc" onclick="openPopup('#myPopup')">
+                                        <img src="./assets/img/loc-icon.png" alt="loc_icon">
+                                        &nbsp;Nhiều địa điểm
+                                    </div>
+                                    
+                                    <div class="t-eff-top"></div>
+                                    
+                                    <div class="t-eff-bottom"></div>
+                                </div>
+        
+                                <div class="col-3 card-right" id="" onclick="getQrCode(this.id)">
+                                    <div class="dealtoday-checkbox">
+                                        <input type="checkbox" id="cb-1" name="deal" />
+                                        <label for="cb-1"></label>
                                     </div>
                                 </div>
+                            </div>
                         </div>
-                        <div class="col-sm-3 col-xs-3 card cardRight" id="" onclick="getQrCode(this.id)">
-                            <label class="checkbox-container">
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
+
+                        <div class="deal-detail">
+                            <div class="row">
+                                <div class="col-9 card-left">
+                                    <div class="deal-code">DT9136996022</div>
+        
+                                    <div class="deal-name">Smile Gift Sức khỏe làm đẹp</div>
+        
+                                    <div class="row deal-inf">
+                                        <div class="col-6 deal-price">
+                                            100,000&nbsp;VND
+                                        </div>
+        
+                                        <div class="col-6 deal-exp">
+                                            HSD:&nbsp;31/12/2022
+                                        </div>
+                                    </div>
+                                    <div class="deal-loc" onclick="openPopup('#myPopup')">
+                                        <img src="./assets/img/loc-icon.png" alt="loc_icon">
+                                        &nbsp;Nhiều địa điểm
+                                    </div>
+
+                                    <div class="t-eff-top"></div>
+
+                                    <div class="t-eff-bottom"></div>
+                                </div>
+        
+                                <div class="col-3 card-right" id="" onclick="getQrCode(this.id)">
+                                    <div class="dealtoday-checkbox">
+                                        <input type="checkbox" id="cb-2" name="deal" />
+                                        <label for="cb-2"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="deal-detail">
+                            <div class="row">
+                                <div class="col-9 card-left">
+                                    <div class="deal-code">DT9136996022</div>
+        
+                                    <div class="deal-name">Smile Gift Sức khỏe làm đẹp</div>
+        
+                                    <div class="row deal-inf">
+                                        <div class="col-6 deal-price">
+                                            100,000&nbsp;VND
+                                        </div>
+        
+                                        <div class="col-6 deal-exp">
+                                            HSD:&nbsp;31/12/2022
+                                        </div>
+                                    </div>
+                                    <div class="deal-loc" onclick="openPopup('#myPopup')">
+                                        <img src="./assets/img/loc-icon.png" alt="loc_icon">
+                                        &nbsp;Nhiều địa điểm
+                                    </div>
+                                    
+                                    <div class="t-eff-top"></div>
+                                    
+                                    <div class="t-eff-bottom"></div>
+                                </div>
+        
+                                <div class="col-3 card-right" id="" onclick="getQrCode(this.id)">
+                                    <div class="dealtoday-checkbox">
+                                        <input type="checkbox" id="cb-3" name="deal" />
+                                        <label for="cb-3"></label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -397,18 +489,20 @@
     <script>
         function openPopup(popup) {
             $("#loading").show();
-            /* Open popup and make accessible screen readers */
+
             $(popup).show().attr("aria-hidden", "false");
-            /* Focus on element to guide screen readers to popup */
-            $("#closePopup").focus();
+            $('body').attr('style', 'overflow: hidden');
+
             $("#loading").hide();
         }
 
         function closePopup(popup) {
-            /* Close popup and hide from screen readers */
+
             $(popup).hide().attr("aria-hidden", "true");
-            /* Focus screen readers back to button */
+            $('body').attr('style', 'overflow: auto');
+
             $("#openMyPopup").focus();
+            
         }
 
         $(document).ready(function () {
@@ -426,6 +520,23 @@
                 });
             });
         });
+
+        function triggerDropdown(id, value) {
+            //Close dropdown
+            // $('#dropDown-toggle').prop("checked", false);
+            $('#dropDown-toggle').click();
+
+            //Remove class active
+            $("#pos-detector").parents('.dropDown-wrapper-ActionButton').find('.dropDown-ActionButton label').each(function () {
+                $(this).find('div').removeClass('active');
+            });
+
+            //Active selected item
+            $('#' + id + '-lbl').addClass('active');
+
+            //Set value to input
+            $('#status').html(value);
+        }
     </script>
     <!--#endregion-->
 
