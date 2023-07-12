@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="https://id.dealtoday.vn/assetQR/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
@@ -123,6 +123,10 @@
                 </div>
     
                 <div class="col-12 box-deal">
+                    <div class="empty d-none">
+                        Không có mã giảm giá
+                    </div>
+                    <input type="checkbox" id="isShowAllDeal" class="d-none"/>
                     <div class="deal-card-rg">
                         <div class="deal-detail">
                             <div class="row">
@@ -228,6 +232,84 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="deal-detail">
+                            <div class="row">
+                                <div class="col-9 card-left">
+                                    <div class="deal-code">DT9136996022</div>
+        
+                                    <div class="deal-name">Smile Gift Sức khỏe làm đẹp</div>
+        
+                                    <div class="row deal-inf">
+                                        <div class="col-6 deal-price">
+                                            100,000&nbsp;VND
+                                        </div>
+        
+                                        <div class="col-6 deal-exp">
+                                            HSD:&nbsp;31/12/2022
+                                        </div>
+                                    </div>
+                                    <div class="deal-loc" onclick="openPopup('#myPopup')">
+                                        <img src="./assets/img/loc-icon.png" alt="loc_icon">
+                                        &nbsp;Nhiều địa điểm
+                                    </div>
+                                    
+                                    <div class="t-eff-top"></div>
+                                    
+                                    <div class="t-eff-bottom"></div>
+                                </div>
+        
+                                <div class="col-3 card-right" id="" onclick="getQrCode(this.id)">
+                                    <div class="dealtoday-checkbox">
+                                        <input type="checkbox" id="cb-3" name="deal" />
+                                        <label for="cb-3"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="deal-detail">
+                            <div class="row">
+                                <div class="col-9 card-left">
+                                    <div class="deal-code">DT9136996022</div>
+        
+                                    <div class="deal-name">Smile Gift Sức khỏe làm đẹp</div>
+        
+                                    <div class="row deal-inf">
+                                        <div class="col-6 deal-price">
+                                            100,000&nbsp;VND
+                                        </div>
+        
+                                        <div class="col-6 deal-exp">
+                                            HSD:&nbsp;31/12/2022
+                                        </div>
+                                    </div>
+                                    <div class="deal-loc" onclick="openPopup('#myPopup')">
+                                        <img src="./assets/img/loc-icon.png" alt="loc_icon">
+                                        &nbsp;Nhiều địa điểm
+                                    </div>
+                                    
+                                    <div class="t-eff-top"></div>
+                                    
+                                    <div class="t-eff-bottom"></div>
+                                </div>
+        
+                                <div class="col-3 card-right" id="" onclick="getQrCode(this.id)">
+                                    <div class="dealtoday-checkbox">
+                                        <input type="checkbox" id="cb-3" name="deal" />
+                                        <label for="cb-3"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label id="viewMore" for="isShowAllDeal" class="btn-view-more">
+                            Xem thêm
+                        </label>
+                        <label id="viewLess" for="isShowAllDeal" class="btn-view-more">
+                            Thu gọn
+                        </label>
                     </div>
                 </div>
             </div>

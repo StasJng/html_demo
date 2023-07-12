@@ -316,12 +316,22 @@ body {
     padding: 0 15px;
 }
 
+.box-deal .empty {
+    text-align: center;
+    font-size: 18pt;
+    font-weight: 400;
+    margin-bottom: 16px;
+    color: #00000091;
+}
+
 .deal-card-rg {
     background-color: #FAFAFA;
     border: 1px solid #eee;
     border-radius: 8px;
     margin: 0 8px;
     padding-bottom: 12px;
+    max-height: 300px;
+    overflow: hidden;
 }
 
 .deal-detail {
@@ -330,6 +340,10 @@ body {
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 8px;
+}
+
+.deal-detail .disabled {
+    opacity:0.65; pointer-events: none"
 }
 
 .card-left {
@@ -453,7 +467,28 @@ body {
     border-top: 2px dashed #eee;
     margin-top: -3px;
 }
+.btn-view-more {
+    color: #39A1FF;
+    text-align: center;
+    margin: 12px 0 0 0;
+    width: 100%;
+}
+.box-deal > input:checked + .deal-card-rg {
+	max-height: fit-content;
+	overflow: auto;
+}
 
+#viewLess {
+    display: none;
+}
+
+.box-deal > input:checked ~ .col-12 #viewMore {
+    display: block;
+}
+
+.box-deal > input:checked ~ .col-12 #viewLess {
+    display: flex;
+}
 /* Checkbox */
 .dealtoday-checkbox {
     display: block;
