@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="https://id.dealtoday.vn/assetQR/images/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-itunes-app" content="app-id=1063926571, affiliate-data=myAffiliateData /">
+    <meta name="google-play-app" content="app-id=vn.dealtoday.android">
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <!--#region Header-->
+    <div class="header-qr row" id="header-qr">
+        <a class="col-6 logo-rg" href="https://dealtoday.vn/" class="logo">
+            <img src="assets/img/logo-dealtoday-white.svg" alt="logo">
+        </a>
+        <a class="col-6 contact-rg phone-number" onclick="callS()">
+            <img src="assets/img/icon-phone-white.svg" alt="" width="16" height="16" />
+            1900 2065
+        </a>
+    </div>
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            if (window.pageYOffset > 50) {
+                document.getElementById("header-qr").setAttribute("style", "box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px; height: 72px;");
+            }
+            else {
+                document.getElementById("header-qr").setAttribute("style", "box-shadow: none;");
+            }
+        }
+    </script>
+    <!--#endregion-->
+
+    <!--#region Main content-->
+    <div class="body">
+        <div id="qr-125" class="qr-wrapper">
+            <div class="box-show-qr">
+                <div class="sub-text">Đưa mã này cho thu ngân</div>
+    
+                <div class="row">
+                    <img src="./assets/img/qr_code.png" width="260" alt="qr_code">
+                </div>
+    
+                <div class="sub-text">S/N: 123456789</div>
+                
+                <div class="main-text">
+                    DTD112345658758
+                </div>
+    
+                <div class="main-text">
+                    Buffet Premium nướng thượng hạng tại nhà hàng Jeonbok ẩm thực Hàn Quốc số 1 tại Hà Nội - Áp dụng cuối tuần
+                </div>
+    
+                <div class="exp-text">HSD: 01/01/2025</div>
+    
+                <div class="row">
+                    <div class="col-12 ticket-edge-ctn">
+                        <div class="right"></div>
+                        <div class="left"></div> 
+                        <div class="borderline"></div>
+                    </div>
+                </div>
+    
+                <div class="price-text">
+                    800,000đ
+                </div>
+    
+                <div class="download-qr">
+                    <button class="btn-download-qr" id="" onclick="download_qr(this.id)">Tải mã QR</button>
+                    <a id=""></a>
+                </div>
+            </div>
+    
+            <div class="box-show-info">
+                <div class="row">
+                    <div class="col-12 box-filter">
+                        <div class="row">
+                            <div class="col-6 main-text">
+                                Danh sách mã code
+                            </div>
+                            <div class="col-6 drop-status-rg">
+                                <input id="stt-1" value="Chưa sử dụng" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);">
+                                <input id="stt-2" value="Đã sử dụng" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);">
+                                <input id="stt-3" value="Hết hạn" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);">
+                                <input id="stt-4" value="Hủy" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);">
+                        
+                                <div class="dropDown-wrapper-ActionButton">
+                                    <input type="checkbox" id="dropDown-toggle">
+                        
+                                    <label for="dropDown-toggle" class="dropDown-toggle-label-ActionButton">
+                                        <span id="status">Chưa sử dụng</span>
+                                    </label>
+                        
+                                    <div class="dropDown-ActionButton">
+                                        <div id="pos-detector" class="d-none"></div>
+    
+                                        <label for="stt-1">
+                                            <div id="stt-1-lbl" class="dropdown-label-left-bx active">✓</div> 
+                                            Chưa sử dụng
+                                        </label>
+                                        <label for="stt-2">
+                                            <div id="stt-2-lbl" class="dropdown-label-left-bx">✓</div>
+                                            Đã sử dụng
+                                        </label>
+                                        <label for="stt-3">
+                                            <div id="stt-3-lbl" class="dropdown-label-left-bx">✓</div>
+                                            Hết hạn
+                                        </label>
+                                        <label for="stt-4">
+                                            <div id="stt-4-lbl" class="dropdown-label-left-bx">✓</div>
+                                            Hủy
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-12 box-deal">
+                        <div class="empty d-none">
+                            Không có mã giảm giá
+                        </div>
+                        <input type="checkbox" id="isShowAllDeal" class="d-none"/>
+                        <div class="deal-card-rg voucher">
+                            <div class="select-all">
+                                <div class="row">
+                                    <div class="col-10 card-right">
+                                        <div class="select-all-txt">
+                                            Tất cả
+                                        </div>
+                                    </div>
+                                    <div class="col-2 card-right">
+                                        <div class="dealtoday-checkbox">
+                                            <input type="checkbox" id="cb-1" name="deal" />
+                                            <label for="cb-1"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="deal-detail">
+                                <div class="row">
+                                    <div class="col-2 card-left voucher save-box" onclick="copyCode(this.id);" id="DT9136996022DT9136996022">
+                                        <img src="assets/img/icon-copy.svg" alt="" width="20" height="20"/>
+                                    </div>
+                                    <div class="col-8 card-left voucher">
+                                        <div class="deal-code">DT9136996022DT9136996022</div>
+
+                                        <div class="t-eff-top"></div>
+                                        
+                                        <div class="t-eff-bottom"></div>
+                                    </div>
+            
+                                    <div class="col-2 card-right" id="" onclick="getQrCode(this.id)">
+                                        <div class="dealtoday-checkbox">
+                                            <input type="checkbox" id="cb-2" name="deal" />
+                                            <label for="cb-2"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="deal-detail">
+                                <div class="row">
+                                    <div class="col-2 card-left voucher save-box" onclick="copyCode(this.id);" id="DT9136996022">
+                                        <img src="assets/img/icon-copy.svg" alt="" width="20" height="20"/>
+                                    </div>
+                                    <div class="col-8 card-left voucher">
+                                        <div class="deal-code">DT9136996022</div>
+
+                                        <div class="t-eff-top"></div>
+                                        
+                                        <div class="t-eff-bottom"></div>
+                                    </div>
+            
+                                    <div class="col-2 card-right" id="" onclick="getQrCode(this.id)">
+                                        <div class="dealtoday-checkbox">
+                                            <input type="checkbox" id="cb-3" name="deal" />
+                                            <label for="cb-3"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="deal-detail">
+                                <div class="row">
+                                    <div class="col-2 card-left voucher save-box" onclick="copyCode(this.id);" id="DT9136996022">
+                                        <img src="assets/img/icon-copy.svg" alt="" width="20" height="20"/>
+                                    </div>
+                                    <div class="col-8 card-left voucher">
+                                        <div class="deal-code">DT9136996022</div>
+
+                                        <div class="t-eff-top"></div>
+                                        
+                                        <div class="t-eff-bottom"></div>
+                                    </div>
+            
+                                    <div class="col-2 card-right" id="" onclick="getQrCode(this.id)">
+                                        <div class="dealtoday-checkbox">
+                                            <input type="checkbox" id="cb-4" name="deal" />
+                                            <label for="cb-4"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="deal-detail">
+                                <div class="row">
+                                    <div class="col-2 card-left voucher save-box" onclick="copyCode(this.id);" id="DT9136996022">
+                                        <img src="assets/img/icon-copy.svg" alt="" width="20" height="20"/>
+                                    </div>
+                                    <div class="col-8 card-left voucher">
+                                        <div class="deal-code">DT9136996022</div>
+
+                                        <div class="t-eff-top"></div>
+                                        
+                                        <div class="t-eff-bottom"></div>
+                                    </div>
+            
+                                    <div class="col-2 card-right" id="" onclick="getQrCode(this.id)">
+                                        <div class="dealtoday-checkbox">
+                                            <input type="checkbox" id="cb-5" name="deal" />
+                                            <label for="cb-5"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="deal-detail">
+                                <div class="row">
+                                    <div class="col-2 card-left voucher save-box" onclick="copyCode(this.id);" id="DT9136996022">
+                                        <img src="assets/img/icon-copy.svg" alt="" width="20" height="20"/>
+                                    </div>
+                                    <div class="col-8 card-left voucher">
+                                        <div class="deal-code">DT9136996022</div>
+
+                                        <div class="t-eff-top"></div>
+                                        
+                                        <div class="t-eff-bottom"></div>
+                                    </div>
+            
+                                    <div class="col-2 card-right" id="" onclick="getQrCode(this.id)">
+                                        <div class="dealtoday-checkbox">
+                                            <input type="checkbox" id="cb-1" name="deal" />
+                                            <label for="cb-1"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label id="viewMore" for="isShowAllDeal" class="btn-view-more">
+                                Xem thêm
+                            </label>
+                            <label id="viewLess" for="isShowAllDeal" class="btn-view-more">
+                                Thu gọn
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="addition-info">
+            <div class="using-guide">
+                <div class="title-info">
+                    Điểm chấp nhận
+                </div>
+                <div class="content-info voucher">
+                    <div class="loc-info">
+                        Số 18 ngõ 11 Thái Hà, Đống Đa, Hà Nội
+                    </div>
+                    <div class="loc-info">
+                        Số 18 ngõ 11 Thái Hà, Đống Đa, Hà Nội
+                    </div>
+                    <div class="loc-info">
+                        Số 18 ngõ 11 Thái Hà, Đống Đa, Hà Nội
+                    </div>
+                    <div class="loc-info">
+                        Số 18 ngõ 11 Thái Hà, Đống Đa, Hà Nội
+                    </div>
+                    <div class="loc-info">
+                        Số 18 ngõ 11 Thái Hà, Đống Đa, Hà Nội
+                    </div>
+                </div>
+            </div>
+        
+            <div class="terms-of-use">
+                <div class="title-info">
+                    Điều kiện sử dụng
+                </div>
+                <div class="content-info gift">
+                    <ul>
+                        <li>Mã quà tặng Dealtoday không có giá trị quy đổi thành tiền mặt, không hoàn tiền thừa và không được yêu cầu xuất hóa đơn tài chính cho phần giá trị quy đổi.</li>
+                        <li>Không chia sẻ hoặc tiết lộ thông tin mã quà tặng Dealtoday cho bất kỳ ai.</li>
+                        <li>Mã quà tặng Dealtoday phải còn thời hạn sử dụng.</li>
+                        <li>Có thể kết hợp một hoặc nhiều mã thẻ quà tặng cùng với các phương thức thanh toán khác (Thẻ tín dụng, tiền mặt) để đổi quà có giá trị cao hơn.</li>
+                        <li>Mọi thắc mắc trong quá trình sử dụng vui lòng liên hệ: 1900 2065</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
+    <!--#region script-->
+    <script>
+        function triggerDropdown(id, value) {
+            //Close dropdown
+            // $('#dropDown-toggle').prop("checked", false);
+            $('#dropDown-toggle').click();
+
+            //Remove class active
+            $("#pos-detector").parents('.dropDown-wrapper-ActionButton').find('.dropDown-ActionButton label').each(function () {
+                $(this).find('div').removeClass('active');
+            });
+
+            //Active selected item
+            $('#' + id + '-lbl').addClass('active');
+
+            //Set value to input
+            $('#status').html(value);
+        }
+
+        function copyCode(code) {
+            if (code.includes("Ma the:")) {
+                code = code.substring(7, code.indexOf("-Serial:"));
+                navigator.clipboard.writeText(code);
+                alert("Đã copy mã thẻ!");
+            }
+            else if (code.includes(",SERIAL:")) {
+                code = code.substring(4, code.indexOf(",SERIAL:"));
+                navigator.clipboard.writeText(code);
+                alert("Đã copy mã PIN!");
+            }
+            else {
+                navigator.clipboard.writeText(code);
+                alert("Đã copy mã code!");
+            }
+        };
+    </script>
+    <!--#endregion-->
+
+    <!--#region-->
+    <!--#endregion-->
+</body>
+</html>
