@@ -10,7 +10,14 @@
     <meta name="google-play-app" content="app-id=vn.dealtoday.android">
     <link rel="stylesheet" href="./assets/style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    
+    <!-- Datepicker -->
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/js/bootstrap-datetimepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 </head>
 <body>
     <!--#region Header-->
@@ -40,7 +47,21 @@
 
     <!--#region Main content-->
     <div class="body">
-        <div id="qr-125" class="qr-wrapper">
+        <div class="col-12 tab-selector">
+            <div class="row">
+                <div id="changeCodeArea" area-name="changeCode-125" class="col-6 tab" onclick="showArea(this.id);">
+                    <div class="col-12">
+                        Chưa sử dụng
+                    </div>
+                </div>
+                <div id="viewCodeArea" area-name="qr-125" class="col-6 tab selected" onclick="showArea(this.id);">
+                    <div class="col-12">
+                        Mã QR
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="qr-126" class="qr-wrapper">
             <div class="box-show-qr">
                 <div class="sub-text">Đưa mã này cho thu ngân</div>
     
@@ -50,8 +71,12 @@
     
                 <div class="sub-text">S/N: 123456789</div>
                 
-                <div class="main-text">
+                <div class="main-text d-none">
                     DTD112345658758
+                </div>
+
+                <div class="info-text">
+                    Bạn đã chọn 3 mã
                 </div>
     
                 <div class="main-text">
@@ -267,6 +292,37 @@
                 </div>
             </div>
         </div>
+
+        <div id="qr-125" class="qr-wrapper">
+            <div class="col-12 txt-alert">
+                Quý khách vui lòng chọn số lượng vé và ngày để được phục vụ
+            </div>
+        </div>
+
+        <div id="changeCode-125" class="qr-wrapper">
+            <div class="col-12 txt-convert-msg">
+                Vui lòng chọn số lượng vé và ngày sử dụng dịch vụ: <span class="item-title">Vé tiêu chuẩn 2 chiều NCT</span>
+            </div>
+                
+            <div class="row">
+                <div class="col-6 txt-convert-prop">
+                    <div class="col-12">
+                        Số lượng vé
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="quant-count" style="pointer-events: none;" value="2"/>
+                    </div>
+                </div>
+                <div class="col-6 txt-convert-prop">
+                    <div class="col-12">
+                        Ngày sử dụng
+                    </div>
+                    <div class="col-12">
+                        <img src="assets/img/icon-grey-calendar.svg" alt="" width="32" height="32" onclick="openMenuPopup('#popup-select-date')"/>
+                    </div>
+                </div>
+            </div>
+        </div>
     
         <div class="addition-info">
             <div class="using-guide">
@@ -310,6 +366,50 @@
     </div>
     <!--#endregion-->
 
+    <!--#region Popup-->
+    <input id="selectedDate" type="hidden" />
+    <div class="calender-popup-container" id="popup-select-date" onclick="if(event.target == this){closePopup('#popup-select-date');}" aria-hidden="true">
+        <div class="calender-popup-wrapper">
+            <div class="row">
+                <div class="col-12 calendar-header">
+                    Chọn ngày
+                    <img src="assets/img/close-icon.png" alt="" class="qr-image" onclick="closePopup('#popup-select-date');" />
+                </div>
+                <div class="col-12">
+                    <div style="position: relative; min-height: fit-content; ">
+                        <input id="select_date" type="text" style="display: none;" />
+                        <script>
+                            //Declare datepicker
+                            $(function () {
+                                $('#select_date').datetimepicker({
+                                    locale: 'vi',
+                                    keepOpen: true,
+                                    format: 'DD/MM/YYYY',
+                                    minDate: moment()
+                                });
+                    
+                                $("#select_date").data("DateTimePicker").show();
+                            });
+                        </script>
+                    </div>
+                </div>
+                <div class="col-12 row btn-rg">
+                    <div class="col-6">
+                        <div class="btn-general back" onclick="closePopup('#popup-calendar-from');"> 
+                            Quay lại
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="btn-general" onclick="fillDate('#selectedDate');"> 
+                            Chọn ngày
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
     <!--#region script-->
     <script>
         function triggerDropdown(id, value) {
@@ -345,6 +445,41 @@
                 alert("Đã copy mã code!");
             }
         };
+
+        function getBlobFromB64(b64Data) 
+        {
+            var byteCharacters = atob(b64Data); //Get binary data from b64 string
+
+            var byteNumbers = new Array(byteCharacters.length); //Get length of binary data
+
+            //Convert to blob
+            for (var i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            var byteArray = new Uint8Array(byteNumbers);
+            var blob = new Blob([byteArray], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+        }
+
+        function showArea(id) {
+            $('.tab-selector .row .col-6').removeClass('selected');
+            $('#' + id).addClass('selected');
+            $('body .qr-wrapper').hide();
+            $('#' + $('#' + id).attr('area-name')).show();
+        };
+
+        function openMenuPopup(popup) {
+            $(popup).show().attr("aria-hidden", "false");
+            $('body').attr('style','overflow: hidden');
+        }
+        
+        function closePopup(popup) {
+            $(popup).hide().attr("aria-hidden", "true");
+            $('body').attr('style','overflow: auto');
+        }
+
+        function fillDate(inputId) {
+            $(inputId).val($('#' + 'select_date').val());
+        }
     </script>
     <!--#endregion-->
 
