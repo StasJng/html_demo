@@ -129,10 +129,71 @@
         </div>
     </div>
     <script>
+        function begin() {
+            var myTimer, timing = 180;
+            $('#timing').html(timing);
+            $('#begin').prop('disabled', true);
+            myTimer = setInterval(function () {
+                --timing;
+                $('#timing').html(timing);
+                if (timing === 0) {
+                    $('.text-veryfi-3').html("Bạn không nhận được mã? Vui lòng click&nbsp;<span style='color:red;cursor:pointer;' onclick='ResendOTP();'>Gửi lại</span>");
+                    clearInterval(myTimer);
+                    $('#begin').prop('disabled', false);
+                }
+            }, 1000);
+        }
+
+        function ResendOTP() {
+            var mobile = $('#hfmobile').val();
+            $.ajax({
+                type: 'post',
+                url: '/v2/ResendOTPSMS',
+                data: {
+                    mobile: mobile
+                },
+                success: function (d) {
+                    if (d.code == "00") {
+                        $('.text-veryfi-3').html(d.msg);
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            begin();
+            $(".input-number").inputFilter(function (value) {
+                return /^\d*$/.test(value);    // Allow digits only, using a RegExp
+            });
+
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'login',
+                'loginMethod': 'SMS'
+            });
+        });
+
+        (function ($) {
+            $.fn.inputFilter = function (inputFilter) {
+                return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function () {
+                    if (inputFilter(this.value)) {
+                        this.oldValue = this.value;
+                        this.oldSelectionStart = this.selectionStart;
+                        this.oldSelectionEnd = this.selectionEnd;
+                    } else if (this.hasOwnProperty("oldValue")) {
+                        this.value = this.oldValue;
+                        this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                    } else {
+                        this.value = "";
+                    }
+                });
+            };
+        }(jQuery));
+
         $(function () {
             //Active phone
             $(".input-number").keyup(function (e) {
-                if (e.keyCode == 8) {
+                if (e.keyCode == 8) { //Press "Backspace"
                     if (parseInt($(this).val().length) == 0) {
                         $(this).prev('.input-number').focus();
                     }
@@ -142,7 +203,7 @@
                     }
                 }
             });
-        })
+        });
     </script>
 </body>
 </html>
