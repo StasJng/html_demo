@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    
+    
+    
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({ 
+            //pageLanguage: 'vi', 
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL, 
+            autoDisplay: false,
+            includedLanguages: 'en,vi', 
+            gaTrack: true, 
+            gaId: 'AIzaSyAuk_NhmtJvsJXMB9PAy-jCSGv5sVhhxvM'
+        }, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+    <title>Document</title>
+</head>
+<style>
+.box-language {
+    text-align: right;
+    padding: 15px 0;
+}
+
+.box-language select {
+    border: 1px solid #bdbdbd;
+    height: 38px;
+    padding: 0 10px 0 30px;
+    background: url(https://www.dealtoday.vn/Areas/MobileV2/asset/images/landingpage/language.svg) no-repeat;
+    background: url(https://www.dealtoday.vn/AssetBooking/Images/flag_vn.jpg) no-repeat;
+    background-position: left 10px center;
+    background-color: white;
+}
+
+.text-company {
+    font-weight: 500;
+    padding: 25px 0;
+}
+ #lang-box-125 {
+    border-top: 1.5px solid #cdcdcd;
+    margin-top: 10px;
+    padding: 0 30px;
+ }
+
+/*Hide Google traslate bar*/
+body > .skiptranslate {
+    display: none;
+}
+
+/*Make sure Body not get padding after translate*/
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
+    left: 0;
+}
+.goog-te-gadget {
+    color: transparent !important;
+}
+.goog-te-gadget .goog-te-combo {
+    height: 32px;
+    background: url(https://www.dealtoday.vn/AssetBooking/Images/flag_vn.jpg) no-repeat;
+    background-position: left 10px center;
+    background-color: white;
+    width: 60px;
+    border-radius: 8px;
+    padding: 0px 65px 0px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.goog-te-gadget img {
+    display: none;
+}
+</style>
+<body>
+    <div class="container" id="lang-box-125">
+        <div class="row">
+            <div class="text-company col-md-6 col-xs-12">© Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế STARS</div>
+            <div class="box-language col-md-6 col-xs-12">
+                <!-- <select onchange="goTrans(this.value)" id="drop-lang-125">
+                    <option value="Vietnamese">Tiếng Việt</option>
+                    <option value="English">English</option>
+                </select> -->
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="google_translate_element" style="visibility: hidden; height: 0px !important"></div> -->
+    <!--#region Basic Demo with other Languages-->
+         <!--# <h1>My Web Page</h1>
+
+        <p>Hello everybody!</p>
+
+        <p> Translatethis page:</p>
+
+        <div id="google_translate_element"></div>
+
+        <script type="text/javascript">
+        function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+        </script>
+
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+        <p>You can translate the content of this page by selecting a language in the select box.</p> -->
+    <!--#endregion-->
+</div>
+<script type="text/javascript">
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i <ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function setCookie(cname, cvalue, exdays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (exdays*24*60*60*1000));
+        let expires = "expires="+ d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    
+    $(document).ready(function () {
+        var currLang = getCookie("googtrans");
+        console.log(currLang);
+        console.log(typeof currLang);
+        if (currLang == "") {
+            document.getElementById("drop-lang-125").value = "Vietnamese";
+        }
+        else
+        {
+            document.getElementById("drop-lang-125").value = "English";
+        }
+    });
+
+    function goTrans(lang) {
+        //Check frame and get current language
+        // var $frame = $('.goog-te-menu-frame:first');
+        // if (!$frame.length) {
+        //     alert("Error: Could not find Google translate frame.");
+        //     return false;
+        // }
+
+
+        //Check cookie to Reload(set default language)
+        var currLang = getCookie("googtrans");
+        if (lang == 'Vietnamese' && (typeof currLang) != "undefined") {
+            setCookie("googtrans", -1, "");
+            window.location.reload();
+            return false;
+        }
+        
+        //Translate
+        if(lang == 'English' && (typeof currLang) != "undefined") {
+            // var $frame = $('.goog-te-menu-frame:first');
+            // if (!$frame.length) {
+            //     alert("Error: Could not find Google translate frame.");
+            //     return false;
+            // }
+            // $('.goog-te-menu-frame:first').contents().find('a span.text').get(1).click();
+
+            $('.goog-te-combo option[value=en]').each(function () {
+                //console.log($(this).parents('.container').find('.goog-te-combo option[value=en]').html);
+                //$(this).parents('.container').find('.goog-te-combo option[value=en]').get(1).click();
+                // $('.goog-te-combo').val('en');
+                // $('.goog-te-combo').change();
+                // $('.goog-te-combo option[value=en]').attr('selected','selected');
+                $('.goog-te-combo').attr('id','selectBox');
+
+                $("#selectBox").focus();
+                document.getElementById("selectBox").click();
+                keypress();
+
+                $("#selectBox").show();
+                $("#selectBox").select();
+
+
+                $('.goog-te-combo option[value=en]').attr('id','selectedLang');
+                document.getElementById("selectedLang").focus();
+                document.getElementById("selectedLang").click();
+                $('#selectedLang').show();
+                $('#selectedLang').select();
+                keypress();
+            });
+
+            document.querySelector('.goog-te-combo option[value=en]').click();
+            document.getElementById("inputDemo").focus();
+            document.getElementById("selectBox").focus();
+
+            const event = new KeyboardEvent('keydown', { key });
+  textField.dispatchEvent(event);
+            return false;
+        }
+
+        function keypress() {
+            // let e = jQuery.Event("keypress");
+            // let e = jQuery.Event("keyup");
+            let e = jQuery.Event("keyup");
+            e.which = 13; 
+            e.keyCode = 13;
+            $("#inputDemo").trigger(e);
+
+            const ke = new KeyboardEvent('keydown', {
+                bubbles: true, cancelable: true, keyCode: 13
+            });
+            document.body.dispatchEvent(ke);
+        }
+
+        //Translate
+        // if(lang == 'English' && (typeof currLang) != "undefined") {
+        //     var $frame = $('.goog-te-combo:first');
+        //     if (!$frame.length) {
+        //         alert("Error: Could not find Google translate frame.");
+        //         return false;
+        //     }
+
+        //     console.log($('.goog-te-combo:first option[value=en]'));
+        //     console.log($('.goog-te-combo:first').attr('selected'));
+        //     $('.goog-te-combo:first option[value=en]').attr('selected','selected');
+            
+        //     return false;
+        // }
+    }
+</script>
+</body>
+</html>
