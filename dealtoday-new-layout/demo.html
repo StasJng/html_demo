@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,300&subset=latin,vietnamese,latin-ext' rel='stylesheet' type='text/css'>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    
+    <!-- Datepicker -->
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/js/bootstrap-datetimepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--#region Popups-->
+    <div class="wrapper">
+        <div class="calender-popup-container" id="popup-calendar-from" onclick="if(event.target == this){closePopup('#popup-calendar-from');}" aria-hidden="true">
+            <div class="calender-popup-wrapper">
+                <div class="row">
+                    <div class="col-12 calendar-header">
+                        Chọn ngày
+                        <img src="asset/images/eticket/close-icon.svg" alt="" class="qr-image" onclick="closePopup('#popup-calendar-from');" />
+                    </div>
+                    <div class="col-12">
+                        <div style="position: relative; min-height: fit-content; ">
+                            <input id="select_date_from" type="text" style="display: none;" />
+                            <script>
+                                //Declare datepicker
+                                $(function () {
+                                    $('#select_date_from').datetimepicker({
+                                        locale: 'vi',
+                                        keepOpen: true,
+                                        format: 'DD/MM/YYYY',
+                                        minDate: moment()
+                                    });
+                        
+                                    $("#select_date_from").data("DateTimePicker").show();
+                                    document.getElementsByClassName('bootstrap-datetimepicker-widget dropdown-menu usetwentyfour')[0].setAttribute('style', 'display: block; position: absolute; z-index: 1; top: 0;');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-12 row btn-rg">
+                        <div class="col-6">
+                            <div class="btn-general back" onclick="closePopup('#popup-calendar-from');"> 
+                                Quay lại
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="btn-general" onclick="fillDate('from');"> 
+                                Chọn ngày
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="calender-popup-container" id="popup-calendar-to" onclick="if(event.target == this){closePopup('#popup-calendar-to');}" aria-hidden="true">
+            <div class="calender-popup-wrapper">
+                <div class="row">
+                    <div class="col-12 calendar-header">
+                        Chọn ngày
+                        <img src="asset/images/eticket/close-icon.svg" alt="" class="qr-image" onclick="closePopup('#popup-calendar-to');" />
+                    </div>
+                    <div class="col-12">
+                        <div style="position: relative; min-height: fit-content; ">
+                            <input id="select_date_to" type="text" style="display: none;" />
+                            <script>
+                                //Declare datepicker
+                                $(function () {
+                                    $('#select_date_to').datetimepicker({
+                                        locale: 'vi',
+                                        keepOpen: true,
+                                        format: 'DD/MM/YYYY',
+                                        minDate: moment()
+                                    });
+                        
+                                    $("#select_date_to").data("DateTimePicker").show();
+                                    document.getElementsByClassName('bootstrap-datetimepicker-widget dropdown-menu usetwentyfour')[0].setAttribute('style', 'display: block; position: absolute; z-index: 1; top: 0;');
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-12 row btn-rg">
+                        <div class="col-6">
+                            <div class="btn-general back" onclick="closePopup('#popup-calendar-to');"> 
+                                Quay lại
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="btn-general" onclick="fillDate('to');"> 
+                                Chọn ngày
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="calender-popup-container" id="popup-trans-type" aria-hidden="true">
+        <div class="calender-popup-wrapper">
+            <div class="row">
+                <div class="col-12 calendar-header">
+                    Trạng thái
+                    <img src="asset/images/eticket/close-icon.svg" alt="" class="qr-image" onclick="closePopup('#popup-trans-type');" />
+                </div>
+
+                <div class="trans-type-ctn">
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-0" name="trans-type-mb" type="radio" value="-1" onchange="setTransValue(this.value)" />
+                        <label for="val-0">
+                            <div class="popup-opt">&nbsp;Tất cả</div>
+                        </label>
+                    </div>
+
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-1" name="trans-type-mb" type="radio" value="22,27,23,100,200,400" onchange="setTransValue(this.value)" />
+                        <label for="val-1">
+                            <div class="popup-opt">&nbsp;Mua hàng</div>
+                        </label>
+                    </div>
+    
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-2" name="trans-type-mb" type="radio" value="220,280,240,260" onchange="setTransValue(this.value)" />
+                        <label for="val-2">
+                            <div class="popup-opt">&nbsp;Đổi điểm</div>
+                        </label>
+                    </div>
+    
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-3" name="trans-type-mb" type="radio" value="180" onchange="setTransValue(this.value)" />
+                        <label for="val-3">
+                            <div class="popup-opt">&nbsp;Hoàn trả</div>
+                        </label>
+                    </div>
+    
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-4" name="trans-type-mb" type="radio" value="320,321,322,340,341,342" onchange="setTransValue(this.value)" />
+                        <label for="val-4">
+                            <div class="popup-opt">&nbsp;Mua và nạp thẻ điện thoại</div>
+                        </label>
+                    </div>
+    
+                    <div class="col-12 dealtoday-checkbox round">
+                        <input id="val-5" name="trans-type-mb" type="radio" value="43" onchange="setTransValue(this.value)" />
+                        <label for="val-5">
+                            <div class="popup-opt">&nbsp;Sử dụng dịch vụ</div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openMenuPopup(popup) {
+            $(popup).show().attr("aria-hidden", "false");
+            $('body').attr('style','overflow: hidden');
+        }
+        
+        function closePopup(popup) {
+            $(popup).hide().attr("aria-hidden", "true");
+            $('body').attr('style','overflow: auto');
+        }
+
+        function fillDate(type, value) {
+            $('#' + type + "-date").val($('#' + 'select_date_' + type).val());
+            $('#' + type + "-date-mb").val($('#' + 'select_date_' + type).val());
+        }
+
+        function setTransValue(value) {
+            $('#transtype').val(value);
+            $('#transtype').change();
+        }
+    </script>
+    <!--#endregion-->
+
+    <!--#region Header-->
+    <div class="header" id="header">
+        <div class="container">
+            <div class="row header-content">
+                <div class="col-6">
+                    <div class="header-logo payment">
+                        <a href="/eticket">
+                            <img src="asset/images/eticket/eticket-header-logo.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 hot-line">
+                    <div class="wrap">
+                        <img src="asset/images/eticket/icon-phone.svg" alt="" />
+                        <a href="tel:19002065">19002065</a>
+                        <a href="tel:0934661016"class="d-lg-flex d-md-flex d-sm-none d-none">&nbsp;-&nbsp;0934.661.016</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            if (window.pageYOffset > 0) {
+                document.getElementById("header").setAttribute("style", "box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
+            }
+            else {
+                document.getElementById("header").setAttribute("style", "box-shadow: none;");
+            }
+        }
+
+        function showNavBar() {
+            if ($("#nav-bar").hasClass("hidden")) {
+               $("#nav-bar").removeClass("hidden"); 
+               $("#nav-bar").addClass("visible"); 
+               $("#main-content-reg").attr("style", "height: 0; overflow: hidden;");
+               $("#mb-header-title").attr("style", "opacity: 0; pointer-events: none");
+            }
+            else
+            {
+               $("#nav-bar").addClass("hidden"); 
+               $("#nav-bar").removeClass("visible"); 
+               $("#main-content-reg").attr("style", "overflow: auto;");
+               $("#mb-header-title").attr("style", "opacity: 1;");
+            }
+        }
+    </script>
+    <!--#endregion-->
+    
+    <!--#region Body-->
+    <div class="body">
+        <div class="container">
+            <div class="row">
+                <!--#region head-title-->
+                <div id="mb-header-title" class="col-12 mb-head-title d-lg-none d-md-none d-sm-flex d-flex">
+                    <img src="asset/images/eticket/icon-left.svg" alt="" onclick="showNavBar();">
+                    Tài khoản deal
+                </div>
+                <!--#endregion-->
+
+                <!--#region Left-->
+                <div id="nav-bar" class="col-lg-3 col-md-3 col-sm-12 col-12 profi-and-funcs hidden">
+                    <div class="row profi">
+                        <div class="col-lg-12 col-md-12 col-sm-10 col-10">
+                            <div class="row">
+                                <div class="col-12 name"> 
+                                    Mr. Trần Demo
+                                </div>
+                                <div class="col-12 email"> 
+                                    winwinthepooh@gmail.com
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2 d-lg-none d-md-none d-sm-flex d-flex">
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                    </div>
+
+                    <div class="row d-lg-block d-md-block d-sm-none d-none">
+                        <div class="gen-ful-border"></div>
+                    </div>
+
+                    <div class="group-title">
+                        <img src="asset/images/eticket/funcs-icon/v2/icon-user.svg" alt="" >
+                        <span>Thông tin tài khoản</span>
+                    </div>
+                    <div class="row funcs">
+                        <a href="#" class="col-12 detail selected" onclick="showNavBar();">
+                            Người dùng
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <a href="#" class="col-12 detail">
+                            Tài khoản ngân hàng
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <a href="#" class="col-12 detail">
+                            Đổi mật khẩu
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                    </div>
+                    
+                    <div class="group-title">
+                        <img src="asset/images/eticket/funcs-icon/v2/icon-point.svg" alt="" >
+                        <span>Tài khoản điểm</span>
+                    </div>
+                    <div class="row funcs">
+                        <a href="#" class="col-12 detail">
+                            Dealtoday E-point<span class="e-point-count">80.000</span>
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <a href="#" class="col-12 detail">
+                            Vani xu
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                    </div>
+                    
+                    <div class="group-title">
+                        <img src="asset/images/eticket/funcs-icon/v2/icon-service.svg" alt="" >
+                        <span>Tài khoản Deal</span>
+                    </div>
+                    <div class="row funcs">
+                        <a href="#" class="col-12 detail">
+                            Tài khoản Deal
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <a href="#" class="col-12 detail">
+                            Mã giảm giá
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                    </div>
+
+                    <div class="group-title">
+                        <img src="asset/images/eticket/funcs-icon/v2/icon-history.svg" alt="" >
+                        <span>Lịch sử giao dịch</span>
+                    </div>
+                    <div class="row funcs">
+                        <a href="#" class="col-12 detail">
+                            Giao dịch dịch vụ
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <a href="#" class="col-12 detail">
+                            Đánh giá, nhận xét
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                    </div>
+
+                    <div class="group-title">
+                        <img src="asset/images/eticket/funcs-icon/v2/icon-notify.svg" alt="" >
+                        <span>Thông báo</span>
+                    </div>
+                    <div class="row funcs">
+                        <a href="#" class="col-12 detail">
+                            Tất cả thông báo
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <a href="#" class="col-12 detail">
+                            Tài khoản điểm
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                    </div>
+
+                    <div class="group-title">
+                        <img src="asset/images/eticket/funcs-icon/v2/icon-infomation.svg" alt="" >
+                        <span>Hỗ trợ</span>
+                    </div>
+                    <div class="row funcs">
+                        <a href="#" class="col-12 detail">
+                            Giới thiệu Dealtoday
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                        <div class="borderline"></div>
+                        <a href="#" class="col-12 detail">
+                            Điều khoản sử dụng
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                        <div class="borderline"></div>
+                        <div class="col-12 detail">
+                            <span>Ngôn ngữ</span>
+                            <div class="langs-rg">
+                                <span class="lang-icon selected">
+                                    <img src="https://www.dealtoday.vn/AssetBooking/Images/flag_vn.jpg" alt="" />
+                                </span>
+                                <span>
+                                    |
+                                </span>
+                                <span class="lang-icon">
+                                    <img src="https://www.dealtoday.vn/asset/images/ecode/flag-en-egift.png" alt="" />
+                                </span>
+                            </div>
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </div>
+                        <div class="borderline d-lg-none d-sm-none d-sm-block d-block"></div>
+                        <a href="#" class="col-12 detail">
+                            Hotline: 1900 2065
+                            <img src="asset/images/eticket/icon-right.svg" alt="" class="right-icon d-lg-none d-sm-none d-sm-block d-block">
+                        </a>
+                    </div>
+
+                    <a href="#" class="d-lg-none d-md-none d-sm-block d-block"> 
+                        <div class="btn-log-out">
+                            <div>
+                                Đăng xuất
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!--#endregion-->
+
+                <!--#region Right-->
+                <div class="col-lg-9 col-md-9 col-sm-12 col-12">
+                    <div class="container content">
+                        <div class="row items">
+                            <!--#region Title-->
+                            <div class="col-12 title d-lg-block d-md-block d-sm-none d-none">
+                                Tài khoản deal
+                                <div class="col-12"></div>
+                            </div>
+                            <!--#endregion-->
+
+                            <!--#region Filter-->
+                            <div class="col-12">
+                                <form class="row trans-filter">
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                                        <div class="row inp-form">
+                                            <div class="col-12">
+                                                <div class="inp-value date">
+                                                    <input type="text" id="from-date" name="from-date" placeholder="Từ ngày" autocomplete="off" class="d-lg-block d-mf-block d-sm-none d-none" />
+                                                    <!--#region Script-->
+                                                    <script>
+                                                        //Declare datepicker
+                                                        $(function () {
+                                                            $('#from-date').datetimepicker({
+                                                                locale: 'vi',
+                                                                keepOpen: true,
+                                                                format: 'DD/MM/YYYY',
+                                                                minDate: moment().add(-1, 'y'),
+                                                                maxDate: moment()
+                                                            });
+                                                        });
+                                                    </script>
+                                                    <!--#endregion-->
+
+                                                    <input type="text" id="from-date-mb" name="from-date-mb" placeholder="Từ ngày" autocomplete="off" class="d-lg-none d-mf-none d-sm-block d-block" onclick="openMenuPopup('#popup-calendar-from')" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                                        <div class="row inp-form">
+                                            <div class="col-12">
+                                                <div class="inp-value date">
+                                                    <input type="text" id="to-date" name="to-date" placeholder="Đến ngày" autocomplete="off" class="d-lg-block d-mf-block d-sm-none d-none" />
+                                                    <!--#region Script-->
+                                                    <script>
+                                                        //Declare datepicker
+                                                        $(function () {
+                                                            $('#to-date').datetimepicker({
+                                                                locale: 'vi',
+                                                                keepOpen: true,
+                                                                format: 'DD/MM/YYYY',
+                                                                maxDate: moment()
+                                                            });
+                                                        });
+
+                                                    </script>
+                                                    <!--#endregion-->
+
+                                                    <input type="text" id="to-date-mb" name="to-date-mb" placeholder="Đến ngày" autocomplete="off" class="d-lg-none d-mf-none d-sm-block d-block" onclick="openMenuPopup('#popup-calendar-to')" readonly />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" value="@ViewBag.transtype" id="hdTranType" />
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
+                                        <div class="row inp-form">
+                                            <div class="col-12">
+                                                <input id="type-0" value="-1" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);" class="d-none">
+                                                <input id="type-1" value="22,27,23,100,200,400" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);" class="d-none">
+                                                <input id="type-2" value="220,280,240,260" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);" class="d-none">
+                                                <input id="type-3" value="180" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);" class="d-none">
+                                                <input id="type-4" value="320,321,322,340,341,342" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);" class="d-none">
+                                                <input id="type-5" value="43" type="radio" name="options" onchange="triggerDropdown(this.id, this.value);" class="d-none">
+
+                                                <div class="inp-value drop-rg">
+                                                    <input type="checkbox" id="dropDown-toggle">
+
+                                                    <label for="dropDown-toggle" class="dropDown-toggle-label-ActionButton" onclick="openMenuPopup('#popup-trans-type')">
+                                                        <select id="transtype" name="transtype" style="pointer-events: none">
+                                                            <option value="-1">Chọn loại giao dịch</option>
+                                                            <option value="22,27,23,100,200,400">Mua hàng</option>
+                                                            <option value="220,280,240,260">Đổi điểm</option>
+                                                            <option value="180">Hoàn trả</option>
+                                                            <option value="320,321,322,340,341,342">Mua &amp; Nạp Thẻ điện thoại</option>
+                                                            <option value="43">Sử dụng dịch vụ</option>
+                                                        </select>  
+                                                    </label>
+                                                    <div class="dropDown-wrapper-ActionButton">
+                                                        <div class="dropDown-ActionButton">
+                                                            <div id="pos-detector" class="d-none"></div>
+                                                            <label for="type-0">
+                                                                <div id="type-0-lbl" class="dropdown-label-left-bx active"></div> 
+                                                                Tất cả
+                                                            </label>
+                                                            <label for="type-1">
+                                                                <div id="type-1-lbl" class="dropdown-label-left-bx"></div> 
+                                                                Mua hàng
+                                                            </label>
+                                                            <label for="type-2">
+                                                                <div id="type-2-lbl" class="dropdown-label-left-bx"></div>
+                                                                Đổi điểm
+                                                            </label>
+                                                            <label for="type-3">
+                                                                <div id="type-3-lbl" class="dropdown-label-left-bx"></div>
+                                                                Hoàn trả
+                                                            </label>
+                                                            <label for="type-4">
+                                                                <div id="type-4-lbl" class="dropdown-label-left-bx"></div>
+                                                                Mua và nạp thẻ điện thoại
+                                                            </label>
+                                                            <label for="type-5">
+                                                                <div id="type-5-lbl" class="dropdown-label-left-bx"></div>
+                                                                Sử dụng dịch vụ
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-sm-12 col-12">
+                                        <div class="btn-ctn">
+                                            <button class="btn-search">
+                                                Tìm kiếm
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!--#endregion-->
+
+                            <!--#region Items-->
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-12 detail-ticket-rg">
+                                        <div class="row sv-detail-inf"> 
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <a href="#" class="col-lg-2 col-md-2 col-sm-2 col-2">
+                                                        <img src="asset/images/eticket/demo-service-img.png" alt="" />
+                                                    </a>
+                                                    <a href="#" class="col-lg-10 col-md-10 col-sm-10 col-10 sv-info">
+                                                        <div class="row">
+                                                            <div class="col-12 sv-title">
+                                                                Buffet nướng cao cấp hơn 60 món
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-6 col-6 sv-price">
+                                                                500,000 vnđ
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-6 col-6 sv-date">
+                                                                HSD: 31/12/2020
+                                                            </div>
+                                                            <div class="col-12 sv-quantity">
+                                                                Số lượng:&nbsp;5&nbsp;&nbsp;|&nbsp;&nbsp;Đã dùng:&nbsp;2&nbsp;&nbsp;|&nbsp;&nbsp;Chưa dùng:&nbsp;3
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 ticket-edge-ctn">
+                                                <div class="right"></div>
+                                                <div class="left"></div> 
+                                                <div class="borderline"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row sv-inf-btm">
+                                                    <div class="col-lg-10 col-md-8 col-sm-6 col-6 txt-end">
+                                                        <a href="#" rel="nofollow" class="btn-general accep">
+                                                            Điểm áp dụng
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-4  col-sm-6 col-6 txt-end color-000">
+                                                        <div class="btn-general">
+                                                            Sử dụng
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 detail-ticket-rg used">
+                                        <div class="row sv-detail-inf"> 
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <a href="#" class="col-lg-2 col-md-2 col-sm-2 col-2">
+                                                        <img src="asset/images/eticket/demo-service-img.png" alt="" />
+                                                    </a>
+                                                    <a href="#" class="col-lg-10 col-md-10 col-sm-10 col-10 sv-info">
+                                                        <div class="row">
+                                                            <div class="col-12 sv-title">
+                                                                Buffet nướng cao cấp hơn 60 món
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-6 col-6 sv-price">
+                                                                500,000 vnđ
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-6 col-6 sv-date">
+                                                                HSD: 31/12/2020
+                                                            </div>
+                                                            <div class="col-12 sv-quantity">
+                                                                Số lượng:&nbsp;5&nbsp;&nbsp;|&nbsp;&nbsp;Đã dùng:&nbsp;2&nbsp;&nbsp;|&nbsp;&nbsp;Chưa dùng:&nbsp;3
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 ticket-edge-ctn">
+                                                <div class="right"></div>
+                                                <div class="left"></div> 
+                                                <div class="borderline"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row sv-inf-btm">
+                                                    <div class="col-lg-10 col-md-8 col-sm-6 col-6 txt-end">
+                                                        <a href="#" rel="nofollow" class="btn-general accep">
+                                                            Điểm áp dụng
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-4  col-sm-6 col-6 txt-end color-000">
+                                                        <div class="btn-general">
+                                                            Đã sử dụng
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 detail-ticket-rg exprired">
+                                        <div class="row sv-detail-inf"> 
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <a href="#" class="col-lg-2 col-md-2 col-sm-2 col-2">
+                                                        <img src="asset/images/eticket/demo-service-img.png" alt="" />
+                                                    </a>
+                                                    <a href="#" class="col-lg-10 col-md-10 col-sm-10 col-10 sv-info">
+                                                        <div class="row">
+                                                            <div class="col-12 sv-title">
+                                                                Buffet nướng cao cấp hơn 60 món
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-6 col-6 sv-price">
+                                                                500,000 vnđ
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-6 col-6 sv-date">
+                                                                HSD: 31/12/2020
+                                                            </div>
+                                                            <div class="col-12 sv-quantity">
+                                                                Số lượng:&nbsp;5&nbsp;&nbsp;|&nbsp;&nbsp;Đã dùng:&nbsp;2&nbsp;&nbsp;|&nbsp;&nbsp;Chưa dùng:&nbsp;3
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 ticket-edge-ctn">
+                                                <div class="right"></div>
+                                                <div class="left"></div> 
+                                                <div class="borderline"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row sv-inf-btm">
+                                                    <div class="col-lg-10 col-md-8 col-sm-6 col-6 txt-end">
+                                                        <a href="#" rel="nofollow" class="btn-general accep">
+                                                            Điểm áp dụng
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-4  col-sm-6 col-6 txt-end color-000">
+                                                        <div class="btn-general">
+                                                            Hết hạn
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 detail-ticket-rg cancelled">
+                                        <div class="row sv-detail-inf"> 
+                                            <div class="col-12">
+                                                <div class="row">
+                                                    <a href="#" class="col-lg-2 col-md-2 col-sm-2 col-2">
+                                                        <img src="asset/images/eticket/demo-service-img.png" alt="" />
+                                                    </a>
+                                                    <a href="#" class="col-lg-10 col-md-10 col-sm-10 col-10 sv-info">
+                                                        <div class="row">
+                                                            <div class="col-12 sv-title">
+                                                                Buffet nướng cao cấp hơn 60 món
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-6 col-6 sv-price">
+                                                                500,000 vnđ
+                                                            </div>
+                                                            <div class="col-lg-12 col-md-12 col-sm-6 col-6 sv-date">
+                                                                HSD: 31/12/2020
+                                                            </div>
+                                                            <div class="col-12 sv-quantity">
+                                                                Số lượng:&nbsp;5&nbsp;&nbsp;|&nbsp;&nbsp;Đã dùng:&nbsp;2&nbsp;&nbsp;|&nbsp;&nbsp;Chưa dùng:&nbsp;3
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12 ticket-edge-ctn">
+                                                <div class="right"></div>
+                                                <div class="left"></div> 
+                                                <div class="borderline"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="row sv-inf-btm">
+                                                    <div class="col-lg-10 col-md-8 col-sm-6 col-6 txt-end">
+                                                        <a href="#" rel="nofollow" class="btn-general accep">
+                                                            Điểm áp dụng
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-lg-2 col-md-4  col-sm-6 col-6 txt-end color-000">
+                                                        <div class="btn-general">
+                                                            Hủy
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--#endregion-->
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion-->
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
+    <!--#region Script-->
+    <script>
+        function triggerDropdown(id, value) {
+            //Close dropdown
+            $('#dropDown-toggle').prop("checked", false);
+            
+            //Remove class active
+            $("#pos-detector").parents('.dropDown-wrapper-ActionButton').find('.dropDown-ActionButton label').each( function() {
+                $(this).find('div').removeClass('active');
+            });
+
+            //Active selected item
+            $('#' + id + '-lbl').addClass('active');
+
+            //Set value to input
+            $('#transtype').val(value);
+            $('#transtype').change();
+        }
+    </script>
+    <!--#endregion-->
+</body>
+</html>
