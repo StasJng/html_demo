@@ -121,7 +121,26 @@
     height: 40px;
 }
 
+.btn-general {
+    border: 1px solid #F6911E;
+    background-color: #fff;
 
+    color:#F6911E;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 10px 12px;
+
+    border-radius: 8px;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.btn-general:hover {
+    background-color: #F6911E;
+    color:#fff;
+}
 
 
 
