@@ -1,44 +1,55 @@
-/* Font */
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 200;
-    src: url(../eticket/Font/Roboto-Thin.ttf);
-}
 
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 300;
-    src: url(../eticket/Font/Roboto-Light.ttf);
-}
 
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../eticket/Font/Roboto-Regular.ttf);
-}
 
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    src: url(../eticket/Font/Roboto-Medium.ttf);
-}
 
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 600;
-    src: url(../eticket/Font/Roboto-Bold.ttf);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Generals */
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto';
 }
 
 *:focus {
