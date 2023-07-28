@@ -280,7 +280,9 @@
 
 
 /* Region - Flashsale */
-
+.flash-sale {
+    background-color: #E8141F;
+}
 
 
 
@@ -490,18 +492,23 @@
 }
 
 .list-product-reg {
-    padding: 0 10px;
+    padding: 0 7px;
+}
+
+.list-product-reg a:hover {
+    text-transform: none;
+    text-decoration: none;
+    margin-top: -1px;
 }
 
 .list-product-reg .p-contanier {
-    padding: 0 5px;
+    padding: 0 8px;
 }
 
 .product-box {
     width: 100%;
     max-width: 100%;
     margin-bottom: 15px;
-    border: 1px solid #eee;
     border-radius: 12px;
     background-color: #fff;
 }
@@ -514,7 +521,7 @@
 }
 
 .product-box .p-info {
-    padding: 0 8px;
+    padding: 5px 8px;
 }
 
 .product-box .p-title {
@@ -565,8 +572,8 @@
 .product-box .sale-tag {
     position: absolute;
     padding: 5px;
-    right: 32px;
-    top: 1px;
+    right: 20px;
+    top: 0;
     width: 40px;
     background-color: #F6911E;
     text-align:center;
