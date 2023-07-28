@@ -135,21 +135,9 @@
     height: 78px;
 }
 
-.header-menu {
-    height: 100%;
-    align-items: center;
-    float: left;
-}
-
 .hot-line {
     text-align: start;
     display: flex;
-    vertical-align: middle;
-    align-items: center;
-    height: 100%;
-    float: right;
-    padding-right: 0;
-    margin-right: 0;
 }
 
 .hot-line a {
@@ -170,6 +158,24 @@
 
 
 
+
+
+
+
+
+/* Body */
+.body {
+    margin-top: 138px
+}
+
+.main-banner {
+    width: 100%;
+    height: max-content;
+}
+
+.main-banner img {
+    width: 100%;
+}
 
 
 
