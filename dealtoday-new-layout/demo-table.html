@@ -9,14 +9,14 @@
     <title>Demo table</title>
 </head>
 <style>
-    .ctn {
+    .table-ctn {
         margin: 32px auto;
         overflow-wrap: break-word;
         width: 100%;
         padding: 0;
     }
 
-    table {
+    .list-transaction  table {
         width: 100%;
         table-layout: fixed;
         border-collapse: separate;
@@ -25,13 +25,12 @@
         border-left: 1px solid #eee;
         border-radius: 12px;
         margin: 0 auto;
-
         font-size: 14px;
         text-align: center;
     }
 
     @media(max-width: 992px) {
-        table {
+        .list-transaction  table {
             max-height: 70vh;
             min-height: 50vh;
             width: 100%;
@@ -40,57 +39,57 @@
             overflow-x: auto;
         }
 
-        tbody {
+        .list-transaction tbody {
             display: block;
             width: max-content;
         }
 
-        th {
+        .list-transaction th {
             position: sticky;
             top: 0;
         }
 
         /* width */
-        table::-webkit-scrollbar {
+        .list-transaction table::-webkit-scrollbar {
             height: 3px;
             width: 3px;
         }
 
         /* Track */
-        table::-webkit-scrollbar-track {
+        .list-transaction table::-webkit-scrollbar-track {
             background: #fafafa;
             border-radius: 10px;
         }
 
         /* Handle */
-        table::-webkit-scrollbar-thumb {
+        .list-transaction table::-webkit-scrollbar-thumb {
             background: #cdcdcd;
             border-radius: 10px;
         }
 
         /* Handle on hover */
-        table::-webkit-scrollbar-thumb:hover {
+        .list-transaction table::-webkit-scrollbar-thumb:hover {
             background: #cdcdcd;
         }
     }
 
-    table tr:last-child td:first-child {
+    .list-transaction table tr:last-child td:first-child {
         border-bottom-left-radius: 8px;
     }
 
-    table tr:last-child td:last-child {
+    .list-transaction table tr:last-child td:last-child {
         border-bottom-right-radius: 8px;
     }
 
-    table th:first-child {
+    .list-transaction table th:first-child {
         border-top-left-radius: 8px;
     }
 
-    table th:last-child {
+    .list-transaction table th:last-child {
         border-top-right-radius: 8px;
     }
 
-    td, th {
+    .list-transaction td, .list-transaction th {
         padding: 10px;
         border-top: 1px solid #eee;
         border-right: 1px solid #eee;
@@ -98,125 +97,132 @@
         border-left: none;
     }
 
-    th {
+    .list-transaction th {
         background-color: #f5f5f5;
     }
 
-    tr:nth-child(odd) {
+    .list-transaction tr:nth-child(odd) {
         background-color: #fafafa;
+    }
+
+    .list-transaction tr:hover {
+        background-color: #dcdcdcbd;
     }
 </style>
 <body>
     <!--#region Items-->
-    <div class="col-12">
-        <div class="ctn">
+    <div class="col-12 list-transaction">
+        <div class="table-ctn">
             <table>
                 <tbody>
                     <tr>
                         <th style="table-layout: fixed; width: 100px">ID</th>
-                        <th style="table-layout: fixed; width: 200px">Tên dịch vụ</th>
-                        <th>Số lượng mua</th>
-                        <th>Số lượng tồn</th>
-                        <th>Doanh số</th>
-                        <th>Chiết khấu</th>
+                        <th style="table-layout: fixed; width: 200px">Tên Deal</th>
+                        <th style="table-layout: fixed; width: 150px">Thời gian</th>
+                        <th>Order Id</th>
+                        <th>Số lượng</th>
+                        <th>Đơn giá</th>
+                        <th>Giá trị</th>
                     </tr>
 
                     <tr>
-                        <td>00000000</td>
-                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>111082</td>
+                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                        <td>21/07/2023 15:11</td>
+                        <td>1564964</td>
+                        <td style="font-weight: 500">1</td>
+                        <td style="font-weight: 500">1,000đ</td>
+                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
                     </tr>
 
                     <tr>
-                        <td>00000000</td>
-                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>111082</td>
+                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                        <td>21/07/2023 15:11</td>
+                        <td>1564964</td>
+                        <td style="font-weight: 500">1</td>
+                        <td style="font-weight: 500">1,000đ</td>
+                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
                     </tr>
 
                     <tr>
-                        <td>00000000</td>
-                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>111082</td>
+                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                        <td>21/07/2023 15:11</td>
+                        <td>1564964</td>
+                        <td style="font-weight: 500">1</td>
+                        <td style="font-weight: 500">1,000đ</td>
+                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
                     </tr>
 
                     <tr>
-                        <td>00000000</td>
-                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>111082</td>
+                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                        <td>21/07/2023 15:11</td>
+                        <td>1564964</td>
+                        <td style="font-weight: 500">1</td>
+                        <td style="font-weight: 500">1,000đ</td>
+                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
                     </tr>
 
                     <tr>
-                        <td>00000000</td>
-                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>111082</td>
+                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                        <td>21/07/2023 15:11</td>
+                        <td>1564964</td>
+                        <td style="font-weight: 500">1</td>
+                        <td style="font-weight: 500">1,000đ</td>
+                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
                     </tr>
 
                     <tr>
-                        <td>00000000</td>
-                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>111082</td>
+                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                        <td>21/07/2023 15:11</td>
+                        <td>1564964</td>
+                        <td style="font-weight: 500">1</td>
+                        <td style="font-weight: 500">1,000đ</td>
+                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
                     </tr>
 
                     <tr>
-                        <td>00000000</td>
-                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>111082</td>
+                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                        <td>21/07/2023 15:11</td>
+                        <td>1564964</td>
+                        <td style="font-weight: 500">1</td>
+                        <td style="font-weight: 500">1,000đ</td>
+                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
                     </tr>
 
                     <tr>
-                        <td>00000000</td>
-                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>111082</td>
+                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                        <td>21/07/2023 15:11</td>
+                        <td>1564964</td>
+                        <td style="font-weight: 500">1</td>
+                        <td style="font-weight: 500">1,000đ</td>
+                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
                     </tr>
 
                     <tr>
-                        <td>00000000</td>
-                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
-
-                    <tr>
-                        <td>00000000</td>
-                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>111082</td>
+                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                        <td>21/07/2023 15:11</td>
+                        <td>1564964</td>
+                        <td style="font-weight: 500">1</td>
+                        <td style="font-weight: 500">1,000đ</td>
+                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
                     </tr>
 
                     <tr>
-                        <td>00000000</td>
-                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                        <td>100</td>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
+                        <td>111082</td>
+                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                        <td>21/07/2023 15:11</td>
+                        <td>1564964</td>
+                        <td style="font-weight: 500">1</td>
+                        <td style="font-weight: 500">1,000đ</td>
+                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
                     </tr>
                 </tbody>
             </table>
