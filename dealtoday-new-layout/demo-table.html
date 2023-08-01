@@ -9,11 +9,6 @@
     <title>Demo table</title>
 </head>
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
     .ctn {
         margin: 32px auto;
         overflow-wrap: break-word;
@@ -22,7 +17,7 @@
     }
 
     table {
-        width: calc(100% - 32px);
+        width: 100%;
         table-layout: fixed;
         border-collapse: separate;
         border-spacing: 0;
@@ -30,15 +25,24 @@
         border-left: 1px solid #eee;
         border-radius: 12px;
         margin: 0 auto;
+
+        font-size: 14px;
+        text-align: center;
     }
 
-    @media(max-width: 768px) {
+    @media(max-width: 992px) {
         table {
-            height: 65vh;
+            max-height: 70vh;
+            min-height: 50vh;
             width: 100%;
-            display:block;
+            display: block;
             overflow-y: scroll;
-            overflow-x: hidden;
+            overflow-x: auto;
+        }
+
+        tbody {
+            display: block;
+            width: max-content;
         }
 
         th {
@@ -48,24 +52,25 @@
 
         /* width */
         table::-webkit-scrollbar {
+            height: 3px;
             width: 3px;
         }
 
         /* Track */
         table::-webkit-scrollbar-track {
-            background: #fafafa; 
+            background: #fafafa;
             border-radius: 10px;
         }
-        
+
         /* Handle */
         table::-webkit-scrollbar-thumb {
-            background: #cdcdcd; 
+            background: #cdcdcd;
             border-radius: 10px;
         }
 
         /* Handle on hover */
         table::-webkit-scrollbar-thumb:hover {
-            background: #cdcdcd; 
+            background: #cdcdcd;
         }
     }
 
@@ -76,7 +81,7 @@
     table tr:last-child td:last-child {
         border-bottom-right-radius: 8px;
     }
-        
+
     table th:first-child {
         border-top-left-radius: 8px;
     }
@@ -102,153 +107,121 @@
     }
 </style>
 <body>
-    <div class="container ctn">
-        <table>
-            <tbody>
-                <tr>
-                    <th>ID</th>
-                    <th class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Tên dịch vụ</th>
-                    <th>Số lượng mua</th>
-                    <th>Số lượng tồn</th>
-                    <th>Doanh số</th>
-                    <th>Chiết khấu</th>
-                </tr>
-                <tr>
-                    <td>0000000001</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000002</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000003</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000004</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000005</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000006</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000007</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000008</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000008</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000008</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000008</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000008</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000008</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000008</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-    
-                <tr>
-                    <td>0000000008</td>
-                    <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
-                    <td>100</td>
-                    <td>100</td>
-                    <td>0</td>
-                    <td>0</td>
-                </tr>
-            </tbody>
-        </table>
+    <!--#region Items-->
+    <div class="col-12">
+        <div class="ctn">
+            <table>
+                <tbody>
+                    <tr>
+                        <th style="table-layout: fixed; width: 100px">ID</th>
+                        <th style="table-layout: fixed; width: 200px">Tên dịch vụ</th>
+                        <th>Số lượng mua</th>
+                        <th>Số lượng tồn</th>
+                        <th>Doanh số</th>
+                        <th>Chiết khấu</th>
+                    </tr>
+
+                    <tr>
+                        <td>00000000</td>
+                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>00000000</td>
+                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>00000000</td>
+                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>00000000</td>
+                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>00000000</td>
+                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>00000000</td>
+                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>00000000</td>
+                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>00000000</td>
+                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>00000000</td>
+                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+
+                    <tr>
+                        <td>00000000</td>
+                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+
+                    <tr>
+                        <td>00000000</td>
+                        <td class="text-left">Vé vào cổng khu vui chơi Vinwonder - Saigon</td>
+                        <td>100</td>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
+    <!--#endregion-->
 </body>
 </html>
