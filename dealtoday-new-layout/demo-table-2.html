@@ -9,13 +9,103 @@
     <title>Demo table</title>
 </head>
 <style>
+    /* Report table style */
+    .table-ctn {
+        margin: 32px auto 0 auto;
+        overflow-wrap: break-word;
+        width: 100%;
+        padding: 0;
+    }
 
+    .list-trans-tbl table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-bottom: 1px solid #eee;
+        border-left: 1px solid #eee;
+        border-radius: 12px;
+        margin: 0 auto;
+        font-size: 14px;
+        text-align: center;
+    }
 
+    @media(max-width: 1200px) {
+        .list-trans-tbl table {
+            max-height: 70vh;
+            width: 100%;
+            display: block;
+            overflow-y: scroll;
+            overflow-x: auto;
+        }
 
+        .list-trans-tbl tbody {
+            display: block;
+            width: max-content;
+        }
 
+        .list-trans-tbl th {
+            position: sticky;
+            top: 0;
+        }
+        /* width */
+        .list-trans-tbl table::-webkit-scrollbar {
+            height: 3px;
+            width: 3px;
+        }
+        /* Track */
+        .list-trans-tbl table::-webkit-scrollbar-track {
+            background: #fafafa;
+            border-radius: 10px;
+        }
+        /* Handle */
+        .list-trans-tbl table::-webkit-scrollbar-thumb {
+            background: #cdcdcd;
+            border-radius: 10px;
+        }
+        /* Handle on hover */
+        .list-trans-tbl table::-webkit-scrollbar-thumb:hover {
+            background: #cdcdcd;
+        }
+    }
 
+    .list-trans-tbl table tr:last-child td:first-child {
+        border-bottom-left-radius: 8px;
+    }
+
+    .list-trans-tbl table tr:last-child td:last-child {
+        border-bottom-right-radius: 8px;
+    }
+
+    .list-trans-tbl table th:first-child {
+        border-top-left-radius: 8px;
+    }
+
+    .list-trans-tbl table th:last-child {
+        border-top-right-radius: 8px;
+    }
+
+    .list-trans-tbl td, .list-trans-tbl th {
+        padding: 10px;
+        border-top: 1px solid #eee;
+        border-right: 1px solid #eee;
+        border-bottom: none;
+        border-left: none;
+    }
+
+    .list-trans-tbl th {
+        background-color: #f5f5f5;
+    }
+
+    .list-trans-tbl tr:nth-child(odd) {
+        background-color: #fafafa;
+    }
+
+    .list-trans-tbl tr:hover {
+        background-color: #dcdcdcbd;
+    }
     
-/* Checkbox */
+    /* Checkbox */
     .dealtoday-checkbox {
         display: block;
     }

@@ -2511,6 +2511,45 @@
     transform: rotate(90deg);
 }
 
+.dealtoday-checkbox .hide::before, .dealtoday-checkbox .hide::after {
+    content: none;
+    display: none;
+}
+
+.dealtoday-checkbox.drop-data label:before {
+    border-radius: 18px;
+    border-color: transparent;
+    background-color: dodgerblue;
+}
+
+.dealtoday-checkbox.drop-data label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -6px;
+    left: -5px;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+    background-position: center;
+    background-size: 40% 2px, 2px 40%;
+    background-repeat: no-repeat;
+}
+
+.dealtoday-checkbox.drop-data input:checked + label:before {
+    background: red;
+}
+
+.dealtoday-checkbox.drop-data input:checked + label:after {
+    top: 4px;
+    left: 9px;
+    width: 2px;
+    border-width: 3px 3px 0px 0px;
+    border-radius: 3px;
+    transform: rotate(90deg);
+    background: red;
+}
+
 /* Custom Datetime picker */
 .bootstrap-datetimepicker-widget.dropdown-menu.bottom:before,
 .bootstrap-datetimepicker-widget.dropdown-menu.bottom:after {
@@ -3582,15 +3621,15 @@
     color: #000;
 }
 
-/* Style report table */
+/* Report table style */
 .table-ctn {
-    margin: 32px auto;
+    margin: 32px auto 0 auto;
     overflow-wrap: break-word;
     width: 100%;
     padding: 0;
 }
 
-.list-transaction  table {
+.list-trans-tbl table {
     width: 100%;
     table-layout: fixed;
     border-collapse: separate;
@@ -3603,67 +3642,62 @@
     text-align: center;
 }
 
-@media(max-width: 992px) {
-    .list-transaction  table {
+@media(max-width: 1200px) {
+    .list-trans-tbl table {
         max-height: 70vh;
-        min-height: 50vh;
         width: 100%;
         display: block;
         overflow-y: scroll;
         overflow-x: auto;
     }
 
-    .list-transaction tbody {
+    .list-trans-tbl tbody {
         display: block;
         width: max-content;
     }
 
-    .list-transaction th {
+    .list-trans-tbl th {
         position: sticky;
         top: 0;
     }
-
     /* width */
-    .list-transaction table::-webkit-scrollbar {
+    .list-trans-tbl table::-webkit-scrollbar {
         height: 3px;
         width: 3px;
     }
-
     /* Track */
-    .list-transaction table::-webkit-scrollbar-track {
+    .list-trans-tbl table::-webkit-scrollbar-track {
         background: #fafafa;
         border-radius: 10px;
     }
-
     /* Handle */
-    .list-transaction table::-webkit-scrollbar-thumb {
+    .list-trans-tbl table::-webkit-scrollbar-thumb {
         background: #cdcdcd;
         border-radius: 10px;
     }
-
     /* Handle on hover */
-    .list-transaction table::-webkit-scrollbar-thumb:hover {
+    .list-trans-tbl table::-webkit-scrollbar-thumb:hover {
         background: #cdcdcd;
     }
 }
 
-.list-transaction table tr:last-child td:first-child {
+.list-trans-tbl table tr:last-child td:first-child {
     border-bottom-left-radius: 8px;
 }
 
-.list-transaction table tr:last-child td:last-child {
+.list-trans-tbl table tr:last-child td:last-child {
     border-bottom-right-radius: 8px;
 }
 
-.list-transaction table th:first-child {
+.list-trans-tbl table th:first-child {
     border-top-left-radius: 8px;
 }
 
-.list-transaction table th:last-child {
+.list-trans-tbl table th:last-child {
     border-top-right-radius: 8px;
 }
 
-.list-transaction td, .list-transaction th {
+.list-trans-tbl td, .list-trans-tbl th {
     padding: 10px;
     border-top: 1px solid #eee;
     border-right: 1px solid #eee;
@@ -3671,14 +3705,30 @@
     border-left: none;
 }
 
-.list-transaction th {
+.list-trans-tbl th {
     background-color: #f5f5f5;
 }
 
-.list-transaction tr:nth-child(odd) {
+.list-trans-tbl tr:nth-child(odd) {
     background-color: #fafafa;
 }
 
-.list-transaction tr:hover {
+.list-trans-tbl tr:hover {
     background-color: #dcdcdcbd;
+}
+
+.tbl-d-ctn > input:checked + .tbl-d-detail {
+    display: block !important;
+}
+
+@media(max-width: 768px) {
+    .list-trans-tbl tbody {
+        display: block;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .list-trans-tbl tr {
+        background-color: #fff !important;
+    }
 }

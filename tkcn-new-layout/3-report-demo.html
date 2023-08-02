@@ -532,127 +532,467 @@
                             </div>
                             <!--#endregion-->
 
-                            <!--#region Items-->
-                            <div class="col-12 list-transaction">
+                            <!--#region List Items-->
+                            <div class="col-12 list-trans-tbl">
                                 <div class="table-ctn">
                                     <table>
                                         <tbody>
                                             <tr>
-                                                <th style="table-layout: fixed; width: 100px">ID</th>
-                                                <th style="table-layout: fixed; width: 200px">Tên Deal</th>
-                                                <th style="table-layout: fixed; width: 150px">Thời gian</th>
-                                                <th>Order Id</th>
-                                                <th>Số lượng</th>
-                                                <th>Đơn giá</th>
-                                                <th>Giá trị</th>
+                                                <th class="d-lg-none d-md-none d-sm-table-cell d-table-cell" style="table-layout: fixed; width: 50px"></th>
+                                                <th class="d-lg-none d-md-none d-sm-table-cell d-table-cell">ID</th>
+                                                <th class="d-lg-none d-md-none d-sm-table-cell d-table-cell">Tên Deal</th>
+                
+                                                <!--#region Items-->
+                                                <th class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="table-layout: fixed; width: 90px">ID</th>
+                                                <th class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="table-layout: fixed; width: 190px">Tên Deal</th>
+                                                <th class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="table-layout: fixed; width: 100px">Thời gian</th>
+                                                <th class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="table-layout: fixed; width: 90px">Order Id</th>
+                                                <th class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="table-layout: fixed; width: 78px">Số lượng</th>
+                                                <th class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Đơn giá</th>
+                                                <th class="d-lg-table-cell d-md-table-cell d-sm-none d-none">Giá trị</th>
+                                                <!--#region Items-->
                                             </tr>
-
-                                            <tr>
+                
+                                            <!--#region Items-->
+                                            <tr class="d-lg-table-row d-md-table-row d-sm-none d-none">
                                                 <td>111082</td>
                                                 <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                                                <td>21/07/2023 15:11</td>
+                                                <td>08/08/2023 08:08</td>
                                                 <td>1564964</td>
-                                                <td style="font-weight: 500">1</td>
-                                                <td style="font-weight: 500">1,000đ</td>
-                                                <td style="color: #F6911E; font-weight: 500">1,000đ</td>
+                                                <td style="font-weight: 500">25</td>
+                                                <td style="font-weight: 500">1,000,000đ</td>
+                                                <td style="color: #F6911E; font-weight: 500">25,000,000đ</td>
                                             </tr>
+            
+                                            <tr class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                                                <td>
+                                                    <div class="dealtoday-checkbox drop-data">
+                                                        <input type="checkbox" id="item-1" />
+                                                        <label for="item-1" onclick="showDetailData('1')">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    111082
+                                                </td>
+                                                <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                                            </tr>
+            
+                                            <tr rowspan="3" class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                                                <td colspan="3" class="m-0 p-0">
+                                                    <div class="tbl-d-ctn">
+                                                        <input type="checkbox" id="detail-data-1" class="d-none" />
+                                                        <div class="tbl-d-detail d-none">
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Thời gian</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>08/08/2023 08:08</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Order ID</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>12465463</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Số lượng</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>25</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Đơn giá</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>1,000,000đ</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+            
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Giá trị</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate" style="color: #F6911E;"><b>25,000,000đ</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!--#endregion-->
 
-                                            <tr>
+                                            <!--#region Items-->
+                                            <tr class="d-lg-table-row d-md-table-row d-sm-none d-none">
                                                 <td>111082</td>
                                                 <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                                                <td>21/07/2023 15:11</td>
+                                                <td>08/08/2023 08:08</td>
                                                 <td>1564964</td>
-                                                <td style="font-weight: 500">1</td>
-                                                <td style="font-weight: 500">1,000đ</td>
-                                                <td style="color: #F6911E; font-weight: 500">1,000đ</td>
+                                                <td style="font-weight: 500">25</td>
+                                                <td style="font-weight: 500">1,000,000đ</td>
+                                                <td style="color: #F6911E; font-weight: 500">25,000,000đ</td>
                                             </tr>
-
-                                            <tr>
+            
+                                            <tr class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                                                <td>
+                                                    <div class="dealtoday-checkbox drop-data">
+                                                        <input type="checkbox" id="item-2" />
+                                                        <label for="item-2" onclick="showDetailData('2')">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    111082
+                                                </td>
+                                                <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                                            </tr>
+            
+                                            <tr rowspan="3" class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                                                <td colspan="3" class="m-0 p-0">
+                                                    <div class="tbl-d-ctn">
+                                                        <input type="checkbox" id="detail-data-2" class="d-none" />
+                                                        <div class="tbl-d-detail d-none">
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Thời gian</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>08/08/2023 08:08</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Order ID</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>12465463</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Số lượng</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>25</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Đơn giá</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>1,000,000đ</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+            
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Giá trị</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate" style="color: #F6911E;"><b>25,000,000đ</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!--#endregion-->
+                                            
+                                            <!--#region Items-->
+                                            <tr class="d-lg-table-row d-md-table-row d-sm-none d-none">
                                                 <td>111082</td>
                                                 <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                                                <td>21/07/2023 15:11</td>
+                                                <td>08/08/2023 08:08</td>
                                                 <td>1564964</td>
-                                                <td style="font-weight: 500">1</td>
-                                                <td style="font-weight: 500">1,000đ</td>
-                                                <td style="color: #F6911E; font-weight: 500">1,000đ</td>
+                                                <td style="font-weight: 500">25</td>
+                                                <td style="font-weight: 500">1,000,000đ</td>
+                                                <td style="color: #F6911E; font-weight: 500">25,000,000đ</td>
                                             </tr>
+            
+                                            <tr class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                                                <td>
+                                                    <div class="dealtoday-checkbox drop-data">
+                                                        <input type="checkbox" id="item-3" />
+                                                        <label for="item-3" onclick="showDetailData('3')">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    111082
+                                                </td>
+                                                <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                                            </tr>
+            
+                                            <tr rowspan="3" class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                                                <td colspan="3" class="m-0 p-0">
+                                                    <div class="tbl-d-ctn">
+                                                        <input type="checkbox" id="detail-data-3" class="d-none" />
+                                                        <div class="tbl-d-detail d-none">
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Thời gian</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>08/08/2023 08:08</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Order ID</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>12465463</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Số lượng</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>25</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Đơn giá</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>1,000,000đ</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+            
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Giá trị</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate" style="color: #F6911E;"><b>25,000,000đ</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!--#endregion-->
 
-                                            <tr>
+                                            <!--#region Items-->
+                                            <tr class="d-lg-table-row d-md-table-row d-sm-none d-none">
                                                 <td>111082</td>
                                                 <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                                                <td>21/07/2023 15:11</td>
+                                                <td>08/08/2023 08:08</td>
                                                 <td>1564964</td>
-                                                <td style="font-weight: 500">1</td>
-                                                <td style="font-weight: 500">1,000đ</td>
-                                                <td style="color: #F6911E; font-weight: 500">1,000đ</td>
+                                                <td style="font-weight: 500">25</td>
+                                                <td style="font-weight: 500">1,000,000đ</td>
+                                                <td style="color: #F6911E; font-weight: 500">25,000,000đ</td>
                                             </tr>
+            
+                                            <tr class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                                                <td>
+                                                    <div class="dealtoday-checkbox drop-data">
+                                                        <input type="checkbox" id="item-4" />
+                                                        <label for="item-4" onclick="showDetailData('4')">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    111082
+                                                </td>
+                                                <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
+                                            </tr>
+            
+                                            <tr rowspan="3" class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                                                <td colspan="3" class="m-0 p-0">
+                                                    <div class="tbl-d-ctn">
+                                                        <input type="checkbox" id="detail-data-4" class="d-none" />
+                                                        <div class="tbl-d-detail d-none">
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Thời gian</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>08/08/2023 08:08</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Order ID</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>12465463</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Số lượng</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>25</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Đơn giá</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>1,000,000đ</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+            
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Giá trị</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate" style="color: #F6911E;"><b>25,000,000đ</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <!--#endregion-->
 
-                                            <tr>
+                                            <!--#region Items-->
+                                            <tr class="d-lg-table-row d-md-table-row d-sm-none d-none">
                                                 <td>111082</td>
                                                 <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                                                <td>21/07/2023 15:11</td>
+                                                <td>08/08/2023 08:08</td>
                                                 <td>1564964</td>
-                                                <td style="font-weight: 500">1</td>
-                                                <td style="font-weight: 500">1,000đ</td>
-                                                <td style="color: #F6911E; font-weight: 500">1,000đ</td>
+                                                <td style="font-weight: 500">25</td>
+                                                <td style="font-weight: 500">1,000,000đ</td>
+                                                <td style="color: #F6911E; font-weight: 500">25,000,000đ</td>
                                             </tr>
-
-                                            <tr>
-                                                <td>111082</td>
+            
+                                            <tr class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                                                <td>
+                                                    <div class="dealtoday-checkbox drop-data">
+                                                        <input type="checkbox" id="item-5" />
+                                                        <label for="item-5" onclick="showDetailData('5')">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    111082
+                                                </td>
                                                 <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                                                <td>21/07/2023 15:11</td>
-                                                <td>1564964</td>
-                                                <td style="font-weight: 500">1</td>
-                                                <td style="font-weight: 500">1,000đ</td>
-                                                <td style="color: #F6911E; font-weight: 500">1,000đ</td>
                                             </tr>
-
-                                            <tr>
-                                                <td>111082</td>
-                                                <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                                                <td>21/07/2023 15:11</td>
-                                                <td>1564964</td>
-                                                <td style="font-weight: 500">1</td>
-                                                <td style="font-weight: 500">1,000đ</td>
-                                                <td style="color: #F6911E; font-weight: 500">1,000đ</td>
+            
+                                            <tr rowspan="3" class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                                                <td colspan="3" class="m-0 p-0">
+                                                    <div class="tbl-d-ctn">
+                                                        <input type="checkbox" id="detail-data-5" class="d-none" />
+                                                        <div class="tbl-d-detail d-none">
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Thời gian</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>08/08/2023 08:08</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Order ID</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>12465463</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Số lượng</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>25</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Đơn giá</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate"><b>1,000,000đ</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+            
+                                                            <div class="col-12 trans-content">
+                                                                <div class="row">
+                                                                    <div class="col-6 text-left">
+                                                                        <span class="trans-attr">Giá trị</span>
+                                                                    </div>
+                                                                    <div class="col-6" style="text-align:right;">
+                                                                        <span class="trans-total notranslate" style="color: #F6911E;"><b>25,000,000đ</b></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
-
-                                            <tr>
-                                                <td>111082</td>
-                                                <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                                                <td>21/07/2023 15:11</td>
-                                                <td>1564964</td>
-                                                <td style="font-weight: 500">1</td>
-                                                <td style="font-weight: 500">1,000đ</td>
-                                                <td style="color: #F6911E; font-weight: 500">1,000đ</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>111082</td>
-                                                <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                                                <td>21/07/2023 15:11</td>
-                                                <td>1564964</td>
-                                                <td style="font-weight: 500">1</td>
-                                                <td style="font-weight: 500">1,000đ</td>
-                                                <td style="color: #F6911E; font-weight: 500">1,000đ</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>111082</td>
-                                                <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                                                <td>21/07/2023 15:11</td>
-                                                <td>1564964</td>
-                                                <td style="font-weight: 500">1</td>
-                                                <td style="font-weight: 500">1,000đ</td>
-                                                <td style="color: #F6911E; font-weight: 500">1,000đ</td>
-                                            </tr>
+                                            <!--#endregion-->
                                         </tbody>
                                     </table>
-                                    
+                                    <script>
+                                        function showDetailData(id) {
+                                            document.getElementById('detail-data-' + id).click();
+                                        }
+                                    </script>
                                     <div class="btn-ctn">
-                                        <div id="btn-loadmore" data-current-page="2" class="btn-view-more">
+                                        <a href="javascript:void(0);" id="btn-loadmore" data-current-page="2" class="btn-view-more">
                                             Xem thêm
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
