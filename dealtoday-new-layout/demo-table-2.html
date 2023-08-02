@@ -9,114 +9,131 @@
     <title>Demo table</title>
 </head>
 <style>
-    .table-ctn {
-        margin: 32px auto;
-        overflow-wrap: break-word;
+
+
+
+
+
+    
+/* Checkbox */
+    .dealtoday-checkbox {
+        display: block;
+    }
+
+    .dealtoday-checkbox input {
+        display: none;
+    }
+
+    .dealtoday-checkbox-chil {
+        opacity: 0;
+        display: block !important;
+        position: relative;
         width: 100%;
+        min-height: 30px;
+        cursor: pointer;
+        margin: 2px 0 -32px 26px;
+    }
+
+    .dealtoday-checkbox label {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 2px;
         padding: 0;
+        position: relative;
+        cursor: pointer;
     }
 
-    .list-transaction  table {
-        /* width: 100%; */
-        table-layout: fixed;
-        border-collapse: separate;
-        border-spacing: 0;
-        border-bottom: 1px solid #eee;
-        border-left: 1px solid #eee;
-        border-radius: 12px;
-        margin: 0 auto;
-        font-size: 14px;
-        text-align: center;
+    .dealtoday-checkbox label:before {
+        content: '';
+        -webkit-appearance: none;
+        background-color: #ffffff;
+        border: 2px solid #cdcdcd;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+        padding: 8px;
+        display: inline-block;
+        position: relative;
+        border-radius: 5px;
+        border-width: 2px;
+        vertical-align: middle;
+        cursor: pointer;
+        margin: -3px 0 0 0;
     }
 
-    @media(max-width: 992px) {
-        .list-transaction  table {
-            /* max-height: 70vh;
-            min-height: 50vh;
-            width: 100%;
-            display: block; */
-            overflow-y: scroll;
-            overflow-x: auto;
-        }
-
-        .list-transaction tbody {
-            display: block;
-            width: max-content;
-        }
-
-        .list-transaction th {
-            position: sticky;
-            top: 0;
-        }
-
-        /* width */
-        .list-transaction table::-webkit-scrollbar {
-            height: 3px;
-            width: 3px;
-        }
-
-        /* Track */
-        .list-transaction table::-webkit-scrollbar-track {
-            background: #fafafa;
-            border-radius: 10px;
-        }
-
-        /* Handle */
-        .list-transaction table::-webkit-scrollbar-thumb {
-            background: #cdcdcd;
-            border-radius: 10px;
-        }
-
-        /* Handle on hover */
-        .list-transaction table::-webkit-scrollbar-thumb:hover {
-            background: #cdcdcd;
-        }
+    .dealtoday-checkbox.round label:before {
+        border-radius: 10px;
+        border-width: 1px;
     }
 
-    .list-transaction table tr:last-child td:first-child {
-        border-bottom-left-radius: 8px;
+    .dealtoday-checkbox.round input:checked + label:after {
+        top: 4px;
+        left: 6px;
     }
 
-    .list-transaction table tr:last-child td:last-child {
-        border-bottom-right-radius: 8px;
+    .dealtoday-checkbox input:checked + label:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 7px;
+        width: 7px;
+        height: 12px;
+        border: solid #ffffff;
+        border-width: 0 3px 3px 0;
+        border-radius: 2px;
+        transform: rotate(45deg);
+        background: #F0821B;
     }
 
-    .list-transaction table tr:nth-child() td:last-child {
-        border-bottom-right-radius: 8px;
+    .dealtoday-checkbox input:checked + label:before {
+        border-color: transparent;
+        background-color: #F0821B;
     }
 
-    .list-transaction table th:first-child {
-        border-top-left-radius: 8px;
+    .dealtoday-checkbox.minus input:checked + label:after {
+        top: 3px;
+        border: solid #ffffff;
+        border-width: 0 3px 0px 0;
+        transform: rotate(90deg);
     }
 
-    .list-transaction table th:last-child {
-        border-top-right-radius: 8px;
+    .dealtoday-checkbox .hide::before, .dealtoday-checkbox .hide::after {
+        content: none;
+        display: none;
     }
 
-    .list-transaction td, .list-transaction th {
-        padding: 10px;
-        border-top: 1px solid #eee;
-        border-right: 1px solid #eee;
-        border-bottom: none;
-        border-left: none;
+    .dealtoday-checkbox.drop-data label:before {
+        border-radius: 18px;
+        border-color: transparent;
+        background-color: dodgerblue;
     }
 
-    .list-transaction th {
-        background-color: #f5f5f5;
+    .dealtoday-checkbox.drop-data label:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 31px;
+        height: 30px;
+        background: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+        background-position: center;
+        background-size: 40% 2px, 2px 40%;
+        background-repeat: no-repeat;
     }
 
-    .list-transaction tr:nth-child(odd) {
-        background-color: #fafafa;
+    .dealtoday-checkbox.drop-data input:checked + label:before {
+        background: red;
     }
 
-    .list-transaction tr:hover {
-        background-color: #dcdcdcbd;
-    }
-
-    @media(max-width: 768px) {
-        .mb-border-tr-r-8 {
-            border-top-right-radius: 8px;
-        }
+    .dealtoday-checkbox.drop-data input:checked + label:after {
+        top: 4px;
+        left: 9px;
+        width: 2px;
+        border-width: 3px 3px 0px 0px;
+        border-radius: 3px;
+        transform: rotate(90deg);
+        background: red;
     }
 </style>
 <body>
@@ -126,6 +143,7 @@
             <table>
                 <tbody>
                     <tr>
+                        <th class="d-lg-none d-md-none d-sm-table-cell d-table-cell" style="table-layout: fixed; width: 50px"></th>
                         <th style="table-layout: fixed; width: 100px">ID</th>
                         <th class="mb-border-tr-r-8" style="table-layout: fixed; width: 200px">Tên Deal</th>
                         <th class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="table-layout: fixed; width: 150px">Thời gian</th>
@@ -147,24 +165,29 @@
                     </tr>
 
                     <tr class="d-lg-none d-md-none d-sm-table-row d-table-row">
-                        <td>111082</td>
+                        <td>
+                            <div class="dealtoday-checkbox">
+                                <input type="checkbox" id="item-1" />
+                                <label for="item-1" onclick="showDetailData('1')">&nbsp;</label>
+                            </div>
+                        </td>
+                        <td>
+                            111082
+                        </td>
                         <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
                     </tr>
-
-                    <tr rowspan="2" class="d-lg-none d-md-none d-sm-table-row d-table-row">
-                        <td colspan="2">
-                            <div class="row">
-                                <div class="col-6">
-                                    Info 1
-                                </div>
-                                <div class="value-1">
-                                    Value 1
-                                </div>
-                                <div class="col-6">
-                                    Info 2
-                                </div>
-                                <div class="value-1">
-                                    Value 2
+                    
+                    <tr rowspan="3" class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                        <td colspan="3" class="m-0 p-0">
+                            <div class="tbl-d-ctn">
+                                <input type="checkbox" id="detail-data-1" class="d-none" />
+                                <div class="row tbl-d-detail d-none">
+                                    <div class="col-6">
+                                        Info
+                                    </div>
+                                    <div class="col-6">
+                                        Value
+                                    </div>
                                 </div>
                             </div>
                         </td>
@@ -183,132 +206,29 @@
                     </tr>
 
                     <tr class="d-lg-none d-md-none d-sm-table-row d-table-row">
-                        <td>111082</td>
-                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                    </tr>
-
-                    <tr rowspan="2" class="d-lg-none d-md-none d-sm-table-row d-table-row">
-                        <td colspan="2">
-                            <div class="row">
-                                <div class="col-6">
-                                    Info 1
-                                </div>
-                                <div class="value-1">
-                                    Value 1
-                                </div>
-                                <div class="col-6">
-                                    Info 2
-                                </div>
-                                <div class="value-1">
-                                    Value 2
-                                </div>
+                        <td>
+                            <div class="dealtoday-checkbox">
+                                <input type="checkbox" id="item-2" />
+                                <label for="item-2" onclick="showDetailData('2')">&nbsp;</label>
                             </div>
                         </td>
-                    </tr>
-                    <!--#endregion-->
-
-                    <!--#region Items-->
-                    <tr class="d-lg-table-row d-md-table-row d-sm-none d-none">
-                        <td>111082</td>
-                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                        <td>21/07/2023 15:11</td>
-                        <td>1564964</td>
-                        <td style="font-weight: 500">1</td>
-                        <td style="font-weight: 500">1,000đ</td>
-                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
-                    </tr>
-
-                    <tr class="d-lg-none d-md-none d-sm-table-row d-table-row">
-                        <td>111082</td>
-                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                    </tr>
-
-                    <tr rowspan="2" class="d-lg-none d-md-none d-sm-table-row d-table-row">
-                        <td colspan="2">
-                            <div class="row">
-                                <div class="col-6">
-                                    Info 1
-                                </div>
-                                <div class="value-1">
-                                    Value 1
-                                </div>
-                                <div class="col-6">
-                                    Info 2
-                                </div>
-                                <div class="value-1">
-                                    Value 2
-                                </div>
-                            </div>
+                        <td>
+                            111082
                         </td>
-                    </tr>
-                    <!--#endregion-->
-
-                    <!--#region Items-->
-                    <tr class="d-lg-table-row d-md-table-row d-sm-none d-none">
-                        <td>111082</td>
-                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                        <td>21/07/2023 15:11</td>
-                        <td>1564964</td>
-                        <td style="font-weight: 500">1</td>
-                        <td style="font-weight: 500">1,000đ</td>
-                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
-                    </tr>
-
-                    <tr class="d-lg-none d-md-none d-sm-table-row d-table-row">
-                        <td>111082</td>
                         <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
                     </tr>
-
-                    <tr rowspan="2" class="d-lg-none d-md-none d-sm-table-row d-table-row">
-                        <td colspan="2">
-                            <div class="row">
-                                <div class="col-6">
-                                    Info 1
-                                </div>
-                                <div class="value-1">
-                                    Value 1
-                                </div>
-                                <div class="col-6">
-                                    Info 2
-                                </div>
-                                <div class="value-1">
-                                    Value 2
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <!--#endregion-->
-
-                    <!--#region Items-->
-                    <tr class="d-lg-table-row d-md-table-row d-sm-none d-none">
-                        <td>111082</td>
-                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                        <td>21/07/2023 15:11</td>
-                        <td>1564964</td>
-                        <td style="font-weight: 500">1</td>
-                        <td style="font-weight: 500">1,000đ</td>
-                        <td style="color: #F6911E; font-weight: 500">1,000đ</td>
-                    </tr>
-
-                    <tr class="d-lg-none d-md-none d-sm-table-row d-table-row">
-                        <td>111082</td>
-                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                    </tr>
-
-                    <tr rowspan="2" class="d-lg-none d-md-none d-sm-table-row d-table-row">
-                        <td colspan="2">
-                            <div class="row">
-                                <div class="col-6">
-                                    Info 1
-                                </div>
-                                <div class="value-1">
-                                    Value 1
-                                </div>
-                                <div class="col-6">
-                                    Info 2
-                                </div>
-                                <div class="value-1">
-                                    Value 2
+                    
+                    <tr rowspan="3" class="d-lg-none d-md-none d-sm-table-row d-table-row">
+                        <td colspan="3" class="m-0 p-0">
+                            <div class="tbl-d-ctn">
+                                <input type="checkbox" id="detail-data-2" class="d-none" />
+                                <div class="row tbl-d-detail d-none">
+                                    <div class="col-6">
+                                        Info
+                                    </div>
+                                    <div class="col-6">
+                                        Value
+                                    </div>
                                 </div>
                             </div>
                         </td>
@@ -319,5 +239,11 @@
         </div>
     </div>
     <!--#endregion-->
+
+    <script>
+        function showDetailData(id) {
+            document.getElementById('detail-data-' + id).click();
+        }
+    </script>
 </body>
 </html>
