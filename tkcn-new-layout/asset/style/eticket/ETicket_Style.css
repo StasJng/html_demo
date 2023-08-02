@@ -51,6 +51,15 @@
     visibility: hidden;
 }
 
+.flex-center {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;        
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
 /* Header */
 .header {
     width: 100%;
@@ -2519,7 +2528,7 @@
 .dealtoday-checkbox.drop-data label:before {
     border-radius: 18px;
     border-color: transparent;
-    background-color: dodgerblue;
+    background-color: #F0821B;
 }
 
 .dealtoday-checkbox.drop-data label:after {
@@ -2537,17 +2546,17 @@
 }
 
 .dealtoday-checkbox.drop-data input:checked + label:before {
-    background: red;
+    background: #F0821B;
 }
 
 .dealtoday-checkbox.drop-data input:checked + label:after {
-    top: 4px;
+    top: 3px;
     left: 9px;
     width: 2px;
     border-width: 3px 3px 0px 0px;
     border-radius: 3px;
     transform: rotate(90deg);
-    background: red;
+    background: #F0821B;
 }
 
 /* Custom Datetime picker */
@@ -3640,23 +3649,26 @@
     margin: 0 auto;
     font-size: 14px;
     text-align: center;
+    margin-bottom: 100px;
 }
 
 @media(max-width: 1200px) {
     .list-trans-tbl table {
+        display: block;
         max-height: 70vh;
         width: 100%;
-        display: block;
         overflow-y: scroll;
         overflow-x: auto;
     }
 
     .list-trans-tbl tbody {
-        display: block;
+        display: table;
         width: max-content;
+        /* width: 100%; */
     }
 
     .list-trans-tbl th {
+        z-index: 1;
         position: sticky;
         top: 0;
     }
@@ -3675,10 +3687,10 @@
         background: #cdcdcd;
         border-radius: 10px;
     }
-    /* Handle on hover */
-    .list-trans-tbl table::-webkit-scrollbar-thumb:hover {
-        background: #cdcdcd;
-    }
+        /* Handle on hover */
+        .list-trans-tbl table::-webkit-scrollbar-thumb:hover {
+            background: #cdcdcd;
+        }
 }
 
 .list-trans-tbl table tr:last-child td:first-child {
@@ -3689,7 +3701,15 @@
     border-bottom-right-radius: 8px;
 }
 
+.list-trans-tbl table tr:nth-last-child(3) td:last-child {
+    border-bottom-right-radius: 8px;
+}
+
 .list-trans-tbl table th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.list-trans-tbl table th:nth-child(4) {
     border-top-left-radius: 8px;
 }
 
@@ -3723,12 +3743,38 @@
 
 @media(max-width: 768px) {
     .list-trans-tbl tbody {
-        display: block;
+        display: table;
         width: 100%;
         overflow-x: hidden;
     }
 
     .list-trans-tbl tr {
         background-color: #fff !important;
+    }
+
+    .list-trans-tbl table th:first-child {
+        border-top-left-radius: 0px;
+    }
+
+    .list-trans-tbl table {
+        overflow-x: hidden;
+    }
+}
+
+@media(max-width: 992px) {
+    .list-trans-tbl table {
+        border-radius: 0;
+    }
+
+    .list-trans-tbl table th:last-child {
+        border-top-right-radius: 0;
+    }
+
+    .list-trans-tbl table tr:nth-last-child(3) td:last-child {
+        border-bottom-right-radius: 0;
+    }
+
+    .list-trans-tbl table th:nth-child(4) {
+        border-top-left-radius: 0;
     }
 }
