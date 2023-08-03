@@ -39,6 +39,11 @@
     font-display: swap;
 }
 
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
 /* Generals */
 * {
     margin: 0;
@@ -144,20 +149,14 @@
         padding: 0 12px;
     }
 }
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------- */
 
 
 
 
 
 /* Header */
+/* -------------------------------------------------------------------------------------------- */
 .header {
     height: 138px;
     width: 100%;
@@ -191,18 +190,13 @@
     width: 19px;
     margin-right: 15px;
 }
+/* -------------------------------------------------------------------------------------------- */
 
 
 
 
 
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------- */
 /* Body */
 .body {
     margin-top: 138px;
@@ -217,12 +211,13 @@
     height: unset !important;
     aspect-ratio: 16/5;
 }
+/* -------------------------------------------------------------------------------------------- */
 
 
 
 
 
-
+/* -------------------------------------------------------------------------------------------- */
 /* Regigon - Main category */
 .main-category {
 	font-size: 16px;
@@ -230,6 +225,21 @@
 	color: #000;
     text-align: center;
     margin: 0 -15px;
+}
+
+.main-category a {
+	color: #000;
+}
+
+.main-category a:hover {
+    color: #F0821B;
+    text-decoration: none;
+}
+
+.main-category a:hover > div {
+    margin-top: -2px;
+    transition: box-shadow 0.3s ease, margin 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
 @media(max-width: 768px) {
@@ -260,61 +270,59 @@
     margin-top: 12px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Region - Danh mục nổi bật */
 .popular-category {
     background-color: #fff;
 }
 
+.popular-category .item:hover .cate-name, .popular-category a:hover {
+    color: #F0821B;
+    text-decoration: none;
+}
+
+.popular-category .title {
+    padding-top: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;    
+}
+
+.popular-category .list-item {
+    align-items: start;
+    padding: 15px 0;
+}
+
+.popular-category .cate-name {
+    padding-top: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #000;    
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+@media(max-width: 992px) {
+    .popular-category .cate-name {
+        font-size: 15px;
+    }
+
+    .popular-category .list-item .col {
+        padding: 0 10px;
+    }
+}
+
+@media(max-width: 768px) {
+    .popular-category .cate-name {
+        font-size: 13px;
+    }
+}
+/* -------------------------------------------------------------------------------------------- */
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------- */
 /* Region - Flashsale */
 .flash-sale {
     background-color: #E8141F;
@@ -331,7 +339,7 @@
     background-image: url('../images/generals/arrows/arr-md-white-right.svg');
     background-repeat: no-repeat;
     background-size: 15px 15px;
-    background-position: right 18px top 17px;
+    background-position: right 18px top 18px;
 }
 
 @media(max-width: 768px) {
@@ -339,7 +347,13 @@
         font-size: 12px;
     }
 }
+/* -------------------------------------------------------------------------------------------- */
 
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
 /* Countdown Timer Style */
 .countdown-container {
     color: black;
@@ -409,67 +423,37 @@
     font-style: normal !important;
     background-color: transparent !important;
 }
+/* -------------------------------------------------------------------------------------------- */
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------- */
 /* Region - Top thương hiệu nổi bật */
+/* -------------------------------------------------------------------------------------------- */
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------- */
 /* Region - Deal hot hôm nay */
+/* -------------------------------------------------------------------------------------------- */
 
 
 
 
 
-
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------- */
 /* Region - Dành cho bạn */
+/* -------------------------------------------------------------------------------------------- */
 
 
 
 
 
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------- */
 /* Footer */
 .footer {
     padding: 32px 0;
@@ -523,7 +507,6 @@
     padding: 3px 0;
 }
 
-
 /* Footer Column x5 (large screen) */
 @media (min-width: 992px) {
     .footer .col-info-reg .col-lg-2 {
@@ -570,39 +553,13 @@
     padding: 3px 0;
     height: fit-content;
 }
+/* -------------------------------------------------------------------------------------------- */
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------- */
 /* List Product */
 @media (min-width: 992px) {
     .list-product-reg .col-lg-2 {
@@ -687,7 +644,6 @@
     text-decoration: line-through;
 }
 
-
 /* Sale tag */
 .product-box .sale-tag {
     position: absolute;
@@ -712,21 +668,13 @@
     border-color: transparent #F6911E;
     border-width: 10px 20px 10px 20px;
 }
+/* -------------------------------------------------------------------------------------------- */
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------------------------------------- */
 /*Count Deal Bar*/
 .skillbar {
     height: 20px;
@@ -750,13 +698,10 @@
     font-size: 13px;
     font-weight: 500;
     text-align: center;
-
-
-
-
     background-image: url('../images/generals/icon-hot-sale.svg');
     background-repeat: no-repeat;
     background-size: 10px 15px;
     background-position: left 5px center;
 }
+/* -------------------------------------------------------------------------------------------- */
 
