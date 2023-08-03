@@ -109,6 +109,11 @@
     height: 40px;
 }
 
+.gap-bor-line {
+    margin-top: -1px;
+    border-bottom: 1px solid #F0821B;
+}
+
 .btn-general {
     border: 1px solid #F6911E;
     background-color: #fff;
@@ -117,12 +122,16 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
-    padding: 10px 12px;
+    padding: 12px 10px;
 
     border-radius: 8px;
     text-align: center;
     margin: 0 auto;
     cursor: pointer;
+}
+
+.btn-general.round {
+    border-radius: 50px;
 }
 
 .btn-general:hover {
@@ -220,7 +229,7 @@
 	font-weight: 600;
 	color: #000;
     text-align: center;
-    margin: 0 -30px;
+    margin: 0 -15px;
 }
 
 @media(max-width: 768px) {
@@ -519,7 +528,7 @@
 }
 
 .list-product-reg {
-    padding: 0 6px;
+    padding: 0 22px;
 }
 
 .list-product-reg a:hover {
@@ -578,7 +587,6 @@
 }
 
 .product-box .p-price {
-    margin: 3px 0;
     padding: 0;
 }
 .product-box .p-price .sale-price {
@@ -617,4 +625,140 @@
     border-style: solid;
     border-color: transparent #F6911E;
     border-width: 10px 20px 10px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Count Deal Bar*/
+.skillbar {
+    height: 20px;
+    border-radius: 15px;
+    background-color: #fddebc;
+}
+
+.count-bar {
+    height: 20px;
+    width: 0px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: #F6911E;
+}
+
+.count-left {
+    height: 20px;
+    width: 100%;
+    color: white;
+    margin-top: -20px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+
+
+
+
+    background-image: url('../images/generals/icon-hot-sale.svg');
+    background-repeat: no-repeat;
+    background-size: 10px 15px;
+    background-position: left 5px center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Countdown style*/
+.countdown-zone {
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    float: right;
+    margin: 8px 0 0 0;
+}
+
+.countdown-container {
+    text-align: center;
+    color: black;
+}
+
+.countdown-container li {
+    display: inline-block;
+    font-size: 10pt;
+    list-style-type: none;
+}
+
+.countdown-container li span {
+    display: block;
+}
+
+.countdown-container li i span {
+    width: 25px;
+    height: 20px;
+}
+
+.countdown-container li i span {
+    font-style: normal;
+    margin: 0 6px 0 6px;
+    background-color: #ff0000;
+    color: white;
+    font-weight: 400;
+    border-radius: 3px;
+}
+
+.set-countdown-time {
+    align-items: center;
+    width: 100%;
+}
+
+.countdown-input {
+    width: 55px;
+}
+
+.countdown-seperator {
+    width: 2px !important;
+    height: 20px !important;
+    font-style: normal !important;
+    margin: 0 0 0 0 !important;
+    background-color: transparent !important;
+    color: black !important;
+    font-weight: 600 !important;
+    border-radius: 3px !important;
+}
+
+.countdown-seperator-day {
+    width: 28px !important;
+    height: 20px !important;
+    font-style: normal !important;
+    margin: 0 0 0 0 !important;
+    background-color: transparent !important;
+    color: black !important;
+    font-weight: 600 !important;
+    border-radius: 3px !important;
 }
