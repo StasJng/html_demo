@@ -955,7 +955,478 @@
                 <div class="gap-reg-30"></div>
 
                 <!--#region Demo-->
-                
+                <div class="col-3">
+                    <div class="filter-wrapper">
+                        <div class="filter-container">
+                            <p class="drop-filter-title">Địa điểm</p>
+                            <ul class="loc-filter-items">
+                                <li class="srch-box">
+                                    <div class="container">
+                                    <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm điểm đến">
+                                    </div>
+                                </li>
+
+                                <li class="dropdown">
+                                    <input type="checkbox" checked="" />
+                                    <a data-toggle="dropdown">
+                                        <span class="dealtoday-checkbox">
+                                            <input type="checkbox" id="p-loc-1" locid="1" onchange="addFilter(1, 'loc', 'p')">
+                                            <label for="p-loc-1"></label>
+                                            <span class="txt-keyword-p">Hà Nội </span>
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="txt-info">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="c-loc-4-1" locid="4" parentid="1" class="dealtoday-checkbox-chil" onchange="addFilter(4, 'loc', 'c', 1)" />
+                                                <label for="c-loc-4-1">
+                                                    <span class="txt-keyword">Hoàn Kiếm </span>
+                                                </label>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown">
+                                    <input type="checkbox" checked="" />
+                                    <a data-toggle="dropdown">
+                                        <span class="dealtoday-checkbox">
+                                            <input type="checkbox" id="p-loc-5" locid="5" onchange="addFilter(1, 'loc', 'p')">
+                                            <label for="p-loc-5"></label>
+                                            <span class="txt-keyword-p">Gia Lâm </span>
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="txt-info">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="c-loc-5-1" locid="51" parentid="1" class="dealtoday-checkbox-chil" onchange="addFilter(4, 'loc', 'c', 1)" />
+                                                    <label for="c-loc-5-1">
+                                                        <span class="txt-keyword">Ocean Park 1</span>
+                                                    </label>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="txt-info">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="c-loc-5-2" locid="52" parentid="1" class="dealtoday-checkbox-chil" onchange="addFilter(4, 'loc', 'c', 1)" />
+                                                    <label for="c-loc-5-2">
+                                                        <span class="txt-keyword">Ocean Park 2</span>
+                                                    </label>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="txt-info">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="c-loc-5-3" locid="53" parentid="1" class="dealtoday-checkbox-chil" onchange="addFilter(4, 'loc', 'c', 1)" />
+                                                    <label for="c-loc-5-3">
+                                                        <span class="txt-keyword">Ocean Park 3</span>
+                                                    </label>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="dropdown non-drop">
+                                    <input type="checkbox" checked="">
+                                    <a data-toggle="dropdown" class="non-drop">
+                                        <span class="dealtoday-checkbox">
+                                            <input type="checkbox" id="p-loc-3" locid="3" onchange="addFilter(3, 'loc', 'p')">
+                                            <label for="p-loc-3">
+                                                <span class="txt-keyword-p">Hồ Chí Minh </span>
+                                            </label>
+                                        </span>
+                                    </a>
+                                    <ul class="dropdown-menu"></ul>
+                                </li>
+
+                            </ul>
+
+                            <div class="border-div"></div>
+
+                            <p class="drop-filter-title">Dịch vụ</p>
+
+                            <ul>
+                                <li class="dropdown">
+                                    <input type="checkbox" checked="" />
+
+                                    <a data-toggle="dropdown">
+                                        <span class="dealtoday-checkbox">
+                                            <input type="checkbox" id="p-tag-1494" onchange="addFilter(1494, 'tag', 'p')">
+                                            <label for="p-tag-1494"></label>
+                                            <span>Khu vui chơi </span>
+                                        </span>
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a>
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="c-tag-52-1494" tagid="52" parentid="1494" class="dealtoday-checkbox-chil" onchange="addFilter(52, 'tag', 'c', 1494)">
+                                                    <label for="c-tag-52-1494">
+                                                        <span>Thủy cung</span>
+                                                    </label>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="c-tag-54-1494" tagid="54" parentid="1494" class="dealtoday-checkbox-chil" onchange="addFilter(54, 'tag', 'c', 1494)">
+                                                    <label for="c-tag-54-1494">
+                                                        <span>Bán chạy</span>
+                                                    </label>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="c-tag-22-1494" tagid="22" parentid="1494" class="dealtoday-checkbox-chil" onchange="addFilter(22, 'tag', 'c', 1494)">
+                                                    <label for="c-tag-22-1494">
+                                                        <span>Khu vui chơi</span>
+                                                    </label>
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <!--#region Demo Flash Sale Items-->
+                    <div class="col-12 list-product-reg">
+                        <div class="row">
+                            <!--#region List product-->
+                            <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        
+                                        <div class="p-price">
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="row flex-align-center">
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pr-xl-0">
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                </div>
+                                                <div class="skillbar" total="100" saled="82">
+                                                    <div id="count-bar" class="count-bar"></div>
+                                                    <div class="count-left">
+                                                        Đang bán
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pt-x-lg-0 pt-lg-2 pt-md-2 pt-sm-2 pt-2">
+                                                <div class="btn-general">
+                                                    Mua ngay
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        
+                                        <div class="p-price">
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="row flex-align-center">
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pr-xl-0">
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                </div>
+                                                <div class="skillbar" total="100" saled="82">
+                                                    <div id="count-bar" class="count-bar"></div>
+                                                    <div class="count-left">
+                                                        Đang bán
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pt-x-lg-0 pt-lg-2 pt-md-2 pt-sm-2 pt-2">
+                                                <div class="btn-general">
+                                                    Mua ngay
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        
+                                        <div class="p-price">
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="row flex-align-center">
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pr-xl-0">
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                </div>
+                                                <div class="skillbar" total="100" saled="82">
+                                                    <div id="count-bar" class="count-bar"></div>
+                                                    <div class="count-left">
+                                                        Đang bán
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pt-x-lg-0 pt-lg-2 pt-md-2 pt-sm-2 pt-2">
+                                                <div class="btn-general">
+                                                    Mua ngay
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        
+                                        <div class="p-price">
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="row flex-align-center">
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pr-xl-0">
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                </div>
+                                                <div class="skillbar" total="100" saled="82">
+                                                    <div id="count-bar" class="count-bar"></div>
+                                                    <div class="count-left">
+                                                        Đang bán
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pt-x-lg-0 pt-lg-2 pt-md-2 pt-sm-2 pt-2">
+                                                <div class="btn-general">
+                                                    Mua ngay
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        
+                                        <div class="p-price">
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="row flex-align-center">
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pr-xl-0">
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                </div>
+                                                <div class="skillbar" total="100" saled="82">
+                                                    <div id="count-bar" class="count-bar"></div>
+                                                    <div class="count-left">
+                                                        Đang bán
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pt-x-lg-0 pt-lg-2 pt-md-2 pt-sm-2 pt-2">
+                                                <div class="btn-general">
+                                                    Mua ngay
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        
+                                        <div class="p-price">
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="row flex-align-center">
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pr-xl-0">
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                </div>
+                                                <div class="skillbar" total="100" saled="82">
+                                                    <div id="count-bar" class="count-bar"></div>
+                                                    <div class="count-left">
+                                                        Đang bán
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pt-x-lg-0 pt-lg-2 pt-md-2 pt-sm-2 pt-2">
+                                                <div class="btn-general">
+                                                    Mua ngay
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        
+                                        <div class="p-price">
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="row flex-align-center">
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pr-xl-0">
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                </div>
+                                                <div class="skillbar" total="100" saled="82">
+                                                    <div id="count-bar" class="count-bar"></div>
+                                                    <div class="count-left">
+                                                        Đang bán
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pt-x-lg-0 pt-lg-2 pt-md-2 pt-sm-2 pt-2">
+                                                <div class="btn-general">
+                                                    Mua ngay
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        
+                                        <div class="p-price">
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+
+                                        <div class="row flex-align-center">
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pr-xl-0">
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                </div>
+                                                <div class="skillbar" total="100" saled="82">
+                                                    <div id="count-bar" class="count-bar"></div>
+                                                    <div class="count-left">
+                                                        Đang bán
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-12 col-md-12 sol-sm-12 col-12 pt-x-lg-0 pt-lg-2 pt-md-2 pt-sm-2 pt-2">
+                                                <div class="btn-general">
+                                                    Mua ngay
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <!--#endregion-->
+
+                            <div class="col-12 flex-center">
+                                <div class="btn-general">
+                                    Xem thêm
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--#endregion-->
+                </div>
                 <!--#endregion-->
 
                 <div class="gap-reg-40"></div>

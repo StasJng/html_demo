@@ -207,6 +207,7 @@
 .body {
     margin-top: 138px;
     background-color: #f5f5f5;
+    overflow-x: hidden;
 }
 
 .main-banner, .main-banner img {
@@ -357,6 +358,104 @@
         font-size: 12px;
     }
 }
+
+/* Flash sale page */
+.flash-sale-header .countdown-container {
+    background-image: none;
+    height: 60px;
+    padding: 0;
+    background-color: #F6911E;
+    z-index: 2;
+    padding: 0 15px;
+}
+.flash-sale-breadcrumb.upcoming {
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    height: 61px;
+}
+
+.flash-sale-breadcrumb.upcoming .countdown-seperator {
+    color: #F0821B !important;
+}
+
+.flash-sale-breadcrumb.finished {
+    background-color: #424242;
+}
+
+.flash-sale-breadcrumb.upcoming .countdown-container {
+    background-color: #FFF;
+}
+
+.flash-sale-breadcrumb.finished .countdown-container {
+    background-color: #424242;
+}
+
+.flash-sale-header .countdown-container img {
+    margin-right: 8px;
+}
+
+.flash-sale-breadcrumb .border-middle {
+    border-top: 1px solid #fff;
+    margin-top: -32px;
+    width: 800px;
+}
+
+.flash-sale-breadcrumb.upcoming .countdown-container li {
+    color: #000;
+}
+
+.flash-sale-breadcrumb.upcoming .countdown-container li i span, .flash-sale-breadcrumb.finished .countdown-container li i span {
+    color: #fff;
+    background-color: #F0821B;
+}
+
+.flash-sale-breadcrumb.upcoming .countdown-container img, .flash-sale-breadcrumb.finished .countdown-container img {
+    content: url(../images/generals/icon-flashsale-title-orange.png);
+}
+
+.flash-sale-breadcrumb.upcoming .border-middle {
+    border-top: 1px solid #9E9E9E;
+}
+
+@media(max-width: 768px) {
+    .flash-sale-banner {
+        padding: 0;
+    }
+
+    .flash-sale-header .countdown-container {
+        height: 52px;
+        position: absolute;
+        top: 28px;
+    }
+
+    .flash-sale-header .countdown-container img {
+        height: 20px;
+        width: 95px;
+    }
+
+    .flash-sale-header .countdown-container ul {
+        margin-top: 0;
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 576px) {
+    .flash-sale-header .countdown-container {
+        width: 100%;
+    }
+
+    .flash-sale-header .countdown-container ul {
+        position: absolute;
+        right: 32px;
+        top: 12px;
+    }
+
+    .flash-sale-header .countdown-container img {
+        position: absolute;
+        left: 32px;
+        top: 16px;
+    }
+}
 /* -------------------------------------------------------------------------------------------- */
 
 
@@ -424,6 +523,7 @@
     height: 28px !important;
     font-style: normal !important;
     background-color: transparent !important;
+    /* color: transparent !important; */
 }
 
 .countdown-seperator-day {
@@ -432,6 +532,10 @@
     color: #fff !important;
     font-style: normal !important;
     background-color: transparent !important;
+}
+
+.time-left {
+    margin-right: 3px;
 }
 /* -------------------------------------------------------------------------------------------- */
 
@@ -720,6 +824,17 @@
     background-size: 10px 15px;
     background-position: left 5px center;
 }
+
+.skillbar.upcoming .count-bar {
+    background-color: transparent;
+}
+
+.skillbar.upcoming .count-left {
+    color: #F6911E;
+    background-image: url('../images/generals/icon-hot-sale-up-coming.svg');
+}
+
+
 /* -------------------------------------------------------------------------------------------- */
 
 
@@ -727,8 +842,7 @@
 
 
 /* -------------------------------------------------------------------------------------------- */
-
-
+/* Temp Swiper*/
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -773,5 +887,215 @@
 .slider::before {
     left: 0;
     top: 0;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* Filters */
+.filter-wrapper {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    padding: 12px 8px;
+    /* height: max-content; */
+}
+
+.filter-container {
+    padding: 0 5px 20px 5px;
+}
+
+.filter-container > ul {
+    list-style: none;
+}
+
+/* ---------------------------- */
+/* Customize Sroll-Bar */
+/* Width */
+.loc-filter-items::-webkit-scrollbar {
+    width: 3px;
+}
+/* Track */
+.loc-filter-items::-webkit-scrollbar-track {
+    background: #FAFAFA;
+}
+/* Handle */
+.loc-filter-items::-webkit-scrollbar-thumb {
+    background: #CDCDCD;
+    border-radius: 10px;
+}
+/* Handle on hover */
+.loc-filter-items::-webkit-scrollbar-thumb:hover {
+    opacity: 0.8;
+}
+/* ---------------------------- */
+
+.loc-filter-items {
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown [data-toggle=dropdown] {
+    display: block;
+    color: black;
+    font-weight: 600;
+    background: white;
+}
+
+.dropdown [data-toggle=dropdown]:before {
+    position: absolute;
+    display: block;
+    content: url(../images/generals/arrows/arr-md-black-right.svg);
+    rotate: 90deg;
+    font-size: 0.7em;
+    top: 8px;
+    right: 10px;
+    pointer-events: none;
+}
+
+.dropdown > input[type=checkbox]:checked + [data-toggle=dropdown]:before {
+    rotate: -90deg;
+}
+
+.dropdown > input[type=checkbox]:checked ~ .dropdown-menu {
+    max-height: max-content;
+    display: contents;
+}
+
+.dropdown.non-drop [data-toggle=dropdown]:before {
+    content: '';
+}
+.dropdown > .dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+.dropdown > .dropdown-menu li {
+    margin-left: 5px;
+}
+
+.dropdown > .dropdown-menu li a {
+    display: block;
+    color: black;
+    background: white;
+}
+
+.dropdown > input[type=checkbox] {
+    opacity: 0;
+    width: 100%;
+    cursor: pointer;
+    min-height: 34px;
+    position: absolute;
+}
+
+.dropdown > .dropdown-menu .dealtoday-checkbox {
+    padding-left: 15px;
+}
+
+.dropdown :hover {
+    color: #F0821B;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* Checkbox */
+.dealtoday-checkbox {
+    display: block;
+}
+.dealtoday-checkbox input {
+    display: none;
+}
+.dealtoday-checkbox label {
+    box-sizing: border-box;
+    margin: 2px;
+    padding: 0;
+    position: relative;
+    cursor: pointer;
+}
+.dealtoday-checkbox label:before {
+    content: '';
+    background-color: #ffffff;
+    border: 2px solid #cdcdcd;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 8px;
+    display: inline-block;
+    position: relative;
+    border-radius: 5px;
+    border-width: 2px;
+    vertical-align: middle;
+    cursor: pointer;
+    margin: -3px 0 0 0;
+}
+.dealtoday-checkbox input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 7px;
+    height: 13px;
+    border: solid #ffffff;
+    border-width: 0 3px 3px 0;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    background: #F0821B;
+}
+.dealtoday-checkbox input:checked + label:before {
+    border-color: transparent;
+    background-color: #F0821B;
+}
+/* Round checkbox */
+.dealtoday-checkbox.round label:before {
+    border-radius: 10px;
+    border-width: 1px;
+}
+.dealtoday-checkbox.round input:checked + label:after {
+    top: 4px;
+    left: 6px;
+}
+/* Expand checkbox(plus, minus) */
+.dealtoday-checkbox.drop-data label:before {
+    border-radius: 18px;
+    border-color: transparent;
+    background-color: #F6911E;
+}
+.dealtoday-checkbox.drop-data label:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 31px;
+    height: 30px;
+    background: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+    background-position: center;
+    background-size: 40% 2px, 2px 40%;
+    background-repeat: no-repeat;
+}
+.dealtoday-checkbox.drop-data input:checked + label:before {
+    background: #F6911E;
+}
+.dealtoday-checkbox.drop-data input:checked + label:after {
+    top: 5px;
+    left: 9px;
+    width: 2px;
+    border-width: 3px 3px 0px 0px;
+    border-radius: 3px;
+    transform: rotate(90deg);
+    background: #F6911E;
 }
 /* -------------------------------------------------------------------------------------------- */
