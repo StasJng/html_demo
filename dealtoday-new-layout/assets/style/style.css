@@ -357,6 +357,10 @@ a {
     background-position: right 18px top 18px;
 }
 
+.flash-sale .view-all:hover {
+    text-decoration: underline !important;
+}
+
 @media(max-width: 768px) {
     .flash-sale {
         border-radius: 0;
@@ -376,6 +380,32 @@ a {
     z-index: 2;
     padding: 0 15px;
 }
+
+.flash-sale-breadcrumb {
+    background-color: #F6911E;
+    height: 60px;
+}
+
+@media(max-width: 768px) {
+    .flash-sale-breadcrumb {
+        height: 52px;
+    }
+}
+
+.border-middle {
+    margin-top: -1px;
+    border-top: 1px solid #fff;
+}
+
+.flash-sale-banner, .flash-sale-banner img {
+    width: 100%;
+}
+
+.flash-sale-banner img {
+    height: unset !important;
+    aspect-ratio: 4/1;
+}
+
 .flash-sale-breadcrumb.upcoming {
     background-color: #fff;
     border-top: 1px solid #eee;
@@ -433,7 +463,11 @@ a {
     .flash-sale-header .countdown-container {
         height: 52px;
         position: absolute;
-        top: 28px;
+        top: 168px;
+    }
+
+    .flash-sale-breadcrumb.upcoming .flash-sale-header .countdown-container {
+        top: 169px;
     }
 
     .flash-sale-header .countdown-container img {
@@ -562,6 +596,22 @@ a {
 
 /* -------------------------------------------------------------------------------------------- */
 /* Region - Deal hot hôm nay */
+.deal-tab {
+    height: 56px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.deal-tab:hover {
+    color: #F0821B;
+}
+
+.deal-tab.selected {
+    border-bottom: 2px solid #F0821B;
+}
 /* -------------------------------------------------------------------------------------------- */
 
 
@@ -924,6 +974,7 @@ a {
 
 .filter-container > ul {
     list-style: none;
+    padding-left: 0;
 }
 
 /* ---------------------------- */
