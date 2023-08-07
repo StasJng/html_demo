@@ -55,6 +55,11 @@
     outline: none;
 }
 
+a {
+    color: unset;
+    text-decoration: none !important;
+}
+
 @media (min-width: 1200px) {
     .container {
         max-width: 1200px !important;
@@ -275,6 +280,8 @@
 
 .main-category .detail .cate-name {
     margin-top: 12px;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 /* Region - Danh mục nổi bật */
@@ -289,6 +296,7 @@
 
 .popular-category .title {
     padding-top: 12px;
+    padding-left: 12px;
     font-size: 16px;
     font-weight: 500;
     color: #000;    
@@ -471,7 +479,7 @@
     background-image: url('../images/generals/icon-flashsale-title.png');
     background-repeat: no-repeat;
     background-size: 133px 28px;
-    background-position: left 5px center;
+    background-position: left 18px center;
 }
 
 @media(max-width: 768px) {
@@ -487,6 +495,7 @@
 
 .countdown-container ul {
     margin-bottom: 0;
+    padding-left: 12px;
 }
 
 .countdown-container li {
@@ -685,7 +694,11 @@
 }
 
 .list-product-reg {
-    padding: 0 22px;
+    padding: 0 8px;
+}
+
+.list-product-reg .lst-items {
+    margin: 0 -8px;
 }
 
 .list-product-reg a:hover {
