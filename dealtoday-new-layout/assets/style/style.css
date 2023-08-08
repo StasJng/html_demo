@@ -1258,7 +1258,7 @@ ul.breadcrumb-nav li+li:before {
     content: "";
     width: 25px;
     height: 25px;
-    position: fixed;
+    position: absolute;
     background-image: url(../images/generals/arrows/arr-md-grey-right.svg);
     background-repeat: no-repeat;
     background-size: 19px 19px;
@@ -1275,6 +1275,153 @@ ul.breadcrumb-nav li a:hover {
     color: #F0821B;
 }
 /* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* Result page */
+.order-result {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 64px;
+}
+
+.order-result .success .message img, .order-result .failed .message img {
+    width: 98px;
+    height: 98px;
+}
+
+.order-result .success .message h2, .order-result .failed .message h2 {
+    width: 100%;
+    margin: 55px auto 51px auto;
+    color: #000;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+}
+
+.order-result .btn-ctn {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    text-align: center;
+}
+
+.order-result .success .btn-continue-shopping, .order-result .success .btn-view-order-detail, .order-result .failed .btn-retry {
+    padding: 10px 55px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 8px;
+    width: 230px;
+    height: 40px;
+}
+
+.order-result .success .btn-continue-shopping:hover, .order-result .success .btn-view-order-detail:hover, .order-result .failed .btn-retry:hover, .order-result .btn-download {
+    cursor: pointer;
+}
+
+.order-result .success .btn-continue-shopping, .order-result .failed .btn-retry {
+    background-color: #F0821B;
+    border: 1px solid #F0821B;
+    color: #fff;
+}
+
+.order-result .success .btn-view-order-detail {
+    background-color: #fff;
+    border: 1px solid #F0821B;
+    color: #F0821B;
+}
+
+.order-result .success .download, .order-result .failed .download {
+    max-width: 335px;
+    margin: 0 auto;
+}
+
+.order-result .success .download .col-12, .order-result .failed .download .col-12 {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.order-result .success .download .title, .order-result .failed .download .title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    color: #000;
+    margin: 51px auto 26px auto;
+    text-align: center;
+}
+
+.order-result .success .download img, .order-result .failed .download img {
+    width: 147px;
+    height: 50px;
+    margin: 8px;
+}
+
+.order-result .failed .btn-continue-shopping {
+    width: 147px;
+    height: 50px;
+}
+
+@media (max-width: 768px) {
+    .order-result {
+        border-radius: 0;
+        min-height: 70vh;
+    }
+
+    .order-result .success .message img, .order-result .failed .message img {
+        width: 81px;
+        height: 81px;
+    }
+
+    .order-result .success .download .title, .order-result .failed .download .title {
+        margin: 51px auto 16px auto;
+    }
+
+    .order-result .success .message h2, .order-result .failed .message h2 {
+        font-size: 22px;
+    }
+
+    .order-result .success .btn-continue-shopping, .order-result .failed .btn-retry {
+        margin: 8px auto;
+    }
+
+    .order-result .success .btn-view-order-detail {
+        margin: 8px auto;
+    }
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
