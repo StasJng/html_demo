@@ -185,10 +185,7 @@ a {
 
 .header-top {
     height: 60px;
-}
-
-.header-bottom {
-    height: 78px;
+    transition: height 0.3s;
 }
 
 .hot-line {
@@ -227,38 +224,76 @@ a {
     margin-top: 5px;
 }
 
-.header-r .loc-box {
-    
-}
-
-.header-r .srch-box input, .header-r .srch-box button  {
-    display: inline-block;
-}
-
-.header-r .srch-box input {
-    margin-top: 16px;
-    width: 100%;
-    padding: 10px 12px;
-    background-color: #f5f5f5;
-    border: 1px solid transparent;
-    border-color: #eee;
-    border-radius: 8px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: #000;
-}
-
-.header-r .cart-box {
-
-}
-
 .goog-te-gadget .goog-te-combo {
     margin: 2px 65px 0px 0px !important;
 }
 
 .header-r .h-translate {
     width: 200px;
+}
+
+.header-bottom {
+    height: 78px;
+    width: 100%;
+}
+
+.header-bottom .header-logo {
+    flex: 0 0 auto;
+    width: 20%;
+}
+
+.header-bottom .loc-box {
+    flex: 0 0 auto;
+    width: 15%;
+}
+
+.header-bottom .loc-box .dropdown {
+    height: 44px;
+    width: 150px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    border-color: #eee;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0 0 0 8px;
+}
+
+.header-bottom .srch-box {
+    flex: 0 0 auto;
+    width: 60%;
+}
+
+.header-bottom .srch-box button  {
+    border-radius: 0 8px 8px 0;
+    width: 44px;
+    height: 44px;
+}
+
+.srch-box input {
+    width: 85%;
+    padding: 12px 0 12px 45px;
+    background-color: #f5f5f5;
+    border: 1px solid transparent;
+    border-color: #eee;
+    border-radius: 8px 0 0 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+    height: 44px;
+    margin-right: -5px;
+    background-image: url(../images/header/icon-search-orange.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: left 12px center;
+}
+
+.header-bottom .cart-box {
+    display: flex;
+    flex: 0 0 auto;
+    width: 5%;
+    padding-right: 13px;
+    justify-content: end;
 }
 
 @media(max-width: 992px) {
@@ -271,8 +306,87 @@ a {
     }
 }
 
-.header-r .h-auth {
+@media(max-width: 768px) {
+    .header {
+        height: 86px;
+    }
 
+    .header-top {
+        display: none !important;
+    }
+
+    .header-bottom {
+        height: 86px;
+        display: inline-block !important;
+    }
+
+    .header-bottom .header-logo {
+        width: 100% !important;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .header-bottom .header-logo a img {
+        height: 26px;
+        width: 130px;
+    }
+
+    .header-bottom .cart-box {
+        display: flex;
+        justify-content: end;
+        margin-top: -65px;
+        width: 100%;
+        padding-right: 5px;
+    }
+
+    .header-bottom .cart-box img {
+        height: 26px;
+        width: 26px;
+    }
+
+
+
+
+
+    .header-bottom .loc-box {
+        width: 35% !important;
+        display: inline-block;
+    }
+
+    .header-bottom .loc-box .dropdown {
+        height: 28px;
+        width: 100%;
+        border-radius: 8px 0 0 8px;
+        border-color: transparent;
+    }
+
+    .header-bottom .srch-box {
+        width: 65%;
+        display: inline-block;
+        margin-left: -5px;
+    }
+
+    .srch-box input {
+        width: calc(100% - 28px);
+        padding: 12px 0 12px 12px;
+        height: 28px;
+        border-radius: 0;
+        background-image: none;
+        border-color: transparent;
+    }
+
+    .header-bottom .srch-box button {
+        border-radius: 0 8px 8px 0;
+        width: 28px;
+        height: 28px;
+        padding: 0;
+        border: none;
+        border-top: 1px solid transparent;
+    }
+}
+
+@media(max-width: 576px) {
+    
 }
 /* -------------------------------------------------------------------------------------------- */
 
@@ -286,6 +400,12 @@ a {
     margin-top: 138px;
     background-color: #f5f5f5;
     overflow-x: hidden;
+}
+
+@media(max-width: 768px) {
+    .body {
+        margin-top: 86px;
+    }
 }
 
 .main-banner, .main-banner img {
@@ -363,6 +483,7 @@ a {
 }
 
 .popular-category .item:hover .cate-name, .popular-category a:hover {
+    cursor: pointer;
     color: #F0821B;
     text-decoration: none;
 }
@@ -1650,8 +1771,6 @@ body {
     top: 0 !important;
     left: 0;
 }
-
-
 
 .goog-te-gadget {
     color: transparent !important;
