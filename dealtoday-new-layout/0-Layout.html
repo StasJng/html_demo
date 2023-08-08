@@ -33,7 +33,7 @@
     <!--#region Header-->
     <div class="header" id="header">
         <div class="container p-sm-0 p-xs-0">
-            <div class="row header-top flex-align-center">
+            <div id="header-top" class="row header-top flex-align-center">
                 <div class="col-4 hot-line">
                     <img src="assets/images/header/icon-phone.svg" alt="" height="20" width="20" />
                     <a href="tel:19002065">19002065</a>
@@ -113,6 +113,9 @@
                 <div class="cart-box">
                     <img src="assets/images/header/icon-cart-orange.svg" alt="" width="24" height="24" />
                 </div>
+                <div class="mb-menu-box d-xl-none d-lg-none d-md-none d-sm-block d-block">
+                    <img src="assets/images/header/icon-mb-menu.svg" alt="" height="26" width="26" />
+                </div>
             </div>
         </div>
     </div>
@@ -122,10 +125,12 @@
 
         function myFunction() {
             if (window.pageYOffset > 0) {
-                document.getElementById("header").setAttribute("style", "box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
+                $("#header").attr("style", "height: fit-content; box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
+                $("#header-top").attr("style", "height: 0; opacity: 0");
             }
             else {
-                document.getElementById("header").setAttribute("style", "box-shadow: none;");
+                $("#header").removeAttr("style");
+                $("#header-top").removeAttr("style");
             }
         }
     </script>
@@ -275,7 +280,7 @@
                 <!--#region Flashsale-->
                 <div class="col-12 flash-sale border-round-12">
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-9 p-0">
                             <div class="col-12">
                                 <input type="hidden" id="countdowntTime" value="10/3/2023 11:53:32 AM" />
                                 <div class="countdown-container">
@@ -1491,7 +1496,6 @@
     </div>
     <!--#endregion-->
 
-
     <!--#region PopupCategory-->
     <div class="cate-container" id="catePopup" onclick="if(event.target == this){closeMenuPopup('#catePopup');}" aria-hidden="false">
         <div class="cate-wrapper">
@@ -1598,7 +1602,6 @@
         </div>
     </div>
     <!--#endregion-->
-
 
     <!--#region script-->
     <script>

@@ -540,7 +540,7 @@ a {
 .flash-sale .view-all {
     color: #fff;
     margin-left: -15px;
-    padding: 15px 38px 0 0;
+    padding: 15px 25px 0 0;
     text-align: end;
     min-width: max-content;
     font-size: 14px;
@@ -548,7 +548,7 @@ a {
     background-image: url('../images/generals/arrows/arr-md-white-right.svg');
     background-repeat: no-repeat;
     background-size: 15px 15px;
-    background-position: right 18px top 18px;
+    background-position: right 5px top 18px;
 }
 
 .flash-sale .view-all:hover {
