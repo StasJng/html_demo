@@ -344,9 +344,9 @@ a {
         width: 26px;
     }
 
-
-
-
+    .header-bottom .mb-menu-box {
+        margin-top: -26px;
+    }
 
     .header-bottom .loc-box {
         width: 35% !important;
