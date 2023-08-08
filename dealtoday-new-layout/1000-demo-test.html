@@ -71,7 +71,7 @@
                 <!--#region Ngành hàng-->
                 <div class="col-12 p-sm-0 p-xs-0">
                     <div class="row main-category">
-                        <a href="#" class="col-4">
+                        <a href="#" class="col-4" onclick="openMenuPopup('#catePopup')">
                             <div class="col-12 detail border-round-12 flex-center">
                                 <div class="row">
                                     <div class="col-12">
@@ -1448,6 +1448,114 @@
             </div>
         </div>
     </div>
+
+    <!--#region PopupCategory-->
+    <div class="cate-container" id="catePopup" onclick="if(event.target == this){closeMenuPopup('#catePopup');}" aria-hidden="false">
+        <div class="cate-wrapper">
+            <h2>Tất cả dịch vụ<span class="float-end" onclick="closeMenuPopup('#catePopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="24" width="24" /></span></h2>
+            
+            <div class="row detail-lst">
+                <div class="col-12 cate-header">
+                    <h3>E-Voucher</h3>
+                </div>
+                <div class="borderline d-xl-block d-lg-block d-md-block d-sm-block d-xs-none d-none"></div>
+                <div class="col-12 row cate-lst">
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Voucher/vui-choi-giai-tri.png" data-src="" alt="" width="24" height="24" />
+                        <p>Khu vui chơi</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Voucher/lam-dep.png" data-src="" alt="" width="24" height="24" />
+                        <p>Sức Khỏe & Làm Đẹp</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Voucher/nha-hang-am-thuc.png" data-src="" alt="" width="24" height="24" />
+                        <p>Nhà Hàng Ăn Uống</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Voucher/du-lich-khach-san.png" data-src="" alt="" width="24" height="24" />
+                        <p>Du Lịch & Khách Sạn</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Voucher/booking-golf.png" data-src="" alt="" width="24" height="24" />
+                        <p>Booking Golf</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Voucher/phan-mem.png" data-src="" alt="" width="24" height="24" />
+                        <p>Phần mềm</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Voucher/sieu-thi.png" data-src="" alt="" width="24" height="24" />
+                        <p>Siêu thị</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Voucher/khoa-hoc-dao-tao.png" data-src="" alt="" width="24" height="24" />
+                        <p>Khóa học Đào tạo</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row detail-lst">
+                <div class="col-12 cate-header">
+                    <h3>E-Gift</h3>
+                </div>
+                <div class="borderline"></div>
+                <div class="col-12 row cate-lst">
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Gift/sinh-nhat.png" data-src="" alt="" width="24" height="24" />
+                        <p>Sinh nhật</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Gift/cam-on.png" data-src="" alt="" width="24" height="24" /> 
+                        <p>Cảm ơn</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Gift/chuc-mung.png" data-src="" alt="" width="24" height="24" />
+                        <p>Chúc mừng</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Gift/dip-le.png" data-src="" alt="" width="24" height="24" />
+                        <p>Dịp lễ</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Gift/nguoi-than.png" data-src="" alt="" width="24" height="24" />
+                        <p>Người thân</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Gift/doi-tac.png" data-src="" alt="" width="24" height="24" />
+                        <p>Đối tác</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row detail-lst">
+                <div class="col-12 cate-header">
+                    <h3>E-Ticket</h3>
+                </div>
+                <div class="borderline"></div>
+                <div class="col-12 row cate-lst">
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Ticket/vui-choi-giai-tri.png" data-src="" alt="" width="24" height="24" />
+                        <p>Vui chơi giải trí</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Ticket/su-kien-van-hoa.png" data-src="" alt="" width="24" height="24" />
+                        <p>Sự kiện văn hóa</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Ticket/di-chuyen.png" data-src="" alt="" width="24" height="24" />
+                        <p>Di chuyển</p>
+                    </a>
+                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
+                        <img src="assets/images/demo-imgs/category/E-Ticket/tham-quan-du-lich.png" data-src="" alt="" width="24" height="24" />
+                        <p>Tham quan du lịch</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
     <!--#endregion-->
 
     <!--#region Footer-->
@@ -1789,7 +1897,17 @@
                 }, 2);
             });
         });
-    </script>
+        
+        function openMenuPopup(popupId) {
+            $('body').attr('style', 'overflow: hidden');
+            $(popupId).show().attr("aria-hidden", "false");
+        }
+
+        function closeMenuPopup(popupId) {
+            $('body').attr('style', 'overflow: auto');
+            $(popupId).hide().attr("aria-hidden", "true");
+        }
+   </script>
     <!--#endregion-->
 </body>
 </html>
