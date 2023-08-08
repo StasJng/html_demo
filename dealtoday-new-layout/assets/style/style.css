@@ -605,11 +605,19 @@ a {
     cursor: pointer;
 }
 
+@media(max-width: 768px) {
+    .deal-tab {
+        font-size: 13px;
+        padding: 0;
+    }
+}
+
 .deal-tab:hover {
     color: #F0821B;
 }
 
 .deal-tab.selected {
+    color: #F0821B;
     border-bottom: 2px solid #F0821B;
 }
 /* -------------------------------------------------------------------------------------------- */
@@ -852,6 +860,16 @@ a {
     text-decoration: line-through;
 }
 
+.product-box .bounus-point {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #9E9E9E;
+}
+
+.product-box .bounus-point .p-val {
+    color: #F0821B;
+}
+
 /* Sale tag */
 .product-box .sale-tag {
     position: absolute;
@@ -875,6 +893,22 @@ a {
     border-style: solid;
     border-color: transparent #F6911E;
     border-width: 10px 20px 10px 20px;
+}
+
+/* Ticket's Tags */
+.tags-ctn {
+    height: 24px;
+    overflow: hidden;
+    margin-bottom: 3px;
+}
+
+.tags-ctn .tag-item {
+    font-size: 12px;
+	font-weight: 500;
+    color: #F0821B;
+	background-color: #FEF3E2;
+    margin-right: 5px;
+    padding: 5px;
 }
 /* -------------------------------------------------------------------------------------------- */
 
@@ -1193,6 +1227,21 @@ a {
 
 
 /* -------------------------------------------------------------------------------------------- */
+/* Danh sách tìm kiếm */
+.deal-result-type {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid #F0821B;
+}
+
+@media(max-width: 576px) {
+    .deal-result-type {
+        max-width: calc(100% - 24px) !important;
+        margin: 0 auto;
+    }
+}
+
 /* Breadcrumb */
 ul.breadcrumb-nav {
     list-style: none;
@@ -1202,8 +1251,20 @@ ul.breadcrumb-nav {
 ul.breadcrumb-nav li {
     display: inline;
 }
+ul.breadcrumb-nav li+li {
+    margin-left: 18px;
+}
 ul.breadcrumb-nav li+li:before {
-    content: "/\00a0";
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: fixed;
+    background-image: url(../images/generals/arrows/arr-md-grey-right.svg);
+    background-repeat: no-repeat;
+    background-size: 19px 19px;
+    margin-left: -24px;
+    background-position-x: center;
+    background-position-y: center;
 }
 ul.breadcrumb-nav li a {
     color: #ccc;
@@ -1218,9 +1279,4 @@ ul.breadcrumb-nav li a:hover {
 
 
 
-.deal-result-type {
-    color: #000;
-    font-size: 16px;
-    font-weight: 500;
-    border-bottom: 1px solid #F0821B;
-}
+
