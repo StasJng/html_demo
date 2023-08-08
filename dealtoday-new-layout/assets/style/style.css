@@ -138,6 +138,12 @@ a {
     text-align: center;
     margin: 0 auto;
     cursor: pointer;
+    width: fit-content;
+}
+
+.btn-general.orange {
+    background-color: #F6911E;
+    color:#fff;
 }
 
 .btn-general.round {
@@ -200,6 +206,73 @@ a {
 .hot-line img {
     width: 19px;
     margin-right: 15px;
+}
+
+.header-r {
+    justify-content: end;
+}
+
+.header-r .h-notify {
+    color: #000;
+}
+
+.header-r .h-notify:hover {
+    cursor: pointer;
+    color: #F0821B;
+}
+
+.header-r .h-notify .txt-noti {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+.header-r .loc-box {
+    
+}
+
+.header-r .srch-box input, .header-r .srch-box button  {
+    display: inline-block;
+}
+
+.header-r .srch-box input {
+    margin-top: 16px;
+    width: 100%;
+    padding: 10px 12px;
+    background-color: #f5f5f5;
+    border: 1px solid transparent;
+    border-color: #eee;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+}
+
+.header-r .cart-box {
+
+}
+
+.goog-te-gadget .goog-te-combo {
+    margin: 2px 65px 0px 0px !important;
+}
+
+.header-r .h-translate {
+    width: 200px;
+}
+
+@media(max-width: 992px) {
+    .goog-te-gadget .goog-te-combo {
+        margin: 2px 15px 0px 0px !important;
+    }
+
+    .header-r .h-translate {
+        width: 80px;
+    }
+}
+
+.header-r .h-auth {
+
 }
 /* -------------------------------------------------------------------------------------------- */
 
@@ -1563,8 +1636,61 @@ ul.breadcrumb-nav li a:hover {
 
 
 
+/* Customize Google drop box */
+/* -------------------------------------------------------------------------------------------- */
+/*Hide Google traslate bar*/
+body > .skiptranslate {
+    display: none;
+}
+
+/*Make sure Body not get padding after translate*/
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    top: 0 !important;
+    left: 0;
+}
 
 
+
+.goog-te-gadget {
+    color: transparent !important;
+}
+
+#goog-gt-tt, #goog-gt-vt {
+    display: none !important;
+}
+
+.VIpgJd-yAWNEb-VIpgJd-fmcmS-sn54Q {
+    background-color: #fff !important;
+    box-shadow: none !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+    height: 32px;
+    background: url(https://www.dealtoday.vn/AssetBooking/Images/flag_vn.jpg) no-repeat;
+    background-position: left 10px center;
+    background-color: white;
+    width: 55px;
+    border-radius: 8px;
+    padding: 0px 50px 0px 0;
+    border-color: transparent;
+    float: right;
+}
+
+.goog-te-gadget .goog-te-combo:hover {
+    color: #000;
+}
+
+.goog-te-gadget img {
+    display: none;
+}
+
+.VIpgJd-ZVi9od-l4eHX-hSRGPd, .VIpgJd-ZVi9od-l4eHX-hSRGPd:link, .VIpgJd-ZVi9od-l4eHX-hSRGPd:visited, .VIpgJd-ZVi9od-l4eHX-hSRGPd:hover, .VIpgJd-ZVi9od-l4eHX-hSRGPd:active {
+    color: transparent !important;
+    pointer-events: none !important;
+}
+/* -------------------------------------------------------------------------------------------- */
 
 
 
