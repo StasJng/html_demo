@@ -70,6 +70,8 @@ a {
 .v-hidden {
     width: 0;
     height: 0;
+    margin: 0;
+    padding: 0;
     visibility: hidden;
 }
 
@@ -124,6 +126,10 @@ a {
     border-bottom: 1px solid #F0821B;
 }
 
+.gap-bor-line.c-eee {
+    border-color: #eee;
+}
+
 .btn-general {
     border: 1px solid #F6911E;
     background-color: #fff;
@@ -165,6 +171,14 @@ a {
 	font-size: 20px;
 	font-weight: 700;
 	color: #000;
+}
+
+.pad-l-0 {
+    padding-left: 0 !important;
+}
+
+.pad-r-0 {
+    padding-right: 0 !important;
 }
 /* -------------------------------------------------------------------------------------------- */
 
@@ -465,7 +479,6 @@ a {
 .body {
     margin-top: 138px;
     background-color: #f5f5f5;
-    overflow-x: hidden;
 }
 
 @media(max-width: 768px) {
@@ -1446,7 +1459,7 @@ a {
     border-width: 1px;
 }
 .dealtoday-checkbox.round input:checked + label:after {
-    top: 4px;
+    top: 3px;
     left: 6px;
 }
 /* Expand checkbox(plus, minus) */
@@ -1887,12 +1900,411 @@ body {
 
 
 
+/* -------------------------------------------------------------------------------------------- */
+/*Checkout*/
+.checkout-info, .commit-payment {
+    background-color: #fff;
+}
 
+@media(max-width: 576px) {
+    .checkout-info {
+        border-radius: 0;
+    }
 
+    .checkout-info label {
+        width: 100%;
+    }
+}
 
+.checkout-info h2, .commit-payment h2 {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px 0;
+    margin: 0;
+}
 
+.checkout-info h3 {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 16px 0;
+    margin: 0;
+}
 
+.checkout-info .edit, .commit-payment .edit {
+    display: grid;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: #2170E2;
+    text-align: end;
+    margin: 0px;
+    cursor: pointer;
+}
 
+.checkout-info .from .field, .checkout-info .to .field {
+    color: #616161;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.checkout-info .from .info, .checkout-info .to .info {
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* From */
+.checkout-info .from {
+    margin: auto;
+    padding: 16px 0;
+    line-height: 30px;
+}
+
+/* To */
+.checkout-info .to {
+    margin: 0px auto 20px auto;
+    padding: 16px 0;
+    background-color: #FAFAFA;
+    border: 1px solid #FAFAFA;
+    border-radius: 8px;
+    line-height: 30px;
+}
+
+.checkout-info .to input {
+    width: 100%;
+    padding: 3px 12px;
+    display: inline-block;
+    border: 1px solid #E0E0E0;
+    background-color: #FAFAFA;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+@media(max-width: 992px) {
+    .checkout-info .to .field {
+        height: 38px;
+        margin-bottom: 6px;
+    }
+
+    .checkout-info .to .info {
+        margin-bottom: 6px;
+    }
+
+    .commit-payment .items .value {
+        justify-content: end;
+    }
+}
+
+/* Buttons */
+.checkout-info .btn-cancel:hover, .checkout-info .btn-confirm:hover {
+    cursor: pointer;
+}
+
+.checkout-info .btn-confirm, .checkout-info .btn-cancel {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px 0;
+    width: 92px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.checkout-info .btn-confirm {
+    color: #fff;
+    background-color: #F0821B;
+    border: 1px solid #F0821B;
+}
+
+.checkout-info .btn-cancel {
+    color: #616161;
+    background-color: #FAFAFA;
+    border: 1px solid #EEE;
+}
+
+.checkout-info .d-method {
+    padding-top: 10px;
+    padding-bottom: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+
+.commit-payment .btn-apply:hover {
+    cursor: pointer;
+    opacity: 0.95;
+}
+
+.commit-payment .btn-apply {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 100%;
+    background-color: #F0821B;
+    font-size: 14px;
+    float: right;
+    padding: 0 24px;
+    min-width: 100px;
+}
+/* Payment methods */
+@media(min-width: 992px) {
+    .commit-payment {
+        margin-left: 12px !important;
+    }
+}
+
+.checkout-info .d-method > input:checked ~ .method-content {
+    width: 100%;
+    height: fit-content;
+    visibility: visible;
+    margin: 0 0 0 32px;
+}
+
+.checkout-info .d-method > input:checked ~ .method-content .acc-balance, .checkout-info .d-method > input:checked ~ .method-content .acc-pass {
+    margin-top: 12px;
+}
+
+.checkout-info .d-method .acc-balance .cont.title {
+    color: #757575;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.checkout-info .d-method .acc-balance .cont.red {
+    color: #E8141F;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.checkout-info .d-method .acc-balance .cont.black {
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.checkout-info .d-method .acc-pass .cont.pass input {
+    background: url(../images/auth/icon-pass-hidden.svg) no-repeat 96% 8px #fcfcfc;
+    border: 1px solid #cdcdcd;
+    background-color: #FAFAFA;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 8px;
+    padding-left: 8px;
+    color: #BDBDBD;
+    max-width: 300px;
+    margin: 8px 0;
+    height: 38px;
+    width: 100%;
+}
+
+.checkout-info .d-method > input:checked ~ .method-content .save-inf {
+    margin: 8px 0px 0 -10px !important;
+    font-weight: 400 !important;
+}
+
+.checkout-info .d-method .save-inf label:before {
+    border-radius: 5px !important;
+    border-width: 2px !important;
+}
+
+.checkout-info .d-method .save-inf input:checked + label:after {
+    top: 2px !important;
+    left: 6px !important;
+}
+
+.checkout-info .d-method .save-inf input:checked + label:before {
+    background-color: #1E83F6;
+}
+
+.checkout-info .d-method .save-inf input:checked + label:after {
+    background: #1E83F6;
+}
+
+/* Commit Payment */
+.commit-payment {
+    border-radius: 12px;
+}
+
+@media(max-width: 576px) {
+    .commit-payment {
+        border-radius: 0;
+    }
+}
+
+.commit-payment .edit {
+    justify-content: end;
+}
+
+.commit-payment .items {
+    padding-top: 8px;
+    padding-bottom: 15px;
+}
+
+.commit-payment .items .bor-item {
+    padding-top: 8px;
+    border-bottom: 1px solid #F5F5F5;
+    margin: 0 auto;
+}
+
+.commit-payment .items .title {
+    font-size: 15px;
+    font-weight: 500;
+    padding-top: 8px;
+}
+
+.commit-payment .items .value {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.commit-payment .items .date {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.commit-payment .items .date, .commit-payment .items .quantity {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.commit-payment input:focus {
+    outline: none;
+}
+
+.commit-payment .discount-apply {
+    padding-top: 12px;
+    padding-bottom: 16px;
+}
+
+.commit-payment .discount-code-input {
+    width: 100%;
+    height: 36px;
+    font-size: 14px;
+    color: #BDBDBD;
+    padding-left: 16px;
+    border: 1px solid #BDBDBD;
+}
+
+.commit-payment .discount-title {
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.commit-payment .total-txt {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.commit-payment .use-pts {
+    margin: 10px auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #F5F5F5;
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.commit-payment .total-num {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.commit-payment .use-pt-txt {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.commit-payment .total-pay-txt {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.commit-payment .total-pay-num {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.commit-payment .total-num {
+    text-align: end;
+}
+
+.commit-payment .total-pay-num {
+    text-align: end;
+}
+
+.commit-payment .btn-finish-ctn {
+    margin: 12px 0 20px 0;
+}
+
+/* Instant-check Status Button*/
+.tgl {
+    display: none;
+}
+
+.tgl, .tgl:after, .tgl:before, .tgl *, .tgl *:after, .tgl *:before, .tgl + .tgl-btn {
+    box-sizing: border-box;
+}
+
+.tgl::selection, .tgl:after::selection, .tgl:before::selection, .tgl *::selection, .tgl *:after::selection, .tgl *:before::selection, .tgl + .tgl-btn::selection {
+    background: none;
+}
+
+.tgl + .tgl-btn {
+    outline: 0;
+    display: block;
+    width: 1.8em;
+    height: 1em;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+
+.tgl + .tgl-btn:after {
+    left: 0;
+}
+
+.tgl + .tgl-btn:before {
+    display: none;
+}
+
+.tgl:checked + .tgl-btn:after {
+    left: 50%;
+}
+
+.tgl-light + .tgl-btn {
+    background: #C2C2C2;
+    border-radius: 2em;
+    padding: 2px;
+    transition: all 0.4s ease;
+}
+
+.tgl-light + .tgl-btn:after {
+    border-radius: 50%;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+.tgl-light:checked + .tgl-btn {
+    background: #F0821B;
+}
+
+.border-div {
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid #F5F5F5;
+}
+/* -------------------------------------------------------------------------------------------- */
 
 
 
