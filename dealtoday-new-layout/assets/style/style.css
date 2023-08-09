@@ -296,6 +296,10 @@ a {
     justify-content: end;
 }
 
+.header-bottom .mb-menu-box {
+    display: none;
+}
+
 @media(max-width: 1200px) {
     .header-bottom .header-logo {
         width: 25%;
@@ -316,9 +320,9 @@ a {
 
     .header-bottom .srch-box input {
         border-radius: 0;
-        background-image: none;
         border-color: transparent;
-        padding: 12px 0 12px 24px;
+        padding: 12px 0 12px 50px;
+        background-position: left 24px center;
     }
 
     .header-bottom .loc-box::before {
@@ -330,6 +334,10 @@ a {
         background-color: #cdcdcd;
         margin: 5px 0 0 158px;
         z-index: 10;
+    }
+
+    .header-bottom .srch-box::before {
+        content: none;
     }
 }
 
@@ -398,6 +406,7 @@ a {
     }
 
     .header-bottom .mb-menu-box {
+        display: block;
         margin-top: -26px;
     }
 
@@ -428,22 +437,22 @@ a {
     }
 
     .header-bottom .srch-box input {
-        width: calc(100% - 28px);
+        width: 100%;
         height: 28px;
+        padding: 12px 0 12px 32px;
+        background-position: left 6px center;
+        border-radius: 0 8px 8px 0;
     }
 
     .header-bottom .srch-box button {
-        border-radius: 0 8px 8px 0;
-        width: 28px;
-        height: 28px;
-        padding: 0;
-        border: none;
-        border-top: 1px solid transparent;
+        display: none;
     }
 }
 
 @media(max-width: 576px) {
-    
+    .header-bottom .srch-box input {
+        font-size: 13px;
+    }
 }
 /* -------------------------------------------------------------------------------------------- */
 
@@ -858,7 +867,7 @@ a {
 
 @media(max-width: 768px) {
     .deal-tab {
-        font-size: 13px;
+        font-size: 14px;
         padding: 0;
     }
 }
