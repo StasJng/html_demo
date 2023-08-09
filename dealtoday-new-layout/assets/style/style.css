@@ -2069,6 +2069,10 @@ body {
     }
 }
 
+.checkout-info .d-method > input:checked ~ label {
+    color: #F0821B;
+}
+
 .checkout-info .d-method > input:checked ~ .method-content {
     width: 100%;
     height: fit-content;
