@@ -271,7 +271,7 @@
                                             </div>
                                         </div>
     
-                                        <div class="col-xl-12 col-lg-12 col-md-4 col-sm-6 col-xs-8 col-6">
+                                        <div class="col-xl-12 col-lg-12 col-md-4 col-sm-6 col-xs-8 col-7">
                                             <div class="row">
                                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 col-6 info-btn">
                                                     <div class="btn-cancel">
@@ -342,7 +342,8 @@
                                                 Tổng cộng
                                             </div>
                                             <div class="col-12 cont pass">
-                                                <input type="password" placeholder="Nhập mật khẩu" />
+                                                <input type="password" placeholder="Nhập mật khẩu" id="pass-125-input" />
+                                                <img src="assets/images/auth/icon-pass-hidden.svg" alt="" height="18" width="18" id="pass-125" onclick="changePassVisible(this.id);" />
                                             </div>
                                         </div>
                                     </div>
@@ -380,10 +381,12 @@
                                     <label for="method6">&nbsp;Thanh toán bẳng thẻ tín dụng/Ghi nợ</label>
 
                                     <div class="row">
-                                        <div class="col-12 inter-pay">
-                                            <span><img src="//cdn.dealtoday.vn/assets/d2d/images/eticket/icon-payment-visa.svg" alt="" /></span>
-                                            <span><img src="//cdn.dealtoday.vn/assets/d2d/images/eticket/icon-payment-mastercard.svg" alt="" /></span>
-                                            <span><img src="//cdn.dealtoday.vn/assets/d2d/images/eticket/icon-payment-jcb.svg" alt="" /></span>
+                                        <div class="col-12 credit-pay">
+                                            <span><img src="assets/images/footer/payment/payment-visa.svg" alt="" height="24" width="48"/></span>
+                                            &nbsp;
+                                            <span><img src="assets/images/footer/payment/payment-mastercard.svg" alt="" height="24" width="48"/></span>
+                                            &nbsp;
+                                            <span><img src="assets/images/footer/payment/payment-jcb.svg" alt="" height="24" width="48"/></span>
                                         </div>
                                     </div>
                                 </div>
@@ -468,7 +471,7 @@
                                                 </span>
                                             </div>
                                             <div class="col-2">
-                                                <input class="tgl tgl-light" id="cb1" name="cb1" type="checkbox" />
+                                                <input class="tgl tgl-light" id="use-point" name="use-point" type="checkbox" />
                                                 <label class="tgl-btn" for="cb1"></label>
                                             </div>
                                         </div>
@@ -789,6 +792,17 @@
             }
             else {
                 document.getElementById(methodId + "-items").classList.add("v-hidden");
+            }
+        }
+
+        function changePassVisible (iconId) {
+            if($('#' + iconId + '-input').attr('type') == 'password') {
+                $('#' + iconId + '-input').attr('type', 'text');
+                $('#' + iconId).attr('src', 'assets/images/auth/icon-pass-visible.svg');
+            }   
+            else {
+                $('#' + iconId + '-input').attr('type', 'password');
+                $('#' + iconId).attr('src', 'assets/images/auth/icon-pass-hidden.svg');
             }
         }
    </script>

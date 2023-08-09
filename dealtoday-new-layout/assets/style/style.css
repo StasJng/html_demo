@@ -736,11 +736,11 @@ a {
     .flash-sale-header .countdown-container {
         height: 52px;
         position: absolute;
-        top: 168px;
+        top: 30px;
     }
 
     .flash-sale-breadcrumb.upcoming .flash-sale-header .countdown-container {
-        top: 169px;
+        top: 32px;
     }
 
     .flash-sale-header .countdown-container img {
@@ -761,13 +761,13 @@ a {
 
     .flash-sale-header .countdown-container ul {
         position: absolute;
-        right: 32px;
+        right: 16px;
         top: 12px;
     }
 
     .flash-sale-header .countdown-container img {
         position: absolute;
-        left: 32px;
+        left: 16px;
         top: 16px;
     }
 }
@@ -1910,10 +1910,6 @@ body {
     .checkout-info {
         border-radius: 0;
     }
-
-    .checkout-info label {
-        width: 100%;
-    }
 }
 
 .checkout-info h2, .commit-payment h2 {
@@ -1992,6 +1988,24 @@ body {
 
     .commit-payment .items .value {
         justify-content: end;
+    }
+
+    .checkout-info .d-method {
+        padding: 12px 12px !important;
+        width: calc(100% - 32px);
+        margin: 0 16px 12px 16px;
+        border: 1px solid #eee;
+        border-radius: 8px;
+    }
+
+    .checkout-info label {
+        width: 100%;
+    }
+}
+
+@media(max-width: 576px) {
+    .checkout-info .d-method .acc-pass .cont.pass input {
+        max-width: calc(100% - 60px) !important;
     }
 }
 
@@ -2085,18 +2099,20 @@ body {
 }
 
 .checkout-info .d-method .acc-pass .cont.pass input {
-    background: url(../images/auth/icon-pass-hidden.svg) no-repeat 96% 8px #fcfcfc;
     border: 1px solid #cdcdcd;
     background-color: #FAFAFA;
     box-sizing: border-box;
     display: inline-block;
     border-radius: 8px;
     padding-left: 8px;
-    color: #BDBDBD;
     max-width: 300px;
     margin: 8px 0;
     height: 38px;
     width: 100%;
+}
+
+.checkout-info .d-method .acc-pass .cont.pass img {
+    margin-left: -32px;
 }
 
 .checkout-info .d-method > input:checked ~ .method-content .save-inf {
@@ -2120,6 +2136,11 @@ body {
 
 .checkout-info .d-method .save-inf input:checked + label:after {
     background: #1E83F6;
+}
+
+.checkout-info .credit-pay {
+    margin-top: 6px;
+    margin-left: 20px;
 }
 
 /* Commit Payment */
@@ -2262,6 +2283,10 @@ body {
     user-select: none;
 }
 
+.tgl + .tgl-btn:hover {
+    cursor: pointer;
+}
+
 .tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
     position: relative;
     display: block;
@@ -2287,6 +2312,7 @@ body {
     border-radius: 2em;
     padding: 2px;
     transition: all 0.4s ease;
+    float: right;
 }
 
 .tgl-light + .tgl-btn:after {
