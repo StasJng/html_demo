@@ -12,6 +12,22 @@
     <meta name="keywords" content="@Html.Raw(ViewBag.Keywords)" />
     <meta name="description" content="@Html.Raw(ViewBag.Description)">
     <title>@ViewBag.Title</title>
+
+    <!--#region Google Transalte-->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                autoDisplay: false,
+                includedLanguages: 'en,vi',
+                gaTrack: true,
+                gaId: 'AIzaSyAuk_NhmtJvsJXMB9PAy-jCSGv5sVhhxvM'
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+    <!--#endregion-->
 </head>
 
 <body>
@@ -125,21 +141,231 @@
     <div class="body">
         <div class="container">
             <div class="row">
+                <div class="gap-reg-20"></div>
+
+                <!--#region Breadcrumb-->
+                <div class="col-12 p-0">
+                    <ul class="breadcrumb-nav">
+                        <li><a href="#">Trang chủ</a></li>
+                        <li><a href="#">Tìm kiếm</a></li>
+                        <li><a href="#">Kết quả tìm kiếm ”Buffet TP. Hồ Chí Minh”</a></li>
+                      </ul>
+                </div>
+                <!--#endregion-->
+                
                 <div class="gap-reg-30"></div>
 
-                <!--#region Content-->
-                <div class="col-12 p-0">
-                    <div class="container order-result flex-center">
-                        <div class="row failed flex-center">
-                            <div class="col-12 message">
-                                <img src="assets/images/order/icon-result-failed.svg" alt="" />
-                                <h2>Đặt hàng không thành công</h2>
+                <!--#region Images & Price-->
+                <div class="col-12 d-detail-rg">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+                            <div class="detail-item-swiper-ctn">
+
                             </div>
-                            <div class="col-12 btn-ctn">
-                                <div class="btn-retry">
+
+                            <div class="row list-value-tag">
+                                <div class="col-4">
+                                    <img src="" alt="" height="" width="" />
+                                    Deal thật, khuyến mại thật
+                                </div>
+                                <div class="col-4">
+                                    <img src="" alt="" height="" width="" />
+                                    Giá bán tại Dealtoday luôn thấp hơn tại điểm bán
+                                </div>
+                                <div class="col-4">
+                                    <img src="" alt="" height="" width="" />
+                                    Hoàn tiền 100% nếu Khách hàng không hài lòng
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+                            <div class="deal-title">
+                                Buffet lẩu Trùng Khánh tại nhà hàng BaoYu - Áp dụng từ thứ 2 đến thứ 6
+                            </div>
+                            <div class="deal-rating">
+                                <span>
+                                    <img src="assets/images/generals/icon-star-rating.svg" alt="" height="14" width="14" />
+                                </span>
+                                <span>4.8(541 đánh giá)</span>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                                <span>90k+ đã bán</span>
+                            </div>
+                            <div class="deal-price">
+                                <div>
                                     <div>
-                                        Thanh toán lại
+                                        422.000đ
                                     </div>
+                                    <div>
+                                        1.345.000đ
+                                    </div>
+                                </div>
+                                <div>
+                                    <img src="" alt="" height="" width="" />
+                                </div>
+                            </div>
+                            <div class="sale-code">
+                                <div>
+                                    Ưu đãi
+                                </div>
+                                <div>
+                                    <span>
+                                        Giảm 5%
+                                    </span>
+                                    <span>
+                                        Giảm 7%
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="quantity">
+                                <div>
+                                    Số lượng
+                                </div>
+                                <div>
+                                    <span>
+                                        -
+                                    </span>
+                                    <span>
+                                        1
+                                    </span>
+                                    <span>
+                                        +
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="xpr-date">
+                                HSD: 12/09/2023
+                            </div>
+                            <div class="col-12">
+                                <div class="btn-general">
+                                    Mua ngay
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="btn-general orange">
+                                    <span>
+                                        <img src="" alt="" height="" width="" />
+                                    </span>
+                                    <span>
+                                        Thêm và giỏ hàng
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-12 bounus-point">
+                                    <span>
+                                        <img src="" alt="" height="" width="" />
+                                    </span>
+                                    <span>
+                                        Tích lũy đến 2100 điểm thưởng
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion-->
+
+                <!--#region Main Info + Terms of use -->
+                <div class="col-12 d-detail-rg">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <h2 class="">
+                                Thông tin nổi bật
+                            </h2>
+
+                            <div>
+
+                            </div>
+
+                            <div class="btn-general">
+                                Xem thêm
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <h2 class="">
+                                Điều kiện sử dụng
+                            </h2>
+
+                            <div>
+
+                            </div>
+
+                            <div class="btn-general">
+                                Xem thêm
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btn-general">
+                        Xem thêm
+                    </div>
+                </div>
+                <!--#endregion-->
+
+                <!--#region Description + Brand + Accep Point-->
+                <div class="col-12 d-detail-rg">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                            <h2 class="">
+                                Giới thiệu sản phẩm
+                            </h2>
+
+                            <div>
+                                <div class="">
+                                    demo text demo text demo text demo text demo text demo text demo text demo text 
+                                </div>
+                                <img src="" alt="" height="" width="" lazy />
+                                <div class="">
+                                    demo text demo text demo text demo text demo text demo text demo text demo text 
+                                </div>
+                                <img src="" alt="" height="" width="" lazy />
+                                <div class="">
+                                    demo text demo text demo text demo text demo text demo text demo text demo text 
+                                </div>
+                                <div class="btn-general">
+                                    Xem thêm
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                            <div class="">
+                                <div class="">
+                                    <div class="">
+                                        <img src="" alt="" height="" width="" />
+                                    </div>
+                                    <div>
+                                        <div class="">
+                                            Đơn vị cung cấp
+                                        </div>
+                                        <div class="">
+                                            Nhà hàng Gyu Kaku
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <div class="">
+                                        <img src="" alt="" height="" width="" />
+                                    </div>
+                                    <div>
+                                        <div class="">
+                                            Đơn vị cung cấp
+                                        </div>
+                                        <div class="">
+                                            <span>331.000đ</span>
+                                            <span>-24%</span>
+                                            <span>1.225.000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h2>
+                                    Điểm chấp nhận
+                                </h2>
+                                <div>
+                                    <a href="#">
+                                        18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -147,7 +373,26 @@
                 </div>
                 <!--#endregion-->
 
-                <div class="gap-reg-30"></div>
+                <!--#region Reviews-->
+                <div class="col-12 d-detail-rg">
+                    <h2>
+                        Đánh giá
+                    </h2>
+                    <div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion-->
+
+                <!--#region Recommand-->
+                <div class="col-12 d-detail-rg">
+                    <div class="row">
+                        
+                    </div>
+                </div>
+                <!--#endregion-->
             </div>
         </div>
     </div>
@@ -427,6 +672,18 @@
             </div>
         </div>
     </div>
+    <!--#endregion-->
+
+    <!--#region script-->
+    <script>
+        $(document).ready(function () {
+            $('.skillbar').each(function () {
+                $(this).find('.count-bar').animate({
+                    width: (((parseInt($(this).attr('saled')) / parseInt($(this).attr('total'))) * 100).toString() + "%")
+                }, 2);
+            });
+        });
+    </script>
     <!--#endregion-->
 </body>
 </html>
