@@ -2339,4 +2339,162 @@ body {
 
 
 
+/* -------------------------------------------------------------------------------------------- */
+/* Cart */
+.cart .lst-items {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 0;
+}
+
+/* Checkbox Category */
+.cart .category-item-checkbox {
+    padding: 12px 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart .category-item-checkbox .txt-cat {
+    font-weight: 600;
+    color: #000;
+}
+
+/* Item Detail */
+.cart .item-box {
+    padding: 8px;
+}
+
+.cart .item-box .txt-info p {
+    margin-bottom: 5px;
+}
+
+.cart .item-box .txt-info .title {
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: justify;
+    max-height: 38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.cart .item-box .txt-info .desc {
+    font-size: 14px;
+    color: #333;
+    text-align: justify;
+    max-height: 39px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.cart .item-box .txt-info .date {
+    font-size: 14px;
+    color: #000;
+}
+
+.cart .item-box .quantity-info p {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.cart .item-box .price-info {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Commit Payment */
+.cart .commit-payment {
+    padding: 16px;
+    height: fit-content;
+}
+
+.cart .commit-payment .txt-cshback {
+    font-size: 13px;
+    color: #9E9E9E;
+    margin-top: 8px;
+}
+
+.cart .commit-payment .txt-cshback .point {
+    font-size: 14px;
+    color: #F0821B;
+}
+
+
+
+.cart .item-box.evoucher .price-info {
+    color: #F0821B;
+}
+
+.cart .evoucher .manage-buttons {
+    float: right;
+}
+
+
+@media (max-width: 992px) {
+    .cart .manage-buttons {
+        position: absolute;
+        margin: 20px 0 0 8px;
+    }
+
+    .cart .evoucher .manage-buttons {
+        margin: 20px 0 0 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Commit Payment */
+    .cart .commit-payment-mb {
+        background-color: #fff;
+        justify-content: center;
+    }
+
+    .cart .commit-payment-mb .txt-price {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .cart .commit-payment-mb .txt-note {
+        font-size: 13px;
+    }
+
+    .cart .commit-payment-mb .btn-finish {
+        font-size: 13px;
+        border-radius: 0;
+        height: 38px;
+        justify-content: center;
+    }
+
+    .cart .manage-buttons, .cart .evoucher .manage-buttons {
+        float: right;
+        position: unset;
+        margin: -5px 8px 0 0;
+    }
+}
+
+@media(max-width: 576px) {
+    .cart .lst-items {
+        border-radius: 0;
+    }
+    
+    .cart .manage-buttons, .cart .evoucher .manage-buttons {
+        position: absolute;
+        right: 12px;
+        margin-top: -30px;
+    }
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
 
