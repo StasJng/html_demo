@@ -1048,6 +1048,7 @@ a {
     margin-bottom: 15px;
     border-radius: 12px;
     background-color: #fff;
+    position: relative;
 }
 
 .product-box.result {
