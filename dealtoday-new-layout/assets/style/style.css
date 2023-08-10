@@ -1978,8 +1978,7 @@ body {
 
 @media(max-width: 992px) {
     .checkout-info .to .field {
-        height: 38px;
-        margin-bottom: 6px;
+        
     }
 
     .checkout-info .to .info {
