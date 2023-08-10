@@ -1227,63 +1227,7 @@ a {
     color: #F6911E;
     background-image: url('../images/generals/icon-hot-sale-up-coming.svg');
 }
-
-
 /* -------------------------------------------------------------------------------------------- */
-
-
-
-
-
-/* -------------------------------------------------------------------------------------------- */
-/* Temp Swiper*/
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-   }
-    100% {
-        transform: translateX(calc(-200px * 9));
-   }
-}
-.slider {
-    background: #f5f5f5;
-    height: unset;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-}
-
-.slider .slide-track {
-    animation: scroll 54s linear infinite;
-    display: flex;
-    width: calc(200px * 18);
-}
-.slider .slide {
-    height: unset;
-    width: 200px;
-}
-
-/* Blur effect */
-.slider::before, .slider::after {
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    content: "";
-    height: 200px;
-    position: absolute;
-    width: 100px;
-    z-index: 2;
-}
-.slider::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-}
-.slider::before {
-    left: 0;
-    top: 0;
-}
-/* -------------------------------------------------------------------------------------------- */
-
 
 
 
@@ -2499,5 +2443,139 @@ body {
 
 
 
+/* -------------------------------------------------------------------------------------------- */
+/* Chi tiết Deal */
+.d-detail-rg {
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.d-detail-rg .detail-item-swiper-ctn {
+
+}
+
+.d-detail-rg .list-value-tag {
+
+}
+
+.d-detail-rg .list-value-tag .tag-box {
+
+}
+
+.d-detail-rg .list-value-tag .tag-box img {
+    
+}
 
 
+.d-detail-rg .deal-title {
+
+}
+
+.d-detail-rg .deal-rating {
+
+}
+
+.d-detail-rg .deal-rating .rating-point {
+
+}
+
+.d-detail-rg .deal-rating .saled-count {
+
+}
+
+.d-detail-rg .deal-price {
+
+}
+
+.d-detail-rg .deal-price .p-origin {
+
+}
+
+.d-detail-rg .deal-price .p-sale {
+
+}
+
+.d-detail-rg .deal-price .p-sale .p-tag {
+
+}
+
+.d-detail-rg .deal-price .vnpay-img {
+
+}
+
+.d-detail-rg .sale-code {
+
+}
+
+.d-detail-rg .quantity {
+
+}
+
+.d-detail-rg .xpr-date {
+
+}
+
+.d-detail-rg .bounus-point {
+
+}
+
+.d-detail-rg h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    padding: 12px 0 0 0;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* Temp Swiper*/
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+   }
+    100% {
+        transform: translateX(calc(-200px * 9));
+   }
+}
+.slider {
+    background: #f5f5f5;
+    height: unset;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slider .slide-track {
+    animation: scroll 54s linear infinite;
+    display: flex;
+    width: calc(200px * 18);
+}
+.slider .slide {
+    height: unset;
+    width: 200px;
+}
+
+/* Blur effect */
+.slider::before, .slider::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 200px;
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+}
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+}
+.slider::before {
+    left: 0;
+    top: 0;
+}
+/* -------------------------------------------------------------------------------------------- */
