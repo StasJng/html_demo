@@ -2427,10 +2427,13 @@ body {
     color: #F0821B;
 }
 
-
-
 .cart .item-box.evoucher .price-info {
     color: #F0821B;
+}
+
+
+.cart .manage-buttons span {
+    cursor: pointer;
 }
 
 .cart .evoucher .manage-buttons {
@@ -2445,7 +2448,7 @@ body {
     }
 
     .cart .evoucher .manage-buttons {
-        margin: 20px 0 0 40px;
+        margin: 20px 0 0 50px;
     }
 }
 
@@ -2483,7 +2486,7 @@ body {
     .cart .lst-items {
         border-radius: 0;
     }
-    
+
     .cart .manage-buttons, .cart .evoucher .manage-buttons {
         position: absolute;
         right: 12px;
