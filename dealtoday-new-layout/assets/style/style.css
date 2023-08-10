@@ -2450,6 +2450,7 @@ body {
     background-color: #fff;
     border-radius: 12px;
     padding: 16px;
+    height: fit-content;
 }
 
 .d-detail-rg .detail-item-swiper-ctn {
@@ -2577,6 +2578,175 @@ body {
 
 
 /* -------------------------------------------------------------------------------------------- */
+/* Customize Swiper Recommend */
+.lst-recommand .swiper-pagination {
+	bottom: -5px !important;
+}
+
+.lst-recommand .swiper-pagination-bullet-active {
+	background-color: #F0821B;
+}
+
+.lst-recommand .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+	margin: 0 3px !important;
+}
+
+.lst-recommand .swiper-pagination-bullet {
+	width: 15px !important;
+	height: 3px !important;
+	border-radius: 3px !important;
+}
+
+/* Customize Swiper Brand */
+.lst-brand .swiper-wrapper {
+    margin-bottom: 20px;
+}
+
+.lst-brand .swiper-pagination {
+	bottom: -6px !important;
+}
+
+.lst-brand .swiper-pagination-bullet-active {
+	background-color: #F0821B;
+}
+
+.lst-brand .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+	margin: 0 3px !important;
+}
+
+.lst-brand .swiper-pagination-bullet {
+	width: 15px !important;
+	height: 3px !important;
+	border-radius: 3px !important;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* Review List */
+.review-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 12px;
+}
+
+.review-item .h-title {
+    line-height: 20px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.review-item .user {
+    font-size: 16px;
+	font-weight: 500;
+	text-align: start;
+}
+
+.review-item .date-time {
+    font-size: 12px;
+    font-weight: 400;
+    text-align: end;
+}
+
+.review-item .subject {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: start;
+}
+
+.review-item .reviewed-rating {
+    margin: 2px 0;
+}
+
+.review-item .reviewed-rating .Stars {
+    font-size: 22px;
+}
+
+.review-item .comment {
+    font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0px;
+	text-align: justify;
+    color: #000;
+}
+
+.review-item .list-image .reviewed-img-lst img {
+    width: 100px;
+    height: 100px;
+    margin: 8px 0;
+}
+
+.review-item .response {
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-top: 8px;
+    padding: 12px;
+}
+
+.review-item .response .rp-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+    padding: 0 16px;
+    position: relative;
+}
+
+.review-item .response .rp-date {
+    text-align: end;
+    color: #757575;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    position: absolute;
+    right: 16px;
+    top: 3px;
+}
+
+.review-item .response .rp-content {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 16px;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* Rating */
+:root {
+    --star-size: 30px;
+    --star-color: #fff;
+    --star-background: #F0821B;
+}
+
+.Stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: inline-block;
+    font-size: var(--star-size);
+    line-height: 1;
+}
+.Stars::before {
+    content: "★★★★★";
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
 /* Temp Swiper*/
 @keyframes scroll {
     0% {
@@ -2596,7 +2766,7 @@ body {
 }
 
 .slider .slide-track {
-    animation: scroll 54s linear infinite;
+    animation: scroll 12s linear infinite;
     display: flex;
     width: calc(200px * 18);
 }
@@ -2629,23 +2799,4 @@ body {
 
 
 
-/* -------------------------------------------------------------------------------------------- */
-/* Customize Swiper Paginator*/
-.lst-recommand .swiper-pagination {
-	bottom: -5px !important;
-}
 
-.lst-recommand .swiper-pagination-bullet-active {
-	background-color: #F0821B;
-}
-
-.lst-recommand .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
-	margin: 0 3px !important;
-}
-
-.lst-recommand .swiper-pagination-bullet {
-	width: 15px !important;
-	height: 3px !important;
-	border-radius: 3px !important;
-}
-/* -------------------------------------------------------------------------------------------- */
