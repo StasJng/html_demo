@@ -11,10 +11,13 @@
     <meta name="title" content="@Html.Raw(ViewBag.MetaTitle)" />
     <meta name="keywords" content="@Html.Raw(ViewBag.Keywords)" />
     <meta name="description" content="@Html.Raw(ViewBag.Description)">
+
+    <script src="assets/plugins/swiper-slider/js/swiper.min.js"></script>
+    <link href="assets/plugins/swiper-slider/css/swiper.min.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 
     <!--#region Google Transalte-->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'vi',
@@ -26,7 +29,7 @@
             }, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script> -->
     <!--#endregion-->
 </head>
 
@@ -165,16 +168,34 @@
 
                             <div class="row list-value-tag">
                                 <div class="col-4 tag-box">
-                                    <img src="assets/images/generals/icon-real-deal.svg" alt="" height="32" width="32" />
-                                    Deal thật, khuyến mại thật
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="assets/images/generals/icon-real-deal.svg" alt="" height="32" width="32" />
+                                        </div>
+                                        <div class="col-9">
+                                            Deal thật, khuyến mại thật
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-4 tag-box">
-                                    <img src="assets/images/generals/icon-low-price.svg" alt="" height="32" width="32" />
-                                    Giá bán tại Dealtoday luôn thấp hơn tại điểm bán
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="assets/images/generals/icon-low-price.svg" alt="" height="32" width="32" />
+                                        </div>
+                                        <div class="col-9">
+                                            Giá bán tại Dealtoday luôn thấp hơn tại điểm bán
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-4 tag-box">
-                                    <img src="assets/images/generals/icon-cachback.svg" alt="" height="32" width="32" />
-                                    Hoàn tiền 100% nếu Khách hàng không hài lòng
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <img src="assets/images/generals/icon-cachback.svg" alt="" height="32" width="32" />
+                                        </div>
+                                        <div class="col-9">
+                                            Hoàn tiền 100% nếu Khách hàng không hài lòng
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -205,23 +226,23 @@
                                 </div>
                             </div>
                             <div class="sale-code">
-                                <div>
+                                <span class="title">
                                     Ưu đãi
-                                </div>
-                                <div>
+                                </span>
+                                <span class="lst-code">
                                     <span>
                                         Giảm 5%
                                     </span>
                                     <span>
                                         Giảm 7%
                                     </span>
-                                </div>
+                                </span>
                             </div>
                             <div class="quantity">
-                                <div>
+                                <span class="title">
                                     Số lượng
-                                </div>
-                                <div>
+                                </span>
+                                <span>
                                     <span>
                                         -
                                     </span>
@@ -231,10 +252,10 @@
                                     <span>
                                         +
                                     </span>
-                                </div>
+                                </span>
                             </div>
                             <div class="xpr-date">
-                                HSD: 12/09/2023
+                                HSD:&nbsp;<b>12/09/2023</b>
                             </div>
                             <div class="col-12">
                                 <div class="btn-general orange w-100">
@@ -274,7 +295,7 @@
                                 Thông tin nổi bật
                             </h2>
 
-                            <div>
+                            <div class="raw-content-rg">
                                 <ul>
                                     <li style="text-align:justify">"Vé vào cổng khu vui chơi Nhà Tuyết Snow World Aeon Mall Hà Đông - Áp dụng Thứ 7, CN và lễ tết" sẽ mang đến những trò chơi mới lạ, thú vị trong không gian hấp dẫn, tuyệt vời hơn bao giờ hết.</li>
                                     <li style="text-align:justify">
@@ -297,7 +318,7 @@
                                 Điều kiện sử dụng
                             </h2>
 
-                            <div>
+                            <div class="raw-content-rg">
                                 <ul>
                                     <li style="text-align:justify">"Vé vào cổng khu vui chơi Nhà Tuyết Snow World Aeon Mall Hà Đông - Áp dụng Thứ 7, CN và lễ tết" sẽ mang đến những trò chơi mới lạ, thú vị trong không gian hấp dẫn, tuyệt vời hơn bao giờ hết.</li>
                                     <li style="text-align:justify">
@@ -330,28 +351,23 @@
                     <div class="row">
                         <!--#region Description-->
                         <div class="col-12 ">
-                            <div class="row">
-                                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                                    <h2 class="">
-                                        Giới thiệu sản phẩm
-                                    </h2>
-        
-                                    <div>
-                                        <div class="">
-                                            demo text demo text demo text demo text demo text demo text demo text demo text 
-                                        </div>
-                                        <img src="" alt="" height="" width="" lazy />
-                                        <div class="">
-                                            demo text demo text demo text demo text demo text demo text demo text demo text 
-                                        </div>
-                                        <img src="" alt="" height="" width="" lazy />
-                                        <div class="">
-                                            demo text demo text demo text demo text demo text demo text demo text demo text 
-                                        </div>
-                                        <div class="btn-general">
-                                            Xem thêm
-                                        </div>
-                                    </div>
+                            <h2 class="">
+                                Giới thiệu sản phẩm
+                            </h2>
+
+                            <div class="d-detail-info">
+                                Không chỉ nổi tiếng ở nội địa mà nó còn hấp dẫn rất nhiều thực khách ở các quốc gia khác, Lẩu Trùng Khánh luôn được xem là tinh hoa của ẩm thực Trung Hoa. Nếu không có cơ hội đến với xứ Trung nhưng vẫn muốn thưởng thức hương vị đặc biệt đó ở Việt Nam, Dealtoday mời bạn đến với bữa tiệc "Buffet lẩu Trùng Khánh tại nhà hàng BaoYu" mang đến cho quý khách hàng những món ăn thơm ngon, hấp dẫn.
+                                
+                                <img src="assets/images/demo-imgs/detail-page/img-info-1.png" alt="" height="800" width="400" lazy />
+                                
+                                Lẩu Trùng Khánh từ lâu rất nổi tiếng trên bản đồ ẩm thực thế giới, nay đã có mặt tại Baoyu với rất nhiều loại nước lẩu đặc trưng như: lẩu Hoàng Kim, lẩu Mala, lẩu Thái, lẩu nấm, lẩu dưỡng nhan, lẩu Trùng Khánh, lẩu cà chua, từ cay tê đậm đà đến dịu ngọt thơm ngậy, vô cùng đặc biệt không giống bất kì nơi nào khác.
+                                
+                                <img src="assets/images/demo-imgs/detail-page/img-info-2.png" alt="" height="800" width="400" lazy />
+                                
+                                Bên cạnh đó, xuất phát từ cái nôi của ẩm thực lẩu Trung Quốc, gây thương nhớ đặc biệt đó là nước dùng lẩu Trùng Khánh nổi tiếng bởi màu đỏ rực rỡ, vị cay tê và cách chế biến cầu kì. Với nguyên liệu chính từ ớt Tứ Xuyên, dầu ớt, bơ và nhiều loại gia vị khác, lẩu Trùng Khánh mang hương vị khó quên từ vị cay lan toả trong khoang miệng, với mùi thơm từ gia vị đậm đà trong từng giọt nước dùng.
+                                
+                                <div class="btn-general">
+                                    Xem thêm
                                 </div>
                             </div>
                         </div>
@@ -425,7 +441,260 @@
                 <!--#region Recommand-->
                 <div class="col-12 d-detail-rg">
                     <div class="row">
-                        
+                        <div class="col-12 lst-recommand">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                    <div class="original-price">
+                                                        1.000.000đ                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                    <div class="original-price">
+                                                        1.000.000đ                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                    <div class="original-price">
+                                                        1.000.000đ                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                    <div class="original-price">
+                                                        1.000.000đ                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                    <div class="original-price">
+                                                        1.000.000đ                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                    <div class="original-price">
+                                                        1.000.000đ                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                    <div class="original-price">
+                                                        1.000.000đ                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                    <div class="original-price">
+                                                        1.000.000đ                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!--#endregion-->
@@ -714,13 +983,44 @@
 
     <!--#region script-->
     <script>
-        $(document).ready(function () {
-            $('.skillbar').each(function () {
-                $(this).find('.count-bar').animate({
-                    width: (((parseInt($(this).attr('saled')) / parseInt($(this).attr('total'))) * 100).toString() + "%")
-                }, 2);
-            });
-        });
+        var width = $(window).width();
+        if (width <= 768) {
+            //List images
+            let swiper = new Swiper('.lst-recommand .swiper-container', {
+                slidesPerView: 2,
+                spaceBetween: 10,
+                loop: false,
+                pagination: {
+                    el: '.lst-recommand .swiper-pagination',
+                    clickable: true,
+                },
+            }
+            );
+        }
+        else {
+            //List images
+            let swiper = new Swiper('.lst-recommand .swiper-container', {
+                slidesPerView: 5,
+                spaceBetween: 10,
+                loop: false,
+                pagination: {
+                    el: '.lst-recommand .swiper-pagination',
+                    clickable: true,
+                },
+            }
+            );
+        };
+
+        var swiper = new Swiper('.detail-item-swiper-ctn .swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: false,
+                pagination: {
+                    el: '.detail-item-swiper-ctn .swiper-pagination',
+                    clickable: true,
+                },
+            }
+        );
     </script>
     <!--#endregion-->
 </body>

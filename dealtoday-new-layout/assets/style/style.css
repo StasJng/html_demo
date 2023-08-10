@@ -2448,6 +2448,7 @@ body {
 .d-detail-rg {
     background-color: #fff;
     border-radius: 12px;
+    padding: 16px;
 }
 
 .d-detail-rg .detail-item-swiper-ctn {
@@ -2459,20 +2460,25 @@ body {
 }
 
 .d-detail-rg .list-value-tag .tag-box {
-
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
 }
 
 .d-detail-rg .list-value-tag .tag-box img {
-    
+
 }
 
-
 .d-detail-rg .deal-title {
-
+    font-size: 20px;
+    font-weight: 600;
+    color:#000;    
 }
 
 .d-detail-rg .deal-rating {
-
+    font-size: 14px;
+    font-weight: 400;
+    color:#000;    
 }
 
 .d-detail-rg .deal-rating .rating-point {
@@ -2484,19 +2490,29 @@ body {
 }
 
 .d-detail-rg .deal-price {
-
+    
 }
 
 .d-detail-rg .deal-price .p-origin {
-
+    font-size: 16px;
+    font-weight: 400;
+    color: #757575;    
+    text-decoration: line-through;
 }
 
 .d-detail-rg .deal-price .p-sale {
-
+    font-size: 34px;
+    font-weight: 700;
+    color: #E8141F;    
 }
 
 .d-detail-rg .deal-price .p-sale .p-tag {
-
+    background-color: #E8141F;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 5px;
+    padding: 5px 12px;
 }
 
 .d-detail-rg .deal-price .vnpay-img {
@@ -2507,12 +2523,31 @@ body {
 
 }
 
-.d-detail-rg .quantity {
+.d-detail-rg .sale-code .title, .d-detail-rg .quantity .title {
+    font-size: 14px;
+    font-weight: 400;
+    color: #9E9E9E;    
+    display: inline-block;
+    width: 70px;
+}
 
+.d-detail-rg .sale-code .lst-code {
+    font-size: 14px;
+    font-weight: 400;
+    color: #E97318;    
+    overflow: hidden;
+}
+
+.d-detail-rg .sale-code .lst-code span {
+    background-color: #FEF3E2;
+    margin-right: 5px;
+    padding: 5px;
 }
 
 .d-detail-rg .xpr-date {
-
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
 }
 
 .d-detail-rg .bounus-point {
@@ -2523,7 +2558,16 @@ body {
     font-size: 20px;
     font-weight: 600;
     color: #000;
-    padding: 12px 0 0 0;
+}
+
+.d-detail-rg .raw-content-rg {
+    padding: 0 12px;
+}
+
+.d-detail-rg .d-detail-info img {
+    width: 100%;
+    height: unset !important;
+    aspect-ratio: 2/1;
 }
 /* -------------------------------------------------------------------------------------------- */
 
@@ -2577,5 +2621,30 @@ body {
 .slider::before {
     left: 0;
     top: 0;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* Customize Swiper Paginator*/
+.lst-recommand .swiper-pagination {
+	bottom: -5px !important;
+}
+
+.lst-recommand .swiper-pagination-bullet-active {
+	background-color: #F0821B;
+}
+
+.lst-recommand .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+	margin: 0 3px !important;
+}
+
+.lst-recommand .swiper-pagination-bullet {
+	width: 15px !important;
+	height: 3px !important;
+	border-radius: 3px !important;
 }
 /* -------------------------------------------------------------------------------------------- */
