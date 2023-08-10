@@ -6,15 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     
     <meta name="title" content="@Html.Raw(ViewBag.MetaTitle)" />
     <meta name="keywords" content="@Html.Raw(ViewBag.Keywords)" />
     <meta name="description" content="@Html.Raw(ViewBag.Description)">
+
+    <script src="assets/plugins/swiper-slider/js/swiper.min.js"></script>
+    <link href="assets/plugins/swiper-slider/css/swiper.min.css" rel="stylesheet" />
+
     <title>@ViewBag.Title</title>
 
     <!--#region Google Transalte-->
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'vi',
@@ -26,10 +30,9 @@
             }, 'google_translate_element');
         }
     </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script> -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
     <!--#endregion-->
 </head>
-
 <body>
     <!--#region Header-->
     <div class="header" id="header">
@@ -153,7 +156,7 @@
                                 <div class="lst-items col-12">
                                     <div class="dealtoday-checkbox category-item-checkbox">
                                         <input type="checkbox" id="select-all-voucher">
-                                        <label for="select-all-voucher">&nbsp;&nbsp;<span class="txt-cat">E-VOUCHER</span></label>
+                                        <label for="select-all-voucher">&nbsp;&nbsp;<span class="txt-cat">E-Voucher</span></label>
                                     </div>
             
                                     <div class="row item-box evoucher">
@@ -235,7 +238,7 @@
                                 <div class="lst-items col-12">
                                     <div class="dealtoday-checkbox category-item-checkbox">
                                         <input type="checkbox" id="select-all-gift">
-                                        <label for="select-all-gift">&nbsp;&nbsp;<span class="txt-cat">E-GIFT</span></label>
+                                        <label for="select-all-gift">&nbsp;&nbsp;<span class="txt-cat">E-Gift</span></label>
                                     </div>
                                     
                                 </div>
@@ -247,7 +250,7 @@
                                 <div class="lst-items col-12">
                                     <div class="dealtoday-checkbox category-item-checkbox">
                                         <input type="checkbox" id="select-all-ticket">
-                                        <label for="select-all-ticket">&nbsp;&nbsp;<span class="txt-cat">E-TICKET</span></label>
+                                        <label for="select-all-ticket">&nbsp;&nbsp;<span class="txt-cat">E-Ticket</span></label>
                                     </div>
             
                                     <div class="row item-box">
@@ -322,7 +325,6 @@
                             </div>
                         </div>
 
-
                         <div class="d-lg-none d-md-block d-sm-block d-block gap-reg-20"></div>
 
                         <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12">
@@ -348,8 +350,6 @@
                                 <!--#endregion-->
 
                                 <!--#region Payment(Mobile)-->
-                                <div class="gap-reg-20 d-lg-none d-md-none d-sm-block d-block"></div>
-
                                 <div class="col-12 commit-payment-mb d-lg-none d-md-none d-sm-none d-xs-block d-block">
                                     <div class="row">
                                         <div class="col-8 flex-align-center">
@@ -662,33 +662,7 @@
 
     <!--#region-->
     <script>
-        var width = $(window).width();
-        if (width <= 768) {
-            //New tickets
-            let swiper = new Swiper('.new-ticket-region .swiper-container', {
-                    slidesPerView: 1.5,
-                    spaceBetween: 0,
-                    loop: false,
-                    pagination: {
-                        el: '.new-ticket-region .swiper-pagination',
-                        clickable: true,
-                },
-            }
-            );
-        }
-        else {
-            //New tickets
-            let swiper = new Swiper('.new-ticket-region .swiper-container', {
-                slidesPerView: 4,
-                spaceBetween: 0,
-                loop: false,
-                pagination: {
-                    el: '.new-ticket-region .swiper-pagination',
-                    clickable: true,
-                },
-            }
-            );
-        };
+        
     </script>
     <!--#endregion-->
 </body>
