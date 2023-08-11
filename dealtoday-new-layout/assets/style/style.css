@@ -1046,7 +1046,7 @@ a {
     width: 100%;
     max-width: 100%;
     margin-bottom: 15px;
-    border-radius: 12px;
+    border-radius: 8px;
     background-color: #fff;
     position: relative;
 }
@@ -1079,7 +1079,7 @@ a {
     width: 100%;
     height: unset !important;
     aspect-ratio: 1/1;
-    border-radius: 12px 12px 0 0;
+    border-radius: 8px 8px 0 0;
 }
 
 .product-box .p-info {
@@ -1148,7 +1148,7 @@ a {
 .product-box .sale-tag {
     position: absolute;
     padding: 5px;
-    right: 20px;
+    right: 12px;
     top: 0;
     width: 40px;
     background-color: #F6911E;
@@ -2507,6 +2507,8 @@ body {
     font-size: 20px;
     font-weight: 600;
     color:#000;    
+    line-height: 30px;
+    margin-bottom: 12px;
 }
 
 .d-detail-rg .deal-rating {
@@ -2524,7 +2526,14 @@ body {
 }
 
 .d-detail-rg .deal-price {
-    
+    position: relative;
+    height: 110px;
+    align-items: center;
+    display: flex;
+}
+
+.d-detail-rg .deal-price .d-price {
+    display: inline-block;
 }
 
 .d-detail-rg .deal-price .p-origin {
@@ -2550,11 +2559,15 @@ body {
 }
 
 .d-detail-rg .deal-price .vnpay-img {
-
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 5px;
 }
 
-.d-detail-rg .sale-code {
-
+.d-detail-rg .sale-code, .d-detail-rg .quantity {
+    margin: 12px 0;
 }
 
 .d-detail-rg .sale-code .title, .d-detail-rg .quantity .title {
@@ -2582,6 +2595,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     color: #000;
+    margin-bottom: 12px;
 }
 
 .d-detail-rg .bounus-point {
@@ -2602,6 +2616,24 @@ body {
     width: 100%;
     height: unset !important;
     aspect-ratio: 2/1;
+}
+
+.d-detail-rg .add-to-cart {
+    margin-bottom: 12px;
+}
+
+.d-detail-rg .buy-now {
+    margin-bottom: 8px;
+}
+
+.d-detail-rg .bounus-point {
+    font-size: 14px;
+    font-weight: 600;
+    color: #F0821B;
+    background-color: #FEF3E2;
+    width: fit-content;
+    padding: 3px 12px;
+    border-radius: 20px;
 }
 /* -------------------------------------------------------------------------------------------- */
 
