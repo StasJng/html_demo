@@ -1398,6 +1398,11 @@ a {
     position: relative;
     cursor: pointer;
 }
+
+.dealtoday-checkbox label span {
+    font-size: 15px;
+}
+
 .dealtoday-checkbox label:before {
     content: '';
     background-color: #ffffff;
