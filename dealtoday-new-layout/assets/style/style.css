@@ -3047,6 +3047,67 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 
 /* -------------------------------------------------------------------------------------------- */
+/* Box Sorting trên trang search */
+.d-detail-rg .result-txt {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d-detail-rg .result-fil {
+
+}
+
+.d-detail-rg .result-fil .sort-txt {
+    font-size: 13px;
+    font-weight: 400;
+    color: #000;
+}
+
+.d-detail-rg .result-fil .sort-by {
+
+}
+
+.d-detail-rg .result-fil .sort-by span+span::before {
+    content: "|";
+    width: 20px;
+    height: 20px;
+    color: #cdcdcd;
+    font-size: 16px;
+    position: absolute;
+    margin-left: -30px;
+}
+
+.d-detail-rg .result-fil .sort-by .s-new, .d-detail-rg .result-fil .sort-by .s-most, .d-detail-rg .result-fil .sort-by .s-price {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    margin: 0 25px;
+    cursor: pointer;
+}
+
+.d-detail-rg .result-fil .sort-by .s-new:hover, .d-detail-rg .result-fil .sort-by .s-most:hover, .d-detail-rg .result-fil .sort-by .s-price:hover {
+    color: #F0821B;
+}
+
+.d-detail-rg .result-fil .sort-by .s-price::after {
+    content: "";
+    width: 20px;
+    height: 24px;
+    font-size: 16px;
+    position: absolute;
+    background-image: url(../images/generals/icon-sorting.svg);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: right 0 center;
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
 /* Temp Swiper*/
 @keyframes scroll {
     0% {
