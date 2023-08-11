@@ -2621,6 +2621,14 @@ input#showFullTermsAndInfo:checked ~ .col-12 .row .terms-n-info-btn {
     display: none !important;
 }
 
+input#showFullDesc:checked ~ .col-12 .d-detail-info {
+	max-height: fit-content;
+}
+
+input#showFullDesc:checked ~ .col-12 .btn-general {
+	display: none ! important;
+}
+
 .d-detail-rg .list-value-tag {
     border: 1px solid #eee;
     border-radius: 8px;
@@ -2636,7 +2644,92 @@ input#showFullTermsAndInfo:checked ~ .col-12 .row .terms-n-info-btn {
 }
 
 .d-detail-rg .list-value-tag .tag-box img {
+}
 
+@media(min-width: 992px) {
+    .d-detail-rg.d-brand, .d-detail-rg.loc-rg {
+        margin: 0 0 0 20px;
+        width: calc(100% - 20px);
+    }
+}
+
+.d-detail-rg.d-brand .b-prices {
+    position: relative;
+}
+
+.d-detail-rg.d-brand .b-title {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+
+.d-detail-rg.d-brand .b-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d-detail-rg.d-brand .b-prices .p-main {
+    font-size: 20px;
+    font-weight: 600;
+    color: #F6911E;
+}
+
+.d-detail-rg.d-brand .b-prices .p-percent {
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #F6911E;
+    border-radius: 3px;
+    padding: 3px;
+    margin: 0 8px;
+}
+
+.d-detail-rg.d-brand .b-prices .p-origin {
+    font-size: 14px;
+    font-weight: 400;
+    color: #BDBDBD;
+    text-decoration: line-through;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .d-detail-rg.d-brand .b-prices .p-origin {
+        position: absolute;
+        top: 28px;
+    }
+
+    .d-detail-rg.d-brand .d-detail {
+        margin-bottom: 32px !important;
+    }
+}
+
+.d-detail-rg.d-brand .d-items {
+    margin: -16px 0;
+}
+
+.d-detail-rg.d-brand .d-detail {
+    margin: 16px 0;
+}
+
+.d-detail-rg.d-brand .d-detail img {
+    margin-right: 12px;
+}
+
+.d-detail-rg .lst-locs a {
+    color: #000;
+    width: fit-content;
+    display: block;
+    font-size: 14px;
+    padding-left: 25px;
+
+    background-image: url(../images/generals/icon-location-outline.svg);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: left 0 center;
+}
+
+.d-detail-rg .lst-locs a:hover {
+    color: #F0821B;
 }
 
 .d-detail-rg .deal-title {
@@ -2651,14 +2744,6 @@ input#showFullTermsAndInfo:checked ~ .col-12 .row .terms-n-info-btn {
     font-size: 14px;
     font-weight: 400;
     color:#000;    
-}
-
-.d-detail-rg .deal-rating .rating-point {
-
-}
-
-.d-detail-rg .deal-rating .saled-count {
-
 }
 
 .d-detail-rg .deal-price {
@@ -2692,6 +2777,16 @@ input#showFullTermsAndInfo:checked ~ .col-12 .row .terms-n-info-btn {
     font-weight: 700;
     border-radius: 5px;
     padding: 5px 12px;
+    position: absolute;
+    top: 28px;
+    left: 165px;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    .d-detail-rg .deal-price .p-sale .p-tag {
+        top: 65px;
+        left: 110px;
+    }
 }
 
 .d-detail-rg .deal-price .vnpay-img {

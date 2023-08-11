@@ -147,7 +147,7 @@
                 <div class="gap-reg-20"></div>
 
                 <!--#region Breadcrumb-->
-                <div class="col-12 p-0">
+                <div class="col-12 p-sm-0 p-xs-0">
                     <ul class="breadcrumb-nav">
                         <li><a href="#">Trang chủ</a></li>
                         <li><a href="#">E-Voucher</a></li>
@@ -342,7 +342,6 @@
                 <input type="checkbox" class="v-hidden" id="showFullTermsAndInfo" />
                 <div class="col-12">
                     <div class="row">
-
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-detail-rg general-info">
                             <input type="checkbox" class="v-hidden" id="showFullGenInfo" />
                             <div class="row">
@@ -416,9 +415,10 @@
                 <div class="gap-reg-20"></div>
 
                 <!--#region Description + Review-->
-                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 d-descript">
                     <div class="row d-detail-rg">
                         <!--#region Description-->
+                        <input id="showFullDesc" type="checkbox" class="v-hidden" />
                         <div class="col-12 p-0">
                             <h2 class="">
                                 Giới thiệu sản phẩm
@@ -438,8 +438,10 @@
 
                             <div class="gap-reg-16"></div>
 
-                            <div class="btn-general">
-                                Xem thêm
+                            <div class="col-12 flex-center">
+                                <label class="btn-general" for="showFullDesc">
+                                    Xem thêm
+                                </label>
                             </div>
                         </div>
                         <!--#endregion-->
@@ -603,56 +605,87 @@
                         <div class="gap-reg-16"></div>
                         <!--#endregion-->
                     </div>
-                        
-                        
-                        
                 </div>
                 <!--#endregion-->
 
                 <div class="gap-reg-20 d-xl-none d-lg-none d-md-block d-sm-block d-block"></div>
 
                 <!--#region Partner Info-->
-                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 d-detail-rg">
-                    <div class="">
-                        <div class="">
-                            <div class="">
-                                <img src="" alt="" height="" width="" />
-                            </div>
-                            <div>
-                                <div class="">
-                                    Đơn vị cung cấp
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 ">
+                    <div class="row">
+                        <div class="col-12 d-detail-rg d-brand">
+                            <div class="d-items">
+                                <a href="#" class="d-detail flex-align-center">
+                                    <img src="assets/images/demo-imgs/detail-page/img-partner-logo.png" alt="40" height="40" width="40" lazy />
+                                    <div class="w-100">
+                                        <div class="b-title">
+                                            Đơn vị cung cấp
+                                        </div>
+                                        <div class="b-name">
+                                            Nhà hàng Gyu Kaku
+                                        </div>
+                                    </div>
+                                </a>
+        
+                                <div class="row">
+                                    <div class="border-div w-100"></div>
                                 </div>
-                                <div class="">
-                                    Nhà hàng Gyu Kaku
-                                </div>
+        
+                                <a href="#" class="d-detail flex-align-center">
+                                    <img src="assets/images/demo-imgs/detail-page/img-partner-deal-1.png" alt="" height="40" width="40" lazy />
+                                    <div class="w-100">
+                                        <div class="b-title">
+                                            Đơn vị cung cấp
+                                        </div>
+                                        <div class="b-prices flex-align-center">
+                                            <span class="p-main">500.000đ</span>
+                                            <span class="p-percent">-50%</span>
+                                            <span class="p-origin">1.000.000đ</span>
+                                        </div>
+                                    </div>
+                                </a>
+        
+                                <div class="border-div w-100"></div>
+        
+                                <a href="#" class="d-detail flex-align-center">
+                                    <img src="assets/images/demo-imgs/detail-page/img-partner-deal-2.png" alt="" height="40" width="40" lazy />
+                                    <div class="w-100">
+                                        <div class="b-title">
+                                            Đơn vị cung cấp
+                                        </div>
+                                        <div class="b-prices flex-align-center">
+                                            <span class="p-main">500.000đ</span>
+                                            <span class="p-percent">-50%</span>
+                                            <span class="p-origin">1.000.000đ</span>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
 
-                        <div class="">
-                            <div class="">
-                                <img src="" alt="" height="" width="" />
-                            </div>
-                            <div>
-                                <div class="">
-                                    Đơn vị cung cấp
-                                </div>
-                                <div class="">
-                                    <span>331.000đ</span>
-                                    <span>-24%</span>
-                                    <span>1.225.000</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <div class="gap-reg-20"></div>
 
-                    <div>
-                        <h2>
-                            Điểm chấp nhận
-                        </h2>
-                        <div>
-                            <a href="#">
-                                18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
-                            </a>
+                        <div class="col-12 d-detail-rg loc-rg">
+                            <h2>
+                                Điểm chấp nhận
+                            </h2>
+                            <div class="lst-locs">
+                                <a href="#">
+                                    18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
+                                </a>
+
+                                <div class="gap-reg-6"></div>
+
+                                <a href="#">
+                                    18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
+                                </a>
+
+                                <div class="gap-reg-6"></div>
+
+                                <a href="#">
+                                    18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -665,7 +698,7 @@
                     Dành cho bạn
                 </h2>
 
-                <div class="gap-reg-20"></div>
+                <div class="gap-reg-8"></div>
 
                 <div class="col-12 lst-recommand p-sm-0 p-xs-0">
                     <div class="swiper-container">
