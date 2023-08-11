@@ -294,6 +294,7 @@ a {
 .header-bottom .srch-box {
     flex: 0 0 auto;
     width: 60%;
+    z-index: 10;
 }
 
 .header-bottom .srch-box button  {
@@ -327,10 +328,12 @@ a {
     width: 5%;
     padding-right: 13px;
     justify-content: end;
+    cursor: pointer;
 }
 
 .header-bottom .mb-menu-box {
     display: none;
+    cursor: pointer;
 }
 
 @media(max-width: 1200px) {
