@@ -183,7 +183,9 @@
                         <div class="col-xl-3 col-lg-3 col-9 d-xl-block d-lg-block d-md-none d-sm-none d-none">
                             <div class="filter-wrapper">
                                 <div class="filter-container">
+                                    <!--#region Địa điểm(contains 2-lvl Searchbox)-->
                                     <p class="drop-filter-title">Địa điểm</p>
+
                                     <ul class="loc-filter-items">
                                         <li class="srch-box">
                                             <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm điểm đến">
@@ -193,7 +195,7 @@
                                             <input type="checkbox" checked="" />
                                             <a data-toggle="dropdown">
                                                 <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="p-loc-1" locid="1" onchange="addFilter(1, 'loc', 'p')">
+                                                    <input type="checkbox" id="p-loc-1" locid="1" onchange="">
                                                     <label for="p-loc-1"></label>
                                                     <span class="txt-keyword-p">Hà Nội </span>
                                                 </span>
@@ -202,7 +204,7 @@
                                             <li>
                                                 <a class="txt-info">
                                                     <span class="dealtoday-checkbox">
-                                                        <input type="checkbox" id="c-loc-4-1" locid="4" parentid="1" class="dealtoday-checkbox-chil" onchange="addFilter(4, 'loc', 'c', 1)" />
+                                                        <input type="checkbox" id="c-loc-4-1" locid="4" parentid="1" class="dealtoday-checkbox-chil" onchange="" />
                                                         <label for="c-loc-4-1">
                                                             <span class="txt-keyword">Hoàn Kiếm </span>
                                                         </label>
@@ -216,7 +218,7 @@
                                             <input type="checkbox" checked="" />
                                             <a data-toggle="dropdown">
                                                 <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="p-loc-5" locid="5" onchange="addFilter(1, 'loc', 'p')">
+                                                    <input type="checkbox" id="p-loc-5" locid="5" onchange="">
                                                     <label for="p-loc-5"></label>
                                                     <span class="txt-keyword-p">Gia Lâm </span>
                                                 </span>
@@ -225,7 +227,7 @@
                                                 <li>
                                                     <a class="txt-info">
                                                         <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="c-loc-5-1" locid="51" parentid="1" class="dealtoday-checkbox-chil" onchange="addFilter(4, 'loc', 'c', 1)" />
+                                                            <input type="checkbox" id="c-loc-5-1" locid="51" parentid="1" class="dealtoday-checkbox-chil" onchange="" />
                                                             <label for="c-loc-5-1">
                                                                 <span class="txt-keyword">Ocean Park 1</span>
                                                             </label>
@@ -235,7 +237,7 @@
                                                 <li>
                                                     <a class="txt-info">
                                                         <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="c-loc-5-2" locid="52" parentid="1" class="dealtoday-checkbox-chil" onchange="addFilter(4, 'loc', 'c', 1)" />
+                                                            <input type="checkbox" id="c-loc-5-2" locid="52" parentid="1" class="dealtoday-checkbox-chil" onchange="" />
                                                             <label for="c-loc-5-2">
                                                                 <span class="txt-keyword">Ocean Park 2</span>
                                                             </label>
@@ -245,7 +247,7 @@
                                                 <li>
                                                     <a class="txt-info">
                                                         <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="c-loc-5-3" locid="53" parentid="1" class="dealtoday-checkbox-chil" onchange="addFilter(4, 'loc', 'c', 1)" />
+                                                            <input type="checkbox" id="c-loc-5-3" locid="53" parentid="1" class="dealtoday-checkbox-chil" onchange="" />
                                                             <label for="c-loc-5-3">
                                                                 <span class="txt-keyword">Ocean Park 3</span>
                                                             </label>
@@ -259,7 +261,7 @@
                                             <input type="checkbox" checked="">
                                             <a data-toggle="dropdown" class="non-drop">
                                                 <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="p-loc-3" locid="3" onchange="addFilter(3, 'loc', 'p')">
+                                                    <input type="checkbox" id="p-loc-3" locid="3" onchange="">
                                                     <label for="p-loc-3">
                                                         Đà Nẵng
                                                     </label>
@@ -269,9 +271,11 @@
                                         </li>
         
                                     </ul>
+                                    <!--#endregion-->
         
                                     <div class="border-div"></div>
         
+                                    <!--#region Dịch vụ-->
                                     <p class="drop-filter-title">Dịch vụ</p>
         
                                     <ul>
@@ -280,7 +284,7 @@
         
                                             <a data-toggle="dropdown">
                                                 <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="p-tag-1494" onchange="addFilter(1494, 'tag', 'p')">
+                                                    <input type="checkbox" id="p-tag-1494" onchange="">
                                                     <label for="p-tag-1494"></label>
                                                     <span>Khu vui chơi </span>
                                                 </span>
@@ -290,7 +294,7 @@
                                                 <li>
                                                     <a>
                                                         <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="c-tag-52-1494" tagid="52" parentid="1494" class="dealtoday-checkbox-chil" onchange="addFilter(52, 'tag', 'c', 1494)">
+                                                            <input type="checkbox" id="c-tag-52-1494" tagid="52" parentid="1494" class="dealtoday-checkbox-chil" onchange="">
                                                             <label for="c-tag-52-1494">
                                                                 <span>Thủy cung</span>
                                                             </label>
@@ -300,7 +304,7 @@
                                                 <li>
                                                     <a>
                                                         <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="c-tag-54-1494" tagid="54" parentid="1494" class="dealtoday-checkbox-chil" onchange="addFilter(54, 'tag', 'c', 1494)">
+                                                            <input type="checkbox" id="c-tag-54-1494" tagid="54" parentid="1494" class="dealtoday-checkbox-chil" onchange="">
                                                             <label for="c-tag-54-1494">
                                                                 <span>Bán chạy</span>
                                                             </label>
@@ -310,7 +314,7 @@
                                                 <li>
                                                     <a>
                                                         <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="c-tag-22-1494" tagid="22" parentid="1494" class="dealtoday-checkbox-chil" onchange="addFilter(22, 'tag', 'c', 1494)">
+                                                            <input type="checkbox" id="c-tag-22-1494" tagid="22" parentid="1494" class="dealtoday-checkbox-chil" onchange="">
                                                             <label for="c-tag-22-1494">
                                                                 <span>Khu vui chơi</span>
                                                             </label>
@@ -320,6 +324,128 @@
                                             </ul>
                                         </li>
                                     </ul>
+                                    <!--#endregion-->
+
+                                    <div class="border-div"></div>
+
+                                    <!--#region Địa điểm(contains 1-lvl Searchbox)-->
+                                    <p class="drop-filter-title">Thương hiệu</p>
+
+                                    <ul class="loc-filter-items brand">
+                                        <li class="srch-box">
+                                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm điểm đến">
+                                        </li>
+        
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-1" onchange="">
+                                                <label for="b-no-1" class="txt-keyword">
+                                                    Brand No 1
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-2" onchange="">
+                                                <label for="b-no-2" class="txt-keyword">
+                                                    Brand No 2
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-3" onchange="">
+                                                <label for="b-no-3" class="txt-keyword">
+                                                    Brand No 3
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-4" onchange="">
+                                                <label for="b-no-4" class="txt-keyword">
+                                                    Brand No 4
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-5" onchange="">
+                                                <label for="b-no-5" class="txt-keyword">
+                                                    Brand No 5
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-6" onchange="">
+                                                <label for="b-no-6" class="txt-keyword">
+                                                    Brand No 6
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-7" onchange="">
+                                                <label for="b-no-7" class="txt-keyword">
+                                                    Brand No 7
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-8" onchange="">
+                                                <label for="b-no-8" class="txt-keyword">
+                                                    Brand No 8
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-9" onchange="">
+                                                <label for="b-no-9" class="txt-keyword">
+                                                    Brand No 9
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-10" onchange="">
+                                                <label for="b-no-10" class="txt-keyword">
+                                                    Brand No 10
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-11" onchange="">
+                                                <label for="b-no-11" class="txt-keyword">
+                                                    Brand No 11
+                                                </label>
+                                            </span>
+                                        </li>
+
+                                        <li class="dropdown brand non-drop">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="b-no-12" onchange="">
+                                                <label for="b-no-12" class="txt-keyword">
+                                                    Brand No 12
+                                                </label>
+                                            </span>
+                                        </li>
+        
+                                    </ul>
+                                    <!--#endregion-->
                                 </div>
                             </div>
                         </div>
@@ -888,7 +1014,7 @@
 
     <!--#region-->
     <script>
-        //Searching function
+        //Location searching function
         $(document).ready(function () {
             $(".loc-filter-items").each(function (i, value) {
                 let input = $(value).find("input[type='text']");
@@ -935,13 +1061,22 @@
             });
         });
 
+        //Brand searchin function
         $(document).ready(function () {
-            $('.skillbar').each(function () {
-                $(this).find('.count-bar').animate({
-                    width: (((parseInt($(this).attr('saled')) / parseInt($(this).attr('total'))) * 100).toString() + "%")
-                }, 2);
+        $(".loc-filter-items.brand").each(function (i, value) {
+            var input = $(value).find("input[type='text']");
+            $(input).keyup(function () {
+                var filter = $(input).val().toUpperCase();
+                $(value).find(".txt-keyword").each(function (index, item) {
+                    if ($(item).text().toUpperCase().search(filter) < 0) {
+                        $(this).parents('.dropdown').hide();
+                    } else {
+                        $(this).parents('.dropdown').show();
+                    }
+                });
             });
         });
+    });
    </script>
     <!--#endregion-->
 </body>

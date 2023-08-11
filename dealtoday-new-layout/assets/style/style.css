@@ -1268,6 +1268,8 @@ a {
 .filter-wrapper .srch-box {
     position: sticky;
     top: 0;
+    z-index: 5;
+    background: #fff;
 }
 
 .filter-wrapper .srch-box input {
@@ -1289,42 +1291,42 @@ a {
 /* ---------------------------- */
 /* Customize Sroll-Bar */
 /* Width */
-.loc-filter-items::-webkit-scrollbar {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar {
     width: 3px;
 }
 /* Track */
-.loc-filter-items::-webkit-scrollbar-track {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar-track {
     background: #FAFAFA;
 }
 /* Handle */
-.loc-filter-items::-webkit-scrollbar-thumb {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar-thumb {
     background: #CDCDCD;
     border-radius: 10px;
 }
 /* Handle on hover */
-.loc-filter-items::-webkit-scrollbar-thumb:hover {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar-thumb:hover {
     opacity: 0.8;
 }
 /* ---------------------------- */
 
-.loc-filter-items {
+.filter-wrapper .loc-filter-items {
     max-height: 300px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
-.dropdown {
+.filter-wrapper .dropdown {
     position: relative;
 }
 
-.dropdown [data-toggle=dropdown] {
+.filter-wrapper .dropdown [data-toggle=dropdown] {
     display: block;
     color: black;
     font-weight: 600;
     background: white;
 }
 
-.dropdown [data-toggle=dropdown]:before {
+.filter-wrapper .dropdown [data-toggle=dropdown]:before {
     position: absolute;
     display: block;
     content: url(../images/generals/arrows/arr-dropdown-down-black.svg);
@@ -1334,35 +1336,40 @@ a {
     pointer-events: none;
 }
 
-.dropdown > input[type=checkbox]:checked + [data-toggle=dropdown]:before {
+.filter-wrapper .dropdown > input[type=checkbox]:checked + [data-toggle=dropdown]:before {
     rotate: 180deg;
 }
 
-.dropdown > input[type=checkbox]:checked ~ .dropdown-menu {
+.filter-wrapper .dropdown > input[type=checkbox]:checked ~ .dropdown-menu {
     max-height: max-content;
     display: contents;
 }
 
-.dropdown.non-drop [data-toggle=dropdown]:before {
+.filter-wrapper .dropdown.non-drop [data-toggle=dropdown]:before {
     content: '';
 }
-.dropdown > .dropdown-menu {
+
+.filter-wrapper .dropdown.non-drop.brand {
+    margin: 3px;
+}
+
+.filter-wrapper .dropdown > .dropdown-menu {
     max-height: 0;
     overflow: hidden;
     list-style-type: none;
 }
 
-.dropdown > .dropdown-menu li {
+.filter-wrapper .dropdown > .dropdown-menu li {
     margin-left: 5px;
 }
 
-.dropdown > .dropdown-menu li a {
+.filter-wrapper .dropdown > .dropdown-menu li a {
     display: block;
     color: black;
     background: white;
 }
 
-.dropdown > input[type=checkbox] {
+.filter-wrapper .dropdown > input[type=checkbox] {
     opacity: 0;
     width: 100%;
     cursor: pointer;
@@ -1370,11 +1377,11 @@ a {
     position: absolute;
 }
 
-.dropdown > .dropdown-menu .dealtoday-checkbox {
+.filter-wrapper .dropdown > .dropdown-menu .dealtoday-checkbox {
     padding-left: 15px;
 }
 
-.dropdown :hover {
+.filter-wrapper .dropdown :hover {
     color: #F0821B;
 }
 /* -------------------------------------------------------------------------------------------- */
