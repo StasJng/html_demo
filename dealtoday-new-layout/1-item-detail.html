@@ -150,55 +150,106 @@
                 <div class="col-12 p-0">
                     <ul class="breadcrumb-nav">
                         <li><a href="#">Trang chủ</a></li>
-                        <li><a href="#">Tìm kiếm</a></li>
-                        <li><a href="#">Kết quả tìm kiếm ”Buffet TP. Đà Nẵng”</a></li>
+                        <li><a href="#">E-Voucher</a></li>
+                        <li><a href="#">Combo Lẩu Trùng Khánh</a></li>
                       </ul>
                 </div>
                 <!--#endregion-->
                 
-                <div class="gap-reg-30"></div>
+                <div class="gap-reg-20"></div>
 
                 <!--#region Images & Price-->
                 <div class="col-12 d-detail-rg">
                     <div class="row">
                         <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
                             <div class="detail-item-swiper-ctn">
+                                <div class="slider-gallery">
+                                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="15000">
+                                        <!--#region Wrapper for slides-->
+                                        <div class="carousel-inner" role="listbox">
+                                            <div class="item active" data-target="#view-image-dialog" data-toggle="modal" data-id="@item.Voucher_gallery_id">
+                                                <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="dealtoday.vn" height="" width="" lazy />
+                                            </div>
+                                        </div>
+                                        <!--#endregion-->
 
+                                        <!--#region Indicator-->
+                                        <div class="carousel-indicators">
+                                            <div class="swiper-container ">
+                                                <div class="swiper-wrapper carousel-indicators">
+                                                    <div class="swiper-slide">
+                                                        <a href="#" data-target="#carousel-example-generic" data-slide-to="@Html.Raw(j - 1)" >
+                                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-sup-1.png" alt="dealtoday" height="64" width="128" />
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="swiper-slide">
+                                                        <a href="#" data-target="#carousel-example-generic" data-slide-to="@Html.Raw(j - 1)" >
+                                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-sup-4.png" alt="dealtoday" height="64" width="128" />
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <!--#region Add Arrows-->
+                                                <div class="swiper-button-next" style="background-image: none">
+                                                    <span class="mdi-hardware-keyboard-arrow-right" style="font-size: 45px; color: #f7941d"></span>
+                                                </div>
+                                                
+                                                <div class="swiper-button-prev" style="background-image: none">
+                                                    <span class="mdi-hardware-keyboard-arrow-left" style="font-size: 45px; color: #f7941d"></span>
+                                                </div>
+                                                <!--#endregion-->
+                                            </div>
+                                        </div>
+                                        <!--#endregion-->
+                                    </div>
+                                </div>
+                                <script>
+                                    $(function () {
+                                        var mainDealImgSwiper = new Swiper('.slider-gallery .swiper-container', {
+                                            slidesPerView: "auto",
+                                            spaceBetween: 5,
+                                            nextButton: '.swiper-button-next',
+                                            prevButton: '.swiper-button-prev'
+                                        });
+                                    })
+                                </script>
                             </div>
 
-                            <div class="row list-value-tag">
-                                <div class="col-4 tag-box">
+                            <div class="row list-value-tag d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
+                                <div class="col-4 tag-box flex-align-center">
                                     <div class="row">
-                                        <div class="col-3">
+                                        <div class="col-2 flex-center">
                                             <img src="assets/images/generals/icon-real-deal.svg" alt="" height="32" width="32" />
                                         </div>
-                                        <div class="col-9">
+                                        <div class="col-10 flex-align-center">
                                             Deal thật, khuyến mại thật
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4 tag-box">
+                                <div class="col-4 tag-box flex-align-center">
                                     <div class="row">
-                                        <div class="col-3">
+                                        <div class="col-2 flex-center">
                                             <img src="assets/images/generals/icon-low-price.svg" alt="" height="32" width="32" />
                                         </div>
-                                        <div class="col-9">
+                                        <div class="col-10 flex-align-center">
                                             Giá bán tại Dealtoday luôn thấp hơn tại điểm bán
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4 tag-box">
+                                <div class="col-4 tag-box flex-align-center">
                                     <div class="row">
-                                        <div class="col-3">
+                                        <div class="col-2 flex-center">
                                             <img src="assets/images/generals/icon-cachback.svg" alt="" height="32" width="32" />
                                         </div>
-                                        <div class="col-9">
+                                        <div class="col-10 flex-align-center">
                                             Hoàn tiền 100% nếu Khách hàng không hài lòng
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                             <div class="deal-title">
                                 Buffet lẩu Trùng Khánh tại nhà hàng BaoYu - Áp dụng từ thứ 2 đến thứ 6
@@ -288,69 +339,87 @@
                 <div class="gap-reg-20"></div>
 
                 <!--#region Main Info + Terms of use -->
-                <div class="col-12 d-detail-rg">
+                <input type="checkbox" class="v-hidden" id="showFullTermsAndInfo" />
+                <div class="col-12">
                     <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            <h2 class="">
-                                Thông tin nổi bật
-                            </h2>
 
-                            <div class="raw-content-rg">
-                                <ul>
-                                    <li style="text-align:justify">"Vé vào cổng khu vui chơi Nhà Tuyết Snow World Aeon Mall Hà Đông - Áp dụng Thứ 7, CN và lễ tết" sẽ mang đến những trò chơi mới lạ, thú vị trong không gian hấp dẫn, tuyệt vời hơn bao giờ hết.</li>
-                                    <li style="text-align:justify">
-                                        <span>Tại Snow World, các bé sẽ được trải nghiệm vui chơi thỏa thích dưới tuyết cùng những trò hấp dẫn như:&nbsp;</span>
-                                        <span>Nhà tuyết xốp tinh khôi,&nbsp;cầu trượt siêu khổng lồ, chinh phục leo núi nhân tạo, biển bóng ngập tràn, lego linh hoạt…</span>
-                                    </li>
-                                    <li style="text-align:justify">
-                                        <span>Snow World sở hữu công nghệ làm tuyết tốt nhất thế giới từ đối tác Nhật Bản với nhiệt độ luôn duy trì ở mức 18 độ C tạo môi trường thoải mái, các bé thỏa sức vui chơi mà vẫn đảm bảo sức khỏe.</span>
-                                    </li>
-                                    <li style="text-align:justify">Với đội ngũ nhân viên chuyên nghiệp, chu đáo, nhiệt tình cùng chất lượng dịch vụ đẳng cấp,&nbsp;Nhà Tuyết Snow World Aeon Mall Hà Đông sẽ mang đến sự hài lòng nhất tới mọi khách hàng.</li>
-                                </ul>
-                            </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-detail-rg general-info">
+                            <input type="checkbox" class="v-hidden" id="showFullGenInfo" />
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>Thông tin nổi bật</h2>
+        
+                                    <div class="raw-content-rg">
+                                        <ul>
+                                            <li style="text-align:justify">"Vé vào cổng khu vui chơi Nhà Tuyết Snow World Aeon Mall Hà Đông - Áp dụng Thứ 7, CN và lễ tết" sẽ mang đến những trò chơi mới lạ, thú vị trong không gian hấp dẫn, tuyệt vời hơn bao giờ hết.</li>
+                                            <li style="text-align:justify">
+                                                <span>Tại Snow World, các bé sẽ được trải nghiệm vui chơi thỏa thích dưới tuyết cùng những trò hấp dẫn như:&nbsp;</span>
+                                                <span>Nhà tuyết xốp tinh khôi,&nbsp;cầu trượt siêu khổng lồ, chinh phục leo núi nhân tạo, biển bóng ngập tràn, lego linh hoạt…</span>
+                                            </li>
+                                            <li style="text-align:justify">
+                                                <span>Snow World sở hữu công nghệ làm tuyết tốt nhất thế giới từ đối tác Nhật Bản với nhiệt độ luôn duy trì ở mức 18 độ C tạo môi trường thoải mái, các bé thỏa sức vui chơi mà vẫn đảm bảo sức khỏe.</span>
+                                            </li>
+                                            <li style="text-align:justify">Với đội ngũ nhân viên chuyên nghiệp, chu đáo, nhiệt tình cùng chất lượng dịch vụ đẳng cấp,&nbsp;Nhà Tuyết Snow World Aeon Mall Hà Đông sẽ mang đến sự hài lòng nhất tới mọi khách hàng.</li>
+                                        </ul>
+                                    </div>
+        
+                                    <div class="gap-reg-8 d-xl-none d-lg-none d-md-block d-sm-block d-block"></div>
 
-                            <div class="btn-general">
-                                Xem thêm
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            <h2 class="">
-                                Điều kiện sử dụng
-                            </h2>
-
-                            <div class="raw-content-rg">
-                                <ul>
-                                    <li style="text-align:justify">"Vé vào cổng khu vui chơi Nhà Tuyết Snow World Aeon Mall Hà Đông - Áp dụng Thứ 7, CN và lễ tết" sẽ mang đến những trò chơi mới lạ, thú vị trong không gian hấp dẫn, tuyệt vời hơn bao giờ hết.</li>
-                                    <li style="text-align:justify">
-                                        <span>Tại Snow World, các bé sẽ được trải nghiệm vui chơi thỏa thích dưới tuyết cùng những trò hấp dẫn như:&nbsp;</span>
-                                        <span>Nhà tuyết xốp tinh khôi,&nbsp;cầu trượt siêu khổng lồ, chinh phục leo núi nhân tạo, biển bóng ngập tràn, lego linh hoạt…</span>
-                                    </li>
-                                    <li style="text-align:justify">
-                                        <span>Snow World sở hữu công nghệ làm tuyết tốt nhất thế giới từ đối tác Nhật Bản với nhiệt độ luôn duy trì ở mức 18 độ C tạo môi trường thoải mái, các bé thỏa sức vui chơi mà vẫn đảm bảo sức khỏe.</span>
-                                    </li>
-                                    <li style="text-align:justify">Với đội ngũ nhân viên chuyên nghiệp, chu đáo, nhiệt tình cùng chất lượng dịch vụ đẳng cấp,&nbsp;Nhà Tuyết Snow World Aeon Mall Hà Đông sẽ mang đến sự hài lòng nhất tới mọi khách hàng.</li>
-                                </ul>
-                            </div>
-
-                            <div class="btn-general">
-                                Xem thêm
+                                    <label class="btn-general d-xl-none d-lg-none d-md-block d-sm-block d-block" for="showFullGenInfo">
+                                        Xem thêm
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        
+                        <div class="gap-reg-20 d-xl-none d-lg-none d-md-block d-sm-block d-block"></div>
+        
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-detail-rg terms-of-use">
+                            <input type="checkbox" class="v-hidden" id="showFullTerms" />
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>Điều kiện sử dụng</h2>
+        
+                                    <div class="raw-content-rg">
+                                        <ul>
+                                            <li style="text-align:justify">"Vé vào cổng khu vui chơi Nhà Tuyết Snow World Aeon Mall Hà Đông - Áp dụng Thứ 7, CN và lễ tết" sẽ mang đến những trò chơi mới lạ, thú vị trong không gian hấp dẫn, tuyệt vời hơn bao giờ hết.</li>
+                                            <li style="text-align:justify">
+                                                <span>Tại Snow World, các bé sẽ được trải nghiệm vui chơi thỏa thích dưới tuyết cùng những trò hấp dẫn như:&nbsp;</span>
+                                                <span>Nhà tuyết xốp tinh khôi,&nbsp;cầu trượt siêu khổng lồ, chinh phục leo núi nhân tạo, biển bóng ngập tràn, lego linh hoạt…</span>
+                                            </li>
+                                            <li style="text-align:justify">
+                                                <span>Snow World sở hữu công nghệ làm tuyết tốt nhất thế giới từ đối tác Nhật Bản với nhiệt độ luôn duy trì ở mức 18 độ C tạo môi trường thoải mái, các bé thỏa sức vui chơi mà vẫn đảm bảo sức khỏe.</span>
+                                            </li>
+                                            <li style="text-align:justify">Với đội ngũ nhân viên chuyên nghiệp, chu đáo, nhiệt tình cùng chất lượng dịch vụ đẳng cấp,&nbsp;Nhà Tuyết Snow World Aeon Mall Hà Đông sẽ mang đến sự hài lòng nhất tới mọi khách hàng.</li>
+                                        </ul>
+                                    </div>
 
-                    <div class="btn-general">
-                        Xem thêm
+                                    <div class="gap-reg-8 d-xl-none d-lg-none d-md-block d-sm-block d-block"></div>
+        
+                                    <label class="btn-general d-xl-none d-lg-none d-md-block d-sm-block d-block" for="showFullTerms">
+                                        Xem thêm
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-12 d-xl-block d-lg-block d-md-none d-sm-none d-none d-detail-rg terms-n-info-btn w-100 flex-center">
+                            <label class="btn-general" for="showFullTermsAndInfo">
+                                Xem thêm
+                            </label>
+                        </div>
                     </div>
                 </div>
+                
                 <!--#endregion-->
                 
                 <div class="gap-reg-20"></div>
 
                 <!--#region Description + Review-->
-                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 d-detail-rg">
-                    <div class="row">
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="row d-detail-rg">
                         <!--#region Description-->
-                        <div class="col-12 ">
+                        <div class="col-12 p-0">
                             <h2 class="">
                                 Giới thiệu sản phẩm
                             </h2>
@@ -365,15 +434,21 @@
                                 <img src="assets/images/demo-imgs/detail-page/img-info-2.png" alt="" height="800" width="400" lazy />
                                 
                                 Bên cạnh đó, xuất phát từ cái nôi của ẩm thực lẩu Trung Quốc, gây thương nhớ đặc biệt đó là nước dùng lẩu Trùng Khánh nổi tiếng bởi màu đỏ rực rỡ, vị cay tê và cách chế biến cầu kì. Với nguyên liệu chính từ ớt Tứ Xuyên, dầu ớt, bơ và nhiều loại gia vị khác, lẩu Trùng Khánh mang hương vị khó quên từ vị cay lan toả trong khoang miệng, với mùi thơm từ gia vị đậm đà trong từng giọt nước dùng.
-                                
-                                <div class="btn-general">
-                                    Xem thêm
-                                </div>
+                            </div>
+
+                            <div class="gap-reg-16"></div>
+
+                            <div class="btn-general">
+                                Xem thêm
                             </div>
                         </div>
                         <!--#endregion-->
+                    </div>
+                    
+                    <div class="gap-reg-20"></div>
 
-                        <div class="gap-reg-20"></div>
+                    <div class="row d-detail-rg p-0">
+                        <div class="gap-reg-16"></div>
 
                         <!--#region Reviews List-->
                         <div class="col-12">
@@ -381,7 +456,7 @@
                                 Đánh giá
                             </h2>
                         </div>
-                        
+
                         <div class="col-12 lst-review">
                             <div class="review-item">
                                 <div class="col-12 h-title">
@@ -517,17 +592,24 @@
                             </div>
                         </div>
 
-                        <div class="gap-reg-20"></div>
+                        <div class="gap-reg-16"></div>
 
                         <div class="col-12 flex-center">
                             <div class="btn-general">
                                 Xem thêm
                             </div>
                         </div>
+
+                        <div class="gap-reg-16"></div>
                         <!--#endregion-->
                     </div>
+                        
+                        
+                        
                 </div>
                 <!--#endregion-->
+
+                <div class="gap-reg-20 d-xl-none d-lg-none d-md-block d-sm-block d-block"></div>
 
                 <!--#region Partner Info-->
                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 d-detail-rg">
