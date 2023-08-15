@@ -68,7 +68,7 @@
                                         if ($('#google_translate_element').attr('lang') == 'en') {
                                             window.location.reload();
                                         }
-                                    };
+                                    }
                                 }
                             });
                         });
@@ -131,15 +131,25 @@
             if (window.pageYOffset > 0) {
                 $("#header").attr("style", "height: fit-content; box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
                 $("#header-top").attr("style", "height: 0; opacity: 0");
+                $("#btn-go-top").addClass("d-flex");
             }
             else {
                 $("#header").removeAttr("style");
                 $("#header-top").removeAttr("style");
+                $("#btn-go-top").removeClass("d-flex");
             }
         }
     </script>
     <!--#endregion-->
     
+    <!--#region Go to top-->
+    <div id="btn-go-top" class="btn-go-top flex-center">
+        <a href="#" class="flex-center">
+            <img src="assets/images/generals/arrows/arr-back-to-top-left.svg" alt="go-to-top" height="16" width="16" />
+        </a>
+    </div>
+    <!--#endregion-->
+
     <!--#region Body-->
     <div class="body">
         <div class="main-banner">
@@ -1029,8 +1039,8 @@
     </div>
 
     <!--#region PopupCategory-->
-    <div class="cate-container" id="catePopup" onclick="if(event.target == this){closeMenuPopup('#catePopup');}" aria-hidden="false">
-        <div class="cate-wrapper">
+    <div class="p-popup-container" id="catePopup" onclick="if(event.target == this){closeMenuPopup('#catePopup');}" aria-hidden="false">
+        <div class="p-popup-wrapper">
             <h2>Tất cả dịch vụ<span class="float-end" onclick="closeMenuPopup('#catePopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="24" width="24" /></span></h2>
             
             <div class="row detail-lst">

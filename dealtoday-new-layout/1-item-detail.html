@@ -68,7 +68,7 @@
                                         if ($('#google_translate_element').attr('lang') == 'en') {
                                             window.location.reload();
                                         }
-                                    };
+                                    }
                                 }
                             });
                         });
@@ -243,7 +243,7 @@
                                             <img src="assets/images/generals/icon-cachback.svg" alt="" height="32" width="32" />
                                         </div>
                                         <div class="col-10 flex-align-center">
-                                            Hoàn tiền <span class="notranslate">100%</span> nếu Khách hàng không hài lòng
+                                            Hoàn tiền 100% nếu Khách hàng không hài lòng
                                         </div>
                                     </div>
                                 </div>
@@ -281,29 +281,90 @@
                                     Ưu đãi
                                 </span>
                                 <span class="lst-code">
-                                    <span>
-                                        Giảm 5%
-                                    </span>
-                                    <span>
-                                        Giảm 7%
-                                    </span>
+                                    Lấy mã ưu đãi
+                                    <div class="code-info">
+                                        <div class="row flex-align-center">
+                                            <div class="col-8">
+                                                <div class="d-block w-100 title">
+                                                    HEVUI5 - Ưu đãi giảm 5% cho đơn hàng giải trí từ 300K
+                                                </div>
+                                                <div class="d-block w-100 xpr">
+                                                    HSD: 25/12/2023
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="btn-general">
+                                                    Lấy mã
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row flex-align-center">
+                                            <div class="col-8">
+                                                <div class="d-block w-100 title">
+                                                    HEVUI5 - Ưu đãi giảm 5% cho đơn hàng giải trí từ 300K
+                                                </div>
+                                                <div class="d-block w-100 xpr">
+                                                    HSD: 25/12/2023
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="btn-general">
+                                                    Lấy mã
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="sale-code-mb d-xl-none d-lg-none d-md-none d-sm-none d-xs-block d-block" onclick="openPopup('#saleCodePopup')"></span>
                                 </span>
                             </div>
-                            <div class="quantity">
+
+                            <div class="quantity  flex-align-center">
                                 <span class="title">
                                     Số lượng
                                 </span>
-                                <span>
-                                    <span>
-                                        -
-                                    </span>
-                                    <span>
-                                        1
-                                    </span>
-                                    <span>
-                                        +
-                                    </span>
+                                <span class="select-quantity" data-groupid="241">
+                                    <span class="subtract">-</span>
+                                    <span class="quan" data-packid="113277" data-price="216000">0</span>
+                                    <span class="plus">+</span>
                                 </span>
+                                <script>
+                                    $('.select-quantity .plus').click(function () {
+                                    var total = 0;
+                                        var quan = $(this).parent().find('.quan').text();
+                                        if (quan < 20) {
+                                            quan = parseInt(quan) + 1;
+                                            $(this).parent().find('.quan').text(quan);
+                                            $(this).parents('.detail-option').find('.quan').each(function (index, obj) {
+                                                var price = $(obj).data("price");
+                                                var tem_quan = $(obj).text();
+                                                if (tem_quan <= 20) {
+                                                    total += price * parseInt(tem_quan);
+                                                }
+                                            });
+                                        }
+                                        else {
+                                            alert("Bạn mua tối đa 20 sản phẩm. Nếu có nhu cầu mua số lượng lớn vui lòng liên hệ hotline 1900 2065")
+                                        }
+                                    });
+
+
+                                    $('.select-quantity .subtract').click(function () {
+                                        var total = 0;
+                                        var quan = $(this).parent().find('.quan').text();
+                                        if (quan > 0) {
+                                            quan = parseInt(quan) - 1;
+                                            $(this).parent().find('.quan').text(quan);
+                                            $(this).parents('.detail-option').find('.quan').each(function (index, obj) {
+                                                var price = $(obj).data("price");
+                                                var tem_quan = $(obj).text();
+                                                if (tem_quan < 20) {
+                                                    total += price * parseInt(tem_quan);
+                                                }
+                                            });
+                                        }
+                                    });
+                                </script>
                             </div>
                             <div class="xpr-date">
                                 HSD:&nbsp;<b>12/09/2023</b>
@@ -375,7 +436,7 @@
                                     <img src="assets/images/generals/icon-cachback.svg" alt="" height="32" width="32" />
                                 </div>
                                 <div class="col-lg-11 col-md-11 col-sm-11 col-xs-10 col-10 flex-align-center">
-                                    Hoàn tiền <span class="notranslate">100%</span> nếu Khách hàng không hài lòng
+                                    Hoàn tiền 100% nếu Khách hàng không hài lòng
                                 </div>
                             </div>
                         </div>
@@ -1345,6 +1406,59 @@
             </div>
         </div>
     </div>
+    <!--#endregion-->
+
+    <!--#region Popup Sale Code(MB)-->
+    <div class="p-popup-container" id="saleCodePopup" onclick="if(event.target == this){closePopup('#saleCodePopup');}" >
+        <div class="p-popup-wrapper">
+            <h2 class="text-center">Mã giảm giá<span class="float-end" onclick="closePopup('#saleCodePopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="24" width="24" /></span></h2>
+            
+            <div class="mb-s-code flex-align-center">
+                <div class="col-9">
+                    <div class="d-block w-100 title">
+                        <span class="code">HEVUI5</span>&nbsp;-&nbsp;Ưu đãi giảm 5% cho đơn hàng giải trí từ 300K
+                    </div>
+                    <div class="d-block w-100 xpr">
+                        HSD: 25/12/2023
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="btn-general">
+                        Lấy mã
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-s-code flex-align-center">
+                <div class="col-9">
+                    <div class="d-block w-100 title">
+                        <span class="code">HEVUI5</span>&nbsp;-&nbsp;Ưu đãi giảm 5% cho đơn hàng giải trí từ 300K
+                    </div>
+                    <div class="d-block w-100 xpr">
+                        HSD: 25/12/2023
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="btn-general">
+                        Lấy mã
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        function openPopup(popup) {
+            $('body').attr('style', 'overflow: hidden');
+            $(popup).show();
+        }
+
+        function closePopup(popup) {
+            $('body').removeAttr('style');
+            $(popup).hide();
+        }
+    </script>
     <!--#endregion-->
 
     <!--#region script-->
