@@ -1313,20 +1313,20 @@ a {
 /* ---------------------------- */
 /* Customize Sroll-Bar */
 /* Width */
-.filter-wrapper .loc-filter-items::-webkit-scrollbar {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar, .p-popup-wrapper::-webkit-scrollbar {
     width: 3px;
 }
 /* Track */
-.filter-wrapper .loc-filter-items::-webkit-scrollbar-track {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar-track, .p-popup-wrapper::-webkit-scrollbar-track  {
     background: #FAFAFA;
 }
 /* Handle */
-.filter-wrapper .loc-filter-items::-webkit-scrollbar-thumb {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar-thumb, .p-popup-wrapper::-webkit-scrollbar-thumb {
     background: #CDCDCD;
     border-radius: 10px;
 }
 /* Handle on hover */
-.filter-wrapper .loc-filter-items::-webkit-scrollbar-thumb:hover {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar-thumb:hover, .p-popup-wrapper::-webkit-scrollbar-thumb:hover {
     opacity: 0.8;
 }
 /* ---------------------------- */
@@ -1721,7 +1721,7 @@ ul.breadcrumb-nav li a:hover {
 .p-popup-wrapper {
     position: fixed;
     height: fit-content;
-    max-height: 80%;
+    /* max-height: 80%; */
     min-width: 675px;
     max-width: 100%;
     overflow-x: hidden;
@@ -1779,6 +1779,7 @@ ul.breadcrumb-nav li a:hover {
     background-color: #fafafa;
     padding: 16px;
     margin: 0px -12px;
+    z-index: 10;
 }
 
 .p-popup-wrapper h2 span {
@@ -2639,46 +2640,47 @@ body {
 
 
 /* ---------------------------------------------------- */
-.d-detail-rg .slider-gallery {
-    box-shadow: 0px 1px 2px 1px #ddd;
-}
-
-.d-detail-rg .slider-gallery .carousel-indicators {
-    position: inherit;
-    margin-left: 0;
-    width: 100%;
-}
-
-.d-detail-rg .slider-gallery .carousel-indicators li {
-    width: 70px;
-    height: 49px;
-    text-indent: 0;
-    border: none;
-    border-radius: 0;
-    text-align: left;
-    margin: 0;
-    opacity: 0.5;
-    float: left;
-}
-
-.d-detail-rg .slider-gallery .carousel-indicators li.active {
-    opacity: 1;
-}
-
-.d-detail-rg .slider-gallery .carousel-indicators li img {
-    width: 100%;
-}
-
-/* ---------------------------------------------------- */
-
-.d-detail-rg .detail-item-swiper-ctn {
-
-}
-
-.d-detail-rg .detail-item-swiper-ctn .slider-gallery .carousel-inner img {
+.d-detail-rg .main-swiper .swiper-slide img {
     width: 100%;
     height: unset;
     aspect-ratio: 2/1;
+}
+
+.d-detail-rg .mySwiper, .mySwiper2 {
+    overflow: hidden;
+    position: relative;
+}
+
+.d-detail-rg .swiper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.d-detail-rg .swiper-slide {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-detail-rg .mySwiper {
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.d-detail-rg .mySwiper .swiper-slide {
+    opacity: 0.4;
+}
+
+.d-detail-rg .mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.d-detail-rg .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 /* ---------------------------------------------------- */
 

@@ -163,56 +163,58 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
                             <div class="detail-item-swiper-ctn">
-                                <div class="slider-gallery">
-                                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="15000">
-                                        <!--#region Wrapper for slides-->
-                                        <div class="carousel-inner" role="listbox">
-                                            <div class="item active" data-target="#view-image-dialog" data-toggle="modal" data-id="@item.Voucher_gallery_id">
-                                                <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="dealtoday.vn" height="" width="" lazy />
-                                            </div>
+                                <!-- Swiper -->
+                                <div class="swiper mySwiper2 main-swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
                                         </div>
-                                        <!--#endregion-->
-
-                                        <!--#region Indicator-->
-                                        <div class="carousel-indicators">
-                                            <div class="swiper-container ">
-                                                <div class="swiper-wrapper carousel-indicators">
-                                                    <div class="swiper-slide">
-                                                        <a href="#" data-target="#carousel-example-generic" data-slide-to="@Html.Raw(j - 1)" >
-                                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-sup-1.png" alt="dealtoday" height="64" width="128" />
-                                                        </a>
-                                                    </div>
-
-                                                    <div class="swiper-slide">
-                                                        <a href="#" data-target="#carousel-example-generic" data-slide-to="@Html.Raw(j - 1)" >
-                                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-sup-4.png" alt="dealtoday" height="64" width="128" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-
-                                                <!--#region Add Arrows-->
-                                                <div class="swiper-button-next" style="background-image: none">
-                                                    <span class="mdi-hardware-keyboard-arrow-right" style="font-size: 45px; color: #f7941d"></span>
-                                                </div>
-                                                
-                                                <div class="swiper-button-prev" style="background-image: none">
-                                                    <span class="mdi-hardware-keyboard-arrow-left" style="font-size: 45px; color: #f7941d"></span>
-                                                </div>
-                                                <!--#endregion-->
-                                            </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
                                         </div>
-                                        <!--#endregion-->
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+
+                                <div thumbsSlider="" class="swiper mySwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
+                                        </div>
                                     </div>
                                 </div>
+
+                                <!-- Initialize Swiper -->
                                 <script>
-                                    $(function () {
-                                        var mainDealImgSwiper = new Swiper('.slider-gallery .swiper-container', {
-                                            slidesPerView: "auto",
-                                            spaceBetween: 5,
-                                            nextButton: '.swiper-button-next',
-                                            prevButton: '.swiper-button-prev'
-                                        });
-                                    })
+                                    var swiper = new Swiper(".mySwiper", {
+                                                            loop: true,
+                                                            spaceBetween: 10,
+                                                            slidesPerView: 4,
+                                                            freeMode: true,
+                                                            watchSlidesProgress: true,
+                                                            });
+                                                            var swiper2 = new Swiper(".mySwiper2", {
+                                                            loop: true,
+                                                            spaceBetween: 10,
+                                                            navigation: {
+                                                                nextEl: ".swiper-button-next",
+                                                                prevEl: ".swiper-button-prev",
+                                                            },
+                                                            thumbs: {
+                                                                swiper: swiper,
+                                                            },
+                                    });
                                 </script>
                             </div>
 
