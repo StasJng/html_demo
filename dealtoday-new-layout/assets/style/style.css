@@ -2390,7 +2390,7 @@ body {
 
 /* Checkbox Category */
 .cart .category-item-checkbox {
-    padding: 12px 8px;
+    padding: 12px 28px;
     border-bottom: 1px solid #eee;
 }
 
@@ -2401,7 +2401,7 @@ body {
 
 /* Item Detail */
 .cart .item-box {
-    padding: 8px;
+    margin: 16px;
 }
 
 .cart .item-box .txt-info p {
@@ -2426,11 +2426,10 @@ body {
     font-size: 14px;
     color: #333;
     text-align: justify;
-    max-height: 39px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
 
@@ -2533,7 +2532,7 @@ body {
     }
 
     .cart .evoucher .manage-buttons {
-        margin: 20px 0 0 50px;
+        margin: 8px 0 0 50px;
     }
 }
 
@@ -2574,9 +2573,53 @@ body {
 
     .cart .manage-buttons, .cart .evoucher .manage-buttons {
         position: absolute;
-        right: 12px;
+        right: 24px;
         margin-top: -30px;
     }
+}
+
+
+
+
+
+
+
+.cart .cart-about-to-sale {
+	border: 1px solid #F0821B;
+	border-top: 38px solid #F0821B;
+    padding: 12px 0;
+}
+
+.cart .cart-on-sale {
+	border: 1px solid #E8141F;
+	border-top: 38px solid #E8141F;
+    padding: 12px 0;
+}
+
+.cart .sale-countdown {
+	border: 1px solid #cdcdcd;
+	border-top: 1px solid #cdcdcd;
+	position: relative;
+}
+
+.cart .cart-on-sale.countdown .timer-box {
+
+}
+
+.cart .cart-on-sale.countdown .timer-box img {
+    
+}
+
+
+
+
+
+.cart .d-detail-rg .select-quantity {
+    font-size: 18px;
+}
+
+.cart .d-detail-rg .select-quantity .quan {
+    font-size: 16px;
 }
 /* -------------------------------------------------------------------------------------------- */
 
