@@ -2472,6 +2472,50 @@ body {
     color: #F0821B;
 }
 
+.cart .item-box.evoucher .presale-price {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+
+.cart .item-box.evoucher .presale-status {
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    background-color: #E8141F;
+    width: fit-content !important;
+    padding: 2px 3px;
+}
+
+@media(min-width: 1200px) {
+    .cart .item-box.evoucher .presale-status {
+        width: unset !important;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px)  {
+    .cart .item-box.evoucher .presale-status {
+        width: max-content !important;
+        display: flex;
+        margin-left: -2px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px)  {
+    .cart .item-box.evoucher .presale-status {
+        margin-left: 32px;
+    }
+}
+
+@media(max-width: 576px) {
+    .cart .item-box.evoucher .presale-status {
+        width: max-content !important;
+    }
+}
+
+.cart .item-box.evoucher .quant-btn {
+    margin: -8px 0;
+}
 
 .cart .manage-buttons span {
     cursor: pointer;
@@ -2832,6 +2876,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 .d-detail-rg .sale-code, .d-detail-rg .quantity {
     margin: 12px 0;
+    padding: 0;
 }
 
 .d-detail-rg .sale-code .title, .d-detail-rg .quantity .title {
