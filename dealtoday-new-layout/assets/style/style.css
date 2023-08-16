@@ -354,13 +354,25 @@ a {
 .header-bottom .cart-box .item-count {
     position: absolute;
     top: -3px;
-    left: 28px;
+    right: 5px;
     height: 15px;
     width: 15px;
     border-radius: 50px;
     background-color: red;
     color: white;
     font-size: 12px;
+}
+
+@media(max-width: 992px) {
+    .header-bottom .cart-box .item-count {
+        right: -7px;
+    }
+}
+
+@media(max-width: 768px) {
+    .header-bottom .cart-box .item-count {
+        right: -3px;
+    }
 }
 
 .header-bottom .mb-menu-box {
@@ -3529,6 +3541,14 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     display: none;
     cursor: pointer;
+    z-index: 15;
+}
+
+@media(max-width: 768px) {
+    .btn-go-top {
+        bottom: 28px;
+        right: 28px;
+    }
 }
 
 .btn-go-top a {
