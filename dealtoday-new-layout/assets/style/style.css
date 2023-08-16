@@ -463,6 +463,8 @@ a {
     .header-bottom .mb-menu-box {
         display: block;
         margin-top: -26px;
+        height: 38px;
+        width: 38px;
     }
 
     .header-bottom .loc-box {
@@ -861,6 +863,7 @@ a {
 .countdown-container li i span {
     width: 28px;
     height: 25px;
+    position: relative;
 }
 
 .countdown-container li i span {
@@ -876,7 +879,7 @@ a {
 }
 
 .countdown-seperator {
-    width: 2px !important;
+    width: 8px !important;
     height: 28px !important;
     font-style: normal !important;
     background-color: transparent !important;
@@ -3508,5 +3511,50 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     rotate: -90deg;
 }
 
+.days-left::after {
+    position: absolute;
+    content: "Ngày";
+    height: fit-content;
+    width: max-content;
+    background-color: transparent;
+    top: 100%;
+    left: -3px;
+    color: #fff;
+    font-size: 11px;
+}
 
+.hours-left::after {
+    position: absolute;
+    content: "Giờ";
+    height: fit-content;
+    width: max-content;
+    background-color: transparent;
+    top: 100%;
+    left: 2px;
+    color: #fff;
+    font-size: 11px;
+}
 
+.minutes-left::after {
+    position: absolute;
+    content: "Phút";
+    height: fit-content;
+    width: max-content;
+    background-color: transparent;
+    top: 100%;
+    left: -1px;
+    color: #fff;
+    font-size: 11px;
+}
+
+.seconds-left::after {
+    position: absolute;
+    content: "Giây";
+    height: fit-content;
+    width: max-content;
+    background-color: transparent;
+    top: 100%;
+    left: 0;
+    color: #fff;
+    font-size: 11px;
+}
