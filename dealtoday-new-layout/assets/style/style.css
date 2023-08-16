@@ -348,6 +348,19 @@ a {
     padding-right: 13px;
     justify-content: end;
     cursor: pointer;
+    position: relative;
+}
+
+.header-bottom .cart-box .item-count {
+    position: absolute;
+    top: -3px;
+    left: 28px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
 }
 
 .header-bottom .mb-menu-box {
@@ -2422,6 +2435,10 @@ body {
     color: #000;
 }
 
+.cart .category-item-checkbox .txt-cat:hover {
+    color: #F0821B;
+}
+
 /* Item Detail */
 .cart .item-box {
     margin: 16px;
@@ -2524,13 +2541,21 @@ body {
     .cart .item-box.evoucher .presale-status {
         width: max-content !important;
         display: flex;
-        margin-left: -2px;
+        margin-left: -5px;
+    }
+
+    .cart .item-box .txt-info {
+        margin: 0 0 0 5px;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px)  {
     .cart .item-box.evoucher .presale-status {
-        margin-left: 32px;
+        margin-left: 28px;
+    }
+
+    .cart .item-box .txt-info {
+        margin: 0 -25px;
     }
 }
 
@@ -2806,11 +2831,18 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     margin: 0;
 }
 
-.d-detail-rg .list-value-tag .tag-box {
+.d-detail-rg .tag-box {
     font-size: 14px;
     font-weight: 400;
     color: #000;
     padding: 0 5px;
+}
+
+@media(max-width: 992px) {
+    .d-detail-rg .tag-box {
+        width: calc(100% - 32px);
+        margin: 0 auto;
+    }
 }
 
 @media(min-width: 992px) {
@@ -3511,7 +3543,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     rotate: -90deg;
 }
 
-.days-left::after {
+.detail-flash-countdown.show-unit .days-left::after {
     position: absolute;
     content: "Ngày";
     height: fit-content;
@@ -3523,7 +3555,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-size: 11px;
 }
 
-.hours-left::after {
+.detail-flash-countdown.show-unit .hours-left::after {
     position: absolute;
     content: "Giờ";
     height: fit-content;
@@ -3535,7 +3567,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-size: 11px;
 }
 
-.minutes-left::after {
+.detail-flash-countdown.show-unit .minutes-left::after {
     position: absolute;
     content: "Phút";
     height: fit-content;
@@ -3547,7 +3579,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-size: 11px;
 }
 
-.seconds-left::after {
+.detail-flash-countdown.show-unit .seconds-left::after {
     position: absolute;
     content: "Giây";
     height: fit-content;
