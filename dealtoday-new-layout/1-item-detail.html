@@ -170,15 +170,18 @@
                                             <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main-2.png" alt="" height="" width="" lazy />
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main-3.png" alt="" height="" width="" lazy />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main-4.png" alt="" height="" width="" lazy />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main-5.png" alt="" height="" width="" lazy />
                                         </div>
                                     </div>
-
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
                                 </div>
 
                                 <div thumbsSlider="" class="swiper mySwiper">
@@ -187,12 +190,21 @@
                                             <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main-2.png" alt="" height="" width="" lazy />
                                         </div>
                                         <div class="swiper-slide">
-                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main-3.png" alt="" height="" width="" lazy />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main-4.png" alt="" height="" width="" lazy />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main-5.png" alt="" height="" width="" lazy />
                                         </div>
                                     </div>
+
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
                                 </div>
 
                                 <!-- Initialize Swiper -->
@@ -264,6 +276,35 @@
                                 <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
                                 <span class="saled-count">90k+ đã bán</span>
                             </div>
+
+                            <!--#region Countdown Timer-->
+                            <input type="hidden" id="countdowntTime" value="9/9/2023 11:53:32 AM" />
+
+                            <div class="col-12 detail-flash-countdown upcoming">
+                                <div class="countdown-container">
+                                    <ul>
+                                        <li class="time-left"><span>Bắt đầu sau</span></li>
+                                        <li><i><span class="days-left"></span></i></li>
+                                        <li><i><span class="hours-left"></span></i></li>
+                                        <li><i><span class="minutes-left"></span></i></li>
+                                        <li><i><span class="seconds-left"></span></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-12 detail-flash-countdown">
+                                <div class="countdown-container">
+                                    <ul>
+                                        <li class="time-left"><span>Kết thúc trong</span></li>
+                                        <li><i><span class="days-left"></span></i></li>
+                                        <li><i><span class="hours-left"></span></i></li>
+                                        <li><i><span class="minutes-left"></span></i></li>
+                                        <li><i><span class="seconds-left"></span></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--#endregion-->
+
                             <div class="deal-price">
                                 <div class="d-price">
                                     <div class="p-sale">
@@ -275,7 +316,8 @@
                                     </div>
                                 </div>
                                 <div class="vnpay-img">
-                                    <img src="assets/images/demo-imgs/detail-page/img-vnpay-qr.png" alt="" height="100" width="100" />
+                                    <img src="assets/images/demo-imgs/detail-page/vn-pay-frame.png" alt="" height="100" width="100" />
+                                    <img class="qr-code-img" src="assets/images/demo-imgs/detail-page/demo-qr.png" alt="" height="68" width="68" lazy />
                                 </div>
                             </div>
                             <div class="sale-code">
@@ -350,7 +392,6 @@
                                         }
                                     });
 
-
                                     $('.select-quantity .subtract').click(function () {
                                         var total = 0;
                                         var quan = $(this).parent().find('.quan').text();
@@ -368,6 +409,11 @@
                                     });
                                 </script>
                             </div>
+
+                            <div class="err-msg">
+                                Giá ưu đãi chỉ áp dụng với số lượng deal nhất định
+                            </div>
+
                             <div class="xpr-date">
                                 HSD:&nbsp;<b>12/09/2023</b>
                             </div>
@@ -385,6 +431,12 @@
                                         Thêm và giỏ hàng
                                     </span>
                                 </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="btn-general grey-disabled w-100">
+                                    Ngừng bán
+                                </div>
+                                <div class="gap-reg-12"></div>
                             </div>
                             <div class="col-12 bounus-point">
                                     <span>
@@ -1493,6 +1545,74 @@
             );
         };
     </script>
+<script>
+    (function () {
+        var stopDay = document.getElementById("countdowntTime").value;
+
+        const second = 1000,
+              minute = second * 60,
+              hour = minute * 60,
+              day = hour * 24;
+            
+        const countDown = new Date(stopDay).getTime(),
+        x = setInterval(function () {
+            const now = new Date().getTime(),
+            distance = countDown - now;
+
+            if (now > countDown) {
+                $(".days-left").each(function() {
+                    $(this).html("00");
+                });
+
+                $(".hours-left").each(function() {
+                    $(this).html("00");
+                });
+
+                $(".minutes-left").each(function() {
+                    $(this).html("00");
+                });
+
+                $(".seconds-left").each(function() {
+                    $(this).html("00");
+                });
+            }
+            else {
+                if (Math.floor(distance % (day)) < 10) {
+                    $(".days-left").html("0" + Math.floor(distance / (day)));
+                }
+                else {
+                    $(".days-left").html(Math.floor(distance / (day)));
+                }
+
+                if (Math.floor((distance % (day)) / (hour)) < 10) {
+                    $(".hours-left").html("0" + Math.floor((distance % (day)) / (hour)));
+                }
+                else {
+                    $(".hours-left").html(Math.floor((distance % (day)) / (hour)));
+                }
+
+                if (Math.floor((distance % (hour)) / (minute)) < 10) {
+                    $(".minutes-left").html("0" + Math.floor((distance % (hour)) / (minute)));
+                }
+                else {
+                    $(".minutes-left").html(Math.floor((distance % (hour)) / (minute)));
+                }
+
+                if (Math.floor((distance % (minute)) / second) < 10) {
+                    $(".seconds-left").html("0" + Math.floor((distance % (minute)) / second));
+                }
+                else {
+                    $(".seconds-left").html(Math.floor((distance % (minute)) / second));
+                }
+            }
+
+            if (distance < 0) {
+                $("#countdown-zone").addClass("d-none");
+                clearInterval(x);
+            }
+        }, 0)
+    }()); 
+</script>
     <!--#endregion-->
 </body>
 </html>

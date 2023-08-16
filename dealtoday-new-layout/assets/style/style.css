@@ -171,14 +171,21 @@ a {
     color:#fff;
 }
 
+.btn-general.grey-disabled {
+    background-color: #E0E0E0;
+    border-color: #E0E0E0;
+    color: #fff;
+    pointer-events: none;
+}
+
 .btn-general.round {
     border-radius: 50px;
 }
 
-.btn-general:hover {
+/* .btn-general:hover {
     background-color: #F6911E;
     color:#fff;
-}
+} */
 
 @media(max-width: 768px) {
     .contanier-mb-padding {
@@ -198,6 +205,18 @@ a {
 
 .pad-r-0 {
     padding-right: 0 !important;
+}
+
+.err-msg {
+	font-size: 16px;
+	font-weight: 400;
+	color: #E8141F;
+} 
+
+@media(max-width: 768px) {
+    .err-msg {
+        font-size: 14px;
+    } 
 }
 /* -------------------------------------------------------------------------------------------- */
 
@@ -2406,7 +2425,7 @@ body {
 }
 
 .cart .item-box .txt-info p {
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 
 .cart .item-box .txt-info .title {
@@ -2414,7 +2433,6 @@ body {
     font-size: 16px;
     font-weight: 600;
     line-height: 20px;
-    text-align: justify;
     max-height: 38px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -2426,7 +2444,6 @@ body {
 .cart .item-box .txt-info .desc {
     font-size: 14px;
     color: #333;
-    text-align: justify;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -2449,6 +2466,13 @@ body {
 .cart .item-box .price-info {
     font-size: 16px;
     font-weight: 500;
+}
+
+@media(max-width: 576px) {
+    .cart .item-box .item-img img {
+        width: 68px;
+        height: 68px;
+    }
 }
 
 /* Commit Payment */
@@ -2579,15 +2603,9 @@ body {
     }
 }
 
-
-
-
-
-
-
 .cart .cart-about-to-sale {
-	border: 1px solid #F0821B;
-	border-top: 38px solid #F0821B;
+	border: 1px solid #fff;
+	border-top: 38px solid #fff;
     padding: 12px 0;
 }
 
@@ -2603,18 +2621,6 @@ body {
 	position: relative;
 }
 
-.cart .cart-on-sale.countdown .timer-box {
-
-}
-
-.cart .cart-on-sale.countdown .timer-box img {
-    
-}
-
-
-
-
-
 .cart .d-detail-rg .select-quantity {
     font-size: 18px;
 }
@@ -2622,6 +2628,49 @@ body {
 .cart .d-detail-rg .select-quantity .quan {
     font-size: 16px;
 }
+
+.cart .detail-flash-countdown .countdown-container {
+    margin: 12px 0;
+    background-color: transparent;
+    margin-top: -55px;
+}
+
+.cart .detail-flash-countdown .countdown-container {
+    background-position: left 0 center;
+    background-size: 95px 20px;
+}
+
+.cart .detail-flash-countdown.upcoming .countdown-container {
+    background-position: left 0 center;
+    background-image: url(../images/generals/icon-flashsale-detail-upcoming.png);
+    margin-bottom: 0;
+}
+    
+.cart .detail-flash-countdown.upcoming .countdown-container .time-left {
+	color: #F6911E;
+}
+
+.cart .detail-flash-countdown .countdown-container li i span {
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    padding-top: 2px;
+}
+
+.cart .detail-flash-countdown.upcoming .countdown-container li i span {
+	background-color: #F6911E;
+}
+
+.cart .detail-flash-countdown .countdown-container {
+    padding: 24px 0;
+}
+    
+.cart .detail-flash-countdown .countdown-container ul {
+    float: left;
+    margin-top: -12px;
+    margin-left: 95px;
+}
+
 /* -------------------------------------------------------------------------------------------- */
 
 
@@ -2636,8 +2685,6 @@ body {
     padding: 16px;
     height: fit-content;
 }
-
-
 
 /* ---------------------------------------------------- */
 .d-detail-rg .main-swiper .swiper-slide img {
@@ -2679,13 +2726,11 @@ body {
 .d-detail-rg .swiper-slide img {
     display: block;
     width: 100%;
-    height: 100%;
+    height: unset;
     object-fit: cover;
+    aspect-ratio: 2/1;
 }
 /* ---------------------------------------------------- */
-
-
-
 
 .d-detail-rg.general-info .raw-content-rg, .d-detail-rg.terms-of-use .raw-content-rg {
     max-height: 242px;
@@ -2763,9 +2808,6 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 400;
     color: #000;
     padding: 0 5px;
-}
-
-.d-detail-rg .list-value-tag .tag-box img {
 }
 
 @media(min-width: 992px) {
@@ -2916,7 +2958,13 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     height: 100%;
     position: absolute;
     right: 0;
-    top: 5px;
+    top: 5px;   
+}
+
+.d-detail-rg .deal-price .vnpay-img .qr-code-img {
+    position: absolute;
+    top: 16px;
+    left: 16px;
 }
 
 .d-detail-rg .sale-code, .d-detail-rg .quantity {
@@ -2992,12 +3040,94 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     background-color: transparent;
 }
 
-
-.d-detail-rg .sale-code .lst-code .code-info .row .col-8 {
+.d-detail-rg .detail-flash-countdown .countdown-container {
+    margin: 12px 0;
+    background-color: #E8141F;
 }
 
-.d-detail-rg .sale-code .lst-code .code-info .row .col-4 {
+.d-detail-rg .detail-flash-countdown.upcoming .countdown-container {
+    margin: 12px 0;
+    background-color: #fff;
 }
+
+.d-detail-rg .detail-flash-countdown .countdown-container {
+    background-position: left 12px center;
+}
+
+.d-detail-rg .detail-flash-countdown.upcoming .countdown-container {
+    background-position: left 0 center;
+}
+
+.d-detail-rg .detail-flash-countdown.upcoming .countdown-container {
+    background-image: url(../images/generals/icon-flashsale-detail-upcoming.png);
+}
+    
+.d-detail-rg .detail-flash-countdown.upcoming .countdown-container .time-left {
+	color: #F6911E;
+}
+
+.d-detail-rg .detail-flash-countdown .countdown-container li i span {
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    padding-top: 2px;
+}
+
+.d-detail-rg .detail-flash-countdown.upcoming .countdown-container li i span {
+	background-color: #F6911E;
+}
+
+.d-detail-rg .detail-flash-countdown .countdown-container ul {
+    padding-left: 32px
+}
+
+.d-detail-rg .detail-flash-countdown.upcoming .countdown-container ul {
+    padding-left: 45px
+}
+
+@media(max-width: 992px) {
+	.d-detail-rg .detail-flash-countdown .countdown-container {
+        padding: 24px 0;
+    }
+        
+    .d-detail-rg .detail-flash-countdown .countdown-container ul {
+        float: right;
+        margin-top: -12px;
+        margin-right: 8px;
+    }
+}
+
+@media(max-width: 576px) {
+	.d-detail-rg .detail-flash-countdown .countdown-container {
+        background-size: 95px 20px;
+    }
+}
+
+.d-detail-rg .d-detail-info img {
+    width: 100%;
+    height: unset;
+    aspect-ratio: 2/1;
+}
+
+.d-detail-rg .swiper-button-next, .d-detail-rg .swiper-button-prev {
+    top: 0;
+    width: 60px;
+    height: 100%;
+    margin-top: 0;
+    background-color: #fff;
+    background-size: 27px 44px;
+}
+
+.d-detail-rg .swiper-button-prev {
+    margin-left: -10px;
+    background-image: url(../images/generals/arrows/arr-swiper-prev.svg);
+}
+
+.d-detail-rg .swiper-button-next {
+    margin-right: -10px;
+    background-image: url(../images//generals/arrows/arr-swiper-next.svg);
+}
+
 /* ----------------------------- */
 
 
@@ -3005,11 +3135,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-size: 16px;
     font-weight: 500;
     color: #000;
-    margin-bottom: 12px;
-}
-
-.d-detail-rg .bounus-point {
-
+    margin: 12px 0;
 }
 
 .d-detail-rg h2 {
@@ -3262,18 +3388,10 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     color: #000;
 }
 
-.d-detail-rg .result-fil {
-
-}
-
 .d-detail-rg .result-fil .sort-txt {
     font-size: 13px;
     font-weight: 400;
     color: #000;
-}
-
-.d-detail-rg .result-fil .sort-by {
-
 }
 
 .d-detail-rg .result-fil .sort-by span+span::before {
@@ -3313,30 +3431,6 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 
 
-.btn-go-top {
-    border-radius: 50px;
-    background-color: #fff;
-    position: fixed;
-    bottom: 50px;
-    height: 50px;
-    right: 35px;
-    width: 50px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    display: none;
-    cursor: pointer;
-}
-
-.btn-go-top a {
-    display: grid;
-    height: 100%;
-    width: 100%;
-}
-
-.btn-go-top a img {
-    height: 16px;
-    width: 16px;
-    rotate: -90deg;
-}
 
 
 /* -------------------------------------------------------------------------------------------- */
@@ -3389,7 +3483,30 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 /* -------------------------------------------------------------------------------------------- */
 
 
+.btn-go-top {
+    border-radius: 50px;
+    background-color: #fff;
+    position: fixed;
+    bottom: 50px;
+    height: 50px;
+    right: 35px;
+    width: 50px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    display: none;
+    cursor: pointer;
+}
 
+.btn-go-top a {
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+.btn-go-top a img {
+    height: 16px;
+    width: 16px;
+    rotate: -90deg;
+}
 
 
 
