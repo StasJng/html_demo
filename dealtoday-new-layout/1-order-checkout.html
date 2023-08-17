@@ -39,116 +39,96 @@
 
 <body>
     <!--#region Header-->
-    <div class="header" id="header">
-        <div class="container p-sm-0 p-xs-0">
-            <div id="header-top" class="row header-top flex-align-center">
-                <div class="col-4 hot-line">
-                    <img src="assets/images/header/icon-phone.svg" alt="" height="20" width="20" />
-                    <a href="tel:19002065">19002065</a>
-                    <a href="tel:0934661016"class="d-lg-flex d-md-flex d-sm-none d-none">&nbsp;-&nbsp;0934.661.016</a>
-                </div>
-                <div class="col-8 flex-align-center header-r">
-                    <div class="h-notify flex-align-center">
-                        <span><img src="assets/images/header/icon-bell-orange.svg" alt="" height="20" width="20" /></span><span class="txt-noti">&nbsp;&nbsp;Thông báo</span>
-                    </div>
-                    <div class="h-translate">
-                        <div id="google_translate_element" onclick="goTrans(this.id)"></div>
-                    </div>
-                    <!--#region Using Google Translate-->
-                    <script>
-                        $(document).ready(function () {
-                            $('html').attr('lang', 'vn');
-                        });
-                
-                        var element = document.querySelector('html');
-                        var observer = new MutationObserver(function (mutations) {
-                            mutations.forEach(function (mutation) {
-                                if (mutation.type === "attributes") {
-                                    if ($('html').attr('lang') == 'en') {
-                                        $('.goog-te-combo').attr('style', 'background: url(https://www.dealtoday.vn/asset/images/ecode/flag-en-egift.png) no-repeat; background-position: left 10px center; background-color: white;');
-                                    }
-                                    else if ($('html').attr('lang') == 'vi') {
-                                        //$('.goog-te-combo').attr('style', 'background: url(https://www.dealtoday.vn/AssetBooking/Images/flag_vn.jpg) no-repeat; background-position: left 10px center; background-color: white;');
-                                        if ($('#google_translate_element').attr('lang') == 'en') {
-                                            window.location.reload();
-                                        }
-                                    }
-                                }
-                            });
-                        });
-                
-                        observer.observe(element, {
-                            attributes: true //configure it to listen to attribute changes
-                        });
-                
-                        function goTrans(id) {
-                            $('.goog-te-combo option').each(function () {
-                                // if($(this).html() == "Select Language") {
-                                //     $(this).remove();
-                                // }
-                            });
-                
-                            $('#google_translate_element').attr('lang', $('html').attr('lang'));
-                        };
-                    </script>
-                    <!--#endregion-->
-                    <div class="h-auth">
-                        <div class="btn-general round">
-                            Đăng nhập/ Đăng ký
-                        </div>
+    <div class="header-payment" id="header-payment">
+        <div class="container">
+            <div class="row h-content">
+                <div class="col-6 p-0">
+                    <div class="h-logo pay flex-center">
+                        <a href="/">
+                            <img src="assets/images/header/logo.png" alt="" />
+                        </a>
+                        <div class="bor"> </div>
+                        <div class="pay-title" onclick="openPopup('#popup-location');">Thanh toán</div>
                     </div>
                 </div>
-            </div>
-            <div class="header-bottom flex-align-center">
-                <div class="header-logo">
-                    <a href="#">
-                        <img src="assets/images/header/logo.png" alt="" height="40" width="200" />
-                    </a>
-                </div>
-                <div class="loc-box">
-                    <select class="dropdown">
-                        <option value="001">Hà Nội</option>
-                        <option value="002">Đà Nẵng</option>
-                        <option value="003">Sài Gòn</option>
-                    </select>
-                </div>
-                <div class="srch-box">
-                    <input type="text" placeholder="Tìm kiếm theo nhu cầu của bạn" />
-                    <button class="btn-general orange">
-                        <img src="assets/images/header/icon-search-white.svg" alt="" height="20" width="20" />
-                    </button>
-                </div>
-                <div class="cart-box">
-                    <img src="assets/images/header/icon-cart-orange.svg" alt="" width="24" height="24" />
-                </div>
-                <div class="mb-menu-box">
-                    <img src="assets/images/header/icon-mb-menu.svg" alt="" height="26" width="26" />
+                <div class="col-6 p-0 hot-line">
+                    <div class="wrap flex-align-center">
+                        <img src="assets/images/header/icon-phone.svg" alt="" />
+                        <a href="tel:19002065">19002065</a>
+                        <a href="tel:0934661016" class="d-lg-flex d-md-flex d-sm-none d-none">&nbsp;-&nbsp;0934.661.016</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!--#region Popup Location-->
+    <div class="p-popup-container popup-location" id="popup-location" onclick="if(event.target == this){closePopup('#popup-location');}" aria-hidden="true">
+        <div class="p-popup-wrapper">
+            <div class="row">
+                <div class="col-12 p-locs-tiltle">
+                    Chọn địa điểm
+                    <img src="assets/images/popup/close-icon-black.svg" alt="" height="20" width="20" onclick="closePopup('#popup-location');"/>
+                </div>
+
+                <div class="gap-reg-16"></div>
+
+                <div class="col-12 p-locs-desc">
+                    Hãy chọn tỉnh thành của bạn. Bạn có thể thay đổi tỉnh thành tại đầu trang.
+                </div>
+
+                <div class="gap-reg-16"></div>
+
+                <div class="col-12 p-locs-select">
+                    <select>
+                        <option>Toàn quốc</option>
+                        <option>Hà Nội</option>
+                        <option>Sài Gòn</option>
+                        <option>Đà Nẵng</option>
+                    </select>                    
+                </div>
+
+                <div class="gap-reg-16"></div>
+
+                <div class="col-12">
+                    <div class="btn-general orange w-100">
+                        Tiếp tục
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+    
     <script>
         window.onscroll = function () { myFunction() };
 
         function myFunction() {
             if (window.pageYOffset > 0) {
-                $("#header").attr("style", "height: fit-content; box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
-                $("#header-top").attr("style", "height: 0; opacity: 0");
+                $("#header-payment").attr("style", "height: fit-content; box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
             }
             else {
-                $("#header").removeAttr("style");
-                $("#header-top").removeAttr("style");
+                $("#header-payment").removeAttr("style");
             }
+        }
+
+        function openPopup(popup) {
+            $('body').attr('style', 'overflow: hidden');
+            $(popup).show().attr("aria-hidden", "false");
+        }
+
+        function closePopup(popup) {
+            $('body').removeAttr('style');
+            $(popup).hide().attr("aria-hidden", "true");
         }
     </script>
     <!--#endregion-->
     
     <!--#region Body-->
-    <div class="body">
+    <div class="body order">
         <div class="container">
             <div class="row">
-                <div class="gap-reg-40"></div>
+                <div class="gap-reg-20"></div>
 
                 <!--#region Checkout-->
                 <div class="col-12 checkout-rg p-sm-0 p-xs-0">
@@ -278,14 +258,14 @@
                                         <div class="col-xl-12 col-lg-12 col-md-4 col-sm-6 col-xs-8 col-7">
                                             <div class="row">
                                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 col-6 info-btn">
-                                                    <div class="btn-cancel">
+                                                    <div class="btn-cancel" onclick="openPopup('#popup-checkout-warning')">
                                                         <div>
                                                             Hủy
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 col-6">
-                                                    <div class="btn-confirm" onclick="openMenuPopup('#warning')">
+                                                    <div class="btn-confirm">
                                                         <div>
                                                             Xác nhận
                                                         </div>
@@ -502,7 +482,7 @@
                 </div>
                 <!--#endregion-->
 
-                <div class="gap-reg-40"></div>
+                <div class="gap-reg-20"></div>
             </div>
         </div>
     </div>
@@ -694,84 +674,6 @@
                     <div class="footer-borderline"></div>
                 </div>
                 <!--#endregion-->
-                
-                <!--#region Description-->
-                <div class="col-12">
-                    <div class="txt-title">
-                        Dealtoday.vn - Nhà cung cấp Hotdeal ưu đãi nhất Hà Nội
-                    </div>
-
-                    <div class="txt-desc">
-                        Dealtoday.vn là sàn thương mại điện tử với mạng lưới hơn 1000 đối tác rộng khắp toàn quốc, chuyên cung cấp khuyến mại hot trong lĩnh vực dịch vụ (nhà hàng - ẩm thực, du lịch – khách sạn, sức khỏe – làm đẹp, vui chơi giải trí)
-
-                        Tải ứng dụng Dealtoday trên điện thoại để luôn được cập nhật các deal/voucher hấp dẫn nhất, ở gần bạn nhất đồng thời biến việc mua sắm trở nên dễ dàng, thú vị và tiết kiệm hơn bao giờ hết.
-
-                        Dealtoday.vn – Sàn thương mại điện tử cung cấp giá trị niềm tin, luôn bảo vệ quyền lợi người mua voucher khuyến mãi
-
-                        Dealtoday cung cấp lợi ích cho khách hàng dưới hình thức deal hot/voucher giảm giá. Mỗi Deal/Voucher khuyến mãi đối tác phát hành đều được kiểm duyệt lại theo quy trình chặt chẽ của Dealtoday.
-                        Không có Deal/voucher nâng giá để khuyến mãi. Dealtoday cam kết mỗi khuyến mại được phát hành đều là Deal thật với khuyến mại thật. Giá dịch vụ khi mua tại Dealtoday luôn luôn thấp hơn tại điểm bán trực tiếp và thấp nhất trên thị trường hot deal Hà Nội/hot deal HCM.
-
-                        Dealtoday luôn tập trung vào các đối tác/nhà phát hành deal uy tín, chuyên nghiệp và có rất nhiều đối tác là những thương hiệu lớn trong các lĩnh vực ẩm thực, du lịch – khách sạn.
-
-                        Đặc biệt, khách hàng có quyền yêu cầu hoàn tiền trong vòng 3 ngày nếu các nhà cung cấp không đáp ứng đúng thông tin khi mua voucher. Đội ngũ hỗ trợ của Dealtoday sẵn sàng chờ đợi để giải đáp những thắc mắc của người dùng dịch vụ. Dealtoday luôn cố gắng mang lại những trải nghiệm tốt nhất cho mỗi khách hàng
-                        
-                        Nhận khuyến mãi nhiều hơn khi là thành viên của sàn thương mại điện tử Dealtoday.vn
-
-                        Khi là thành viên của Dealtoday.vn, người mua có cơ hội tiết kiệm thêm mỗi ngày nhờ quy chế Cộng điểm. Khách hàng có thể được tích lũy từ 5-30% khi mua sắm tại các điểm ưu đãi tại Hà Nội, TP.HCM và các tỉnh thành khác trên toàn quốc.
-
-                        Khách hàng cũng dễ dàng chuyển nhượng, tặng điểm tích lũy, tặng deal/voucher cho bạn bè, người thân cùng là thành viên của Dealtoday.vn mà không cần để ý tới việc các hot deals/voucher đó ở Hà Nội hay TP.HCM.
-
-                        Là thành viên của Dealtoday.vn, khách hàng cũng đồng thời trở thành VIP của các thương hiệu lớn trên toàn quốc.
-
-                        Dealtoday.vn – LUÔN ƯU ĐÃI
-
-                        Với sứ mệnh là một sàn thương mại điện tử chuyên cung cấp voucher/hot deal trên toàn quốc, Dealtoday.vn luôn nỗ lực để mang lại những giá trị tuyệt vời hơn cho khách hàng. Có Dealtoday.vn, khách hàng không còn cần xếp hàng dài chờ đợi khuyến mại như những cách thức mua hàng truyền thống.
-
-                        Chỉ cần một click chuột và xác nhận, ngay lập tức khuyến mại sẽ được gửi về điện thoại/email. Việc tiếp theo chỉ là sử dụng quyền lợi ưu đãi và tiết kiệm thêm được một khoản đáng kể mỗi lần mua sắm.
-
-                        Trở thành thành viên của Dealtoday ngay hôm nay và tận hưởng niềm vui mua sắm mỗi ngày!
-                    </div>
-
-                    <div class="footer-borderline"></div>
-                </div>
-                <!--#endregion-->
-                
-                <!--#region Category-->
-                <div class="col-12">
-                    <div class="txt-title">
-                        Danh mục
-                    </div>
-                </div>
-                <div class="col-12 footer-tags-reg">
-                    <div class="txt-tag">
-                        <div class="txt-title">
-                            Dealtoday.vn 
-                        </div>
-                        <div class="txt-desc">
-                            Dealtoday.vn là sàn thương mại điện tử 
-                        </div>
-                    </div>
-                    <div class="txt-tag">
-                        <div class="txt-title">
-                            Dealtoday.vn là sàn thương mại điện tử với mạng lưới hơn 1000 đối tác rộng khắp toàn quốc, chuyên cung cấp khuyến mại hot trong lĩnh vực dịch vụ (nhà hàng - ẩm thực, du lịch – khách sạn, sức khỏe – làm đẹp, vui chơi giải trí)
-                        </div>
-                        <div class="txt-desc">
-                            Dealtoday.vn là sàn thương mại điện tử 
-                        </div>
-                    </div>
-                    <div class="txt-tag">
-                        <div class="txt-title">
-                            Dealtoday.vn là sàn thương mại điện tử với mạng lưới hơn 1000 đối tác rộng khắp toàn quốc, chuyên cung cấp khuyến mại hot trong lĩnh vực dịch vụ (nhà hàng - ẩm thực, du lịch – khách sạn, sức khỏe – làm đẹp, vui chơi giải trí)
-                        </div>
-                        <div class="txt-desc">
-                            Dealtoday.vn 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="footer-borderline"></div>
-                </div>
-                <!--#endregion-->
             
                 <!--#region Copyright-->
                 <div class="col-12">
@@ -810,6 +712,91 @@
             }
         }
    </script>
+    <!--#endregion-->
+
+    <!--#region Mobile menu-->
+    <div class="mb-menu-container" id="mb-menu" onclick="if(event.target == this){closePopup('#mb-menu');}" aria-hidden="true">
+        <div class="mb-menu-wrapper">
+            <div class="item-lst row">
+                <div class="col-12 flex-align-center">
+                    <span><img src="assets/images/header/logo.png" alt="" height="26" width="130" /></span>
+                    <span class="close-icon"><img src="assets/images/popup/close-icon-black.svg" alt="" height="20" width="20" onclick="closePopup('#mb-menu');"></span>
+                </div>
+                <div class="slim-border"></div>
+                <div class="col-12 flex-align-center">
+                    <span><img src="assets/images/popup/mb-menu/icon-mb-menu-user.svg" alt="" height="20" width="20" /></span>
+                    <span class="f-heavy">Đăng ký/ Đăng nhập</span>
+                </div>
+            </div>
+            <div class="bold-border"></div>
+            <div class="item-lst row">
+                <div class="col-12 flex-align-center">
+                    <span><img src="assets/images/popup/mb-menu/icon-mb-menu-evoucher.svg" alt="" height="20" width="20" /></span>
+                    <span class="f-heavy">E-Voucher</span>
+                </div>
+                <div class="slim-border"></div>
+                <div class="col-12 flex-align-center">
+                    <span><img src="assets/images/popup/mb-menu/icon-mb-menu-egift.svg" alt="" height="20" width="20" /></span>
+                    <span class="f-heavy">E-Gift</span>
+                </div>
+                <div class="slim-border"></div>
+                <div class="col-12 flex-align-center">
+                    <span><img src="assets/images/popup/mb-menu/icon-mb-menu-eticket.svg" alt="" height="20" width="20" /></span>
+                    <span class="f-heavy">E-Ticket</span>
+                </div>
+            </div>
+            <div class="bold-border"></div>
+            <div class="item-lst row">
+                <div class="col-12 flex-align-center">
+                    <span><img src="assets/images/header/icon-bell-orange.svg" alt="" height="18" width="18" /></span>
+                    <span>Thông báo</span>
+                </div>
+                <div class="slim-border"></div>
+                <div class="col-12 flex-align-center">
+                    <span><img src="assets/images/popup/mb-menu/icon-mb-menu-translate.svg" alt="" height="20" width="20" /></span>
+                    <span>Ngôn ngữ</span>
+                    <div class="d-inline-block mb-menu-translate-box">
+                        <div class="h-translate">
+                            <div id="google_translate_element-mb" onclick="goTrans(this.id)"></div>
+                        </div>
+                        <script type="text/javascript">
+                            var width = $(window).width();
+
+                            if(width <= 768) {
+                                function googleTranslateElementInit() {
+                                    new google.translate.TranslateElement({
+                                        pageLanguage: 'vi',
+                                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                                        autoDisplay: false,
+                                        includedLanguages: 'en,vi',
+                                        gaTrack: true,
+                                        gaId: 'AIzaSyAuk_NhmtJvsJXMB9PAy-jCSGv5sVhhxvM'
+                                    }, 'google_translate_element-mb');
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="slim-border"></div>
+                <div class="col-12 flex-align-center">
+                    <span><img src="assets/images/header/icon-phone.svg" alt="" height="18" width="18" /></span>
+                    <span class="f-heavy"><a href="tel:19002065">1900 2065 - 0934.661.016</a></span>
+                </div>
+            </div>
+            <div class="bold-border"></div>
+            <div class="btn-general round w-100">
+                Đăng xuất
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
+    <!--#region Popup Warning-->
+    <div class="p-popup-container popup-checkout-warning" id="popup-checkout-warning" onclick="if(event.target == this){closePopup('#popup-checkout-warning');}" aria-hidden="true">
+        <div class="p-popup-wrapper">
+            Tài khoản vanannguyen@gmail.com đã tồn tại trên hệ thống. Vui lòng đăng nhập để thuận tiện trong quá trình thanh toán
+        </div>
+    </div>
     <!--#endregion-->
 </body>
 </html>
