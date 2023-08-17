@@ -243,7 +243,7 @@
                                                 <span class="dealtoday-checkbox">
                                                     <input type="checkbox" id="p-loc-3" locid="3" onchange="">
                                                     <label for="p-loc-3">
-                                                        Đà Nẵng
+                                                        <span class="txt-keyword-p">Đà Nẵng</span>
                                                     </label>
                                                 </span>
                                             </a>
@@ -1016,13 +1016,13 @@
     </div>
     <!--#endregion-->
 
-    <!--#region Popup Sale Code(MB)-->
-    <div class="p-popup-container" id="filterPopup" onclick="if(event.target == this){closePopup('#filterPopup');}" >
-        <div class="p-popup-wrapper h-100">
+    <!--#region Popup Filter(MB)-->
+    <div class="p-popup-container" id="filterPopup" onclick="if(event.target == this){closePopup('#filterPopup');}">
+        <div class="p-popup-wrapper h-100 top-0">
             <h2 class="text-center">Bộ lọc<span class="float-end" onclick="closePopup('#filterPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="24" width="24" /></span></h2>
-            
+
             <div class="filter-wrapper">
-                <div class="filter-container">
+                <div class="filter-container pad-l-0 pad-r-0">
                     <!--#region Địa điểm(contains 2-lvl Searchbox)-->
                     <p class="drop-filter-title">Địa điểm</p>
 
@@ -1041,16 +1041,16 @@
                                 </span>
                             </a>
                             <ul class="dropdown-menu">
-                            <li>
-                                <a class="txt-info">
-                                    <span class="dealtoday-checkbox">
-                                        <input type="checkbox" id="c-loc-4-1" locid="4" parentid="1" class="dealtoday-checkbox-chil" onchange="" />
-                                        <label for="c-loc-4-1">
-                                            <span class="txt-keyword">Hoàn Kiếm </span>
-                                        </label>
-                                    </span>
-                                </a>
-                            </li>
+                                <li>
+                                    <a class="txt-info">
+                                        <span class="dealtoday-checkbox">
+                                            <input type="checkbox" id="c-loc-4-1" locid="4" parentid="1" class="dealtoday-checkbox-chil" onchange="" />
+                                            <label for="c-loc-4-1">
+                                                <span class="txt-keyword">Hoàn Kiếm </span>
+                                            </label>
+                                        </span>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
@@ -1102,9 +1102,7 @@
                             <a data-toggle="dropdown" class="non-drop">
                                 <span class="dealtoday-checkbox">
                                     <input type="checkbox" id="p-loc-3" locid="3" onchange="">
-                                    <label for="p-loc-3">
-                                        Đà Nẵng
-                                    </label>
+                                    <label for="p-loc-3" class="txt-keyword-p">&nbsp;&nbsp;Đà Nẵng</label>
                                 </span>
                             </a>
                             <ul class="dropdown-menu"></ul>
@@ -1407,6 +1405,23 @@
 
                     </ul>
                     <!--#endregion-->
+
+                    <div class="gap-reg-20"></div>
+                </div>
+            </div>
+
+            <div class="filter-wrapper btn-filter p-0 flex-center">
+                <div class="row w-100">
+                    <div class="col-6 pad-l-0">
+                        <div class="btn-general w-100">
+                            Đặt lại
+                        </div>
+                    </div>
+                    <div class="col-6 pad-r-0">
+                        <div class="btn-general orange w-100">
+                            Áp dụng
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

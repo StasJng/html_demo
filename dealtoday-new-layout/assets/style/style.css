@@ -678,6 +678,7 @@ a {
 @media(max-width: 768px) {
     .body {
         margin-top: 86px;
+        overflow-x: hidden;
     }
 }
 
@@ -1436,6 +1437,7 @@ a {
     border-radius: 10px;
     background-color: #fff;
     padding: 12px 8px;
+    position: relative;
     /* height: max-content; */
 }
 
@@ -1454,6 +1456,17 @@ a {
     font-size: 16px;
     font-weight: 500;
     color: #000;
+}
+
+.filter-wrapper.btn-filter {
+    border-top: 2px solid #eee;
+    border-radius: 0;
+    position: sticky;
+    bottom: -12px;
+    z-index: 20;
+    background-color: #fafafa;
+    margin: -24px auto;
+    padding: 12px 0 16px 0!important;
 }
 
 .filter-wrapper .border-div {
@@ -3893,7 +3906,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     min-height: 100%;
     overflow: auto;
     overflow-x: hidden;
-    max-width: 450px; /*Max-width of popup can be changed*/
+    /* max-width: 450px; Max-width of popup can be changed */
     width: 80%; /*Width of popup*/
     left: 40%;
     bottom: 0;
