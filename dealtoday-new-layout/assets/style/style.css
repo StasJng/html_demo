@@ -1392,6 +1392,7 @@ a {
     height: 20px;
     border-radius: 15px;
     background-color: #fddebc;
+    overflow: hidden;
 }
 
 .count-bar {
@@ -2647,6 +2648,10 @@ body {
     background-color: #fff;
     border-radius: 12px;
     padding: 0;
+}
+
+.cart .lst-items.blur .item-box, .cart .lst-items.blur > .dealtoday-checkbox {
+    opacity: 0.5;
 }
 
 /* Checkbox Category */

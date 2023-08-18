@@ -1646,21 +1646,21 @@
 
 .trans-content .trans-failed {
 	font-weight: 400;
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 18px;
 	color: #E8141F;
 }
 
 .trans-content .trans-success {
 	font-weight: 400;
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 18px;
 	color: #00B138;
 }
 
 .trans-content .trans-total {
 	font-weight: 400;
-	font-size: 13px;
+	font-size: 14px;
 	line-height: 18px;
 	color: #333333;
 }
@@ -3776,4 +3776,8 @@
     .list-trans-tbl table th:nth-child(4) {
         border-top-left-radius: 0;
     }
+}
+
+.list-trans-tbl .dealtoday-checkbox label {
+    margin: 0;
 }
