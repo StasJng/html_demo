@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    
+    <meta name="title" content="@Html.Raw(ViewBag.MetaTitle)" />
+    <meta name="keywords" content="@Html.Raw(ViewBag.Keywords)" />
+    <meta name="description" content="@Html.Raw(ViewBag.Description)">
+
+    <script src="assets/plugins/swiper-slider/js/swiper.min.js"></script>
+    <link href="assets/plugins/swiper-slider/css/swiper.min.css" rel="stylesheet" />
+
+    <title>@ViewBag.Title</title>
+
+    <!--#region Google Transalte-->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                autoDisplay: false,
+                includedLanguages: 'en,vi',
+                gaTrack: true,
+                gaId: 'AIzaSyAuk_NhmtJvsJXMB9PAy-jCSGv5sVhhxvM'
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+    <!--#endregion-->
+</head>
+<style>
+    :root {
+        --clr-prim:#F6911E;
+        --clr-box-dark:#f2f2f2;
+        --shadow:0px 3px 6px 0px rgba(0,0,0,0.1);
+    }
+
+    .dual-range {
+        --range-size:15px;
+        --range-width: calc(100% - 32px);
+        --handle-size:1.3;
+        height: var(--range-size);
+        width: var(--range-width);
+        background: var(--clr-box-dark);
+        border-radius: 50px;
+        position: relative;
+        user-select: none;
+    }
+
+    .dual-range .highlight {
+        position: absolute;
+        height: var(--range-size);
+        width: calc(var(--x-2) - var(--x-1) + var(--range-size) * var(--handle-size));
+        left: var(--x-1);
+        background: var(--clr-prim);
+        z-index: 1;
+        border-radius: 50px;
+    }
+
+    .dual-range .handle {
+        width: calc(var(--range-size) * var(--handle-size));
+        height: calc(var(--range-size) * var(--handle-size));
+        background: #fff;
+        position: absolute;
+        box-shadow: var(--shadow);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        cursor: grab;
+    }
+
+    .dual-range .handle:active {
+        cursor: grabbing;
+    }
+
+    .dual-range .handle.left {
+        left: var(--x-1);
+    }
+    
+    .dual-range .handle.right {
+        left: var(--x-2);
+    }
+
+    .dual-range .handle::after {
+        content: "$" attr(data-value);
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+</style>
+<body>
+    <div class="container flex-center">
+        <div class="row">
+            <div class="col-12">
+                <div class="dual-range" data-min="100000" data-max="10000000">
+                    <span class="handle left"></span>
+                    <span class="highlight"></span>
+                    <span class="handle right"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        new dualRangeSlider(document.querySelector(".dual-range"))
+    });
+
+    class dualRangeSlider {
+        constructor(rangeElement) {
+            this.range = rangeElement
+            this.min = Number(rangeElement.dataset.min)
+            this.max = Number(rangeElement.dataset.max)
+            this.handles = [...this.range.querySelectorAll(".handle")]
+            this.startPos = 0;
+            this.activeHandle;
+            
+            this.handles.forEach(handle => {
+                handle.addEventListener("mousedown", this.startMove.bind(this))
+                handle.addEventListener("touchstart", this.startMoveTouch.bind(this))
+            })
+            
+            window.addEventListener("mouseup", this.stopMove.bind(this))
+            window.addEventListener("touchend", this.stopMove.bind(this))
+            window.addEventListener("touchcancel", this.stopMove.bind(this))
+            window.addEventListener("touchleave", this.stopMove.bind(this))
+            
+            const rangeRect = this.range.getBoundingClientRect();
+            const handleRect = this.handles[0].getBoundingClientRect()
+            this.range.style.setProperty("--x-1", "0px");
+            this.range.style.setProperty("--x-2", rangeRect.width - handleRect.width/2 + "px");
+            this.handles[0].dataset.value = this.range.dataset.min;
+            this.handles[1].dataset.value = this.range.dataset.max;
+        }
+        
+        startMoveTouch(e) {
+            const handleRect = e.target.getBoundingClientRect()
+            this.startPos = e.touches[0].clientX - handleRect.x;
+            this.activeHandle = e.target;
+            this.moveTouchListener = this.moveTouch.bind(this)
+            window.addEventListener("touchmove", this.moveTouchListener);
+        }
+        
+        startMove(e) {
+            this.startPos = e.offsetX;
+            this.activeHandle = e.target;
+            this.moveListener = this.move.bind(this)
+            window.addEventListener("mousemove", this.moveListener);
+        }
+        
+        moveTouch(e) {
+            this.move({clientX: e.touches[0].clientX})
+        }
+        
+        move(e) {
+            const isLeft = this.activeHandle.classList.contains("left")
+            const property = isLeft ? "--x-1" : "--x-2";
+            const parentRect = this.range.getBoundingClientRect();
+            const handleRect = this.activeHandle.getBoundingClientRect();
+            let newX = e.clientX - parentRect.x - this.startPos;
+            if(isLeft) {
+                const otherX = parseInt(this.range.style.getPropertyValue("--x-2"));
+                newX = Math.min(newX, otherX - handleRect.width)
+                newX = Math.max(newX, 0 - handleRect.width/2)
+            } else {
+                const otherX = parseInt(this.range.style.getPropertyValue("--x-1"));
+                newX = Math.max(newX, otherX + handleRect.width)
+                newX = Math.min(newX, parentRect.width - handleRect.width/2)
+            }
+            this.activeHandle.dataset.value = this.calcHandleValue((newX + handleRect.width/2) / parentRect.width)
+            this.range.style.setProperty(property, newX + "px");
+        }
+        
+        calcHandleValue(percentage) {
+            return Math.round(percentage * (this.max - this.min) + this.min)
+        }
+        
+        stopMove() {
+            window.removeEventListener("mousemove", this.moveListener);
+            window.removeEventListener("touchmove", this.moveTouchListener);
+        }
+    }
+</script>
+</html>
