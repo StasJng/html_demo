@@ -1501,23 +1501,28 @@ a {
 /* ---------------------------- */
 /* Customize Sroll-Bar */
 /* Width */
-.filter-wrapper .loc-filter-items::-webkit-scrollbar, .p-popup-wrapper::-webkit-scrollbar {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar {
     width: 3px;
+    position: absolute;
 }
 /* Track */
-.filter-wrapper .loc-filter-items::-webkit-scrollbar-track, .p-popup-wrapper::-webkit-scrollbar-track  {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar-track {
     background: #FAFAFA;
 }
 /* Handle */
-.filter-wrapper .loc-filter-items::-webkit-scrollbar-thumb, .p-popup-wrapper::-webkit-scrollbar-thumb {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar-thumb {
     background: #CDCDCD;
     border-radius: 10px;
 }
 /* Handle on hover */
-.filter-wrapper .loc-filter-items::-webkit-scrollbar-thumb:hover, .p-popup-wrapper::-webkit-scrollbar-thumb:hover {
+.filter-wrapper .loc-filter-items::-webkit-scrollbar-thumb:hover {
     opacity: 0.8;
 }
 /* ---------------------------- */
+
+.p-popup-wrapper::-webkit-scrollbar {
+    display: none;
+}
 
 .filter-wrapper .loc-filter-items {
     max-height: 300px;
@@ -2029,7 +2034,7 @@ ul.breadcrumb-nav li a:hover {
 }
 /* -------------------- */
 /* Popup Cateogry */
-.p-popup-wrapper h2 {
+/* .p-popup-wrapper h2 {
     text-align: left;
     font-size: 16px;
     font-weight: 500;
@@ -2041,6 +2046,19 @@ ul.breadcrumb-nav li a:hover {
     padding: 16px;
     margin: 0px -12px;
     z-index: 10;
+} */
+
+.p-popup-wrapper h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    padding: 16px;
+    z-index: 10;
+    background: linear-gradient(to right, #f6911E, #f6911E);
+    width: calc(100% + 32px);
+    margin-left: -16px;
 }
 
 .p-popup-wrapper h2 span {
