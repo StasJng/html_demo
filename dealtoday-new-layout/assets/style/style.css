@@ -291,6 +291,31 @@ a {
     width: 200px;
 }
 
+.header-r .h-auth a {
+    position: relative;
+}
+
+.header-r .h-auth a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+}
+
+.header-r .h-auth a:hover {
+    color: #F0821B;
+}
+
+.header-r .h-auth a img {
+    height: 18px;
+    width: 18px;
+    margin: -3px 3px 0 0;
+}
+
+.header-r .h-auth a .username {
+    display: inline-block;
+    margin-top: 6px;
+}
+
 .header-bottom {
     height: 78px;
     width: 100%;
@@ -1951,6 +1976,18 @@ ul.breadcrumb-nav li a:hover {
     padding: 16px;
 }
 
+@media(min-width: 768px) {
+    .popup-location .p-popup-wrapper {
+        height: 241px !important;
+        width: 600px !important;
+    }
+
+    .popup-location .p-popup-wrapper .btn-general.w-100 {
+        width: 296px !important;
+        height: 40px !important;
+        padding: 8px 10px;
+    }
+}
 
 .popup-location .p-popup-wrapper .p-locs-tiltle {
     position: relative;
@@ -1976,7 +2013,7 @@ ul.breadcrumb-nav li a:hover {
 }
 
 .popup-location .p-popup-wrapper .p-locs-select {
-    
+    text-align: center;
 }
 
 .popup-location .p-popup-wrapper .p-locs-select select {
@@ -2912,11 +2949,9 @@ body {
     margin: 12px 0;
     background-color: transparent;
     margin-top: -55px;
-}
-
-.cart .detail-flash-countdown .countdown-container {
     background-position: left 0 center;
     background-size: 95px 20px;
+    position: relative;
 }
 
 .cart .detail-flash-countdown.upcoming .countdown-container {
@@ -2929,15 +2964,35 @@ body {
 	color: #F6911E;
 }
 
+.cart .detail-flash-countdown.upcoming .countdown-container ul, .cart .detail-flash-countdown.upcoming .countdown-container ul li, .cart .detail-flash-countdown.onsale .countdown-container ul, .cart .detail-flash-countdown.onsale .countdown-container ul li  {
+    position: relative;
+}
+
+.cart .detail-flash-countdown.upcoming .countdown-container li i span.count::before, .cart .detail-flash-countdown.onsale .countdown-container li i span.count::before {
+	content: ":";
+    color: #F0821B;
+    background-color: transparent;
+    position: absolute;
+    font-weight: bold;
+    left: -6px;
+    top: -1px;
+}
+
+.cart .detail-flash-countdown.onsale .countdown-container li i span.count::before {
+    color: #fff;
+}
+
 .cart .detail-flash-countdown .countdown-container li i span {
+    margin: 0 2px;
     font-size: 12px;
     width: 20px;
-    height: 20px;
+    height: 15px;
     padding-top: 2px;
 }
 
 .cart .detail-flash-countdown.upcoming .countdown-container li i span {
 	background-color: #F6911E;
+    color: #fff;
 }
 
 .cart .detail-flash-countdown .countdown-container {
@@ -2950,6 +3005,73 @@ body {
     margin-left: 95px;
 }
 
+.cart .detail-flash-countdown.upcoming .countdown-container li:first-child, .cart .detail-flash-countdown.onsale .countdown-container li:first-child {
+    top: -1px;
+}
+
+.cart .detail-flash-countdown.upcoming .countdown-container li, .cart .detail-flash-countdown.onsale .countdown-container li {
+    top: -5px;
+}
+
+.cart .detail-flash-countdown.upcoming .countdown-container li i .days-left::after, .cart .detail-flash-countdown.onsale .countdown-container li i .days-left::after {
+    content: "Ngày";
+    color: #000;
+    position: absolute;
+    top: 15px;
+    left: -1px;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+.cart .detail-flash-countdown.upcoming .countdown-container li i .hours-left::after, .cart .detail-flash-countdown.onsale .countdown-container li i .hours-left::after {
+    content: "Giờ";
+    color: #000;
+    position: absolute;
+    top: 15px;
+    left: 2px;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+.cart .detail-flash-countdown.upcoming .countdown-container li i .minutes-left::after, .cart .detail-flash-countdown.onsale .countdown-container li i .minutes-left::after {
+    content: "Phút";
+    color: #000;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+.cart .detail-flash-countdown.upcoming .countdown-container li i .seconds-left::after, .cart .detail-flash-countdown.onsale .countdown-container li i .seconds-left::after {
+    content: "Giây";
+    color: #000;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+.cart .detail-flash-countdown.onsale .countdown-container li i .days-left::after {
+    color: #fff;
+}
+
+.cart .detail-flash-countdown.onsale .countdown-container li i .hours-left::after {
+    color: #fff;
+}
+
+.cart .detail-flash-countdown.onsale .countdown-container li i .minutes-left::after {
+    color: #fff;
+}
+
+.cart .detail-flash-countdown.onsale .countdown-container li i .seconds-left::after {
+    color: #fff;
+}
+
+.d-detail-rg .detail-flash-countdown .countdown-container .countdown-seperator {
+    width: 2px !important;
+}
 /* -------------------------------------------------------------------------------------------- */
 
 
@@ -3369,20 +3491,40 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 .d-detail-rg .detail-flash-countdown .countdown-container li i span {
     font-size: 12px;
     width: 20px;
-    height: 20px;
+    height: 15px;
     padding-top: 2px;
+}
+
+.d-detail-rg .detail-flash-countdown .countdown-container li:first-child {
+    top: 0;
+}
+
+.d-detail-rg .detail-flash-countdown .countdown-container li {
+    top: -5px;
+    display: inline-block;
+    position: relative;
 }
 
 .d-detail-rg .detail-flash-countdown.upcoming .countdown-container li i span {
 	background-color: #F6911E;
+    color: #fff;
+}
+
+.d-detail-rg .detail-flash-countdown.upcoming .countdown-container .countdown-seperator {
+	color: #F0821B;
+}
+
+.d-detail-rg .detail-flash-countdown .countdown-container .countdown-seperator {
+	color: #fff;
 }
 
 .d-detail-rg .detail-flash-countdown .countdown-container ul {
-    padding-left: 32px
+    padding-left: 5px;
 }
 
 .d-detail-rg .detail-flash-countdown.upcoming .countdown-container ul {
-    padding-left: 45px
+    padding-left: 0;
+    margin-left: -5px;
 }
 
 @media(max-width: 992px) {
@@ -3852,9 +3994,10 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     width: max-content;
     background-color: transparent;
     top: 100%;
-    left: -3px;
+    left: -2px;
     color: #fff;
     font-size: 11px;
+    font-weight: 400;
 }
 
 .detail-flash-countdown.show-unit .hours-left::after {
@@ -3864,9 +4007,10 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     width: max-content;
     background-color: transparent;
     top: 100%;
-    left: 2px;
+    left: calc(1px + 1px/2);
     color: #fff;
     font-size: 11px;
+    font-weight: 400;
 }
 
 .detail-flash-countdown.show-unit .minutes-left::after {
@@ -3879,6 +4023,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     left: -1px;
     color: #fff;
     font-size: 11px;
+    font-weight: 400;
 }
 
 .detail-flash-countdown.show-unit .seconds-left::after {
@@ -3891,6 +4036,23 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     left: 0;
     color: #fff;
     font-size: 11px;
+    font-weight: 400;
+}
+
+.detail-flash-countdown.upcoming.show-unit .days-left::after {
+    color: #000;
+}
+
+.detail-flash-countdown.upcoming.show-unit .hours-left::after {
+    color: #000;
+}
+
+.detail-flash-countdown.upcoming.show-unit .minutes-left::after {
+    color: #000;
+}
+
+.detail-flash-countdown.upcoming.show-unit .seconds-left::after {
+    color: #000;
 }
 
 
@@ -3967,7 +4129,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 400;
 }
 
-.mb-menu-wrapper .item-lst span a {
+.mb-menu-wrapper .item-lst span a, .mb-menu-wrapper .item-lst a {
     color: #000;
 }
 

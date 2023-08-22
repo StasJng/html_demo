@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background: linear-gradient(35deg, red, purple); 
+            background: linear-gradient(35deg, #cdcdcded, #fafafa); 
+        }
+
+        /* <select> styles */
+        select {
+            /* Reset */
+            appearance: none;
+            border: 0;
+            outline: 0;
+            font: inherit;
+
+            /* Personalize */
+            width: 20em;
+            height: 3em;
+            padding: 0 4em 0 1em;
+            background: url(assets/images/generals/dropdown-icon-triangle.svg) no-repeat right 0.8em center/1.4em, linear-gradient(to left, rgba(255, 255, 255, 0.3) 3em, rgba(255, 255, 255, 0.2) 3em);
+            color: black;
+            border-radius: 0.25em;
+            box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            /* <option> colors */
+            /* Remove focus outline */
+            /* Remove IE arrow */
+        }
+        
+        select option {
+            color: inherit;
+            background-color: #cdcdcd;
+        }
+        
+        select:focus {
+            outline: none;
+        }
+
+        select::-ms-expand {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <select>
+        <option selected value="0">Pure CSS Select</option>
+        <option value="1">No Wrapper</option>
+        <option value="2">No JS</option>
+        <option value="3">Nice!</option>
+      </select>
+</body>
+</html>
