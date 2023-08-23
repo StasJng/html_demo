@@ -2810,6 +2810,11 @@ body {
     color: #000;
 }
 
+.cart .item-box.evoucher .presale-price.origin {
+    color: #9E9E9E;
+    text-decoration: line-through;
+}
+
 .cart .item-box.evoucher .presale-status {
     font-size: 12px;
     font-weight: 400;
@@ -2829,7 +2834,7 @@ body {
     .cart .item-box.evoucher .presale-status {
         width: max-content !important;
         display: flex;
-        margin-left: -5px;
+        margin: 0 auto;
     }
 
     .cart .item-box .txt-info {
@@ -2839,7 +2844,7 @@ body {
 
 @media screen and (min-width: 768px) and (max-width: 992px)  {
     .cart .item-box.evoucher .presale-status {
-        margin-left: 28px;
+        margin: 0 auto 12px auto;
     }
 
     .cart .item-box .txt-info {
@@ -2851,10 +2856,14 @@ body {
     .cart .item-box.evoucher .presale-status {
         width: max-content !important;
     }
+
+    .cart .item-box.evoucher .quant-btn {
+        margin: -8px 0 !important;
+    }
 }
 
 .cart .item-box.evoucher .quant-btn {
-    margin: -8px 0;
+    margin: 2px 0;
 }
 
 .cart .manage-buttons span {
@@ -2865,11 +2874,16 @@ body {
     float: right;
 }
 
+@media (max-width: 1200px) {
+    .cart .manage-buttons {
+        margin-left: 8px;
+    }
+}
 
 @media (max-width: 992px) {
     .cart .manage-buttons {
         position: absolute;
-        margin: 20px 0 0 8px;
+        margin: 20px 0 0 20px;
     }
 
     .cart .evoucher .manage-buttons {
@@ -3987,7 +4001,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     rotate: -90deg;
 }
 
-.detail-flash-countdown.show-unit .days-left::after {
+.detail-flash-countdown.show-unit .days-left::after, .flash-sale .countdown-container.show-unit .days-left::after {
     position: absolute;
     content: "Ngày";
     height: fit-content;
@@ -4000,7 +4014,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 400;
 }
 
-.detail-flash-countdown.show-unit .hours-left::after {
+.detail-flash-countdown.show-unit .hours-left::after, .flash-sale .countdown-container.show-unit .hours-left::after {
     position: absolute;
     content: "Giờ";
     height: fit-content;
@@ -4013,7 +4027,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 400;
 }
 
-.detail-flash-countdown.show-unit .minutes-left::after {
+.detail-flash-countdown.show-unit .minutes-left::after, .flash-sale .countdown-container.show-unit .minutes-left::after {
     position: absolute;
     content: "Phút";
     height: fit-content;
@@ -4026,7 +4040,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 400;
 }
 
-.detail-flash-countdown.show-unit .seconds-left::after {
+.detail-flash-countdown.show-unit .seconds-left::after, .flash-sale .countdown-container.show-unit .seconds-left::after  {
     position: absolute;
     content: "Giây";
     height: fit-content;
@@ -4065,6 +4079,27 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     }
 }
 
+.flash-sale .countdown-container li i span {
+    width: 20px;
+    height: 16px;
+    font-size: 12px;
+}
+
+.flash-sale .countdown-container .countdown-seperator {
+    color: #fff;
+    width: 2px !important;
+}
+
+
+.flash-sale .countdown-container li:first-child {
+    top: 0;
+}
+
+.flash-sale .countdown-container li {
+    top: -5px;
+    display: inline-block;
+    position: relative;
+}
 
 
 
