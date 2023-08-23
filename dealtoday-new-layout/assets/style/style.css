@@ -102,6 +102,16 @@ a {
     border-radius: 8px;
 }
 
+.w-100-p-16 {
+    width: calc(100% - 32px);   
+    margin: 0 auto;
+}
+
+.w-100-p-12 {
+    width: calc(100% - 24px);   
+    margin: 0 auto;
+}
+
 .gap-reg-6, .gap-reg-8, .gap-reg-10, .gap-reg-12, .gap-reg-16, .gap-reg-20, .gap-reg-30, .gap-reg-40  {
 	width: 100%;
     margin: 0;
@@ -182,10 +192,10 @@ a {
     border-radius: 50px;
 }
 
-/* .btn-general:hover {
+.btn-general:hover {
     background-color: #F6911E;
     color:#fff;
-} */
+}
 
 @media(max-width: 768px) {
     .contanier-mb-padding {
@@ -919,6 +929,8 @@ a {
 
 .flash-sale-breadcrumb.finished .countdown-container {
     background-color: #424242;
+    color: #fff;
+    justify-content: center;
 }
 
 .flash-sale-header .countdown-container img {
@@ -935,9 +947,14 @@ a {
     color: #000;
 }
 
-.flash-sale-breadcrumb.upcoming .countdown-container li i span, .flash-sale-breadcrumb.finished .countdown-container li i span {
+.flash-sale-breadcrumb.upcoming .countdown-container li i span {
     color: #fff;
     background-color: #F0821B;
+}
+
+.flash-sale-breadcrumb.finished .countdown-container li i span {
+    color: #000;
+    background-color: #fff;
 }
 
 .flash-sale-breadcrumb.upcoming .countdown-container img, .flash-sale-breadcrumb.finished .countdown-container img {
@@ -2070,7 +2087,7 @@ ul.breadcrumb-nav li a:hover {
 }
 /* -------------------- */
 /* Popup Cateogry */
-/* .p-popup-wrapper h2 {
+.p-popup-wrapper h2 {
     text-align: left;
     font-size: 16px;
     font-weight: 500;
@@ -2082,9 +2099,9 @@ ul.breadcrumb-nav li a:hover {
     padding: 16px;
     margin: 0px -12px;
     z-index: 10;
-} */
+}
 
-.p-popup-wrapper h2 {
+/* .p-popup-wrapper h2 {
     font-size: 16px;
     font-weight: 500;
     color: #fff;
@@ -2095,7 +2112,7 @@ ul.breadcrumb-nav li a:hover {
     background: linear-gradient(to right, #f6911E, #f6911E);
     width: calc(100% + 32px);
     margin-left: -16px;
-}
+} */
 
 .p-popup-wrapper h2 span {
     margin-top: -3px;
@@ -2335,7 +2352,11 @@ body {
 
 @media(max-width: 992px) {
     .checkout-info .to .field {
-        
+        height: 36px;
+    }
+
+    .checkout-info .to .field.type-in {
+        margin-bottom: 3px;
     }
 
     .checkout-info .to .info {
@@ -2728,6 +2749,14 @@ body {
     margin: 16px;
 }
 
+.cart .item-box.expired .bx-content, .cart .item-box.expired .bx-img {
+    opacity: 0.5;
+}
+
+.cart .item-box.expired .dealtoday-checkbox {
+    pointer-events: none;
+}
+
 .cart .item-box .txt-info p {
     margin-bottom: 3px;
 }
@@ -2998,9 +3027,9 @@ body {
 
 .cart .detail-flash-countdown .countdown-container li i span {
     margin: 0 2px;
-    font-size: 12px;
-    width: 20px;
-    height: 15px;
+    font-size: 13px;
+    width: 18px;
+    height: 16px;
     padding-top: 2px;
 }
 
@@ -3021,6 +3050,12 @@ body {
 
 .cart .detail-flash-countdown.upcoming .countdown-container li:first-child, .cart .detail-flash-countdown.onsale .countdown-container li:first-child {
     top: -1px;
+}
+
+@media(max-width: 576px) {
+    .cart .detail-flash-countdown.upcoming .countdown-container li:first-child, .cart .detail-flash-countdown.onsale .countdown-container li:first-child {
+        font-size: 13px;
+    }
 }
 
 .cart .detail-flash-countdown.upcoming .countdown-container li, .cart .detail-flash-countdown.onsale .countdown-container li {
@@ -4001,7 +4036,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     rotate: -90deg;
 }
 
-.detail-flash-countdown.show-unit .days-left::after, .flash-sale .countdown-container.show-unit .days-left::after {
+.detail-flash-countdown.show-unit .days-left::after, .flash-sale .countdown-container.show-unit .days-left::after, .flash-sale-breadcrumb .countdown-container.show-unit .days-left::after {
     position: absolute;
     content: "Ngày";
     height: fit-content;
@@ -4014,7 +4049,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 400;
 }
 
-.detail-flash-countdown.show-unit .hours-left::after, .flash-sale .countdown-container.show-unit .hours-left::after {
+.detail-flash-countdown.show-unit .hours-left::after, .flash-sale .countdown-container.show-unit .hours-left::after, .flash-sale-breadcrumb .countdown-container.show-unit .hours-left::after {
     position: absolute;
     content: "Giờ";
     height: fit-content;
@@ -4027,7 +4062,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 400;
 }
 
-.detail-flash-countdown.show-unit .minutes-left::after, .flash-sale .countdown-container.show-unit .minutes-left::after {
+.detail-flash-countdown.show-unit .minutes-left::after, .flash-sale .countdown-container.show-unit .minutes-left::after, .flash-sale-breadcrumb .countdown-container.show-unit .minutes-left::after {
     position: absolute;
     content: "Phút";
     height: fit-content;
@@ -4040,7 +4075,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 400;
 }
 
-.detail-flash-countdown.show-unit .seconds-left::after, .flash-sale .countdown-container.show-unit .seconds-left::after  {
+.detail-flash-countdown.show-unit .seconds-left::after, .flash-sale .countdown-container.show-unit .seconds-left::after, .flash-sale-breadcrumb .countdown-container.show-unit .seconds-left::after  {
     position: absolute;
     content: "Giây";
     height: fit-content;
@@ -4053,19 +4088,19 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 400;
 }
 
-.detail-flash-countdown.upcoming.show-unit .days-left::after {
+.detail-flash-countdown.upcoming.show-unit .days-left::after, .flash-sale-breadcrumb.upcoming .countdown-container.show-unit .days-left::after  {
     color: #000;
 }
 
-.detail-flash-countdown.upcoming.show-unit .hours-left::after {
+.detail-flash-countdown.upcoming.show-unit .hours-left::after, .flash-sale-breadcrumb.upcoming .countdown-container.show-unit .hours-left::after {
     color: #000;
 }
 
-.detail-flash-countdown.upcoming.show-unit .minutes-left::after {
+.detail-flash-countdown.upcoming.show-unit .minutes-left::after, .flash-sale-breadcrumb.upcoming .countdown-container.show-unit .minutes-left::after {
     color: #000;
 }
 
-.detail-flash-countdown.upcoming.show-unit .seconds-left::after {
+.detail-flash-countdown.upcoming.show-unit .seconds-left::after, .flash-sale-breadcrumb.upcoming .countdown-container.show-unit .seconds-left::after {
     color: #000;
 }
 
@@ -4079,29 +4114,33 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     }
 }
 
-.flash-sale .countdown-container li i span {
+.flash-sale .countdown-container li i span, .flash-sale-breadcrumb .countdown-container li i span {
     width: 20px;
-    height: 16px;
-    font-size: 12px;
+    height: 18px;
+    font-size: 14px;
 }
 
-.flash-sale .countdown-container .countdown-seperator {
+.flash-sale .countdown-container .countdown-seperator, .flash-sale-breadcrumb .countdown-container .countdown-seperator {
     color: #fff;
     width: 2px !important;
 }
 
 
-.flash-sale .countdown-container li:first-child {
+.flash-sale .countdown-container li:first-child, .flash-sale-breadcrumb .countdown-container li:first-child {
     top: 0;
 }
 
-.flash-sale .countdown-container li {
+@media(max-width: 576px) {
+    .flash-sale .countdown-container li:first-child, .flash-sale-breadcrumb .countdown-container li:first-child {
+        font-size: 13px;
+    }
+}
+
+.flash-sale .countdown-container li, .flash-sale-breadcrumb .countdown-container li {
     top: -5px;
     display: inline-block;
     position: relative;
 }
-
-
 
 
 
