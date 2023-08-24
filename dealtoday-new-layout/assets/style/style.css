@@ -2020,6 +2020,7 @@ ul.breadcrumb-nav li a:hover {
     right: 10px;
     height: 24px;
     width: 24px;
+    cursor: pointer;
 }
 
 .popup-location .p-popup-wrapper .p-locs-desc {
@@ -2233,6 +2234,9 @@ body {
 
 .goog-te-gadget {
     color: transparent !important;
+    position: relative;
+    height: 0;
+    font-size: 1px !important;
 }
 
 #goog-gt-tt, #goog-gt-vt {
@@ -2254,6 +2258,7 @@ body {
     padding: 0px 50px 0px 0;
     border-color: transparent;
     float: right;
+    cursor: pointer;
 }
 
 .goog-te-gadget .goog-te-combo:hover {
@@ -3744,6 +3749,42 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 	height: 3px !important;
 	border-radius: 3px !important;
 }
+
+.lst-brand .brand-log-bx {
+    position: relative;
+    border-radius: 12px;
+    background: linear-gradient(to right, red, purple);
+    padding: 5px;
+}
+
+.lst-brand .brand-log-bx img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    margin: -10px;
+    background-image: linear-gradient(to right top, #2979ff, #07a787);
+    border-radius: inherit;
+}
+
+.boxed {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-clip: padding-box;
+    border: 10px solid transparent;
+    background-color: #191a28;
+    border-radius: 20px;
+  }
+  .boxed:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    margin: -10px;
+    background-image: linear-gradient(to right top, #2979ff, #07a787);
+    border-radius: inherit;
+  }
 /* -------------------------------------------------------------------------------------------- */
 
 
@@ -4237,4 +4278,134 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     position: absolute;
     right: 0;
     margin-top: -3px;
+}
+
+
+/* Popup Location */
+.popup-location .p-popup-wrapper {
+    height: 262px !important;
+    width: 328px !important;
+    min-width: unset !important;
+    top: 22%;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 16px;
+
+    background-image: url(../images/popup/popup-loc-bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+
+    overflow: visible;
+}
+
+@media(min-width: 768px) {
+    .popup-location .p-popup-wrapper {
+        height: 241px !important;
+        width: 600px !important;
+    }
+
+    .popup-location .p-popup-wrapper .btn-general.w-100 {
+        width: 296px !important;
+        height: 40px !important;
+        padding: 8px 10px;
+    }
+}
+
+.popup-location .p-popup-wrapper .p-locs-tiltle {
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+}
+
+.popup-location .p-popup-wrapper .p-locs-tiltle img {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.popup-location .p-popup-wrapper .p-locs-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+}
+
+.popup-location .p-popup-wrapper .p-locs-select {
+    text-align: center;
+    position: relative;
+}
+
+.popup-location .p-popup-wrapper .p-locs-select select {
+    height: 48px;
+    width: 296px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    position: relative;
+    border-radius: 8px;
+    padding: 0 12px;
+    background-color: #FAFAFA;
+    border-color: #eee;
+}
+
+.popup-location .p-popup-wrapper .p-locs-select select::after {
+    content: "";
+    background-image: url(../images/generals/arrows/arr-dropdown-down-black.svg);
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    background-position: left 15px center;
+}
+
+.popup-location .p-locs-select .select-web-cover {
+    height: 100%;
+    width: 300px;
+    margin: 0 auto;
+    background-color: transparent;
+    position: relative;
+    top: -48px;
+    cursor: pointer;
+}
+
+.popup-location .p-locs-select .select-web-cover .popup-customized {
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    height: max-content;
+    width: 296px;
+    margin-top: 3px;
+}
+
+@media(max-width: 768px) {
+    .popup-location .p-locs-select .select-web-cover .popup-customized {
+        left: 0;
+    }
+}
+
+.popup-location .p-locs-select .select-web-cover .select-item {
+    height: 50px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0 16px;
+}
+
+.popup-location .p-locs-select .select-web-cover .select-item:hover {
+    background-color: #f5f5f5;
+}
+
+.popup-location .p-locs-select .select-web-cover .select-item.selected {
+    background-image: url(../images/popup/icon-tick-location.svg);
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 24px 24px;
 }
