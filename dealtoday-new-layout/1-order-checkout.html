@@ -35,6 +35,43 @@
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
     <!--#endregion-->
+
+    <!--#region Prevent User from using Dev Tools-->
+    <script>
+        document.onkeydown = (e) => {
+            if (e.key == 123) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'I') { // Prevent Ctrl+Shift+I
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'C') { // Prevent Ctrl+Shift+C
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'J') { // Prevent Ctrl+Shift+J
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key == 'U') { // Prevent Ctrl+U
+                e.preventDefault();
+            }
+        };
+
+        $(document).keydown(function (e) {
+            if (e.keyCode == 123) { // Prevent F12
+                return false;
+            }
+            //else if (e.ctrlKey && e.shiftKey && e.keyCode == 73) { // Prevent Ctrl+Shift+I
+            //    return false;
+            //}
+        });
+
+        //Prevent Right Click
+        //~ <body oncontextmenu="return false">
+        $(document).on("contextmenu", function (e) {
+            e.preventDefault();
+        });
+    </script>
+    <!--#endregion-->
 </head>
 
 <body>
