@@ -71,1229 +71,1241 @@
     <!--#endregion-->
 </head>
 <body>
-    <!--#region Header-->
-    <div class="header-payment" id="header-payment">
-        <div class="container">
-            <div class="row h-content">
-                <div class="col-6 p-0">
-                    <div class="h-logo pay flex-center">
-                        <a href="/">
-                            <img src="assets/images/header/logo.png" alt="" />
-                        </a>
-                        <div class="bor"> </div>
-                        <div class="pay-title" onclick="openPopup('#popup-location');">Thanh toán</div>
-                    </div>
-                </div>
-                <div class="col-6 p-0 hot-line">
-                    <div class="wrap flex-align-center">
-                        <img src="assets/images/header/icon-phone.svg" alt="" />
-                        <a href="tel:19002065">19002065</a>
-                        <a href="tel:0934661016" class="d-lg-flex d-md-flex d-sm-none d-none">&nbsp;-&nbsp;0934.661.016</a>
-                    </div>
-                </div>
-            </div>
+    <!--#region Javascript disabled meesage(~Gmail)-->
+    <noscript>
+        <style type="text/css">
+            .pagecontainer {display:none !important;}
+        </style>
+        <div class="noscriptmsg">
+            You don't have javascript enabled!
         </div>
-    </div>
-
-    <!--#region Popup Location-->
-    <div class="p-popup-container popup-location" id="popup-location" onclick="if(event.target == this){closePopup('#popup-location');}" aria-hidden="true">
-        <div class="p-popup-wrapper">
-            <div class="row">
-                <div class="col-12 p-locs-tiltle">
-                    Chọn địa điểm
-                    <img src="assets/images/popup/close-icon-black.svg" alt="" height="20" width="20" onclick="closePopup('#popup-location');"/>
-                </div>
-
-                <div class="gap-reg-16"></div>
-
-                <div class="col-12 p-locs-desc">
-                    Hãy chọn tỉnh thành của bạn. Bạn có thể thay đổi tỉnh thành tại đầu trang.
-                </div>
-
-                <div class="gap-reg-16"></div>
-
-                <div class="col-12 p-locs-select">
-                    <select>
-                        <option>Toàn quốc</option>
-                        <option>Hà Nội</option>
-                        <option>Sài Gòn</option>
-                        <option>Đà Nẵng</option>
-                    </select>                    
-                </div>
-
-                <div class="gap-reg-16"></div>
-
-                <div class="col-12">
-                    <div class="btn-general orange w-100">
-                        Tiếp tục
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </noscript>
     <!--#endregion-->
-    
-    <script>
-        window.onscroll = function () { myFunction() };
 
-        function myFunction() {
-            if (window.pageYOffset > 0) {
-                $("#header-payment").attr("style", "height: fit-content; box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
+    <div class="pagecontainer">
+        <!--#region Header-->
+        <div class="header-payment" id="header-payment">
+            <div class="container">
+                <div class="row h-content">
+                    <div class="col-6 p-0">
+                        <div class="h-logo pay flex-center">
+                            <a href="/">
+                                <img src="assets/images/header/logo.png" alt="" />
+                            </a>
+                            <div class="bor"> </div>
+                            <div class="pay-title" onclick="openPopup('#popup-location');">Thanh toán</div>
+                        </div>
+                    </div>
+                    <div class="col-6 p-0 hot-line">
+                        <div class="wrap flex-align-center">
+                            <img src="assets/images/header/icon-phone.svg" alt="" />
+                            <a href="tel:19002065">19002065</a>
+                            <a href="tel:0934661016" class="d-lg-flex d-md-flex d-sm-none d-none">&nbsp;-&nbsp;0934.661.016</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!--#region Popup Location-->
+        <div class="p-popup-container popup-location" id="popup-location" onclick="if(event.target == this){closePopup('#popup-location');}" aria-hidden="true">
+            <div class="p-popup-wrapper">
+                <div class="row">
+                    <div class="col-12 p-locs-tiltle">
+                        Chọn địa điểm
+                        <img src="assets/images/popup/close-icon-black.svg" alt="" height="20" width="20" onclick="closePopup('#popup-location');"/>
+                    </div>
+    
+                    <div class="gap-reg-16"></div>
+    
+                    <div class="col-12 p-locs-desc">
+                        Hãy chọn tỉnh thành của bạn. Bạn có thể thay đổi tỉnh thành tại đầu trang.
+                    </div>
+    
+                    <div class="gap-reg-16"></div>
+    
+                    <div class="col-12 p-locs-select">
+                        <select>
+                            <option>Toàn quốc</option>
+                            <option>Hà Nội</option>
+                            <option>Sài Gòn</option>
+                            <option>Đà Nẵng</option>
+                        </select>                    
+                    </div>
+    
+                    <div class="gap-reg-16"></div>
+    
+                    <div class="col-12">
+                        <div class="btn-general orange w-100">
+                            Tiếp tục
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--#endregion-->
+        
+        <script>
+            window.onscroll = function () { myFunction() };
+    
+            function myFunction() {
+                if (window.pageYOffset > 0) {
+                    $("#header-payment").attr("style", "height: fit-content; box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
+                }
+                else {
+                    $("#header-payment").removeAttr("style");
+                }
             }
-            else {
-                $("#header-payment").removeAttr("style");
+    
+            function openPopup(popup) {
+                $('body').attr('style', 'overflow: hidden');
+                $(popup).show().attr("aria-hidden", "false");
             }
-        }
-
-        function openPopup(popup) {
-            $('body').attr('style', 'overflow: hidden');
-            $(popup).show().attr("aria-hidden", "false");
-        }
-
-        function closePopup(popup) {
-            $('body').removeAttr('style');
-            $(popup).hide().attr("aria-hidden", "true");
-        }
-    </script>
-    <!--#endregion-->
     
-    <!--#region Body-->
-    <div class="body order">
-        <div class="container">
-            <div class="row">
-                <div class="gap-reg-12"></div>
-
-                <!--#region Cart-->
-                <div class="d-lg-none d-md-flex d-sm-flex d-xs-flex d-flex col-12 p-0 flex-center page-title-tag">
-                    Giỏ hàng
-                </div>
-                <div class="d-lg-none d-md-flex d-sm-block d-xs-block d-block gap-reg-12"></div>
-
-                <div class="col-12 cart">
-                    <div class="row">
-                        <!--#region Avaiable Items-->
-                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 col-12">
-                            <div class="row">
-                                <!--#region E-Voucher-->
-                                <div class="lst-items blur col-12">
-                                    <div class="dealtoday-checkbox category-item-checkbox">
-                                        <input type="checkbox" id="select-all-voucher">
-                                        <label for="select-all-voucher">&nbsp;&nbsp;<span class="txt-cat">E-Voucher</span></label>
-                                    </div>
-
-                                    <div class="row item-box evoucher">
-                                        <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                            <div class="row">
-                                                <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                                    <div class="check-box">
-                                                        <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="evc-1">
-                                                            <label for="evc-1"></label>
-                                                        </span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
-                                                    <img src="assets/images/demo-imgs/cart-deal-imgs/cart-1.png" alt="" height="80" width="80" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
-                                            <div class="row">
+            function closePopup(popup) {
+                $('body').removeAttr('style');
+                $(popup).hide().attr("aria-hidden", "true");
+            }
+        </script>
+        <!--#endregion-->
+        
+        <!--#region Body-->
+        <div class="body order">
+            <div class="container">
+                <div class="row">
+                    <div class="gap-reg-12"></div>
     
-                                                <div class="col-lg-5 col-md-5 col-sm-12 col-12">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <div class="txt-info">
-                                                                <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
-                                                                <div class="gap-reg-6 d-lg-block d-md-none d-sm-none d-none"></div>
-                                                                <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-lg-7 col-md-7 col-sm-12 col-12">
-                                                    <div class="row h-100">
-                                                        <div class="col-lg-8 col-md-8 col-sm-12 col-12">
-                                                            <div class="row h-100 flex-align-center">
-                                                                <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                    <div class="row">
-                                                                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
-                                                                            <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
-                                                                        </div>
-                                                                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
-                                                                            <div class="notranslate d-block w-100 presale-price">250.000đ</div>
-                                                                            <div class="d-block w-100 presale-status">Đã cập nhật</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                    <div class="row">
-                                                                        <div class="col-xl-12 col-lg-12 col-md-4 col-sm-12 col-md-12 p-lg-0 p-md-0 bg-transparent quantity-info d-detail-rg flex-align-center notranslate justify-content-xl-center justify-content-lg-center justify-content-md-center justify-sm-content-start justify-sm-start">
-                                                                            <div class="quantity flex-align-center quant-btn">
-                                                                                <span class="select-quantity" data-groupid="241">
-                                                                                    <span class="subtract">-</span>
-                                                                                    <span class="quan" data-packid="113277" data-price="216000">0</span>
-                                                                                    <span class="plus">+</span>
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4 col-md-4 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0">
-                                                            <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="price-info notranslate">250.000đ</div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="manage-buttons">
-                                                                        <span> 
-                                                                            <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20"> 
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="w-100-p-16"><div class="border-div w-100"></div></div>
-
-                                    <div class="row item-box evoucher">
-                                        <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                            <div class="row">
-                                                <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                                    <div class="check-box">
-                                                        <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="evc-2">
-                                                            <label for="evc-2"></label>
-                                                        </span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
-                                                    <img src="assets/images/demo-imgs/cart-deal-imgs/cart-1.png" alt="" height="80" width="80" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
-                                            <div class="row">
-    
-                                                <div class="col-lg-5 col-md-5 col-sm-12 col-12">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <div class="txt-info">
-                                                                <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
-                                                                <div class="gap-reg-6 d-lg-block d-md-none d-sm-none d-none"></div>
-                                                                <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-lg-7 col-md-7 col-sm-12 col-12">
-                                                    <div class="row h-100">
-                                                        <div class="col-lg-8 col-md-8 col-sm-12 col-12">
-                                                            <div class="row h-100 flex-align-center">
-                                                                <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                    <div class="row">
-                                                                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
-                                                                            <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
-                                                                        </div>
-                                                                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
-                                                                            <div class="notranslate d-block w-100 presale-price">250.000đ</div>
-                                                                            <div class="d-block w-100 presale-status">Đã cập nhật</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                    <div class="row">
-                                                                        <div class="col-xl-12 col-lg-12 col-md-4 col-sm-12 col-md-12 p-lg-0 p-md-0 bg-transparent quantity-info d-detail-rg flex-align-center notranslate justify-content-xl-center justify-content-lg-center justify-content-md-center justify-sm-content-start justify-sm-start">
-                                                                            <div class="quantity flex-align-center quant-btn">
-                                                                                <span class="select-quantity" data-groupid="241">
-                                                                                    <span class="subtract">-</span>
-                                                                                    <span class="quan" data-packid="113277" data-price="216000">0</span>
-                                                                                    <span class="plus">+</span>
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4 col-md-4 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0">
-                                                            <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="price-info notranslate">250.000đ</div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="manage-buttons">
-                                                                        <span> 
-                                                                            <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20"> 
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--#endregion-->
-
-                                <div class="gap-reg-20"></div>
-
-                                <!--#region E-Gift-->
-                                <div class="lst-items blur col-12">
-                                    <div class="dealtoday-checkbox category-item-checkbox">
-                                        <input type="checkbox" id="select-all-egift">
-                                        <label for="select-all-egift">&nbsp;&nbsp;<span class="txt-cat">E-Gift</span></label>
-                                    </div>
-
-                                    <input type="hidden" id="countdowntTime" value="9/9/2023 11:53:32 AM" />
-
-                                    <div class="row item-box cart-about-to-sale evoucher">
-                                        <div class="col-12 detail-flash-countdown upcoming">
-                                            <div class="countdown-container">
-                                                <ul>
-                                                    <li class="time-left"><span>Bắt đầu sau</span></li>
-                                                    <li><i><span class="days-left"></span></i></li>
-                                                    <li><i><span class="hours-left count"></span></i></li>
-                                                    <li><i><span class="minutes-left count"></span></i></li>
-                                                    <li><i><span class="seconds-left count"></span></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                            <div class="row">
-                                                <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                                    <div class="check-box">
-                                                        <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="gift-1">
-                                                            <label for="gift-1"></label>
-                                                        </span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
-                                                    <img src="assets/images/demo-imgs/cart-deal-imgs/cart-2.png" alt="" height="80" width="80" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
-                                            <div class="row">
-    
-                                                <div class="col-lg-5 col-md-5 col-sm-12 col-12">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <div class="txt-info">
-                                                                <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
-                                                                <div class="gap-reg-6 d-lg-block d-md-none d-sm-none d-none"></div>
-                                                                <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-lg-7 col-md-7 col-sm-12 col-12">
-                                                    <div class="row h-100">
-                                                        <div class="col-lg-8 col-md-8 col-sm-12 col-12">
-                                                            <div class="row h-100 flex-align-center">
-                                                                <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                    <div class="row">
-                                                                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
-                                                                            <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
-                                                                        </div>
-                                                                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
-                                                                            <div class="notranslate d-block w-100 presale-price">250.000đ</div>
-                                                                            <div class="d-block w-100 presale-status">Đã cập nhật</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                    <div class="row">
-                                                                        <div class="col-xl-12 col-lg-12 col-md-4 col-sm-12 col-md-12 p-lg-0 p-md-0 bg-transparent quantity-info d-detail-rg flex-align-center notranslate justify-content-xl-center justify-content-lg-center justify-content-md-center justify-sm-content-start justify-sm-start">
-                                                                            <div class="quantity flex-align-center quant-btn">
-                                                                                <span class="select-quantity" data-groupid="241">
-                                                                                    <span class="subtract">-</span>
-                                                                                    <span class="quan" data-packid="113277" data-price="216000">0</span>
-                                                                                    <span class="plus">+</span>
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4 col-md-4 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0">
-                                                            <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="price-info notranslate">250.000đ</div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="manage-buttons">
-                                                                        <span> 
-                                                                            <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20"> 
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="w-100-p-16"><div class="border-div w-100"></div></div>
-
-                                    <div class="row item-box cart-on-sale evoucher">
-                                        <div class="col-12 detail-flash-countdown onsale">
-                                            <div class="countdown-container">
-                                                <ul>
-                                                    <li class="time-left"><span>Kết thúc trong</span></li>
-                                                    <li><i><span class="days-left"></span></i></li>
-                                                    <li><i><span class="hours-left count"></span></i></li>
-                                                    <li><i><span class="minutes-left count"></span></i></li>
-                                                    <li><i><span class="seconds-left count"></span></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                            <div class="row">
-                                                <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                                    <div class="check-box">
-                                                        <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="gift-2">
-                                                            <label for="gift-2"></label>
-                                                        </span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
-                                                    <img src="assets/images/demo-imgs/cart-deal-imgs/cart-2.png" alt="" height="80" width="80" />
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
-                                            <div class="row">
-    
-                                                <div class="col-lg-5 col-md-5 col-sm-12 col-12">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <div class="txt-info">
-                                                                <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
-                                                                <div class="gap-reg-6 d-lg-block d-md-none d-sm-none d-none"></div>
-                                                                <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-lg-7 col-md-7 col-sm-12 col-12">
-                                                    <div class="row h-100">
-                                                        <div class="col-lg-8 col-md-8 col-sm-12 col-12">
-                                                            <div class="row h-100 flex-align-center">
-                                                                <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                    <div class="row">
-                                                                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
-                                                                            <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
-                                                                        </div>
-                                                                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
-                                                                            <div class="notranslate d-block w-100 presale-price">250.000đ</div>
-                                                                            <div class="d-block w-100 presale-status">Đã cập nhật</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                    <div class="row">
-                                                                        <div class="col-xl-12 col-lg-12 col-md-4 col-sm-12 col-md-12 p-lg-0 p-md-0 bg-transparent quantity-info d-detail-rg flex-align-center notranslate justify-content-xl-center justify-content-lg-center justify-content-md-center justify-sm-content-start justify-sm-start">
-                                                                            <div class="quantity flex-align-center quant-btn">
-                                                                                <span class="select-quantity" data-groupid="241">
-                                                                                    <span class="subtract">-</span>
-                                                                                    <span class="quan" data-packid="113277" data-price="216000">0</span>
-                                                                                    <span class="plus">+</span>
-                                                                                </span>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4 col-md-4 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0">
-                                                            <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="price-info notranslate">250.000đ</div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="manage-buttons">
-                                                                        <span> 
-                                                                            <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20"> 
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--#endregion-->
-
-                                <div class="gap-reg-20"></div>
-
-                                <!--#region E-Ticket-->
-                                <div class="lst-items col-12">
-                                    <div class="dealtoday-checkbox category-item-checkbox">
-                                        <input type="checkbox" id="select-all-ticket">
-                                        <label for="select-all-ticket">&nbsp;&nbsp;<span class="txt-cat">E-Ticket</span></label>
-                                    </div>
-    
-                                    <div class="row item-box">
-                                        <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block bx-img">
-                                            <div class="row">
-                                                <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                                    <div class="check-box">
-                                                        <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="ticket-3">
-                                                            <label for="ticket-3"></label>
-                                                        </span>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
-                                                    <img src="assets/images/demo-imgs/cart-deal-imgs/cart-3.png" alt="" height="80" width="80" />
-                                                </div>
-                                            </div>
-                                        </div>
-    
-                                        <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
-                                            <div class="row">
-    
-                                                <div class="col-lg-7 col-md-7 col-sm-12 col-12">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <div class="txt-info">
-                                                                <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
-                                                                <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
-                                                                <p class="date notranslate">3/3/2023 17:20</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-lg-5 col-md-5 col-sm-12 col-12">
-                                                    <div class="row h-100">
-                                                        <div class="col-lg-5 col-md-6 col-sm-12 col-12 flex-align-center pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
-                                                            <div class="quantity-info">
-                                                                <p><span class="notranslate">1&nbsp;x</span>&nbsp;Người lớn</p>
-                                                                <p><span class="notranslate">1&nbsp;x</span>&nbsp;Trẻ em</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-md-6 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
-                                                            <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="price-info notranslate">
-                                                                        250.000đ
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12 pad-r-0">
-                                                                    <div class="manage-buttons">
-                                                                        <span>
-                                                                            <img src="assets/images/generals/icon-edit-item.svg" alt="" height="20" width="20" />
-                                                                        </span>
-                                                                        <span class="d-xl-inline d-lg-none d-md-inline d-sm-inline d-inline">&nbsp;</span>
-                                                                        <span>
-                                                                            <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20" />
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-                                        </div>
-                                    </div>
-    
-                                    <div class="w-100-p-16"><div class="border-div w-100"></div></div>
-    
-                                    <div class="row item-box">
-                                        <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block bx-img">
-                                            <div class="row">
-                                                <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                                    <div class="check-box">
-                                                        <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="ticket-10">
-                                                            <label for="ticket-10"></label>
-                                                        </span>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
-                                                    <img src="assets/images/demo-imgs/cart-deal-imgs/cart-3.png" alt="" height="80" width="80" />
-                                                </div>
-                                            </div>
-                                        </div>
-    
-                                        <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
-                                            <div class="row">
-    
-                                                <div class="col-lg-7 col-md-7 col-sm-12 col-12">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <div class="txt-info">
-                                                                <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
-                                                                <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
-                                                                <p class="date notranslate">3/3/2023 17:20</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-lg-5 col-md-5 col-sm-12 col-12">
-                                                    <div class="row h-100">
-                                                        <div class="col-lg-5 col-md-6 col-sm-12 col-12 flex-align-center pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
-                                                            <div class="quantity-info">
-                                                                <p><span class="notranslate">1&nbsp;x</span>&nbsp;Người lớn</p>
-                                                                <p><span class="notranslate">1&nbsp;x</span>&nbsp;Trẻ em</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-md-6 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
-                                                            <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="price-info notranslate">
-                                                                        250.000đ
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12 pad-r-0">
-                                                                    <div class="manage-buttons">
-                                                                        <span>
-                                                                            <img src="assets/images/generals/icon-edit-item.svg" alt="" height="20" width="20" />
-                                                                        </span>
-                                                                        <span class="d-xl-inline d-lg-none d-md-inline d-sm-inline d-inline">&nbsp;</span>
-                                                                        <span>
-                                                                            <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20" />
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-                                        </div>
-                                    </div>
-    
-                                    <div class="w-100-p-16"><div class="border-div w-100"></div></div>
-    
-                                    <div class="row item-box expired">
-                                        <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block bx-img">
-                                            <div class="row">
-                                                <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                                    <div class="check-box">
-                                                        <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="ticket-11">
-                                                            <label for="ticket-11"></label>
-                                                        </span>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
-                                                    <img src="assets/images/demo-imgs/cart-deal-imgs/cart-3.png" alt="" height="80" width="80" />
-                                                </div>
-                                            </div>
-                                        </div>
-    
-                                        <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
-                                            <div class="row">
-    
-                                                <div class="col-lg-7 col-md-7 col-sm-12 col-12">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <div class="txt-info">
-                                                                <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
-                                                                <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
-                                                                <p class="date notranslate">3/3/2023 17:20</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-lg-5 col-md-5 col-sm-12 col-12">
-                                                    <div class="row h-100">
-                                                        <div class="col-lg-5 col-md-6 col-sm-12 col-12 flex-align-center pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
-                                                            <div class="quantity-info">
-                                                                <p><span class="notranslate">1&nbsp;x</span>&nbsp;Người lớn</p>
-                                                                <p><span class="notranslate">1&nbsp;x</span>&nbsp;Trẻ em</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-md-6 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
-                                                            <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="price-info notranslate">
-                                                                        250.000đ
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12 pad-r-0">
-                                                                    <div class="manage-buttons">
-                                                                        <span>
-                                                                            <img src="assets/images/generals/icon-edit-item.svg" alt="" height="20" width="20" />
-                                                                        </span>
-                                                                        <span class="d-xl-inline d-lg-none d-md-inline d-sm-inline d-inline">&nbsp;</span>
-                                                                        <span>
-                                                                            <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20" />
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-                                        </div>
-    
-                                        <div class="err-msg">Vé đã hết hạn, vui lòng chọn lại</div>
-                                    </div>
-    
-                                    <div class="w-100-p-16"><div class="border-div w-100"></div></div>
-    
-                                    <div class="row item-box expired">
-                                        <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block bx-img">
-                                            <div class="row">
-                                                <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
-                                                    <div class="check-box">
-                                                        <span class="dealtoday-checkbox">
-                                                            <input type="checkbox" id="ticket-12">
-                                                            <label for="ticket-12"></label>
-                                                        </span>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
-                                                    <img src="assets/images/demo-imgs/cart-deal-imgs/cart-3.png" alt="" height="80" width="80" />
-                                                </div>
-                                            </div>
-                                        </div>
-    
-                                        <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
-                                            <div class="row">
-    
-                                                <div class="col-lg-7 col-md-7 col-sm-12 col-12">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            <div class="txt-info">
-                                                                <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
-                                                                <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
-                                                                <p class="date notranslate">3/3/2023 17:20</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                                <div class="col-lg-5 col-md-5 col-sm-12 col-12">
-                                                    <div class="row h-100">
-                                                        <div class="col-lg-5 col-md-6 col-sm-12 col-12 flex-align-center pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
-                                                            <div class="quantity-info">
-                                                                <p><span class="notranslate">1&nbsp;x</span>&nbsp;Người lớn</p>
-                                                                <p><span class="notranslate">1&nbsp;x</span>&nbsp;Trẻ em</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-7 col-md-6 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
-                                                            <div class="row">
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12">
-                                                                    <div class="price-info notranslate">
-                                                                        250.000đ
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-12 col-sm-6 col-12 pad-r-0">
-                                                                    <div class="manage-buttons">
-                                                                        <span>
-                                                                            <img src="assets/images/generals/icon-edit-item.svg" alt="" height="20" width="20" />
-                                                                        </span>
-                                                                        <span class="d-xl-inline d-lg-none d-md-inline d-sm-inline d-inline">&nbsp;</span>
-                                                                        <span>
-                                                                            <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20" />
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-                                        </div>
-    
-                                        <div class="err-msg">Vé đã hết hạn, vui lòng chọn lại</div>
-                                    </div>
-                                </div>
-                                <!--#endregion-->
-                            </div>
-                        </div>
-
-                        <div class="d-lg-none d-md-block d-sm-block d-block gap-reg-20"></div>
-
-                        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12">
-                            <div class="row">
-                                <!--#region Payment(Web)-->
-                                <div class="col-12 commit-payment d-lg-block d-md-block d-sm-block d-xs-none d-none">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h3 class="notranslate">900.000&nbsp;<span>đ</span></h3>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <div class="btn-general orange w-100">
-                                                Hoàn tất
-                                            </div>
-                                        </div>
-
-                                        <div class="col-12 txt-cshback">
-                                            <span>Nhận Dealtodaypoint&nbsp;</span><span><img src="assets/images/generals/icon-epoint.svg" alt="" height="20" width="20" /></span><span class="point notranslate">100</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--#endregion-->
-                                <!--#region Payment(Mobile)-->
-                                <div class="col-12 commit-payment-mb d-lg-none d-md-none d-sm-none d-xs-block d-block">
-                                    <div class="row">
-                                        <div class="col-8 flex-align-center">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <span class="txt-note">Tổng cộng (<span class="notranslate">2</span>&nbsp;đơn vị)</span>
-                                                </div>
-                                                <div class="col-12">
-                                                    <span class="txt-price notranslate">250.000đ</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4 flex-align-center">
-                                            <div class="btn-general btn-finish orange w-100 flex-align-center">
-                                                Hoàn tất
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--#endregion-->
-                            </div>
-                        </div>
-                        <!--#endregion-->
+                    <!--#region Cart-->
+                    <div class="d-lg-none d-md-flex d-sm-flex d-xs-flex d-flex col-12 p-0 flex-center page-title-tag">
+                        Giỏ hàng
                     </div>
+                    <div class="d-lg-none d-md-flex d-sm-block d-xs-block d-block gap-reg-12"></div>
+    
+                    <div class="col-12 cart">
+                        <div class="row">
+                            <!--#region Avaiable Items-->
+                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12 col-12">
+                                <div class="row">
+                                    <!--#region E-Voucher-->
+                                    <div class="lst-items blur col-12">
+                                        <div class="dealtoday-checkbox category-item-checkbox">
+                                            <input type="checkbox" id="select-all-voucher">
+                                            <label for="select-all-voucher">&nbsp;&nbsp;<span class="txt-cat">E-Voucher</span></label>
+                                        </div>
+    
+                                        <div class="row item-box evoucher">
+                                            <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                <div class="row">
+                                                    <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                        <div class="check-box">
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="evc-1">
+                                                                <label for="evc-1"></label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
+                                                        <img src="assets/images/demo-imgs/cart-deal-imgs/cart-1.png" alt="" height="80" width="80" />
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
+                                                <div class="row">
+        
+                                                    <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="txt-info">
+                                                                    <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
+                                                                    <div class="gap-reg-6 d-lg-block d-md-none d-sm-none d-none"></div>
+                                                                    <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+                                                        <div class="row h-100">
+                                                            <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                                                                <div class="row h-100 flex-align-center">
+                                                                    <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
+                                                                                <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
+                                                                            </div>
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
+                                                                                <div class="notranslate d-block w-100 presale-price">250.000đ</div>
+                                                                                <div class="d-block w-100 presale-status">Đã cập nhật</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-12 col-lg-12 col-md-4 col-sm-12 col-md-12 p-lg-0 p-md-0 bg-transparent quantity-info d-detail-rg flex-align-center notranslate justify-content-xl-center justify-content-lg-center justify-content-md-center justify-sm-content-start justify-sm-start">
+                                                                                <div class="quantity flex-align-center quant-btn">
+                                                                                    <span class="select-quantity" data-groupid="241">
+                                                                                        <span class="subtract">-</span>
+                                                                                        <span class="quan" data-packid="113277" data-price="216000">0</span>
+                                                                                        <span class="plus">+</span>
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="price-info notranslate">250.000đ</div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="manage-buttons">
+                                                                            <span> 
+                                                                                <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20"> 
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="w-100-p-16"><div class="border-div w-100"></div></div>
+    
+                                        <div class="row item-box evoucher">
+                                            <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                <div class="row">
+                                                    <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                        <div class="check-box">
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="evc-2">
+                                                                <label for="evc-2"></label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
+                                                        <img src="assets/images/demo-imgs/cart-deal-imgs/cart-1.png" alt="" height="80" width="80" />
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
+                                                <div class="row">
+        
+                                                    <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="txt-info">
+                                                                    <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
+                                                                    <div class="gap-reg-6 d-lg-block d-md-none d-sm-none d-none"></div>
+                                                                    <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+                                                        <div class="row h-100">
+                                                            <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                                                                <div class="row h-100 flex-align-center">
+                                                                    <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
+                                                                                <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
+                                                                            </div>
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
+                                                                                <div class="notranslate d-block w-100 presale-price">250.000đ</div>
+                                                                                <div class="d-block w-100 presale-status">Đã cập nhật</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-12 col-lg-12 col-md-4 col-sm-12 col-md-12 p-lg-0 p-md-0 bg-transparent quantity-info d-detail-rg flex-align-center notranslate justify-content-xl-center justify-content-lg-center justify-content-md-center justify-sm-content-start justify-sm-start">
+                                                                                <div class="quantity flex-align-center quant-btn">
+                                                                                    <span class="select-quantity" data-groupid="241">
+                                                                                        <span class="subtract">-</span>
+                                                                                        <span class="quan" data-packid="113277" data-price="216000">0</span>
+                                                                                        <span class="plus">+</span>
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="price-info notranslate">250.000đ</div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="manage-buttons">
+                                                                            <span> 
+                                                                                <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20"> 
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--#endregion-->
+    
+                                    <div class="gap-reg-20"></div>
+    
+                                    <!--#region E-Gift-->
+                                    <div class="lst-items blur col-12">
+                                        <div class="dealtoday-checkbox category-item-checkbox">
+                                            <input type="checkbox" id="select-all-egift">
+                                            <label for="select-all-egift">&nbsp;&nbsp;<span class="txt-cat">E-Gift</span></label>
+                                        </div>
+    
+                                        <input type="hidden" id="countdowntTime" value="9/9/2023 11:53:32 AM" />
+    
+                                        <div class="row item-box cart-about-to-sale evoucher">
+                                            <div class="col-12 detail-flash-countdown upcoming">
+                                                <div class="countdown-container">
+                                                    <ul>
+                                                        <li class="time-left"><span>Bắt đầu sau</span></li>
+                                                        <li><i><span class="days-left"></span></i></li>
+                                                        <li><i><span class="hours-left count"></span></i></li>
+                                                        <li><i><span class="minutes-left count"></span></i></li>
+                                                        <li><i><span class="seconds-left count"></span></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                <div class="row">
+                                                    <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                        <div class="check-box">
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="gift-1">
+                                                                <label for="gift-1"></label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
+                                                        <img src="assets/images/demo-imgs/cart-deal-imgs/cart-2.png" alt="" height="80" width="80" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
+                                                <div class="row">
+        
+                                                    <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="txt-info">
+                                                                    <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
+                                                                    <div class="gap-reg-6 d-lg-block d-md-none d-sm-none d-none"></div>
+                                                                    <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+                                                        <div class="row h-100">
+                                                            <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                                                                <div class="row h-100 flex-align-center">
+                                                                    <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
+                                                                                <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
+                                                                            </div>
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
+                                                                                <div class="notranslate d-block w-100 presale-price">250.000đ</div>
+                                                                                <div class="d-block w-100 presale-status">Đã cập nhật</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-12 col-lg-12 col-md-4 col-sm-12 col-md-12 p-lg-0 p-md-0 bg-transparent quantity-info d-detail-rg flex-align-center notranslate justify-content-xl-center justify-content-lg-center justify-content-md-center justify-sm-content-start justify-sm-start">
+                                                                                <div class="quantity flex-align-center quant-btn">
+                                                                                    <span class="select-quantity" data-groupid="241">
+                                                                                        <span class="subtract">-</span>
+                                                                                        <span class="quan" data-packid="113277" data-price="216000">0</span>
+                                                                                        <span class="plus">+</span>
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="price-info notranslate">250.000đ</div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="manage-buttons">
+                                                                            <span> 
+                                                                                <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20"> 
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <div class="w-100-p-16"><div class="border-div w-100"></div></div>
+    
+                                        <div class="row item-box cart-on-sale evoucher">
+                                            <div class="col-12 detail-flash-countdown onsale">
+                                                <div class="countdown-container">
+                                                    <ul>
+                                                        <li class="time-left"><span>Kết thúc trong</span></li>
+                                                        <li><i><span class="days-left"></span></i></li>
+                                                        <li><i><span class="hours-left count"></span></i></li>
+                                                        <li><i><span class="minutes-left count"></span></i></li>
+                                                        <li><i><span class="seconds-left count"></span></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                <div class="row">
+                                                    <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                        <div class="check-box">
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="gift-2">
+                                                                <label for="gift-2"></label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+    
+                                                    <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
+                                                        <img src="assets/images/demo-imgs/cart-deal-imgs/cart-2.png" alt="" height="80" width="80" />
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
+                                                <div class="row">
+        
+                                                    <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="txt-info">
+                                                                    <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
+                                                                    <div class="gap-reg-6 d-lg-block d-md-none d-sm-none d-none"></div>
+                                                                    <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+                                                        <div class="row h-100">
+                                                            <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                                                                <div class="row h-100 flex-align-center">
+                                                                    <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
+                                                                                <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
+                                                                            </div>
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
+                                                                                <div class="notranslate d-block w-100 presale-price">250.000đ</div>
+                                                                                <div class="d-block w-100 presale-status">Đã cập nhật</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                                        <div class="row">
+                                                                            <div class="col-xl-12 col-lg-12 col-md-4 col-sm-12 col-md-12 p-lg-0 p-md-0 bg-transparent quantity-info d-detail-rg flex-align-center notranslate justify-content-xl-center justify-content-lg-center justify-content-md-center justify-sm-content-start justify-sm-start">
+                                                                                <div class="quantity flex-align-center quant-btn">
+                                                                                    <span class="select-quantity" data-groupid="241">
+                                                                                        <span class="subtract">-</span>
+                                                                                        <span class="quan" data-packid="113277" data-price="216000">0</span>
+                                                                                        <span class="plus">+</span>
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-4 col-md-4 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="price-info notranslate">250.000đ</div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="manage-buttons">
+                                                                            <span> 
+                                                                                <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20"> 
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--#endregion-->
+    
+                                    <div class="gap-reg-20"></div>
+    
+                                    <!--#region E-Ticket-->
+                                    <div class="lst-items col-12">
+                                        <div class="dealtoday-checkbox category-item-checkbox">
+                                            <input type="checkbox" id="select-all-ticket">
+                                            <label for="select-all-ticket">&nbsp;&nbsp;<span class="txt-cat">E-Ticket</span></label>
+                                        </div>
+        
+                                        <div class="row item-box">
+                                            <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block bx-img">
+                                                <div class="row">
+                                                    <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                        <div class="check-box">
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="ticket-3">
+                                                                <label for="ticket-3"></label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
+                                                        <img src="assets/images/demo-imgs/cart-deal-imgs/cart-3.png" alt="" height="80" width="80" />
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
+                                                <div class="row">
+        
+                                                    <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="txt-info">
+                                                                    <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
+                                                                    <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
+                                                                    <p class="date notranslate">3/3/2023 17:20</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                                                        <div class="row h-100">
+                                                            <div class="col-lg-5 col-md-6 col-sm-12 col-12 flex-align-center pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
+                                                                <div class="quantity-info">
+                                                                    <p><span class="notranslate">1&nbsp;x</span>&nbsp;Người lớn</p>
+                                                                    <p><span class="notranslate">1&nbsp;x</span>&nbsp;Trẻ em</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-6 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="price-info notranslate">
+                                                                            250.000đ
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12 pad-r-0">
+                                                                        <div class="manage-buttons">
+                                                                            <span>
+                                                                                <img src="assets/images/generals/icon-edit-item.svg" alt="" height="20" width="20" />
+                                                                            </span>
+                                                                            <span class="d-xl-inline d-lg-none d-md-inline d-sm-inline d-inline">&nbsp;</span>
+                                                                            <span>
+                                                                                <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20" />
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="w-100-p-16"><div class="border-div w-100"></div></div>
+        
+                                        <div class="row item-box">
+                                            <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block bx-img">
+                                                <div class="row">
+                                                    <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                        <div class="check-box">
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="ticket-10">
+                                                                <label for="ticket-10"></label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
+                                                        <img src="assets/images/demo-imgs/cart-deal-imgs/cart-3.png" alt="" height="80" width="80" />
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
+                                                <div class="row">
+        
+                                                    <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="txt-info">
+                                                                    <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
+                                                                    <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
+                                                                    <p class="date notranslate">3/3/2023 17:20</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                                                        <div class="row h-100">
+                                                            <div class="col-lg-5 col-md-6 col-sm-12 col-12 flex-align-center pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
+                                                                <div class="quantity-info">
+                                                                    <p><span class="notranslate">1&nbsp;x</span>&nbsp;Người lớn</p>
+                                                                    <p><span class="notranslate">1&nbsp;x</span>&nbsp;Trẻ em</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-6 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="price-info notranslate">
+                                                                            250.000đ
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12 pad-r-0">
+                                                                        <div class="manage-buttons">
+                                                                            <span>
+                                                                                <img src="assets/images/generals/icon-edit-item.svg" alt="" height="20" width="20" />
+                                                                            </span>
+                                                                            <span class="d-xl-inline d-lg-none d-md-inline d-sm-inline d-inline">&nbsp;</span>
+                                                                            <span>
+                                                                                <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20" />
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                        </div>
+        
+                                        <div class="w-100-p-16"><div class="border-div w-100"></div></div>
+        
+                                        <div class="row item-box expired">
+                                            <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block bx-img">
+                                                <div class="row">
+                                                    <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                        <div class="check-box">
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="ticket-11">
+                                                                <label for="ticket-11"></label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
+                                                        <img src="assets/images/demo-imgs/cart-deal-imgs/cart-3.png" alt="" height="80" width="80" />
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
+                                                <div class="row">
+        
+                                                    <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="txt-info">
+                                                                    <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
+                                                                    <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
+                                                                    <p class="date notranslate">3/3/2023 17:20</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                                                        <div class="row h-100">
+                                                            <div class="col-lg-5 col-md-6 col-sm-12 col-12 flex-align-center pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
+                                                                <div class="quantity-info">
+                                                                    <p><span class="notranslate">1&nbsp;x</span>&nbsp;Người lớn</p>
+                                                                    <p><span class="notranslate">1&nbsp;x</span>&nbsp;Trẻ em</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-6 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="price-info notranslate">
+                                                                            250.000đ
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12 pad-r-0">
+                                                                        <div class="manage-buttons">
+                                                                            <span>
+                                                                                <img src="assets/images/generals/icon-edit-item.svg" alt="" height="20" width="20" />
+                                                                            </span>
+                                                                            <span class="d-xl-inline d-lg-none d-md-inline d-sm-inline d-inline">&nbsp;</span>
+                                                                            <span>
+                                                                                <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20" />
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+        
+                                            <div class="err-msg">Vé đã hết hạn, vui lòng chọn lại</div>
+                                        </div>
+        
+                                        <div class="w-100-p-16"><div class="border-div w-100"></div></div>
+        
+                                        <div class="row item-box expired">
+                                            <div class="col-lg-2 col-md-3 col-sm-3 col-4 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block bx-img">
+                                                <div class="row">
+                                                    <div class="col-3 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block">
+                                                        <div class="check-box">
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="ticket-12">
+                                                                <label for="ticket-12"></label>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-9 flex-align-center d-xl-flex d-lg-flex d-md-flex d-sm-block d-xs-block d-block item-img">
+                                                        <img src="assets/images/demo-imgs/cart-deal-imgs/cart-3.png" alt="" height="80" width="80" />
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-lg-10 col-md-9 col-sm-9 col-8 bx-content">
+                                                <div class="row">
+        
+                                                    <div class="col-lg-7 col-md-7 col-sm-12 col-12">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <div class="txt-info">
+                                                                    <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
+                                                                    <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
+                                                                    <p class="date notranslate">3/3/2023 17:20</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                    <div class="col-lg-5 col-md-5 col-sm-12 col-12">
+                                                        <div class="row h-100">
+                                                            <div class="col-lg-5 col-md-6 col-sm-12 col-12 flex-align-center pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
+                                                                <div class="quantity-info">
+                                                                    <p><span class="notranslate">1&nbsp;x</span>&nbsp;Người lớn</p>
+                                                                    <p><span class="notranslate">1&nbsp;x</span>&nbsp;Trẻ em</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-7 col-md-6 col-sm-12 col-12 flex-align-center d-lg-flex d-md-flex d-sm-block d-flex pad-r-0 justify-content-xl-center justify-content-lg-center justify-content-md-center">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12">
+                                                                        <div class="price-info notranslate">
+                                                                            250.000đ
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6 col-md-12 col-sm-6 col-12 pad-r-0">
+                                                                        <div class="manage-buttons">
+                                                                            <span>
+                                                                                <img src="assets/images/generals/icon-edit-item.svg" alt="" height="20" width="20" />
+                                                                            </span>
+                                                                            <span class="d-xl-inline d-lg-none d-md-inline d-sm-inline d-inline">&nbsp;</span>
+                                                                            <span>
+                                                                                <img src="assets/images/generals/icon-remove-item.svg" alt="" height="20" width="20" />
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+        
+                                            <div class="err-msg">Vé đã hết hạn, vui lòng chọn lại</div>
+                                        </div>
+                                    </div>
+                                    <!--#endregion-->
+                                </div>
+                            </div>
+    
+                            <div class="d-lg-none d-md-block d-sm-block d-block gap-reg-20"></div>
+    
+                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12 col-12">
+                                <div class="row">
+                                    <!--#region Payment(Web)-->
+                                    <div class="col-12 commit-payment d-lg-block d-md-block d-sm-block d-xs-none d-none">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h3 class="notranslate">900.000&nbsp;<span>đ</span></h3>
+                                            </div>
+    
+                                            <div class="col-12">
+                                                <div class="btn-general orange w-100">
+                                                    Hoàn tất
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-12 txt-cshback">
+                                                <span>Nhận Dealtodaypoint&nbsp;</span><span><img src="assets/images/generals/icon-epoint.svg" alt="" height="20" width="20" /></span><span class="point notranslate">100</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--#endregion-->
+                                    <!--#region Payment(Mobile)-->
+                                    <div class="col-12 commit-payment-mb d-lg-none d-md-none d-sm-none d-xs-block d-block">
+                                        <div class="row">
+                                            <div class="col-8 flex-align-center">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span class="txt-note">Tổng cộng (<span class="notranslate">2</span>&nbsp;đơn vị)</span>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <span class="txt-price notranslate">250.000đ</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 flex-align-center">
+                                                <div class="btn-general btn-finish orange w-100 flex-align-center">
+                                                    Hoàn tất
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--#endregion-->
+                                </div>
+                            </div>
+                            <!--#endregion-->
+                        </div>
+                    </div>
+                    <!--#endregion-->
+    
+                    <div class="gap-reg-20"></div>
                 </div>
-                <!--#endregion-->
-
-                <div class="gap-reg-20"></div>
             </div>
         </div>
-    </div>
-
-    <!--#endregion-->
-
-    <!--#region Footer-->
-    <div class="footer">
-        <div class="container p-sm-0 p-xs-0">
-            <div class="row">
-                <!--#region Head Title-->
-                <div class="col-12">
-                    <div class="txt-head-title">
-                        Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế EBIS
+    
+        <!--#endregion-->
+    
+        <!--#region Footer-->
+        <div class="footer">
+            <div class="container p-sm-0 p-xs-0">
+                <div class="row">
+                    <!--#region Head Title-->
+                    <div class="col-12">
+                        <div class="txt-head-title">
+                            Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế EBIS
+                        </div>
+                        <div class="footer-borderline"></div>
                     </div>
-                    <div class="footer-borderline"></div>
-                </div>
-                <!--#endregion-->
-                
-                <!--#region Contact + Info-->
-                <div class="col-12 col-info-reg">
-                    <div class="row">
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-8">
-                            <div class="txt-title">
-                                Liên hệ với Dealtoday
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Trung tâm hỗ trợ
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Hướng dẫn đặt hàng
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Hướng dẫn đổi trả
-                                </a>
-                            </div>
-                        </div>
-        
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-8">
-                            <div class="txt-title">
-                                Đối tác
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Đăng ký nhà cung cấp
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Đăng ký đại lý
-                                </a>
-                            </div>
-                        </div>
-        
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-8">
-                            <div class="txt-title">
-                                Về Dealtoday
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Về chúng tôi
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Cơ hội nghề nghiệp
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Điều khoản sử dụng
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Chính sách bảo mật
-                                </a>
-                            </div>
-                        </div>
-        
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-8">
-                            <div class="txt-title">
-                                Thanh toán
-                            </div>
-        
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-mastercard.svg" data-src="" alt="" width="48" height="24" lazy />
+                    <!--#endregion-->
+                    
+                    <!--#region Contact + Info-->
+                    <div class="col-12 col-info-reg">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Liên hệ với Dealtoday
                                 </div>
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-visa.svg" data-src="" alt="" width="48" height="24" lazy />
-                                </div>
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-vpbank.svg" data-src="" alt="" width="48" height="24" lazy />
-                                </div>
-                            </div>
-        
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-atm.svg" data-src="" alt="" width="48" height="24" lazy />
-                                </div>
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-vn-pay.svg" data-src="" alt="" width="48" height="24" lazy />
-                                </div>
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-bidv.svg" data-src="" alt="" width="48" height="24" lazy />
-                                </div>
-                            </div>
-        
-                            <div class="txt-title">
-                                Chứng nhận bởi
-                            </div>
-        
-                            <div class="txt-info">
-                                <img src="assets/images/footer/icon-bo-cong-thuong.svg" data-src="" alt="" width="120" height="45" lazy />
-                            </div>
-                        </div>
-        
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-8">
-                            <div class="txt-title">
-                                Kết nối với chúng tôi
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#" class="footer-social-icon">
-                                    <img class="" src="assets/images/footer/social/icon-facebook.svg" data-src="" alt="" width="18" height="18" lazy />
-                                </a>
-                                <a href="#" class="footer-social-icon">
-                                    <img class="" src="assets/images/footer/social/icon-youtube.svg" data-src="" alt="" width="18" height="18" lazy />
-                                </a>
-                                <a href="#" class="footer-social-icon">
-                                    <img class="" src="assets/images/footer/social/icon-instagram.svg" data-src="" alt="" width="18" height="18" lazy />
-                                </a>
-                            </div>
-        
-                            <div class="txt-title">
-                                Tải ứng dụng Dealtoday
-                            </div>
-        
-                            <div class="row flex-align-center">
-                                <div class="col-5">
-                                    <a>
-                                        <img class="" src="assets/images/footer/download-qr-375.png" data-src="" alt="" width="90" height="90" lazy />
-                                    </a>
-                                </div>
-                                <div class="col-7">
-                                    <a href="#" class="footer-btn-download">
-                                        <img class="" src="assets/images/footer/download/icon-download-googlePlay.svg" data-src="" alt="" width="106" height="40" lazy />
-                                    </a>
-                                    <a href="#" class="footer-btn-download">
-                                        <img class="" src="assets/images/footer/download/icon-download-appStore.svg" data-src="" alt="" width="106" height="40" lazy />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-borderline"></div>
-                </div>
-                <!--#endregion-->
-                
-                <!--#region Location-->
-                <div class="col-12">
-                    <div class="txt-desc">
-                        Trụ sở chính: Phòng 301, Tầng 3, Tòa nhà số 18 Ngõ 11, Thái Hà, Phường Trung Liệt, Quận Đống Đa, Hà Nội - Tel: 024.7304.7799 – Fax: 024.2215.0220 – Email: hotro@dealtoday.vn
-                    </div>
-
-                    <div class="txt-desc">
-                        Văn phòng HCM: Tầng 8, Tòa nhà Phương Nam, Số 157 Võ Thị Sáu, Phường Võ Thị Sáu, Quận 3, TP. HCM- Tel: 028.6680.8756
-                    </div>
-
-                    <div class="txt-desc">
-                        Giấy chứng nhận đăng ký kinh doanh số 0102225186 - Do Sở Kế hoạch Đầu Tư Hà Nội cấp ngày 18/04/2007
-                    </div>
-
-                    <div class="footer-borderline"></div>
-                </div>
-                <!--#endregion-->
-                
-                <!--#region Description-->
-                <div class="col-12">
-                    <div class="txt-title">
-                        Dealtoday.vn - Nhà cung cấp Hotdeal ưu đãi nhất Hà Nội
-                    </div>
-
-                    <div class="txt-desc">
-                        Dealtoday.vn là sàn thương mại điện tử với mạng lưới hơn 1000 đối tác rộng khắp toàn quốc, chuyên cung cấp khuyến mại hot trong lĩnh vực dịch vụ (nhà hàng - ẩm thực, du lịch – khách sạn, sức khỏe – làm đẹp, vui chơi giải trí)
-
-                        Tải ứng dụng Dealtoday trên điện thoại để luôn được cập nhật các deal/voucher hấp dẫn nhất, ở gần bạn nhất đồng thời biến việc mua sắm trở nên dễ dàng, thú vị và tiết kiệm hơn bao giờ hết.
-
-                        Dealtoday.vn – Sàn thương mại điện tử cung cấp giá trị niềm tin, luôn bảo vệ quyền lợi người mua voucher khuyến mãi
-
-                        Dealtoday cung cấp lợi ích cho khách hàng dưới hình thức deal hot/voucher giảm giá. Mỗi Deal/Voucher khuyến mãi đối tác phát hành đều được kiểm duyệt lại theo quy trình chặt chẽ của Dealtoday.
-                        Không có Deal/voucher nâng giá để khuyến mãi. Dealtoday cam kết mỗi khuyến mại được phát hành đều là Deal thật với khuyến mại thật. Giá dịch vụ khi mua tại Dealtoday luôn luôn thấp hơn tại điểm bán trực tiếp và thấp nhất trên thị trường hot deal Hà Nội/hot deal HCM.
-
-                        Dealtoday luôn tập trung vào các đối tác/nhà phát hành deal uy tín, chuyên nghiệp và có rất nhiều đối tác là những thương hiệu lớn trong các lĩnh vực ẩm thực, du lịch – khách sạn.
-
-                        Đặc biệt, khách hàng có quyền yêu cầu hoàn tiền trong vòng 3 ngày nếu các nhà cung cấp không đáp ứng đúng thông tin khi mua voucher. Đội ngũ hỗ trợ của Dealtoday sẵn sàng chờ đợi để giải đáp những thắc mắc của người dùng dịch vụ. Dealtoday luôn cố gắng mang lại những trải nghiệm tốt nhất cho mỗi khách hàng
-                        
-                        Nhận khuyến mãi nhiều hơn khi là thành viên của sàn thương mại điện tử Dealtoday.vn
-
-                        Khi là thành viên của Dealtoday.vn, người mua có cơ hội tiết kiệm thêm mỗi ngày nhờ quy chế Cộng điểm. Khách hàng có thể được tích lũy từ 5-30% khi mua sắm tại các điểm ưu đãi tại Hà Nội, TP.HCM và các tỉnh thành khác trên toàn quốc.
-
-                        Khách hàng cũng dễ dàng chuyển nhượng, tặng điểm tích lũy, tặng deal/voucher cho bạn bè, người thân cùng là thành viên của Dealtoday.vn mà không cần để ý tới việc các hot deals/voucher đó ở Hà Nội hay TP.HCM.
-
-                        Là thành viên của Dealtoday.vn, khách hàng cũng đồng thời trở thành VIP của các thương hiệu lớn trên toàn quốc.
-
-                        Dealtoday.vn – LUÔN ƯU ĐÃI
-
-                        Với sứ mệnh là một sàn thương mại điện tử chuyên cung cấp voucher/hot deal trên toàn quốc, Dealtoday.vn luôn nỗ lực để mang lại những giá trị tuyệt vời hơn cho khách hàng. Có Dealtoday.vn, khách hàng không còn cần xếp hàng dài chờ đợi khuyến mại như những cách thức mua hàng truyền thống.
-
-                        Chỉ cần một click chuột và xác nhận, ngay lập tức khuyến mại sẽ được gửi về điện thoại/email. Việc tiếp theo chỉ là sử dụng quyền lợi ưu đãi và tiết kiệm thêm được một khoản đáng kể mỗi lần mua sắm.
-
-                        Trở thành thành viên của Dealtoday ngay hôm nay và tận hưởng niềm vui mua sắm mỗi ngày!
-                    </div>
-
-                    <div class="footer-borderline"></div>
-                </div>
-                <!--#endregion-->
-                
-                <!--#region Category-->
-                <div class="col-12">
-                    <div class="txt-title">
-                        Danh mục
-                    </div>
-                </div>
-                <div class="col-12 footer-tags-reg">
-                    <div class="txt-tag">
-                        <div class="txt-title">
-                            Dealtoday.vn 
-                        </div>
-                        <div class="txt-desc">
-                            Dealtoday.vn là sàn thương mại điện tử 
-                        </div>
-                    </div>
-                    <div class="txt-tag">
-                        <div class="txt-title">
-                            Dealtoday.vn là sàn thương mại điện tử với mạng lưới hơn 1000 đối tác rộng khắp toàn quốc, chuyên cung cấp khuyến mại hot trong lĩnh vực dịch vụ (nhà hàng - ẩm thực, du lịch – khách sạn, sức khỏe – làm đẹp, vui chơi giải trí)
-                        </div>
-                        <div class="txt-desc">
-                            Dealtoday.vn là sàn thương mại điện tử 
-                        </div>
-                    </div>
-                    <div class="txt-tag">
-                        <div class="txt-title">
-                            Dealtoday.vn là sàn thương mại điện tử với mạng lưới hơn 1000 đối tác rộng khắp toàn quốc, chuyên cung cấp khuyến mại hot trong lĩnh vực dịch vụ (nhà hàng - ẩm thực, du lịch – khách sạn, sức khỏe – làm đẹp, vui chơi giải trí)
-                        </div>
-                        <div class="txt-desc">
-                            Dealtoday.vn 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="footer-borderline"></div>
-                </div>
-                <!--#endregion-->
             
-                <!--#region Copyright-->
-                <div class="col-12">
-                    <div class="txt-desc flex-center">
-                        © 2022 - Bản quyền của Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế EBIS
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Trung tâm hỗ trợ
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Hướng dẫn đặt hàng
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Hướng dẫn đổi trả
+                                    </a>
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Đối tác
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Đăng ký nhà cung cấp
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Đăng ký đại lý
+                                    </a>
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Về Dealtoday
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Về chúng tôi
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Cơ hội nghề nghiệp
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Điều khoản sử dụng
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Chính sách bảo mật
+                                    </a>
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Thanh toán
+                                </div>
+            
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-mastercard.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-visa.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-vpbank.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                </div>
+            
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-atm.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-vn-pay.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-bidv.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                </div>
+            
+                                <div class="txt-title">
+                                    Chứng nhận bởi
+                                </div>
+            
+                                <div class="txt-info">
+                                    <img src="assets/images/footer/icon-bo-cong-thuong.svg" data-src="" alt="" width="120" height="45" lazy />
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Kết nối với chúng tôi
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#" class="footer-social-icon">
+                                        <img class="" src="assets/images/footer/social/icon-facebook.svg" data-src="" alt="" width="18" height="18" lazy />
+                                    </a>
+                                    <a href="#" class="footer-social-icon">
+                                        <img class="" src="assets/images/footer/social/icon-youtube.svg" data-src="" alt="" width="18" height="18" lazy />
+                                    </a>
+                                    <a href="#" class="footer-social-icon">
+                                        <img class="" src="assets/images/footer/social/icon-instagram.svg" data-src="" alt="" width="18" height="18" lazy />
+                                    </a>
+                                </div>
+            
+                                <div class="txt-title">
+                                    Tải ứng dụng Dealtoday
+                                </div>
+            
+                                <div class="row flex-align-center">
+                                    <div class="col-5">
+                                        <a>
+                                            <img class="" src="assets/images/footer/download-qr-375.png" data-src="" alt="" width="90" height="90" lazy />
+                                        </a>
+                                    </div>
+                                    <div class="col-7">
+                                        <a href="#" class="footer-btn-download">
+                                            <img class="" src="assets/images/footer/download/icon-download-googlePlay.svg" data-src="" alt="" width="106" height="40" lazy />
+                                        </a>
+                                        <a href="#" class="footer-btn-download">
+                                            <img class="" src="assets/images/footer/download/icon-download-appStore.svg" data-src="" alt="" width="106" height="40" lazy />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-borderline"></div>
                     </div>
+                    <!--#endregion-->
+                    
+                    <!--#region Location-->
+                    <div class="col-12">
+                        <div class="txt-desc">
+                            Trụ sở chính: Phòng 301, Tầng 3, Tòa nhà số 18 Ngõ 11, Thái Hà, Phường Trung Liệt, Quận Đống Đa, Hà Nội - Tel: 024.7304.7799 – Fax: 024.2215.0220 – Email: hotro@dealtoday.vn
+                        </div>
+    
+                        <div class="txt-desc">
+                            Văn phòng HCM: Tầng 8, Tòa nhà Phương Nam, Số 157 Võ Thị Sáu, Phường Võ Thị Sáu, Quận 3, TP. HCM- Tel: 028.6680.8756
+                        </div>
+    
+                        <div class="txt-desc">
+                            Giấy chứng nhận đăng ký kinh doanh số 0102225186 - Do Sở Kế hoạch Đầu Tư Hà Nội cấp ngày 18/04/2007
+                        </div>
+    
+                        <div class="footer-borderline"></div>
+                    </div>
+                    <!--#endregion-->
+                    
+                    <!--#region Description-->
+                    <div class="col-12">
+                        <div class="txt-title">
+                            Dealtoday.vn - Nhà cung cấp Hotdeal ưu đãi nhất Hà Nội
+                        </div>
+    
+                        <div class="txt-desc">
+                            Dealtoday.vn là sàn thương mại điện tử với mạng lưới hơn 1000 đối tác rộng khắp toàn quốc, chuyên cung cấp khuyến mại hot trong lĩnh vực dịch vụ (nhà hàng - ẩm thực, du lịch – khách sạn, sức khỏe – làm đẹp, vui chơi giải trí)
+    
+                            Tải ứng dụng Dealtoday trên điện thoại để luôn được cập nhật các deal/voucher hấp dẫn nhất, ở gần bạn nhất đồng thời biến việc mua sắm trở nên dễ dàng, thú vị và tiết kiệm hơn bao giờ hết.
+    
+                            Dealtoday.vn – Sàn thương mại điện tử cung cấp giá trị niềm tin, luôn bảo vệ quyền lợi người mua voucher khuyến mãi
+    
+                            Dealtoday cung cấp lợi ích cho khách hàng dưới hình thức deal hot/voucher giảm giá. Mỗi Deal/Voucher khuyến mãi đối tác phát hành đều được kiểm duyệt lại theo quy trình chặt chẽ của Dealtoday.
+                            Không có Deal/voucher nâng giá để khuyến mãi. Dealtoday cam kết mỗi khuyến mại được phát hành đều là Deal thật với khuyến mại thật. Giá dịch vụ khi mua tại Dealtoday luôn luôn thấp hơn tại điểm bán trực tiếp và thấp nhất trên thị trường hot deal Hà Nội/hot deal HCM.
+    
+                            Dealtoday luôn tập trung vào các đối tác/nhà phát hành deal uy tín, chuyên nghiệp và có rất nhiều đối tác là những thương hiệu lớn trong các lĩnh vực ẩm thực, du lịch – khách sạn.
+    
+                            Đặc biệt, khách hàng có quyền yêu cầu hoàn tiền trong vòng 3 ngày nếu các nhà cung cấp không đáp ứng đúng thông tin khi mua voucher. Đội ngũ hỗ trợ của Dealtoday sẵn sàng chờ đợi để giải đáp những thắc mắc của người dùng dịch vụ. Dealtoday luôn cố gắng mang lại những trải nghiệm tốt nhất cho mỗi khách hàng
+                            
+                            Nhận khuyến mãi nhiều hơn khi là thành viên của sàn thương mại điện tử Dealtoday.vn
+    
+                            Khi là thành viên của Dealtoday.vn, người mua có cơ hội tiết kiệm thêm mỗi ngày nhờ quy chế Cộng điểm. Khách hàng có thể được tích lũy từ 5-30% khi mua sắm tại các điểm ưu đãi tại Hà Nội, TP.HCM và các tỉnh thành khác trên toàn quốc.
+    
+                            Khách hàng cũng dễ dàng chuyển nhượng, tặng điểm tích lũy, tặng deal/voucher cho bạn bè, người thân cùng là thành viên của Dealtoday.vn mà không cần để ý tới việc các hot deals/voucher đó ở Hà Nội hay TP.HCM.
+    
+                            Là thành viên của Dealtoday.vn, khách hàng cũng đồng thời trở thành VIP của các thương hiệu lớn trên toàn quốc.
+    
+                            Dealtoday.vn – LUÔN ƯU ĐÃI
+    
+                            Với sứ mệnh là một sàn thương mại điện tử chuyên cung cấp voucher/hot deal trên toàn quốc, Dealtoday.vn luôn nỗ lực để mang lại những giá trị tuyệt vời hơn cho khách hàng. Có Dealtoday.vn, khách hàng không còn cần xếp hàng dài chờ đợi khuyến mại như những cách thức mua hàng truyền thống.
+    
+                            Chỉ cần một click chuột và xác nhận, ngay lập tức khuyến mại sẽ được gửi về điện thoại/email. Việc tiếp theo chỉ là sử dụng quyền lợi ưu đãi và tiết kiệm thêm được một khoản đáng kể mỗi lần mua sắm.
+    
+                            Trở thành thành viên của Dealtoday ngay hôm nay và tận hưởng niềm vui mua sắm mỗi ngày!
+                        </div>
+    
+                        <div class="footer-borderline"></div>
+                    </div>
+                    <!--#endregion-->
+                    
+                    <!--#region Category-->
+                    <div class="col-12">
+                        <div class="txt-title">
+                            Danh mục
+                        </div>
+                    </div>
+                    <div class="col-12 footer-tags-reg">
+                        <div class="txt-tag">
+                            <div class="txt-title">
+                                Dealtoday.vn 
+                            </div>
+                            <div class="txt-desc">
+                                Dealtoday.vn là sàn thương mại điện tử 
+                            </div>
+                        </div>
+                        <div class="txt-tag">
+                            <div class="txt-title">
+                                Dealtoday.vn là sàn thương mại điện tử với mạng lưới hơn 1000 đối tác rộng khắp toàn quốc, chuyên cung cấp khuyến mại hot trong lĩnh vực dịch vụ (nhà hàng - ẩm thực, du lịch – khách sạn, sức khỏe – làm đẹp, vui chơi giải trí)
+                            </div>
+                            <div class="txt-desc">
+                                Dealtoday.vn là sàn thương mại điện tử 
+                            </div>
+                        </div>
+                        <div class="txt-tag">
+                            <div class="txt-title">
+                                Dealtoday.vn là sàn thương mại điện tử với mạng lưới hơn 1000 đối tác rộng khắp toàn quốc, chuyên cung cấp khuyến mại hot trong lĩnh vực dịch vụ (nhà hàng - ẩm thực, du lịch – khách sạn, sức khỏe – làm đẹp, vui chơi giải trí)
+                            </div>
+                            <div class="txt-desc">
+                                Dealtoday.vn 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="footer-borderline"></div>
+                    </div>
+                    <!--#endregion-->
+                
+                    <!--#region Copyright-->
+                    <div class="col-12">
+                        <div class="txt-desc flex-center">
+                            © 2022 - Bản quyền của Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế EBIS
+                        </div>
+                    </div>
+                    <!--#endregion-->
                 </div>
-                <!--#endregion-->
             </div>
         </div>
-    </div>
-    <!--#endregion-->
-
-    <!--#region-->
-    <script>
-        $('.select-quantity .plus').click(function () {
-        var total = 0;
-            var quan = $(this).parent().find('.quan').text();
-            if (quan < 20) {
-                quan = parseInt(quan) + 1;
-                $(this).parent().find('.quan').text(quan);
-                $(this).parents('.detail-option').find('.quan').each(function (index, obj) {
-                    var price = $(obj).data("price");
-                    var tem_quan = $(obj).text();
-                    if (tem_quan <= 20) {
-                        total += price * parseInt(tem_quan);
-                    }
-                });
-            }
-            else {
-                alert("Bạn mua tối đa 20 sản phẩm. Nếu có nhu cầu mua số lượng lớn vui lòng liên hệ hotline 1900 2065")
-            }
-        });
-
-
-        $('.select-quantity .subtract').click(function () {
+        <!--#endregion-->
+    
+        <!--#region-->
+        <script>
+            $('.select-quantity .plus').click(function () {
             var total = 0;
-            var quan = $(this).parent().find('.quan').text();
-            if (quan > 0) {
-                quan = parseInt(quan) - 1;
-                $(this).parent().find('.quan').text(quan);
-                $(this).parents('.detail-option').find('.quan').each(function (index, obj) {
-                    var price = $(obj).data("price");
-                    var tem_quan = $(obj).text();
-                    if (tem_quan < 20) {
-                        total += price * parseInt(tem_quan);
-                    }
-                });
-            }
-        });
-    </script>
-
-    <script>
-        (function () {
-            var stopDay = document.getElementById("countdowntTime").value;
-
-            const second = 1000,
-                minute = second * 60,
-                hour = minute * 60,
-                day = hour * 24;
-                
-            const countDown = new Date(stopDay).getTime(),
-            x = setInterval(function () {
-                const now = new Date().getTime(),
-                distance = countDown - now;
-
-                if (now > countDown) {
-                    $(".days-left").each(function() {
-                        $(this).html("00");
-                    });
-
-                    $(".hours-left").each(function() {
-                        $(this).html("00");
-                    });
-
-                    $(".minutes-left").each(function() {
-                        $(this).html("00");
-                    });
-
-                    $(".seconds-left").each(function() {
-                        $(this).html("00");
+                var quan = $(this).parent().find('.quan').text();
+                if (quan < 20) {
+                    quan = parseInt(quan) + 1;
+                    $(this).parent().find('.quan').text(quan);
+                    $(this).parents('.detail-option').find('.quan').each(function (index, obj) {
+                        var price = $(obj).data("price");
+                        var tem_quan = $(obj).text();
+                        if (tem_quan <= 20) {
+                            total += price * parseInt(tem_quan);
+                        }
                     });
                 }
                 else {
-                    if (Math.floor(distance % (day)) < 10) {
-                        $(".days-left").html("0" + Math.floor(distance / (day)));
-                    }
-                    else {
-                        $(".days-left").html(Math.floor(distance / (day)));
-                    }
-
-                    if (Math.floor((distance % (day)) / (hour)) < 10) {
-                        $(".hours-left").html("0" + Math.floor((distance % (day)) / (hour)));
-                    }
-                    else {
-                        $(".hours-left").html(Math.floor((distance % (day)) / (hour)));
-                    }
-
-                    if (Math.floor((distance % (hour)) / (minute)) < 10) {
-                        $(".minutes-left").html("0" + Math.floor((distance % (hour)) / (minute)));
-                    }
-                    else {
-                        $(".minutes-left").html(Math.floor((distance % (hour)) / (minute)));
-                    }
-
-                    if (Math.floor((distance % (minute)) / second) < 10) {
-                        $(".seconds-left").html("0" + Math.floor((distance % (minute)) / second));
-                    }
-                    else {
-                        $(".seconds-left").html(Math.floor((distance % (minute)) / second));
-                    }
+                    alert("Bạn mua tối đa 20 sản phẩm. Nếu có nhu cầu mua số lượng lớn vui lòng liên hệ hotline 1900 2065")
                 }
-
-                if (distance < 0) {
-                    $("#countdown-zone").addClass("d-none");
-                    clearInterval(x);
+            });
+    
+    
+            $('.select-quantity .subtract').click(function () {
+                var total = 0;
+                var quan = $(this).parent().find('.quan').text();
+                if (quan > 0) {
+                    quan = parseInt(quan) - 1;
+                    $(this).parent().find('.quan').text(quan);
+                    $(this).parents('.detail-option').find('.quan').each(function (index, obj) {
+                        var price = $(obj).data("price");
+                        var tem_quan = $(obj).text();
+                        if (tem_quan < 20) {
+                            total += price * parseInt(tem_quan);
+                        }
+                    });
                 }
-            }, 0)
-        }()); 
-    </script>
-    <!--#endregion-->
-
+            });
+        </script>
+    
+        <script>
+            (function () {
+                var stopDay = document.getElementById("countdowntTime").value;
+    
+                const second = 1000,
+                    minute = second * 60,
+                    hour = minute * 60,
+                    day = hour * 24;
+                    
+                const countDown = new Date(stopDay).getTime(),
+                x = setInterval(function () {
+                    const now = new Date().getTime(),
+                    distance = countDown - now;
+    
+                    if (now > countDown) {
+                        $(".days-left").each(function() {
+                            $(this).html("00");
+                        });
+    
+                        $(".hours-left").each(function() {
+                            $(this).html("00");
+                        });
+    
+                        $(".minutes-left").each(function() {
+                            $(this).html("00");
+                        });
+    
+                        $(".seconds-left").each(function() {
+                            $(this).html("00");
+                        });
+                    }
+                    else {
+                        if (Math.floor(distance % (day)) < 10) {
+                            $(".days-left").html("0" + Math.floor(distance / (day)));
+                        }
+                        else {
+                            $(".days-left").html(Math.floor(distance / (day)));
+                        }
+    
+                        if (Math.floor((distance % (day)) / (hour)) < 10) {
+                            $(".hours-left").html("0" + Math.floor((distance % (day)) / (hour)));
+                        }
+                        else {
+                            $(".hours-left").html(Math.floor((distance % (day)) / (hour)));
+                        }
+    
+                        if (Math.floor((distance % (hour)) / (minute)) < 10) {
+                            $(".minutes-left").html("0" + Math.floor((distance % (hour)) / (minute)));
+                        }
+                        else {
+                            $(".minutes-left").html(Math.floor((distance % (hour)) / (minute)));
+                        }
+    
+                        if (Math.floor((distance % (minute)) / second) < 10) {
+                            $(".seconds-left").html("0" + Math.floor((distance % (minute)) / second));
+                        }
+                        else {
+                            $(".seconds-left").html(Math.floor((distance % (minute)) / second));
+                        }
+                    }
+    
+                    if (distance < 0) {
+                        $("#countdown-zone").addClass("d-none");
+                        clearInterval(x);
+                    }
+                }, 0)
+            }()); 
+        </script>
+        <!--#endregion-->
+    </div>
 </body>
 </html>

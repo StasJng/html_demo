@@ -3913,6 +3913,25 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 
 /* -------------------------------------------------------------------------------------------- */
+/* Layout trang SEARCH */
+@media(min-width: 1200px) {
+    .col-xl-3.p-search-filter-ctn-box {
+        padding-right: 70px;
+    }
+
+    .col-xl-9.p-seacrh-lst-items-box {
+        width: calc(75% + 70px);
+        margin-left: -70px;
+        padding-left: 16px;
+    }
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
 /* Box Sorting trên trang search */
 .d-detail-rg .result-txt {
     font-size: 16px;

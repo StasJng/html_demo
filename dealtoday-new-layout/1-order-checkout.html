@@ -75,765 +75,778 @@
 </head>
 
 <body>
-    <!--#region Header-->
-    <div class="header-payment" id="header-payment">
-        <div class="container">
-            <div class="row h-content">
-                <div class="col-6 p-0">
-                    <div class="h-logo pay flex-center">
-                        <a href="/">
-                            <img src="assets/images/header/logo.png" alt="" />
-                        </a>
-                        <div class="bor"> </div>
-                        <div class="pay-title" onclick="openPopup('#popup-location');">Thanh toán</div>
+    <!--#region Javascript disabled meesage(~Gmail)-->
+    <noscript>
+        <style type="text/css">
+            .pagecontainer {display:none !important;}
+        </style>
+        <div class="noscriptmsg">
+            You don't have javascript enabled!
+        </div>
+    </noscript>
+    <!--#endregion-->
+
+    <div class="pagecontainer">
+        <!--#region Header-->
+        <div class="header-payment" id="header-payment">
+            <div class="container">
+                <div class="row h-content">
+                    <div class="col-6 p-0">
+                        <div class="h-logo pay flex-center">
+                            <a href="/">
+                                <img src="assets/images/header/logo.png" alt="" />
+                            </a>
+                            <div class="bor"> </div>
+                            <div class="pay-title" onclick="openPopup('#popup-location');">Thanh toán</div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-6 p-0 hot-line">
-                    <div class="wrap flex-align-center">
-                        <img src="assets/images/header/icon-phone.svg" alt="" />
-                        <a href="tel:19002065">19002065</a>
-                        <a href="tel:0934661016" class="d-lg-flex d-md-flex d-sm-none d-none">&nbsp;-&nbsp;0934.661.016</a>
+                    <div class="col-6 p-0 hot-line">
+                        <div class="wrap flex-align-center">
+                            <img src="assets/images/header/icon-phone.svg" alt="" />
+                            <a href="tel:19002065">19002065</a>
+                            <a href="tel:0934661016" class="d-lg-flex d-md-flex d-sm-none d-none">&nbsp;-&nbsp;0934.661.016</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!--#region Popup Location-->
-    <div class="p-popup-container popup-location" id="popup-location" onclick="if(event.target == this){closePopup('#popup-location');}" aria-hidden="true">
-        <div class="p-popup-wrapper">
-            <div class="row">
-                <div class="col-12 p-locs-tiltle">
-                    Chọn địa điểm
-                    <img src="assets/images/popup/close-icon-black.svg" alt="" height="20" width="20" onclick="closePopup('#popup-location');"/>
-                </div>
-
-                <div class="gap-reg-16"></div>
-
-                <div class="col-12 p-locs-desc">
-                    Hãy chọn tỉnh thành của bạn. Bạn có thể thay đổi tỉnh thành tại đầu trang.
-                </div>
-
-                <div class="gap-reg-16"></div>
-
-                <div class="col-12 p-locs-select">
-                    <select>
-                        <option>Toàn quốc</option>
-                        <option>Hà Nội</option>
-                        <option>Sài Gòn</option>
-                        <option>Đà Nẵng</option>
-                    </select>                    
-                </div>
-
-                <div class="gap-reg-16"></div>
-
-                <div class="col-12">
-                    <div class="btn-general orange w-100">
-                        Tiếp tục
+    
+        <!--#region Popup Location-->
+        <div class="p-popup-container popup-location" id="popup-location" onclick="if(event.target == this){closePopup('#popup-location');}" aria-hidden="true">
+            <div class="p-popup-wrapper">
+                <div class="row">
+                    <div class="col-12 p-locs-tiltle">
+                        Chọn địa điểm
+                        <img src="assets/images/popup/close-icon-black.svg" alt="" height="20" width="20" onclick="closePopup('#popup-location');"/>
+                    </div>
+    
+                    <div class="gap-reg-16"></div>
+    
+                    <div class="col-12 p-locs-desc">
+                        Hãy chọn tỉnh thành của bạn. Bạn có thể thay đổi tỉnh thành tại đầu trang.
+                    </div>
+    
+                    <div class="gap-reg-16"></div>
+    
+                    <div class="col-12 p-locs-select">
+                        <select>
+                            <option>Toàn quốc</option>
+                            <option>Hà Nội</option>
+                            <option>Sài Gòn</option>
+                            <option>Đà Nẵng</option>
+                        </select>                    
+                    </div>
+    
+                    <div class="gap-reg-16"></div>
+    
+                    <div class="col-12">
+                        <div class="btn-general orange w-100">
+                            Tiếp tục
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--#endregion-->
+        <!--#endregion-->
+        
+        <script>
+            window.onscroll = function () { myFunction() };
     
-    <script>
-        window.onscroll = function () { myFunction() };
-
-        function myFunction() {
-            if (window.pageYOffset > 0) {
-                $("#header-payment").attr("style", "height: fit-content; box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
+            function myFunction() {
+                if (window.pageYOffset > 0) {
+                    $("#header-payment").attr("style", "height: fit-content; box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
+                }
+                else {
+                    $("#header-payment").removeAttr("style");
+                }
             }
-            else {
-                $("#header-payment").removeAttr("style");
+    
+            function openPopup(popup) {
+                $('body').attr('style', 'overflow: hidden');
+                $(popup).show().attr("aria-hidden", "false");
             }
-        }
-
-        function openPopup(popup) {
-            $('body').attr('style', 'overflow: hidden');
-            $(popup).show().attr("aria-hidden", "false");
-        }
-
-        function closePopup(popup) {
-            $('body').removeAttr('style');
-            $(popup).hide().attr("aria-hidden", "true");
-        }
-    </script>
-    <!--#endregion-->
     
-    <!--#region Body-->
-    <div class="body order">
-        <div class="container">
-            <div class="row">
-                <div class="gap-reg-20"></div>
-
-                <!--#region Checkout-->
-                <div class="col-12 checkout-rg p-sm-0 p-xs-0">
-                    <div class="row">
-                        <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 col-12">
-                            <!--#region Payment Info-->
-                            <div class="row checkout-info border-round-12">
-                                <div class="col-12">
-                                    <h2>
-                                        Thông tin thanh toán
-                                    </h2>
-                                </div>
+            function closePopup(popup) {
+                $('body').removeAttr('style');
+                $(popup).hide().attr("aria-hidden", "true");
+            }
+        </script>
+        <!--#endregion-->
+        
+        <!--#region Body-->
+        <div class="body order">
+            <div class="container">
+                <div class="row">
+                    <div class="gap-reg-20"></div>
     
-                                <div class="col-12 gap-bor-line c-eee"></div>
-    
-                                <!--#region From-->
-                                <div class="container">
-                                    <div class="row from">
-                                        <div class="col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-4 col-4">
-                                            <div class="row">
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
-                                                    Họ tên
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
-                                                    Số điện thoại
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
-                                                    E-mail
+                    <!--#region Checkout-->
+                    <div class="col-12 checkout-rg p-sm-0 p-xs-0">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 col-12">
+                                <!--#region Payment Info-->
+                                <div class="row checkout-info border-round-12">
+                                    <div class="col-12">
+                                        <h2>
+                                            Thông tin thanh toán
+                                        </h2>
+                                    </div>
+        
+                                    <div class="col-12 gap-bor-line c-eee"></div>
+        
+                                    <!--#region From-->
+                                    <div class="container">
+                                        <div class="row from">
+                                            <div class="col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-4 col-4">
+                                                <div class="row">
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
+                                                        Họ tên
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
+                                                        Số điện thoại
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
+                                                        E-mail
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="col-xl-12 col-lg-12 col-md-9 col-sm-9 col-xs-8 col-8">
-                                            <div class="row">
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
-                                                    Nguyễn Huệ
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
-                                                    0989898989
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
-                                                    winwinthepooh@gmail.com
+                                            <div class="col-xl-12 col-lg-12 col-md-9 col-sm-9 col-xs-8 col-8">
+                                                <div class="row">
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
+                                                        Nguyễn Huệ
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
+                                                        0989898989
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
+                                                        winwinthepooh@gmail.com
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!--#endregion-->
+        
+                                    <div class="col-12 gap-bor-line c-eee"></div>
+        
+                                    <!--#region To-->
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h3>
+                                                    Thông tin người nhận
+                                                </h3>
+                                            </div>
+                                            <div class="col-6 edit">
+                                                Thay đổi
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="container">
+                                        <div class="row to">
+                                            <div class="col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-4 col-4">
+                                                <div class="row">
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
+                                                        Họ tên
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
+                                                        Số điện thoại
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
+                                                        E-mail
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-xl-12 col-lg-12 col-md-9 col-sm-9 col-xs-8 col-8">
+                                                <div class="row">
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
+                                                        Nguyễn Huệ
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
+                                                        0989898989
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
+                                                        winwinthepooh@gmail.com
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+        
+                                    <div class="container">
+                                        <div class="row to">
+                                            <div class="col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-4 col-4">
+                                                <div class="row">
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field type-in">
+                                                        Họ tên
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field type-in">
+                                                        Số điện thoại
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field type-in">
+                                                        E-mail
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-xl-12 col-lg-12 col-md-9 col-sm-9 col-xs-8 col-8">
+                                                <div class="row">
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
+                                                        <input type="text" placeholder="Nhập họ và tên" />
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
+                                                        <input type="text" placeholder="Nhập số điện thoại" />
+                                                    </div>
+                                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
+                                                        <input type="text" placeholder="Nhập email" />
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                            <div class="col-xl-12 col-lg-12 col-md-4 col-sm-6 col-xs-8 col-7">
+                                                <div class="row">
+                                                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 col-6 info-btn">
+                                                        <div class="btn-cancel" onclick="openPopup('#popup-checkout-warning')">
+                                                            <div>
+                                                                Hủy
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 col-6">
+                                                        <div class="btn-confirm">
+                                                            <div>
+                                                                Xác nhận
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--#endregion-->
                                 </div>
                                 <!--#endregion-->
+        
+                                <div class="gap-reg-20"></div>
+                                
+                                <!--#region Payment methods-->
+                                <div class="row checkout-info border-round-12">
+                                    <div class="col-12">
+                                        <h2>
+                                            Chọn hình thức thanh toán
+                                        </h2>
+                                    </div>
+                                    
+                                    <div class="col-12 dealtoday-checkbox round d-method">
+                                        <input type="radio" id="method1" name="payment-method">
+                                        <label for="method1">&nbsp;Thanh toán bằng tài khoản Dealtoday</label>
+        
+                                        <div class="method-content v-hidden">
+                                            <div class="row acc-balance">
+                                                <div class="col-12 cont title">
+                                                    Số dư khả dụng
+                                                </div>
+                                                <div class="col-12 cont black">
+                                                    14.300đ
+                                                </div>
+                                            </div>
     
-                                <div class="col-12 gap-bor-line c-eee"></div>
+                                            <div class="row acc-balance">
+                                                <div class="col-12 cont title">
+                                                    Số dư ngăn tích lũy
+                                                </div>
+                                                <div class="col-12 cont red">
+                                                    14.300đ
+                                                </div>
+                                            </div>
     
-                                <!--#region To-->
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <h3>
-                                                Thông tin người nhận
-                                            </h3>
-                                        </div>
-                                        <div class="col-6 edit">
-                                            Thay đổi
+                                            <div class="row acc-balance">
+                                                <div class="col-12 cont title">
+                                                    Mật khẩu tài khoản
+                                                </div>
+                                                <div class="col-12 cont black">
+                                                    28.600đ
+                                                </div>
+                                            </div>
+    
+                                            <div class="row acc-pass">
+                                                <div class="col-12 cont title">
+                                                    Tổng cộng
+                                                </div>
+                                                <div class="col-12 cont pass">
+                                                    <input type="password" placeholder="Nhập mật khẩu" id="pass-125-input" />
+                                                    <img src="assets/images/auth/icon-pass-hidden.svg" alt="" height="18" width="18" id="pass-125" onclick="changePassVisible(this.id);" />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
     
-                                <div class="container">
-                                    <div class="row to">
-                                        <div class="col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-4 col-4">
-                                            <div class="row">
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
-                                                    Họ tên
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
-                                                    Số điện thoại
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field">
-                                                    E-mail
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="col-12 dealtoday-checkbox round d-method">
+                                        <input type="radio" id="method2" name="payment-method">
+                                        <label for="method2">&nbsp;Thanh toán trực tuyến qua internet banking</label>
     
-                                        <div class="col-xl-12 col-lg-12 col-md-9 col-sm-9 col-xs-8 col-8">
-                                            <div class="row">
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
-                                                    Nguyễn Huệ
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
-                                                    0989898989
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
-                                                    winwinthepooh@gmail.com
-                                                </div>
+                                        <div class="method-content v-hidden">
+                                            <div class="col-12 dealtoday-checkbox save-inf">
+                                                <input type="checkbox" id="save-payment-info">
+                                                <label for="save-payment-info">&nbsp;Lưu thông tin cho lần thanh toán sau</label>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
     
-                                <div class="container">
-                                    <div class="row to">
-                                        <div class="col-xl-12 col-lg-12 col-md-3 col-sm-3 col-xs-4 col-4">
-                                            <div class="row">
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field type-in">
-                                                    Họ tên
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field type-in">
-                                                    Số điện thoại
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 field type-in">
-                                                    E-mail
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="col-12 dealtoday-checkbox round d-method">
+                                        <input type="radio" id="method3" name="payment-method">
+                                        <label for="method3">&nbsp;Thanh toán chuyển khoản</label>
+                                    </div>
     
-                                        <div class="col-xl-12 col-lg-12 col-md-9 col-sm-9 col-xs-8 col-8">
-                                            <div class="row">
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
-                                                    <input type="text" placeholder="Nhập họ và tên" />
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
-                                                    <input type="text" placeholder="Nhập số điện thoại" />
-                                                </div>
-                                                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12 info">
-                                                    <input type="text" placeholder="Nhập email" />
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="col-12 dealtoday-checkbox round d-method">
+                                        <input type="radio" id="method4" name="payment-method">
+                                        <label for="method4">&nbsp;Thanh toán VNPay QR</label>
+                                    </div>
     
-                                        <div class="col-xl-12 col-lg-12 col-md-4 col-sm-6 col-xs-8 col-7">
-                                            <div class="row">
-                                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 col-6 info-btn">
-                                                    <div class="btn-cancel" onclick="openPopup('#popup-checkout-warning')">
-                                                        <div>
-                                                            Hủy
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 col-6">
-                                                    <div class="btn-confirm">
-                                                        <div>
-                                                            Xác nhận
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                    <div class="col-12 dealtoday-checkbox round d-method">
+                                        <input type="radio" id="method5" name="payment-method">
+                                        <label for="method5">&nbsp;Thanh toán Smartpay</label>
+                                    </div>
+    
+                                    <div class="col-12 dealtoday-checkbox round d-method">
+                                        <input type="radio" id="method6" name="payment-method">
+                                        <label for="method6">&nbsp;Thanh toán bẳng thẻ tín dụng/Ghi nợ</label>
+    
+                                        <div class="row">
+                                            <div class="col-12 credit-pay">
+                                                <span><img src="assets/images/footer/payment/payment-visa.svg" alt="" height="24" width="48"/></span>
+                                                &nbsp;
+                                                <span><img src="assets/images/footer/payment/payment-mastercard.svg" alt="" height="24" width="48"/></span>
+                                                &nbsp;
+                                                <span><img src="assets/images/footer/payment/payment-jcb.svg" alt="" height="24" width="48"/></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!--#endregion-->
                             </div>
-                            <!--#endregion-->
+        
+                            <div class="gap-reg-20 d-xl-none d-lg-none d-md-block d-sm-block d-xs-block d-block"></div>
     
-                            <div class="gap-reg-20"></div>
-                            
-                            <!--#region Payment methods-->
-                            <div class="row checkout-info border-round-12">
-                                <div class="col-12">
-                                    <h2>
-                                        Chọn hình thức thanh toán
-                                    </h2>
-                                </div>
-                                
-                                <div class="col-12 dealtoday-checkbox round d-method">
-                                    <input type="radio" id="method1" name="payment-method">
-                                    <label for="method1">&nbsp;Thanh toán bằng tài khoản Dealtoday</label>
+                            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12">
+                                <div class="row commit-payment">
     
-                                    <div class="method-content v-hidden">
-                                        <div class="row acc-balance">
-                                            <div class="col-12 cont title">
-                                                Số dư khả dụng
+                                    <div class="col-12">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <h2>Đơn hàng</h2>
                                             </div>
-                                            <div class="col-12 cont black">
-                                                14.300đ
-                                            </div>
-                                        </div>
-
-                                        <div class="row acc-balance">
-                                            <div class="col-12 cont title">
-                                                Số dư ngăn tích lũy
-                                            </div>
-                                            <div class="col-12 cont red">
-                                                14.300đ
+                                            <div class="col-6 edit flex-align-center">
+                                                Thay đổi
                                             </div>
                                         </div>
-
-                                        <div class="row acc-balance">
-                                            <div class="col-12 cont title">
-                                                Mật khẩu tài khoản
+                                    </div>
+            
+                                    <div class="col-12 gap-bor-line c-eee"></div>
+    
+                                    <!--#region List Items-->
+                                    <div class="col-12 items">
+                                        <div class="row">
+                                            <div class="col-xl-10 col-lg-10 col-md-9 col-sm-9 col-xs-9 col-9 row">
+                                                <div class="col-12 title">Vé xem múa rối nước Thăng Long tại Hà Nội</div>
+                                                <div class="col-12 date">03/03/2023 17:20</div>
+                                                <div class="col-12 quantity">2x Người lớn</div>
                                             </div>
-                                            <div class="col-12 cont black">
-                                                28.600đ
+                                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3 col-3 value flex-align-center">250.000đ</div>
+                                        </div>
+    
+                                        <div class="bor-item"></div>
+    
+                                        <div class="row">
+                                            <div class="col-xl-10 col-lg-10 col-md-9 col-sm-9 col-xs-9 col-9 row">
+                                                <div class="col-12 title">Vé xem múa rối nước Thăng Long tại Hà Nội</div>
+                                                <div class="col-12 date">03/03/2023 17:20</div>
+                                                <div class="col-12 quantity">2x Người lớn</div>
+                                            </div>
+                                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3 col-3 value flex-align-center">250.000đ</div>
+                                        </div>
+                                    </div>
+                                    <!--#endregion-->
+    
+                                    <div class="col-12 gap-bor-line c-eee"></div>
+    
+                                    <div class="col-12">
+                                        <div class="col-12 discount-apply">
+                                            <div class="row">
+                                                <div class="col-12 discount-title">
+                                                    Mã giảm giá
+                                                </div>
+                                                <div class="col-9 pad-r-0">
+                                                    <input type="text" class="discount-code-input" placeholder="Nhập mã giảm giá" />
+                                                </div>
+                                                <div class="col-3 pad-l-0">
+                                                    <div class="btn-apply">Áp dụng</div>
+                                                </div>
                                             </div>
                                         </div>
-
-                                        <div class="row acc-pass">
-                                            <div class="col-12 cont title">
+                                        
+                                        <div class="row flex-align-center">
+                                            <div class="col-6 total-txt">
+                                                Tổng tiền
+                                            </div>
+                                            <div class="col-6 total-num">
+                                                2.000.000đ
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-12 use-pts">
+                                            <div class="row flex-align-center">
+                                                <div class="col-10 use-pt-txt">
+                                                    <span>
+                                                        <img src="assets/images/generals/icon-coins.svg" alt="" height="16" width="16" />
+                                                        &nbsp;Dùng 80.000 điểm thưởng
+                                                    </span>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input class="tgl tgl-light" id="use-point" name="use-point" type="checkbox" />
+                                                    <label class="tgl-btn" for="use-point"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <div class="row flex-align-center">
+                                            <div class="col-6 total-pay-txt">
                                                 Tổng cộng
                                             </div>
-                                            <div class="col-12 cont pass">
-                                                <input type="password" placeholder="Nhập mật khẩu" id="pass-125-input" />
-                                                <img src="assets/images/auth/icon-pass-hidden.svg" alt="" height="18" width="18" id="pass-125" onclick="changePassVisible(this.id);" />
+                                            <div class="col-6 total-pay-num">
+                                                2.000.000đ
+                                            </div>
+                                        </div>
+                
+                                        <div class="col-12 btn-finish-ctn">
+                                            <div class="btn-general orange w-100">
+                                                Hoàn tất
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="col-12 dealtoday-checkbox round d-method">
-                                    <input type="radio" id="method2" name="payment-method">
-                                    <label for="method2">&nbsp;Thanh toán trực tuyến qua internet banking</label>
-
-                                    <div class="method-content v-hidden">
-                                        <div class="col-12 dealtoday-checkbox save-inf">
-                                            <input type="checkbox" id="save-payment-info">
-                                            <label for="save-payment-info">&nbsp;Lưu thông tin cho lần thanh toán sau</label>
-                                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--#endregion-->
+    
+                    <div class="gap-reg-20"></div>
+                </div>
+            </div>
+        </div>
+    
+        <!--#endregion-->
+    
+        <!--#region Footer-->
+        <div class="footer">
+            <div class="container p-sm-0 p-xs-0">
+                <div class="row">
+                    <!--#region Head Title-->
+                    <div class="col-12">
+                        <div class="txt-head-title">
+                            Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế EBIS
+                        </div>
+                        <div class="footer-borderline"></div>
+                    </div>
+                    <!--#endregion-->
+                    
+                    <!--#region Contact + Info-->
+                    <div class="col-12 col-info-reg">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Liên hệ với Dealtoday
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Trung tâm hỗ trợ
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Hướng dẫn đặt hàng
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Hướng dẫn đổi trả
+                                    </a>
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Đối tác
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Đăng ký nhà cung cấp
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Đăng ký đại lý
+                                    </a>
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Về Dealtoday
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Về chúng tôi
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Cơ hội nghề nghiệp
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Điều khoản sử dụng
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Chính sách bảo mật
+                                    </a>
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Thanh toán
+                                </div>
+            
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-mastercard.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-visa.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-vpbank.svg" data-src="" alt="" width="48" height="24" lazy />
                                     </div>
                                 </div>
-
-                                <div class="col-12 dealtoday-checkbox round d-method">
-                                    <input type="radio" id="method3" name="payment-method">
-                                    <label for="method3">&nbsp;Thanh toán chuyển khoản</label>
+            
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-atm.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-vn-pay.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-bidv.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
                                 </div>
-
-                                <div class="col-12 dealtoday-checkbox round d-method">
-                                    <input type="radio" id="method4" name="payment-method">
-                                    <label for="method4">&nbsp;Thanh toán VNPay QR</label>
+            
+                                <div class="txt-title">
+                                    Chứng nhận bởi
                                 </div>
-
-                                <div class="col-12 dealtoday-checkbox round d-method">
-                                    <input type="radio" id="method5" name="payment-method">
-                                    <label for="method5">&nbsp;Thanh toán Smartpay</label>
+            
+                                <div class="txt-info">
+                                    <img src="assets/images/footer/icon-bo-cong-thuong.svg" data-src="" alt="" width="120" height="45" lazy />
                                 </div>
-
-                                <div class="col-12 dealtoday-checkbox round d-method">
-                                    <input type="radio" id="method6" name="payment-method">
-                                    <label for="method6">&nbsp;Thanh toán bẳng thẻ tín dụng/Ghi nợ</label>
-
-                                    <div class="row">
-                                        <div class="col-12 credit-pay">
-                                            <span><img src="assets/images/footer/payment/payment-visa.svg" alt="" height="24" width="48"/></span>
-                                            &nbsp;
-                                            <span><img src="assets/images/footer/payment/payment-mastercard.svg" alt="" height="24" width="48"/></span>
-                                            &nbsp;
-                                            <span><img src="assets/images/footer/payment/payment-jcb.svg" alt="" height="24" width="48"/></span>
-                                        </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Kết nối với chúng tôi
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#" class="footer-social-icon">
+                                        <img class="" src="assets/images/footer/social/icon-facebook.svg" data-src="" alt="" width="18" height="18" lazy />
+                                    </a>
+                                    <a href="#" class="footer-social-icon">
+                                        <img class="" src="assets/images/footer/social/icon-youtube.svg" data-src="" alt="" width="18" height="18" lazy />
+                                    </a>
+                                    <a href="#" class="footer-social-icon">
+                                        <img class="" src="assets/images/footer/social/icon-instagram.svg" data-src="" alt="" width="18" height="18" lazy />
+                                    </a>
+                                </div>
+            
+                                <div class="txt-title">
+                                    Tải ứng dụng Dealtoday
+                                </div>
+            
+                                <div class="row flex-align-center">
+                                    <div class="col-5">
+                                        <a>
+                                            <img class="" src="assets/images/footer/download-qr-375.png" data-src="" alt="" width="90" height="90" lazy />
+                                        </a>
+                                    </div>
+                                    <div class="col-7">
+                                        <a href="#" class="footer-btn-download">
+                                            <img class="" src="assets/images/footer/download/icon-download-googlePlay.svg" data-src="" alt="" width="106" height="40" lazy />
+                                        </a>
+                                        <a href="#" class="footer-btn-download">
+                                            <img class="" src="assets/images/footer/download/icon-download-appStore.svg" data-src="" alt="" width="106" height="40" lazy />
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                            <!--#endregion-->
+                        </div>
+                        <div class="footer-borderline"></div>
+                    </div>
+                    <!--#endregion-->
+                    
+                    <!--#region Location-->
+                    <div class="col-12">
+                        <div class="txt-desc">
+                            Trụ sở chính: Phòng 301, Tầng 3, Tòa nhà số 18 Ngõ 11, Thái Hà, Phường Trung Liệt, Quận Đống Đa, Hà Nội - Tel: 024.7304.7799 – Fax: 024.2215.0220 – Email: hotro@dealtoday.vn
                         </div>
     
-                        <div class="gap-reg-20 d-xl-none d-lg-none d-md-block d-sm-block d-xs-block d-block"></div>
-
-                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 col-12">
-                            <div class="row commit-payment">
-
-                                <div class="col-12">
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <h2>Đơn hàng</h2>
-                                        </div>
-                                        <div class="col-6 edit flex-align-center">
-                                            Thay đổi
-                                        </div>
-                                    </div>
-                                </div>
-        
-                                <div class="col-12 gap-bor-line c-eee"></div>
-
-                                <!--#region List Items-->
-                                <div class="col-12 items">
-                                    <div class="row">
-                                        <div class="col-xl-10 col-lg-10 col-md-9 col-sm-9 col-xs-9 col-9 row">
-                                            <div class="col-12 title">Vé xem múa rối nước Thăng Long tại Hà Nội</div>
-                                            <div class="col-12 date">03/03/2023 17:20</div>
-                                            <div class="col-12 quantity">2x Người lớn</div>
-                                        </div>
-                                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3 col-3 value flex-align-center">250.000đ</div>
-                                    </div>
-
-                                    <div class="bor-item"></div>
-
-                                    <div class="row">
-                                        <div class="col-xl-10 col-lg-10 col-md-9 col-sm-9 col-xs-9 col-9 row">
-                                            <div class="col-12 title">Vé xem múa rối nước Thăng Long tại Hà Nội</div>
-                                            <div class="col-12 date">03/03/2023 17:20</div>
-                                            <div class="col-12 quantity">2x Người lớn</div>
-                                        </div>
-                                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-xs-3 col-3 value flex-align-center">250.000đ</div>
-                                    </div>
-                                </div>
-                                <!--#endregion-->
-
-                                <div class="col-12 gap-bor-line c-eee"></div>
-
-                                <div class="col-12">
-                                    <div class="col-12 discount-apply">
-                                        <div class="row">
-                                            <div class="col-12 discount-title">
-                                                Mã giảm giá
-                                            </div>
-                                            <div class="col-9 pad-r-0">
-                                                <input type="text" class="discount-code-input" placeholder="Nhập mã giảm giá" />
-                                            </div>
-                                            <div class="col-3 pad-l-0">
-                                                <div class="btn-apply">Áp dụng</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="row flex-align-center">
-                                        <div class="col-6 total-txt">
-                                            Tổng tiền
-                                        </div>
-                                        <div class="col-6 total-num">
-                                            2.000.000đ
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-12 use-pts">
-                                        <div class="row flex-align-center">
-                                            <div class="col-10 use-pt-txt">
-                                                <span>
-                                                    <img src="assets/images/generals/icon-coins.svg" alt="" height="16" width="16" />
-                                                    &nbsp;Dùng 80.000 điểm thưởng
-                                                </span>
-                                            </div>
-                                            <div class="col-2">
-                                                <input class="tgl tgl-light" id="use-point" name="use-point" type="checkbox" />
-                                                <label class="tgl-btn" for="use-point"></label>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <div class="row flex-align-center">
-                                        <div class="col-6 total-pay-txt">
-                                            Tổng cộng
-                                        </div>
-                                        <div class="col-6 total-pay-num">
-                                            2.000.000đ
-                                        </div>
-                                    </div>
-            
-                                    <div class="col-12 btn-finish-ctn">
-                                        <div class="btn-general orange w-100">
-                                            Hoàn tất
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="txt-desc">
+                            Văn phòng HCM: Tầng 8, Tòa nhà Phương Nam, Số 157 Võ Thị Sáu, Phường Võ Thị Sáu, Quận 3, TP. HCM- Tel: 028.6680.8756
+                        </div>
+    
+                        <div class="txt-desc">
+                            Giấy chứng nhận đăng ký kinh doanh số 0102225186 - Do Sở Kế hoạch Đầu Tư Hà Nội cấp ngày 18/04/2007
+                        </div>
+    
+                        <div class="footer-borderline"></div>
+                    </div>
+                    <!--#endregion-->
+                
+                    <!--#region Copyright-->
+                    <div class="col-12">
+                        <div class="txt-desc flex-center">
+                            © 2022 - Bản quyền của Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế EBIS
                         </div>
                     </div>
+                    <!--#endregion-->
                 </div>
-                <!--#endregion-->
-
-                <div class="gap-reg-20"></div>
             </div>
         </div>
-    </div>
-
-    <!--#endregion-->
-
-    <!--#region Footer-->
-    <div class="footer">
-        <div class="container p-sm-0 p-xs-0">
-            <div class="row">
-                <!--#region Head Title-->
-                <div class="col-12">
-                    <div class="txt-head-title">
-                        Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế EBIS
-                    </div>
-                    <div class="footer-borderline"></div>
-                </div>
-                <!--#endregion-->
-                
-                <!--#region Contact + Info-->
-                <div class="col-12 col-info-reg">
-                    <div class="row">
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-8">
-                            <div class="txt-title">
-                                Liên hệ với Dealtoday
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Trung tâm hỗ trợ
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Hướng dẫn đặt hàng
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Hướng dẫn đổi trả
-                                </a>
-                            </div>
-                        </div>
-        
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-8">
-                            <div class="txt-title">
-                                Đối tác
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Đăng ký nhà cung cấp
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Đăng ký đại lý
-                                </a>
-                            </div>
-                        </div>
-        
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-8">
-                            <div class="txt-title">
-                                Về Dealtoday
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Về chúng tôi
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Cơ hội nghề nghiệp
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Điều khoản sử dụng
-                                </a>
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#">
-                                    Chính sách bảo mật
-                                </a>
-                            </div>
-                        </div>
-        
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-8">
-                            <div class="txt-title">
-                                Thanh toán
-                            </div>
-        
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-mastercard.svg" data-src="" alt="" width="48" height="24" lazy />
-                                </div>
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-visa.svg" data-src="" alt="" width="48" height="24" lazy />
-                                </div>
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-vpbank.svg" data-src="" alt="" width="48" height="24" lazy />
-                                </div>
-                            </div>
-        
-                            <div class="row">
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-atm.svg" data-src="" alt="" width="48" height="24" lazy />
-                                </div>
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-vn-pay.svg" data-src="" alt="" width="48" height="24" lazy />
-                                </div>
-                                <div class="col-4">
-                                    <img src="assets/images/footer/payment/payment-bidv.svg" data-src="" alt="" width="48" height="24" lazy />
-                                </div>
-                            </div>
-        
-                            <div class="txt-title">
-                                Chứng nhận bởi
-                            </div>
-        
-                            <div class="txt-info">
-                                <img src="assets/images/footer/icon-bo-cong-thuong.svg" data-src="" alt="" width="120" height="45" lazy />
-                            </div>
-                        </div>
-        
-                        <div class="col-lg-2 col-md-4 col-sm-6 col-8">
-                            <div class="txt-title">
-                                Kết nối với chúng tôi
-                            </div>
-        
-                            <div class="txt-info">
-                                <a href="#" class="footer-social-icon">
-                                    <img class="" src="assets/images/footer/social/icon-facebook.svg" data-src="" alt="" width="18" height="18" lazy />
-                                </a>
-                                <a href="#" class="footer-social-icon">
-                                    <img class="" src="assets/images/footer/social/icon-youtube.svg" data-src="" alt="" width="18" height="18" lazy />
-                                </a>
-                                <a href="#" class="footer-social-icon">
-                                    <img class="" src="assets/images/footer/social/icon-instagram.svg" data-src="" alt="" width="18" height="18" lazy />
-                                </a>
-                            </div>
-        
-                            <div class="txt-title">
-                                Tải ứng dụng Dealtoday
-                            </div>
-        
-                            <div class="row flex-align-center">
-                                <div class="col-5">
-                                    <a>
-                                        <img class="" src="assets/images/footer/download-qr-375.png" data-src="" alt="" width="90" height="90" lazy />
-                                    </a>
-                                </div>
-                                <div class="col-7">
-                                    <a href="#" class="footer-btn-download">
-                                        <img class="" src="assets/images/footer/download/icon-download-googlePlay.svg" data-src="" alt="" width="106" height="40" lazy />
-                                    </a>
-                                    <a href="#" class="footer-btn-download">
-                                        <img class="" src="assets/images/footer/download/icon-download-appStore.svg" data-src="" alt="" width="106" height="40" lazy />
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="footer-borderline"></div>
-                </div>
-                <!--#endregion-->
-                
-                <!--#region Location-->
-                <div class="col-12">
-                    <div class="txt-desc">
-                        Trụ sở chính: Phòng 301, Tầng 3, Tòa nhà số 18 Ngõ 11, Thái Hà, Phường Trung Liệt, Quận Đống Đa, Hà Nội - Tel: 024.7304.7799 – Fax: 024.2215.0220 – Email: hotro@dealtoday.vn
-                    </div>
-
-                    <div class="txt-desc">
-                        Văn phòng HCM: Tầng 8, Tòa nhà Phương Nam, Số 157 Võ Thị Sáu, Phường Võ Thị Sáu, Quận 3, TP. HCM- Tel: 028.6680.8756
-                    </div>
-
-                    <div class="txt-desc">
-                        Giấy chứng nhận đăng ký kinh doanh số 0102225186 - Do Sở Kế hoạch Đầu Tư Hà Nội cấp ngày 18/04/2007
-                    </div>
-
-                    <div class="footer-borderline"></div>
-                </div>
-                <!--#endregion-->
-            
-                <!--#region Copyright-->
-                <div class="col-12">
-                    <div class="txt-desc flex-center">
-                        © 2022 - Bản quyền của Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế EBIS
-                    </div>
-                </div>
-                <!--#endregion-->
-            </div>
-        </div>
-    </div>
-    <!--#endregion-->
-
-    <!--#region-->
-    <script>
-        function selectMethod(methodId) {
-            console.log('abc');
-            let isSelected = document.getElementById(methodId).checked;
-            document.getElementById(methodId).checked = !isSelected;
-            if (!isSelected) {
-                document.getElementById(methodId + "-items").classList.remove("v-hidden");
+        <!--#endregion-->
+    
+        <!--#region-->
+        <script>
+            function selectMethod(methodId) {
+                console.log('abc');
+                let isSelected = document.getElementById(methodId).checked;
+                document.getElementById(methodId).checked = !isSelected;
+                if (!isSelected) {
+                    document.getElementById(methodId + "-items").classList.remove("v-hidden");
+                }
+                else {
+                    document.getElementById(methodId + "-items").classList.add("v-hidden");
+                }
             }
-            else {
-                document.getElementById(methodId + "-items").classList.add("v-hidden");
+    
+            function changePassVisible (iconId) {
+                if($('#' + iconId + '-input').attr('type') == 'password') {
+                    $('#' + iconId + '-input').attr('type', 'text');
+                    $('#' + iconId).attr('src', 'assets/images/auth/icon-pass-visible.svg');
+                }   
+                else {
+                    $('#' + iconId + '-input').attr('type', 'password');
+                    $('#' + iconId).attr('src', 'assets/images/auth/icon-pass-hidden.svg');
+                }
             }
-        }
-
-        function changePassVisible (iconId) {
-            if($('#' + iconId + '-input').attr('type') == 'password') {
-                $('#' + iconId + '-input').attr('type', 'text');
-                $('#' + iconId).attr('src', 'assets/images/auth/icon-pass-visible.svg');
-            }   
-            else {
-                $('#' + iconId + '-input').attr('type', 'password');
-                $('#' + iconId).attr('src', 'assets/images/auth/icon-pass-hidden.svg');
-            }
-        }
-   </script>
-    <!--#endregion-->
-
-    <!--#region Mobile menu-->
-    <div class="mb-menu-container" id="mb-menu" onclick="if(event.target == this){closePopup('#mb-menu');}" aria-hidden="true">
-        <div class="mb-menu-wrapper">
-            <div class="item-lst row">
-                <div class="col-12 flex-align-center">
-                    <span><img src="assets/images/header/logo.png" alt="" height="26" width="130" /></span>
-                    <span class="close-icon"><img src="assets/images/popup/close-icon-black.svg" alt="" height="20" width="20" onclick="closePopup('#mb-menu');"></span>
+       </script>
+        <!--#endregion-->
+    
+        <!--#region Mobile menu-->
+        <div class="mb-menu-container" id="mb-menu" onclick="if(event.target == this){closePopup('#mb-menu');}" aria-hidden="true">
+            <div class="mb-menu-wrapper">
+                <div class="item-lst row">
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/header/logo.png" alt="" height="26" width="130" /></span>
+                        <span class="close-icon"><img src="assets/images/popup/close-icon-black.svg" alt="" height="20" width="20" onclick="closePopup('#mb-menu');"></span>
+                    </div>
+                    <div class="slim-border"></div>
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/popup/mb-menu/icon-mb-menu-user.svg" alt="" height="20" width="20" /></span>
+                        <span class="f-heavy">Đăng ký/ Đăng nhập</span>
+                    </div>
                 </div>
-                <div class="slim-border"></div>
-                <div class="col-12 flex-align-center">
-                    <span><img src="assets/images/popup/mb-menu/icon-mb-menu-user.svg" alt="" height="20" width="20" /></span>
-                    <span class="f-heavy">Đăng ký/ Đăng nhập</span>
+                <div class="bold-border"></div>
+                <div class="item-lst row">
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/popup/mb-menu/icon-mb-menu-evoucher.svg" alt="" height="20" width="20" /></span>
+                        <span class="f-heavy">E-Voucher</span>
+                    </div>
+                    <div class="slim-border"></div>
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/popup/mb-menu/icon-mb-menu-egift.svg" alt="" height="20" width="20" /></span>
+                        <span class="f-heavy">E-Gift</span>
+                    </div>
+                    <div class="slim-border"></div>
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/popup/mb-menu/icon-mb-menu-eticket.svg" alt="" height="20" width="20" /></span>
+                        <span class="f-heavy">E-Ticket</span>
+                    </div>
                 </div>
-            </div>
-            <div class="bold-border"></div>
-            <div class="item-lst row">
-                <div class="col-12 flex-align-center">
-                    <span><img src="assets/images/popup/mb-menu/icon-mb-menu-evoucher.svg" alt="" height="20" width="20" /></span>
-                    <span class="f-heavy">E-Voucher</span>
-                </div>
-                <div class="slim-border"></div>
-                <div class="col-12 flex-align-center">
-                    <span><img src="assets/images/popup/mb-menu/icon-mb-menu-egift.svg" alt="" height="20" width="20" /></span>
-                    <span class="f-heavy">E-Gift</span>
-                </div>
-                <div class="slim-border"></div>
-                <div class="col-12 flex-align-center">
-                    <span><img src="assets/images/popup/mb-menu/icon-mb-menu-eticket.svg" alt="" height="20" width="20" /></span>
-                    <span class="f-heavy">E-Ticket</span>
-                </div>
-            </div>
-            <div class="bold-border"></div>
-            <div class="item-lst row">
-                <div class="col-12 flex-align-center">
-                    <span><img src="assets/images/header/icon-bell-orange.svg" alt="" height="18" width="18" /></span>
-                    <span>Thông báo</span>
-                </div>
-                <div class="slim-border"></div>
-                <div class="col-12 flex-align-center">
-                    <span><img src="assets/images/popup/mb-menu/icon-mb-menu-translate.svg" alt="" height="20" width="20" /></span>
-                    <span>Ngôn ngữ</span>
-                    <div class="d-inline-block mb-menu-translate-box">
-                        <div class="h-translate">
-                            <div id="google_translate_element-mb" onclick="goTrans(this.id)"></div>
-                        </div>
-                        <script type="text/javascript">
-                            var width = $(window).width();
-
-                            if(width <= 768) {
-                                function googleTranslateElementInit() {
-                                    new google.translate.TranslateElement({
-                                        pageLanguage: 'vi',
-                                        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
-                                        autoDisplay: false,
-                                        includedLanguages: 'en,vi',
-                                        gaTrack: true,
-                                        gaId: 'AIzaSyAuk_NhmtJvsJXMB9PAy-jCSGv5sVhhxvM'
-                                    }, 'google_translate_element-mb');
+                <div class="bold-border"></div>
+                <div class="item-lst row">
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/header/icon-bell-orange.svg" alt="" height="18" width="18" /></span>
+                        <span>Thông báo</span>
+                    </div>
+                    <div class="slim-border"></div>
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/popup/mb-menu/icon-mb-menu-translate.svg" alt="" height="20" width="20" /></span>
+                        <span>Ngôn ngữ</span>
+                        <div class="d-inline-block mb-menu-translate-box">
+                            <div class="h-translate">
+                                <div id="google_translate_element-mb" onclick="goTrans(this.id)"></div>
+                            </div>
+                            <script type="text/javascript">
+                                var width = $(window).width();
+    
+                                if(width <= 768) {
+                                    function googleTranslateElementInit() {
+                                        new google.translate.TranslateElement({
+                                            pageLanguage: 'vi',
+                                            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                                            autoDisplay: false,
+                                            includedLanguages: 'en,vi',
+                                            gaTrack: true,
+                                            gaId: 'AIzaSyAuk_NhmtJvsJXMB9PAy-jCSGv5sVhhxvM'
+                                        }, 'google_translate_element-mb');
+                                    }
                                 }
-                            }
-                        </script>
+                            </script>
+                        </div>
+                    </div>
+                    <div class="slim-border"></div>
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/header/icon-phone.svg" alt="" height="18" width="18" /></span>
+                        <span class="f-heavy"><a href="tel:19002065">1900 2065 - 0934.661.016</a></span>
                     </div>
                 </div>
-                <div class="slim-border"></div>
-                <div class="col-12 flex-align-center">
-                    <span><img src="assets/images/header/icon-phone.svg" alt="" height="18" width="18" /></span>
-                    <span class="f-heavy"><a href="tel:19002065">1900 2065 - 0934.661.016</a></span>
+                <div class="bold-border"></div>
+                <div class="btn-general round w-100">
+                    Đăng xuất
                 </div>
             </div>
-            <div class="bold-border"></div>
-            <div class="btn-general round w-100">
-                Đăng xuất
+        </div>
+        <!--#endregion-->
+    
+        <!--#region Popup Warning-->
+        <div class="p-popup-container popup-checkout-warning" id="popup-checkout-warning" onclick="if(event.target == this){closePopup('#popup-checkout-warning');}" aria-hidden="true">
+            <div class="p-popup-wrapper">
+                Tài khoản vanannguyen@gmail.com đã tồn tại trên hệ thống. Vui lòng đăng nhập để thuận tiện trong quá trình thanh toán
             </div>
         </div>
+        <!--#endregion-->
     </div>
-    <!--#endregion-->
-
-    <!--#region Popup Warning-->
-    <div class="p-popup-container popup-checkout-warning" id="popup-checkout-warning" onclick="if(event.target == this){closePopup('#popup-checkout-warning');}" aria-hidden="true">
-        <div class="p-popup-wrapper">
-            Tài khoản vanannguyen@gmail.com đã tồn tại trên hệ thống. Vui lòng đăng nhập để thuận tiện trong quá trình thanh toán
-        </div>
-    </div>
-    <!--#endregion-->
 </body>
 </html>
