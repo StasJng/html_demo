@@ -1573,6 +1573,7 @@ a {
 
 .filter-wrapper .dropdown {
     position: relative;
+    min-width: 28px;
 }
 
 .filter-wrapper .dropdown [data-toggle=dropdown] {
@@ -1594,6 +1595,7 @@ a {
 
 .filter-wrapper .dropdown > input[type=checkbox]:checked + [data-toggle=dropdown]:before {
     rotate: 180deg;
+    top: -2px;
 }
 
 .filter-wrapper .dropdown > input[type=checkbox]:checked ~ .dropdown-menu {
@@ -2728,6 +2730,11 @@ body {
     background-color: #fff;
     border-radius: 12px;
     padding: 0;
+}
+
+.cart .sticky-pay-bx {
+    position: sticky;
+    top: 84px;
 }
 
 .cart .lst-items.blur .item-box, .cart .lst-items.blur > .dealtoday-checkbox {
@@ -3916,12 +3923,12 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 /* Layout trang SEARCH */
 @media(min-width: 1200px) {
     .col-xl-3.p-search-filter-ctn-box {
-        padding-right: 70px;
+        padding-right: 50px;
     }
 
     .col-xl-9.p-seacrh-lst-items-box {
-        width: calc(75% + 70px);
-        margin-left: -70px;
+        width: calc(75% + 50px);
+        margin-left: -50px;
         padding-left: 16px;
     }
 }

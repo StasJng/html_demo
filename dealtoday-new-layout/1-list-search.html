@@ -441,7 +441,7 @@
                                                     <span class="dealtoday-checkbox">
                                                         <input type="checkbox" id="p-loc-1" name="fil-val" data="1" class="dealtoday-checkbox-p" onchange="" filType="location" />
                                                         <label for="p-loc-1" class="top-0 d-inline"></label>
-                                                        <span class="txt-keyword-p">Hà Nội </span>
+                                                        <span class="txt-keyword-p">Hà Nội</span>
                                                     </span>
                                                 </a>
                                                 <ul class="dropdown-menu">
@@ -450,7 +450,7 @@
                                                         <span class="dealtoday-checkbox">
                                                             <input type="checkbox" id="c-loc-4-1" name="fil-val" data="4" parentid="1" class="dealtoday-checkbox-chil" onchange="" filType="location" />
                                                             <label for="c-loc-4-1">
-                                                                <span class="txt-keyword">Hoàn Kiếm </span>
+                                                                <span class="txt-keyword">Hoàn Kiếm</span>
                                                             </label>
                                                         </span>
                                                     </a>
@@ -464,7 +464,7 @@
                                                     <span class="dealtoday-checkbox">
                                                         <input type="checkbox" id="p-loc-5" name="fil-val" data="5" class="dealtoday-checkbox-p" onchange="" filType="location" />
                                                         <label for="p-loc-5" class="top-0 d-inline"></label>
-                                                        <span class="txt-keyword-p">Gia Lâm </span>
+                                                        <span class="txt-keyword-p">Gia Lâm</span>
                                                     </span>
                                                 </a>
                                                 <ul class="dropdown-menu">
@@ -531,7 +531,7 @@
                                                     <span class="dealtoday-checkbox">
                                                         <input type="checkbox" id="p-tag-1494" name="fil-val" data="1494" class="dealtoday-checkbox-p" onchange="" filType="ser-type">
                                                         <label for="p-tag-1494" class="top-0 d-inline"></label>
-                                                        <span>Khu vui chơi </span>
+                                                        <span>Khu vui chơi</span>
                                                     </span>
                                                 </a>
             
@@ -1298,6 +1298,7 @@
 
                 <div class="filter-wrapper">
                     <div class="filter-container pad-l-0 pad-r-0">
+                        
                         <!--#region Địa điểm(contains 2-lvl Searchbox)-->
                         <p class="drop-filter-title">Địa điểm</p>
 
@@ -1775,7 +1776,7 @@
 
             //Brand searchin function
             $(document).ready(function () {
-                $(".loc-filter-items.brand").each(function (i, value) {
+                $(".loc-filter-items").each(function (i, value) {
                     var input = $(value).find("input[type='text']");
                     $(input).keyup(function () {
                         var filter = $(input).val().toUpperCase();
@@ -1940,7 +1941,7 @@
                     $('#filValHolder-' + $(this).attr('filType')).val("");
                 }
 
-                GetData($('#filValHolder-' + $(this).attr('filType')).val());
+                //GetData($('#filValHolder-' + $(this).attr('filType')).val());
             });
 
             //Select a checkbox
@@ -1965,12 +1966,12 @@
                         $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal + "," + dataValue);
                     }
 
-                    var numItems = $('.filter-item').length;
+                    var numItems = $('.list-fil-items.' + $(this).attr('filType') + ' .filter-item').length;
                     var numSelItems = $('.dropdown .dealtoday-checkbox input[type=checkbox]:checked').length;
 
                     if (numSelItems == numItems) {
                         $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
-                        $('.check-all-filter').prop("checked", true);
+                        $('.list-fil-items.' + $(this).attr('filType') + '.check-all-filter').prop("checked", true);
 
                         $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]').prop("checked", true);
                     }
@@ -1995,7 +1996,7 @@
 
                     $('.check-all-filter').prop("checked", false);
                 }
-                GetData($('#filValHolder-' + $(this).attr('filType')).val());
+                //GetData($('#filValHolder-' + $(this).attr('filType')).val());
             });
         </script>
         <!--#endregion-->
