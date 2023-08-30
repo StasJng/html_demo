@@ -430,11 +430,11 @@
 
                                         <input type="hidden" id="filValHolder-location" />
 
+                                        <div class="srch-box">
+                                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                                        </div>
+                                        
                                         <ul class="loc-filter-items">
-                                            <li class="srch-box">
-                                                <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
-                                            </li>
-            
                                             <li class="dropdown list-fil-items">
                                                 <input type="checkbox" checked="" />
                                                 <a data-toggle="dropdown">
@@ -578,11 +578,11 @@
 
                                         <input type="hidden" id="filValHolder-brand" />
 
+                                        <div class="srch-box">
+                                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                                        </div>
+
                                         <ul class="loc-filter-items brand list-fil-items">
-                                            <li class="srch-box">
-                                                <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
-                                            </li>
-                    
                                             <li class="dropdown brand non-drop">
                                                 <span class="dealtoday-checkbox">
                                                     <input type="checkbox" class="check-all-filter" data="" id="b-no-all" onchange="" filType="brand">
@@ -1445,11 +1445,11 @@
                         <!--#region Địa điểm(contains 1-lvl Searchbox)-->
                         <p class="drop-filter-title">Thương hiệu</p>
 
-                        <ul class="loc-filter-items brand">
-                            <li class="srch-box">
-                                <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
-                            </li>
+                        <div class="srch-box">
+                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                        </div>
 
+                        <ul class="loc-filter-items brand">
                             <li class="dropdown brand non-drop">
                                 <span class="dealtoday-checkbox">
                                     <input type="checkbox" id="b-no-1" onchange="">
@@ -1575,11 +1575,11 @@
                         <!--#region Địa điểm(contains 1-lvl Searchbox)-->
                         <p class="drop-filter-title">Thương hiệu</p>
 
-                        <ul class="loc-filter-items brand">
-                            <li class="srch-box">
-                                <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
-                            </li>
+                        <div class="srch-box">
+                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                        </div>
 
+                        <ul class="loc-filter-items brand">
                             <li class="dropdown brand non-drop">
                                 <span class="dealtoday-checkbox">
                                     <input type="checkbox" id="b-no-1" onchange="">
@@ -1817,131 +1817,6 @@
                     //Reset QR value
                     $('#filValHolder-' + $(this).attr('filType')).val("");
                 }
-
-                GetData($('#filValHolder-' + $(this).attr('filType')).val());
-            });
-
-            //Select a checkbox
-            $('.filter-item').change(function () {
-                //Get current QR value
-                var currentSelectedVal = $('#filValHolder-' + $(this).attr('filType')).val();
-
-                //Get checkbox's value
-                var dataValue = $(this).attr('data');
-
-                if (this.checked) {
-                    if (currentSelectedVal == null || currentSelectedVal == 'undefined' || currentSelectedVal == "") { //If current QR is null or empty/whitespace
-                        //Set QR value
-                        $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
-                    }
-                    else {
-                        //Add QR to current value
-                        if (currentSelectedVal.slice(-1) == ",") {
-                            currentSelectedVal = currentSelectedVal.substring(0, currentSelectedVal.length - 1);
-                        }
-                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal + "," + dataValue);
-                    }
-
-                    var numItems = $('.filter-item').length;
-                    var numSelItems = $('.dropdown .dealtoday-checkbox input[type=checkbox]:checked').length;
-
-                    if (numSelItems == numItems) {
-                        $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
-                        $('.check-all-filter').prop("checked", true);
-
-                        $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]').prop("checked", true);
-                    }
-                }
-                else {
-                    //Get QR array list
-                    var splFilterValText = currentSelectedVal.split(',');
-
-                    //Count item number
-                    var splFilterValTextLength = splFilterValText.length;
-
-                    if (dataValue == splFilterValText[splFilterValTextLength - 1]) { //Check if is first item
-                        //Remove from list
-                        currentSelectedVal = currentSelectedVal.replace(dataValue, "");
-                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
-                    }
-                    else {
-                        //Remove from list
-                        currentSelectedVal = currentSelectedVal.replace(dataValue + ",", "");
-                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
-                    }
-
-                    //Uncheck "Tất cả"
-                    $('.check-all-filter').prop("checked", false);
-                }
-                GetData($('#filValHolder-' + $(this).attr('filType')).val());
-            });
-
-            function GetData(qrText) {
-                // $("#loading").show();
-                // if ($('#isEticket').val() > 0) {
-                //     $.ajax({
-                //         type: "post",
-                //         url: "/Deal/GenerateTicketQRCodeJson",
-                //         data: {
-                //             qrText: qrText,
-                //         },
-                //         success: function (data) {
-                //             $("#loading").hide();
-                //             $("#qr-img").attr("src", data.data);
-                //         },
-                //         error: function () {
-                //             $("#loading").hide();
-                //             alert("Có lỗi hệ thống,bạn hãy liên hệ theo số 1900 2065 để được hỗ trợ");
-                //         }
-                //     });
-                // }
-                // else {
-                //     $.ajax({
-                //         type: "post",
-                //         url: "/Deal/GenerateQRCodeJson",
-                //         data: {
-                //             qrText: qrText,
-                //         },
-                //         success: function (data) {
-                //             $("#loading").hide();
-                //             $("#qr-img").attr("src", data.data);
-                //         },
-                //         error: function () {
-                //             $("#loading").hide();
-                //             alert("Có lỗi hệ thống,bạn hãy liên hệ theo số 1900 2065 để được hỗ trợ");
-                //         }
-                //     });
-                // }
-            }
-        </script>
-        <!--#endregion-->
-
-        <!--#region Filter 1 lvl-->
-        <script>
-            //Select all
-            $('.check-all-filter').change(function () {
-                if (this.checked) {
-                    //Select all checkbox
-                    $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]').prop("checked", true);
-
-                    //Build list value
-                    var dataValue = "";
-                    $('.list-fil-items input[name=fil-val]:checked').each(function () {
-                        dataValue = dataValue + $(this).attr('data') + ",";
-                    });
-
-                    //Set value
-                    $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
-                }
-                else {
-                    //Uncheck all checkbox
-                    $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]').prop("checked", false);
-
-                    //Reset QR value
-                    $('#filValHolder-' + $(this).attr('filType')).val("");
-                }
-
-                //GetData($('#filValHolder-' + $(this).attr('filType')).val());
             });
 
             //Select a checkbox
@@ -1966,8 +1841,12 @@
                         $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal + "," + dataValue);
                     }
 
-                    var numItems = $('.list-fil-items.' + $(this).attr('filType') + ' .filter-item').length;
-                    var numSelItems = $('.dropdown .dealtoday-checkbox input[type=checkbox]:checked').length;
+                    var numItems = $(this).parents('.list-fil-items').find('.filter-item').length;
+                    var numSelItems = $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]:checked').length;
+
+                    console.log($(this).attr('filType'));
+                    console.log(numItems);
+                    console.log(numSelItems);
 
                     if (numSelItems == numItems) {
                         $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
@@ -1996,13 +1875,24 @@
 
                     $('.check-all-filter').prop("checked", false);
                 }
-                //GetData($('#filValHolder-' + $(this).attr('filType')).val());
             });
         </script>
         <!--#endregion-->
 
         <!--#region Filter 2 lvl-->
         <script>
+            $(document).ready(function () {
+                $('.dealtoday-checkbox-chil').each(function () {
+                    let numItems = $(this).parents('.list-fil-items').find('.filter-item').length;
+                    let numSelItems = $(this).parents('.dropdown-menu').find('.dealtoday-checkbox input[type=checkbox]:checked').length;
+
+                    if (numSelItems == numItems) {
+                        $('.list-fil-items.' + $(this).attr('filType') + '-' + $(this).attr('parentId') + ' .check-all-filter').prop("checked", true);
+
+                        $(this).parents('.list-fil-items').find('.dealtoday-checkbox input[type=checkbox]').prop("checked", true);
+                    }
+                });
+            });
             //Select "Parent Item"
             $('.dealtoday-checkbox-p').change(function () {
                 if (this.checked) {
@@ -2014,62 +1904,82 @@
                     $('.list-fil-items input[name=fil-val]:checked').each(function () {
                         dataValue = dataValue + $(this).attr('data') + ",";
                     });
-                    
+
+                    //Remove parent item
+                    //dataValue = dataValue.replace($(this).attr('data') + ",", "");
+
                     //Set value
                     $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
+                    $('#btn-view-more').attr('selected' + $(this).attr('filType'), dataValue);
+
+                    //window.location.href = "/v2/search-ticket?srkey=" + $('#btn-view-more').attr('keyword') + "&pca=" + $('#btn-view-more').attr('parentCategoryId') + "&st=" + $('#btn-view-more').attr('selectedTags') + "&sl=" + $('#btn-view-more').attr('selectedLocations') + "&sor=" + $('#btn-view-more').attr('sortType') + "&pg=1" + "&sz=" + $('#btn-view-more').attr('pageSize');
                 }
                 else {
-                    console.log("Here!");
                     //Get current Filter value
-                    var currentSelectedVal = $('#filValHolder-' + $(this).attr('filType')).val(); 
+                    var currentSelectedVal = $('#filValHolder-' + $(this).attr('filType')).val();
 
                     //Uncheck all checkbox
                     $(this).parents('.list-fil-items').find('.dealtoday-checkbox input[type=checkbox]').prop("checked", false);
 
                     $(this).parents('.list-fil-items').find('.dealtoday-checkbox input[type=checkbox]').each(function () {
-                        console.log(currentSelectedVal);
-                        console.log($(this).attr('data') + ",");
                         currentSelectedVal = currentSelectedVal.replace($(this).attr('data') + ",", "");
                     });
 
-                    //Reset QR value
+                    //Reset Filter value
                     $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
-                }
+                    $('#btn-view-more').attr('selected' + $(this).attr('filType'), currentSelectedVal);
 
-                GetData($('#filValHolder-' + $(this).attr('filType')).val());
+                    //window.location.href = "/v2/search-ticket?srkey=" + $('#btn-view-more').attr('keyword') + "&pca=" + $('#btn-view-more').attr('parentCategoryId') + "&st=" + $('#btn-view-more').attr('selectedTags') + "&sl=" + $('#btn-view-more').attr('selectedLocations') + "&sor=" + $('#btn-view-more').attr('sortType') + "&pg=1" + "&sz=" + $('#btn-view-more').attr('pageSize');
+                }
             });
 
             //Select "Children Item"
-            $('.filter-item').change(function () {
+            $('.dealtoday-checkbox-chil').change(function () {
                 //Get current Filter value
                 var currentSelectedVal = $('#filValHolder-' + $(this).attr('filType')).val();
-
                 //Get checkbox's value
                 var dataValue = $(this).attr('data');
 
                 //Check selected and do job
                 if (this.checked) {
-                    if (currentSelectedVal == null || currentSelectedVal == 'undefined' || currentSelectedVal == "") { //If current Filter is null or empty/whitespace
-                        //Set Filter value
-                        $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
-                    }
-                    else {
-                        //Add Filter to current value
-                        if (currentSelectedVal.slice(-1) == ",") {
-                            currentSelectedVal = currentSelectedVal.substring(0, currentSelectedVal.length - 1);
-                        }
-                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal + "," + dataValue);
-                    }
-
-                    var numItems = $('.filter-item').length;
+                    var numItems = $('.list-fil-items.' + $(this).attr('filType') + '-' + $(this).attr('parentId') + ' .filter-item').length;
                     var numSelItems = $('.dealtoday-checkbox input[type=checkbox]:checked').length;
 
                     if (numSelItems == numItems) {
-                        $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
-                        $('.check-all-filter').prop("checked", true);
-
+                        $('.list-fil-items.' + $(this).attr('filType') + '-' + $(this).attr('parentId') + ' .check-all-filter').prop("checked", true);
                         $(this).parents('.list-fil-items').find('.dealtoday-checkbox input[type=checkbox]').prop("checked", true);
+
+                        if (currentSelectedVal == null || currentSelectedVal == 'undefined' || currentSelectedVal == "") { //If current Filter is null or empty/whitespace
+                            //Set Filter value
+                            $('#filValHolder-' + $(this).attr('filType')).val(dataValue + "," + $(this).attr('parentId'));
+                            $('#btn-view-more').attr('selected' + $(this).attr('filType'), dataValue + "," + $(this).attr('parentId'));
+                        }
+                        else {
+                            //Add Filter to current value
+                            if (currentSelectedVal.slice(-1) == ",") {
+                                currentSelectedVal = currentSelectedVal.substring(0, currentSelectedVal.length - 1);
+                            }
+                            $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal + "," + dataValue + "," + $(this).attr('parentId'));
+                            $('#btn-view-more').attr('selected' + $(this).attr('filType'), currentSelectedVal + "," + dataValue + "," + $(this).attr('parentId'));
+                        }
                     }
+                    else {
+                        if (currentSelectedVal == null || currentSelectedVal == 'undefined' || currentSelectedVal == "") { //If current Filter is null or empty/whitespace
+                            //Set Filter value
+                            $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
+                            $('#btn-view-more').attr('selected' + $(this).attr('filType'), dataValue);
+                        }
+                        else {
+                            //Add Filter to current value
+                            if (currentSelectedVal.slice(-1) == ",") {
+                                currentSelectedVal = currentSelectedVal.substring(0, currentSelectedVal.length - 1);
+                            }
+                            $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal + "," + dataValue);
+                            $('#btn-view-more').attr('selected' + $(this).attr('filType'), currentSelectedVal + "," + dataValue);
+                        }
+                    }
+
+                    //window.location.href = "/v2/search-ticket?srkey=" + $('#btn-view-more').attr('keyword') + "&pca=" + $('#btn-view-more').attr('parentCategoryId') + "&st=" + $('#btn-view-more').attr('selectedTags') + "&sl=" + $('#btn-view-more').attr('selectedLocations') + "&sor=" + $('#btn-view-more').attr('sortType') + "&pg=1" + "&sz=" + $('#btn-view-more').attr('pageSize');
                 }
                 else {
                     //Get Filter array list
@@ -2079,23 +1989,94 @@
                     var splFilterValTextLength = splFilterValText.length;
 
                     if (dataValue == splFilterValText[splFilterValTextLength - 1]) { //Check if is first item
-                        //Remove from list
+                        //Remove selected item from list
                         currentSelectedVal = currentSelectedVal.replace(dataValue, "");
-                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
                     }
                     else {
-                        //Remove from list
+                        //Remove selected item from list
                         currentSelectedVal = currentSelectedVal.replace(dataValue + ",", "");
+                    }
+
+                    if ($(this).attr('parentId') == splFilterValText[splFilterValTextLength - 1]) { //Check if is first item
+                        //Remove parent item from list
+                        currentSelectedVal = currentSelectedVal.replace($(this).attr('parentId'), "");
                         $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
+                        $('#btn-view-more').attr('selected' + $(this).attr('filType'), currentSelectedVal);
+                    }
+                    else {
+                        //Remove parent item from list
+                        currentSelectedVal = currentSelectedVal.replace($(this).attr('parentId') + ",", "");
+                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
+                        $('#btn-view-more').attr('selected' + $(this).attr('filType'), currentSelectedVal);
                     }
 
                     $('.check-all-filter').prop("checked", false);
+
+                    //window.location.href = "/v2/search-ticket?srkey=" + $('#btn-view-more').attr('keyword') + "&pca=" + $('#btn-view-more').attr('parentCategoryId') + "&st=" + $('#btn-view-more').attr('selectedTags') + "&sl=" + $('#btn-view-more').attr('selectedLocations') + "&sor=" + $('#btn-view-more').attr('sortType') + "&pg=1" + "&sz=" + $('#btn-view-more').attr('pageSize');
                 }
-                GetData($('#filValHolder-' + $(this).attr('filType')).val());
             });
         </script>
         <!--#endregion-->
 
+        <!--#region Load more items-->
+        <script>
+            $(document).ready(function () {
+                let totalDeal = parseInt($('#btn-view-more').attr('totalDeal'));
+                let page = parseInt($('#btn-view-more').attr("curPage")) + 1;
+                let pageSize = parseInt($('#btn-view-more').attr("pageSize"));
+
+                if (totalDeal < page * pageSize - pageSize) {
+                    $('#btn-view-more').hide();
+                }
+            });
+            //
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            //
+            async function loadMoreItem() {
+                let keyword = $('#btn-view-more').attr("keyword");
+                let parentCategoryId = parseInt($('#btn-view-more').attr("parentCategoryId"));
+                let selectedTags = $('#btn-view-more').attr("selectedTags");
+                let selectedLocations = $('#btn-view-more').attr("selectedLocations");
+                let sortType = parseInt($('#btn-view-more').attr("sortType"));
+                let page = parseInt($('#btn-view-more').attr("curPage")) + 1; console.log(page);
+                let size = parseInt($('#btn-view-more').attr("pageSize"));
+                
+                $('#btn-view-more').hide();
+
+                $.ajax({
+                    url: '/v2/search-ticket',
+                    data: {
+                        srkey: keyword,
+                        pca: parentCategoryId,
+                        st: selectedTags,
+                        sl: selectedLocations,
+                        sor: sortType,
+                        pg: page,
+                        sz: size
+                    },
+                    success: function (data) {
+                        if (data == "0") {
+                            $('#btn-view-more').hide();
+                        } else {
+                            $('#btn-view-more').attr("curPage", page + 1);
+                            $("#loadedDeals").append(data);
+                        }
+                    },
+                    error: function () {
+                        alert("error");
+                    }
+                });
+                await sleep(200);
+
+                if (parseInt($('#totalDeals').val()) >= (parseInt($('#btn-view-more').attr("curPage")) + 1) * size - size) {
+                    $('#btn-view-more').show();
+                }
+            }
+        </script>
+        <!--#endregion-->
+        
         <!--#endregion-->
     </div>
 </body>
