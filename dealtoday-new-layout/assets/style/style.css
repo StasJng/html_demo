@@ -1220,7 +1220,35 @@ a {
 .footer-tags-reg .txt-tag {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+}
+
+.footer-tags-reg .txt-tag a {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(97, 97, 97, 1);
+    padding: 3px 0;
+}
+
+.footer-tags-reg .sub-cate {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.footer-tags-reg .sub-cate a {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(97, 97, 97, 1);
+    padding: 3px 0;
+}
+
+.footer-tags-reg .txt-tag a:hover, .footer-tags-reg .sub-cate a:hover {
+    color: #F6911E;
+}
+
+.footer-tags-reg .sub-cate i {
+    font-style: normal;
 }
 
 @media (max-width: 768px) {
@@ -1607,14 +1635,23 @@ a {
     content: '';
 }
 
-.filter-wrapper .dropdown.non-drop.brand {
-    margin: 3px;
-}
-
 .filter-wrapper .dropdown > .dropdown-menu {
     max-height: 0;
     overflow: hidden;
     list-style-type: none;
+}
+
+.filter-wrapper .dropdown.non-drop .dealtoday-checkbox label {
+    display: inline-block !important;
+    width: 100%;
+    z-index: 2;
+}
+
+.filter-wrapper .dropdown.non-drop .dealtoday-checkbox span {
+    position: absolute;
+    top: 2px;
+    left: 28px;
+    z-index: 1;
 }
 
 .filter-wrapper .dropdown > .dropdown-menu li {
@@ -4434,4 +4471,30 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     background-repeat: no-repeat;
     background-position: right 12px center;
     background-size: 24px 24px;
+}
+
+
+
+
+
+/* No search result */
+.empty-search-result {
+    font-size: 32px;
+    font-weight: 500;
+    color: #888;
+    height: 35vh;
+}
+
+.empty-search-result .r-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+.empty-search-result .r-msg {
+    font-size: 14px;
+    margin: 0 auto;
+    font-weight: 400;
+    max-width: 600px;
+    color: #616161;
 }
