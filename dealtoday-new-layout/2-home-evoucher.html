@@ -455,10 +455,26 @@
                 <div class="gap-reg-30"></div>
                 
                 <!--#region Ưu đãi hấp dẫn-->
+                <h2 class="col-12 reg-title p-sm-0 p-xs-0">
+                    Ưu đãi hấp dẫn
+                </h2>
+
+                <div class="gap-reg-20"></div>
+
                 <div class="col-12">
                     <div class="row lst-vou-promo">
-                        <div class="col-4">
-
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="col-xl-4 xol-lg-4 col-md-6 col-sm-6 col-xs-12 col-12 swiper-slide d-promo">
+                                    <img src="assets/images/demo-imgs/combo/cb-promo-1.png" alt="" width="390" height="150" />
+                                </div>
+                                <div class="col-xl-4 xol-lg-4 col-md-6 col-sm-6 col-xs-12 col-12 swiper-slide d-promo">
+                                    <img src="assets/images/demo-imgs/combo/cb-promo-2.png" alt="" width="390" height="150" />
+                                </div>
+                                <div class="col-xl-4 xol-lg-4 col-md-6 col-sm-6 col-xs-12 col-12 swiper-slide d-promo">
+                                    <img src="assets/images/demo-imgs/combo/cb-promo-3.png" alt="" width="390" height="150" />
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2192,6 +2208,17 @@
                                     },
                                 }
             );
+
+            let promoSwiper = new Swiper('.lst-vou-promo .swiper-container', {
+                                    slidesPerView: 1,
+                                    spaceBetween: 10,
+                                    loop: false,
+                                    pagination: {
+                                        el: '.lst-vou-promo .swiper-pagination',
+                                        clickable: true,
+                                    },
+                                }
+            );
         }
         else {
             //List images
@@ -2223,6 +2250,17 @@
                                     loop: false,
                                     pagination: {
                                         el: '.lst-combo .swiper-pagination',
+                                        clickable: true,
+                                    },
+                                }
+            );
+
+            let promoSwiper = new Swiper('.lst-vou-promo .swiper-container', {
+                                    slidesPerView: 3,
+                                    spaceBetween: 15,
+                                    loop: false,
+                                    pagination: {
+                                        el: '.lst-vou-promo .swiper-pagination',
                                         clickable: true,
                                     },
                                 }

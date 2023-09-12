@@ -3755,24 +3755,46 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 
 /* -------------------------------------------------------------------------------------------- */
+/* Promo */
+.lst-vou-promo .d-promo img {
+    aspect-ratio: 39/15;
+    width: 100%;
+    height: unset;
+}
+
+@media(max-width: 576px) {
+    .lst-vou-promo {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+/* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
 /* Customize Swiper Recommend */
-.lst-recommand .swiper-pagination, .lst-coupon .swiper-pagination, .lst-combo .swiper-pagination {
+.lst-recommand .swiper-pagination, .lst-coupon .swiper-pagination, .lst-combo .swiper-pagination, .lst-vou-promo .swiper-pagination {
 	bottom: -5px !important;
 }
 
-.lst-recommand .swiper-pagination-bullet-active, .lst-coupon .swiper-pagination-bullet-active, .lst-combo .swiper-pagination-bullet-active {
+.lst-recommand .swiper-pagination-bullet-active, .lst-coupon .swiper-pagination-bullet-active, .lst-combo .swiper-pagination-bullet-active, .lst-vou-promo .swiper-pagination-bullet-active {
 	background-color: #F0821B;
 }
 
 .lst-recommand .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .lst-coupon .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.lst-combo .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+.lst-combo .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.lst-vou-promo .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
 	margin: 0 3px !important;
 }
 
 .lst-recommand .swiper-pagination-bullet,
 .lst-coupon .swiper-pagination-bullet,
-.lst-combo .swiper-pagination-bullet {
+.lst-combo .swiper-pagination-bullet,
+.lst-vou-promo .swiper-pagination-bullet {
 	width: 15px !important;
 	height: 3px !important;
 	border-radius: 3px !important;
