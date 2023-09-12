@@ -3756,21 +3756,23 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 /* -------------------------------------------------------------------------------------------- */
 /* Customize Swiper Recommend */
-.lst-recommand .swiper-pagination, .lst-coupon .swiper-pagination {
+.lst-recommand .swiper-pagination, .lst-coupon .swiper-pagination, .lst-combo .swiper-pagination {
 	bottom: -5px !important;
 }
 
-.lst-recommand .swiper-pagination-bullet-active, .lst-coupon .swiper-pagination-bullet-active {
+.lst-recommand .swiper-pagination-bullet-active, .lst-coupon .swiper-pagination-bullet-active, .lst-combo .swiper-pagination-bullet-active {
 	background-color: #F0821B;
 }
 
 .lst-recommand .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.lst-coupon .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+.lst-coupon .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.lst-combo .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
 	margin: 0 3px !important;
 }
 
 .lst-recommand .swiper-pagination-bullet,
-.lst-coupon .swiper-pagination-bullet {
+.lst-coupon .swiper-pagination-bullet,
+.lst-combo .swiper-pagination-bullet {
 	width: 15px !important;
 	height: 3px !important;
 	border-radius: 3px !important;
@@ -4567,7 +4569,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-display: swap;
 }
  
- .box-cb-d {
+.box-cb-d {
     font-family: 'Be Vietnam Pro';
 
      background-image: linear-gradient(to right, #fb870e, #f79a1c 300px, #fb870e 600px);
@@ -4582,7 +4584,17 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
      display: block;
      position: relative;
      height: fit-content;
- }
+     cursor: pointer;
+}
+
+.box-cb-d div {
+    pointer-events: none;
+}
+
+.box-cb-d:hover {
+    margin-top: -1px;
+    box-shadow: 1px 1px 3px 3px rgba(0,0,0,0.1);
+}
 
  .box-cb-d .origin-price {
     text-decoration: line-through;
@@ -4681,7 +4693,6 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     bottom: -25px;
 }
 
- 
 .box-cb-d .btn-ctn .btn-buy {
     font-weight: bold;
     padding: 5px 10px;
@@ -4696,6 +4707,15 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     cursor: pointer;
     text-decoration: none;
     text-align: center;
+}
+
+.box-cb-d .btn-ctn:hover {
+    background-image: linear-gradient(to right, #eb3941, #ed1c24);
+    box-shadow: 0 5px 5px rgba(214, 38, 44, 0.5);
+}
+
+.box-cb-d .btn-ctn:hover .btn-buy {
+    background-image: linear-gradient(to right, #eb3941, #ed1c24);
 }
 
 .box-cb-d .image-box img {
