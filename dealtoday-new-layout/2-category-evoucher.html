@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    
+    <meta name="title" content="@Html.Raw(ViewBag.MetaTitle)" />
+    <meta name="keywords" content="@Html.Raw(ViewBag.Keywords)" />
+    <meta name="description" content="@Html.Raw(ViewBag.Description)">
+
+    <script src="assets/plugins/swiper-slider/js/swiper.min.js"></script>
+    <link href="assets/plugins/swiper-slider/css/swiper.min.css" rel="stylesheet" />
+
+    <title>@ViewBag.Title</title>
+
+    <!--#region Google Transalte-->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                autoDisplay: false,
+                includedLanguages: 'en,vi',
+                gaTrack: true,
+                gaId: 'AIzaSyAuk_NhmtJvsJXMB9PAy-jCSGv5sVhhxvM'
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+    <!--#endregion-->
+
+    <!--#region Prevent User from using Dev Tools-->
+    <script>
+        document.onkeydown = (e) => {
+            if (e.key == 123) {
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'I') { // Prevent Ctrl+Shift+I
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'C') { // Prevent Ctrl+Shift+C
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.shiftKey && e.key == 'J') { // Prevent Ctrl+Shift+J
+                e.preventDefault();
+            }
+            if (e.ctrlKey && e.key == 'U') { // Prevent Ctrl+U
+                e.preventDefault();
+            }
+        };
+
+        $(document).keydown(function (e) {
+            if (e.keyCode == 123) { // Prevent F12
+                return false;
+            }
+            //else if (e.ctrlKey && e.shiftKey && e.keyCode == 73) { // Prevent Ctrl+Shift+I
+            //    return false;
+            //}
+        });
+
+        //Prevent Right Click
+        //~ <body oncontextmenu="return false">
+        $(document).on("contextmenu", function (e) {
+            e.preventDefault();
+        });
+    </script>
+    <!--#endregion-->
+
+    <!-- <script>
+        function searchWithKeyword() {
+            if ($('#search-key-input').val().length < 2) {
+                return false;
+            }
+            else {
+                window.location.href = "/v2/search-result?srkey=" + $('#search-key-input').val();
+            }
+        }
+
+        document.getElementById('search-key-input').onkeydown = function (e) {
+            if (e.keyCode == 13) {
+                searchWithKeyword();
+            }
+        };
+    </script> -->
+</head>
+<body>
+    <!--#region Javascript disabled meesage(~Gmail)-->
+    <noscript>
+        <style type="text/css">
+            .pagecontainer {display:none !important;}
+        </style>
+        <div class="noscriptmsg">
+            You don't have javascript enabled!
+        </div>
+    </noscript>
+    <!--#endregion-->
+
+    <div class="pagecontainer">
+        <!--#region page Content-->
+        
+        <!--#region Header-->
+        <div class="header" id="header">
+            <div class="container p-sm-0 p-xs-0">
+                <div id="header-top" class="row header-top flex-align-center">
+                    <div class="col-4 hot-line" translate="no">
+                        <img src="assets/images/header/icon-phone.svg" alt="" height="20" width="20" />
+                        <a href="tel:19002065">19002065</a>
+                        <a href="tel:0934661016" class="d-lg-flex d-md-flex d-sm-none d-none">&nbsp;-&nbsp;0934.661.016</a>
+                    </div>
+                    <div class="col-8 flex-align-center header-r">
+                        <div class="h-notify flex-align-center">
+                            <span><img src="assets/images/header/icon-bell-orange.svg" alt="" height="20" width="20" /></span><span class="txt-noti">&nbsp;&nbsp;Thông báo</span>
+                        </div>
+                        <div class="h-translate">
+                            <div id="google_translate_element" onclick="goTrans(this.id)"></div>
+                        </div>
+                        <!--#region Using Google Translate-->
+                        <script>
+                            $(document).ready(function () {
+                                $('html').attr('lang', 'vn');
+                            });
+
+                            var element = document.querySelector('html');
+                            var observer = new MutationObserver(function (mutations) {
+                                mutations.forEach(function (mutation) {
+                                    if (mutation.type === "attributes") {
+                                        if ($('html').attr('lang') == 'en') {
+                                            $('.goog-te-combo').attr('style', 'background: url(https://www.dealtoday.vn/asset/images/ecode/flag-en-egift.png) no-repeat; background-position: left 10px center; background-color: white;');
+                                        }
+                                        else if ($('html').attr('lang') == 'vi') {
+                                            //$('.goog-te-combo').attr('style', 'background: url(https://www.dealtoday.vn/AssetBooking/Images/flag_vn.jpg) no-repeat; background-position: left 10px center; background-color: white;');
+                                            if ($('#google_translate_element').attr('lang') == 'en') {
+                                                window.location.reload();
+                                            }
+                                        }
+                                    }
+                                });
+                            });
+
+                            observer.observe(element, {
+                                attributes: true //configure it to listen to attribute changes
+                            });
+
+                            function goTrans(id) {
+                                $('.goog-te-combo option').each(function () {
+                                    // if($(this).html() == "Select Language") {
+                                    //     $(this).remove();
+                                    // }
+                                });
+
+                                $('#google_translate_element').attr('lang', $('html').attr('lang'));
+                            };
+                        </script>
+                        <!--#endregion-->
+                        <div class="h-auth">
+                            <div class="d-none btn-general round">
+                                Đăng nhập/ Đăng ký
+                            </div>
+                            <a href="#">
+                                <span>
+                                    <img src="assets/images/popup/mb-menu/icon-mb-menu-user.svg" alt="icon-user" width="18" height="18" />
+                                </span>
+                                <span class="username">
+                                    Mr. Andrey Lamb
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom flex-align-center">
+                    <div class="header-logo">
+                        <a href="#">
+                            <img src="assets/images/header/logo.png" alt="" height="40" width="200" />
+                        </a>
+                    </div>
+                    <div class="loc-box">
+                        <select class="dropdown">
+                            <option value="001">Hà Nội</option>
+                            <option value="002">Đà Nẵng</option>
+                            <option value="003">Sài Gòn</option>
+                        </select>
+                    </div>
+                    <div class="srch-box">
+                        <input type="text" id="search-key-input" value="" placeholder="Tìm kiếm theo nhu cầu của bạn" />
+                        <button class="btn-general orange">
+                            <img src="assets/images/header/icon-search-white.svg" alt="" height="20" width="20" />
+                        </button>
+                    </div>
+                    <div class="cart-box">
+                        <img src="assets/images/header/icon-cart-orange.svg" alt="" width="24" height="24" onclick="openPopup('#popup-location');"/>
+                        <span class="item-count flex-center">5</span>
+                    </div>
+                    <div class="mb-menu-box d-xl-none d-lg-none d-md-none d-sm-block d-block" onclick="openPopup('#mb-menu')">
+                        <img src="assets/images/header/icon-mb-menu.svg" alt="" height="26" width="26" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--#endregion-->
+
+        <!--#region Mobile Menu-->
+        <div class="mb-menu-container" id="mb-menu" onclick="if(event.target == this){closePopup('#mb-menu');}" aria-hidden="true">
+            <div class="mb-menu-wrapper">
+                <div class="item-lst row">
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/header/logo.png" alt="" height="26" width="130" /></span>
+                        <span class="close-icon"><img src="assets/images/popup/close-icon-black.svg" alt="" height="20" width="20" onclick="closePopup('#mb-menu');"></span>
+                    </div>
+                    <div class="slim-border"></div>
+                    <a href="#" class="col-12 flex-align-center">
+                        <span><img src="assets/images/popup/mb-menu/icon-mb-menu-user.svg" alt="" height="20" width="20" /></span>
+                        <span class="f-heavy">Đăng ký/ Đăng nhập</span>
+                    </a>
+                </div>
+                <div class="bold-border"></div>
+                <div class="item-lst row">
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/popup/mb-menu/icon-mb-menu-evoucher.svg" alt="" height="20" width="20" /></span>
+                        <span class="f-heavy">E-Voucher</span>
+                    </div>
+                    <div class="slim-border"></div>
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/popup/mb-menu/icon-mb-menu-egift.svg" alt="" height="20" width="20" /></span>
+                        <span class="f-heavy">E-Gift</span>
+                    </div>
+                    <div class="slim-border"></div>
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/popup/mb-menu/icon-mb-menu-eticket.svg" alt="" height="20" width="20" /></span>
+                        <span class="f-heavy">E-Ticket</span>
+                    </div>
+                </div>
+                <div class="bold-border"></div>
+                <div class="item-lst row">
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/header/icon-bell-orange.svg" alt="" height="18" width="18" /></span>
+                        <span>Thông báo</span>
+                    </div>
+                    <div class="slim-border"></div>
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/popup/mb-menu/icon-mb-menu-translate.svg" alt="" height="20" width="20" /></span>
+                        <span>Ngôn ngữ</span>
+                        <div class="d-inline-block mb-menu-translate-box">
+                            <div class="h-translate">
+                                <div id="google_translate_element-mb" onclick="goTrans(this.id)"></div>
+                            </div>
+                            <script type="text/javascript">
+                                var width = $(window).width();
+
+                                if (width <= 768) {
+                                    function googleTranslateElementInit() {
+                                        new google.translate.TranslateElement({
+                                            pageLanguage: 'vi',
+                                            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                                            autoDisplay: false,
+                                            includedLanguages: 'en,vi',
+                                            gaTrack: true,
+                                            gaId: 'AIzaSyAuk_NhmtJvsJXMB9PAy-jCSGv5sVhhxvM'
+                                        }, 'google_translate_element-mb');
+                                    }
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <div class="slim-border"></div>
+                    <div class="col-12 flex-align-center">
+                        <span><img src="assets/images/header/icon-phone.svg" alt="" height="18" width="18" /></span>
+                        <span class="f-heavy"><a href="tel:19002065">1900 2065 - 0934.661.016</a></span>
+                    </div>
+                </div>
+                <div class="bold-border"></div>
+                <div class="btn-general round w-100">
+                    Đăng xuất
+                </div>
+            </div>
+        </div>
+        <!--#endregion-->
+
+        <!--#region Popup Location-->
+        <div class="p-popup-container popup-location" id="popup-location" onclick="if(event.target == this){closePopup('#popup-location');}" aria-hidden="true">
+            <div class="p-popup-wrapper">
+                <div class="row">
+                    <div class="col-12 p-locs-tiltle">
+                        Chọn địa điểm
+                        <img src="assets/images/popup/close-icon-black.svg" alt="" height="20" width="20" onclick="closePopup('#popup-location');" />
+                    </div>
+
+                    <div class="gap-reg-12"></div>
+
+                    <div class="col-12 p-locs-desc">
+                        Hãy chọn tỉnh thành của bạn. Bạn có thể thay đổi tỉnh thành tại đầu trang.
+                    </div>
+
+                    <div class="gap-reg-16"></div>
+
+                    <div class="col-12 p-locs-select">
+                        <select id="main-loc-drop">
+                            <option value="21">Toàn quốc</option>
+                            <option value="24">Hà Nội</option>
+                            <option value="25">Sài Gòn</option>
+                            <option value="61">Đà Nẵng</option>
+                        </select>
+                        <div class="d-xl-block d-lg-block d-md-block d-sm-none d-xs-none d-none select-web-cover" id="location-bx" onclick="showLocations()">
+                            <div class="popup-customized" id="location-select">
+                                <div class="select-item flex-align-center selected" onclick="pickThisLocation(this.id)" id-val="21" id="loc-toan-quoc">Toàn quốc</div>
+                                <div class="border-div w-100"></div>
+                                <div class="select-item flex-align-center" onclick="pickThisLocation(this.id)" id-val="24" id="loc-ha-noi">Hà Nội</div>
+                                <div class="border-div w-100"></div>
+                                <div class="select-item flex-align-center" onclick="pickThisLocation(this.id)" id-val="25" id="loc-sai-gon">Sài Gòn</div>
+                                <div class="border-div w-100"></div>
+                                <div class="select-item flex-align-center" onclick="pickThisLocation(this.id)" id-val="61" id="loc-da-nang">Đà Nẵng</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        function showLocations() {
+                            $('#location-select').toggle();
+                        }
+
+                        function pickThisLocation(itemId) {
+                            $('.select-item').each(function () {
+                                $(this).removeClass('selected');
+                            });
+
+                            $('#' + itemId).addClass('selected');
+
+                            $("#main-loc-drop").val($('#' + itemId).attr('id-val'));
+                        }
+
+                        document.addEventListener('click', function handleClickOutsideBox(event) {
+                            const boxLocation = document.getElementById('location-bx');
+                            const boxLocSelect = document.getElementById('location-select');
+
+                            if (!boxLocation.contains(event.target) && !boxLocSelect.contains(event.target)) {
+                                $('#location-select').hide();
+                            }
+                        });
+                    </script>
+
+                    <div class="gap-reg-16"></div>
+
+                    <div class="col-12">
+                        <div class="btn-general orange w-100">
+                            Tiếp tục
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--#endregion-->
+
+        <!--#region-->
+        <script>
+            window.onscroll = function () { myFunction() };
+
+            function myFunction() {
+                if (window.pageYOffset > 0) {
+                    $("#header").attr("style", "height: fit-content; box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 5px, rgba(0, 0, 0, 0.22) 0px 1px 2px;");
+                    $("#header-top").attr("style", "height: 0; opacity: 0");
+                    $("#btn-go-top").addClass("d-flex");
+                }
+                else {
+                    $("#header").removeAttr("style");
+                    $("#header-top").removeAttr("style");
+                    $("#btn-go-top").removeClass("d-flex");
+                }
+            }
+
+            function openPopup(popup) {
+                $('body').attr('style', 'overflow: hidden');
+                $(popup).show().attr("aria-hidden", "false");
+            }
+
+            function closePopup(popup) {
+                $('body').removeAttr('style');
+                $(popup).hide().attr("aria-hidden", "true");
+            }
+        </script>
+        <!--#endregion-->
+        
+        <!--#region Body-->
+        <div class="body">
+            <div class="container">
+                <div class="row">
+                    <div class="gap-reg-12"></div>
+
+                    <!--#region Breadcrumb-->
+                    <div class="col-12 p-sm-0 p-xs-0">
+                        <ul class="breadcrumb-nav">
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Tìm kiếm</a></li>
+                            <li><a href="#">Kết quả tìm kiếm ”Buffet Hà Nội”</a></li>
+                        </ul>
+                    </div>
+                    <!--#endregion-->
+
+                    <div class="gap-reg-12"></div>
+
+                    <!--#region Nav-Tabs-->
+                    <div class="col-12">
+                        <div class="row">
+                            <div id="evoucher" class="col-4 deal-tab flex-center">
+                                E-Voucher(50)
+                            </div>
+                            <div id="egift" class="col-4 deal-tab flex-center selected">
+                                E-Gift(50)
+                            </div>
+                            <div id="eticket" class="col-4 deal-tab flex-center">
+                                E-Ticket(25)
+                            </div>
+                        </div>
+                    </div>
+                    <!--#endregion-->
+
+                    <div class="gap-reg-20"></div>
+
+                    <!--#region Main Content-->
+                    <div class="col-12 p-0">
+                        <div class="row">
+                            <!--#region Filter(WEB)-->
+                            <div class="p-search-filter-ctn-box col-xl-3 col-lg-3 col-9 d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                                <div class="filter-wrapper">
+                                    <div class="filter-container">
+                                        <!--#region Địa điểm(contains 2-lvl Searchbox)-->
+                                        <p class="drop-filter-title">Địa điểm</p>
+
+                                        <input type="hidden" id="filValHolder-location" />
+
+                                        <div class="srch-box">
+                                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                                        </div>
+                                        
+                                        <ul class="loc-filter-items">
+                                            <li class="dropdown list-fil-items">
+                                                <input type="checkbox" checked="" />
+                                                <a data-toggle="dropdown">
+                                                    <span class="dealtoday-checkbox">
+                                                        <input type="checkbox" id="p-loc-1" name="fil-val" data="1" class="dealtoday-checkbox-p" onchange="" filType="location" />
+                                                        <label for="p-loc-1" class="top-0 d-inline"></label>
+                                                        <span class="txt-keyword-p">Hà Nội</span>
+                                                    </span>
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="txt-info">
+                                                        <span class="dealtoday-checkbox">
+                                                            <input type="checkbox" id="c-loc-4-1" name="fil-val" data="4" parentid="1" class="dealtoday-checkbox-chil" onchange="" filType="location" />
+                                                            <label for="c-loc-4-1">
+                                                                <span class="txt-keyword">Hoàn Kiếm</span>
+                                                            </label>
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                </ul>
+                                            </li>
+            
+                                            <li class="dropdown list-fil-items">
+                                                <input type="checkbox" checked="" />
+                                                <a data-toggle="dropdown">
+                                                    <span class="dealtoday-checkbox">
+                                                        <input type="checkbox" id="p-loc-5" name="fil-val" data="5" class="dealtoday-checkbox-p" onchange="" filType="location" />
+                                                        <label for="p-loc-5" class="top-0 d-inline"></label>
+                                                        <span class="txt-keyword-p">Gia Lâm</span>
+                                                    </span>
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a class="txt-info">
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="c-loc-5-1" name="fil-val" data="51" parentid="1" class="dealtoday-checkbox-chil" onchange="" filType="location" />
+                                                                <label for="c-loc-5-1">
+                                                                    <span class="txt-keyword">Ocean Park 1</span>
+                                                                </label>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="txt-info">
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="c-loc-5-2" name="fil-val" data="52" parentid="1" class="dealtoday-checkbox-chil" onchange="" filType="location" />
+                                                                <label for="c-loc-5-2">
+                                                                    <span class="txt-keyword">Ocean Park 2</span>
+                                                                </label>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="txt-info">
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="c-loc-5-3" name="fil-val" data="53" parentid="1" class="dealtoday-checkbox-chil" onchange="" filType="location" />
+                                                                <label for="c-loc-5-3">
+                                                                    <span class="txt-keyword">Ocean Park 3</span>
+                                                                </label>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+            
+                                            <li class="dropdown non-drop list-fil-items">
+                                                <input type="checkbox" checked="">
+                                                <a data-toggle="dropdown" class="non-drop">
+                                                    <span class="dealtoday-checkbox">
+                                                        <input type="checkbox" id="p-loc-3" name="fil-val" data="3" class="dealtoday-checkbox-p" onchange="" filType="location" />
+                                                        <label for="p-loc-3" class="top-0 d-inline"></label>
+                                                        <span class="txt-keyword-p">Đà Nẵng</span>
+                                                    </span>
+                                                </a>
+                                                <ul class="dropdown-menu"></ul>
+                                            </li>
+            
+                                        </ul>
+                                        <!--#endregion-->
+            
+                                        <div class="border-div"></div>
+            
+                                        <!--#region Dịch vụ-->
+                                        <p class="drop-filter-title">Dịch vụ</p>
+
+                                        <input type="hidden" id="filValHolder-ser-type" />
+            
+                                        <ul>
+                                            <li class="dropdown list-fil-items">
+                                                <input type="checkbox" checked="" />
+            
+                                                <a data-toggle="dropdown">
+                                                    <span class="dealtoday-checkbox">
+                                                        <input type="checkbox" id="p-tag-1494" name="fil-val" data="1494" class="dealtoday-checkbox-p" onchange="" filType="ser-type">
+                                                        <label for="p-tag-1494" class="top-0 d-inline"></label>
+                                                        <span>Khu vui chơi</span>
+                                                    </span>
+                                                </a>
+            
+                                                <ul class="dropdown-menu">
+                                                    <li>
+                                                        <a>
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="c-tag-52-1494" name="fil-val" data="52" parentid="1494" class="dealtoday-checkbox-chil" onchange="" filType="ser-type">
+                                                                <label for="c-tag-52-1494">
+                                                                    <span>Thủy cung</span>
+                                                                </label>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a>
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="c-tag-54-1494" name="fil-val" data="54" parentid="1494" class="dealtoday-checkbox-chil" onchange="" filType="ser-type">
+                                                                <label for="c-tag-54-1494">
+                                                                    <span>Bán chạy</span>
+                                                                </label>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a>
+                                                            <span class="dealtoday-checkbox">
+                                                                <input type="checkbox" id="c-tag-22-1494" name="fil-val" data="22" parentid="1494" class="dealtoday-checkbox-chil" onchange="" filType="ser-type">
+                                                                <label for="c-tag-22-1494">
+                                                                    <span>Khu vui chơi</span>
+                                                                </label>
+                                                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <!--#endregion-->
+
+                                        <div class="border-div"></div>
+
+                                        <!--#region Thương hiệu(contains 1-lvl Searchbox)-->
+                                        <p class="drop-filter-title">Thương hiệu</p>
+
+                                        <input type="hidden" id="filValHolder-brand" />
+
+                                        <div class="srch-box">
+                                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                                        </div>
+
+                                        <ul class="loc-filter-items brand list-fil-items">
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" class="check-all-filter" data="" id="b-no-all" onchange="" filType="brand">
+                                                    <label for="b-no-all" class="txt-keyword">
+                                                        All
+                                                    </label>
+                                                </span>
+                                            </li>
+            
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-1" onchange="" name="fil-val" data="brand-1" class="filter-item" filType="brand">
+                                                    <label for="b-no-1" class="txt-keyword">
+                                                        Brand No 1
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-2" onchange="" name="fil-val" data="brand-2" class="filter-item" filType="brand">
+                                                    <label for="b-no-2" class="txt-keyword">
+                                                        Brand No 2
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-3" onchange="" name="fil-val" data="brand-3" class="filter-item" filType="brand">
+                                                    <label for="b-no-3" class="txt-keyword">
+                                                        Brand No 3
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-4" onchange="" name="fil-val" data="brand-4" class="filter-item" filType="brand">
+                                                    <label for="b-no-4" class="txt-keyword">
+                                                        Brand No 4
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-5" onchange="" name="fil-val" data="brand-5" class="filter-item" filType="brand">
+                                                    <label for="b-no-5" class="txt-keyword">
+                                                        Brand No 5
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-6" onchange="" name="fil-val" data="brand-6" class="filter-item" filType="brand">
+                                                    <label for="b-no-6" class="txt-keyword">
+                                                        Brand No 6
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-7" onchange="" name="fil-val" data="brand-7" class="filter-item" filType="brand">
+                                                    <label for="b-no-7" class="txt-keyword">
+                                                        Brand No 7
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-8" onchange="" name="fil-val" data="brand-8" class="filter-item" filType="brand">
+                                                    <label for="b-no-8" class="txt-keyword">
+                                                        Brand No 8
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-9" onchange="" name="fil-val" data="brand-9" class="filter-item" filType="brand">
+                                                    <label for="b-no-9" class="txt-keyword">
+                                                        Brand No 9
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-10" onchange="" name="fil-val" data="brand-10" class="filter-item" filType="brand">
+                                                    <label for="b-no-10" class="txt-keyword">
+                                                        Brand No 10
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-11" onchange="" name="fil-val" data="brand-11" class="filter-item" filType="brand">
+                                                    <label for="b-no-11" class="txt-keyword">
+                                                        Brand No 11
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="b-no-12" onchange="" name="fil-val" data="brand-12" class="filter-item" filType="brand">
+                                                    <label for="b-no-12" class="txt-keyword">
+                                                        Brand No 12
+                                                    </label>
+                                                </span>
+                                            </li>
+            
+                                        </ul>
+                                        <!--#endregion-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--#endregion-->
+
+                            <!--#region List Product-->
+                            <div class="p-seacrh-lst-items-box col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                                <div class="col-12 d-detail-rg">
+                                    <div class="row">
+                                        <div class="col-12 result-txt">
+                                            Tìm thấy 214 kết quả
+                                        </div>
+                                        <div class="col-12 result-fil">
+                                            <span class="sort-txt d-lg-inline d-md-none d-sm-none d-xs-none d-none">
+                                                Sắp xếp theo:
+                                            </span>
+                                            <span class="sort-by">
+                                                <span class="s-new active">Mới nhất</span>
+                                                <span class="s-most">Bán chạy</span>
+                                                <span class="s-price">Giá</span>
+                                                <span class="s-filter d-lg-none d-md-flex d-sm-flex d-xs-flex d-flex" onclick="openPopup('#filterPopup')">
+                                                    <img src="assets/images/generals/icon-filter.svg" alt="" height="18" width="18" />
+                                                    &nbsp;Bộ lọc
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="gap-reg-20"></div>
+
+                                <!--#region Demo Flash Sale Items-->
+                                <div class="col-12 list-product-reg">
+                                    <div class="row">
+                                        <!--#region List product-->
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo2.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo3.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo4.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo5.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo6.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo7.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo8.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo9.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo2.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo3.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo4.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo5.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo6.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo9.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo2.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!--#endregion-->
+            
+                                        <div class="col-12 flex-center">
+                                            <div class="btn-general">
+                                                Xem thêm
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--#endregion-->
+                            </div>
+                            <!--#endregion-->
+
+                        </div>
+                    </div>
+                    <!--#endregion-->
+
+                    <div class="gap-reg-30"></div>
+                </div>
+            </div>
+        </div>
+        <!--#endregion-->
+
+        <!--#region Footer-->
+        <div class="footer">
+            <div class="container p-sm-0 p-xs-0">
+                <div class="row">
+                    <!--#region Head Title-->
+                    <div class="col-12">
+                        <div class="txt-head-title">
+                            Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế EBIS
+                        </div>
+                        <div class="footer-borderline"></div>
+                    </div>
+                    <!--#endregion-->
+                    
+                    <!--#region Contact + Info-->
+                    <div class="col-12 col-info-reg">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Liên hệ với Dealtoday
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Trung tâm hỗ trợ
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Hướng dẫn đặt hàng
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Hướng dẫn đổi trả
+                                    </a>
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Đối tác
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Đăng ký nhà cung cấp
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Đăng ký đại lý
+                                    </a>
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Về Dealtoday
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Về chúng tôi
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Cơ hội nghề nghiệp
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Điều khoản sử dụng
+                                    </a>
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#">
+                                        Chính sách bảo mật
+                                    </a>
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Thanh toán
+                                </div>
+            
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-mastercard.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-visa.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-vpbank.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                </div>
+            
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-atm.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-vn-pay.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="assets/images/footer/payment/payment-bidv.svg" data-src="" alt="" width="48" height="24" lazy />
+                                    </div>
+                                </div>
+            
+                                <div class="txt-title">
+                                    Chứng nhận bởi
+                                </div>
+            
+                                <div class="txt-info">
+                                    <img src="assets/images/footer/icon-bo-cong-thuong.svg" data-src="" alt="" width="120" height="45" lazy />
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-2 col-md-4 col-sm-6 col-8">
+                                <div class="txt-title">
+                                    Kết nối với chúng tôi
+                                </div>
+            
+                                <div class="txt-info">
+                                    <a href="#" class="footer-social-icon">
+                                        <img class="" src="assets/images/footer/social/icon-facebook.svg" data-src="" alt="" width="18" height="18" lazy />
+                                    </a>
+                                    <a href="#" class="footer-social-icon">
+                                        <img class="" src="assets/images/footer/social/icon-youtube.svg" data-src="" alt="" width="18" height="18" lazy />
+                                    </a>
+                                    <a href="#" class="footer-social-icon">
+                                        <img class="" src="assets/images/footer/social/icon-instagram.svg" data-src="" alt="" width="18" height="18" lazy />
+                                    </a>
+                                </div>
+            
+                                <div class="txt-title">
+                                    Tải ứng dụng Dealtoday
+                                </div>
+            
+                                <div class="row flex-align-center">
+                                    <div class="col-5">
+                                        <a>
+                                            <img class="" src="assets/images/footer/download-qr-375.png" data-src="" alt="" width="90" height="90" lazy />
+                                        </a>
+                                    </div>
+                                    <div class="col-7">
+                                        <a href="#" class="footer-btn-download">
+                                            <img class="" src="assets/images/footer/download/icon-download-googlePlay.svg" data-src="" alt="" width="106" height="40" lazy />
+                                        </a>
+                                        <a href="#" class="footer-btn-download">
+                                            <img class="" src="assets/images/footer/download/icon-download-appStore.svg" data-src="" alt="" width="106" height="40" lazy />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-borderline"></div>
+                    </div>
+                    <!--#endregion-->
+                    
+                    <!--#region Location-->
+                    <div class="col-12">
+                        <div class="txt-desc">
+                            Trụ sở chính: Phòng 301, Tầng 3, Tòa nhà số 18 Ngõ 11, Thái Hà, Phường Trung Liệt, Quận Đống Đa, Hà Nội - Tel: 024.7304.7799 – Fax: 024.2215.0220 – Email: hotro@dealtoday.vn
+                        </div>
+
+                        <div class="txt-desc">
+                            Văn phòng HCM: Tầng 8, Tòa nhà Phương Nam, Số 157 Võ Thị Sáu, Phường Võ Thị Sáu, Quận 3, TP. HCM- Tel: 028.6680.8756
+                        </div>
+
+                        <div class="txt-desc">
+                            Giấy chứng nhận đăng ký kinh doanh số 0102225186 - Do Sở Kế hoạch Đầu Tư Hà Nội cấp ngày 18/04/2007
+                        </div>
+
+                        <div class="footer-borderline"></div>
+                    </div>
+                    <!--#endregion-->
+                    
+                    <!--#region Description-->
+                    <div class="col-12">
+                        <div class="txt-title">
+                            Dealtoday.vn - Nhà cung cấp Hotdeal ưu đãi nhất Hà Nội
+                        </div>
+
+                        <div class="txt-desc">
+                            Dealtoday.vn là sàn thương mại điện tử với mạng lưới hơn 1000 đối tác rộng khắp toàn quốc, chuyên cung cấp khuyến mại hot trong lĩnh vực dịch vụ (nhà hàng - ẩm thực, du lịch – khách sạn, sức khỏe – làm đẹp, vui chơi giải trí)
+
+                            Tải ứng dụng Dealtoday trên điện thoại để luôn được cập nhật các deal/voucher hấp dẫn nhất, ở gần bạn nhất đồng thời biến việc mua sắm trở nên dễ dàng, thú vị và tiết kiệm hơn bao giờ hết.
+
+                            Dealtoday.vn – Sàn thương mại điện tử cung cấp giá trị niềm tin, luôn bảo vệ quyền lợi người mua voucher khuyến mãi
+
+                            Dealtoday cung cấp lợi ích cho khách hàng dưới hình thức deal hot/voucher giảm giá. Mỗi Deal/Voucher khuyến mãi đối tác phát hành đều được kiểm duyệt lại theo quy trình chặt chẽ của Dealtoday.
+                            Không có Deal/voucher nâng giá để khuyến mãi. Dealtoday cam kết mỗi khuyến mại được phát hành đều là Deal thật với khuyến mại thật. Giá dịch vụ khi mua tại Dealtoday luôn luôn thấp hơn tại điểm bán trực tiếp và thấp nhất trên thị trường hot deal Hà Nội/hot deal HCM.
+
+                            Dealtoday luôn tập trung vào các đối tác/nhà phát hành deal uy tín, chuyên nghiệp và có rất nhiều đối tác là những thương hiệu lớn trong các lĩnh vực ẩm thực, du lịch – khách sạn.
+
+                            Đặc biệt, khách hàng có quyền yêu cầu hoàn tiền trong vòng 3 ngày nếu các nhà cung cấp không đáp ứng đúng thông tin khi mua voucher. Đội ngũ hỗ trợ của Dealtoday sẵn sàng chờ đợi để giải đáp những thắc mắc của người dùng dịch vụ. Dealtoday luôn cố gắng mang lại những trải nghiệm tốt nhất cho mỗi khách hàng
+                            
+                            Nhận khuyến mãi nhiều hơn khi là thành viên của sàn thương mại điện tử Dealtoday.vn
+
+                            Khi là thành viên của Dealtoday.vn, người mua có cơ hội tiết kiệm thêm mỗi ngày nhờ quy chế Cộng điểm. Khách hàng có thể được tích lũy từ 5-30% khi mua sắm tại các điểm ưu đãi tại Hà Nội, TP.HCM và các tỉnh thành khác trên toàn quốc.
+
+                            Khách hàng cũng dễ dàng chuyển nhượng, tặng điểm tích lũy, tặng deal/voucher cho bạn bè, người thân cùng là thành viên của Dealtoday.vn mà không cần để ý tới việc các hot deals/voucher đó ở Hà Nội hay TP.HCM.
+
+                            Là thành viên của Dealtoday.vn, khách hàng cũng đồng thời trở thành VIP của các thương hiệu lớn trên toàn quốc.
+
+                            Dealtoday.vn – LUÔN ƯU ĐÃI
+
+                            Với sứ mệnh là một sàn thương mại điện tử chuyên cung cấp voucher/hot deal trên toàn quốc, Dealtoday.vn luôn nỗ lực để mang lại những giá trị tuyệt vời hơn cho khách hàng. Có Dealtoday.vn, khách hàng không còn cần xếp hàng dài chờ đợi khuyến mại như những cách thức mua hàng truyền thống.
+
+                            Chỉ cần một click chuột và xác nhận, ngay lập tức khuyến mại sẽ được gửi về điện thoại/email. Việc tiếp theo chỉ là sử dụng quyền lợi ưu đãi và tiết kiệm thêm được một khoản đáng kể mỗi lần mua sắm.
+
+                            Trở thành thành viên của Dealtoday ngay hôm nay và tận hưởng niềm vui mua sắm mỗi ngày!
+                        </div>
+
+                        <div class="footer-borderline"></div>
+                    </div>
+                    <!--#endregion-->
+                    
+                    <!--#region Category-->
+                    <div class="col-12">
+                        <div class="txt-title">
+                            Danh mục
+                        </div>
+                    </div>
+                    <div class="col-12 footer-tags-reg">
+                        <div class="txt-tag">
+                            <a href="/deal/vui-choi-giai-tri-158">Vui chơi - Giải trí</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/deal/vui-choi-giai-tri-158">Khu vui chơi - Công viên </a> 
+                            <i>/ </i> 
+                            <a href="/deal/vui-choi-giai-tri-158">Chụp ảnh </a> 
+                            <i>/ </i> 
+                            <a href="/deal/vui-choi-giai-tri-158">Giải trí </a> 
+                            <i>/ </i> 
+                            <a href="/deal/vui-choi-giai-tri-158">Giải trí online </a> 
+                        </div>
+                        <div class="txt-tag">
+                            <a href="/deal/suc-khoe-lam-dep-160">Sức khỏe &amp; Làm đẹp</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/deal/suc-khoe-lam-dep-160">Làm đẹp </a> 
+                            <i>/ </i> 
+                            <a href="/deal/suc-khoe-lam-dep-160">Sức khỏe </a> 
+                        </div>
+                        <div class="txt-tag">
+                            <a href="/deal/nha-hang-an-uong-157">Nhà hàng - Ăn uống</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/deal/nha-hang-an-uong-157">Nhà hàng - quán ăn </a> 
+                            <i>/ </i> 
+                            <a href="/deal/nha-hang-an-uong-157">Thẻ quà tặng </a> 
+                            <i>/ </i> 
+                            <a href="/deal/nha-hang-an-uong-157">Quà Tết </a> 
+                            <i>/ </i> 
+                            <a href="/deal/nha-hang-an-uong-157">Cafe, Trà </a> 
+                            <i>/ </i> 
+                            <a href="/deal/nha-hang-an-uong-157">Kem - Tiệm bánh </a> 
+                        </div>
+                        <div class="txt-tag">
+                            <a href="/deal/du-lich-khach-san-159">Du lịch - Khách sạn</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/deal/du-lich-khach-san-159">Dịch vụ Visa nước ngoài </a> 
+                            <i>/ </i> 
+                            <a href="/deal/du-lich-khach-san-159">Du lịch trong nước </a> 
+                            <i>/ </i> 
+                            <a href="/deal/du-lich-khach-san-159">Du lịch nước ngoài </a> 
+                            <i>/ </i> 
+                            <a href="/deal/du-lich-khach-san-159">Miền Nam </a> 
+                            <i>/ </i> 
+                            <a href="/deal/du-lich-khach-san-159">Khách sạn &amp; Resort </a> 
+                            <i>/ </i> 
+                            <a href="/deal/du-lich-khach-san-159">Dịch vụ tiện ích sân bay </a> 
+                        </div>
+                        <div class="txt-tag">
+                            <a href="/deal/booking-golf-928">Booking Golf</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/deal/booking-golf-928">Miền Bắc </a> 
+                            <i>/ </i> 
+                            <a href="/deal/booking-golf-928">Miền Nam </a> 
+                            <i>/ </i> 
+                            <a href="/deal/booking-golf-928">Miền Trung </a> 
+                        </div>
+                        <div class="txt-tag">
+                            <a href="/deal/khoa-hoc-dao-tao-162">Khóa học - Đào tạo</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/deal/khoa-hoc-dao-tao-162">Trung tâm Ngoại ngữ </a> 
+                            <i>/ </i> 
+                            <a href="/deal/khoa-hoc-dao-tao-162">Khóa học ngắn hạn </a> 
+                            <i>/ </i> 
+                            <a href="/deal/khoa-hoc-dao-tao-162">Cửa hàng sách &amp; Thiết bị GD </a> 
+                            <i>/ </i> 
+                            <a href="/deal/khoa-hoc-dao-tao-162">Dịch vụ giáo dục </a> 
+                        </div>
+                        <div class="txt-tag">
+                            <a href="/deal/qua-tang-228">Quà tặng</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/deal/qua-tang-228">Quà tặng ăn uống </a> 
+                            <i>/ </i> 
+                            <a href="/deal/qua-tang-228">Quà tặng sức khỏe làm đẹp </a> 
+                            <i>/ </i> 
+                            <a href="/deal/qua-tang-228">Quà tặng mua sắm </a> 
+                            <i>/ </i> 
+                            <a href="/deal/qua-tang-228">Quà tặng giải trí </a> 
+                            <i>/ </i> 
+                            <a href="/deal/qua-tang-228">Quà tặng nghỉ dưỡng </a> 
+                        </div>
+                        <div class="txt-tag">
+                            <a href="/deal/phan-mem-1268">Phần mềm</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/deal/phan-mem-1268">Microsoft Office </a> 
+                            <i>/ </i> 
+                            <a href="/deal/phan-mem-1268">Microsoft Windows </a> 
+                            <i>/ </i> 
+                            <a href="/deal/phan-mem-1268">Diệt virut </a> 
+                            <i>/ </i> 
+                            <a href="/deal/phan-mem-1268">Truyền hình Internet </a> 
+                            <i>/ </i> 
+                            <a href="/deal/phan-mem-1268">Khác </a> 
+                        </div>
+                        <div class="txt-tag">
+                            <a href="/deal/dich-vu-khac-163">Dịch vụ khác</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/deal/dich-vu-khac-163">Bảo hiểm </a> 
+                            <i>/ </i> 
+                            <a href="/deal/dich-vu-khac-163">Vận tải </a> 
+                            <i>/ </i> 
+                            <a href="/deal/dich-vu-khac-163">Quà tặng Lễ hội </a> 
+                            <i>/ </i> 
+                            <a href="/deal/dich-vu-khac-163">Dịch vụ khác </a> 
+                            <i>/ </i> 
+                            <a href="/deal/dich-vu-khac-163">Dịch vụ khác </a> 
+                            <i>/ </i> 
+                            <a href="/deal/dich-vu-khac-163">Thời trang - Phụ kiện </a> 
+                        </div>
+                    </div>
+                    <div class="col-12 footer-tags-reg">
+                        <div class="txt-tag">
+                            <a href="/eticket-event/vui-choi-giai-tri-1489">Vui chơi giải trí</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/eticket-event/vui-choi-giai-tri-1489">Vé xem phim </a> 
+                            <i>/ </i> 
+                            <a href="/eticket-event/vui-choi-giai-tri-1489">Khu vui chơi </a> 
+                            <i>/ </i> 
+                            <a href="/eticket-event/vui-choi-giai-tri-1489">Điểm tham quan </a> 
+                            <i>/ </i> 
+                            <a href="/eticket-event/vui-choi-giai-tri-1489">Sân khấu nghệ thuật </a> 
+                        </div>
+                        <div class="txt-tag">
+                            <a href="/eticket-event/su-kien-van-hoa-the-thao-1490">Sự kiện văn hóa thể thao </a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/eticket-event/su-kien-van-hoa-the-thao-1490">Triển lãm </a> 
+                            <i>/ </i> 
+                            <a href="/eticket-event/su-kien-van-hoa-the-thao-1490">Liveshow </a> 
+                            <i>/ </i> 
+                            <a href="/eticket-event/su-kien-van-hoa-the-thao-1490">Thể thao </a> 
+                            <i>/ </i> 
+                            <a href="/eticket-event/su-kien-van-hoa-the-thao-1490">Hội thảo khóa học </a> 
+                        </div>
+                        <div class="txt-tag">
+                            <a href="/eticket-event/tham-quan-du-lich-1491">Tham quan du lịch</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/eticket-event/tham-quan-du-lich-1491">Tour du lịch </a> 
+                            <i>/ </i> 
+                            <a href="/eticket-event/tham-quan-du-lich-1491">Vé du thuyền </a> 
+                        </div>
+                        <div class="txt-tag">
+                            <a href="/eticket-event/di-chuyen-1493">Di chuyển</a>
+                        </div>
+                        <div class="sub-cate">
+                            <a href="/eticket-event/di-chuyen-1493">Vé tàu </a> 
+                            <i>/ </i> 
+                            <a href="/eticket-event/di-chuyen-1493">Vé xe khách </a> 
+                            <i>/ </i> 
+                            <a href="/eticket-event/di-chuyen-1493">Vé cáp treo </a> 
+                            <i>/ </i> 
+                            <a href="/eticket-event/di-chuyen-1493">Vé máy bay </a>
+                            <i>/ </i> 
+                            <a href="/eticket-event/di-chuyen-1493">Vé phòng chờ sân bay </a> 
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="footer-borderline"></div>
+                    </div>
+                    <!--#endregion-->
+                
+                    <!--#region Copyright-->
+                    <div class="col-12">
+                        <div class="txt-desc flex-center">
+                            © 2022 - Bản quyền của Công ty Cổ phần Dịch vụ và Thương mại Điện tử Quốc tế EBIS
+                        </div>
+                    </div>
+                    <!--#endregion-->
+                </div>
+            </div>
+        </div>
+        <!--#endregion-->
+
+        <!--#region Popup Filter(MB)-->
+        <div class="p-popup-container" id="filterPopup" onclick="if(event.target == this){closePopup('#filterPopup');}">
+            <div class="p-popup-wrapper h-100 top-0">
+                <h2 class="text-center">Bộ lọc<span class="float-end" onclick="closePopup('#filterPopup')"><img src="assets/images/generals/close-icon-white.svg" alt="" height="18" width="18" /></span></h2>
+
+                <div class="filter-wrapper">
+                    <div class="filter-container pad-l-0 pad-r-0">
+                        
+                        <!--#region Địa điểm(contains 2-lvl Searchbox)-->
+                        <p class="drop-filter-title">Địa điểm</p>
+
+                        <ul class="loc-filter-items">
+                            <li class="srch-box">
+                                <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                            </li>
+
+                            <li class="dropdown">
+                                <input type="checkbox" checked="" />
+                                <a data-toggle="dropdown">
+                                    <span class="dealtoday-checkbox">
+                                        <input type="checkbox" id="p-loc-1" locid="1" class="dealtoday-checkbox-p" onchange="">
+                                        <label for="p-loc-1"></label>
+                                        <span class="txt-keyword-p">Hà Nội </span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="txt-info">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="c-loc-4-1" locid="4" parentid="1" class="dealtoday-checkbox-chil" onchange="" />
+                                                <label for="c-loc-4-1">
+                                                    <span class="txt-keyword">Hoàn Kiếm </span>
+                                                </label>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <input type="checkbox" checked="" />
+                                <a data-toggle="dropdown">
+                                    <span class="dealtoday-checkbox">
+                                        <input type="checkbox" id="p-loc-5" locid="5" class="dealtoday-checkbox-p" onchange="">
+                                        <label for="p-loc-5"></label>
+                                        <span class="txt-keyword-p">Gia Lâm </span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="txt-info">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="c-loc-5-1" locid="51" parentid="1" class="dealtoday-checkbox-chil" onchange="" />
+                                                <label for="c-loc-5-1">
+                                                    <span class="txt-keyword">Ocean Park 1</span>
+                                                </label>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="txt-info">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="c-loc-5-2" locid="52" parentid="1" class="dealtoday-checkbox-chil" onchange="" />
+                                                <label for="c-loc-5-2">
+                                                    <span class="txt-keyword">Ocean Park 2</span>
+                                                </label>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="txt-info">
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="c-loc-5-3" locid="53" parentid="1" class="dealtoday-checkbox-chil" onchange="" />
+                                                <label for="c-loc-5-3">
+                                                    <span class="txt-keyword">Ocean Park 3</span>
+                                                </label>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <input type="checkbox" checked="" />
+                                <a data-toggle="dropdown">
+                                    <span class="dealtoday-checkbox">
+                                        <input type="checkbox" id="p-loc-5" locid="5" class="dealtoday-checkbox-p" onchange="">
+                                        <label for="p-loc-5"></label>
+                                        <span class="txt-keyword-p">Đà Nẵng</span>
+                                    </span>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <!--#endregion-->
+
+                        <div class="border-div"></div>
+
+                        <!--#region Dịch vụ-->
+                        <p class="drop-filter-title">Dịch vụ</p>
+
+                        <ul>
+                            <li class="dropdown">
+                                <input type="checkbox" checked="" />
+
+                                <a data-toggle="dropdown">
+                                    <span class="dealtoday-checkbox">
+                                        <input type="checkbox" id="p-tag-1494" class="dealtoday-checkbox-p" onchange="">
+                                        <label for="p-tag-1494"></label>
+                                        <span>Khu vui chơi </span>
+                                    </span>
+                                </a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a>
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="c-tag-52-1494" tagid="52" parentid="1494" class="dealtoday-checkbox-chil" onchange="">
+                                                <label for="c-tag-52-1494">
+                                                    <span>Thủy cung</span>
+                                                </label>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="c-tag-54-1494" tagid="54" parentid="1494" class="dealtoday-checkbox-chil" onchange="">
+                                                <label for="c-tag-54-1494">
+                                                    <span>Bán chạy</span>
+                                                </label>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            <span class="dealtoday-checkbox">
+                                                <input type="checkbox" id="c-tag-22-1494" tagid="22" parentid="1494" class="dealtoday-checkbox-chil" onchange="">
+                                                <label for="c-tag-22-1494">
+                                                    <span>Khu vui chơi</span>
+                                                </label>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!--#endregion-->
+
+                        <div class="border-div"></div>
+
+                        <!--#region Địa điểm(contains 1-lvl Searchbox)-->
+                        <p class="drop-filter-title">Thương hiệu</p>
+
+                        <div class="srch-box">
+                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                        </div>
+
+                        <ul class="loc-filter-items brand">
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-1" onchange="">
+                                    <label for="b-no-1" class="txt-keyword">
+                                        Brand No 1
+                                    </label>
+                                </span>
+                            </li>
+                            
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-1" onchange="">
+                                    <label for="b-no-1" class="txt-keyword">
+                                        Brand No 1
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-2" onchange="">
+                                    <label for="b-no-2" class="txt-keyword">
+                                        Brand No 2
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-3" onchange="">
+                                    <label for="b-no-3" class="txt-keyword">
+                                        Brand No 3
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-4" onchange="">
+                                    <label for="b-no-4" class="txt-keyword">
+                                        Brand No 4
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-5" onchange="">
+                                    <label for="b-no-5" class="txt-keyword">
+                                        Brand No 5
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-6" onchange="">
+                                    <label for="b-no-6" class="txt-keyword">
+                                        Brand No 6
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-7" onchange="">
+                                    <label for="b-no-7" class="txt-keyword">
+                                        Brand No 7
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-8" onchange="">
+                                    <label for="b-no-8" class="txt-keyword">
+                                        Brand No 8
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-9" onchange="">
+                                    <label for="b-no-9" class="txt-keyword">
+                                        Brand No 9
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-10" onchange="">
+                                    <label for="b-no-10" class="txt-keyword">
+                                        Brand No 10
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-11" onchange="">
+                                    <label for="b-no-11" class="txt-keyword">
+                                        Brand No 11
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-12" onchange="">
+                                    <label for="b-no-12" class="txt-keyword">
+                                        Brand No 12
+                                    </label>
+                                </span>
+                            </li>
+
+                        </ul>
+                        <!--#endregion-->
+
+                        <div class="border-div"></div>
+
+                        <!--#region Địa điểm(contains 1-lvl Searchbox)-->
+                        <p class="drop-filter-title">Thương hiệu</p>
+
+                        <div class="srch-box">
+                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                        </div>
+
+                        <ul class="loc-filter-items brand">
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-1" onchange="">
+                                    <label for="b-no-1" class="txt-keyword">
+                                        Brand No 1
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-2" onchange="">
+                                    <label for="b-no-2" class="txt-keyword">
+                                        Brand No 2
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-3" onchange="">
+                                    <label for="b-no-3" class="txt-keyword">
+                                        Brand No 3
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-4" onchange="">
+                                    <label for="b-no-4" class="txt-keyword">
+                                        Brand No 4
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-5" onchange="">
+                                    <label for="b-no-5" class="txt-keyword">
+                                        Brand No 5
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-6" onchange="">
+                                    <label for="b-no-6" class="txt-keyword">
+                                        Brand No 6
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-7" onchange="">
+                                    <label for="b-no-7" class="txt-keyword">
+                                        Brand No 7
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-8" onchange="">
+                                    <label for="b-no-8" class="txt-keyword">
+                                        Brand No 8
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-9" onchange="">
+                                    <label for="b-no-9" class="txt-keyword">
+                                        Brand No 9
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-10" onchange="">
+                                    <label for="b-no-10" class="txt-keyword">
+                                        Brand No 10
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-11" onchange="">
+                                    <label for="b-no-11" class="txt-keyword">
+                                        Brand No 11
+                                    </label>
+                                </span>
+                            </li>
+
+                            <li class="dropdown brand non-drop">
+                                <span class="dealtoday-checkbox">
+                                    <input type="checkbox" id="b-no-12" onchange="">
+                                    <label for="b-no-12" class="txt-keyword">
+                                        Brand No 12
+                                    </label>
+                                </span>
+                            </li>
+
+                        </ul>
+                        <!--#endregion-->
+
+                        <div class="gap-reg-20"></div>
+                    </div>
+                </div>
+
+                <div class="filter-wrapper btn-filter p-0 flex-center">
+                    <div class="row w-100">
+                        <div class="col-6 pad-l-0">
+                            <div class="btn-general w-100">
+                                Đặt lại
+                            </div>
+                        </div>
+                        <div class="col-6 pad-r-0">
+                            <div class="btn-general orange w-100">
+                                Áp dụng
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function openPopup(popup) {
+                $('body').attr('style', 'overflow: hidden');
+                $(popup).show();
+            }
+
+            function closePopup(popup) {
+                $('body').removeAttr('style');
+                $(popup).hide();
+            }
+        </script>
+        <!--#endregion-->
+
+        <!--#region-->
+        <script>
+            //Location searching function
+            $(document).ready(function () {
+                $(".loc-filter-items").each(function (i, value) {
+                    let input = $(value).find("input[type='text']");
+                    //On typing
+                    $(input).keyup(function () {
+                        //Declare filter
+                        let filter = $(input).val().toUpperCase();
+
+                        $(value).find(".txt-keyword-p").each(function (index, item) {
+                            if ($(item).text().toUpperCase().search(filter) < 0) {
+                                $(this).parents('.dropdown').hide();
+                            }
+                        });
+
+                        //Search
+                        $(value).find(".txt-keyword").each(function (index, item) {
+                            //console.log($(item).attr("id"));
+                            //console.log("p: " + $(item).attr("pId"));
+                            if ($(item).text().toUpperCase().search(filter) < 0) {
+                                $(this).parents('.txt-info').hide();
+                            }
+                            else {
+                                $(this).parents('.txt-info').show();
+                                $(this).parents('.dropdown').show();
+                            }
+                        });
+
+                        if (filter.length <= 1) {
+                            $(value).find(".txt-keyword-p").each(function (index, item) {
+                                $(this).parents('.dropdown').show();
+                            });
+                        }
+
+                        $(value).find(".txt-keyword-p").each(function (index, item) {
+                            if ($(item).text().toUpperCase().search(filter) > 0) {
+                                $(this).parents('.dropdown').show();
+
+                                $(".dropdown .txt-info").each(function () {
+                                    $(this).attr("style", "display: block");
+                                });
+                            }
+                        });
+                    });
+                });
+            });
+
+            //Brand searchin function
+            $(document).ready(function () {
+                $(".loc-filter-items").each(function (i, value) {
+                    var input = $(value).find("input[type='text']");
+                    $(input).keyup(function () {
+                        var filter = $(input).val().toUpperCase();
+                        $(value).find(".txt-keyword").each(function (index, item) {
+                            if ($(item).text().toUpperCase().search(filter) < 0) {
+                                $(this).parents('.dropdown').hide();
+                            } else {
+                                $(this).parents('.dropdown').show();
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+        <!--#endregion-->
+
+        <!--#region Filter 1 lvl-->
+        <script>
+            //Select all
+            $('.check-all-filter').change(function () {
+                if (this.checked) {
+                    //Select all checkbox
+                    $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]').prop("checked", true);
+
+                    //Build list value
+                    var dataValue = "";
+                    $('.list-fil-items input[name=fil-val]:checked').each(function () {
+                        dataValue = dataValue + $(this).attr('data') + ",";
+                    });
+
+                    //Set value
+                    $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
+                }
+                else {
+                    //Uncheck all checkbox
+                    $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]').prop("checked", false);
+
+                    //Reset QR value
+                    $('#filValHolder-' + $(this).attr('filType')).val("");
+                }
+            });
+
+            //Select a checkbox
+            $('.filter-item').change(function () {
+                //Get current Filter value
+                var currentSelectedVal = $('#filValHolder-' + $(this).attr('filType')).val();
+
+                //Get checkbox's value
+                var dataValue = $(this).attr('data');
+
+                //Check selected and do job
+                if (this.checked) {
+                    if (currentSelectedVal == null || currentSelectedVal == 'undefined' || currentSelectedVal == "") { //If current Filter is null or empty/whitespace
+                        //Set Filter value
+                        $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
+                    }
+                    else {
+                        //Add Filter to current value
+                        if (currentSelectedVal.slice(-1) == ",") {
+                            currentSelectedVal = currentSelectedVal.substring(0, currentSelectedVal.length - 1);
+                        }
+                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal + "," + dataValue);
+                    }
+
+                    var numItems = $(this).parents('.list-fil-items').find('.filter-item').length;
+                    var numSelItems = $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]:checked').length;
+
+                    console.log($(this).attr('filType'));
+                    console.log(numItems);
+                    console.log(numSelItems);
+
+                    if (numSelItems == numItems) {
+                        $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
+                        $('.list-fil-items.' + $(this).attr('filType') + '.check-all-filter').prop("checked", true);
+
+                        $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]').prop("checked", true);
+                    }
+                }
+                else {
+                    //Get Filter array list
+                    var splFilterValText = currentSelectedVal.split(',');
+
+                    //Count item number
+                    var splFilterValTextLength = splFilterValText.length;
+
+                    if (dataValue == splFilterValText[splFilterValTextLength - 1]) { //Check if is first item
+                        //Remove from list
+                        currentSelectedVal = currentSelectedVal.replace(dataValue, "");
+                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
+                    }
+                    else {
+                        //Remove from list
+                        currentSelectedVal = currentSelectedVal.replace(dataValue + ",", "");
+                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
+                    }
+
+                    $('.check-all-filter').prop("checked", false);
+                }
+            });
+        </script>
+        <!--#endregion-->
+
+        <!--#region Filter 2 lvl-->
+        <script>
+            $(document).ready(function () {
+                $('.dealtoday-checkbox-chil').each(function () {
+                    let numItems = $(this).parents('.list-fil-items').find('.filter-item').length;
+                    let numSelItems = $(this).parents('.dropdown-menu').find('.dealtoday-checkbox input[type=checkbox]:checked').length;
+
+                    if (numSelItems == numItems) {
+                        $('.list-fil-items.' + $(this).attr('filType') + '-' + $(this).attr('parentId') + ' .check-all-filter').prop("checked", true);
+
+                        $(this).parents('.list-fil-items').find('.dealtoday-checkbox input[type=checkbox]').prop("checked", true);
+                    }
+                });
+            });
+            //Select "Parent Item"
+            $('.dealtoday-checkbox-p').change(function () {
+                if (this.checked) {
+                    //Select all checkbox
+                    $(this).parents('.list-fil-items').find('.dealtoday-checkbox input[type=checkbox]').prop("checked", true);
+
+                    //Build list value
+                    var dataValue = "";
+                    $('.list-fil-items input[name=fil-val]:checked').each(function () {
+                        dataValue = dataValue + $(this).attr('data') + ",";
+                    });
+
+                    //Remove parent item
+                    //dataValue = dataValue.replace($(this).attr('data') + ",", "");
+
+                    //Set value
+                    $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
+                    $('#btn-view-more').attr('selected' + $(this).attr('filType'), dataValue);
+
+                    //window.location.href = "/v2/search-ticket?srkey=" + $('#btn-view-more').attr('keyword') + "&pca=" + $('#btn-view-more').attr('parentCategoryId') + "&st=" + $('#btn-view-more').attr('selectedTags') + "&sl=" + $('#btn-view-more').attr('selectedLocations') + "&sor=" + $('#btn-view-more').attr('sortType') + "&pg=1" + "&sz=" + $('#btn-view-more').attr('pageSize');
+                }
+                else {
+                    //Get current Filter value
+                    var currentSelectedVal = $('#filValHolder-' + $(this).attr('filType')).val();
+
+                    //Uncheck all checkbox
+                    $(this).parents('.list-fil-items').find('.dealtoday-checkbox input[type=checkbox]').prop("checked", false);
+
+                    $(this).parents('.list-fil-items').find('.dealtoday-checkbox input[type=checkbox]').each(function () {
+                        currentSelectedVal = currentSelectedVal.replace($(this).attr('data') + ",", "");
+                    });
+
+                    //Reset Filter value
+                    $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
+                    $('#btn-view-more').attr('selected' + $(this).attr('filType'), currentSelectedVal);
+
+                    //window.location.href = "/v2/search-ticket?srkey=" + $('#btn-view-more').attr('keyword') + "&pca=" + $('#btn-view-more').attr('parentCategoryId') + "&st=" + $('#btn-view-more').attr('selectedTags') + "&sl=" + $('#btn-view-more').attr('selectedLocations') + "&sor=" + $('#btn-view-more').attr('sortType') + "&pg=1" + "&sz=" + $('#btn-view-more').attr('pageSize');
+                }
+            });
+
+            //Select "Children Item"
+            $('.dealtoday-checkbox-chil').change(function () {
+                //Get current Filter value
+                var currentSelectedVal = $('#filValHolder-' + $(this).attr('filType')).val();
+                //Get checkbox's value
+                var dataValue = $(this).attr('data');
+
+                //Check selected and do job
+                if (this.checked) {
+                    var numItems = $('.list-fil-items.' + $(this).attr('filType') + '-' + $(this).attr('parentId') + ' .filter-item').length;
+                    var numSelItems = $('.dealtoday-checkbox input[type=checkbox]:checked').length;
+
+                    if (numSelItems == numItems) {
+                        $('.list-fil-items.' + $(this).attr('filType') + '-' + $(this).attr('parentId') + ' .check-all-filter').prop("checked", true);
+                        $(this).parents('.list-fil-items').find('.dealtoday-checkbox input[type=checkbox]').prop("checked", true);
+
+                        if (currentSelectedVal == null || currentSelectedVal == 'undefined' || currentSelectedVal == "") { //If current Filter is null or empty/whitespace
+                            //Set Filter value
+                            $('#filValHolder-' + $(this).attr('filType')).val(dataValue + "," + $(this).attr('parentId'));
+                            $('#btn-view-more').attr('selected' + $(this).attr('filType'), dataValue + "," + $(this).attr('parentId'));
+                        }
+                        else {
+                            //Add Filter to current value
+                            if (currentSelectedVal.slice(-1) == ",") {
+                                currentSelectedVal = currentSelectedVal.substring(0, currentSelectedVal.length - 1);
+                            }
+                            $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal + "," + dataValue + "," + $(this).attr('parentId'));
+                            $('#btn-view-more').attr('selected' + $(this).attr('filType'), currentSelectedVal + "," + dataValue + "," + $(this).attr('parentId'));
+                        }
+                    }
+                    else {
+                        if (currentSelectedVal == null || currentSelectedVal == 'undefined' || currentSelectedVal == "") { //If current Filter is null or empty/whitespace
+                            //Set Filter value
+                            $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
+                            $('#btn-view-more').attr('selected' + $(this).attr('filType'), dataValue);
+                        }
+                        else {
+                            //Add Filter to current value
+                            if (currentSelectedVal.slice(-1) == ",") {
+                                currentSelectedVal = currentSelectedVal.substring(0, currentSelectedVal.length - 1);
+                            }
+                            $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal + "," + dataValue);
+                            $('#btn-view-more').attr('selected' + $(this).attr('filType'), currentSelectedVal + "," + dataValue);
+                        }
+                    }
+
+                    //window.location.href = "/v2/search-ticket?srkey=" + $('#btn-view-more').attr('keyword') + "&pca=" + $('#btn-view-more').attr('parentCategoryId') + "&st=" + $('#btn-view-more').attr('selectedTags') + "&sl=" + $('#btn-view-more').attr('selectedLocations') + "&sor=" + $('#btn-view-more').attr('sortType') + "&pg=1" + "&sz=" + $('#btn-view-more').attr('pageSize');
+                }
+                else {
+                    //Get Filter array list
+                    var splFilterValText = currentSelectedVal.split(',');
+
+                    //Count item number
+                    var splFilterValTextLength = splFilterValText.length;
+
+                    if (dataValue == splFilterValText[splFilterValTextLength - 1]) { //Check if is first item
+                        //Remove selected item from list
+                        currentSelectedVal = currentSelectedVal.replace(dataValue, "");
+                    }
+                    else {
+                        //Remove selected item from list
+                        currentSelectedVal = currentSelectedVal.replace(dataValue + ",", "");
+                    }
+
+                    if ($(this).attr('parentId') == splFilterValText[splFilterValTextLength - 1]) { //Check if is first item
+                        //Remove parent item from list
+                        currentSelectedVal = currentSelectedVal.replace($(this).attr('parentId'), "");
+                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
+                        $('#btn-view-more').attr('selected' + $(this).attr('filType'), currentSelectedVal);
+                    }
+                    else {
+                        //Remove parent item from list
+                        currentSelectedVal = currentSelectedVal.replace($(this).attr('parentId') + ",", "");
+                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
+                        $('#btn-view-more').attr('selected' + $(this).attr('filType'), currentSelectedVal);
+                    }
+
+                    $('.check-all-filter').prop("checked", false);
+
+                    //window.location.href = "/v2/search-ticket?srkey=" + $('#btn-view-more').attr('keyword') + "&pca=" + $('#btn-view-more').attr('parentCategoryId') + "&st=" + $('#btn-view-more').attr('selectedTags') + "&sl=" + $('#btn-view-more').attr('selectedLocations') + "&sor=" + $('#btn-view-more').attr('sortType') + "&pg=1" + "&sz=" + $('#btn-view-more').attr('pageSize');
+                }
+            });
+        </script>
+        <!--#endregion-->
+
+        <!--#region Load more items-->
+        <script>
+            $(document).ready(function () {
+                let totalDeal = parseInt($('#btn-view-more').attr('totalDeal'));
+                let page = parseInt($('#btn-view-more').attr("curPage")) + 1;
+                let pageSize = parseInt($('#btn-view-more').attr("pageSize"));
+
+                if (totalDeal < page * pageSize - pageSize) {
+                    $('#btn-view-more').hide();
+                }
+            });
+            //
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            //
+            async function loadMoreItem() {
+                let keyword = $('#btn-view-more').attr("keyword");
+                let parentCategoryId = parseInt($('#btn-view-more').attr("parentCategoryId"));
+                let selectedTags = $('#btn-view-more').attr("selectedTags");
+                let selectedLocations = $('#btn-view-more').attr("selectedLocations");
+                let sortType = parseInt($('#btn-view-more').attr("sortType"));
+                let page = parseInt($('#btn-view-more').attr("curPage")) + 1; console.log(page);
+                let size = parseInt($('#btn-view-more').attr("pageSize"));
+                
+                $('#btn-view-more').hide();
+
+                $.ajax({
+                    url: '/v2/search-ticket',
+                    data: {
+                        srkey: keyword,
+                        pca: parentCategoryId,
+                        st: selectedTags,
+                        sl: selectedLocations,
+                        sor: sortType,
+                        pg: page,
+                        sz: size
+                    },
+                    success: function (data) {
+                        if (data == "0") {
+                            $('#btn-view-more').hide();
+                        } else {
+                            $('#btn-view-more').attr("curPage", page + 1);
+                            $("#loadedDeals").append(data);
+                        }
+                    },
+                    error: function () {
+                        alert("error");
+                    }
+                });
+                await sleep(200);
+
+                if (parseInt($('#totalDeals').val()) >= (parseInt($('#btn-view-more').attr("curPage")) + 1) * size - size) {
+                    $('#btn-view-more').show();
+                }
+            }
+        </script>
+        <!--#endregion-->
+        
+        <!--#endregion-->
+    </div>
+</body>
+</html>

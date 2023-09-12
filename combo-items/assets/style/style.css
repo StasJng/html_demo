@@ -69,34 +69,63 @@
     font-size: 22px;
  }
 
+ .box-cb-d .sale-price::before {
+    width: 100%;
+    transform: translate(50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    
+    content: '123.456.789đ';
+    font-size: 55px;
+    font-weight: 600;
+    
+    color: white;
+    text-shadow: 1px 1px 1px #f7941d,
+    1px 1px 1px #f7941d,
+    1px 1px 1px #f7941d,
+    1px 1px 1px #f7941d,
+    1px 1px 1px #f7941d,
+    1px 1px 1px #f7941d,
+    1px 1px 1px #f7941d,
+    1px 1px 1px #f7941d,
+    1px 1px 1px #f7941d,
+    1px 1px 1px #f7941d,
+                 1px 1px 1px rgba(16,16,16,0.4),
+                 1px 1px 1px rgba(16,16,16,0.2),
+                 1px 1px 1px rgba(16, 16, 16, 0),
+                 1px 1px 1px rgba(16, 16, 16, 0);
+   letter-spacing: -5px;
+
+   -webkit-text-stroke: 1px #f7941d;
+   z-index: 1;
+   text-align: center;
+}
+
  .box-cb-d .sale-price {
-     /* transform: translate(50%,-50%); */
-     font-size: 55px;
-     font-weight: 600;
-     color: #fff7b0;
-     /* text-shadow: 1px 1px 1px #f7941d,
-     1px 1px 1px #f7941d,
-     1px 1px 1px #f7941d,
-     1px 1px 1px #f7941d,
-     1px 1px 1px #f7941d,
-     1px 1px 1px #f7941d,
-     1px 1px 1px #f7941d,
-     1px 1px 1px #f7941d,
-     1px 1px 1px #f7941d,
-     1px 1px 1px #f7941d,
-                  1px 1px 1px rgba(16,16,16,0.4),
-                  1px 1px 1px rgba(16,16,16,0.2),
-                  1px 1px 1px rgba(16, 16, 16, 0),
-                  1px 1px 1px rgba(16, 16, 16, 0); */
-    line-height: 80px;
     letter-spacing: -5px;
- 
-    -webkit-text-stroke: 1px #f7941d;
+
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
 
-    background: linear-gradient(to bottom, #fff7b0, #fff178);
+    height: 53px;
+    overflow: hidden;
+    margin: 15px 0;
+ }
+
+ .box-cb-d .sale-price .r-price {
+    font-size: 55px;
+    font-weight: 600;
+
+    width: 100%;
+    transform: translate(50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: -50%;
+    z-index: 2;
+
+    background: linear-gradient(to bottom, #fff, #fff178);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
  }
@@ -104,16 +133,19 @@
  .box-cb-d .sale-price::after {
     width: 100%;
     transform: translate(50%,-50%);
+    position: absolute;
+    top: 50%;
+    left: -50%;
+
     font-size: 55px;
     font-weight: 600;
     content: '123.456.789đ';
+    
     color: #ed1c24;
-    position: absolute;
-    -webkit-text-stroke: 11px #ed1c24;
-    top: 50%;
-    left: -50%;
+    
     z-index: -1;
     text-align: center;
+    -webkit-text-stroke: 12px #ed1c24;
  }
 
  .box-cb-d .btn-ctn {
@@ -139,6 +171,9 @@
     background-color: #db0100;
     color: #fff;
     width: 150px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
 }
 
 .box-cb-d .image-box img {
@@ -219,17 +254,5 @@
 }
 
 .gap-reg-50 {
-    height: 40px;
-}
-
-
-
-
-
-
-.demo {
-    font-size: 72px;
-    background: -webkit-linear-gradient(#eee, #333);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    height: 50px;
 }
