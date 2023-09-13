@@ -4812,6 +4812,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     -webkit-appearance: none;
     -moz-appearance: none;
     cursor: pointer;
+    z-index: 2;
 }
 
 .range-input input::-webkit-slider-thumb {
