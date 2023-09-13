@@ -1307,6 +1307,10 @@ a {
     margin-top: -1px;
 }
 
+.list-product-reg a:hover .product-box {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
 .list-product-reg .p-contanier {
     padding: 0 8px;
 }
@@ -3776,25 +3780,39 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 /* -------------------------------------------------------------------------------------------- */
 /* Customize Swiper Recommend */
-.lst-recommand .swiper-pagination, .lst-coupon .swiper-pagination, .lst-combo .swiper-pagination, .lst-vou-promo .swiper-pagination {
+@media(min-width: 992px) {
+    .row .lst-recommand, .row .lst-coupon, .row .lst-combo {
+        overflow: hidden;
+        padding-top: 1px !important;
+    }
+
+    .lst-recommand .swiper-container, .lst-coupon .swiper-container, .lst-combo .swiper-container {
+        overflow: visible;
+    }
+
+    .swiper-wrapper .product-box:hover {
+        margin-top: -1px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+}
+
+.lst-recommand .swiper-pagination, .lst-coupon .swiper-pagination, .lst-combo .swiper-pagination {
 	bottom: -5px !important;
 }
 
-.lst-recommand .swiper-pagination-bullet-active, .lst-coupon .swiper-pagination-bullet-active, .lst-combo .swiper-pagination-bullet-active, .lst-vou-promo .swiper-pagination-bullet-active {
+.lst-recommand .swiper-pagination-bullet-active, .lst-coupon .swiper-pagination-bullet-active, .lst-combo .swiper-pagination-bullet-active {
 	background-color: #F0821B;
 }
 
 .lst-recommand .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
 .lst-coupon .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.lst-combo .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.lst-vou-promo .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+.lst-combo .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
 	margin: 0 3px !important;
 }
 
 .lst-recommand .swiper-pagination-bullet,
 .lst-coupon .swiper-pagination-bullet,
-.lst-combo .swiper-pagination-bullet,
-.lst-vou-promo .swiper-pagination-bullet {
+.lst-combo .swiper-pagination-bullet {
 	width: 15px !important;
 	height: 3px !important;
 	border-radius: 3px !important;
