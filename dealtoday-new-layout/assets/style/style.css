@@ -2166,6 +2166,10 @@ ul.breadcrumb-nav li a:hover {
     margin-right: -3px;
 }
 
+.p-popup-wrapper h2 span img {
+    cursor: pointer;
+}
+
 .p-popup-wrapper .detail-lst {
     background-color: #fff;
     border-radius: 8px;
@@ -3779,7 +3783,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 
 /* -------------------------------------------------------------------------------------------- */
-/* Customize Swiper Recommend */
+/* Customize Swiper Recommend, Coupon, Combo */
 @media(min-width: 992px) {
     .row .lst-recommand, .row .lst-coupon, .row .lst-combo {
         overflow: hidden;
