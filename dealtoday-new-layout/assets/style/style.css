@@ -3768,6 +3768,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     aspect-ratio: 39/15;
     width: 100%;
     height: unset;
+    border-radius: 8px;
 }
 
 @media(max-width: 576px) {
@@ -3794,7 +3795,12 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         overflow: visible;
     }
 
-    .swiper-wrapper .product-box:hover, .swiper-wrapper .d-promo:hover {
+    .swiper-wrapper .product-box:hover {
+        margin-top: -1px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .swiper-wrapper .d-promo a img:hover {
         margin-top: -1px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
