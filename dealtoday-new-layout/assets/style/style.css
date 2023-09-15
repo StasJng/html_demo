@@ -3785,16 +3785,16 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 /* -------------------------------------------------------------------------------------------- */
 /* Customize Swiper Recommend, Coupon, Combo */
 @media(min-width: 992px) {
-    .row .lst-recommand, .row .lst-coupon, .row .lst-combo {
+    .row .lst-recommand, .row .lst-coupon, .row .lst-combo, .row .lst-vou-promo {
         overflow: hidden;
         padding-top: 1px !important;
     }
 
-    .lst-recommand .swiper-container, .lst-coupon .swiper-container, .lst-combo .swiper-container {
+    .lst-recommand .swiper-container, .lst-coupon .swiper-container, .lst-combo .swiper-container, .lst-vou-promo .swiper-container {
         overflow: visible;
     }
 
-    .swiper-wrapper .product-box:hover {
+    .swiper-wrapper .product-box:hover, .swiper-wrapper .d-promo:hover {
         margin-top: -1px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
