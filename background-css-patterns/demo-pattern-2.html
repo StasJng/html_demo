@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html {
+        --s: 300px; /* control the size */
+        --c1: #fff6e9;
+        --c2: #fff2df; /* fff3e6 */
+
+        --_g: var(--c1)        6.2%,var(--c2)  6.3% 18.7%,var(--c1) 18.8% 31.2%,
+        var(--c2) 31.3% 43.7%,var(--c1) 43.8% 56.2%,var(--c2) 56.3% 68.7%,#0000 68.8%;
+        background:
+        radial-gradient(var(--s) at 100% 0   ,var(--_g)),
+        radial-gradient(var(--s) at 0    0   ,var(--_g)),
+        radial-gradient(var(--s) at 0    100%,var(--_g)),
+        radial-gradient(var(--s) at 100% 100%,var(--_g)) var(--c1);
+        background-size: var(--s) var(--s);
+    }
+</style>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --width: 100vw;
+        --height: 100vh;
+        --unit: 25px;
+        --color1: #fff2df;
+        --color2: #fff6e9;
+        --color3: transparent;
+        --color5: #fff3e6;
+    }
+
+    .css-pattern-component {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .css-pattern-component.pattern {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        width: var(--width);
+        height: var(--height);
+        background-color: var(--color1);
+    }
+
+    .css-pattern-component.pattern:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-image: radial-gradient(circle at center center, var(--color3), var(--color3) 40%, var(--color1) 110%, var(--color1));
+    }
+
+    .css-pattern-component.pattern__snakes {
+        background-size: calc(var(--unit) * 6) calc(var(--unit) * 6);
+        background-image: radial-gradient(circle at right bottom, var(--color3), var(--color3) 20%, var(--color2) 20%, var(--color2) 40%, var(--color3) 40%, var(--color3)), radial-gradient(circle at left top, var(--color3), var(--color3) 30%, var(--color2) 30%, var(--color2) 50%, var(--color3) 50%, var(--color3));
+    }
+</style>
+<body>
+    <div class="css-pattern-component pattern pattern__snakes" style="height: 3000px;"></div>
+</body>
+</html>
