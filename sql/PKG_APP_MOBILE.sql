@@ -237,7 +237,7 @@
         END IF;
         
         EXCEPTION
-        WHEN no_data_found -- User không t?n t?i
+        WHEN no_data_found -- User khï¿½ng t?n t?i
         THEN 
             OPEN ret FOR SELECT '04' FROM dual;
     END proc_checkChangePassword;
@@ -251,7 +251,7 @@
         FROM MP_Partner_Account
         WHERE Account_Id = p_accountId;
         
-        -- N?u m?t kh?u nh?p vào ?úng.
+        -- N?u m?t kh?u nh?p vï¿½o ?ï¿½ng.
         IF (l_currPassword = p_curPassword) 
         THEN
             UPDATE MP_Partner_Account
@@ -259,17 +259,17 @@
             WHERE Account_Id = p_accountId;
             
             OPEN ret FOR SELECT '1' FROM dual; -- 1:Success!
-        ELSE -- M?t kh?u không ?úng.
+        ELSE -- M?t kh?u khï¿½ng ?ï¿½ng.
             OPEN ret FOR SELECT '-1' FROM dual;
         END IF;
         
         EXCEPTION
         WHEN No_Data_Found 
         THEN 
-            OPEN ret FOR SELECT '-2' FROM dual; -- 2:Account không t?n t?i!
+            OPEN ret FOR SELECT '-2' FROM dual; -- 2:Account khï¿½ng t?n t?i!
         WHEN OTHERS 
         THEN 
-            OPEN ret FOR SELECT '0' FROM dual; -- 0:X?y ra l?i khác trong quá trình c?p nh?t.
+            OPEN ret FOR SELECT '0' FROM dual; -- 0:X?y ra l?i khï¿½c trong quï¿½ trï¿½nh c?p nh?t.
     End proc_updatePassword;
   
   --getPartnerInfo
@@ -529,7 +529,7 @@
       v_numOfViewed number :=0;
       v_numOfReviewed number:=0;
   BEGIN
-    --T?ng s? deal ?ang ho?t ??ng trên Dealtoday
+    --T?ng s? deal ?ang ho?t ??ng trï¿½n Dealtoday
     SELECT COUNT(evp.VOUCHER_PARTNER_ID) INTO v_numOfActivedDeal 
     FROM EV_VOUCHER ev,
          EV_VOUCHER_PARTNER evp 
@@ -539,14 +539,14 @@
           p_monthYear BETWEEN TO_NUMBER(TO_CHAR(ev.START_DATE,'YYYYMM')) AND  
           TO_NUMBER(TO_CHAR(ev.EXPIRATION_DATE,'YYYYMM'));
           
-    --T?ng s? mã ?ã s? d?ng trong tháng
+    --T?ng s? mï¿½ ?ï¿½ s? d?ng trong thï¿½ng
     SELECT COUNT(0) INTO v_numOfOrder 
     FROM EV_VOUCHER_CHARGE 
     WHERE PARTNER_ID = p_partnerId AND 
           STATUS =1 AND 
           TO_NUMBER(TO_CHAR(CHARGE_DATE,'YYYYMM')) =  p_monthYear;
     
-    --T?ng s? doanh thu trong tháng
+    --T?ng s? doanh thu trong thï¿½ng
     SELECT SUM(md.ITEM_PRICE) INTO v_usedRevenue 
     FROM EV_VOUCHER_CHARGE evc, 
          MP_ORDER_DETAIL md 
@@ -555,7 +555,7 @@
           evc.ORDER_ID = md.ORDER_ID AND 
           TO_NUMBER(TO_CHAR(evc.CHARGE_DATE,'YYYYMM')) =  p_monthYear;
           
-    -- T?ng s? view trong tháng
+    -- T?ng s? view trong thï¿½ng
     SELECT COUNT(0) INTO v_numOfViewed 
     FROM MP_STATISTIC_VIEW 
     WHERE PARTNER_ID = p_partnerId AND 
@@ -570,9 +570,11 @@
             --v_numOfReviewed numOfReviewed 
     FROM dual;
     
-    --L?y ra doanh thu tháng 
+    --L?y ra doanh thu thï¿½ng 
     --OPEN retMonthRevenues FOR SELECT NULL FROM dual;
   END GetPartnerDashboard;
+
+  --getNotification
   PROCEDURE GetTopNotification(p_partnerId NUMBER, p_notificationType NUMBER, ret OUT refcur)
   AS
   BEGIN
@@ -882,6 +884,7 @@
                    ) t ;
   END GetPartnerReviewComments;
   
+  --getReview
   PROCEDURE GetListReviewComment(p_notificationId NUMBER, ret OUT refcur)
   AS
     v_REVIEW_ID NUMBER := 0;
@@ -993,4 +996,3 @@
   
 END PKG_APP_MOBILE;
 
-/
