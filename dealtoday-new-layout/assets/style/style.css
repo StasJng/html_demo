@@ -4867,3 +4867,85 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     right: 5px;
 }
 /* -------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------- */
+/* Custom Datetime picker */
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:before,
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:after {
+/*    display: none;*/
+}
+
+.bootstrap-datetimepicker-widget {
+    border-radius: 12px;
+    padding: 12px !important;
+    position: absolute;
+    top: 0;
+}
+
+.bootstrap-datetimepicker-widget th {
+    font-size: 14px !important;
+}
+
+.bootstrap-datetimepicker-widget th, .bootstrap-datetimepicker-widget tr, .bootstrap-datetimepicker-widget td {
+    line-height: 25px !important;
+    font-size: 12px;
+}
+
+@media(max-width: 768px) {
+    .bootstrap-datetimepicker-widget th, .bootstrap-datetimepicker-widget tr, .bootstrap-datetimepicker-widget td {
+        line-height: 30px !important;
+    }
+}
+
+.bootstrap-datetimepicker-widget td.active, .bootstrap-datetimepicker-widget td.active:hover {
+    background-color: #F0821B !important;
+    text-shadow: none !important;
+}
+
+.bootstrap-datetimepicker-widget td.active.today:before {
+    border-bottom-color: #fff !important;
+}
+
+.bootstrap-datetimepicker-widget td.today:before {
+    border-bottom: 7px solid #F0821B !important;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    border-radius: 12px;
+}
+
+.datepicker .table-condensed .prev {
+    background: url(../images/generals/arrows/arr-swiper-prev.svg) no-repeat !important;
+    background-size: 15px 15px !important;
+    background-position: 50% 50% !important;
+}
+
+.datepicker .table-condensed .next {
+    background: url(../images/generals/arrows/arr-swiper-next.svg) no-repeat !important;
+    background-size: 15px 15px !important;
+    background-position: 50% 50% !important;
+}
+
+.datepicker .table-condensed .prev.disabled, .datepicker .table-condensed .next.disabled {
+    opacity: 0.5;
+}
+
+.bootstrap-datetimepicker-widget th.picker-switch {
+    text-transform: capitalize;
+}
+
+.bootstrap-datetimepicker-widget td span.active {
+    background-color: #F0821B !important;
+    text-shadow: none !important;
+}
+/* -------------------------------------------------------------------------------------------- */

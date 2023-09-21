@@ -2617,6 +2617,19 @@
     rotate: 180deg;
 }
 
+.datepicker .table-condensed .prev.disabled, .datepicker .table-condensed .next.disabled {
+    opacity: 0.5;
+}
+
+.bootstrap-datetimepicker-widget th.picker-switch {
+    text-transform: capitalize;
+}
+
+.bootstrap-datetimepicker-widget td span.active {
+    background-color: #F0821B !important;
+    text-shadow: none !important;
+}
+
 
 /* Popup */
 #warning {
