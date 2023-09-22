@@ -5193,6 +5193,10 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         position: absolute;
         bottom: 30vh;
     }
+
+    .popup-map .p-popup-wrapper .close-accep {
+        height: 8px !important;
+    }
 }
 
 .popup-map .p-popup-wrapper .p-locs-tiltle {
@@ -5238,10 +5242,20 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     overflow: scroll;
     height: 20vh;
     background-color: #fff;
+    transition: all 0.3s ease;
 }
 
-.popup-map .p-popup-wrapper .acc-p-list ~ .dealtoday-checkbox{
-    margin-top: 10px
+.popup-map .p-popup-wrapper .acc-p-list label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+}
+
+.popup-map .p-popup-wrapper .acc-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    line-height: 32px;
 }
 
 .popup-map .p-popup-wrapper .srch-box {
@@ -5259,4 +5273,13 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     outline: none;
     background: url(https://www.dealtoday.vn/asset/images/egift/icon-search.png) no-repeat;
     background-position: left 10px center;
+}
+
+.popup-map .p-popup-wrapper .close-accep {
+    height: 7px;
+    width: 40px;
+    background: #c7c7cc;
+    border-radius: 5px;
+    margin: 0 auto;
+    height: 0;
 }
