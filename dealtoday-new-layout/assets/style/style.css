@@ -3346,8 +3346,8 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 }
 
 .d-detail-rg.d-brand .b-name {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     color: #000;
 }
 
@@ -3430,7 +3430,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 .d-detail-rg .deal-price {
     position: relative;
-    height: 110px;
+    height: 125px;
     align-items: center;
     display: flex;
 }
@@ -3810,7 +3810,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 /* -------------------------------------------------------------------------------------------- */
 /* Customize Swiper Recommend, Coupon, Combo */
 .swiper-container {
-    padding-bottom: 10px !important;
+    padding-bottom: 5px !important;
 }
 
 @media(min-width: 992px) {
@@ -5069,4 +5069,194 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     .popular-category .list-item::-webkit-scrollbar {
         display: none !important;
     }
+}
+
+
+
+.d-detail-rg .cb-d-info {
+    background-color: #fafafa;
+    border-radius: 8px;
+    border: 1px dashed #F6911E;
+    padding: 12px;
+    margin: 15px auto;
+}
+
+.d-detail-rg .cb-d-info .d-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.d-detail-rg .cb-d-info > span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ed1c24;
+    margin-top: 5px;
+}
+
+.d-detail-rg .cb-d-info > span img {
+    margin-top: -3px;
+}
+
+.d-detail-rg .cb-d-info .d-item .quant {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    width: 25px;
+}
+
+.d-detail-rg .cb-d-info .d-item .name {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    flex: 1;
+}
+
+.d-detail-rg .cb-d-info .d-item .name:hover {
+    color: #F6911E;
+}
+
+.d-detail-rg.d-brand .l-multi, .d-detail-rg.d-brand .l-single {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.d-detail-rg.d-brand .l-single, .d-detail-rg.d-brand .b-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.d-detail-rg.d-brand .l-multi {
+    color: #cdcdcd;
+}
+
+.d-detail-rg.d-brand .l-single {
+    color: #000;    
+}
+
+.d-detail-rg.d-brand .l-multi img, .d-detail-rg.d-brand .l-single img {
+    margin-right: 1px;
+}
+
+.d-detail-rg.d-brand .l-multi:hover, .d-detail-rg.d-brand .l-single:hover {
+    color: #F6911E;
+}
+
+@media(max-width: 576px) {
+    .d-detail-rg .deal-price {
+        height: fit-content;
+    }
+
+    .d-detail-rg .deal-price .p-sale .p-tag {
+        top: 8px;
+    }
+}
+
+
+
+/* Popup Map */
+.popup-map .p-popup-wrapper {
+    height: calc(100% - 86px) !important;
+    width: 100% !important;
+    min-width: unset !important;
+    border-radius: 8px 8px 0 0;
+    background-color: #fff;
+    padding: 16px;
+    bottom: 0;
+    overflow: hidden;
+}
+
+@media(min-width: 768px) {
+    .popup-map .p-popup-wrapper {
+        height: 65% !important;
+        width: 65% !important;
+        bottom: 20%;
+        border-radius: 8px;
+    }
+}
+
+@media(max-width: 768px) {
+    .popup-map .p-popup-wrapper .map-frame iframe {
+        height: calc(100vh - 112px) !important; 
+    }
+
+    .popup-map .p-popup-wrapper .acc-p-list {
+        height: 30vh !important;
+    }
+
+    .popup-map .p-popup-wrapper .srch-box {
+        display: block !important;
+        position: absolute;
+        bottom: 30vh;
+    }
+}
+
+.popup-map .p-popup-wrapper .p-locs-tiltle {
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+    position: sticky;
+    top: -16px;
+    padding: 10px 0;
+    margin: -16px 0;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.popup-map .p-popup-wrapper .p-locs-tiltle img {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+.popup-map .p-popup-wrapper .map-frame {
+    position: sticky;
+    top: 24px;
+    z-index: 1;
+}
+
+.popup-map .p-popup-wrapper .map-frame iframe {
+    height: 38vh; 
+    width: 100%; 
+    margin-top: 16px; 
+    border:none;
+}
+
+.popup-map .p-popup-wrapper .acc-p-list {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    overflow: scroll;
+    height: 20vh;
+    background-color: #fff;
+}
+
+.popup-map .p-popup-wrapper .acc-p-list ~ .dealtoday-checkbox{
+    margin-top: 10px
+}
+
+.popup-map .p-popup-wrapper .srch-box {
+    z-index: 5;
+    background-color: #fff;
+    padding: 20px 0 10px 0;
+    display: none;
+}
+
+.popup-map .p-popup-wrapper .srch-box .txt-search {
+    width: calc(100% - 8px);
+    height: 35px;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+    outline: none;
+    background: url(https://www.dealtoday.vn/asset/images/egift/icon-search.png) no-repeat;
+    background-position: left 10px center;
 }
