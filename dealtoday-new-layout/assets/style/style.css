@@ -5188,9 +5188,11 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
     .popup-map .p-popup-wrapper .acc-p-list {
         height: 30vh !important;
+        margin-left: -5px !important;
     }
 
     .popup-map .p-popup-wrapper .srch-box {
+        margin-left: -5px !important;
         display: block !important;
         position: absolute;
         bottom: 30vh;
@@ -5269,7 +5271,8 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 }
 
 .popup-map .p-popup-wrapper .srch-box .txt-search {
-    width: calc(100% - 8px);
+    width: calc(100% - 12px);
+    margin: 0 6px;
     height: 35px;
     border: 1px solid #c4c4c4;
     border-radius: 8px;
