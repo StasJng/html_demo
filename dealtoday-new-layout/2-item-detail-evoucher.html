@@ -558,7 +558,7 @@
                                         1.000.000đ
                                     </div>
                                 </div>
-                                <div class="vnpay-img d-none d-xs-none d-sm-block d-md-block d-lg-block d-xl-block">
+                                <div class="vnpay-img d-none d-xs-none d-sm-block d-md-block d-lg-block d-xl-block" onclick="openPopup('#popup-vnpay');">
                                     <img class="qr-code-img" src="assets/images/demo-imgs/detail-page/demo-qr.png" alt="" height="68" width="68" lazy />
                                     <div>Quét mua bằng QR</div>
                                 </div>
@@ -716,7 +716,7 @@
                                         Tích lũy đến 2100 điểm thưởng
                                     </span>
                             </div>
-                            <div class="col-12 qrpay-reg-mb d-xl-none d-lg-none d-md-none d-sm-none d-xs-block">
+                            <div class="col-12 qrpay-reg-mb d-xl-none d-lg-none d-md-none d-sm-none d-xs-block" onclick="openPopup('#popup-vnpay');">
                                 Thanh toán nhanh với mã QR
                                 <img src="assets/images/generals/icon-qr-orange.svg" alt="icon-qr-orange" height="24" width="24" /> 
                             </div>
@@ -1976,15 +1976,14 @@
                         &q=Space+Needle,Seattle+WA">
                     </iframe>
                 </div>
-
-                <div class="srch-box">
+                
+                <div class="srch-box" id="acc-srch">
+                    <div class="close-accep" onclick="minimize();"></div>
                     <input type="text" class="txt-search" />
                 </div>
 
                 <div class="col-12 acc-p-list" id="acc-list">
                     <div class="row">
-                        <div class="close-accep" onclick="minimize();"></div>
-
                         <div class="acc-name">
                             Vinwonder Nha Trang
                         </div>
@@ -2041,6 +2040,45 @@
                     </div>
                     
                 </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
+    <!--#region Popup Map-->
+    <div class="p-popup-container popup-vnpay" id="popup-vnpay" onclick="if(event.target == this){closePopup('#popup-vnpay');}" aria-hidden="true">
+        <div class="p-popup-wrapper">
+            <div class="col-12 close-img">
+                <img src="assets/images/popup/close-icon-white.png" alt="" height="15" width="15" onclick="closePopup('#popup-vnpay');"/> 
+            </div>
+            
+            <div class="row ctn-reg">
+                <div class="col-12 flex-center qr-img">
+                    <img src="assets/images/demo-imgs/detail-page/demo-qr-2.png" alt="" height="280" width="280" />
+                </div>
+
+                <div class="d-name">
+                    Buffet lẩu Trùng Khánh tại nhà hàng BaoYu - Áp dụng từ thứ 2 đến thứ 6
+                </div>
+
+                <div class="col-12 row d-detail-rg">
+                    <div class="col-6">
+                        <div class="deal-price">
+                            <div class="d-price">
+                                <div class="p-sale">
+                                    <span class="notranslate">500.000đ</span>
+                                    <span class="p-tag notranslate">-50%</span>
+                                </div>
+                                <div class="p-origin notranslate">
+                                    1.000.000đ
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-center pay-msg">
+                Quét mã VNPAY-QR để thanh toán
             </div>
         </div>
     </div>
@@ -2146,7 +2184,17 @@
 </script>
 <script>
     function minimize() {
-        $('#acc-list').
+        console.log($('#acc-list').attr('style'));
+        
+        if($('#acc-list').attr('style') != null && $('#acc-list').attr('style') != 'undefined') {
+            $('#acc-list').removeAttr('style');
+            $('#acc-srch').removeAttr('style');
+        }
+        else 
+        {
+            $('#acc-list').attr('style','height: 18px !important;');
+            $('#acc-srch').attr('style','bottom: -45px !important');
+        }
     }  
 </script>
     <!--#endregion-->

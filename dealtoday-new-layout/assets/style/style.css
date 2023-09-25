@@ -3460,7 +3460,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     border-radius: 5px;
     padding: 5px 12px;
     position: absolute;
-    top: 28px;
+    top: 33px;
     left: 165px;
 }
 
@@ -3480,7 +3480,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 @media screen and (min-width: 992px) and (max-width: 1200px){
     .d-detail-rg .deal-price .p-sale .p-tag {
-        top: 65px;
+        top: 72px;
         left: 110px;
     }
 }
@@ -5181,7 +5181,9 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 @media(max-width: 768px) {
     .popup-map .p-popup-wrapper .map-frame iframe {
-        height: calc(100vh - 112px) !important; 
+        height: calc(100vh - 170px) !important; 
+        width: calc(100% + 32px) !important;
+        margin-left: -16px !important;
     }
 
     .popup-map .p-popup-wrapper .acc-p-list {
@@ -5242,7 +5244,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     overflow: scroll;
     height: 20vh;
     background-color: #fff;
-    transition: all 0.3s ease;
+    transition: all 0.8s ease;
 }
 
 .popup-map .p-popup-wrapper .acc-p-list label {
@@ -5261,8 +5263,9 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 .popup-map .p-popup-wrapper .srch-box {
     z-index: 5;
     background-color: #fff;
-    padding: 20px 0 10px 0;
+    padding: 0 0 10px 0;
     display: none;
+    transition: all 0.8s ease;
 }
 
 .popup-map .p-popup-wrapper .srch-box .txt-search {
@@ -5273,13 +5276,104 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     outline: none;
     background: url(https://www.dealtoday.vn/asset/images/egift/icon-search.png) no-repeat;
     background-position: left 10px center;
+    padding-left: 32px;
+    font-size: 15px;
 }
 
 .popup-map .p-popup-wrapper .close-accep {
-    height: 7px;
     width: 40px;
     background: #c7c7cc;
     border-radius: 5px;
-    margin: 0 auto;
-    height: 0;
+    margin: 10px auto;
 }
+
+
+
+@media(min-width: 769px) {
+    .acc-p-list {
+        overflow-x: hidden;
+    }
+
+    .acc-p-list::-webkit-scrollbar {
+        position: absolute;
+        height: 0;
+        width: 15px;
+    }
+
+    /* Track */
+    .acc-p-list::-webkit-scrollbar-track {
+        background: #FAFAFA;
+    }
+
+    /* Handle */
+    .acc-p-list::-webkit-scrollbar-thumb {
+        background: #CDCDCD;
+    }
+
+    /* Handle on hover */
+    .acc-p-list::-webkit-scrollbar-thumb:hover {
+        opacity: 0.8;
+    }
+}
+
+/* Popup VNPay */
+
+.popup-vnpay .p-popup-wrapper {
+    height: fit-content !important;
+    width: 65% !important;
+    max-width: 500px;
+    border-radius: 8px;
+    min-width: unset !important;
+    background-color: #045BA7;
+    padding: 8px 16px;
+    overflow: hidden;
+}
+
+.popup-vnpay .p-popup-wrapper .ctn-reg { 
+    background-color: #fff;
+    padding: 16px;
+    margin: 0;
+    border-radius: 8px;
+}
+
+.popup-vnpay .p-popup-wrapper .d-name { 
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.popup-vnpay .p-popup-wrapper .close-img {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 8px;
+}
+
+.popup-vnpay .p-popup-wrapper .ctn-reg .qr-img img {
+    height: unset;
+    width: 100%;
+    max-width: 300px;
+}
+
+.popup-vnpay .p-popup-wrapper .d-detail-rg .deal-price {
+    height: 50px;
+}
+
+.popup-vnpay .p-popup-wrapper .d-detail-rg .deal-price .p-sale .p-tag {
+    top: -3px !important;
+    left: 165px !important;
+}
+
+.popup-vnpay .p-popup-wrapper .pay-msg {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    margin: 8px 0 0 0;
+}
+
+@media(max-width: 768px) {
+    .popup-vnpay .p-popup-wrapper {
+        width: calc(100% - 32px) !important;
+        top: 15% !important;
+    }
+}
+
