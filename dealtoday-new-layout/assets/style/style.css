@@ -3495,6 +3495,11 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     border-radius: 4px;
 }
 
+.d-detail-rg .deal-price .vnpay-img:hover {
+    filter: contrast(110%) brightness(110%);
+    cursor: pointer;
+}
+
 .d-detail-rg .deal-price .vnpay-img div {
     font-size: 11px;
     font-weight: 500;
@@ -5072,48 +5077,114 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 }
 
 
-
 .d-detail-rg .cb-d-info {
     background-color: #fafafa;
-    border-radius: 8px;
     border: 1px dashed #F6911E;
-    padding: 12px;
-    margin: 15px auto;
+    width: 100%;
 }
 
-.d-detail-rg .cb-d-info .d-title {
+.cb-d-info {
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    padding: 12px;
+    margin: 15px auto;
+    width: calc(100% - 30px);
+}
+
+.cb-d-info .d-title {
     font-size: 16px;
     font-weight: 600;
     color: #000;
 }
 
-.d-detail-rg .cb-d-info > span {
+.cb-d-info > span {
     font-size: 14px;
     font-weight: 600;
     color: #ed1c24;
     margin-top: 5px;
 }
 
-.d-detail-rg .cb-d-info > span img {
+.cb-d-info > span img {
     margin-top: -3px;
 }
 
-.d-detail-rg .cb-d-info .d-item .quant {
+.cb-d-info .d-item .quant {
     font-size: 14px;
     font-weight: 500;
     color: #000;
     width: 25px;
 }
 
-.d-detail-rg .cb-d-info .d-item .name {
+.cb-d-info .d-item .name {
     font-size: 14px;
     font-weight: 400;
     color: #000;
     flex: 1;
 }
 
-.d-detail-rg .cb-d-info .d-item .name:hover {
+.cb-d-info .product-box {
+    margin-bottom: 0;
+}
+
+.cb-d-info .product-box .p-title {
+    min-height: fit-content;
+    -webkit-line-clamp: 1;
+    font-weight: 500;
+}
+
+.cb-d-info .d-item .name:hover {
     color: #F6911E;
+}
+
+.cb-d-info .d-item .name > img {
+    border-radius: 8px;
+    height: 72px;
+    width: 72px;
+    margin: 8px;
+}
+
+.cb-d-info .cb-btn-reg {
+    border-left: 1px solid #eee;
+    margin-bottom: -12px;
+}
+
+.cb-d-info .cb-btn-reg .t-p-origin {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9E9E9E;    
+    text-decoration: line-through;
+}
+
+.cb-d-info .cb-btn-reg .t-p-txt {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;    
+}
+
+.cb-d-info .cb-btn-reg .t-p-sale {
+    font-size: 20px;
+    font-weight: 600;
+    color: #F0821B;    
+    line-height: 20px;
+}
+
+.cb-d-info .cb-btn-reg .t-p-save {
+    font-size: 14px;
+    font-weight: 500;
+    color: #F0821B;    
+    margin-top: 3px;
+    margin-bottom: 8px;
+}
+
+.cb-d-info .cb-btn-reg .btn-general {
+    background-color: #fef3e2;
+    width: calc(100% - 32px);
+}
+
+.cb-d-info .cb-btn-reg .btn-general:hover {
+    color: #F6911E;
+    background-color: #fef3e2;
 }
 
 .d-detail-rg.d-brand .l-multi, .d-detail-rg.d-brand .l-single {
@@ -5351,6 +5422,10 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     margin-bottom: 8px;
 }
 
+.popup-vnpay .p-popup-wrapper .close-img img {
+    cursor: pointer;
+}
+
 .popup-vnpay .p-popup-wrapper .ctn-reg .qr-img img {
     height: unset;
     width: 100%;
@@ -5379,4 +5454,6 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         top: 15% !important;
     }
 }
+
+
 
