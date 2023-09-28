@@ -363,7 +363,7 @@
                                         <input type="hidden" id="filValHolder-brand-1999" />
 
                                         <div class="srch-box">
-                                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                                            <input type="text" id="search-input-brand-1999" placeholder="Tìm kiếm">
                                         </div>
 
                                         <ul class="loc-filter-items brand list-fil-items attribute-filter" filType="brand-1999">
@@ -488,7 +488,7 @@
                                         <input type="hidden" id="filValHolder-l-88" />
 
                                         <div class="srch-box">
-                                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                                            <input type="text" id="search-input-l-88" placeholder="Tìm kiếm">
                                         </div>
 
                                         <ul class="loc-filter-items brand list-fil-items attribute-filter" filType="l-88">
@@ -1676,7 +1676,7 @@
         <script>
             $(document).ready(function () {
                 $(".attribute-filter").each(function (i, value) {
-                    var input = $(value).find("input[type='text']");
+                    var input = $('#search-input-' + $(this).attr('filType'));
                     $(input).keyup(function () {
                         var filter = $(input).val().toUpperCase();
                         $(value).find(".txt-keyword").each(function (index, item) {
@@ -1846,6 +1846,9 @@
                     console.log('web');
                 }
             }
+
+            let demoStr = "/vui-choi-giai-tri-158/snow-world-aeon-mall-ha-dong-funny-kids-vinke-&-aquarium-times-city---"; 
+            console.log(demoStr.replace(/(\-)\1+/img, "-"));
         </script>
         <!--#endregion-->
 </body>
