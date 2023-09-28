@@ -479,6 +479,67 @@
             
                                         </ul>
                                         <!--#endregion-->
+
+                                        <div class="border-div"></div>
+
+                                        <!--#region Địa điểm(contains 1-lvl Searchbox)-->
+                                        <p class="drop-filter-title">Địa điểm</p>
+
+                                        <input type="hidden" id="filValHolder-l-88" />
+
+                                        <div class="srch-box">
+                                            <input type="text" id="etk-loc-search-input" placeholder="Tìm kiếm">
+                                        </div>
+
+                                        <ul class="loc-filter-items brand list-fil-items attribute-filter" filType="l-88">
+                                            <input type="hidden" id="filSeoHolder-l-88" />
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="l-no-1" onchange="" name="fil-val" data="lo1"  data-name="Địa điểm 1" class="filter-item" filType="l-88">
+                                                    <label for="l-no-1" class="txt-keyword">
+                                                        Location No 1
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="l-no-2" onchange="" name="fil-val" data="lo2"  data-name="Địa điểm 2" class="filter-item" filType="l-88">
+                                                    <label for="l-no-2" class="txt-keyword">
+                                                        Location No 2
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="l-no-3" onchange="" name="fil-val" data="lo3"  data-name="Địa điểm 3" class="filter-item" filType="l-88">
+                                                    <label for="l-no-3" class="txt-keyword">
+                                                        Location No 3
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="l-no-4" onchange="" name="fil-val" data="lo4"  data-name="Địa điểm 4" class="filter-item" filType="l-88">
+                                                    <label for="l-no-4" class="txt-keyword">
+                                                        Location No 4
+                                                    </label>
+                                                </span>
+                                            </li>
+
+                                            <li class="dropdown brand non-drop">
+                                                <span class="dealtoday-checkbox">
+                                                    <input type="checkbox" id="l-no-5" onchange="" name="fil-val" data="lo5"  data-name="Địa điểm 5" class="filter-item" filType="l-88">
+                                                    <label for="l-no-5" class="txt-keyword">
+                                                        Location No 5
+                                                    </label>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        <!--#endregion-->
                                     </div>
                                 </div>
                             </div>
@@ -1719,10 +1780,7 @@
                     //----------------------------------------------------------------------------------------------
                 }
 
-                let seo = $('#filSeoHolder-' + $(this).attr('filType')).val().replace(/,/g, "-");
-                let pName = $(this).attr('filType'); 
-                let pValue = $('#filValHolder-' + $(this).attr('filType')).val();
-                doWork(seo, pName, pValue);
+                doWork();
             });
         </script>
         <!--#endregion-->
@@ -1749,11 +1807,39 @@
 
         <!--#region DOOWRK-->
         <script>
-             var width = $(window).width();
-            function doWork(seo, pName, pValue) {
-                let url = "/deal/vui-choi-giai-tri-158/" + seo + "/?" + pName + "=" + pValue;
+            var width = $(window).width();
+            
+            function doWork() {
+                let seoStr = "";
+                let paramsStr = "";
+                //Build SEO
+                $('.attribute-filter').each(function() {
+                    if (seoStr == null || seoStr == 'undefined' || seoStr == "") { //If current SEO is null or empty/whitespace
+                        //Set new value
+                        seoStr = $('#filSeoHolder-' + $(this).attr('filType')).val().replace(/,/mg, "-");
+                    }
+                    else {
+                        //Add Filter to current value
+                        seoStr = seoStr + "-" + $('#filSeoHolder-' + $(this).attr('filType')).val();
+                    }
+                });
+
+                //Build params
+                $('.attribute-filter').each(function() {
+                    if (paramsStr == null || paramsStr == 'undefined' || paramsStr == "") { //If current PARAMS is null or empty/whitespace
+                        //Set new value
+                        paramsStr = $(this).attr('filType') + '=' + $('#filValHolder-' + $(this).attr('filType')).val();
+                    }
+                    else {
+                        //Add Filter to current value
+                        paramsStr = paramsStr + "&" + $(this).attr('filType') + '=' + $('#filValHolder-' + $(this).attr('filType')).val();
+                    }
+                });
+
+                let url = "/deal/vui-choi-giai-tri-158/" + seoStr + "/?" + paramsStr;
                 console.log("window.location.href=" + url);
 
+                console.log('v2');
                 if (width <= 768) {
                     console.log('mobile');
                 } else {
