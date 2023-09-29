@@ -1070,9 +1070,16 @@
                                             </div>
                                         </a>
                                         <!--#endregion-->
-            
+                                        <input type="hidden" id="SelectedCategory" cateName="Vui chơi giải trí" cateId="158" />
+
                                         <div class="col-12 flex-center">
-                                            <div class="btn-general">
+                                            <div class="btn-general"
+                                                 id="btn-view-more"
+                                                 totalDeal="16"
+                                                 sortType="1"
+                                                 curPage="1"
+                                                 pageSize="16"
+                                                 onclick="loadMoreItem();">
                                                 Xem thêm
                                             </div>
                                         </div>
@@ -1694,31 +1701,6 @@
 
         <!--#region Filter checkbox select function(1 lvl)-->
         <script>
-            //Bind SEO default
-            $(document).ready(function () {
-                $('.attribute-filter').each(function () {
-                    $(this).find('.dealtoday-checkbox input[type=checkbox]:checked').each(function () {
-                        //Get filter name & create SEO value
-                        let seoValue = toLowerCaseNonAccentVietnamese($(this).attr('data-name')).replace(/(\-)\1+/img, "-").replace(/\-$/, "");
-                        
-                        //
-                        let currSelectedSeo = $('#filSeoHolder-' + $(this).attr('filType')).val(); 
-
-                        if (currSelectedSeo == null || currSelectedSeo == 'undefined' || currSelectedSeo == "") { //If current Filter is null or empty/whitespace
-                            //Set SEO value
-                            $('#filSeoHolder-' + $(this).attr('filType')).val(seoValue);
-                        }
-                        else {
-                            //Add Seo to current value
-                            if (currSelectedSeo.slice(-1) == ",") {
-                                currSelectedSeo = currSelectedSeo.substring(0, currSelectedSeo.length - 1);
-                            }
-                            $('#filSeoHolder-' + $(this).attr('filType')).val(currSelectedSeo + "," + seoValue);
-                        }
-                    });
-                });
-            });
-
             //Select a checkbox
             $('.filter-item').change(function () {
                 //Get current Filter value
@@ -1729,20 +1711,16 @@
 
                 //Get checkbox's value
                 var dataValue = $(this).attr('data');
-                var seoValue = toLowerCaseNonAccentVietnamese($(this).attr('data-name'));
+                var seoValue = convertEN2SEO(toLowerCaseNonAccentVietnamese($(this).attr('data-name')));
 
                 //Check selected and do job
                 if (this.checked) {
                     //---------------------------LOADING VALUE------------------------------------------------------
                     if (currSelectedVal == null || currSelectedVal == 'undefined' || currSelectedVal == "") { //If current Filter is null or empty/whitespace
-                        //Set Filter value
-                        $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
+                        $('#filValHolder-' + $(this).attr('filType')).val(dataValue); //Set Filter value
                     }
                     else {
-                        //Add Filter to current value
-                        if (currSelectedVal.slice(-1) == ",") {
-                            currSelectedVal = currSelectedVal.substring(0, currSelectedVal.length - 1);
-                        }
+                        currSelectedVal = currSelectedVal.replace(/\,$/, ""); //remove last item if it's ","
                         $('#filValHolder-' + $(this).attr('filType')).val(currSelectedVal + "," + dataValue);
                     }
                     //----------------------------------------------------------------------------------------------
@@ -1751,27 +1729,21 @@
 
                     //---------------------------LOADING SEO--------------------------------------------------------
                     if (currSelectedSeo == null || currSelectedSeo == 'undefined' || currSelectedSeo == "") { //If current Filter is null or empty/whitespace
-                        //Set SEO value
-                        $('#filSeoHolder-' + $(this).attr('filType')).val(seoValue);
+                        $('#filSeoHolder-' + $(this).attr('filType')).val(seoValue); //Set SEO value
                     }
                     else {
-                        //Add Seo to current value
-                        if (currSelectedSeo.slice(-1) == ",") {
-                            currSelectedSeo = currSelectedSeo.substring(0, currSelectedSeo.length - 1);
-                        }
+                        currSelectedSeo = currSelectedSeo.replace(/\,$/, ""); //remove last item if it's ","
                         $('#filSeoHolder-' + $(this).attr('filType')).val(currSelectedSeo + "," + seoValue);
                     }
                     //----------------------------------------------------------------------------------------------
                 }
                 else {
                     //---------------------------LOADING VALUE------------------------------------------------------
-                    //Get Filter array list
-                    var splFilterValText = currSelectedVal.split(',');
+                    var splFilterValText = currSelectedVal.split(','); //Get Filter array list
 
-                    //Count item number
-                    var splFilterValTextLength = splFilterValText.length;
+                    var splFilterValTextLength = splFilterValText.length; //Count item number
 
-                    if (dataValue == splFilterValText[splFilterValTextLength - 1]) { //Check if is first item
+                    if (dataValue == splFilterValText[splFilterValTextLength - 1]) { //Check if is last item
                         //Remove from list
                         currSelectedVal = currSelectedVal.replace(dataValue, "");
                         $('#filValHolder-' + $(this).attr('filType')).val(currSelectedVal);
@@ -1786,20 +1758,16 @@
 
 
                     //---------------------------LOADING SEO--------------------------------------------------------
-                    //Get Filter array list
-                    var splFilterSeoText = currSelectedSeo.split(',');
+                    var splFilterSeoText = currSelectedSeo.split(','); //Get Filter array list
 
-                    //Count item number
-                    var splFilterSeoTextLength = splFilterSeoText.length;
+                    var splFilterSeoTextLength = splFilterSeoText.length; //Count item number
 
-                    if (seoValue == splFilterSeoText[splFilterSeoTextLength - 1]) { //Check if is first item
-                        //Remove from list
-                        currSelectedSeo = currSelectedSeo.replace(seoValue, "");
+                    if (seoValue == splFilterSeoText[splFilterSeoTextLength - 1]) { //Check if is last item
+                        currSelectedSeo = currSelectedSeo.replace(seoValue, ""); //Remove from list
                         $('#filSeoHolder-' + $(this).attr('filType')).val(currSelectedSeo);
                     }
                     else {
-                        //Remove from list
-                        currSelectedSeo = currSelectedSeo.replace(seoValue + ",", "");
+                        currSelectedSeo = currSelectedSeo.replace(seoValue + ",", ""); //Remove from list
                         $('#filSeoHolder-' + $(this).attr('filType')).val(currSelectedSeo);
                     }
                     //----------------------------------------------------------------------------------------------
@@ -1827,6 +1795,11 @@
                 str = str.replace(/\s|\u202F|\u00A0/g, "-");
                 return str;
             }
+
+            function convertEN2SEO(str) {
+                str = str.replace(/,/mg, "-").replace(/&/mg, "").replace(/(\-)\1+/img, "-").replace(/^[-]/, "").replace(/\-$/, "");
+                return str;
+            }   
         </script>
         <!--#endregion-->
 
@@ -1837,33 +1810,43 @@
             function doWork() {
                 let seoStr = "";
                 let paramsStr = "";
+
                 //Build SEO
-                $('.attribute-filter').each(function() {
+                seoStr = "gia-tu-" + $("#price-min").val() + "-den-" + $("#price-max").val();
+                $('.attribute-filter').each(function () {
                     if (seoStr == null || seoStr == 'undefined' || seoStr == "") { //If current SEO is null or empty/whitespace
-                        //Set new value
-                        seoStr = $('#filSeoHolder-' + $(this).attr('filType')).val().replace(/,/mg, "-");
+                        seoStr = convertEN2SEO($('#filSeoHolder-' + $(this).attr('filType')).val()); //Set new value
                     }
                     else {
-                        //Add Filter to current value
-                        seoStr = seoStr + "-" + $('#filSeoHolder-' + $(this).attr('filType')).val();
+                        seoStr = seoStr + "-" + convertEN2SEO($('#filSeoHolder-' + $(this).attr('filType')).val()); //Add Filter to current value
                     }
                 });
 
                 //Build params
-                $('.attribute-filter').each(function() {
-                    if($(this).find('.dealtoday-checkbox input[type=checkbox]:checked')[0] != null) {
+                $('.attribute-filter').each(function () {
+                    if ($(this).find('.dealtoday-checkbox input[type=checkbox]:checked')[0] != null) { //Check count selected item > 0
                         if (paramsStr == null || paramsStr == 'undefined' || paramsStr == "") { //If current PARAMS is null or empty/whitespace
-                            //Set new value
-                            paramsStr = $(this).attr('filType') + '=' + $('#filValHolder-' + $(this).attr('filType')).val();
+                            paramsStr = $(this).attr('filType') + '=' + $('#filValHolder-' + $(this).attr('filType')).val(); //Set new value
                         }
                         else {
-                            //Add Filter to current value
-                            paramsStr = paramsStr + "&" + $(this).attr('filType') + '=' + $('#filValHolder-' + $(this).attr('filType')).val();
+                            paramsStr = paramsStr + "&" + $(this).attr('filType') + '=' + $('#filValHolder-' + $(this).attr('filType')).val(); //Add Filter to current value
                         }
                     }
                 });
 
-                let url = "/deal/vui-choi-giai-tri-158/" + seoStr.replace(/,/img, "-").replace(/(\-)\1+/img, "-").replace(/\-$/, "") + "/?" + paramsStr;
+                paramsStr = paramsStr +
+                            "&pmn=" + $("#price-min").val() + 
+                            "&pmx=" + $("#price-max").val() + 
+                            "&sor=" + $('#btn-view-more').attr('sortType') + 
+                            "&pg=1" + 
+                            "&sz=" + $('#btn-view-more').attr('pageSize');
+
+                //Build url
+                let url = "/deal/" +
+                          convertEN2SEO(toLowerCaseNonAccentVietnamese($('#SelectedCategory').attr('cateName'))) + "-" + $('#SelectedCategory').attr('cateId') +
+                          "/" + seoStr.replace(/(\-)\1+/img, "-").replace(/\-$/, "") + 
+                          "/?" + paramsStr;
+
                 console.log("window.location.href=" + url);
 
                 console.log('v2');
@@ -1875,5 +1858,49 @@
             }
         </script>
         <!--#endregion-->
+
+        <!--#region Load more items-->
+        <script>
+            //
+            async function loadMoreItem() {
+            //     $('#btn-view-more').attr("curPage", parseInt($('#btn-view-more').attr("curPage")) + 1); //Set next page
+
+            //     let url = buildLink().replace("&pg=1", "&pg=" + $('#btn-view-more').attr("curPage"));
+
+            //     $('#btn-view-more').hide();
+
+            //     $('#loading').show(); $('body').attr('style', 'overflow: hidden;');
+
+            //     $.ajax({
+            //         url: url,
+            //         success: function (data) {
+            //             $('#loading').hide(); $('body').removeAttr('style');
+            //             if (data == "0") {
+            //                 $('#btn-view-more').hide();
+            //             } else {
+            //                 $("#loadedDeals").append(data);
+
+            //                 let totalDeal = parseInt($('#btn-view-more').attr('totalDeal'));
+            //                 let page = parseInt($('#btn-view-more').attr("curPage")) + 1;
+            //                 let pageSize = parseInt($('#btn-view-more').attr("pageSize"));
+
+            //                 if (totalDeal >= page * pageSize - pageSize) {
+            //                     $('#btn-view-more').show();
+            //                 }
+            //             }
+            //         },
+            //         failed: function (data) {
+            //             $('#loading').hide(); $('body').removeAttr('style');
+            //             alert("Có lỗi xảy ra, vui lòng thử lại sau!");
+            //         },
+            //         error: function () {
+            //             $('#loading').hide(); $('body').removeAttr('style');
+            //             alert("Có lỗi xảy ra, vui lòng thử lại sau!");
+            //         }
+            //     });
+            };
+        </script>
+        <!--#endregion-->
+
 </body>
 </html>
