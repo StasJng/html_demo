@@ -1826,17 +1826,19 @@
 
                 //Build params
                 $('.attribute-filter').each(function() {
-                    if (paramsStr == null || paramsStr == 'undefined' || paramsStr == "") { //If current PARAMS is null or empty/whitespace
-                        //Set new value
-                        paramsStr = $(this).attr('filType') + '=' + $('#filValHolder-' + $(this).attr('filType')).val();
-                    }
-                    else {
-                        //Add Filter to current value
-                        paramsStr = paramsStr + "&" + $(this).attr('filType') + '=' + $('#filValHolder-' + $(this).attr('filType')).val();
+                    if($(this).find('.dealtoday-checkbox input[type=checkbox]:checked')[0] != null) {
+                        if (paramsStr == null || paramsStr == 'undefined' || paramsStr == "") { //If current PARAMS is null or empty/whitespace
+                            //Set new value
+                            paramsStr = $(this).attr('filType') + '=' + $('#filValHolder-' + $(this).attr('filType')).val();
+                        }
+                        else {
+                            //Add Filter to current value
+                            paramsStr = paramsStr + "&" + $(this).attr('filType') + '=' + $('#filValHolder-' + $(this).attr('filType')).val();
+                        }
                     }
                 });
 
-                let url = "/deal/vui-choi-giai-tri-158/" + seoStr + "/?" + paramsStr;
+                let url = "/deal/vui-choi-giai-tri-158/" + seoStr.replace(/(\-)\1+/img, "-").replace(/\-$/, "") + "/?" + paramsStr;
                 console.log("window.location.href=" + url);
 
                 console.log('v2');
@@ -1847,8 +1849,9 @@
                 }
             }
 
-            let demoStr = "/vui-choi-giai-tri-158/snow-world-aeon-mall-ha-dong-funny-kids-vinke-&-aquarium-times-city---"; 
-            console.log(demoStr.replace(/(\-)\1+/img, "-"));
+            // let demoStr = "/vui-choi-giai-tri-158/snow-world-aeon-mall-ha-dong-funny-kids-vinke-&-aquarium-times-city---"; 
+            // console.log(demoStr.replace(/(\-)\1+/img, "-").replace(/\-$/, ""));
+
         </script>
         <!--#endregion-->
 </body>
