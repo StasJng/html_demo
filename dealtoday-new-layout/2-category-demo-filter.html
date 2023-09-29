@@ -1694,6 +1694,31 @@
 
         <!--#region Filter checkbox select function(1 lvl)-->
         <script>
+            //Bind SEO default
+            $(document).ready(function () {
+                $('.attribute-filter').each(function () {
+                    $(this).find('.dealtoday-checkbox input[type=checkbox]:checked').each(function () {
+                        //Get filter name & create SEO value
+                        let seoValue = toLowerCaseNonAccentVietnamese($(this).attr('data-name')).replace(/(\-)\1+/img, "-").replace(/\-$/, "");
+                        
+                        //
+                        let currSelectedSeo = $('#filSeoHolder-' + $(this).attr('filType')).val(); 
+
+                        if (currSelectedSeo == null || currSelectedSeo == 'undefined' || currSelectedSeo == "") { //If current Filter is null or empty/whitespace
+                            //Set SEO value
+                            $('#filSeoHolder-' + $(this).attr('filType')).val(seoValue);
+                        }
+                        else {
+                            //Add Seo to current value
+                            if (currSelectedSeo.slice(-1) == ",") {
+                                currSelectedSeo = currSelectedSeo.substring(0, currSelectedSeo.length - 1);
+                            }
+                            $('#filSeoHolder-' + $(this).attr('filType')).val(currSelectedSeo + "," + seoValue);
+                        }
+                    });
+                });
+            });
+
             //Select a checkbox
             $('.filter-item').change(function () {
                 //Get current Filter value
@@ -1838,7 +1863,7 @@
                     }
                 });
 
-                let url = "/deal/vui-choi-giai-tri-158/" + seoStr.replace(/(\-)\1+/img, "-").replace(/\-$/, "") + "/?" + paramsStr;
+                let url = "/deal/vui-choi-giai-tri-158/" + seoStr.replace(/,/img, "-").replace(/(\-)\1+/img, "-").replace(/\-$/, "") + "/?" + paramsStr;
                 console.log("window.location.href=" + url);
 
                 console.log('v2');
@@ -1848,10 +1873,6 @@
                     console.log('web');
                 }
             }
-
-            // let demoStr = "/vui-choi-giai-tri-158/snow-world-aeon-mall-ha-dong-funny-kids-vinke-&-aquarium-times-city---"; 
-            // console.log(demoStr.replace(/(\-)\1+/img, "-").replace(/\-$/, ""));
-
         </script>
         <!--#endregion-->
 </body>
