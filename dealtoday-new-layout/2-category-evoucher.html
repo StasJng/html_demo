@@ -634,101 +634,6 @@
             
                                         </ul>
                                         <!--#endregion-->
-                                    
-                                        <div class="border-div"></div>
-
-                                        <!--#region Khoảng giá-->
-                                        <p class="drop-filter-title">Khoảng giá</p>
-
-                                        <div class="gap-reg-6"></div>
-
-                                        <div class="range-ctn">
-                                            <div class="range-slider">
-                                                <span class="range-selected"></span>
-                                            </div>
-                                    
-                                            <div class="range-input">
-                                                <input type="range" id="min-price" class="min default" min="0" max="1000000" value="0" step="100000" onchange="window.location.href=''">
-                                                <input type="range" id="max-price" class="max default" min="0" max="1000000" value="1000000" step="100000" onchange="window.location.href=''">
-                                            </div>
-                                    
-                                            <div class="range-price">      
-                                                <input type="hidden" name="min" value="0">      
-                                                <input type="hidden" name="max" value="100000">      
-                                                <span class="min-p" id="min-p-txt">0đ</span> 
-                                                <span class="max-p" id="max-p-txt">1.000.000đ</span>
-                                            </div>
-                                        </div> 
-                                    
-                                        <script>
-                                            function sleep(ms) {
-                                                return new Promise(resolve => setTimeout(resolve, ms));
-                                            }
-                                    
-                                            let rangeMin = 100000;
-                                            const range = document.querySelector(".range-selected");
-                                            const rangeInput = document.querySelectorAll(".range-input input");
-                                            const rangePrice = document.querySelectorAll(".range-price input");
-                                    
-                                            rangeInput.forEach((input) => {
-                                                input.addEventListener("input", (e) => {
-                                                    sleep(500);
-                                    
-                                                    let minRange = parseInt(rangeInput[0].value);
-                                                    let maxRange = parseInt(rangeInput[1].value);
-                                    
-                                                    if (maxRange - minRange < rangeMin) {     
-                                                        if (e.target.className === "min") {
-                                                            rangeInput[0].value = maxRange - rangeMin;        
-                                                        } 
-                                                        else {
-                                                            rangeInput[1].value = minRange + rangeMin;        
-                                                        }
-                                                    } else {
-                                                        rangePrice[0].value = minRange;
-                                                        rangePrice[1].value = maxRange;
-                                                        range.style.left = (minRange / rangeInput[0].max) * 100 + "%";
-                                                        range.style.right = 100 - (maxRange / rangeInput[1].max) * 100 + "%";
-                                    
-                                                        if(minRange == 0) {
-                                                            $('#min-price').addClass("default");
-                                                        } else {
-                                                            $('#min-price').removeClass("default");
-                                                        }
-                                    
-                                                        if(maxRange == parseInt($('#max-price').attr('max'))) {
-                                                            $('#max-price').addClass("default");
-                                                        } else {
-                                                            $('#max-price').removeClass("default");
-                                                        }
-                                                    }
-                                    
-                                                    $('#min-p-txt').html(new Intl.NumberFormat().format(rangeInput[0].value) + 'đ'); 
-                                                    $('#max-p-txt').html(new Intl.NumberFormat().format(rangeInput[1].value) + 'đ');
-                                                });
-                                            });
-                                    
-                                            rangePrice.forEach((input) => {
-                                                input.addEventListener("input", (e) => {
-                                                    sleep(500);
-                                    
-                                                    let minPrice = rangePrice[0].value;
-                                                    let maxPrice = rangePrice[1].value;
-                                    
-                                                    if (maxPrice - minPrice >= rangeMin && maxPrice <= rangeInput[1].max) {
-                                                        if (e.target.className === "min") {
-                                                            rangeInput[0].value = minPrice;
-                                                            range.style.left = (minPrice / rangeInput[0].max) * 100 + "%";
-                                                        } else {
-                                                            rangeInput[1].value = maxPrice;
-                                                            range.style.right = 100 - (maxPrice / rangeInput[1].max) * 100 + "%";
-                                                        }
-                                                    }
-                                                });
-                                            });
-                                        </script>
-                                        <!--#endregion-->
-
                                     </div>
                                 </div>
                             </div>
@@ -1700,7 +1605,7 @@
         <!--#region Popup Filter(MB)-->
         <div class="p-popup-container" id="filterPopup" onclick="if(event.target == this){closePopup('#filterPopup');}">
             <div class="p-popup-wrapper h-100 top-0">
-                <h2 class="text-center">Bộ lọc<span class="float-end" onclick="closePopup('#filterPopup')"><img src="assets/images/generals/close-icon-white.svg" alt="" height="18" width="18" /></span></h2>
+                <h2 class="text-center">Bộ lọc<span class="float-end" onclick="closePopup('#filterPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="18" width="18" /></span></h2>
 
                 <div class="filter-wrapper">
                     <div class="filter-container pad-l-0 pad-r-0">
@@ -2100,7 +2005,7 @@
                         <div class="border-div"></div>
 
                         <!--#region Khoảng giá-->
-                        <!-- <p class="drop-filter-title">Khoảng giá</p>
+                        <p class="drop-filter-title">Khoảng giá</p>
 
                         <div class="gap-reg-6"></div>
 
@@ -2188,7 +2093,7 @@
                                     }
                                 });
                             });
-                        </script> -->
+                        </script>
                         <!--#endregion-->
                         <div class="gap-reg-20"></div>
                     </div>
