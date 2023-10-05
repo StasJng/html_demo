@@ -1651,8 +1651,9 @@ a {
 
 .filter-wrapper .dropdown.non-drop .dealtoday-checkbox label {
     display: inline-block !important;
-    width: 100%;
+    width: calc(100% - 10px);
     z-index: 2;
+    font-size: 15px;
 }
 
 .filter-wrapper .dropdown.non-drop .dealtoday-checkbox span {
@@ -4073,6 +4074,12 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     color: #000;
 }
 
+.d-detail-rg .result-txt .mb-note {
+    font-size: 12px;
+    font-weight: 400;
+    color: #757575;
+}
+
 .d-detail-rg .result-fil .sort-txt {
     font-size: 13px;
     font-weight: 400;
@@ -5488,12 +5495,18 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 .lst-coupon .c-info {
     margin: 6px;
+    position: relative;
 }
 
 .lst-coupon .c-info .c-partner {
-	font-size: 12px;
-	font-weight: 400;
-	color: #F6911E;
+    font-size: 12px;
+    font-weight: 400;
+    color: #F6911E;
+    background-color: #FEF3E2;
+    width: fit-content;
+    padding: 0 5px;
+    border-radius: 5px;
+    margin-bottom: 2px;
 }
 
 .lst-coupon .c-info .c-name {
@@ -5505,18 +5518,40 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    line-height: 22px;
 }
 
 .lst-coupon .c-info .c-price {
 	font-size: 20px;
 	font-weight: 700;
 	color: #F6911E;
+    line-height: 22px;
 }
 
 .lst-coupon .c-info .c-exp {
 	font-size: 12px;
 	font-weight: 400;
 	color: #BDBDBD;
+}
+
+.lst-coupon .c-info .c-origin {
+	font-size: 14px;
+	font-weight: 400;
+	color: #BDBDBD;
+    text-decoration: line-through;
+}
+
+.lst-coupon .c-info .btn-general {
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.lst-coupon .product-box .sale-tag {
+    right: unset;
+    left: 112px;
+    top: 6px;
 }
 
 
@@ -5541,3 +5576,8 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     border-radius: 0;
     border: 5px solid #FAFAFA;
 } */
+
+
+.lst-product-reg .lst-items ~ a {
+    padding: 0 8px;
+}
