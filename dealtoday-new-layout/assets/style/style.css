@@ -5581,3 +5581,8 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 .lst-product-reg .lst-items ~ a {
     padding: 0 8px;
 }
+
+.filter-wrapper .loc-filter-items.tree {
+	overflow-y: hidden;
+	max-height: unset;
+}

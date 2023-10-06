@@ -34,7 +34,7 @@
     <!--#endregion-->
 
     <!--#region Prevent User from using Dev Tools-->
-    <script>
+    <!-- <script>
         document.onkeydown = (e) => {
             if (e.key == 123) {
                 e.preventDefault();
@@ -67,8 +67,43 @@
         $(document).on("contextmenu", function (e) {
             e.preventDefault();
         });
-    </script>
+    </script> -->
     <!--#endregion-->
+
+    <style>
+        .cart .d-detail-rg .select-quantity {
+            font-size: 18px;
+            border-radius: 4px;
+            border: 1px solid #eee;
+            height: 26px;
+            margin: -1px 0 0 0;
+            padding: 0;
+        }
+
+        .d-detail-rg .select-quantity .quan {
+            border: 1px solid #eee;
+            height: 25px;
+            width: 38px;
+            display: inline-block;
+            text-align: center;
+            font-size: 19px;
+            margin: 0 -8px;
+            border-top-color: transparent;
+        }
+
+        .d-detail-rg .select-quantity span {
+            position: relative;
+            top: -1px;
+        }
+        .d-detail-rg .select-quantity .subtract, .d-detail-rg .select-quantity .plus {
+            background: transparent !important;
+            height: 25px;
+        }
+
+        .cart .d-detail-rg .select-quantity::selection, .cart .d-detail-rg .select-quantity span::selection {
+            background-color: transparent;
+        }
+    </style>
 </head>
 <body>
     <!--#region Javascript disabled meesage(~Gmail)-->
@@ -218,7 +253,7 @@
                                                         <div class="row">
                                                             <div class="col-12">
                                                                 <div class="txt-info">
-                                                                    <p class="title">Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
+                                                                    <p class="title"><span class="pro-cb-tag">Combo</span>Tour Tham Quan Công viên Safari World ở Bangkok kèm Dịch Vụ Đưa đón Riêng - 24/7(Không tính ngày nghỉ/lễ)</p>
                                                                     <div class="gap-reg-6 d-lg-block d-md-none d-sm-none d-none"></div>
                                                                     <p class="desc">Shared Transfer - Single Day Pass (Safari Park + Marine Park) - (Can be recharge and change detail info before midnight)</p>
                                                                 </div>
@@ -231,13 +266,14 @@
                                                             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
                                                                 <div class="row h-100 flex-align-center">
                                                                     <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                        <div class="row">
+                                                                        <div class="row position-relative">
                                                                             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
                                                                                 <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
                                                                             </div>
-                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2 position-relative" style="top: 10px;">
                                                                                 <div class="notranslate d-block w-100 presale-price">250.000đ</div>
                                                                                 <div class="d-block w-100 presale-status">Đã cập nhật</div>
+                                                                                <div class="gap-reg-8 d-lg-none d-md-none d-sm-none d-xs-block"></div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -317,13 +353,14 @@
                                                             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
                                                                 <div class="row h-100 flex-align-center">
                                                                     <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                        <div class="row">
+                                                                        <div class="row position-relative">
                                                                             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
                                                                                 <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
                                                                             </div>
-                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2 position-relative" style="top: 10px;">
                                                                                 <div class="notranslate d-block w-100 presale-price">250.000đ</div>
                                                                                 <div class="d-block w-100 presale-status">Đã cập nhật</div>
+                                                                                <div class="gap-reg-8 d-lg-none d-md-none d-sm-none d-xs-block"></div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -424,13 +461,14 @@
                                                             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
                                                                 <div class="row h-100 flex-align-center">
                                                                     <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                        <div class="row">
+                                                                        <div class="row position-relative">
                                                                             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
                                                                                 <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
                                                                             </div>
-                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2 position-relative" style="top: 10px;">
                                                                                 <div class="notranslate d-block w-100 presale-price">250.000đ</div>
                                                                                 <div class="d-block w-100 presale-status">Đã cập nhật</div>
+                                                                                <div class="gap-reg-8 d-lg-none d-md-none d-sm-none d-xs-block"></div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -521,13 +559,14 @@
                                                             <div class="col-lg-8 col-md-8 col-sm-12 col-12">
                                                                 <div class="row h-100 flex-align-center">
                                                                     <div class="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12">
-                                                                        <div class="row">
+                                                                        <div class="row position-relative">
                                                                             <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start flex-align-center">
                                                                                 <div class="notranslate d-block w-100 presale-price origin">250.000đ</div>
                                                                             </div>
-                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2">
+                                                                            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-md-12 text-lg-center text-md-center text-sm-start p-md-0 p-lg-0 p-xl-2 position-relative" style="top: 10px;">
                                                                                 <div class="notranslate d-block w-100 presale-price">250.000đ</div>
                                                                                 <div class="d-block w-100 presale-status">Đã cập nhật</div>
+                                                                                <div class="gap-reg-8 d-lg-none d-md-none d-sm-none d-xs-block"></div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
