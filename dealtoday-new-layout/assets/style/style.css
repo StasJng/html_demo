@@ -5609,6 +5609,18 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 .h-c-pg .h-c-cat .main-category .detail .cate-name {
     font-weight: 400;
+    text-align: start;
+    position: relative;
+    left: -3px;
+}
+
+@media(max-width: 576px) {
+    .h-c-pg .h-c-cat .main-category .detail .cate-name {
+        justify-content: center;
+        text-align: center;
+        left: 0;
+        top: 5px;
+    }
 }
 
 .h-c-pg .h-c-cat .main-category .img-ctn {
@@ -5616,7 +5628,6 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    margin: 0 8px;
 }
 
 .h-c-pg .h-c-cat .main-category .img-ctn img {
