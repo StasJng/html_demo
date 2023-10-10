@@ -5712,3 +5712,38 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-size: 16px;
     font-weight: 400;
 }
+
+
+
+
+
+.inf-page {
+
+}
+
+.inf-page .h-mb {
+    background-image: url(../images/demo-imgs/info-page/bg1-mb.png);
+    background-repeat: no-repeat;
+    background-size: auto 280px;
+    height: 250px;
+    padding-top: 30px;
+    margin-bottom: -125px;
+}
+
+.inf-page .h-mb .bnd {
+    font-weight: 500;
+    font-size: 26px;
+    color: #fff;
+    border-bottom: calc(3px / 2) solid #FFC605;
+}
+
+.inf-page .h-mb .slo {
+    font-weight: 400;
+    font-size: 14px;
+    color: #fff;
+}
+
+.inf-page .h-mb .bnd, .inf-page .h-mb .slo {
+    width: calc(100% - 32px);
+    margin: 0 auto;
+}
