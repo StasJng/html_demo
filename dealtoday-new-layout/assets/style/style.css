@@ -5715,10 +5715,208 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 
 
-
-
 .inf-page {
 
+}
+
+.inf-page .ban-info img {
+    max-width: 1005px;
+}
+
+.inf-page .ban-info.net {
+    background-color: #ffcb05;
+}
+
+.inf-page .ban-info.net .til {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    padding: 15px 0;
+}
+
+.inf-page .ban-info.net .count {
+    position: absolute;
+}
+
+
+
+@media(max-width: 576px) {
+    .inf-page .ban-info.net .count span {
+        display: inline-block;
+        color: #000;
+        font-weight: 500;
+        background: url(../images/demo-imgs/info-page/num-bg-mb.gif) no-repeat;
+        width: calc(5vw / 2);
+        height: 4vw;
+        padding: 0px 3px 0px 0px;
+        font-size: 15px;
+        min-width: 15px;
+        min-height: 19px;
+    }
+
+    .inf-page .ban-info.net .count.custom {
+        top: 20%;
+        left: 7%;
+    }
+    
+    .inf-page .ban-info.net .count.part {
+        bottom: 7%;
+        left: 23%;
+    }
+    
+    .inf-page .ban-info.net .count.soical {
+        bottom: 15%;
+        right: 5%;
+    }
+    
+    .inf-page .ban-info.net .count.app {
+        top: 56%;
+        right: 11%;
+    }
+}
+
+@media(min-width: 577px) {
+    .inf-page .ban-info.net .count span {
+        display: inline-block;
+        color: #000;
+        font-weight: 500;
+        background: url(../images/demo-imgs/info-page/num-bg-mb.gif) no-repeat;
+        width: calc(5vw / 2);
+        height: 4vw;
+        padding: 0px 3px 0px 0px;
+        font-size: 15px;
+        min-width: 15px;
+        min-height: 19px;
+    }
+
+    .inf-page .ban-info.net .count.custom {
+        top: 17%;
+        left: 15%;
+    }
+    
+    .inf-page .ban-info.net .count.part {
+        bottom: 10%;
+        left: 26%;
+    }
+    
+    .inf-page .ban-info.net .count.soical {
+        bottom: 17%;
+        right: 16%;
+    }
+    
+    .inf-page .ban-info.net .count.app {
+        top: 54%;
+        right: 16%;
+    }
+}
+
+@media(min-width: 769px) {
+    .inf-page .ban-info.net .count span {
+        display: inline-block;
+        color: #000;
+        font-weight: 500;
+        background: url(../images/demo-imgs/info-page/num-bg-mb.gif) no-repeat;
+        background-size: 28px 32px;
+        width: calc(8vw / 2);
+        height: 3vw;
+        font-size: 22px;
+        min-width: 28px;
+        min-height: 32px;
+    }
+    
+    .inf-page .ban-info.net .count.custom {
+        top: 25%;
+        left: 2%;
+    }
+    
+    .inf-page .ban-info.net .count.part {
+        bottom: 11%;
+        left: 10%;
+    }
+    
+    .inf-page .ban-info.net .count.soical {
+        bottom: 12%;
+        right: 31%;
+    }
+    
+    .inf-page .ban-info.net .count.app {
+        top: 65%;
+        right: 1%;
+    }
+}
+
+@media(min-width: 993px) {
+    .inf-page .ban-info.net .count span {
+        display: inline-block;
+        color: #000;
+        font-weight: 500;
+        background: url(../images/demo-imgs/info-page/num-bg-mb.gif) no-repeat;
+        background-size: 28px 32px;
+        width: calc(4vw / 2);
+        height: 3vw;
+        font-size: 22px;
+        min-width: 28px;
+        min-height: 32px;
+    }
+    
+    .inf-page .ban-info.net .count.custom {
+        top: 25%;
+        left: 2%;
+    }
+    
+    .inf-page .ban-info.net .count.part {
+        bottom: 11%;
+        left: 10%;
+    }
+    
+    .inf-page .ban-info.net .count.soical {
+        bottom: 12%;
+        right: 31%;
+    }
+    
+    .inf-page .ban-info.net .count.app {
+        top: 65%;
+        right: 1%;
+    }
+}
+
+
+@media(min-width: 1005px) {
+    .inf-page .ban-info.net .count span {
+        display: inline-block;
+        color: #000;
+        font-weight: 500;
+        background: url(../images/demo-imgs/info-page/num-bg-mb.gif) no-repeat;
+        background-size: 28px 32px;
+        width: 28px;
+        height: 32px;
+        font-size: 22px;
+    }
+    
+    .inf-page .ban-info.net .count.custom {
+        top: 165px;
+        left: 95px;
+    }
+    
+    .inf-page .ban-info.net .count.part {
+        bottom: 75px;
+        left: 120px;
+    }
+    
+    .inf-page .ban-info.net .count.soical {
+        bottom: 85px;
+        right: 350px;
+    }
+    
+    .inf-page .ban-info.net .count.app {
+        top: 425px;
+        right: 38px;
+    }
+}
+
+
+.inf-page .ban-info.part {
+    background-color: #ededed;
 }
 
 .inf-page .h-mb {
@@ -5741,9 +5939,86 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 400;
     font-size: 14px;
     color: #fff;
+    padding-top: 5px;
 }
 
 .inf-page .h-mb .bnd, .inf-page .h-mb .slo {
     width: calc(100% - 32px);
     margin: 0 auto;
+}
+
+.inf-page .w-info .we {
+    font-size: 32px; 
+    font-weight: 500; 
+    color: #F6911E;
+}
+
+.inf-page .w-info .do {
+    border-left: 1px solid #F6911E; 
+    font-size: 18px; 
+    font-weight: 400; 
+    color: #000; 
+    margin-top: 15px;
+}
+
+.inf-page .w-info .do div {
+    margin: 0 0 15px 15px;
+}
+
+@media(max-width: 576px) {
+    .inf-page .w-info .we {
+        margin-top: 12px;
+        font-size: 25px; 
+    }
+    
+    .inf-page .w-info .do {
+        margin-top: 5px;
+    }
+
+    .inf-page .w-info .do div {
+        font-size: 15px;
+    }
+}
+
+.inf-page .regis {
+
+}
+
+.inf-page .regis .til {
+    font-size: 20px;
+}
+
+
+
+.inf-page .regis .f-inp {
+    margin: 8px 0 12px 0;
+}
+
+.inf-page .regis .f-inp img {
+    margin: 3px;
+    pointer-events: none;
+}
+
+.inf-page .regis .f-inp .f-tag {
+    font-size: 15px;
+    font-weight: 400;
+    padding: 8px;
+    border-radius: 5px 0 0 5px;
+    color: #fff;
+    background-color: #fecc09;
+    width: 125px;
+}
+
+.inf-page .regis .f-inp input {
+    display: flex;
+    background-color: #eee;
+    border: none;
+    flex: 1;
+    border-radius: 0 5px 5px 0;
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+.inf-page .regis .f-inp input:focus {
+    outline: none;
 }
