@@ -5886,31 +5886,31 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         display: inline-block;
         color: #000;
         font-weight: 500;
-        background: url(../images/demo-imgs/info-page/num-bg-mb.gif) no-repeat;
-        background-size: 28px 32px;
-        width: 28px;
-        height: 32px;
-        font-size: 22px;
+        background: url(../images/demo-imgs/info-page/num-bg.png) no-repeat;
+        background-size: 34px 42px;
+        width: 34px;
+        height: 42px;
+        font-size: 30px;
     }
     
     .inf-page .ban-info.net .count.custom {
-        top: 165px;
-        left: 95px;
+        top: 160px;
+        left: 65px;
     }
     
     .inf-page .ban-info.net .count.part {
-        bottom: 75px;
-        left: 120px;
+        bottom: 68px;
+        left: 115px;
     }
     
     .inf-page .ban-info.net .count.soical {
-        bottom: 85px;
-        right: 350px;
+        bottom: 80px;
+        right: 333px;
     }
     
     .inf-page .ban-info.net .count.app {
-        top: 425px;
-        right: 38px;
+        top: 418px;
+        right: 28px;
     }
 }
 
