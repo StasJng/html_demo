@@ -6305,8 +6305,6 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     color: #bdbdbd;
 }
 
-
-
 .d-detail-rg .g-info {
 
 }
@@ -6339,17 +6337,17 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     bottom: 0;
 }
 
-.d-detail-rg .g-info .d-pack .pay-info .p-count input {
+.d-detail-rg .g-info .d-pack .pay-info .p-count select {
     border: 1px solid #eee;
     border-radius: 5px;
     position: relative;
     width: 100%;
     height: 36px;
+    min-width: 125px;
 }
 
 .d-detail-rg .g-info .d-pack .pay-info .p-count input::after {
     position: absolute;
-
 }
 
 .d-detail-rg .g-info .d-pack .pay-info .p-order .btn-general {
