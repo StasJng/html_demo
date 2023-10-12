@@ -32,42 +32,12 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
     <!--#endregion-->
 
-    <!--#region Prevent User from using Dev Tools-->
-    <!-- <script>
-        document.onkeydown = (e) => {
-            if (e.key == 123) {
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.shiftKey && e.key == 'I') { // Prevent Ctrl+Shift+I
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.shiftKey && e.key == 'C') { // Prevent Ctrl+Shift+C
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.shiftKey && e.key == 'J') { // Prevent Ctrl+Shift+J
-                e.preventDefault();
-            }
-            if (e.ctrlKey && e.key == 'U') { // Prevent Ctrl+U
-                e.preventDefault();
-            }
-        };
-
-        $(document).keydown(function (e) {
-            if (e.keyCode == 123) { // Prevent F12
-                return false;
-            }
-            //else if (e.ctrlKey && e.shiftKey && e.keyCode == 73) { // Prevent Ctrl+Shift+I
-            //    return false;
-            //}
-        });
-
-        //Prevent Right Click
-        //~ <body oncontextmenu="return false">
-        $(document).on("contextmenu", function (e) {
-            e.preventDefault();
-        });
-    </script> -->
-    <!--#endregion-->
+    <!-- Datepicker -->
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/js/bootstrap-datetimepicker.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.0.0/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -361,8 +331,8 @@
                 <div class="col-12 p-sm-0 p-xs-0">
                     <ul class="breadcrumb-nav">
                         <li><a href="#">Trang chủ</a></li>
-                        <li><a href="#">E-Voucher</a></li>
-                        <li><a href="#">Combo Lẩu Trùng Khánh</a></li>
+                        <li><a href="#">Booking Golf</a></li>
+                        <li><a href="#">Sân Golf Đề Mô</a></li>
                       </ul>
                 </div>
                 <!--#endregion-->
@@ -378,7 +348,7 @@
                                 <div class="swiper mySwiper2 main-swiper">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
+                                            <img src="assets/images/demo-imgs/golf/slide.png" alt="" height="" width="" lazy />
                                         </div>
                                         <div class="swiper-slide">
                                             <img src="assets/images/demo-imgs/detail-page/img-swiper-main-2.png" alt="" height="" width="" lazy />
@@ -398,7 +368,7 @@
                                 <div thumbsSlider="" class="swiper mySwiper">
                                     <div class="swiper-wrapper">
                                         <div class="swiper-slide">
-                                            <img src="assets/images/demo-imgs/detail-page/img-swiper-main.png" alt="" height="" width="" lazy />
+                                            <img src="assets/images/demo-imgs/golf/slide.png" alt="" height="" width="" lazy />
                                         </div>
                                         <div class="swiper-slide">
                                             <img src="assets/images/demo-imgs/detail-page/img-swiper-main-2.png" alt="" height="" width="" lazy />
@@ -473,37 +443,11 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="cb-d-info d-none d-xs-none d-sm-none d-md-none d-lg-block d-xl-block">
-                                <div class="d-title">Combo bao gồm:</div>
-                                
-                                <div class="d-item flex-align-center">
-                                    <div class="quant">1x</div>
-                                    <a href="#" class="name">Vé người lớn thám hiểm khu vui chơi đảo khủng long Dino Island tại Aeon Mall Tân Phú Celadon</a>
-                                </div>
-
-                                <div class="gap-reg-6"></div>
-
-                                <div class="d-item flex-align-center">
-                                    <div class="quant">1x</div>
-                                    <a href="#" class="name">Vé người lớn thám hiểm khu vui chơi đảo khủng long Dino Island tại Aeon Mall Tân Phú Celadon</a>
-                                </div>
-
-                                <span>
-                                    <img src="assets/images/generals/icon-gift-red.svg" alt="icon-gift-red" height="18" width="16" />
-                                    Quà tặng                                    
-                                </span>
-                                
-                                <div class="d-item flex-align-center">
-                                    <div class="quant">1x</div>
-                                    <a href="#" class="name">Vé người lớn thám hiểm khu vui chơi đảo khủng long Dino Island tại Aeon Mall Tân Phú Celadon</a>
-                                </div>
-                            </div>
                         </div>
 
                         <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                             <div class="deal-title">
-                                Buffet lẩu Trùng Khánh tại nhà hàng BaoYu - Áp dụng từ thứ 2 đến thứ 6
+                                Sân Golf Đề Mô
                             </div>
                             <div class="deal-rating">
                                 <span>
@@ -514,211 +458,114 @@
                                 <span class="saled-count">90k+ đã bán</span>
                             </div>
 
-                            <!--#region Countdown Timer-->
-                            <input type="hidden" id="countdowntTime" value="9/9/2023 11:53:32 AM" />
-
-                            <div class="col-12 detail-flash-countdown upcoming show-unit">
-                                <div class="countdown-container">
-                                    <ul>
-                                        <li class="time-left"><span>Bắt đầu sau</span></li>
-                                        <li><i><span class="days-left"></span></i></li>
-                                        <li><i><span class="countdown-seperator">:</span></i></li>
-                                        <li><i><span class="hours-left"></span></i></li>
-                                        <li><i><span class="countdown-seperator">:</span></i></li>
-                                        <li><i><span class="minutes-left"></span></i></li>
-                                        <li><i><span class="countdown-seperator">:</span></i></li>
-                                        <li><i><span class="seconds-left"></span></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="col-12 detail-flash-countdown show-unit">
-                                <div class="countdown-container">
-                                    <ul>
-                                        <li class="time-left"><span>Kết thúc trong</span></li>
-                                        <li><i><span class="days-left"></span></i></li>
-                                        <li><i><span class="countdown-seperator">:</span></i></li>
-                                        <li><i><span class="hours-left"></span></i></li>
-                                        <li><i><span class="countdown-seperator">:</span></i></li>
-                                        <li><i><span class="minutes-left"></span></i></li>
-                                        <li><i><span class="countdown-seperator">:</span></i></li>
-                                        <li><i><span class="seconds-left"></span></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!--#endregion-->
-
-                            <div class="deal-price">
-                                <div class="d-price">
-                                    <div class="p-sale">
-                                        <span class="notranslate">500.000đ</span>
-                                        <span class="p-tag notranslate">-50%</span>
+                            <div class="col-12 g-date-picker d-flex">
+                                    <span>Chọn ngày</span>
+                                    <div class="position-relative">
+                                        <input id="select_date_from" type="text" placeholder="Chọn thời gian" />
+                                        <script>
+                                            //Declare datepicker
+                                            $(function () {
+                                                $('#select_date_from').datetimepicker({
+                                                    locale: 'vi',
+                                                    keepOpen: true,
+                                                    format: 'DD/MM/YYYY',
+                                                    minDate: moment()
+                                                });
+                                            });
+                                        </script>
                                     </div>
-                                    <div class="p-origin notranslate">
-                                        1.000.000đ
-                                    </div>
-                                </div>
-                                <div class="vnpay-img d-none d-xs-none d-sm-block d-md-block d-lg-block d-xl-block" onclick="openPopup('#popup-vnpay');">
-                                    <img class="qr-code-img" src="assets/images/demo-imgs/detail-page/demo-qr.png" alt="" height="68" width="68" lazy />
-                                    <div>Quét mua bằng QR</div>
-                                </div>
                             </div>
 
-                            <div class="cb-d-info d-block d-xs-block d-sm-block d-md-block d-lg-none d-xl-none">
-                                <div class="d-title">Combo bao gồm:</div>
-                                
-                                <div class="d-item flex-align-center">
-                                    <div class="quant">1x</div>
-                                    <a href="#" class="name">Vé người lớn thám hiểm khu vui chơi đảo khủng long Dino Island tại Aeon Mall Tân Phú Celadon</a>
-                                </div>
+                            <div class="g-info">
+                                <div class="d-type">Weekend</div>
 
-                                <div class="gap-reg-6"></div>
-                                
-                                <div class="d-item flex-align-center">
-                                    <div class="quant">1x</div>
-                                    <a href="#" class="name">Vé người lớn thám hiểm khu vui chơi đảo khủng long Dino Island tại Aeon Mall Tân Phú Celadon</a>
-                                </div>
+                                <div class="d-pack">
+                                    <div class="gap-reg-12"></div>
 
-                                <span>
-                                    <img src="assets/images/generals/icon-gift-red.svg" alt="icon-gift-red" height="18" width="16" />
-                                    Quà tặng                                    
-                                </span>
-                                
-                                <div class="d-item flex-align-center">
-                                    <div class="quant">1x</div>
-                                    <a href="#" class="name">Vé người lớn thám hiểm khu vui chơi đảo khủng long Dino Island tại Aeon Mall Tân Phú Celadon</a>
-                                </div>
-                            </div>
+                                    <div class="til">Chơi golf tại Legend Hill Golf Resort - Áp dụng trước 15h00 các ngày cuối tuần</div>
 
-                            <div class="sale-code">
-                                <span class="title">
-                                    Ưu đãi
-                                </span>
-                                <span class="lst-code">
-                                    Lấy mã ưu đãi
-                                    <div class="code-info">
-                                        <div class="row flex-align-center">
-                                            <div class="col-8">
-                                                <div class="d-block w-100 title">
-                                                    HEVUI5 - Ưu đãi giảm 5% cho đơn hàng giải trí từ 300K
-                                                </div>
-                                                <div class="d-block w-100 xpr">
-                                                    HSD: 25/12/2023
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="btn-general">
-                                                    Lấy mã
-                                                </div>
-                                            </div>
+                                    <div class="row pay-info flex-align-center">
+                                        <div class="col-4 p-price">
+                                            2.650.000đ
                                         </div>
-                                        
-                                        <div class="row flex-align-center">
-                                            <div class="col-8">
-                                                <div class="d-block w-100 title">
-                                                    HEVUI5 - Ưu đãi giảm 5% cho đơn hàng giải trí từ 300K
-                                                </div>
-                                                <div class="d-block w-100 xpr">
-                                                    HSD: 25/12/2023
-                                                </div>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="btn-general">
-                                                    Lấy mã
-                                                </div>
-                                            </div>
+                                        <div class="col-4 p-count">
+                                            <input type="text" />
+                                        </div>
+                                        <div class="col-4 p-order">
+                                            <div class="btn-general orange">Đặt ngay</div>
                                         </div>
                                     </div>
-                                    <span class="sale-code-mb d-xl-none d-lg-none d-md-none d-sm-none d-xs-block d-block" onclick="openPopup('#saleCodePopup')"></span>
-                                </span>
-                            </div>
+    
+                                    <div class="p-info">
+                                        Hole: 18 hố
+                                        <br/>
+                                        Phí xe điện: Bao gồm 1/2 phí
+                                    </div>
 
-                            <div class="quantity  flex-align-center">
-                                <span class="title">
-                                    Số lượng
-                                </span>
-                                <span class="select-quantity" data-groupid="241">
-                                    <span class="subtract">-</span>
-                                    <span class="quan" data-packid="113277" data-price="216000">0</span>
-                                    <span class="plus">+</span>
-                                </span>
-                                <script>
-                                    $('.select-quantity .plus').click(function () {
-                                    var total = 0;
-                                        var quan = $(this).parent().find('.quan').text();
-                                        if (quan < 20) {
-                                            quan = parseInt(quan) + 1;
-                                            $(this).parent().find('.quan').text(quan);
-                                            $(this).parents('.detail-option').find('.quan').each(function (index, obj) {
-                                                var price = $(obj).data("price");
-                                                var tem_quan = $(obj).text();
-                                                if (tem_quan <= 20) {
-                                                    total += price * parseInt(tem_quan);
-                                                }
-                                            });
-                                        }
-                                        else {
-                                            alert("Bạn mua tối đa 20 sản phẩm. Nếu có nhu cầu mua số lượng lớn vui lòng liên hệ hotline 1900 2065")
-                                        }
-                                    });
+                                    <div class="gap-reg-12"></div>
 
-                                    $('.select-quantity .subtract').click(function () {
-                                        var total = 0;
-                                        var quan = $(this).parent().find('.quan').text();
-                                        if (quan > 0) {
-                                            quan = parseInt(quan) - 1;
-                                            $(this).parent().find('.quan').text(quan);
-                                            $(this).parents('.detail-option').find('.quan').each(function (index, obj) {
-                                                var price = $(obj).data("price");
-                                                var tem_quan = $(obj).text();
-                                                if (tem_quan < 20) {
-                                                    total += price * parseInt(tem_quan);
-                                                }
-                                            });
-                                        }
-                                    });
-                                </script>
-                            </div>
+                                    <div class="gap-bor-line c-eee"></div>
+                                </div>
 
-                            <div class="err-msg">
-                                Giá ưu đãi chỉ áp dụng với số lượng deal nhất định
-                            </div>
+                                <div class="d-pack">
+                                    <div class="gap-reg-12"></div>
 
-                            <div class="xpr-date">
-                                HSD:&nbsp;<b>12/09/2023</b>
-                            </div>
-                            <div class="col-12 add-to-cart">
-                                <div class="btn-general orange w-100">
-                                    Mua ngay
+                                    <div class="til">Chơi golf tại Legend Hill Golf Resort - Áp dụng trước 15h00 các ngày cuối tuần</div>
+
+                                    <div class="row pay-info flex-align-center">
+                                        <div class="col-4 p-price">
+                                            2.650.000đ
+                                        </div>
+                                        <div class="col-4 p-count">
+                                            <input type="text" />
+                                        </div>
+                                        <div class="col-4 p-order">
+                                            <div class="btn-general orange">Đặt ngay</div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="p-info">
+                                        Hole: 18 hố
+                                        <br/>
+                                        Phí xe điện: Bao gồm 1/2 phí
+                                    </div>
+
+                                    <div class="gap-reg-12"></div>
+
+                                    <div class="gap-bor-line c-eee"></div>
                                 </div>
                             </div>
-                            <div class="col-12 buy-now">
-                                <div class="btn-general w-100">
-                                    <span>
-                                        <img src="assets/images/generals/icon-shopping-cart.svg" alt="" height="16" width="16" />
-                                    </span>
-                                    <span>
-                                        Thêm và giỏ hàng
-                                    </span>
+
+                            <div class="gap-reg-20"></div>
+
+                            <div class="g-info">
+                                <div class="d-type">Weekday</div>
+
+                                <div class="d-pack">
+                                    <div class="gap-reg-12"></div>
+
+                                    <div class="til">Chơi golf tại Legend Hill Golf Resort - Áp dụng trước 15h00 các ngày cuối tuần</div>
+
+                                    <div class="row pay-info flex-align-center">
+                                        <div class="col-4 p-price">
+                                            2.650.000đ
+                                        </div>
+                                        <div class="col-4 p-count">
+                                            <input type="text" />
+                                        </div>
+                                        <div class="col-4 p-order">
+                                            <div class="btn-general orange">Đặt ngay</div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="p-info">
+                                        Hole: 18 hố
+                                        <br/>
+                                        Phí xe điện: Bao gồm 1/2 phí
+                                    </div>
+
+                                    <div class="gap-reg-12"></div>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="btn-general grey-disabled w-100">
-                                    Ngừng bán
-                                </div>
-                                <div class="gap-reg-12"></div>
-                            </div>
-                            <div class="col-12 bounus-point">
-                                    <span>
-                                        <img src="assets/images/generals/icon-epoint.svg" alt="" height="14" width="14" />
-                                    </span>
-                                    <span>
-                                        Tích lũy đến 2100 điểm thưởng
-                                    </span>
-                            </div>
-                            <div class="col-12 qrpay-reg-mb d-xl-none d-lg-none d-md-none d-sm-none d-xs-block" onclick="openPopup('#popup-vnpay');">
-                                Thanh toán nhanh với mã QR
-                                <img src="assets/images/generals/icon-qr-orange.svg" alt="icon-qr-orange" height="24" width="24" /> 
                             </div>
                         </div>
                     </div>
@@ -774,82 +621,6 @@
 
                 <div class="gap-reg-20"></div>
 
-                <!--#region Main Info + Terms of use -->
-                <input type="checkbox" class="v-hidden" id="showFullTermsAndInfo" />
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-detail-rg general-info">
-                            <input type="checkbox" class="v-hidden" id="showFullGenInfo" />
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2>Thông tin nổi bật</h2>
-        
-                                    <div class="raw-content-rg">
-                                        <ul>
-                                            <li style="text-align:justify">"Vé vào cổng khu vui chơi Nhà Tuyết Snow World Aeon Mall Hà Đông - Áp dụng Thứ 7, CN và lễ tết" sẽ mang đến những trò chơi mới lạ, thú vị trong không gian hấp dẫn, tuyệt vời hơn bao giờ hết.</li>
-                                            <li style="text-align:justify">
-                                                <span>Tại Snow World, các bé sẽ được trải nghiệm vui chơi thỏa thích dưới tuyết cùng những trò hấp dẫn như:&nbsp;</span>
-                                                <span>Nhà tuyết xốp tinh khôi,&nbsp;cầu trượt siêu khổng lồ, chinh phục leo núi nhân tạo, biển bóng ngập tràn, lego linh hoạt…</span>
-                                            </li>
-                                            <li style="text-align:justify">
-                                                <span>Snow World sở hữu công nghệ làm tuyết tốt nhất thế giới từ đối tác Nhật Bản với nhiệt độ luôn duy trì ở mức 18 độ C tạo môi trường thoải mái, các bé thỏa sức vui chơi mà vẫn đảm bảo sức khỏe.</span>
-                                            </li>
-                                            <li style="text-align:justify">Với đội ngũ nhân viên chuyên nghiệp, chu đáo, nhiệt tình cùng chất lượng dịch vụ đẳng cấp,&nbsp;Nhà Tuyết Snow World Aeon Mall Hà Đông sẽ mang đến sự hài lòng nhất tới mọi khách hàng.</li>
-                                        </ul>
-                                    </div>
-        
-                                    <div class="gap-reg-8 d-xl-none d-lg-none d-md-block d-sm-block d-block"></div>
-
-                                    <label class="btn-general d-xl-none d-lg-none d-md-block d-sm-block d-block" for="showFullGenInfo">
-                                        Xem thêm
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="gap-reg-20 d-xl-none d-lg-none d-md-block d-sm-block d-block"></div>
-        
-                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-detail-rg terms-of-use">
-                            <input type="checkbox" class="v-hidden" id="showFullTerms" />
-                            <div class="row">
-                                <div class="col-12">
-                                    <h2>Điều kiện sử dụng</h2>
-        
-                                    <div class="raw-content-rg">
-                                        <ul>
-                                            <li style="text-align:justify">"Vé vào cổng khu vui chơi Nhà Tuyết Snow World Aeon Mall Hà Đông - Áp dụng Thứ 7, CN và lễ tết" sẽ mang đến những trò chơi mới lạ, thú vị trong không gian hấp dẫn, tuyệt vời hơn bao giờ hết.</li>
-                                            <li style="text-align:justify">
-                                                <span>Tại Snow World, các bé sẽ được trải nghiệm vui chơi thỏa thích dưới tuyết cùng những trò hấp dẫn như:&nbsp;</span>
-                                                <span>Nhà tuyết xốp tinh khôi,&nbsp;cầu trượt siêu khổng lồ, chinh phục leo núi nhân tạo, biển bóng ngập tràn, lego linh hoạt…</span>
-                                            </li>
-                                            <li style="text-align:justify">
-                                                <span>Snow World sở hữu công nghệ làm tuyết tốt nhất thế giới từ đối tác Nhật Bản với nhiệt độ luôn duy trì ở mức 18 độ C tạo môi trường thoải mái, các bé thỏa sức vui chơi mà vẫn đảm bảo sức khỏe.</span>
-                                            </li>
-                                            <li style="text-align:justify">Với đội ngũ nhân viên chuyên nghiệp, chu đáo, nhiệt tình cùng chất lượng dịch vụ đẳng cấp,&nbsp;Nhà Tuyết Snow World Aeon Mall Hà Đông sẽ mang đến sự hài lòng nhất tới mọi khách hàng.</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="gap-reg-8 d-xl-none d-lg-none d-md-block d-sm-block d-block"></div>
-        
-                                    <label class="btn-general d-xl-none d-lg-none d-md-block d-sm-block d-block" for="showFullTerms">
-                                        Xem thêm
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="col-12 d-xl-block d-lg-block d-md-none d-sm-none d-none d-detail-rg terms-n-info-btn w-100 flex-center">
-                            <label class="btn-general" for="showFullTermsAndInfo">
-                                Xem thêm
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                
-                <!--#endregion-->
-                
-                <div class="gap-reg-20"></div>
-
                 <!--#region Description + Review-->
                 <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 d-descript">
                     <div class="row d-detail-rg">
@@ -861,15 +632,9 @@
                             </h2>
 
                             <div class="d-detail-info">
-                                Không chỉ nổi tiếng ở nội địa mà nó còn hấp dẫn rất nhiều thực khách ở các quốc gia khác, Lẩu Trùng Khánh luôn được xem là tinh hoa của ẩm thực Trung Hoa. Nếu không có cơ hội đến với xứ Trung nhưng vẫn muốn thưởng thức hương vị đặc biệt đó ở Việt Nam, Dealtoday mời bạn đến với bữa tiệc "Buffet lẩu Trùng Khánh tại nhà hàng BaoYu" mang đến cho quý khách hàng những món ăn thơm ngon, hấp dẫn.
+                                Tọa lạc tại Thôn Cộng Hòa, xã Phù Linh, Sóc Sơn, Hà Nội, Legend Hill Golf là sân gôn đầu tiên do Nicklaus Design - Người đã dành được 18 giải championship nhà nghề danh giá thiết kế và đi vào vận hành tại Việt Nam.
                                 
-                                <img src="assets/images/demo-imgs/detail-page/img-info-1.png" alt="" height="800" width="400" lazy />
-                                
-                                Lẩu Trùng Khánh từ lâu rất nổi tiếng trên bản đồ ẩm thực thế giới, nay đã có mặt tại Baoyu với rất nhiều loại nước lẩu đặc trưng như: lẩu Hoàng Kim, lẩu Mala, lẩu Thái, lẩu nấm, lẩu dưỡng nhan, lẩu Trùng Khánh, lẩu cà chua, từ cay tê đậm đà đến dịu ngọt thơm ngậy, vô cùng đặc biệt không giống bất kì nơi nào khác.
-                                
-                                <img src="assets/images/demo-imgs/detail-page/img-info-2.png" alt="" height="800" width="400" lazy />
-                                
-                                Bên cạnh đó, xuất phát từ cái nôi của ẩm thực lẩu Trung Quốc, gây thương nhớ đặc biệt đó là nước dùng lẩu Trùng Khánh nổi tiếng bởi màu đỏ rực rỡ, vị cay tê và cách chế biến cầu kì. Với nguyên liệu chính từ ớt Tứ Xuyên, dầu ớt, bơ và nhiều loại gia vị khác, lẩu Trùng Khánh mang hương vị khó quên từ vị cay lan toả trong khoang miệng, với mùi thơm từ gia vị đậm đà trong từng giọt nước dùng.
+                                <img src="assets/images/demo-imgs/golf/detail.png" alt="" height="800" width="400" lazy />
                             </div>
 
                             <div class="gap-reg-16"></div>
@@ -921,28 +686,19 @@
                                         <div class="col-10">
                                             <div class="row reviewed-img-lst">
                                                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-1.png" alt="" height="80" width="80" lazy />
+                                                    <img src="assets/images/demo-imgs/golf/cmt/1.png" alt="" height="80" width="80" lazy />
                                                 </div>
                                                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-2.png" alt="" height="80" width="80" lazy />
+                                                    <img src="assets/images/demo-imgs/golf/cmt/2.png" alt="" height="80" width="80" lazy />
                                                 </div>
                                                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-3.png" alt="" height="80" width="80" lazy />
+                                                    <img src="assets/images/demo-imgs/golf/cmt/3.png" alt="" height="80" width="80" lazy />
                                                 </div>
                                                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-4.png" alt="" height="80" width="80" lazy />
+                                                    <img src="assets/images/demo-imgs/golf/cmt/4.png" alt="" height="80" width="80" lazy />
                                                 </div>
                                                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-5.png" alt="" height="80" width="80" lazy />
-                                                </div>
-                                                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-1.png" alt="" height="80" width="80" lazy />
-                                                </div>
-                                                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-2.png" alt="" height="80" width="80" lazy />
-                                                </div>
-                                                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-3.png" alt="" height="80" width="80" lazy />
+                                                    <img src="assets/images/demo-imgs/golf/cmt/5.png" alt="" height="80" width="80" lazy />
                                                 </div>
                                             </div>
                                         </div>
@@ -991,28 +747,19 @@
                                         <div class="col-10">
                                             <div class="row reviewed-img-lst">
                                                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-1.png" alt="" height="80" width="80" lazy />
+                                                    <img src="assets/images/demo-imgs/golf/cmt/1.png" alt="" height="80" width="80" lazy />
                                                 </div>
                                                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-2.png" alt="" height="80" width="80" lazy />
+                                                    <img src="assets/images/demo-imgs/golf/cmt/2.png" alt="" height="80" width="80" lazy />
                                                 </div>
                                                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-3.png" alt="" height="80" width="80" lazy />
+                                                    <img src="assets/images/demo-imgs/golf/cmt/3.png" alt="" height="80" width="80" lazy />
                                                 </div>
                                                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-4.png" alt="" height="80" width="80" lazy />
+                                                    <img src="assets/images/demo-imgs/golf/cmt/4.png" alt="" height="80" width="80" lazy />
                                                 </div>
                                                 <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-5.png" alt="" height="80" width="80" lazy />
-                                                </div>
-                                                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-1.png" alt="" height="80" width="80" lazy />
-                                                </div>
-                                                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-2.png" alt="" height="80" width="80" lazy />
-                                                </div>
-                                                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-4 col-5">
-                                                    <img src="assets/images/demo-imgs/detail-page/img-rv-3.png" alt="" height="80" width="80" lazy />
+                                                    <img src="assets/images/demo-imgs/golf/cmt/5.png" alt="" height="80" width="80" lazy />
                                                 </div>
                                             </div>
                                         </div>
@@ -1049,436 +796,16 @@
                 <!--#region Partner Info-->
                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 ">
                     <div class="row">
-                        <div class="col-12 d-detail-rg d-brand">
-                            <div class="d-items">
-                                <a href="#" class="d-detail flex-align-center">
-                                    <img src="assets/images/demo-imgs/detail-page/img-partner-logo.png" alt="40" height="40" width="40" lazy />
-                                    <div class="w-100">
-                                        <div class="b-name">
-                                            Nhà hàng Gyu Kaku
-                                        </div>
-                                        <div class="b-title">
-                                            Vé vui chơi đảo khủng long Dino Island tại Aeon Mall Tân Phú Celadon - Tặng 1 vé ẩm thực không giới hạn tại Vinwonder
-                                        </div>
-                                        <div class="l-multi" onclick="openPopup('#popup-map')">
-                                            <img src="assets/images/generals/icon-loc-map.svg" alt="" height="16" width="16" />
-                                            Nhiều địa điểm
-                                        </div>
-                                        <div class="l-single">
-                                            <img src="assets/images/generals/icon-location-outline.svg" alt="" height="16" width="16" />
-                                            Số 18 ngõ 11 Thái Hà, Đống Đa, Hà Nội
-                                        </div>
-                                    </div>
-                                </a>
-        
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="border-div w-100"></div>
-                                    </div>
-                                </div>
-        
-                                <a href="#" class="d-detail flex-align-center">
-                                    <img src="assets/images/demo-imgs/detail-page/img-partner-logo.png" alt="40" height="40" width="40" lazy />
-                                    <div class="w-100">
-                                        <div class="b-name">
-                                            Nhà hàng Gyu Kaku
-                                        </div>
-                                        <div class="b-title">
-                                            Vé vui chơi đảo khủng long Dino Island tại Aeon Mall Tân Phú Celadon - Tặng 1 vé ẩm thực không giới hạn tại Vinwonder
-                                        </div>
-                                        <div class="l-multi" onclick="openPopup('#popup-map')">
-                                            <img src="assets/images/generals/icon-loc-map.svg" alt="" height="16" width="16" />
-                                            Nhiều địa điểm
-                                        </div>
-                                        <div class="l-single">
-                                            <img src="assets/images/generals/icon-location-outline.svg" alt="" height="16" width="16" />
-                                            Số 18 ngõ 11 Thái Hà, Đống Đa, Hà Nội
-                                        </div>
-                                    </div>
-                                </a>
-                                <!-- <a href="#" class="d-detail flex-align-center">
-                                    <img src="assets/images/demo-imgs/detail-page/img-partner-deal-1.png" alt="" height="40" width="40" lazy />
-                                    <div class="w-100">
-                                        <div class="b-title">
-                                            Đơn vị cung cấp
-                                        </div>
-                                        <div class="b-prices flex-align-center">
-                                            <span class="p-main">500.000đ</span>
-                                            <span class="p-percent">-50%</span>
-                                            <span class="p-origin">1.000.000đ</span>
-                                        </div>
-                                    </div>
-                                </a>
-        
-                                <div class="border-div w-100"></div>
-        
-                                <a href="#" class="d-detail flex-align-center">
-                                    <img src="assets/images/demo-imgs/detail-page/img-partner-deal-2.png" alt="" height="40" width="40" lazy />
-                                    <div class="w-100">
-                                        <div class="b-title">
-                                            Đơn vị cung cấp
-                                        </div>
-                                        <div class="b-prices flex-align-center">
-                                            <span class="p-main">500.000đ</span>
-                                            <span class="p-percent">-50%</span>
-                                            <span class="p-origin">1.000.000đ</span>
-                                        </div>
-                                    </div>
-                                </a> -->
-                            </div>
-                        </div>
-
-                        <!-- <div class="gap-reg-20"></div>
-
                         <div class="col-12 d-detail-rg loc-rg">
                             <h2>
-                                Điểm chấp nhận
+                                Điạ chỉ sân
                             </h2>
                             <div class="lst-locs">
-                                <a href="#">
-                                    18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
-                                </a>
-
-                                <div class="gap-reg-6"></div>
-
-                                <a href="#">
-                                    18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
-                                </a>
-
-                                <div class="gap-reg-6"></div>
-
-                                <a href="#">
+                                <a href="#" onclick="openPopup('#popup-map')">
                                     18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
                                 </a>
                             </div>
-                        </div> -->
-                    </div>
-                </div>
-                <!--#endregion-->
-
-                <div class="gap-reg-30"></div>
-
-                <!--#region Dành cho bạn-->
-                <h2 class="col-12 reg-title p-sm-0 p-xs-0">
-                    Dành cho bạn
-                </h2>
-
-                <div class="gap-reg-8"></div>
-
-                <div class="col-12 lst-recommand p-sm-0 p-xs-0">
-                    <div class="swiper-container">
-                        <div class="swiper-wrapper">
-                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
-                                <div class="product-box">
-                                    <div class="p-img">
-                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
-                                    </div>
-                                    <div class="sale-tag">50%</div>
-                                    <div class="p-info">
-                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
-                                        <div class="p-rating"> 
-                                            <span>
-                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
-                                            </span>
-                                            <span class="rating-point">
-                                                4.8
-                                            </span>
-                                            <span class="total-rating">
-                                                (541)
-                                            </span>
-                                        </div>
-                                        <div class="p-price">
-                                            <div class="sale-price">
-                                                500.000đ
-                                            </div>
-                                            <div class="original-price">
-                                                1.000.000đ                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
-                                <div class="product-box">
-                                    <div class="p-img">
-                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo2.png" alt="" width="300" height="300" lazy />
-                                    </div>
-                                    <div class="sale-tag">50%</div>
-                                    <div class="p-info">
-                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
-                                        <div class="p-rating"> 
-                                            <span>
-                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
-                                            </span>
-                                            <span class="rating-point">
-                                                4.8
-                                            </span>
-                                            <span class="total-rating">
-                                                (541)
-                                            </span>
-                                        </div>
-                                        <div class="p-price">
-                                            <div class="sale-price">
-                                                500.000đ
-                                            </div>
-                                            <div class="original-price">
-                                                1.000.000đ                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
-                                <div class="product-box">
-                                    <div class="p-img">
-                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo3.png" alt="" width="300" height="300" lazy />
-                                    </div>
-                                    <div class="sale-tag">50%</div>
-                                    <div class="p-info">
-                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
-                                        <div class="p-rating"> 
-                                            <span>
-                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
-                                            </span>
-                                            <span class="rating-point">
-                                                4.8
-                                            </span>
-                                            <span class="total-rating">
-                                                (541)
-                                            </span>
-                                        </div>
-                                        <div class="p-price">
-                                            <div class="sale-price">
-                                                500.000đ
-                                            </div>
-                                            <div class="original-price">
-                                                1.000.000đ                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
-                                <div class="product-box">
-                                    <div class="p-img">
-                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo4.png" alt="" width="300" height="300" lazy />
-                                    </div>
-                                    <div class="sale-tag">50%</div>
-                                    <div class="p-info">
-                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
-                                        <div class="p-rating"> 
-                                            <span>
-                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
-                                            </span>
-                                            <span class="rating-point">
-                                                4.8
-                                            </span>
-                                            <span class="total-rating">
-                                                (541)
-                                            </span>
-                                        </div>
-                                        <div class="p-price">
-                                            <div class="sale-price">
-                                                500.000đ
-                                            </div>
-                                            <div class="original-price">
-                                                1.000.000đ                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
-                                <div class="product-box">
-                                    <div class="p-img">
-                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo5.png" alt="" width="300" height="300" lazy />
-                                    </div>
-                                    <div class="sale-tag">50%</div>
-                                    <div class="p-info">
-                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
-                                        <div class="p-rating"> 
-                                            <span>
-                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
-                                            </span>
-                                            <span class="rating-point">
-                                                4.8
-                                            </span>
-                                            <span class="total-rating">
-                                                (541)
-                                            </span>
-                                        </div>
-                                        <div class="p-price">
-                                            <div class="sale-price">
-                                                500.000đ
-                                            </div>
-                                            <div class="original-price">
-                                                1.000.000đ                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
-                                <div class="product-box">
-                                    <div class="p-img">
-                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo6.png" alt="" width="300" height="300" lazy />
-                                    </div>
-                                    <div class="sale-tag">50%</div>
-                                    <div class="p-info">
-                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
-                                        <div class="p-rating"> 
-                                            <span>
-                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
-                                            </span>
-                                            <span class="rating-point">
-                                                4.8
-                                            </span>
-                                            <span class="total-rating">
-                                                (541)
-                                            </span>
-                                        </div>
-                                        <div class="p-price">
-                                            <div class="sale-price">
-                                                500.000đ
-                                            </div>
-                                            <div class="original-price">
-                                                1.000.000đ                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
-                                <div class="product-box">
-                                    <div class="p-img">
-                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo7.png" alt="" width="300" height="300" lazy />
-                                    </div>
-                                    <div class="sale-tag">50%</div>
-                                    <div class="p-info">
-                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
-                                        <div class="p-rating"> 
-                                            <span>
-                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
-                                            </span>
-                                            <span class="rating-point">
-                                                4.8
-                                            </span>
-                                            <span class="total-rating">
-                                                (541)
-                                            </span>
-                                        </div>
-                                        <div class="p-price">
-                                            <div class="sale-price">
-                                                500.000đ
-                                            </div>
-                                            <div class="original-price">
-                                                1.000.000đ                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
-                                <div class="product-box">
-                                    <div class="p-img">
-                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo8.png" alt="" width="300" height="300" lazy />
-                                    </div>
-                                    <div class="sale-tag">50%</div>
-                                    <div class="p-info">
-                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
-                                        <div class="p-rating"> 
-                                            <span>
-                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
-                                            </span>
-                                            <span class="rating-point">
-                                                4.8
-                                            </span>
-                                            <span class="total-rating">
-                                                (541)
-                                            </span>
-                                        </div>
-                                        <div class="p-price">
-                                            <div class="sale-price">
-                                                500.000đ
-                                            </div>
-                                            <div class="original-price">
-                                                1.000.000đ                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            
-                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
-                                <div class="product-box">
-                                    <div class="p-img">
-                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo9.png" alt="" width="300" height="300" lazy />
-                                    </div>
-                                    <div class="sale-tag">50%</div>
-                                    <div class="p-info">
-                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
-                                        <div class="p-rating"> 
-                                            <span>
-                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
-                                            </span>
-                                            <span class="rating-point">
-                                                4.8
-                                            </span>
-                                            <span class="total-rating">
-                                                (541)
-                                            </span>
-                                        </div>
-                                        <div class="p-price">
-                                            <div class="sale-price">
-                                                500.000đ
-                                            </div>
-                                            <div class="original-price">
-                                                1.000.000đ                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            
-                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
-                                <div class="product-box">
-                                    <div class="p-img">
-                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo10.png" alt="" width="300" height="300" lazy />
-                                    </div>
-                                    <div class="sale-tag">50%</div>
-                                    <div class="p-info">
-                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
-                                        <div class="p-rating"> 
-                                            <span>
-                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
-                                            </span>
-                                            <span class="rating-point">
-                                                4.8
-                                            </span>
-                                            <span class="total-rating">
-                                                (541)
-                                            </span>
-                                        </div>
-                                        <div class="p-price">
-                                            <div class="sale-price">
-                                                500.000đ
-                                            </div>
-                                            <div class="original-price">
-                                                1.000.000đ                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
                         </div>
-                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
                 <!--#endregion-->
