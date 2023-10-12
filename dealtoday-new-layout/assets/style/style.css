@@ -5714,7 +5714,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 }
 
 
-
+/* Start Style .lst-page /hop-tac-doanh-nghiep */
 .inf-page {
 
 }
@@ -5740,152 +5740,125 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 
 
-@media(max-width: 576px) {
+@media(max-width: 520px) {
     .inf-page .ban-info.net .count span {
-        display: inline-block;
-        color: #000;
-        font-weight: 500;
         background: url(../images/demo-imgs/info-page/num-bg-mb.gif) no-repeat;
-        width: calc(5vw / 2);
-        height: 4vw;
-        padding: 0px 3px 0px 0px;
+        background-size: 19px 22px;
+        width: calc(7vw / 1.95);
+        height: 6vw;
         font-size: 15px;
-        min-width: 15px;
-        min-height: 19px;
     }
 
     .inf-page .ban-info.net .count.custom {
         top: 20%;
-        left: 7%;
+        left: 10%;
     }
     
     .inf-page .ban-info.net .count.part {
-        bottom: 7%;
-        left: 23%;
+        bottom: calc(22% / 1.95);
+        left: 22%;
     }
     
     .inf-page .ban-info.net .count.soical {
-        bottom: 15%;
-        right: 5%;
+        bottom: 18%;
+        right: 8%;
     }
     
     .inf-page .ban-info.net .count.app {
-        top: 56%;
+        top: calc(110% / 2.05);
         right: 11%;
     }
 }
 
-@media(min-width: 577px) {
+@media(min-width: 520px) {
     .inf-page .ban-info.net .count span {
-        display: inline-block;
-        color: #000;
-        font-weight: 500;
         background: url(../images/demo-imgs/info-page/num-bg-mb.gif) no-repeat;
+        background-size: 19px 22px;
         width: calc(5vw / 2);
         height: 4vw;
-        padding: 0px 3px 0px 0px;
         font-size: 15px;
-        min-width: 15px;
-        min-height: 19px;
     }
 
     .inf-page .ban-info.net .count.custom {
-        top: 17%;
+        top: 16%;
         left: 15%;
     }
     
     .inf-page .ban-info.net .count.part {
-        bottom: 10%;
+        bottom: 12%;
         left: 26%;
     }
     
     .inf-page .ban-info.net .count.soical {
-        bottom: 17%;
+        bottom: 19%;
         right: 16%;
     }
     
     .inf-page .ban-info.net .count.app {
-        top: 54%;
-        right: 16%;
+        top: 52%;
+        right: 12%;
     }
 }
 
-@media(min-width: 769px) {
+@media(min-width: 768px) {
     .inf-page .ban-info.net .count span {
-        display: inline-block;
-        color: #000;
-        font-weight: 500;
         background: url(../images/demo-imgs/info-page/num-bg-mb.gif) no-repeat;
         background-size: 28px 32px;
-        width: calc(8vw / 2);
-        height: 3vw;
         font-size: 22px;
-        min-width: 28px;
-        min-height: 32px;
     }
     
     .inf-page .ban-info.net .count.custom {
-        top: 25%;
-        left: 2%;
+        top: 26%;
+        left: 12%;
     }
     
     .inf-page .ban-info.net .count.part {
-        bottom: 11%;
-        left: 10%;
+        bottom: calc(21% / 2);
+        left: 12%;
     }
     
     .inf-page .ban-info.net .count.soical {
         bottom: 12%;
-        right: 31%;
+        right: 36%;
     }
     
     .inf-page .ban-info.net .count.app {
-        top: 65%;
-        right: 1%;
+        top: 66%;
+        right: 5%;
     }
 }
 
 @media(min-width: 993px) {
     .inf-page .ban-info.net .count span {
-        display: inline-block;
-        color: #000;
-        font-weight: 500;
         background: url(../images/demo-imgs/info-page/num-bg-mb.gif) no-repeat;
         background-size: 28px 32px;
-        width: calc(4vw / 2);
-        height: 3vw;
         font-size: 22px;
-        min-width: 28px;
-        min-height: 32px;
     }
     
     .inf-page .ban-info.net .count.custom {
-        top: 25%;
-        left: 2%;
+        top: 26%;
+        left: 12%;
     }
     
     .inf-page .ban-info.net .count.part {
-        bottom: 11%;
-        left: 10%;
+        bottom: calc(21% / 2);
+        left: 12%;
     }
     
     .inf-page .ban-info.net .count.soical {
         bottom: 12%;
-        right: 31%;
+        right: 36%;
     }
     
     .inf-page .ban-info.net .count.app {
-        top: 65%;
-        right: 1%;
+        top: 66%;
+        right: 5%;
     }
 }
 
 
 @media(min-width: 1005px) {
     .inf-page .ban-info.net .count span {
-        display: inline-block;
-        color: #000;
-        font-weight: 500;
         background: url(../images/demo-imgs/info-page/num-bg.png) no-repeat;
         background-size: 34px 42px;
         width: 34px;
@@ -5912,6 +5885,13 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         top: 418px;
         right: 28px;
     }
+}
+
+.inf-page .ban-info.net .count span {
+    display: inline-block;
+    color: #000;
+    font-weight: 500;
+    text-align: center;
 }
 
 
@@ -5947,22 +5927,28 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     margin: 0 auto;
 }
 
+.inf-page .w-info {
+    padding-left: 25px;
+}
+
 .inf-page .w-info .we {
     font-size: 32px; 
-    font-weight: 500; 
-    color: #F6911E;
+    font-weight: 400; 
+    color: #f79319;
 }
 
 .inf-page .w-info .do {
-    border-left: 1px solid #F6911E; 
-    font-size: 18px; 
-    font-weight: 400; 
+    border-left: 1px solid #ffcb05; 
+    font-size: 17px; 
+    font-weight: 300; 
     color: #000; 
     margin-top: 15px;
+    line-height: 24px;
 }
 
 .inf-page .w-info .do div {
     margin: 0 0 15px 15px;
+    color: #696969;
 }
 
 @media(max-width: 576px) {
@@ -5981,14 +5967,21 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 }
 
 .inf-page .regis {
-
+    max-width: 1005px;
+    margin: 0 auto;
 }
 
 .inf-page .regis .til {
-    font-size: 20px;
+    font-size: 36px;
+    margin: 5px auto 32px auto;
 }
 
-
+@media(max-width: 768px) {
+    .inf-page .regis .til {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+}
 
 .inf-page .regis .f-inp {
     margin: 8px 0 12px 0;
@@ -6002,7 +5995,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 .inf-page .regis .f-inp .f-tag {
     font-size: 15px;
     font-weight: 400;
-    padding: 8px;
+    padding: 18px 8px;
     border-radius: 5px 0 0 5px;
     color: #fff;
     background-color: #fecc09;
@@ -6019,6 +6012,262 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-size: 15px;
 }
 
+@media(max-width: 768px) {
+    .inf-page .regis .f-inp .f-tag {
+        padding: 8px;
+    }
+}
+
 .inf-page .regis .f-inp input:focus {
     outline: none;
+}
+
+.inf-page .regis .f-con input {
+    height: 30px;
+    width: 100px;
+    border: 1px solid #bdbdbd;
+    border-radius: 3px;
+    background: none;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+.inf-page .regis .f-con .c-ctn {
+    padding: 45px 0 0 70px;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 346px;
+    background-color: #fff;
+}
+
+.inf-page .regis .f-con .t-gui {
+    font-size: 13px;
+    margin: 8px 0;
+}
+
+@media(min-width: 1005px) {
+    .inf-page .regis .f-con {
+        padding: 8px 0 0 55px;
+    }
+
+    .inf-page .regis .f-con .btn-general {
+        width: 346px;
+        padding: 24px 0;
+        margin: 0;
+        font-size: 28px;
+        font-weight: 400;
+        border-radius: 5px;
+        background-color: #f7941d;
+    }
+}
+
+@media(max-width: 1005px) {
+    .inf-page .regis .f-con form {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .inf-page .regis .f-con form .btn-general {
+        width: 80%;
+    }
+
+    .inf-page .regis .f-con form input {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+.inf-page .pacs-reg {
+    background: url(../images/demo-imgs/info-page/bg-5.png);
+    height: max-content;
+    padding-bottom: 35px !important;
+}
+
+.inf-page .pacs-reg .h-til {
+    font-size: 36px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    padding: 65px 0 45px 0;
+}
+
+
+.inf-page .pacs-reg .lst-pacs {
+    max-width: 1005px;
+    margin: 0 auto;
+}
+
+.inf-page .lst-pacs .p-ctn {
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.inf-page .lst-pacs .p-ctn .d-pac {
+    padding: 30px 80px;
+    backdrop-filter: blur(10px) saturate(30%) brightness(150%);
+}
+
+.inf-page .lst-pacs .p-ctn .d-pac .p-name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #fecc09;
+    margin-bottom: 50px;
+}
+
+.inf-page .lst-pacs .p-ctn .d-pac .p-con {
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 30px;
+    margin-left: -10px;
+}
+
+@media(max-width: 768px) {
+    .inf-page .pacs-reg .h-til {
+        font-size: 27px;
+        padding: 45px 0 15px 0;
+    }
+    
+    .inf-page .lst-pacs .p-ctn .d-pac {
+        padding: 15px 28px;
+    }
+    
+    .inf-page .lst-pacs .p-ctn .d-pac .p-name {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .inf-page .lst-pacs .p-ctn .d-pac .p-con li {
+        margin-top: 20px !important;
+    }
+    
+    .inf-page .lst-pacs .p-ctn .d-pac .p-con {
+        font-size: 15px;
+        line-height: 24px;
+    }
+}
+
+.inf-page .lst-pacs .p-ctn .d-pac .p-con li {
+    margin-top: 25px;
+}
+
+.inf-page .lst-pacs .p-ctn .d-pac .p-con li::marker {
+    color: #fecc09;
+}
+
+.inf-page .lst-pacs .p-ctn .d-pac .p-con span {
+    font-weight: 500;
+    color: #fecc09;
+}
+
+.lst-pacs .swiper-pagination {
+	bottom: -5px !important;
+}
+
+.lst-pacs .swiper-pagination-bullet-active {
+	background-color: #F0821B;
+}
+
+.lst-pacs .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+	margin: 0 3px !important;
+}
+
+.lst-pacs .swiper-pagination-bullet {
+	width: 15px !important;
+	height: 3px !important;
+	border-radius: 3px !important;
+}
+
+@media(max-width: 1005px) {
+    .lst-pacs .swiper-button-next, .lst-pacs .swiper-button-prev {
+        display: none;
+    }
+}
+
+.lst-pacs .swiper-button-next, .lst-pacs .swiper-button-prev {
+    background-image: none;
+}
+
+.lst-pacs .swiper-button-prev {
+    left: 230px;
+    top: 100px;
+}
+
+.lst-pacs .swiper-button-next {
+    right: 225px;
+    top: 102px;
+}
+
+.lst-pacs .arr {
+    border: solid #fff;
+    border-width: 0 7px 7px 0;
+    display: inline-block;
+    padding: 8px;
+    opacity: 0.75;
+}
+
+.lst-pacs .arr:hover {
+    opacity: 1;
+}
+
+.lst-pacs .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.lst-pacs .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+/* Finish Style .lst-page */
+
+
+
+
+
+
+
+.txt-line-limit-1, .txt-line-limit-2, .txt-line-limit-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.txt-line-limit-1 {
+    -webkit-line-clamp: 1;
+}
+
+.txt-line-limit-2 {
+    -webkit-line-clamp: 2;
+}
+
+.txt-line-limit-3 {
+    -webkit-line-clamp: 3;
+}
+
+
+
+.lst-golf .product-box .p-title {
+    font-size: 16px;
+    font-weight: 500;
+    min-height: 21px;
+}
+
+.lst-golf .product-box .p-price .sale-price {
+	font-size: 18px;
+    font-weight: 700;
+}
+
+.lst-golf .product-box .p-price .from {
+	font-size: 14px;
+    font-weight: 400;
+	color: #000;
+}
+
+.lst-golf .product-box .g-loc {
+	font-size: 12px;
+	font-weight: 400;
+	color: #757575;
+    min-height: 36px;
 }
