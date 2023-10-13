@@ -6124,7 +6124,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 300;
     color: #fff;
     line-height: 30px;
-    margin-left: -10px;
+    margin-left: -12px;
 }
 
 @media(max-width: 768px) {
@@ -6268,6 +6268,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 	font-size: 14px;
     font-weight: 400;
 	color: #000;
+    margin-right: 5px; 
 }
 
 .lst-golf .product-box .g-loc {
@@ -6277,11 +6278,15 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     min-height: 36px;
 }
 
+.lst-golf .product-box .g-loc img {
+	margin-right: 8px;
+}
+
 
 
 
 .d-detail-rg .g-date-picker {
-    margin: 8px 0;
+    margin: 16px 0 20px 0;
 }
 
 .d-detail-rg .g-date-picker span {
@@ -6333,6 +6338,8 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 .d-detail-rg .g-info .d-pack .pay-info {
 	position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .d-detail-rg .g-info .d-pack .pay-info .p-price {
@@ -6371,12 +6378,12 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 @media screen and (min-width: 992px) and (max-width: 1200px)  {
     .d-detail-rg .g-info .d-pack .pay-info .p-order .btn-general {
-        margin: 8px 0 0 0;
+        margin: 12px 0 0 0;
     }
 
     .d-detail-rg .g-info .d-pack .p-info {
         position: absolute;
-        margin: -40px 0 0 0;
+        margin: -43px 0 0 0;
     }
 }
 /* Finish Golf */
