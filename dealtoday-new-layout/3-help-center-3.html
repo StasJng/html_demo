@@ -331,9 +331,21 @@
 
                     <div class="gap-reg-12"></div>
 
-                    <!--#region Main-banner-->
-                    <div class="main-banner col-12 p-0">
-                        <img src="assets/images/demo-imgs/banner2.png" alt="" height="500" width="1600" lazy />
+                    <!--#region Search Box-->
+                    <div class="col-12 p-0 h-c-srch">
+                        <div class="row">
+                            <div class="col-12 til">
+                                Dealtoday có thể giúp gì cho bạn?
+                            </div>
+                            <div class="col-12 flex-center">
+                                <div class="s-bx d-flex">
+                                    <input type="text" value="" placeholder="Tìm kiếm theo nhu cầu của bạn" />
+                                    <button class="btn-general orange">
+                                        <img src="assets/images/header/icon-search-white.svg" alt="" height="20" width="20" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--#endregion-->
 
@@ -342,7 +354,44 @@
                     <!--#region Main Content-->
                     <div class="col-12 p-0">
                         <div class="row">
-                            <!--#region Filter(WEB)-->
+                            <!--#region-->  
+                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                                <div class="gen-q">
+                                    <a href="#" class="col-12 q-d flex-align-center">
+                                        <span class="c-head">Mua sắm tại Dealtoday</span>
+                                    </a>
+                                    <a href="#" class="col-12 q-d flex-align-center">
+                                        <span>
+                                            Hướng dẫn mua hàng: Các bước mua hàng
+                                        </span>
+                                    </a>
+                                    <a href="#" class="col-12 q-d flex-align-center">
+                                        <span>
+                                            Khi nào thì tôi được đổi trả ở Dealtoday?
+                                        </span>
+                                    </a>
+                                    <a href="#" class="col-12 q-d flex-align-center">
+                                        <span>
+                                            Tính năng
+                                        </span>
+                                    </a>
+                                    <a href="#" class="col-12 q-d flex-align-center">
+                                        <span>
+                                            Liên kết tài khoản
+                                        </span>
+                                    </a>
+                                    <a href="#" class="col-12 q-d flex-align-center">
+                                        <span>
+                                            Quét mã QR
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!--#endregion-->
+
+                            <div class="d-lg-none d-md-block d-sm-block d-block gap-reg-20"></div>
+
+                            <!--#region Content Map-->
                             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                                 <div class="filter-wrapper">
                                     <div class="filter-container">
@@ -360,19 +409,19 @@
                                                 <input type="checkbox" checked="" />
                                                 <a data-toggle="dropdown">
                                                     <span class="dealtoday-checkbox">
-                                                        <span class="txt-keyword-p">Mua sắm tại Dealtoday</span>
+                                                        <span class="txt-keyword-p c-selected">Mua sắm tại Dealtoday</span>
                                                     </span>
                                                 </a>
                                                 <ul class="dropdown-menu">
                                                     <li>
                                                         <a class="txt-info">
-                                                            <span class="txt-keyword">Tài khoản người dùng: Đăng ký, Đăng nhập, Đổi mật khẩu, Xoá tài khoản</span>
+                                                            <span class="txt-keyword">Hướng dẫn mua hàng: Các bước mua hàng</span>
                                                         </a>
                                                     </li>
 
                                                     <li>
                                                         <a class="txt-info">
-                                                            <span class="txt-keyword">Hướng dẫn mua hàng: Các bước mua hàng</span>
+                                                            <span class="txt-keyword">Khi nào thì tôi được đổi trả ở Dealtoday?</span>
                                                         </a>
                                                     </li>
 
@@ -401,7 +450,7 @@
 
                                         <ul class="loc-filter-items tree">
                                             <li class="dropdown list-fil-items">
-                                                <input type="checkbox" checked="" />
+                                                <input type="checkbox" />
                                                 <a data-toggle="dropdown">
                                                     <span class="dealtoday-checkbox">
                                                         <span class="txt-keyword-p">Ưu đãi và khuyến mãi</span>
@@ -427,7 +476,7 @@
 
                                         <ul class="loc-filter-items tree">
                                             <li class="dropdown list-fil-items">
-                                                <input type="checkbox" checked="" />
+                                                <input type="checkbox" />
                                                 <a data-toggle="dropdown">
                                                     <span class="dealtoday-checkbox">
                                                         <span class="txt-keyword-p">Thanh toán</span>
@@ -459,7 +508,7 @@
 
                                         <ul class="loc-filter-items tree">
                                             <li class="dropdown list-fil-items">
-                                                <input type="checkbox" checked="" />
+                                                <input type="checkbox" />
                                                 <a data-toggle="dropdown">
                                                     <span class="dealtoday-checkbox">
                                                         <span class="txt-keyword-p">Đại lý và NCC</span>
@@ -503,7 +552,7 @@
 
                                         <ul class="loc-filter-items tree">
                                             <li class="dropdown list-fil-items">
-                                                <input type="checkbox" checked="" />
+                                                <input type="checkbox" />
                                                 <a data-toggle="dropdown">
                                                     <span class="dealtoday-checkbox">
                                                         <span class="txt-keyword-p">Quản lý đơn hàng, thuế, hoá đơn</span>
@@ -535,48 +584,40 @@
                                 </div>
                             </div>
                             <!--#endregion-->
-
-                            <!--#region-->  
-                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                                <div class="gen-q">
-                                    <a href="#" class="col-12 q-d flex-align-center">
-                                        <span class="c-head">Câu hỏi thường gặp</span>
-                                    </a>
-                                    <a href="#" class="col-12 q-d flex-align-center">
-                                        <span>Làm sao để liên hệ Chăm sóc Khách hàng (CSKH) ?</span>
-                                    </a>
-                                    <a href="#" class="col-12 q-d flex-align-center">
-                                        <span>
-                                            Tôi không thể đặt hàng/Đăng ký/đăng nhập tài khoản do số điện thoại đã tồn tại
-                                        </span>
-                                    </a>
-                                    <a href="#" class="col-12 q-d flex-align-center">
-                                        <span>
-                                            Tôi cần làm gì nếu không được hoàn điểm khi huỷ đơn hàng
-                                        </span>
-                                    </a>
-                                    <a href="#" class="col-12 q-d flex-align-center">
-                                        <span>
-                                            Làm sao để hủy đơn hàng khi bị sai thông tin thanh toán
-                                        </span>
-                                    </a>
-                                    <a href="#" class="col-12 q-d flex-align-center">
-                                        <span>
-                                            Tôi cần làm gì nếu không được hoàn điểm khi huỷ đơn hàng
-                                        </span>
-                                    </a>
-                                    <div class="col-12">
-                                        <a href="#" class="more flex-center">
-                                            Xem thêm
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--#endregion-->
                         </div>
                     </div>
                     <!--#endregion-->
 
+                    <div class="gap-reg-30"></div>
+
+                    <!--#region Contact Box-->
+                    <div class="col-12 p-0 con-bx">
+                        <div class="b-contac row flex-center">
+                            <div class="b-til">Bạn có muốn tìm thêm thông tin tư vấn</div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 col-12 b-i">
+                                <a href="tel:19002065" class="col-12 flex-center">
+                                    <span class="flex-center">
+                                        <img src="assets/images/generals/icon-phone-outline-black.svg" alt="" height="24" width="24"/>
+                                    </span>
+                                    1900&nbsp;2065
+                                </a>
+                            </div>
+
+                            <div class="gap-reg-12 d-lg-none d-md-none d-sm-none d-xs-block d-block"></div>
+                            
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 col-12 b-i">
+                                <a href="#" class="col-12 flex-center">
+                                    <span class="flex-center">
+                                        <img src="assets/images/generals/icon-mail-outline-black.svg" alt="" height="24" width="24"/>
+                                    </span>
+                                    hotro@dealtoday.vn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--#endregion-->
+                    
                     <div class="gap-reg-30"></div>
                 </div>
             </div>

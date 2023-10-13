@@ -331,9 +331,21 @@
 
                     <div class="gap-reg-12"></div>
 
-                    <!--#region Main-banner-->
-                    <div class="main-banner col-12 p-0">
-                        <img src="assets/images/demo-imgs/banner2.png" alt="" height="500" width="1600" lazy />
+                    <!--#region Search Box-->
+                    <div class="col-12 p-0 h-c-srch">
+                        <div class="row">
+                            <div class="col-12 til">
+                                Dealtoday có thể giúp gì cho bạn?
+                            </div>
+                            <div class="col-12 flex-center">
+                                <div class="s-bx d-flex">
+                                    <input type="text" value="" placeholder="Tìm kiếm theo nhu cầu của bạn" />
+                                    <button class="btn-general orange">
+                                        <img src="assets/images/header/icon-search-white.svg" alt="" height="20" width="20" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!--#endregion-->
 
@@ -342,7 +354,28 @@
                     <!--#region Main Content-->
                     <div class="col-12 p-0">
                         <div class="row">
-                            <!--#region Filter(WEB)-->
+
+                            <!--#region Description + Review-->
+                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                                <div class="d-detail-rg">
+                                    <!--#region Description-->
+                                    <div class="col-12 p-0">
+                                        <h2 class="">
+                                            Khi nào thì tôi được đổi trả ở Dealtoday?
+                                        </h2>
+
+                                        <div class="d-detail-info">
+                                            <p style="text-align:justify">Khách hàng được đổi / trả E-voucher/ E-coupon với các lý do sau:</p><ul style="text-align:justify"><li>Khách hàng thay đổi nhu cầu sử dụng dịch vụ</li><li>E-Voucher/ E-Coupon đã hết hạn sử dụng dịch vụ trước hoặc vào ngày được giao tới khách hàng</li><li>Nhà cung cấp dịch vụ đóng cửa, dừng hoạt động không cung cấp sản phẩm/ dịch vụ theo đúng cam kết trên các phương tiện truyền thông.</li><li>Nhà cung cấp dịch vụ không sắp xếp được thời gian sử dụng theo yêu cầu của khách hàng ít nhất 03 lần (có thông báo cho dealtoday về việc không sử dụng được)</li></ul><p style="text-align:right"><br><br><strong><span style="font-size:medium">Dealtoday</span></strong><br><br></p>
+                                        </div>
+                                    </div>
+                                    <!--#endregion-->
+                                </div>
+                            </div>
+                            <!--#endregion-->
+
+                            <div class="d-lg-none d-md-block d-sm-block d-block gap-reg-20"></div>
+
+                            <!--#region Content Map-->
                             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
                                 <div class="filter-wrapper">
                                     <div class="filter-container">
@@ -378,6 +411,12 @@
 
                                                     <li>
                                                         <a class="txt-info">
+                                                            <span class="txt-keyword c-selected">Khi nào thì tôi được đổi trả ở Dealtoday?</span>
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a class="txt-info">
                                                             <span class="txt-keyword">Tính năng</span>
                                                         </a>
                                                     </li>
@@ -401,7 +440,7 @@
 
                                         <ul class="loc-filter-items tree">
                                             <li class="dropdown list-fil-items">
-                                                <input type="checkbox" checked="" />
+                                                <input type="checkbox" />
                                                 <a data-toggle="dropdown">
                                                     <span class="dealtoday-checkbox">
                                                         <span class="txt-keyword-p">Ưu đãi và khuyến mãi</span>
@@ -427,7 +466,7 @@
 
                                         <ul class="loc-filter-items tree">
                                             <li class="dropdown list-fil-items">
-                                                <input type="checkbox" checked="" />
+                                                <input type="checkbox" />
                                                 <a data-toggle="dropdown">
                                                     <span class="dealtoday-checkbox">
                                                         <span class="txt-keyword-p">Thanh toán</span>
@@ -459,7 +498,7 @@
 
                                         <ul class="loc-filter-items tree">
                                             <li class="dropdown list-fil-items">
-                                                <input type="checkbox" checked="" />
+                                                <input type="checkbox" />
                                                 <a data-toggle="dropdown">
                                                     <span class="dealtoday-checkbox">
                                                         <span class="txt-keyword-p">Đại lý và NCC</span>
@@ -503,7 +542,7 @@
 
                                         <ul class="loc-filter-items tree">
                                             <li class="dropdown list-fil-items">
-                                                <input type="checkbox" checked="" />
+                                                <input type="checkbox" />
                                                 <a data-toggle="dropdown">
                                                     <span class="dealtoday-checkbox">
                                                         <span class="txt-keyword-p">Quản lý đơn hàng, thuế, hoá đơn</span>
@@ -535,46 +574,42 @@
                                 </div>
                             </div>
                             <!--#endregion-->
-
-                            <!--#region Description + Review-->
-                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                                <div class="d-detail-rg">
-                                    <!--#region Description-->
-                                    <input id="showFullDesc" type="checkbox" class="v-hidden" />
-                                    <div class="col-12 p-0">
-                                        <h2 class="">
-                                            Giới thiệu sản phẩm
-                                        </h2>
-
-                                        <div class="d-detail-info">
-                                            Không chỉ nổi tiếng ở nội địa mà nó còn hấp dẫn rất nhiều thực khách ở các quốc gia khác, Lẩu Trùng Khánh luôn được xem là tinh hoa của ẩm thực Trung Hoa. Nếu không có cơ hội đến với xứ Trung nhưng vẫn muốn thưởng thức hương vị đặc biệt đó ở Việt Nam, Dealtoday mời bạn đến với bữa tiệc "Buffet lẩu Trùng Khánh tại nhà hàng BaoYu" mang đến cho quý khách hàng những món ăn thơm ngon, hấp dẫn.
-                                            
-                                            <img src="assets/images/demo-imgs/detail-page/img-info-1.png" alt="" height="800" width="400" lazy />
-                                            
-                                            Lẩu Trùng Khánh từ lâu rất nổi tiếng trên bản đồ ẩm thực thế giới, nay đã có mặt tại Baoyu với rất nhiều loại nước lẩu đặc trưng như: lẩu Hoàng Kim, lẩu Mala, lẩu Thái, lẩu nấm, lẩu dưỡng nhan, lẩu Trùng Khánh, lẩu cà chua, từ cay tê đậm đà đến dịu ngọt thơm ngậy, vô cùng đặc biệt không giống bất kì nơi nào khác.
-                                            
-                                            <img src="assets/images/demo-imgs/detail-page/img-info-2.png" alt="" height="800" width="400" lazy />
-                                            
-                                            Bên cạnh đó, xuất phát từ cái nôi của ẩm thực lẩu Trung Quốc, gây thương nhớ đặc biệt đó là nước dùng lẩu Trùng Khánh nổi tiếng bởi màu đỏ rực rỡ, vị cay tê và cách chế biến cầu kì. Với nguyên liệu chính từ ớt Tứ Xuyên, dầu ớt, bơ và nhiều loại gia vị khác, lẩu Trùng Khánh mang hương vị khó quên từ vị cay lan toả trong khoang miệng, với mùi thơm từ gia vị đậm đà trong từng giọt nước dùng.
-                                        </div>
-
-                                        <div class="gap-reg-16"></div>
-
-                                        <div class="col-12 flex-center">
-                                            <label class="btn-general" for="showFullDesc">
-                                                Xem thêm
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <!--#endregion-->
-                                </div>
-                            </div>
-                            <!--#endregion-->
                         </div>
                     </div>
                     <!--#endregion-->
 
                     <div class="gap-reg-30"></div>
+
+                    <!--#region Contact Box-->
+                    <div class="col-12 p-0 con-bx">
+                        <div class="b-contac row flex-center">
+                            <div class="b-til">Bạn có muốn tìm thêm thông tin tư vấn</div>
+
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 col-12 b-i">
+                                <a href="tel:19002065" class="col-12 flex-center">
+                                    <span class="flex-center">
+                                        <img src="assets/images/generals/icon-phone-outline-black.svg" alt="" height="24" width="24"/>
+                                    </span>
+                                    1900&nbsp;2065
+                                </a>
+                            </div>
+
+                            <div class="gap-reg-12 d-lg-none d-md-none d-sm-none d-xs-block d-block"></div>
+                            
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 col-12 b-i">
+                                <a href="#" class="col-12 flex-center">
+                                    <span class="flex-center">
+                                        <img src="assets/images/generals/icon-mail-outline-black.svg" alt="" height="24" width="24"/>
+                                    </span>
+                                    hotro@dealtoday.vn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--#endregion-->
+
+                    <div class="gap-reg-30"></div>
+
                 </div>
             </div>
         </div>
