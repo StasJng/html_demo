@@ -6033,7 +6033,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 }
 
 .inf-page .regis .f-con .c-ctn {
-    padding: 45px 0 0 70px;
+    padding: 36px 0 0 70px;
     border: 1px solid;
     border-radius: 5px;
     width: 346px;
@@ -6074,6 +6074,11 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     .inf-page .regis .f-con form input {
         width: 80%;
         text-align: center;
+    }
+
+    .inf-page .regis .f-con .c-ctn {
+        transform: scale(0.6);
+        margin: -30px 0;
     }
 }
 
@@ -6226,7 +6231,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 
 
-
+/* Start Golf */
 .txt-line-limit-1, .txt-line-limit-2, .txt-line-limit-3 {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -6323,6 +6328,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-size: 14px;
     font-weight: 400;
     color: #000;
+    min-height: 42px;
 }
 
 .d-detail-rg .g-info .d-pack .pay-info {
@@ -6362,3 +6368,15 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-weight: 400;
     color: #9E9E9E;
 }
+
+@media screen and (min-width: 992px) and (max-width: 1200px)  {
+    .d-detail-rg .g-info .d-pack .pay-info .p-order .btn-general {
+        margin: 8px 0 0 0;
+    }
+
+    .d-detail-rg .g-info .d-pack .p-info {
+        position: absolute;
+        margin: -40px 0 0 0;
+    }
+}
+/* Finish Golf */
