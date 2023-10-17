@@ -6378,16 +6378,30 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 }
 
 .d-detail-rg .g-date-picker input {
-	/* flex: 1; */
     border: none;
     border-bottom: 1px solid #eee;
-    width: 125px;
+    width: 150px; /* */
     background-image: url(../images/generals/icon-calendar-orange.svg);
     background-repeat: no-repeat;
     background-size: auto 15px;
     background-position: right 5px center;
     font-size: 14px;
     padding-left: 8px;
+}
+
+.bootstrap-datetimepicker-widget {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+@media(max-width: 576px) {
+    .d-detail-rg .g-date-picker input {
+        flex: 1;
+        width: unset;
+    }
+
+    .d-detail-rg .g-date-picker {
+        flex: 1;
+    }
 }
 
 .d-detail-rg .g-date-picker input::placeholder {
