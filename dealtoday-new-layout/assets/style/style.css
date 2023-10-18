@@ -5797,7 +5797,13 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 /* Start Style .lst-page /hop-tac-doanh-nghiep */
 .inf-page {
+    margin-top: 138px;
+}
 
+@media(max-width: 768px) {
+    .inf-page {
+        margin-top: 86px;
+    }
 }
 
 .inf-page .ban-info img {
@@ -5819,8 +5825,6 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     position: absolute;
 }
 
-
-
 @media(max-width: 520px) {
     .inf-page .ban-info.net .count span {
         background: url(../images/demo-imgs/info-page/num-bg-mb.gif) no-repeat;
@@ -5834,17 +5838,17 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         top: 20%;
         left: 10%;
     }
-    
+
     .inf-page .ban-info.net .count.part {
         bottom: calc(22% / 1.95);
         left: 22%;
     }
-    
+
     .inf-page .ban-info.net .count.soical {
         bottom: 18%;
         right: 8%;
     }
-    
+
     .inf-page .ban-info.net .count.app {
         top: calc(110% / 2.05);
         right: 11%;
@@ -5864,17 +5868,17 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         top: 16%;
         left: 15%;
     }
-    
+
     .inf-page .ban-info.net .count.part {
         bottom: 12%;
         left: 26%;
     }
-    
+
     .inf-page .ban-info.net .count.soical {
         bottom: 19%;
         right: 16%;
     }
-    
+
     .inf-page .ban-info.net .count.app {
         top: 52%;
         right: 12%;
@@ -5887,22 +5891,22 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         background-size: 28px 32px;
         font-size: 22px;
     }
-    
+
     .inf-page .ban-info.net .count.custom {
         top: 26%;
         left: 12%;
     }
-    
+
     .inf-page .ban-info.net .count.part {
         bottom: calc(21% / 2);
         left: 12%;
     }
-    
+
     .inf-page .ban-info.net .count.soical {
         bottom: 12%;
         right: 36%;
     }
-    
+
     .inf-page .ban-info.net .count.app {
         top: 66%;
         right: 5%;
@@ -5915,22 +5919,22 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         background-size: 28px 32px;
         font-size: 22px;
     }
-    
+
     .inf-page .ban-info.net .count.custom {
         top: 26%;
         left: 12%;
     }
-    
+
     .inf-page .ban-info.net .count.part {
         bottom: calc(21% / 2);
         left: 12%;
     }
-    
+
     .inf-page .ban-info.net .count.soical {
         bottom: 12%;
         right: 36%;
     }
-    
+
     .inf-page .ban-info.net .count.app {
         top: 66%;
         right: 5%;
@@ -5946,22 +5950,22 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         height: 42px;
         font-size: 30px;
     }
-    
+
     .inf-page .ban-info.net .count.custom {
         top: 160px;
         left: 65px;
     }
-    
+
     .inf-page .ban-info.net .count.part {
         bottom: 68px;
         left: 115px;
     }
-    
+
     .inf-page .ban-info.net .count.soical {
         bottom: 80px;
         right: 333px;
     }
-    
+
     .inf-page .ban-info.net .count.app {
         top: 418px;
         right: 28px;
@@ -6013,16 +6017,16 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 }
 
 .inf-page .w-info .we {
-    font-size: 32px; 
-    font-weight: 400; 
+    font-size: 32px;
+    font-weight: 400;
     color: #f79319;
 }
 
 .inf-page .w-info .do {
-    border-left: 1px solid #ffcb05; 
-    font-size: 17px; 
-    font-weight: 300; 
-    color: #000; 
+    border-left: 1px solid #ffcb05;
+    font-size: 17px;
+    font-weight: 300;
+    color: #000;
     margin-top: 15px;
     line-height: 24px;
 }
@@ -6035,9 +6039,9 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 @media(max-width: 576px) {
     .inf-page .w-info .we {
         margin-top: 12px;
-        font-size: 25px; 
+        font-size: 25px;
     }
-    
+
     .inf-page .w-info .do {
         margin-top: 5px;
     }
@@ -6080,7 +6084,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     border-radius: 5px 0 0 5px;
     color: #fff;
     background-color: #fecc09;
-    width: 125px;
+    width: 105px;
 }
 
 .inf-page .regis .f-inp input {
@@ -6113,15 +6117,15 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     padding-left: 5px;
 }
 
-.inf-page .regis .f-con .c-ctn {
-    padding: 36px 0 0 70px;
+.inf-page .regis .f-con .border-cap {
+    padding: 40px 0 0 55px;
     border: 1px solid;
     border-radius: 5px;
     width: 346px;
     background-color: #fff;
 }
 
-.inf-page .regis .f-con .t-gui {
+.inf-page .regis .f-con p {
     font-size: 13px;
     margin: 8px 0;
 }
@@ -6157,9 +6161,17 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         text-align: center;
     }
 
-    .inf-page .regis .f-con .c-ctn {
-        transform: scale(0.6);
-        margin: -30px 0;
+    .inf-page .regis .f-con p {
+        width: 100% !important;
+    }
+
+    .inf-page .regis .f-con .border-cap {
+        transform: scale(0.5);
+        margin: -35px 0;
+    }
+
+    .inf-page .regis .f-con img {
+        transform: scale(0.98);
     }
 }
 
@@ -6213,11 +6225,11 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         font-size: 27px;
         padding: 45px 0 15px 0;
     }
-    
+
     .inf-page .lst-pacs .p-ctn .d-pac {
         padding: 15px 28px;
     }
-    
+
     .inf-page .lst-pacs .p-ctn .d-pac .p-name {
         font-size: 22px;
         margin-bottom: 20px;
@@ -6226,7 +6238,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     .inf-page .lst-pacs .p-ctn .d-pac .p-con li {
         margin-top: 20px !important;
     }
-    
+
     .inf-page .lst-pacs .p-ctn .d-pac .p-con {
         font-size: 15px;
         line-height: 24px;
@@ -6235,6 +6247,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 
 .inf-page .lst-pacs .p-ctn .d-pac .p-con li {
     margin-top: 25px;
+    text-align: justify;
 }
 
 .inf-page .lst-pacs .p-ctn .d-pac .p-con li::marker {
@@ -6247,21 +6260,21 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 }
 
 .lst-pacs .swiper-pagination {
-	bottom: -5px !important;
+    bottom: -5px !important;
 }
 
 .lst-pacs .swiper-pagination-bullet-active {
-	background-color: #F0821B;
+    background-color: #F0821B;
 }
 
 .lst-pacs .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
-	margin: 0 3px !important;
+    margin: 0 3px !important;
 }
 
 .lst-pacs .swiper-pagination-bullet {
-	width: 15px !important;
-	height: 3px !important;
-	border-radius: 3px !important;
+    width: 15px !important;
+    height: 3px !important;
+    border-radius: 3px !important;
 }
 
 @media(max-width: 1005px) {
