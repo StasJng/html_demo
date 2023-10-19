@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        /* Main Class */
+        .pure-css-tree, .pure-css-tree ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .pure-css-tree ul {
+            display: none;
+            position: relative;
+        }
+
+        .pure-css-tree li input[type="checkbox"]:checked ~ ul {
+            display: block;
+        }
+
+        .v-hidden {
+            height: 0;
+            width: 0;
+            margin: 0;
+            padding: 0;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .expandale::before {
+            /* content: "\25B6";
+            color: black;
+            display: inline-block;
+            margin-right: 6px; */
+            content: '';
+            border: solid #000;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            position: relative;
+            top: -3px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg); 
+        }
+
+        .pure-css-tree li input[type="checkbox"]:checked ~ .expandale::before {
+            /* -ms-transform: rotate(90deg); 
+            -webkit-transform: rotate(90deg); */
+            /* transform: rotate(90deg);   */
+            top: 0;
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+
+        /* Custom Style */
+        @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+        body {
+            font-family: Lora, sans-serif;
+        }
+        
+        .pure-css-tree label {
+            cursor: pointer;
+        }
+
+        .pure-css-tree ul {
+            padding-left: 20px;
+        }
+
+        .pure-css-tree li label span {
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pure CSS Tree View </h2>
+
+    <ul class="pure-css-tree">
+        <li>
+            <input id="Drinks-11" type="checkbox" class="v-hidden" />
+            <label for="Drinks-11" class="expandale"><span>Drinks</span></label>
+            <ul>
+                <li>
+                    <input id="Water-115" type="checkbox" class="v-hidden" />
+                    <label for="Water-115" class="expandale"><span>Water</span></label>
+                    <ul>
+                        <li>Lavie</li>
+                        <li>Aquafina</li>
+                        <li>Dasani</li>
+                    </ul>
+                </li>
+
+                <li>Coffee</li>
+                <li>
+                    <input id="Tea-115" type="checkbox" class="v-hidden" />
+                    <label for="Tea-115" class="expandale"><span>Tea</span></label>
+                    <ul>
+                        <li>Black Tea</li>
+                        <li>White Tea</li>
+                        <li>
+                            <input id="Green-Tea-112" type="checkbox" class="v-hidden" />
+                            <label for="Green-Tea-112" class="expandale"><span>Green Tea</span></label>
+                            <ul>
+                                <li>Sencha</li>
+                                <li>Gyokuro</li>
+                                <li>Matcha</li>
+                                <li>Pi Lo Chun</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>  
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
