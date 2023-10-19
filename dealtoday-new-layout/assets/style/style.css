@@ -6528,6 +6528,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     font-size: 14px;
 	font-weight: 700;
     cursor: pointer;
+    user-select: none;
 }
 
 .phone-card-ctn .tab-selectors label {
