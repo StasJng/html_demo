@@ -6495,3 +6495,168 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     }
 }
 /* Finish Golf */
+
+
+/* Nap the */
+.phone-card-ctn .row .tab1 {
+    display: none;
+}
+
+.phone-card-ctn input[type="checkbox"]:checked ~ .row .tab1 {
+    display: block;
+}
+
+.phone-card-ctn input[type="checkbox"]:checked ~ .row .tab2 {
+    display: none;
+}
+
+.phone-card-ctn input[type="checkbox"]:checked ~ .tab-selectors div:first-of-type {
+    color: #000;
+    background-color: #fff;
+    border-top: 3px solid #F6911E;
+    pointer-events: none;
+}
+
+.phone-card-ctn input[type="checkbox"]:checked ~ .tab-selectors div:nth-of-type(2) {
+    color: #757575;
+    background-color: #eee;
+    border-top: 3px solid transparent;
+    pointer-events: all;
+}
+
+.phone-card-ctn .tab-selectors {
+    font-size: 14px;
+	font-weight: 700;
+    cursor: pointer;
+}
+
+.phone-card-ctn .tab-selectors label {
+    cursor: pointer;
+    padding: 15px;
+}
+
+.phone-card-ctn .tab-selectors div {
+    border-radius: 8px 8px 0 0;
+    margin-right: 5px;
+}
+
+.phone-card-ctn .tab-selectors div:first-of-type {
+    color: #757575;
+    background-color: #eee;
+    border-top: 3px solid transparent;
+}
+
+.phone-card-ctn .tab-selectors div:nth-of-type(2) {
+    color: #000;
+    background-color: #fff;
+    border-top: 3px solid #F6911E;
+    pointer-events: none;
+}
+
+.p-card-reg {
+	background-color: #fff;
+	border-radius: 12px;
+    padding: 15px;
+}
+
+@media(max-width: 576px) {
+    .p-card-reg {
+        border-radius: 0;
+    }
+}
+
+.p-card-reg .til {
+	font-size: 20px;
+	font-weight: 700;
+	color: #000;
+    margin-bottom: 15px;
+}
+
+.p-card-reg .card-bx-reg {
+	display: inline-block;
+}
+
+.p-card-reg .card-brand-bx {
+    border-radius: 8px;
+    border: 1px solid #eee;
+    width: 125px;
+    height: 78px;
+    margin: 0 10px 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.p-card-reg .card-brand-bx.c-val {
+    height: 55px;
+    width: fit-content;
+}
+
+.p-card-reg .card-brand-bx label {
+    padding: 15px !important;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.p-card-reg .selected-corner {
+    width: 38px;
+    height: 95px;
+    background: #F6911E;
+    position: absolute;
+    top: -50px;
+    right: -20px;
+    -webkit-transform: rotate(-60deg);
+    transform: rotate(-65deg);
+    opacity: 0;
+}
+
+.p-card-reg .selected-corner:before {
+    content: "✓";
+    color: #fff;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    position: absolute;
+    top: 35px;
+    left: 3px;
+    rotate: 65deg;
+}
+
+.p-card-reg input[type="radio"] {
+    position: absolute;
+}
+
+.card-bx-reg input[type="radio"]:checked ~ .card-brand-bx {
+    border-color: #f6911E;
+ }
+
+.card-bx-reg input[type="radio"]:checked ~ .card-brand-bx .selected-corner {
+   opacity: 1;
+}
+
+.p-card-reg .inf-bx input {
+    height: 52px;
+    padding: 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    margin: 0 12px;
+    width: calc(100% - 24px);
+}
+
+.p-card-reg .inf-bx input::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    color: #757575;
+}
+
+.p-card-reg .q-selector {
+    background-color: #F6911E1A;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.p-card-reg .q-selector .til {
+    font-size: 20px;
+    font-weight: 500;
+}
+/* Nap the */
