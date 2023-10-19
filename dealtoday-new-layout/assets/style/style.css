@@ -6589,6 +6589,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 .p-card-reg .card-brand-bx.c-val {
     height: 55px;
     width: fit-content;
+    user-select: none;
 }
 
 .p-card-reg .card-brand-bx label {
