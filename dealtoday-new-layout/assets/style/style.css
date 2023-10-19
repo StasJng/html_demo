@@ -6557,6 +6557,7 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 	background-color: #fff;
 	border-radius: 12px;
     padding: 15px;
+    height: max-content;
 }
 
 @media(max-width: 576px) {
