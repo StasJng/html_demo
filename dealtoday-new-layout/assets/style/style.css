@@ -6602,14 +6602,14 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 }
 
 .p-card-reg .selected-corner {
-    width: 38px;
-    height: 95px;
+    width: 30px;
+    height: 30px;
     background: #F6911E;
     position: absolute;
-    top: -50px;
-    right: -20px;
+    top: -18px;
+    right: -16px;
     -webkit-transform: rotate(-60deg);
-    transform: rotate(-65deg);
+    transform: rotate(-48deg);
     opacity: 0;
 }
 
@@ -6617,12 +6617,12 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
     content: "✓";
     color: #fff;
     display: inline-block;
-    font-size: 10px;
+    font-size: 6px;
     font-weight: 500;
     position: absolute;
-    top: 35px;
-    left: 3px;
-    rotate: 65deg;
+    top: 12px;
+    left: 2px;
+    rotate: 48deg;
 }
 
 .p-card-reg input[type="radio"] {
