@@ -279,11 +279,32 @@
         background: #F6911E;
     }
 
+    /* Use CSS Selector to show responsive */
     @media(max-width: 768px) {
         tr:has(input[type="checkbox"]:checked) td:nth-of-type(n + 3) {
             display: flex !important;
             flex-direction: row;
             justify-content: end;
+        }
+
+        tr:has(input[type="checkbox"]:checked) td:nth-of-type(3) {
+            justify-content: start !important;
+        }
+
+        tr:has(input[type="checkbox"]:checked) td {
+            position: relative;
+        }
+
+        tr:has(input[type="checkbox"]:checked) td span {
+            display: inline-block !important;
+            position: absolute;
+            left: 8px;
+            font-weight: 500;
+            color: black;
+        }
+
+        tr:has(input[type="checkbox"]:checked) td b {
+            display: none !important;
         }
     }
 </style>
@@ -320,11 +341,11 @@
                         <td>111082</td>
                         <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
                         
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">08/08/2023 08:08</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">1564964</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">25</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">1,000,000đ</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500">25,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Thời gian:</span>08/10/2023 10:11</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Order Id:</span>1564988</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Số lượng:</span>25</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Đơn giá:</span>2,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500"><span class="d-none">Giá trị:</span>50,000,000đ</td>
                     </tr>
 
                     <tr>
@@ -337,11 +358,11 @@
                         <td>111082</td>
                         <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
                         
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">08/08/2023 08:08</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">1564964</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">25</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">1,000,000đ</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500">25,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Thời gian:</span>08/10/2023 10:11</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Order Id:</span>1564988</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Số lượng:</span>25</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Đơn giá:</span>2,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500"><span class="d-none">Giá trị:</span>50,000,000đ</td>
                     </tr>
 
                     <tr>
@@ -354,11 +375,11 @@
                         <td>111082</td>
                         <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
                         
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">08/08/2023 08:08</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">1564964</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">25</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">1,000,000đ</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500">25,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Thời gian:</span>08/10/2023 10:11</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Order Id:</span>1564988</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Số lượng:</span>25</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Đơn giá:</span>2,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500"><span class="d-none">Giá trị:</span>50,000,000đ</td>
                     </tr>
 
                     <tr>
@@ -371,11 +392,11 @@
                         <td>111082</td>
                         <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
                         
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">08/08/2023 08:08</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">1564964</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">25</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">1,000,000đ</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500">25,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Thời gian:</span>08/10/2023 10:11</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Order Id:</span>1564988</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Số lượng:</span>25</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Đơn giá:</span>2,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500"><span class="d-none">Giá trị:</span>50,000,000đ</td>
                     </tr>
 
                     <tr>
@@ -388,11 +409,11 @@
                         <td>111082</td>
                         <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
                         
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">08/08/2023 08:08</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">1564964</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">25</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">1,000,000đ</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500">25,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Thời gian:</span>08/10/2023 10:11</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Order Id:</span>1564988</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Số lượng:</span>25</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Đơn giá:</span>2,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500"><span class="d-none">Giá trị:</span>50,000,000đ</td>
                     </tr>
 
                     <tr>
@@ -405,11 +426,11 @@
                         <td>111082</td>
                         <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
                         
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">08/08/2023 08:08</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">1564964</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">25</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">1,000,000đ</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500">25,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Thời gian:</span>08/10/2023 10:11</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Order Id:</span>1564988</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Số lượng:</span>25</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Đơn giá:</span>2,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500"><span class="d-none">Giá trị:</span>50,000,000đ</td>
                     </tr>
 
                     <tr>
@@ -422,11 +443,11 @@
                         <td>111082</td>
                         <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
                         
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">08/08/2023 08:08</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">1564964</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">25</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">1,000,000đ</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500">25,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Thời gian:</span>08/10/2023 10:11</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Order Id:</span>1564988</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Số lượng:</span>25</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Đơn giá:</span>2,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500"><span class="d-none">Giá trị:</span>50,000,000đ</td>
                     </tr>
 
                     <tr>
@@ -439,45 +460,11 @@
                         <td>111082</td>
                         <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
                         
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">08/08/2023 08:08</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">1564964</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">25</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">1,000,000đ</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500">25,000,000đ</td>
-                    </tr>
-
-                    <tr>
-                        <td class="d-xl-none d-lg-none d-md-none">
-                            <div class="dealtoday-checkbox drop-data">
-                                <input type="checkbox" id="item-9">
-                                <label for="item-9">&nbsp;</label>
-                            </div>
-                        </td>
-                        <td>111082</td>
-                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                        
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">08/08/2023 08:08</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">1564964</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">25</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">1,000,000đ</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500">25,000,000đ</td>
-                    </tr>
-
-                    <tr>
-                        <td class="d-xl-none d-lg-none d-md-none">
-                            <div class="dealtoday-checkbox drop-data">
-                                <input type="checkbox" id="item-10">
-                                <label for="item-10">&nbsp;</label>
-                            </div>
-                        </td>
-                        <td>111082</td>
-                        <td class="text-left">Voucher giảm giá 100k đặt phòng tại Hệ thống khách sạn Novotel</td>
-                        
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">08/08/2023 08:08</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none">1564964</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">25</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500">1,000,000đ</td>
-                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500">25,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Thời gian:</span>08/10/2023 10:11</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none"><span class="d-none">Order Id:</span>1564988</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Số lượng:</span>25</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="font-weight: 500"><span class="d-none">Đơn giá:</span>2,000,000đ</td>
+                        <td class="d-lg-table-cell d-md-table-cell d-sm-none d-none" style="color: #F6911E; font-weight: 500"><span class="d-none">Giá trị:</span>50,000,000đ</td>
                     </tr>
                     <!--#endregion-->
                 </tbody>
