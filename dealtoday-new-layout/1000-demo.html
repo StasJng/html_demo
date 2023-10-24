@@ -922,7 +922,7 @@
                     </div>
                 </div>
                 <!--#endregion-->
-
+                
                 <div class="gap-reg-30"></div>
 
                 <!--#region Deal hot hôm nay-->
@@ -1597,8 +1597,49 @@
                 </div>
                 <!--#endregion-->
 
-                <div class="gap-reg-40"></div>
+                <div class="gap-reg-30"></div>
 
+                <!--#region HDSD-->
+                <h2 class="col-12 reg-title p-sm-0 p-xs-0">
+                    Hướng dẫn sử dụng
+                </h2>
+
+                <div class="gap-reg-20"></div>
+
+                <div class="col-2"></div>
+                <div class="col-8 lst-guides">
+                    <div class="row">
+                        <div class="swiper-container overflow-visible">
+                            <div class="swiper-wrapper">
+                                <a class="swiper-slide">
+                                    <img src="assets/images/demo-imgs/hdsd/step-1.png" alt="" width="192" height="390" lazy class="w-100 h-auto" />
+                                </a>
+    
+                                <a class="swiper-slide">
+                                    <img src="assets/images/demo-imgs/hdsd/step-2.png" alt="" width="192" height="390" lazy class="w-100 h-auto" />
+                                </a>
+    
+                                <a class="swiper-slide">
+                                    <img src="assets/images/demo-imgs/hdsd/step-3.png" alt="" width="192" height="390" lazy class="w-100 h-auto" />
+                                </a>
+    
+                                <a class="swiper-slide">
+                                    <img src="assets/images/demo-imgs/hdsd/step-4.png" alt="" width="192" height="390" lazy class="w-100 h-auto" />
+                                </a>
+    
+                                <a class="swiper-slide">
+                                    <img src="assets/images/demo-imgs/hdsd/step-5.png" alt="" width="192" height="390" lazy class="w-100 h-auto" />
+                                </a>
+                            </div>
+    
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+                <!--#endregion-->
+                
+                <div class="gap-reg-40"></div>
             </div>
         </div>
     </div>
@@ -2233,9 +2274,20 @@
             let brandSwiper = new Swiper('.lst-brand .swiper-container', {
                                     slidesPerView: 2,
                                     spaceBetween: 10,
-                                    loop: false,
+                                    loop: true,
                                     pagination: {
                                         el: '.lst-brand .swiper-pagination',
+                                        clickable: true,
+                                    },
+                                }
+            );
+
+            let guideSwiper = new Swiper('.lst-guides .swiper-container', {
+                                    slidesPerView: 1,
+                                    spaceBetween: 10,
+                                    loop: true,
+                                    pagination: {
+                                        el: '.lst-guides .swiper-pagination',
                                         clickable: true,
                                     },
                                 }
