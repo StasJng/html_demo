@@ -1712,6 +1712,7 @@ a {
 
 .dealtoday-checkbox label span {
     font-size: 15px;
+    padding-left: 1px;
 }
 
 .dealtoday-checkbox label:before {

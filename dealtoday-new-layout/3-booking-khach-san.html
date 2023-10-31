@@ -39,8 +39,19 @@
     <link href="assets/plugins/boostrap-datetime-picker-v4/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 
     <script src="assets/plugins/boostrap3.3.7/bootstrap.min.js"></script>
+
+
+    <!-- Hotel Datepicker -->
+    <!-- <link href="assets/plugins/hotel-datepicker-v4.6.0/hotel-datepicker.css" rel="stylesheet" />
+    <script src="assets/plugins/hotel-datepicker-v4.6.0/hotel-datepicker.min.js"></script>
+    <script src="assets/plugins/hotel-datepicker-v4.6.0/fecha.min.js"></script> -->
+
 </head>
 <style>
+    .phone-card-ctn .tab-selectors {
+        width: max-content;
+    }
+    /* Start Booking Region */
     .h-book .row .srh-ctn .row>* {
         padding: 0 6px;
     }
@@ -79,12 +90,172 @@
         }
     }
 
+    @media(max-width: 576px) {
+        .h-book .phone-card-ctn {
+            padding: 0;
+        }
+
+        .h-book .phone-card-ctn .tab-selectors {
+            padding: 0 12px;
+        }
+
+        .h-book .p-card-reg {
+            border-radius: 0;
+        }
+    }
+
     .h-book .srh-ctn input {
         width: 100%;
         padding: 10px;
         border-radius: 8px;
-        border: 1px solid #eee;
+        border: 1px solid #E0E0E0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #000;
     }
+
+    .h-book .srh-ctn input::placeholder {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #BDBDBD;
+    }
+
+    .h-book .phone-card-ctn input[type="checkbox"]:checked ~ .tab-selectors div:first-of-type, .phone-card-ctn .tab-selectors div:nth-of-type(2) {
+        border-top: 2px solid #F6911E;
+    }
+
+    .h-book .phone-card-ctn .tab-selectors div {
+        border-radius: 5px 5px 0 0;
+    }
+    /* Finish Booking Region */
+
+
+    /* Start Date Picker */
+    .glyphicon.glyphicon-chevron-up::after {
+        content: '';
+        border: solid #000;
+        border-width: 0 5px 5px 0;
+        display: inline-block;
+        padding: 5px;
+        opacity: 0.75;
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+
+    .glyphicon.glyphicon-chevron-down::after {
+        content: '';
+        border: solid #000;
+        border-width: 0 5px 5px 0;
+        display: inline-block;
+        padding: 5px;
+        opacity: 0.75;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    .glyphicon.glyphicon-calendar::after {
+        /* background-image: url(assets/images/generals/icon-calendar-orange.svg);
+        background-repeat: no-repeat;
+        background-size: auto 15px;
+        background-position: center center; */
+        content: '';
+        border: solid #000;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        opacity: 0.75;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+    .glyphicon-time.glyphicon::after {
+        /* background-image: url(assets/images/generals/icon-coins.svg);
+        background-repeat: no-repeat;
+        background-size: auto 15px;
+        background-position: center center; */
+        content: '';
+        border: solid #000;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        opacity: 0.75;
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+
+    .collapse:not(.show):first-of-type {
+        display: block;
+    }
+
+    .collapse.in[aria-expanded="true"], .accordion-toggle {
+        display: block !important;
+        background-color: #fff !important;
+        position: relative;
+    }
+    /* Finish Date Picker */
+
+    /* Start Quant Box */
+    .h-book .select-quantity .subtract, .h-book .select-quantity .plus {
+        border-radius: 50%;
+        color: #fff;
+        background-color: #F6911E;
+        user-select: none;
+    }
+
+    .h-book .select-quantity .subtract {
+        background-color: #E0E0E0;
+    }
+
+    .h-book .select-quantity .quan {
+        font-size: 18px;
+        font-weight: 700;
+        position: relative;
+        top: -2px;
+        border: none;
+        user-select: none;
+    }
+
+    .h-book .select-quantity {
+        line-height: 27px;
+        margin-top: 1px;
+    }
+
+    .h-book .quant-sel {
+        position: absolute;
+        background-color: #fefefe;
+        padding: 12px 12px;
+        margin: 0px 6px;
+        top: 48px;
+        left: 0;
+        width: calc(100% - 12px);
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        z-index: 5;
+        display: none;
+    }
+
+    .h-book .fil-ctn .srh-bx.quant > input:first-of-type:focus ~ .quant-sel, .h-book .quant-sel:hover, .h-book .quant-sel input:focus {
+        display: block !important;
+    }
+
+    .h-book .quant-sel .row .col-12 {
+        padding: 5px 10px;
+    }
+
+    .h-book .quant-sel .q-title {
+        font-size: 16px;
+        font-weight: 500;
+        color: #000;
+    }
+
+    .h-book .quant-sel .q-title span {
+        font-size: 12px;
+        font-weight: 400;
+        color: #7e7e7e;
+    }
+    /* Finish Quant Box */
 </style>
 <body>
     <!--#region Header-->
@@ -428,21 +599,160 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="row srh-ctn">
-                                                <div class="fil-ctn row">
+                                                <div class="fil-ctn row d-detail-rg">
                                                     <div class="col-12 col-sm-12 col-md-12 col-lg-5 srh-bx ">
                                                         <input type="text" placeholder="Nhập khách sạn" />
                                                     </div>
     
                                                     <div class="d-block d-sm-block d-md-block d-lg-none gap-reg-8"></div>
     
-                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 srh-bx d-range">
-                                                        <input type="text" placeholder="Chọn ngày" />
+                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 srh-bx d-range g-date-picker d-flex m-0">
+                                                        <div class="position-relative d-flex" style="flex: 1; height: max-content;">
+                                                            <input id="select_date_from" type="text" placeholder="Chọn thời gian" />
+                                                            <script>
+                                                                //Declare datepicker
+                                                                $(function () {
+                                                                    $('#select_date_from').datetimepicker({
+                                                                        locale: 'vi',
+                                                                        keepOpen: true,
+                                                                        format: 'DD/MM/YYYY HH:mm',
+                                                                        minDate: moment()
+                                                                    });
+                                                                });
+                                                            </script>
+                                                        </div>
                                                     </div>
-    
+
                                                     <div class="d-block d-sm-block d-md-block d-lg-none gap-reg-8"></div>
     
-                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 srh-bx quant">
-                                                        <input type="text" placeholder="Chọn số lượng" />
+                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 srh-bx quant position-relative">
+                                                        <input type="text" placeholder="Chọn số lượng" id="quant-val" value="1 Người lớn, 0 Trẻ em, 1 Phòng"/>
+
+                                                        <div class="quant-sel">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <div class="d-inline-block float-start position-relative">
+                                                                        <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                                                            <div class="quantity flex-align-center quant-btn m-0">
+                                                                                <span class="q-title">
+                                                                                    Người lớn
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="d-inline-block float-end position-relative">
+                                                                        <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                                                            <div class="quantity flex-align-center quant-btn m-0">
+                                                                                <span class="select-quantity">
+                                                                                    <span class="subtract">-</span>
+                                                                                    <span class="quan" data-str="Người lớn" c-min="1" >1</span>
+                                                                                    <span class="plus">+</span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-12">
+                                                                    <div class="d-inline-block float-start position-relative">
+                                                                        <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                                                            <div class="quantity flex-align-center quant-btn m-0">
+                                                                                <span class="q-title">
+                                                                                    Trẻ em&nbsp;<span>(Từ 0 - 12 tuổi)</span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="d-inline-block float-end position-relative">
+                                                                        <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                                                            <div class="quantity flex-align-center quant-btn m-0">
+                                                                                <span class="select-quantity">
+                                                                                    <span class="subtract">-</span>
+                                                                                    <span class="quan" data-str="Trẻ em" c-min="0" >0</span>
+                                                                                    <span class="plus">+</span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-12">
+                                                                    <div class="d-inline-block float-start position-relative">
+                                                                        <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                                                            <div class="quantity flex-align-center quant-btn m-0">
+                                                                                <span class="q-title">
+                                                                                    Phòng
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="d-inline-block float-end position-relative">
+                                                                        <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                                                            <div class="quantity flex-align-center quant-btn m-0">
+                                                                                <span class="select-quantity">
+                                                                                    <span class="subtract">-</span>
+                                                                                    <span class="quan" data-str="Phòng" c-min="1" >1</span>
+                                                                                    <span class="plus">+</span>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <script>
+                                                                    $('.select-quantity .plus').click(function () {
+                                                                        var quan = $(this).parent().find('.quan').text();
+
+                                                                        if (quan < 20) {
+                                                                            quan = parseInt(quan) + 1;
+                                                                            $(this).parent().find('.quan').text(quan);
+
+                                                                            let str = "";
+                                                                            $('.quant-sel .quan').each(function() {
+                                                                                str = str + $(this).text() + ' ' + $(this).attr('data-str');
+
+                                                                                if($(this) != $('.quant-sel .quan').last())
+                                                                                {
+                                                                                    str = str + ', ';
+                                                                                }
+                                                                            });
+                                                                            str = str.slice(0, -2);
+
+                                                                            $('#quant-val').val(str);
+                                                                        }
+                                                                        else {
+                                                                            alert("Số lượng tối đa là 20!")
+                                                                        }
+                                                                    });
+                                                            
+                                                            
+                                                                    $('.select-quantity .subtract').click(function () {
+                                                                        var quan = $(this).parent().find('.quan').text();
+
+                                                                        if (quan > parseInt($(this).parent().find('.quan').attr('c-min'))) {
+                                                                            quan = parseInt(quan) - 1;
+                                                                            $(this).parent().find('.quan').text(quan);
+
+                                                                            let str = "";
+                                                                            $('.quant-sel .quan').each(function() {
+                                                                                str = str + $(this).text() + ' ' + $(this).attr('data-str');
+
+                                                                                if($(this) != $('.quant-sel .quan').last())
+                                                                                {
+                                                                                    str = str + ', ';
+                                                                                }
+                                                                            });
+                                                                            str = str.slice(0, -2);
+
+                                                                            $('#quant-val').val(str);
+                                                                        }
+                                                                    });
+                                                                </script>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
 
