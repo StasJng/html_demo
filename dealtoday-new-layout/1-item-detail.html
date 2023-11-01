@@ -40,7 +40,53 @@
 
     <script src="assets/plugins/boostrap3.3.7/bootstrap.min.js"></script>
 </head>
+<style>
+    .d-detail-rg .select-quantity {
+        padding: 0 !important;
+        margin: 0 !important;
+        position: relative !important;
+        display: flex !important;
+        z-index: 0;
+    }
+    
+    .d-detail-rg .select-quantity .subtract, .d-detail-rg .select-quantity .plus, .d-detail-rg .select-quantity .quan {
+        border: 1px solid #eee !important;
+        display: inline-block !important;
+        height: 28px !important;
+        width: 28px !important;
+        text-align: center !important;
+        line-height: 28px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+        user-select: none !important;
+        background-color: transparent !important;
+    }
 
+    .d-detail-rg .select-quantity .quan {
+        border-color: #eee transparent #eee transparent !important;
+        font-size: 18px;
+        width: 32px !important;
+    }
+
+    .d-detail-rg .select-quantity .subtract, .d-detail-rg .select-quantity .plus {
+        font-size: 22px;
+        padding-bottom: 1px;
+        line-height: 26px !important;
+    }
+
+    .d-detail-rg .select-quantity .subtract {
+        border-radius: 5px 0 0 5px;
+    }
+    
+    .d-detail-rg .select-quantity .plus {
+        border-radius: 0 5px 5px 0;
+    }
+
+    .d-detail-rg .sale-code .lst-code .code-info {
+        z-index: 2;
+    }
+</style>
 <body>
     <!--#region Header-->
     <div class="header" id="header">
