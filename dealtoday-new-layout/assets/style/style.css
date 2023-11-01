@@ -4196,6 +4196,10 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
         padding: 10px 0 8px 0;
     }
 
+    #sortPopup .sort-info:last-of-type {
+        border: none;
+    }
+
     .p-seacrh-lst-items-box .d-detail-rg {
         padding-bottom: 0;
         padding-top: 12px;
