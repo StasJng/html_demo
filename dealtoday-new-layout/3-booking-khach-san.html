@@ -33,18 +33,9 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
     
     <!-- Datepicker -->
-    <script src="assets/plugins/boostrap-datetime-picker-v4/moment.js"></script>
-    <script src="assets/plugins/boostrap-datetime-picker-v4/moment-with-locales.js"></script>
-    <script src="assets/plugins/boostrap-datetime-picker-v4/bootstrap-datetimepicker.min.js"></script>
-    <link href="assets/plugins/boostrap-datetime-picker-v4/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-
-    <script src="assets/plugins/boostrap3.3.7/bootstrap.min.js"></script>
-
-
-    <!-- Hotel Datepicker -->
-    <!-- <link href="assets/plugins/hotel-datepicker-v4.6.0/hotel-datepicker.css" rel="stylesheet" />
-    <script src="assets/plugins/hotel-datepicker-v4.6.0/hotel-datepicker.min.js"></script>
-    <script src="assets/plugins/hotel-datepicker-v4.6.0/fecha.min.js"></script> -->
+    <link rel="stylesheet" href="assets/plugins/hotel-datepicker-2.0.5/dist/css/hotel-datepicker.css" />
+    <script type="text/javascript" src="assets/plugins/hotel-datepicker-2.0.5/node_modules/fecha/fecha.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/hotel-datepicker-2.0.5/dist/js/hotel-datepicker.min.js"></script>
 
 </head>
 <style>
@@ -256,6 +247,186 @@
         color: #7e7e7e;
     }
     /* Finish Quant Box */
+
+    /* Start Style Hotel Datepicker */
+    .h-book .datepicker {
+        font-family: 'Roboto';
+        border-radius: 8px;
+    }
+
+    .h-book .srh-ctn input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #E0E0E0;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #000;
+        padding-left: 8px;
+    }
+
+    .h-book .srh-ctn #datePickerHomeTour {
+        background-image: url(assets/images/generals/icon-calendar-orange.svg);
+        background-repeat: no-repeat;
+        background-size: auto 15px;
+        background-position: right 10px center;
+    }
+
+    .h-book .datepicker__inner {
+        padding: 12px;
+    }
+
+    .h-book .datepicker__topbar {
+        display: none;
+    }
+
+    .h-book .datepicker__month-name {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: capitalize;
+        color: #000;
+    }   
+
+    .h-book #datepicker-datePickerHomeTour {
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+    }
+
+    .h-book .datepicker__month-button {
+        background-color: transparent;
+        color: transparent;
+    }
+
+    .h-book .datepicker__week-days {
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .h-book .datepicker__week-name {
+        font-size: 14px;
+        font-weight: 600;
+        color: #000;
+    }
+
+    .h-book .datepicker__month-day {
+        color: #000;
+        font-size: 13px;
+        line-height: 12px;
+        user-select: none;
+        transition: all 0.1s;
+    }
+
+    .h-book .datepicker__month-day--invalid {
+        color: #cecece;
+    }
+
+    .h-book .datepicker__month-day--first-day-selected, .h-book .datepicker__month-day--last-day-selected {
+        background-color: transparent;
+        color: #fff;
+        position: relative;
+    }
+
+    .h-book .datepicker__month-day--selected {
+        color: #fff;
+        background-color: transparent;
+        position: relative;
+    }
+
+    .h-book .datepicker__month-day--hovering {
+        color: #fff;
+        background-color: transparent;
+        position: relative;
+    }
+
+    .h-book .datepicker__month-caption {
+        border: none;
+    }
+
+    .h-book .datepicker__month-button--prev, .h-book .datepicker__month-button--next, .h-book .datepicker__month-name, .h-book .datepicker__week-name {
+        user-select: none;
+        position: relative;
+    }
+
+    .h-book .datepicker__month-button--prev:after, .h-book .datepicker__month-button--next:after {
+        content: '';
+        border: solid #000;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 3px;
+        opacity: 0.75;
+        position: absolute;
+        top: 7px;
+    }
+
+    .h-book .datepicker__month-button--prev:after {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }	
+
+    .h-book .datepicker__month-button--next:after {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+
+    .h-book .datepicker__month-day--today {
+        position: relative;
+        background-color: #fff;
+        border-radius: 4px;
+        color: #cecece;
+    }
+
+    .h-book .datepicker__month-day--today::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: 24px;
+        width: 24px;
+        border: 1px solid #F0821B;
+        border-radius: 50%;
+    }
+
+    .h-book .datepicker__month-day--selected::after {
+        background-color: #f6911e34;
+    }
+
+    .h-book .datepicker__month-day--hovering::after {
+        background-color: #f6911e34;
+    }
+
+    .h-book .datepicker__month-day--first-day-selected:before, .h-book .datepicker__month-day--last-day-selected::before {
+        background-color: #F0821B;
+    }
+
+    .h-book .datepicker__month-day--selected::after,
+    .h-book .datepicker__month-day--hovering::after,
+    .h-book .datepicker__month-day--first-day-selected:before, 
+    .h-book .datepicker__month-day--last-day-selected::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: 24px;
+        width: 25px;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    @media(max-width: 480px) {
+		.h-book #datepicker-datePickerHomeTour {
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            width: calc(100% - 24px);
+        }
+	}
+    /* Finish Style Hotel Datepicker*/
 </style>
 <body>
     <!--#region Header-->
@@ -606,21 +777,36 @@
     
                                                     <div class="d-block d-sm-block d-md-block d-lg-none gap-reg-8"></div>
     
-                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 srh-bx d-range g-date-picker d-flex m-0">
-                                                        <div class="position-relative d-flex" style="flex: 1; height: max-content;">
-                                                            <input id="select_date_from" type="text" placeholder="Chọn thời gian" />
-                                                            <script>
-                                                                //Declare datepicker
-                                                                $(function () {
-                                                                    $('#select_date_from').datetimepicker({
-                                                                        locale: 'vi',
-                                                                        keepOpen: true,
-                                                                        format: 'DD/MM/YYYY HH:mm',
-                                                                        minDate: moment()
-                                                                    });
-                                                                });
-                                                            </script>
-                                                        </div>
+                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 srh-ctn">
+                                                        <input type="text" value="" class="" placeholder="Ngày nhận phòng - Ngày trả phòng" id="datePickerHomeTour" />
+
+                                                        <!--#region Init Datepicker-->
+                                                        <script>
+                                                            var date = new Date();
+                                                            var checkinDate = new Date(date.getTime() + (24 * 60 * 60 * 1000));
+                                                            var checkoutDate = new Date(date.getTime() + (48 * 60 * 60 * 1000));
+                                                            var fromDateRange = checkinDate.getDate() + '/' + (checkinDate.getMonth() + 1) + '/' + checkinDate.getFullYear();
+                                                            var toDateRange = checkoutDate.getDate() + '/' + (checkoutDate.getMonth() + 1) + '/' + checkoutDate.getFullYear();
+
+                                                            var datePickerHomeTour = new HotelDatepicker(document.getElementById('datePickerHomeTour'), {
+                                                                i18n: {
+                                                                    selected: '',
+                                                                    night: 'Đêm',
+                                                                    nights: 'Đêm',
+                                                                    'day-names': ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+                                                                    'month-names': ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
+                                                                },
+                                                                startDate: toDateRange,
+                                                                showTopbar: false,
+                                                                format: 'DD/MM/YYYY',
+                                                                enableCheckout: true,
+
+                                                                getValue: function (v) {
+                                                                    $('.datepicker__month-day').addClass('notranslate');
+                                                                }
+                                                            });
+                                                        </script>
+                                                        <!--#endregion-->
                                                     </div>
 
                                                     <div class="d-block d-sm-block d-md-block d-lg-none gap-reg-8"></div>

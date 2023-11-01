@@ -132,6 +132,7 @@
 
     .h-book .datepicker__month-button--prev, .h-book .datepicker__month-button--next, .h-book .datepicker__month-name, .h-book .datepicker__week-name {
         user-select: none;
+        position: relative;
     }
 
     .h-book .datepicker__month-button--prev:after, .h-book .datepicker__month-button--next:after {
@@ -142,6 +143,7 @@
         padding: 3px;
         opacity: 0.75;
         position: absolute;
+        top: 7px;
     }
 
     .h-book .datepicker__month-button--prev:after {
@@ -203,7 +205,7 @@
         border-radius: 50%;
         z-index: -1;
     }
-
+    
     @media(max-width: 480px) {
 		.h-book #datepicker-datePickerHomeTour {
             box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
