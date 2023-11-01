@@ -38,6 +38,11 @@
     <script type="text/javascript" src="assets/plugins/hotel-datepicker-2.0.5/dist/js/hotel-datepicker.min.js"></script>
 </head>
 <style>
+    .h-book .datepicker {
+        font-family: 'Roboto';
+        border-radius: 8px;
+    }
+
     .h-book .srh-ctn input {
         width: 100%;
         padding: 10px;
@@ -52,11 +57,6 @@
         background-size: auto 15px;
         background-position: right 10px center;
         padding-left: 8px;
-    }
-
-    .h-book .datepicker {
-        font-family: 'Roboto';
-        border-radius: 8px;
     }
 
     .h-book .datepicker__inner {
@@ -97,24 +97,33 @@
     }
 
     .h-book .datepicker__month-day {
-        color: #777;
+        color: #000;
         font-size: 13px;
         line-height: 12px;
+        user-select: none;
+        transition: all 0.1s;
+    }
+
+    .h-book .datepicker__month-day--invalid {
+        color: #cecece;
     }
 
     .h-book .datepicker__month-day--first-day-selected, .h-book .datepicker__month-day--last-day-selected {
-        background-color: #F0821B !important;
+        background-color: transparent;
         color: #fff;
+        position: relative;
     }
 
     .h-book .datepicker__month-day--selected {
-        background-color: #f6911e4c;
-        color: #fff; 
+        color: #fff;
+        background-color: transparent;
+        position: relative;
     }
 
     .h-book .datepicker__month-day--hovering {
-        background-color: #f6911e34;
         color: #fff;
+        background-color: transparent;
+        position: relative;
     }
 
     .h-book .datepicker__month-caption {
@@ -140,7 +149,63 @@
         -webkit-transform: rotate(-45deg);
     }
 
-    @media(max-width: 768px) {
+    .h-book .datepicker__month-day--today {
+        position: relative;
+        background-color: #fff;
+        border-radius: 4px;
+        color: #cecece;
+    }
+
+    .h-book .datepicker__month-day--today::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: 25px;
+        width: 25px;
+        border: 1px solid #F0821B;
+        border-radius: 50%;
+    }
+
+    .h-book .datepicker__month-day--selected::after {
+        background-color: #f6911e4c;
+    }
+
+    .h-book .datepicker__month-day--hovering::after {
+        background-color: #f6911e34;
+    }
+
+    .h-book .datepicker__month-day--first-day-selected:before, .h-book .datepicker__month-day--last-day-selected::before {
+        background-color: #F0821B;
+    }
+
+    .h-book .datepicker__month-day--selected::after,
+    .h-book .datepicker__month-day--hovering::after,
+    .h-book .datepicker__month-day--first-day-selected:before, 
+    .h-book .datepicker__month-day--last-day-selected::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    @media(max-width: 480px) {
+		.h-book #datepicker-datePickerHomeTour {
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+            width: calc(100% - 24px);
+        }
+	}
+    /* @media(max-width: 480px) {
 		.h-book #datepicker-datePickerHomeTour {
             border: none;
             border-radius: 12px 12px 0 0;
@@ -156,7 +221,7 @@
 			padding: 10px 0;
 			width: 100%;
 		}
-	}
+	} */
 </style>
 <body>
     <!--#region Header-->
