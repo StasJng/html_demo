@@ -40,6 +40,279 @@
 
     <script src="assets/plugins/boostrap3.3.7/bootstrap.min.js"></script>
 </head>
+<style>
+    .l-p-items {
+        background-color: #fff;
+        padding: 8px 3px;
+        border-radius: 12px;
+        width: calc(100% - 12px);
+        margin-left: 12px;
+        margin-bottom: 15px;
+    }
+
+    .l-p-items .l-til {
+        color: #000;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 5px 0 12px 0;
+    }
+
+    .l-p-items .list-product-reg a:hover {
+        margin-top: 0 !important;
+    }
+
+    .l-p-items .list-product-reg a {
+        margin-bottom: 12px;
+        border-bottom: 1px solid #eee;
+        padding: 0 12px;
+    }
+
+    .l-p-items .list-product-reg a:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .l-p-items .list-product-reg .product-box {
+        margin-bottom: 12px;
+    }
+
+    .l-p-items .lst-coupon .c-thumbnail img {
+        margin: 0;
+        height: 180px;
+        width: 180px;
+    }
+
+    .l-p-items .lst-coupon .c-info {
+        margin: 6px 6px 6px 8px;
+    }
+
+    .l-p-items .lst-coupon .product-box {
+        border: 1px solid #eee;
+        margin-top: 0 !important;
+    }
+
+    .l-p-items .lst-coupon .c-info .c-name {
+        padding-top: 3px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .l-p-items .lst-coupon .c-info .c-price {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 22px;
+        padding: 2px 0;
+    }
+
+    .l-p-items .lst-coupon .c-info .c-exp {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
+    .l-p-items .lst-coupon .c-info .btn-general {
+        padding: 8px;
+    }
+
+    .p-sum-info {
+        background-color: #fff;
+        padding: 12px;
+    }
+
+    .p-sum-info .p-til {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+        margin-left: 12px;
+        padding-right: 48px;
+
+    }
+
+    .p-sum-info .p-rate {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 14px;
+        color: #F6911E;
+        margin-left: 12px;
+        margin-top: 5px;
+    }
+
+    .p-sum-info .p-rate img {
+        margin-right: 3px;
+    }
+
+    .p-sum-info .p-rate span {
+        color: #9E9E9E;
+        margin-left: 3px;
+    }
+
+    .p-sum-info .sum-val {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #616161;
+        vertical-align: middle;
+    }
+
+    .p-sum-info .sum-val img {
+        margin-right: 3px;
+    }
+
+    .p-sum-info .sum-val .row .p-md-0:first-of-type {
+        margin-bottom: 5px;
+    }
+
+    .p-sum-info .sum-val span {
+        color: #F6911E;
+        margin-left: 3px;
+    }
+
+    .d-detail-rg .d-detail-info img {
+        aspect-ratio: unset !important;
+    }
+
+    .partner-swiper {
+        padding: 12px;
+        background-color: #fff;
+    }
+
+    .partner-swiper .swiper-pagination-bullet-active {
+        background: #F6911E !important;
+    }
+
+    .partner-swiper .swiper-pagination-bullet {
+        width: 15px !important;
+        height: 3px !important;
+        border-radius: 3px !important;
+    }
+
+    .partner-swiper .s-img img {
+        width: 100%;
+        height: unset;
+    }
+
+    .partner-swiper .swiper-button-next, .partner-swiper .swiper-button-prev {
+        background-image: none;
+    }
+
+    .partner-swiper .arr:hover {
+        opacity: 1;
+    }
+
+    .partner-swiper .right, .partner-swiper .left {
+        border: solid #fff;
+        background: #fff;
+        height: 48px;
+        width: 26px;
+        display: inline-block;
+        padding: 8px;
+        opacity: 0.68;
+        position: relative;
+        z-index: 25;
+    }
+
+    .partner-swiper .right {
+        right: -11px;
+    }
+
+    .partner-swiper .left {
+        left: -10px;
+    } 
+
+    .partner-swiper .right::after, .partner-swiper .left::after {
+        content: '';
+        border: solid #000;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 4px;
+        opacity: 1;
+        position: relative;
+        z-index: 25;
+    }
+
+    .partner-swiper .right::after {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        right: 4px;
+        top: 1px;
+    }
+
+    .partner-swiper .left::after {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        top: 1px;
+    }
+
+    .deal-tab {
+        border-bottom: 2px solid #eee;
+    }
+
+    .filter-wrapper .product-box {
+        border: 1px solid #eee;
+    }
+    
+    .filter-wrapper {
+        overflow-y: scroll;
+        border-radius: 0;
+        padding-bottom: 30% !important;
+    }
+
+    .filter-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-wrapper .p-contanier:nth-of-type(odd) {
+        padding-right: 5px !important;
+    } 
+
+    .filter-wrapper .p-contanier:nth-of-type(even) {
+        padding-left: 5px !important;
+    } 
+
+    .p-l-inf {
+        border-radius: 12px;
+        background-color: #fff;
+        padding: 12px !important;
+    }
+
+    .p-l-inf h2 {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+    .p-l-inf .city {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        color: #000;
+    }
+
+    .p-l-inf .lst-locs a {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #000;
+        margin-left: 6px;
+    }
+
+    .p-l-inf .lst-locs a:hover {
+        color: #F6911E;
+    }
+
+    .p-l-inf input[type="text"] {
+        width: 100%;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 8px 10px;
+        margin: 5px 0 12px 0;
+        background-image: url(assets/images/generals/icon-search.svg);
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 20px 20px;
+    }
+</style>
 <body>
     <!--#region Header-->
     <div class="header" id="header">
@@ -339,42 +612,51 @@
 
                 <div class="gap-reg-12"></div>
 
-                <div class="col-12">
+                <div class="col-12 p-sm-0 p-xs-0">
                     <div class="row">
-                        <div class="col-9">
+                        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
                             <!--#region Left Content-->
                             <div class="row">
                                 <!--#region Sum Info-->
-                                <div class="main-banner col-12 p-sm-0 p-xs-0 border-round-12">
-                                    <div class="row">
-                                        <div class="col-6 d-flex">
-                                            <img src="" alt="" height="" width="" />
-                                            <div class="row">
-                                                <div class="col-12">Hệ thống thẩm mỹ viện Ngọc Dung</div>
-                                                <div class="col-12"><img src="" alt="" height="" width="" >4.8(555)</div>
+                                <div class="col-12">
+                                    <div class="row p-sum-info border-round-12">
+                                        <div class="col-xl-6 col-lg-6 col-md-7 col-sm-12 col-xs-12 col-12 d-flex p-0">
+                                            <img src="assets/images/demo-imgs/kham-pha/logo.png" alt="" height="54" width="54" />
+                                            <div class="row flex-align-center">
+                                                <div class="col-12 p-til">Hệ thống thẩm mỹ viện Ngọc Dung Hệ thống thẩm mỹ viện Ngọc Dung</div>
+                                                <div class="col-12 p-rate"><img src="assets/images/generals/icon-star-rating.svg" alt="" height="14" width="14" >4.8<span>(555)</span></div>
                                             </div>
                                         </div>
-                                        <div class="col-6">
-                                            <div class="row">
+                                        <div class="gap-reg-12 d-block d-sm-block d-md-none d-lg-none"></div>
+                                        <div class="col-xl-6 col-lg-6 col-md-5 col-sm-12 col-xs-12 col-12 p-0 flex-align-center">
+                                            <div class="row sum-val">
                                                 <div class="col-6">
                                                     <div class="row">
-                                                        <div class="col-12">
-                                                            <img src="" alt="" height="" width="" >Lượt xem:<span></span>
+                                                        <div class="col-12 p-md-0">
+                                                            <img src="assets/images/generals/icon-kham-pha-view.svg" alt="" height="20" width="20" >Lượt xem:<span>100.000</span>
                                                         </div>
-                                                        <div class="col-12">
-                                                            <img src="" alt="" height="" width="" >Đánh giá:<span></span>
+                                                        <div class="col-12 p-md-0">
+                                                            <img src="assets/images/generals/icon-kham-pha-comment.svg" alt="" height="20" width="20" >Đánh giá:<span>25.000</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="row">
-                                                        <div class="col-12">
-                                                            <img src="" alt="" height="" width="" >Chia sẻ:<span></span>
+                                                        <div class="col-12 p-md-0">
+                                                            <img src="assets/images/generals/icon-kham-pha-share.svg" alt="" height="20" width="20" >Chia sẻ:<span>58.000</span>
                                                         </div>
-                                                        <div class="col-12">
-                                                            <img src="" alt="" height="" width="" >Số deal:<span></span>
+                                                        <div class="col-12 p-md-0">
+                                                            <img src="assets/images/generals/icon-kham-pha-deal.svg" alt="" height="20" width="20" >Số deal:<span>10</span>
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-block d-sm-block d-md-block d-lg-none">
+                                            <div class="gap-reg-12"></div>
+                                            <div class="row">
+                                                <div class="btn-general" onclick="openPopup('#itemPopup');">
+                                                    Sản phẩm dịch vụ
                                                 </div>
                                             </div>
                                         </div>
@@ -384,110 +666,152 @@
 
                                 <div class="gap-reg-20"></div>
 
-                                <!--#region Coupon ưu đãi-->
-                                <div class="partner-swiper col-12 p-sm-0 p-xs-0 border-round-12">
-                                    <div class="">
-                                        <img src="" alt="" height="" width="" />
+                                <!--#region Slider Promo-->
+                                <div class="partner-swiper col-12 border-round-12">
+                                    <div class="swiper-container">
+                                        <div class="swiper-wrapper position-relative">
+                                            <div class="swiper-slide s-img">
+                                                <img src="assets/images/demo-imgs/kham-pha/swipe-1.png" alt="" width="500" height="334" />
+                                            </div>
 
-                                        <img src="" alt="" height="" width="" />
+                                            <div class="swiper-slide s-img">
+                                                <img src="assets/images/demo-imgs/kham-pha/swipe-2.png" alt="" width="500" height="334" />
+                                            </div>
+
+                                            <div class="swiper-slide s-img">
+                                                <img src="assets/images/demo-imgs/kham-pha/swipe-1.png" alt="" width="500" height="334" />
+                                            </div>
+
+                                            <div class="swiper-slide s-img">
+                                                <img src="assets/images/demo-imgs/kham-pha/swipe-2.png" alt="" width="500" height="334" />
+                                            </div>
+
+                                            <div class="swiper-slide s-img">
+                                                <img src="assets/images/demo-imgs/kham-pha/swipe-1.png" alt="" width="500" height="334" />
+                                            </div>
+                                        </div>
+                                        <div class="swiper-button-next"><div class="arr right"></div></div>
+                                        <div class="swiper-button-prev"><div class="arr left"></div></div>
+
+                                        <!-- <div class="swiper-pagination"></div> -->
                                     </div>
                                 </div>
                                 <!--#endregion-->
 
                                 <div class="gap-reg-20"></div>
                                 
-                                <!--#region Coupon ưi đãi-->
-                                <h2 class="col-12 reg-title p-sm-0 p-xs-0">
-                                    Ưu đãi hot
-                                </h2>
-
-                                <div class="gap-reg-20"></div>
-
-                                <div class="col-12 lst-coupon p-sm-0 p-xs-0">
-                                    <div class="swiper-container">
-                                        <div class="swiper-wrapper">
-                                            <a href="#" class="swiper-slide col-lg-4 col-md-4 col-sm-6 col-6 p-contanier">
-                                                <div class="product-box d-flex">
-                                                    <div class="c-thumbnail">
-                                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
-                                                    </div>
-
-                                                    <div class="c-info">
-                                                        <div class="c-partner">Sacombank SBJ</div>
-                                                        <div class="c-name">Coupon Làm đẹp 365 - Áp dụng tất cả các ngày trong năm(không bao gồm những ngày không áp dụng)</div>
-                                                        <div class="c-price">500.000đ</div>
-                                                        <div class="c-exp">HSD: 31/12/2023</div>
-                                                        <div class="btn-general orange float-end">Chi tiết</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-
-                                            <a href="#" class="swiper-slide col-lg-4 col-md-4 col-sm-6 col-6 p-contanier">
-                                                <div class="product-box d-flex">
-                                                    <div class="c-thumbnail">
-                                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
-                                                    </div>
-
-                                                    <div class="c-info">
-                                                        <div class="c-partner">Sacombank SBJ</div>
-                                                        <div class="c-name">Coupon Làm đẹp 365 - Áp dụng tất cả các ngày trong năm(không bao gồm những ngày không áp dụng)</div>
-                                                        <div class="c-price">500.000đ</div>
-                                                        <div class="c-exp">HSD: 31/12/2023</div>
-                                                        <div class="btn-general orange float-end">Chi tiết</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-
-                                            <a href="#" class="swiper-slide col-lg-4 col-md-4 col-sm-6 col-6 p-contanier">
-                                                <div class="product-box d-flex">
-                                                    <div class="c-thumbnail">
-                                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
-                                                    </div>
-
-                                                    <div class="c-info">
-                                                        <div class="c-partner">Sacombank SBJ</div>
-                                                        <div class="c-name">Coupon Làm đẹp 365 - Áp dụng tất cả các ngày trong năm(không bao gồm những ngày không áp dụng)</div>
-                                                        <div class="c-price">500.000đ</div>
-                                                        <div class="c-exp">HSD: 31/12/2023</div>
-                                                        <div class="btn-general orange float-end">Chi tiết</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-
-                                            <a href="#" class="swiper-slide col-lg-4 col-md-4 col-sm-6 col-6 p-contanier">
-                                                <div class="product-box d-flex">
-                                                    <div class="c-thumbnail">
-                                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
-                                                    </div>
-
-                                                    <div class="c-info">
-                                                        <div class="c-partner">Sacombank SBJ</div>
-                                                        <div class="c-name">Coupon Làm đẹp 365 - Áp dụng tất cả các ngày trong năm(không bao gồm những ngày không áp dụng)</div>
-                                                        <div class="c-price">500.000đ</div>
-                                                        <div class="c-exp">HSD: 31/12/2023</div>
-                                                        <div class="btn-general orange float-end">Chi tiết</div>
-                                                    </div>
-                                                </div>
-                                            </a>
-
-                                            <a href="#" class="swiper-slide col-lg-4 col-md-4 col-sm-6 col-6 p-contanier">
-                                                <div class="product-box d-flex">
-                                                    <div class="c-thumbnail">
-                                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
-                                                    </div>
-
-                                                    <div class="c-info">
-                                                        <div class="c-partner">Sacombank SBJ</div>
-                                                        <div class="c-name">Coupon Làm đẹp 365 - Áp dụng tất cả các ngày trong năm(không bao gồm những ngày không áp dụng)</div>
-                                                        <div class="c-price">500.000đ</div>
-                                                        <div class="c-exp">HSD: 31/12/2023</div>
-                                                        <div class="btn-general orange float-end">Chi tiết</div>
-                                                    </div>
-                                                </div>
-                                            </a>
+                                <!--#region Coupon ưu đãi-->
+                                <div class="col-12 p-0">
+                                    <div class="row l-p-items w-100 m-0">
+                                        <div class="col-12 reg-title">
+                                            Ưu đãi hot
                                         </div>
 
-                                        <div class="swiper-pagination"></div>
+                                        <div class="gap-reg-6"></div>
+        
+                                        <div class="col-12 lst-coupon">
+                                            <div class="swiper-container">
+                                                <div class="swiper-wrapper">
+                                                    <a href="#" class="swiper-slide col-lg-4 col-md-4 col-sm-6 col-6 p-contanier">
+                                                        <div class="product-box d-flex">
+                                                            <div class="c-thumbnail">
+                                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square1.png" alt="" width="300" height="300" lazy />
+                                                            </div>
+        
+                                                            <div class="c-info">
+                                                                <div class="c-partner txt-line-limit-2">Sacombank SBJ</div>
+                                                                <div class="c-name">Coupon Làm đẹp 365 - Áp dụng tất cả các ngày trong năm(không bao gồm những ngày không áp dụng)</div>
+                                                                <div class="c-price">500.000đ</div>
+                                                                <div class="c-exp">HSD: 31/12/2023</div>
+                                                                <div class="btn-general orange float-end">Mua ngay</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+        
+                                                    <a href="#" class="swiper-slide col-lg-4 col-md-4 col-sm-6 col-6 p-contanier">
+                                                        <div class="product-box d-flex">
+                                                            <div class="c-thumbnail">
+                                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square2.png" alt="" width="300" height="300" lazy />
+                                                            </div>
+        
+                                                            <div class="c-info">
+                                                                <div class="c-partner txt-line-limit-2">Sacombank SBJ</div>
+                                                                <div class="c-name">Coupon Làm đẹp 365 - Áp dụng tất cả các ngày trong năm(không bao gồm những ngày không áp dụng)</div>
+                                                                <div class="c-price">500.000đ</div>
+                                                                <div class="c-exp">HSD: 31/12/2023</div>
+                                                                <div class="btn-general orange float-end">Mua ngay</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                    <a href="#" class="swiper-slide col-lg-4 col-md-4 col-sm-6 col-6 p-contanier">
+                                                        <div class="product-box d-flex">
+                                                            <div class="c-thumbnail">
+                                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square1.png" alt="" width="300" height="300" lazy />
+                                                            </div>
+        
+                                                            <div class="c-info">
+                                                                <div class="c-partner txt-line-limit-2">Sacombank SBJ Sacombank SBJ Sacombank SBJ</div>
+                                                                <div class="c-name">Coupon Làm đẹp 365 - Áp dụng tất cả các ngày trong năm(không bao gồm những ngày không áp dụng)</div>
+                                                                <div class="c-price">500.000đ</div>
+                                                                <div class="c-exp">HSD: 31/12/2023</div>
+                                                                <div class="btn-general orange float-end">Mua ngay</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+        
+                                                    <a href="#" class="swiper-slide col-lg-4 col-md-4 col-sm-6 col-6 p-contanier">
+                                                        <div class="product-box d-flex">
+                                                            <div class="c-thumbnail">
+                                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square2.png" alt="" width="300" height="300" lazy />
+                                                            </div>
+        
+                                                            <div class="c-info">
+                                                                <div class="c-partner txt-line-limit-2">Sacombank SBJ</div>
+                                                                <div class="c-name">Coupon Làm đẹp 365 - Áp dụng tất cả các ngày trong năm(không bao gồm những ngày không áp dụng)</div>
+                                                                <div class="c-price">500.000đ</div>
+                                                                <div class="c-exp">HSD: 31/12/2023</div>
+                                                                <div class="btn-general orange float-end">Mua ngay</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+
+                                                    <a href="#" class="swiper-slide col-lg-4 col-md-4 col-sm-6 col-6 p-contanier">
+                                                        <div class="product-box d-flex">
+                                                            <div class="c-thumbnail">
+                                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square1.png" alt="" width="300" height="300" lazy />
+                                                            </div>
+        
+                                                            <div class="c-info">
+                                                                <div class="c-partner txt-line-limit-2">Sacombank SBJ</div>
+                                                                <div class="c-name">Coupon Làm đẹp 365 - Áp dụng tất cả các ngày trong năm(không bao gồm những ngày không áp dụng)</div>
+                                                                <div class="c-price">500.000đ</div>
+                                                                <div class="c-exp">HSD: 31/12/2023</div>
+                                                                <div class="btn-general orange float-end">Mua ngay</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+        
+                                                    <a href="#" class="swiper-slide col-lg-4 col-md-4 col-sm-6 col-6 p-contanier">
+                                                        <div class="product-box d-flex">
+                                                            <div class="c-thumbnail">
+                                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square2.png" alt="" width="300" height="300" lazy />
+                                                            </div>
+        
+                                                            <div class="c-info">
+                                                                <div class="c-partner txt-line-limit-2">Sacombank SBJ</div>
+                                                                <div class="c-name">Coupon Làm đẹp 365 - Áp dụng tất cả các ngày trong năm(không bao gồm những ngày không áp dụng)</div>
+                                                                <div class="c-price">500.000đ</div>
+                                                                <div class="c-exp">HSD: 31/12/2023</div>
+                                                                <div class="btn-general orange float-end">Mua ngay</div>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </div>
+        
+                                                <div class="swiper-pagination"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!--#endregion-->
@@ -507,11 +831,11 @@
                                             <div class="d-detail-info">
                                                 Không chỉ nổi tiếng ở nội địa mà nó còn hấp dẫn rất nhiều thực khách ở các quốc gia khác, Lẩu Trùng Khánh luôn được xem là tinh hoa của ẩm thực Trung Hoa. Nếu không có cơ hội đến với xứ Trung nhưng vẫn muốn thưởng thức hương vị đặc biệt đó ở Việt Nam, Dealtoday mời bạn đến với bữa tiệc "Buffet lẩu Trùng Khánh tại nhà hàng BaoYu" mang đến cho quý khách hàng những món ăn thơm ngon, hấp dẫn.
                                                 
-                                                <img src="assets/images/demo-imgs/detail-page/img-info-1.png" alt="" height="800" width="400" lazy />
+                                                <img src="assets/images/demo-imgs/kham-pha/detail1.png" alt="" height="800" width="400" lazy />
                                                 
                                                 Lẩu Trùng Khánh từ lâu rất nổi tiếng trên bản đồ ẩm thực thế giới, nay đã có mặt tại Baoyu với rất nhiều loại nước lẩu đặc trưng như: lẩu Hoàng Kim, lẩu Mala, lẩu Thái, lẩu nấm, lẩu dưỡng nhan, lẩu Trùng Khánh, lẩu cà chua, từ cay tê đậm đà đến dịu ngọt thơm ngậy, vô cùng đặc biệt không giống bất kì nơi nào khác.
                                                 
-                                                <img src="assets/images/demo-imgs/detail-page/img-info-2.png" alt="" height="800" width="400" lazy />
+                                                <img src="assets/images/demo-imgs/kham-pha/detail2.png" alt="" height="800" width="400" lazy />
                                                 
                                                 Bên cạnh đó, xuất phát từ cái nôi của ẩm thực lẩu Trung Quốc, gây thương nhớ đặc biệt đó là nước dùng lẩu Trùng Khánh nổi tiếng bởi màu đỏ rực rỡ, vị cay tê và cách chế biến cầu kì. Với nguyên liệu chính từ ớt Tứ Xuyên, dầu ớt, bơ và nhiều loại gia vị khác, lẩu Trùng Khánh mang hương vị khó quên từ vị cay lan toả trong khoang miệng, với mùi thơm từ gia vị đậm đà trong từng giọt nước dùng.
                                             </div>
@@ -531,15 +855,16 @@
                             </div> 
                             <!--#endregion-->
                         </div>
-                        <div class="col-3">
-                            <div class="row">
+                        <div class="col-3 d-lg-block d-md-none d-sm-none d-none">
+                            <div class="row l-p-items">
+                                <div class="l-til">E-Voucher</div>
                                 <div class="col-12 list-product-reg">
                                     <div class="row">
                                         <!--#region List product-->
                                         <a href="#" class="col-12 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
-                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                                    <img data-src="" src="assets/images/demo-imgs/kham-pha/square3.png" alt="" width="300" height="300" lazy />
                                                 </div>
                                                 <div class="sale-tag">50%</div>
                                                 <div class="p-info">
@@ -556,12 +881,12 @@
                                                         </span>
                                                     </div>
                                                     <div class="p-price">
-                                                        <div class="sale-price">
+                                                        <span class="sale-price">
                                                             500.000đ
-                                                        </div>
-                                                        <div class="original-price">
+                                                        </span>
+                                                        <span class="original-price">
                                                             1.000.000đ                                        
-                                                        </div>
+                                                        </span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -570,7 +895,7 @@
                                         <a href="#" class="col-12 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
-                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                                    <img data-src="" src="assets/images/demo-imgs/kham-pha/square4.png" alt="" width="300" height="300" lazy />
                                                 </div>
                                                 <div class="sale-tag">50%</div>
                                                 <div class="p-info">
@@ -587,43 +912,12 @@
                                                         </span>
                                                     </div>
                                                     <div class="p-price">
-                                                        <div class="sale-price">
+                                                        <span class="sale-price">
                                                             500.000đ
-                                                        </div>
-                                                        <div class="original-price">
+                                                        </span>
+                                                        <span class="original-price">
                                                             1.000.000đ                                        
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-
-                                        <a href="#" class="col-12 p-contanier">
-                                            <div class="product-box">
-                                                <div class="p-img">
-                                                    <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
-                                                </div>
-                                                <div class="sale-tag">50%</div>
-                                                <div class="p-info">
-                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
-                                                    <div class="p-rating"> 
-                                                        <span>
-                                                            <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
                                                         </span>
-                                                        <span class="rating-point">
-                                                            4.8
-                                                        </span>
-                                                        <span class="total-rating">
-                                                            (541)
-                                                        </span>
-                                                    </div>
-                                                    <div class="p-price">
-                                                        <div class="sale-price">
-                                                            500.000đ
-                                                        </div>
-                                                        <div class="original-price">
-                                                            1.000.000đ                                        
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -632,34 +926,394 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row l-p-items">
+                                <div class="l-til">E-Gift</div>
+                                <div class="col-12 list-product-reg">
+                                    <div class="row">
+                                        <!--#region List product-->
+                                        <a href="#" class="col-12 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/kham-pha/square5.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-12 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/kham-pha/square3.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    
+                                                    <div class="bounus-point">
+                                                        Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!--#endregion-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="row l-p-items">
+                                <div class="l-til">E-Ticket</div>
+                                <div class="col-12 list-product-reg">
+                                    <div class="row">
+                                        <!--#region List product-->
+                                        <a href="#" class="col-12 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/kham-pha/square4.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    <div class="p-rating"> 
+                                                        <span>
+                                                            <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy="">
+                                                        </span>
+                                                        <span class="rating-point">
+                                                            4.8
+                                                        </span>
+                                                        <span class="total-rating">
+                                                            (541)
+                                                        </span>
+                                                    </div>
+                                                    <div class="p-price">
+                                                        <div class="sale-price">
+                                                            500.000đ
+                                                        </div>
+                                                        <div class="original-price">
+                                                            1.000.000đ                                        
+                                                        </div>
+                                                    </div>
+                                                    <div class="tags-ctn">
+                                                        <span class="tag-item">
+                                                            Đặt trước
+                                                        </span>
+                                                        <span class="tag-item">
+                                                            Không hoàn hủy
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-12 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/kham-pha/square3.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    <div class="p-rating"> 
+                                                        <span>
+                                                            <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy="">
+                                                        </span>
+                                                        <span class="rating-point">
+                                                            4.8
+                                                        </span>
+                                                        <span class="total-rating">
+                                                            (541)
+                                                        </span>
+                                                    </div>
+                                                    <div class="p-price">
+                                                        <div class="sale-price">
+                                                            500.000đ
+                                                        </div>
+                                                        <div class="original-price">
+                                                            1.000.000đ                                        
+                                                        </div>
+                                                    </div>
+                                                    <div class="tags-ctn">
+                                                        <span class="tag-item">
+                                                            Đặt trước
+                                                        </span>
+                                                        <span class="tag-item">
+                                                            Không hoàn hủy
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <!--#endregion-->
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
                 
                 <div class="gap-reg-20"></div>
 
-                <!--#region Partner Info-->
+                <!--#region Accept Point Info-->
                 <div class="col-12 p-sm-0 p-xs-0">
-                    <div class="d-detail-rg">
-                        <h2>
-                            Điểm chấp nhận
-                        </h2>
-                        <div class="lst-locs">
-                            <a href="#">
-                                18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
-                            </a>
+                    <div class="row m-lg-0 m-xl-0">
+                        <div class="p-l-inf">
+                            <h2>
+                                Điểm chấp nhận
+                            </h2>
+                            <input type="text" placeholder="Tỉnh/Thành phố">
+                            <div class="lst-locs">
+                                <div class="city">Hà Nội</div>
+        
+                                <a href="#">
+                                    18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
+                                </a>
+                            </div>
+        
+                            <div class="gap-reg-12"></div>
+        
+                            <div class="lst-locs">
+                                <div class="city">Đà Nẵng</div>
+                                
+                                <a href="#">
+                                    18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
+                                </a>
+        
+                                <div class="gap-reg-6"></div>
+        
+                                <a href="#">
+                                    18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
+                                </a>
+                            </div>
+        
+                            <div class="gap-reg-12"></div>
+        
+                            <div class="lst-locs">
+                                <div class="city">Sài Gòn</div>
+        
+                                <a href="#">
+                                    18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
+                                </a>
+        
+                                <div class="gap-reg-6"></div>
+        
+                                <a href="#">
+                                    18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--#endregion-->
 
-                            <div class="gap-reg-6"></div>
+                <!--#region Item Popup-->
+                <div class="p-popup-container" id="itemPopup" onclick="if(event.target == this){closePopup('#itemPopup');}">
+                    <div class="p-popup-wrapper h-100 bg-white" style="height: fit-content; overflow: hidden;">
+                        <h2 class="text-center bg-white">Sản phẩm dịch vụ<span class="float-end" onclick="closePopup('#itemPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="20" width="20" /></span></h2>
+                        
+                        <div class="row">
+                            <div class="border-div"></div>
+                        </div>
 
-                            <a href="#">
-                                18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
-                            </a>
+                        <!--#region Tabs-->
+                        <div class="row">
+                            <div id="evoucher" class="col-4 deal-tab flex-center">
+                                E-Voucher(50)
+                            </div>
+                            <div id="egift" class="col-4 deal-tab flex-center selected">
+                                E-Gift(50)
+                            </div>
+                            <div id="eticket" class="col-4 deal-tab flex-center">
+                                E-Ticket(25)
+                            </div>
+                        </div>
+                        <!--#endregion-->
 
-                            <div class="gap-reg-6"></div>
+                        <div class="filter-wrapper h-100 p-0">
+                            <div class="filter-container p-0">
+                                <div class="gap-reg-16"></div>
+                                <div class="row">
+                                    <a href="#" class="col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square3.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <span class="sale-price">
+                                                        500.000đ
+                                                    </span>
+                                                    <span class="original-price">
+                                                        1.000.000đ                                        
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
 
-                            <a href="#">
-                                18 ngõ 11 Thái Hà, Đống Đa, Hà Nội, Việt Nam
-                            </a>
+                                    <a href="#" class="col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square3.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <span class="sale-price">
+                                                        500.000đ
+                                                    </span>
+                                                    <span class="original-price">
+                                                        1.000.000đ                                        
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square3.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                
+                                                <div class="bounus-point">
+                                                    Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square3.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                
+                                                <div class="bounus-point">
+                                                    Điểm thưởng:&nbsp;<span class="p-val">3%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square3.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy="">
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                    <div class="original-price">
+                                                        1.000.000đ                                        
+                                                    </div>
+                                                </div>
+                                                <div class="tags-ctn">
+                                                    <span class="tag-item">
+                                                        Đặt trước
+                                                    </span>
+                                                    <span class="tag-item">
+                                                        Không hoàn hủy
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <a href="#" class="col-6 p-contanier">
+                                        <div class="product-box">
+                                            <div class="p-img">
+                                                <img data-src="" src="assets/images/demo-imgs/kham-pha/square3.png" alt="" width="300" height="300" lazy />
+                                            </div>
+                                            <div class="sale-tag">50%</div>
+                                            <div class="p-info">
+                                                <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                <div class="p-rating"> 
+                                                    <span>
+                                                        <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy="">
+                                                    </span>
+                                                    <span class="rating-point">
+                                                        4.8
+                                                    </span>
+                                                    <span class="total-rating">
+                                                        (541)
+                                                    </span>
+                                                </div>
+                                                <div class="p-price">
+                                                    <div class="sale-price">
+                                                        500.000đ
+                                                    </div>
+                                                    <div class="original-price">
+                                                        1.000.000đ                                        
+                                                    </div>
+                                                </div>
+                                                <div class="tags-ctn">
+                                                    <span class="tag-item">
+                                                        Đặt trước
+                                                    </span>
+                                                    <span class="tag-item">
+                                                        Không hoàn hủy
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1087,113 +1741,6 @@
     </div>
     <!--#endregion-->
 
-    <!--#region PopupCategory-->
-    <div class="p-popup-container" id="catePopup" onclick="if(event.target == this){closeMenuPopup('#catePopup');}" aria-hidden="false">
-        <div class="p-popup-wrapper">
-            <h2>Tất cả dịch vụ<span class="float-end" onclick="closeMenuPopup('#catePopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="24" width="24" /></span></h2>
-            
-            <div class="row detail-lst">
-                <div class="col-12 cate-header">
-                    <h3>E-Voucher</h3>
-                </div>
-                <div class="borderline d-xl-block d-lg-block d-md-block d-sm-block d-xs-none d-none"></div>
-                <div class="col-12 row cate-lst">
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Voucher/vui-choi-giai-tri.png" data-src="" alt="" width="24" height="24" />
-                        <p>Vui chơi giải trí</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Voucher/lam-dep.png" data-src="" alt="" width="24" height="24" />
-                        <p>Sức Khỏe & Làm Đẹp</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Voucher/nha-hang-am-thuc.png" data-src="" alt="" width="24" height="24" />
-                        <p>Nhà Hàng Ăn Uống</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Voucher/du-lich-khach-san.png" data-src="" alt="" width="24" height="24" />
-                        <p>Du Lịch & Khách Sạn</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Voucher/booking-golf.png" data-src="" alt="" width="24" height="24" />
-                        <p>Booking Golf</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Voucher/phan-mem.png" data-src="" alt="" width="24" height="24" />
-                        <p>Phần mềm</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Voucher/sieu-thi.png" data-src="" alt="" width="24" height="24" />
-                        <p>Siêu thị</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Voucher/khoa-hoc-dao-tao.png" data-src="" alt="" width="24" height="24" />
-                        <p>Khóa học Đào tạo</p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="row detail-lst">
-                <div class="col-12 cate-header">
-                    <h3>E-Gift</h3>
-                </div>
-                <div class="borderline"></div>
-                <div class="col-12 row cate-lst">
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Gift/sinh-nhat.png" data-src="" alt="" width="24" height="24" />
-                        <p>Sinh nhật</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Gift/cam-on.png" data-src="" alt="" width="24" height="24" /> 
-                        <p>Cảm ơn</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Gift/chuc-mung.png" data-src="" alt="" width="24" height="24" />
-                        <p>Chúc mừng</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Gift/dip-le.png" data-src="" alt="" width="24" height="24" />
-                        <p>Dịp lễ</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Gift/nguoi-than.png" data-src="" alt="" width="24" height="24" />
-                        <p>Người thân</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Gift/doi-tac.png" data-src="" alt="" width="24" height="24" />
-                        <p>Đối tác</p>
-                    </a>
-                </div>
-            </div>
-
-            <div class="row detail-lst">
-                <div class="col-12 cate-header">
-                    <h3>E-Ticket</h3>
-                </div>
-                <div class="borderline"></div>
-                <div class="col-12 row cate-lst">
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Ticket/vui-choi-giai-tri.png" data-src="" alt="" width="24" height="24" />
-                        <p>Khu vui chơi</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Ticket/su-kien-van-hoa.png" data-src="" alt="" width="24" height="24" />
-                        <p>Sự kiện văn hóa</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Ticket/di-chuyen.png" data-src="" alt="" width="24" height="24" />
-                        <p>Di chuyển</p>
-                    </a>
-                    <a class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-6 col-6" href="#">
-                        <img src="assets/images/demo-imgs/category/E-Ticket/tham-quan-du-lich.png" data-src="" alt="" width="24" height="24" />
-                        <p>Tham quan du lịch</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--#endregion-->
-
     <!--#region script-->
     <script>
         function openMenuPopup(popupId) {
@@ -1211,14 +1758,18 @@
         var width = $(window).width();
         if (width < 576) {
             //Promo
-            let promoSwiper = new Swiper('.lst-vou-promo .swiper-container', {
+            let promoSwiper = new Swiper('.partner-swiper .swiper-container', {
                                     slidesPerView: 1,
-                                    spaceBetween: 10,
+                                    spaceBetween: 0,
                                     loop: false,
-                                    pagination: {
-                                        el: '.lst-vou-promo .swiper-pagination',
-                                        clickable: true,
-                                    },
+                                    // pagination: {
+                                    //     el: '.partner-swiper .swiper-pagination',
+                                    //     clickable: true,
+                                    // },
+                                    navigation: {
+                                        nextEl: ".swiper-button-next",
+                                        prevEl: ".swiper-button-prev",
+                                    }
                                 }
             );
             //List images
@@ -1229,20 +1780,24 @@
                                     pagination: {
                                         el: '.lst-coupon .swiper-pagination',
                                         clickable: true,
-                                    },
+                                    }
                                 }
             );
         }
         else if (width >= 576 && width < 768) {
             //Promo
-            let promoSwiper = new Swiper('.lst-vou-promo .swiper-container', {
-                                    slidesPerView: 1.25,
-                                    spaceBetween: 10,
+            let promoSwiper = new Swiper('.partner-swiper .swiper-container', {
+                                    slidesPerView: 1,
+                                    spaceBetween: 0,
                                     loop: false,
-                                    pagination: {
-                                        el: '.lst-vou-promo .swiper-pagination',
-                                        clickable: true,
-                                    },
+                                    // pagination: {
+                                    //     el: '.partner-swiper .swiper-pagination',
+                                    //     clickable: true,
+                                    // },
+                                    navigation: {
+                                        nextEl: ".swiper-button-next",
+                                        prevEl: ".swiper-button-prev",
+                                    }
                                 }
             );
             //List images
@@ -1253,20 +1808,24 @@
                                     pagination: {
                                         el: '.lst-coupon .swiper-pagination',
                                         clickable: true,
-                                    },
+                                    }
                                 }
             );
         }
         else if(width >= 768 && width < 992) {
             //Promo
-            let promoSwiper = new Swiper('.lst-vou-promo .swiper-container', {
-                                    slidesPerView: 2 + 1/6,
+            let promoSwiper = new Swiper('.partner-swiper .swiper-container', {
+                                    slidesPerView: 2,
                                     spaceBetween: 10,
                                     loop: false,
-                                    pagination: {
-                                        el: '.lst-vou-promo .swiper-pagination',
-                                        clickable: true,
-                                    },
+                                    // pagination: {
+                                    //     el: '.partner-swiper .swiper-pagination',
+                                    //     clickable: true,
+                                    // },
+                                    navigation: {
+                                        nextEl: ".swiper-button-next",
+                                        prevEl: ".swiper-button-prev",
+                                    }
                                 }
             );
 
@@ -1277,56 +1836,35 @@
                                     pagination: {
                                         el: '.lst-coupon .swiper-pagination',
                                         clickable: true,
-                                    },
-                                }
-            );
-        }
-
-        else if(width >= 992 && width < 1200) {
-            //List images
-            let promoSwiper = new Swiper('.lst-vou-promo .swiper-container', {
-                                    slidesPerView: 3,
-                                    spaceBetween: 10,
-                                    loop: false,
-                                    pagination: {
-                                        el: '.lst-vou-promo .swiper-pagination',
-                                        clickable: true,
-                                    },
-                                }
-            );
-
-            let couponSwiper = new Swiper('.lst-coupon .swiper-container', {
-                                    slidesPerView: 2.5,
-                                    spaceBetween: 10,
-                                    loop: false,
-                                    pagination: {
-                                        el: '.lst-coupon .swiper-pagination',
-                                        clickable: true,
-                                    },
+                                    }
                                 }
             );
         }
         else {
             //Promo
-            let promoSwiper = new Swiper('.lst-vou-promo .swiper-container', {
-                                    slidesPerView: 3,
-                                    spaceBetween: 15,
+            let promoSwiper = new Swiper('.partner-swiper .swiper-container', {
+                                    slidesPerView: 2,
+                                    spaceBetween: 10,
                                     loop: false,
-                                    pagination: {
-                                        el: '.lst-vou-promo .swiper-pagination',
-                                        clickable: true,
-                                    },
+                                    // pagination: {
+                                    //     el: '.partner-swiper .swiper-pagination',
+                                    //     clickable: true,
+                                    // },
+                                    navigation: {
+                                        nextEl: ".swiper-button-next",
+                                        prevEl: ".swiper-button-prev",
+                                    }
                                 }
             );
 
             let couponSwiper = new Swiper('.lst-coupon .swiper-container', {
-                                    slidesPerView: 2.5,
+                                    slidesPerView: 2.6,
                                     spaceBetween: 10,
                                     loop: false,
                                     pagination: {
                                         el: '.lst-coupon .swiper-pagination',
                                         clickable: true,
-                                    },
+                                    }
                                 }
             );
         };

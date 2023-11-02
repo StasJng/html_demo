@@ -67,41 +67,6 @@
     .s-sum-inf span {
         color: #F6911E;
     }
-
-    .filter-wrapper .dropdown.non-drop .dealtoday-checkbox label {
-        margin-bottom: 6px;
-    }
-
-    .filter-wrapper .dropdown.non-drop .dealtoday-checkbox label a {
-        color: #000;
-        margin-left: 2px;
-    }
-
-    .filter-wrapper .dropdown.non-drop .dealtoday-checkbox label a:hover {
-        color: #F6911E;
-    }
-
-    .main-banner .swiper-pagination-bullet-active {
-        background: #F6911E !important;
-    }
-
-    .main-banner .swiper-pagination-bullet {
-        width: 15px !important;
-        height: 3px !important;
-        border-radius: 3px !important;
-    }
-
-    @media(max-width: 992px) {
-        .sort-info .dealtoday-checkbox input:checked + label:before, .sort-info .dealtoday-checkbox.round label:before {
-            top: 3px;
-            float: right;
-        }
-
-        .sort-info .dealtoday-checkbox.round input:checked + label:after {
-            top: 2px;
-            left: calc(100% - 12px);
-        }
-    }
 </style>
 <body>
         <!--#region Header-->
@@ -402,175 +367,18 @@
 
                     <div class="gap-reg-12"></div>
 
-                    <!--#region Main-banner-->
-                    <div class="main-banner col-12 p-0">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <a href="#" class="swiper-slide col-12">
-                                    <img src="assets/images/demo-imgs/kham-pha/banner.png" alt="" height="500" width="1600" lazy />
-                                </a>
+                    <div class="s-sum-inf p-sm-0 p-xs-0">Có <span>58</span> Điểm ưu đãi liên quan</div>
 
-                                <a href="#" class="swiper-slide col-12">
-                                    <img src="assets/images/demo-imgs/kham-pha/banner.png" alt="" height="500" width="1600" lazy />
-                                </a>
-
-                                <a href="#" class="swiper-slide col-12">
-                                    <img src="assets/images/demo-imgs/kham-pha/banner.png" alt="" height="500" width="1600" lazy />
-                                </a>
-
-                                <a href="#" class="swiper-slide col-12">
-                                    <img src="assets/images/demo-imgs/kham-pha/banner.png" alt="" height="500" width="1600" lazy />
-                                </a>
-
-                                <a href="#" class="swiper-slide col-12">
-                                    <img src="assets/images/demo-imgs/kham-pha/banner.png" alt="" height="500" width="1600" lazy />
-                                </a>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                    <!--#endregion-->
-
-                    <div class="gap-reg-20"></div>
+                    <div class="gap-reg-12"></div>
 
                     <!--#region Main Content-->
                     <div class="col-12 p-0">
                         <div class="row">
-                            <!--#region Filter(WEB)-->
-                            <div class="p-search-filter-ctn-box col-xl-3 col-lg-3 col-9 d-xl-block d-lg-block d-md-none d-sm-none d-none">
-                                <div class="filter-wrapper">
-                                    <div class="filter-container pb-0">
-
-                                        <!--#region Thương hiệu(contains 1-lvl Searchbox)-->
-                                        <p class="drop-filter-title">Danh mục</p>
-
-                                        <ul class="loc-filter-items brand list-fil-items overflow-hidden">
-                                            <li class="dropdown brand non-drop">
-                                                <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="b-no-1" onchange="" name="fil-val" data="brand-1" class="filter-item" filType="brand">
-                                                    <label for="b-no-1" class="txt-keyword">
-                                                        <a href="#">Mách chỗ làm đẹp</a>
-                                                    </label>
-                                                </span>
-                                            </li>
-
-                                            <li class="dropdown brand non-drop">
-                                                <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="b-no-2" onchange="" name="fil-val" data="brand-2" class="filter-item" filType="brand">
-                                                    <label for="b-no-2" class="txt-keyword">
-                                                        <a href="#">Vui chơi giải trí</a>
-                                                    </label>
-                                                </span>
-                                            </li>
-
-                                            <li class="dropdown brand non-drop">
-                                                <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="b-no-3" onchange="" name="fil-val" data="brand-3" class="filter-item" filType="brand">
-                                                    <label for="b-no-3" class="txt-keyword">
-                                                        <a href="#">Ăn ngon ở đâu?</a>
-                                                    </label>
-                                                </span>
-                                            </li>
-
-                                            <li class="dropdown brand non-drop">
-                                                <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="b-no-4" onchange="" name="fil-val" data="brand-4" class="filter-item" filType="brand">
-                                                    <label for="b-no-4" class="txt-keyword">
-                                                        <a href="#">Khám phá bốn phương</a>
-                                                    </label>
-                                                </span>
-                                            </li>
-
-                                            <li class="dropdown brand non-drop">
-                                                <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="b-no-5" onchange="" name="fil-val" data="brand-5" class="filter-item" filType="brand">
-                                                    <label for="b-no-5" class="txt-keyword">
-                                                        <a href="#">Booking Golf</a>
-                                                    </label>
-                                                </span>
-                                            </li>
-
-                                            <li class="dropdown brand non-drop">
-                                                <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="b-no-6" onchange="" name="fil-val" data="brand-6" class="filter-item" filType="brand">
-                                                    <label for="b-no-6" class="txt-keyword">
-                                                        <a href="#">Hành trang kiến thức</a>
-                                                    </label>
-                                                </span>
-                                            </li>
-
-                                            <li class="dropdown brand non-drop">
-                                                <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="b-no-7" onchange="" name="fil-val" data="brand-7" class="filter-item" filType="brand">
-                                                    <label for="b-no-7" class="txt-keyword">
-                                                        <a href="#">Software</a>
-                                                    </label>
-                                                </span>
-                                            </li>
-
-                                            <li class="dropdown brand non-drop">
-                                                <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="b-no-8" onchange="" name="fil-val" data="brand-8" class="filter-item" filType="brand">
-                                                    <label for="b-no-8" class="txt-keyword">
-                                                        <a href="#">Món quà ý nghĩa</a>
-                                                    </label>
-                                                </span>
-                                            </li>
-
-                                            <li class="dropdown brand non-drop">
-                                                <span class="dealtoday-checkbox">
-                                                    <input type="checkbox" id="b-no-9" onchange="" name="fil-val" data="brand-9" class="filter-item" filType="brand">
-                                                    <label for="b-no-9" class="txt-keyword">
-                                                        <a href="#">Dịch vụ khác</a>
-                                                    </label>
-                                                </span>
-                                            </li>
-                                        </ul>
-                                        <!--#endregion-->
-                                    
-                                    </div>
-                                </div>
-                            </div>
-                            <!--#endregion-->
-                            <!--#region List Product-->
-                            <div class="p-seacrh-lst-items-box col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-                                <div class="col-12 d-detail-rg">
-                                    <div class="row">
-                                        <div class="col-12 result-txt">
-                                            <span class="d-lg-block d-md-none d-sm-none d-xs-none d-none">Tìm thấy 218 kết quả</span>
-                                            <span class="d-lg-none d-md-flex d-sm-flex d-xs-flex d-flex flex-align-center">Du lịch và khách sạn&nbsp;<span class="mb-note">(Có 218 deal liên quan)</span></span>
-                                        </div>
-                                        <div class="col-12 result-fil">
-                                            <span class="sort-txt d-lg-inline d-md-none d-sm-none d-xs-none d-none">
-                                                Sắp xếp theo:
-                                            </span>
-                                            <span class="sort-by">
-                                                <span class="d-lg-inline d-md-none d-sm-none d-xs-none d-none s-new" onclick="doSorting(1);">Mới nhất</span>
-                                                <span class="d-lg-inline d-md-none d-sm-none d-xs-none d-none s-most" onclick="doSorting(2);">Bán chạy</span>
-                                                <span class="d-lg-inline d-md-none d-sm-none d-xs-none d-none s-most" onclick="doSorting(3);">Gần tôi</span>
-                                            </span>
-    
-                                            <div class="row d-lg-none d-md-flex d-sm-flex d-xs-flex d-flex flex-center fil-mb">
-                                                <div class="col-6" onclick="openPopup('#sortPopup')">
-                                                    <img src="assets/images/generals/icon-sort-orange.svg" alt="" height="16" width="16" />
-                                                    &nbsp;Sắp xếp
-                                                </div>
-                                                <div class="col-6" onclick="openPopup('#filterPopup')">
-                                                    <img src="assets/images/generals/icon-filter-orange.svg" alt="" height="16" width="16" />
-                                                    &nbsp;Bộ lọc
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="gap-reg-20"></div>
-
-                                <!--#region Demo Flash Sale Items-->
-                                <div class="col-12 list-product-reg">
+                            <div class="p-seacrh-lst-items-box col-12">
+                                <div class="col-12 list-product-reg p-sm-0 p-xs-0">
                                     <div class="row">
                                         <!--#region List product-->
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner1.png" alt="" width="300" height="300" lazy />
@@ -599,7 +407,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner2.png" alt="" width="300" height="300" lazy />
@@ -628,7 +436,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner3.png" alt="" width="300" height="300" lazy />
@@ -657,7 +465,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner4.png" alt="" width="300" height="300" lazy />
@@ -686,7 +494,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner5.png" alt="" width="300" height="300" lazy />
@@ -715,7 +523,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner6.png" alt="" width="300" height="300" lazy />
@@ -744,7 +552,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner7.png" alt="" width="300" height="300" lazy />
@@ -773,7 +581,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner8.png" alt="" width="300" height="300" lazy />
@@ -802,7 +610,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner9.png" alt="" width="300" height="300" lazy />
@@ -821,19 +629,17 @@
                                                             (541)
                                                         </span>
                                                     </div>
-                                                    <div class="p-price">
-                                                        <span class="sale-price">
-                                                            500.000đ
-                                                        </span>
-                                                        <span class="original-price">
-                                                            1.000.000đ
-                                                        </span>
+                                                    <div class="p-d-total txt-line-limit-1">
+                                                        <img src="assets/images/generals/icon-kham-pha-deal.svg" alt="" height="16" width="16" />Có 5 sản phẩm được bán 
+                                                    </div>
+                                                    <div class="p-locs txt-line-limit-1">
+                                                        <img src="assets/images/generals/icon-loc-map.svg" alt="" height="16" width="16" />Tòa nhà N14 - Số 6 Tôn Thất Tùng - Trung Liệt - Đống Đa - Hà Nội - Việt nam 
                                                     </div>
                                                 </div>
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner10.png" alt="" width="300" height="300" lazy />
@@ -862,7 +668,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner1.png" alt="" width="300" height="300" lazy />
@@ -891,7 +697,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner2.png" alt="" width="300" height="300" lazy />
@@ -920,7 +726,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner3.png" alt="" width="300" height="300" lazy />
@@ -949,7 +755,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner4.png" alt="" width="300" height="300" lazy />
@@ -978,7 +784,7 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner5.png" alt="" width="300" height="300" lazy />
@@ -1007,10 +813,126 @@
                                             </div>
                                         </a>
 
-                                        <a href="#" class="col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
                                             <div class="product-box">
                                                 <div class="p-img">
                                                     <img data-src="" src="assets/images/demo-imgs/kham-pha/partner6.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    <div class="p-rating">
+                                                        <span>
+                                                            <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                        </span>
+                                                        <span class="rating-point">
+                                                            4.8
+                                                        </span>
+                                                        <span class="total-rating">
+                                                            (541)
+                                                        </span>
+                                                    </div>
+                                                    <div class="p-d-total txt-line-limit-1">
+                                                        <img src="assets/images/generals/icon-kham-pha-deal.svg" alt="" height="16" width="16" />Có 5 sản phẩm được bán 
+                                                    </div>
+                                                    <div class="p-locs txt-line-limit-1">
+                                                        <img src="assets/images/generals/icon-loc-map.svg" alt="" height="16" width="16" />Tòa nhà N14 - Số 6 Tôn Thất Tùng - Trung Liệt - Đống Đa - Hà Nội - Việt nam 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/kham-pha/partner7.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    <div class="p-rating">
+                                                        <span>
+                                                            <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                        </span>
+                                                        <span class="rating-point">
+                                                            4.8
+                                                        </span>
+                                                        <span class="total-rating">
+                                                            (541)
+                                                        </span>
+                                                    </div>
+                                                    <div class="p-d-total txt-line-limit-1">
+                                                        <img src="assets/images/generals/icon-kham-pha-deal.svg" alt="" height="16" width="16" />Có 5 sản phẩm được bán 
+                                                    </div>
+                                                    <div class="p-locs txt-line-limit-1">
+                                                        <img src="assets/images/generals/icon-loc-map.svg" alt="" height="16" width="16" />Tòa nhà N14 - Số 6 Tôn Thất Tùng - Trung Liệt - Đống Đa - Hà Nội - Việt nam 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/kham-pha/partner8.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    <div class="p-rating">
+                                                        <span>
+                                                            <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                        </span>
+                                                        <span class="rating-point">
+                                                            4.8
+                                                        </span>
+                                                        <span class="total-rating">
+                                                            (541)
+                                                        </span>
+                                                    </div>
+                                                    <div class="p-d-total txt-line-limit-1">
+                                                        <img src="assets/images/generals/icon-kham-pha-deal.svg" alt="" height="16" width="16" />Có 5 sản phẩm được bán 
+                                                    </div>
+                                                    <div class="p-locs txt-line-limit-1">
+                                                        <img src="assets/images/generals/icon-loc-map.svg" alt="" height="16" width="16" />Tòa nhà N14 - Số 6 Tôn Thất Tùng - Trung Liệt - Đống Đa - Hà Nội - Việt nam 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/kham-pha/partner9.png" alt="" width="300" height="300" lazy />
+                                                </div>
+                                                <div class="sale-tag">50%</div>
+                                                <div class="p-info">
+                                                    <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                                    <div class="p-rating">
+                                                        <span>
+                                                            <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                        </span>
+                                                        <span class="rating-point">
+                                                            4.8
+                                                        </span>
+                                                        <span class="total-rating">
+                                                            (541)
+                                                        </span>
+                                                    </div>
+                                                    <div class="p-d-total txt-line-limit-1">
+                                                        <img src="assets/images/generals/icon-kham-pha-deal.svg" alt="" height="16" width="16" />Có 5 sản phẩm được bán 
+                                                    </div>
+                                                    <div class="p-locs txt-line-limit-1">
+                                                        <img src="assets/images/generals/icon-loc-map.svg" alt="" height="16" width="16" />Tòa nhà N14 - Số 6 Tôn Thất Tùng - Trung Liệt - Đống Đa - Hà Nội - Việt nam 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        <a href="#" class="col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                            <div class="product-box">
+                                                <div class="p-img">
+                                                    <img data-src="" src="assets/images/demo-imgs/kham-pha/partner10.png" alt="" width="300" height="300" lazy />
                                                 </div>
                                                 <div class="sale-tag">50%</div>
                                                 <div class="p-info">
@@ -1044,10 +966,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!--#endregion-->
                             </div>
-                            <!--#endregion-->
-
                         </div>
                     </div>
                     <!--#endregion-->
@@ -1474,299 +1393,72 @@
         </div>
         <!--#endregion-->
 
-        <!--#region Popup Filter(MB)-->
-        <div class="p-popup-container" id="filterPopup" onclick="if(event.target == this){closePopup('#filterPopup');}">
-            <div class="p-popup-wrapper h-100 top-0 bg-white border-0">
-                <h2 class="text-center bg-white">Bộ lọc<span class="float-end" onclick="closePopup('#filterPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="18" width="18" /></span></h2>
-
-                <div class="row">
-                    <div class="border-div"></div>
-                </div>
-
-                <div class="filter-wrapper h-100">
-                    <div class="filter-container pad-l-0 pad-r-0">
-                        <!--#region Thương hiệu(contains 1-lvl Searchbox)-->
-                        <p class="drop-filter-title">Danh mục</p>
-
-                        <ul class="loc-filter-items brand list-fil-items overflow-hidden">
-                            <li class="dropdown brand non-drop">
-                                <span class="dealtoday-checkbox">
-                                    <input type="radio" id="b-no-01" onchange="" name="fil-val" data="brand-1" class="filter-item" filType="brand">
-                                    <label for="b-no-01" class="txt-keyword">
-                                        Mách chỗ làm đẹp
-                                    </label>
-                                </span>
-                            </li>
-
-                            <li class="dropdown brand non-drop">
-                                <span class="dealtoday-checkbox">
-                                    <input type="radio" id="b-no-02" onchange="" name="fil-val" data="brand-2" class="filter-item" filType="brand">
-                                    <label for="b-no-02" class="txt-keyword">
-                                        Vui chơi giải trí
-                                    </label>
-                                </span>
-                            </li>
-
-                            <li class="dropdown brand non-drop">
-                                <span class="dealtoday-checkbox">
-                                    <input type="radio" id="b-no-03" onchange="" name="fil-val" data="brand-3" class="filter-item" filType="brand">
-                                    <label for="b-no-03" class="txt-keyword">
-                                        Ăn ngon ở đâu?
-                                    </label>
-                                </span>
-                            </li>
-
-                            <li class="dropdown brand non-drop">
-                                <span class="dealtoday-checkbox">
-                                    <input type="radio" id="b-no-04" onchange="" name="fil-val" data="brand-4" class="filter-item" filType="brand">
-                                    <label for="b-no-04" class="txt-keyword">
-                                        Khám phá bốn phương
-                                    </label>
-                                </span>
-                            </li>
-
-                            <li class="dropdown brand non-drop">
-                                <span class="dealtoday-checkbox">
-                                    <input type="radio" id="b-no-05" onchange="" name="fil-val" data="brand-5" class="filter-item" filType="brand">
-                                    <label for="b-no-05" class="txt-keyword">
-                                        Booking Golf
-                                    </label>
-                                </span>
-                            </li>
-
-                            <li class="dropdown brand non-drop">
-                                <span class="dealtoday-checkbox">
-                                    <input type="radio" id="b-no-06" onchange="" name="fil-val" data="brand-6" class="filter-item" filType="brand">
-                                    <label for="b-no-06" class="txt-keyword">
-                                        Hành trang kiến thức
-                                    </label>
-                                </span>
-                            </li>
-
-                            <li class="dropdown brand non-drop">
-                                <span class="dealtoday-checkbox">
-                                    <input type="radio" id="b-no-07" onchange="" name="fil-val" data="brand-7" class="filter-item" filType="brand">
-                                    <label for="b-no-07" class="txt-keyword">
-                                        Software
-                                    </label>
-                                </span>
-                            </li>
-
-                            <li class="dropdown brand non-drop">
-                                <span class="dealtoday-checkbox">
-                                    <input type="radio" id="b-no-08" onchange="" name="fil-val" data="brand-8" class="filter-item" filType="brand">
-                                    <label for="b-no-08" class="txt-keyword">
-                                        Món quà ý nghĩa
-                                    </label>
-                                </span>
-                            </li>
-
-                            <li class="dropdown brand non-drop">
-                                <span class="dealtoday-checkbox">
-                                    <input type="radio" id="b-no-09" onchange="" name="fil-val" data="brand-9" class="filter-item" filType="brand">
-                                    <label for="b-no-09" class="txt-keyword">
-                                        Dịch vụ khác
-                                    </label>
-                                </span>
-                            </li>
-                        </ul>
-                        <!--#endregion-->
-                    </div>
-                </div>
-
-                <div class="filter-wrapper btn-filter p-0 flex-center bg-white">
-                    <div class="row w-100">
-                        <div class="col-6 pad-l-0">
-                            <div class="btn-general w-100">
-                                Đặt lại
-                            </div>
-                        </div>
-                        <div class="col-6 pad-r-0">
-                            <div class="btn-general orange w-100">
-                                Áp dụng
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <!--#region-->
         <script>
-            function openPopup(popup) {
-                $('body').attr('style', 'overflow: hidden');
-                $(popup).show();
-            }
+            //Location searching function
+            $(document).ready(function () {
+                $(".loc-filter-items").each(function (i, value) {
+                    let input = $(value).find("input[type='text']");
+                    //On typing
+                    $(input).keyup(function () {
+                        //Declare filter
+                        let filter = $(input).val().toUpperCase();
 
-            function closePopup(popup) {
-                $('body').removeAttr('style');
-                $(popup).hide();
-            }
-        </script>
-        <!--#endregion-->
-
-        <!--#region Popup Sorting-->
-        <div class="p-popup-container" id="sortPopup" onclick="if(event.target == this){closePopup('#sortPopup');}">
-            <div class="p-popup-wrapper h-100 bg-white" style="height: fit-content; overflow: hidden;">
-                <h2 class="text-center bg-white">Bộ lọc<span class="float-end" onclick="closePopup('#sortPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="20" width="20" /></span></h2>
-                
-                <div class="row">
-                    <div class="border-div"></div>
-                </div>
-
-                <div class="filter-wrapper h-100" style="padding-top: 6px;">
-                    <div class="filter-container">
-                        <!--#region Sorting-->
-                        <div class="row sort-info">
-                            <div class="popup-til dealtoday-checkbox round col-12" onclick="pickSortTypeMb(1)">
-                                <input type="radio" name="sorting-type" id="sort-1" value="1" checked>
-                                <label for="sort-1" class="w-100">Mới nhất</label>
-                            </div>
-                        </div>
-        
-                        <div class="row sort-info">
-                            <div class="popup-til dealtoday-checkbox round col-12" onclick="pickSortTypeMb(2)">
-                                <input type="radio" name="sorting-type" id="sort-2" value="2">
-                                <label for="sort-2" class="w-100">Bán chạy</label>
-                            </div>
-                        </div>
-        
-                        <div class="row sort-info">
-                            <div class="popup-til dealtoday-checkbox round col-12" onclick="pickSortTypeMb(3)">
-                                <input type="radio" name="sorting-type" id="sort-3" value="3">
-                                <label for="sort-3" class="w-100">Gần tôi</label>
-                            </div>
-                        </div>
-                        <!--#endregion-->
-        
-                        <script>
-                            function pickSortTypeMb(type) {
-                                if (type == 0) {
-                                    $('#sortPopup').find('.dealtoday-checkbox input[type=radio]').each(function () {
-                                        $(this).removeAttr("checked");
-                                    });
-        
-                                    $('#btn-view-more').attr('sortType', 1);
-                                }
-                                else {
-                                    $('#btn-view-more').attr('sortType', type);
-                                }
+                        $(value).find(".txt-keyword-p").each(function (index, item) {
+                            if ($(item).text().toUpperCase().search(filter) < 0) {
+                                $(this).parents('.dropdown').hide();
                             }
-                        </script>
-                    </div>
-                </div>
-        
-                <div class="filter-wrapper btn-filter p-0 flex-center bg-white">
-                    <div class="row w-100">
-                        <div class="col-12 p-0">
-                            <div class="btn-general orange w-100" onclick="doWork();">
-                                Áp dụng
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--#endregion-->
+                        });
 
-        <!--#region Filter 1 lvl-->
-        <script>
-            //Select all
-            $('.check-all-filter').change(function () {
-                if (this.checked) {
-                    //Select all checkbox
-                    $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]').prop("checked", true);
+                        //Search
+                        $(value).find(".txt-keyword").each(function (index, item) {
+                            //console.log($(item).attr("id"));
+                            //console.log("p: " + $(item).attr("pId"));
+                            if ($(item).text().toUpperCase().search(filter) < 0) {
+                                $(this).parents('.txt-info').hide();
+                            }
+                            else {
+                                $(this).parents('.txt-info').show();
+                                $(this).parents('.dropdown').show();
+                            }
+                        });
 
-                    //Build list value
-                    var dataValue = "";
-                    $('.list-fil-items input[name=fil-val]:checked').each(function () {
-                        dataValue = dataValue + $(this).attr('data') + ",";
-                    });
-
-                    //Set value
-                    $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
-                }
-                else {
-                    //Uncheck all checkbox
-                    $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]').prop("checked", false);
-
-                    //Reset QR value
-                    $('#filValHolder-' + $(this).attr('filType')).val("");
-                }
-            });
-
-            //Select a checkbox
-            $('.filter-item').change(function () {
-                //Get current Filter value
-                var currentSelectedVal = $('#filValHolder-' + $(this).attr('filType')).val();
-
-                //Get checkbox's value
-                var dataValue = $(this).attr('data');
-
-                //Check selected and do job
-                if (this.checked) {
-                    if (currentSelectedVal == null || currentSelectedVal == 'undefined' || currentSelectedVal == "") { //If current Filter is null or empty/whitespace
-                        //Set Filter value
-                        $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
-                    }
-                    else {
-                        //Add Filter to current value
-                        if (currentSelectedVal.slice(-1) == ",") {
-                            currentSelectedVal = currentSelectedVal.substring(0, currentSelectedVal.length - 1);
+                        if (filter.length <= 1) {
+                            $(value).find(".txt-keyword-p").each(function (index, item) {
+                                $(this).parents('.dropdown').show();
+                            });
                         }
-                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal + "," + dataValue);
-                    }
 
-                    var numItems = $(this).parents('.list-fil-items').find('.filter-item').length;
-                    var numSelItems = $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]:checked').length;
+                        $(value).find(".txt-keyword-p").each(function (index, item) {
+                            if ($(item).text().toUpperCase().search(filter) > 0) {
+                                $(this).parents('.dropdown').show();
 
-                    console.log($(this).attr('filType'));
-                    console.log(numItems);
-                    console.log(numSelItems);
+                                $(".dropdown .txt-info").each(function () {
+                                    $(this).attr("style", "display: block");
+                                });
+                            }
+                        });
+                    });
+                });
+            });
 
-                    if (numSelItems == numItems) {
-                        $('#filValHolder-' + $(this).attr('filType')).val(dataValue);
-                        $('.list-fil-items.' + $(this).attr('filType') + '.check-all-filter').prop("checked", true);
-
-                        $(this).parents('.list-fil-items').find('.dropdown .dealtoday-checkbox input[type=checkbox]').prop("checked", true);
-                    }
-                }
-                else {
-                    //Get Filter array list
-                    var splFilterValText = currentSelectedVal.split(',');
-
-                    //Count item number
-                    var splFilterValTextLength = splFilterValText.length;
-
-                    if (dataValue == splFilterValText[splFilterValTextLength - 1]) { //Check if is first item
-                        //Remove from list
-                        currentSelectedVal = currentSelectedVal.replace(dataValue, "");
-                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
-                    }
-                    else {
-                        //Remove from list
-                        currentSelectedVal = currentSelectedVal.replace(dataValue + ",", "");
-                        $('#filValHolder-' + $(this).attr('filType')).val(currentSelectedVal);
-                    }
-
-                    $('.check-all-filter').prop("checked", false);
-                }
+            //Brand searchin function
+            $(document).ready(function () {
+                $(".loc-filter-items").each(function (i, value) {
+                    var input = $(value).find("input[type='text']");
+                    $(input).keyup(function () {
+                        var filter = $(input).val().toUpperCase();
+                        $(value).find(".txt-keyword").each(function (index, item) {
+                            if ($(item).text().toUpperCase().search(filter) < 0) {
+                                $(this).parents('.dropdown').hide();
+                            } else {
+                                $(this).parents('.dropdown').show();
+                            }
+                        });
+                    });
+                });
             });
         </script>
         <!--#endregion-->
-
-        <script>
-            var width = $(window).width();
-        
-            let promoSwiper = new Swiper('.main-banner .swiper-container', {
-                                    slidesPerView: 1,
-                                    spaceBetween: 0,
-                                    loop: false,
-                                    pagination: {
-                                        el: '.main-banner .swiper-pagination',
-                                        clickable: true,
-                                    },
-                                }
-            );
-        </script>
 </body>
 </html>
