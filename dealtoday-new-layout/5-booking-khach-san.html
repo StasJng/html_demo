@@ -67,6 +67,7 @@
     }
 
     .h-book .s-b-ctn .btn-general {
+        padding: 10px;
         width: 100%;
     }
 
@@ -93,17 +94,6 @@
         .h-book .p-card-reg {
             border-radius: 0;
         }
-    }
-
-    .h-book .srh-ctn input {
-        width: 100%;
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid #E0E0E0;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 20px;
-        color: #000;
     }
 
     .h-book .srh-ctn input::placeholder {
@@ -147,10 +137,6 @@
     }
 
     .glyphicon.glyphicon-calendar::after {
-        /* background-image: url(assets/images/generals/icon-calendar-orange.svg);
-        background-repeat: no-repeat;
-        background-size: auto 15px;
-        background-position: center center; */
         content: '';
         border: solid #000;
         border-width: 0 3px 3px 0;
@@ -162,10 +148,6 @@
     }
 
     .glyphicon-time.glyphicon::after {
-        /* background-image: url(assets/images/generals/icon-coins.svg);
-        background-repeat: no-repeat;
-        background-size: auto 15px;
-        background-position: center center; */
         content: '';
         border: solid #000;
         border-width: 0 3px 3px 0;
@@ -222,7 +204,7 @@
         left: 0;
         width: calc(100% - 12px);
         border-radius: 8px;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        box-shadow: rgba(0, 0, 0, 0.38) 0px 5px 15px 0px;
         z-index: 5;
         display: none;
     }
@@ -266,7 +248,7 @@
         padding-left: 8px;
     }
 
-    .h-book .srh-ctn #datePickerHomeTour {
+    .h-book .srh-ctn #datePickerHomeTour, .h-book .srh-ctn #datePickerHomeTourMb {
         background-image: url(assets/images/generals/icon-calendar-orange.svg);
         background-repeat: no-repeat;
         background-size: auto 15px;
@@ -288,10 +270,10 @@
         color: #000;
     }   
 
-    .h-book #datepicker-datePickerHomeTour {
+    .h-book #datepicker-datePickerHomeTour, .h-book #datepicker-datePickerHomeTourMb {
         border: 1px solid rgba(0,0,0,.15);
         border-radius: 12px;
-        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        box-shadow: rgba(0, 0, 0, 0.38) 0px 5px 15px 0px;
     }
 
     .h-book .datepicker__month-button {
@@ -420,12 +402,64 @@
         z-index: -1;
     }
 
-    @media(max-width: 480px) {
-		.h-book #datepicker-datePickerHomeTour {
-            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-            width: calc(100% - 24px);
+    @media(max-width: 992px) {
+        .sort-info .dealtoday-checkbox input:checked + label:before, .sort-info .dealtoday-checkbox.round label:before {
+            top: 3px;
+            float: right;
         }
-	}
+
+        .sort-info .dealtoday-checkbox.round input:checked + label:after {
+            top: 2px;
+            left: calc(100% - 12px);
+        }
+
+        
+    }
+
+    @media(max-width: 768px) {
+        .h-book #datepicker-datePickerHomeTourMb .datepicker__month {
+            width: calc(50% - 20px);
+        }
+
+        .h-book #datepicker-datePickerHomeTourMb {
+            display: block !important;
+            position: relative;
+            bottom: 0;
+            box-shadow: none;
+            left: 0;
+            margin: 0 -20px;
+            width: calc(100% + 40px);
+            margin-bottom: 12px;
+            border: none;
+        }
+
+        .h-book .quant-sel {
+            position: relative;
+            background-color: #fff;
+            padding: 0 12px;
+            top: 0;
+            left: 0;
+            width: calc(100% + 30px);
+            margin: 0 -15px;
+            border-radius: 8px;
+            box-shadow: none;
+            z-index: 5;
+            margin-bottom: 12px;
+            display: none;
+        }
+    }
+
+    @media(max-width: 480px) {
+        .h-book #datepicker-datePickerHomeTourMb .datepicker__month {
+            width: calc(100% + 40px);
+            margin: 0 -20px;
+            margin-top: -12px;
+        }
+
+        .h-book .datepicker__month-button--prev {
+            left: -12px;
+        }
+    }
     /* Finish Style Hotel Datepicker*/
 </style>
 <body>
@@ -776,7 +810,7 @@
     
                                                     <div class="d-block d-sm-block d-md-block d-lg-none gap-reg-8"></div>
     
-                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 srh-ctn">
+                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 srh-ctn d-lg-block d-md-block d-sm-none d-none">
                                                         <input type="text" value="" class="" placeholder="Ngày nhận phòng - Ngày trả phòng" id="datePickerHomeTour" />
 
                                                         <!--#region Init Datepicker-->
@@ -808,9 +842,13 @@
                                                         <!--#endregion-->
                                                     </div>
 
+                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 srh-ctn d-lg-none d-md-none d-sm-block d-block">
+                                                        <input type="text" value="" class="" placeholder="Ngày nhận phòng - Ngày trả phòng" onclick="openPopup('#datePopup')" />
+                                                    </div>
+
                                                     <div class="d-block d-sm-block d-md-block d-lg-none gap-reg-8"></div>
     
-                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 srh-bx quant position-relative">
+                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 srh-bx quant position-relative d-lg-block d-md-block d-sm-none d-none">
                                                         <input type="text" placeholder="Chọn số lượng" id="quant-val" value="1 Người lớn, 0 Trẻ em, 1 Phòng"/>
 
                                                         <div class="quant-sel">
@@ -886,58 +924,12 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-
-                                                                <script>
-                                                                    $('.select-quantity .plus').click(function () {
-                                                                        var quan = $(this).parent().find('.quan').text();
-
-                                                                        if (quan < 20) {
-                                                                            quan = parseInt(quan) + 1;
-                                                                            $(this).parent().find('.quan').text(quan);
-
-                                                                            let str = "";
-                                                                            $('.quant-sel .quan').each(function() {
-                                                                                str = str + $(this).text() + ' ' + $(this).attr('data-str');
-
-                                                                                if($(this) != $('.quant-sel .quan').last())
-                                                                                {
-                                                                                    str = str + ', ';
-                                                                                }
-                                                                            });
-                                                                            str = str.slice(0, -2);
-
-                                                                            $('#quant-val').val(str);
-                                                                        }
-                                                                        else {
-                                                                            alert("Số lượng tối đa là 20!")
-                                                                        }
-                                                                    });
-                                                            
-                                                            
-                                                                    $('.select-quantity .subtract').click(function () {
-                                                                        var quan = $(this).parent().find('.quan').text();
-
-                                                                        if (quan > parseInt($(this).parent().find('.quan').attr('c-min'))) {
-                                                                            quan = parseInt(quan) - 1;
-                                                                            $(this).parent().find('.quan').text(quan);
-
-                                                                            let str = "";
-                                                                            $('.quant-sel .quan').each(function() {
-                                                                                str = str + $(this).text() + ' ' + $(this).attr('data-str');
-
-                                                                                if($(this) != $('.quant-sel .quan').last())
-                                                                                {
-                                                                                    str = str + ', ';
-                                                                                }
-                                                                            });
-                                                                            str = str.slice(0, -2);
-
-                                                                            $('#quant-val').val(str);
-                                                                        }
-                                                                    });
-                                                                </script>
                                                             </div>
                                                         </div>
+                                                    </div>
+
+                                                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 srh-bx quant position-relative d-lg-none d-md-none d-sm-block d-block">
+                                                        <input type="text" placeholder="Chọn số lượng" value="1 Người lớn, 0 Trẻ em, 1 Phòng" onclick="openPopup('#quantPopup')" />
                                                     </div>
                                                 </div>
 
@@ -960,7 +952,7 @@
 
                 <div class="gap-reg-20"></div>
 
-                <!--#region Main Content-->
+                <!--#region List Items-->
                 <div class="col-12 p-0">
                     <div class="row">
                         <!--#region Filter(WEB)-->
@@ -1189,7 +1181,7 @@
 
                             <div class="gap-reg-20"></div>
 
-                            <!--#region Demo Flash Sale Items-->
+                            <!--#region Demo Items-->
                             <div class="col-12 list-product-reg">
                                 <div class="row">
                                     <!--#region List product-->
@@ -1213,12 +1205,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1244,12 +1236,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1275,12 +1267,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1306,12 +1298,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1337,12 +1329,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1368,12 +1360,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1399,12 +1391,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1430,12 +1422,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1461,12 +1453,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1492,12 +1484,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1523,12 +1515,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1554,12 +1546,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1585,12 +1577,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1616,12 +1608,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1647,12 +1639,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1678,12 +1670,12 @@
                                                     </span>
                                                 </div>
                                                 <div class="p-price">
-                                                    <div class="sale-price">
+                                                    <span class="sale-price">
                                                         500.000đ
-                                                    </div>
-                                                    <div class="original-price">
+                                                    </span>
+                                                    <span class="original-price">
                                                         1.000.000đ
-                                                    </div>
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -1707,7 +1699,6 @@
                             <!--#endregion-->
                         </div>
                         <!--#endregion-->
-
                     </div>
                 </div>
                 <!--#endregion-->
@@ -2135,7 +2126,7 @@
     </div>
     <!--#endregion-->
 
-    <!--#region Popup Filter(MB)-->
+    <!--#region Popup Filter-->
     <div class="p-popup-container" id="filterPopup" onclick="if(event.target == this){closePopup('#filterPopup');}">
         <div class="p-popup-wrapper h-100 top-0">
             <h2 class="text-center">Bộ lọc<span class="float-end" onclick="closePopup('#filterPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="18" width="18" /></span></h2>
@@ -2346,6 +2337,314 @@
     </div>
     <!--#endregion-->
 
+    <!--#region Popup Sorting-->
+    <div class="p-popup-container" id="sortPopup" onclick="if(event.target == this){closePopup('#sortPopup');}">
+        <div class="p-popup-wrapper h-100 bg-white" style="height: fit-content; overflow: hidden;">
+            <h2 class="text-center bg-white">Bộ lọc<span class="float-end" onclick="closePopup('#sortPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="20" width="20" /></span></h2>
+            
+            <div class="row">
+                <div class="border-div"></div>
+            </div>
+
+            <div class="filter-wrapper h-100" style="padding-top: 6px;">
+                <div class="filter-container">
+                    <!--#region Sorting-->
+                    <div class="row sort-info">
+                        <div class="popup-til dealtoday-checkbox round col-12" onclick="pickSortTypeMb(1)">
+                            <input type="radio" name="sorting-type" id="sort-1" value="1" checked>
+                            <label for="sort-1" class="w-100">Mới nhất</label>
+                        </div>
+                    </div>
+    
+                    <div class="row sort-info">
+                        <div class="popup-til dealtoday-checkbox round col-12" onclick="pickSortTypeMb(2)">
+                            <input type="radio" name="sorting-type" id="sort-2" value="2">
+                            <label for="sort-2" class="w-100">Bán chạy</label>
+                        </div>
+                    </div>
+    
+                    <div class="row sort-info">
+                        <div class="popup-til dealtoday-checkbox round col-12" onclick="pickSortTypeMb(3)">
+                            <input type="radio" name="sorting-type" id="sort-3" value="3">
+                            <label for="sort-3" class="w-100">Gần tôi</label>
+                        </div>
+                    </div>
+                    <!--#endregion-->
+    
+                    <script>
+                        function pickSortTypeMb(type) {
+                            if (type == 0) {
+                                $('#sortPopup').find('.dealtoday-checkbox input[type=radio]').each(function () {
+                                    $(this).removeAttr("checked");
+                                });
+    
+                                $('#btn-view-more').attr('sortType', 1);
+                            }
+                            else {
+                                $('#btn-view-more').attr('sortType', type);
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+    
+            <div class="filter-wrapper btn-filter p-0 flex-center bg-white">
+                <div class="row w-100">
+                    <div class="col-12 p-0">
+                        <div class="btn-general orange w-100" onclick="doWork();">
+                            Áp dụng
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+    
+    <!--#region Hotel Datepicker-->
+    <div class="p-popup-container" id="datePopup" onclick="if(event.target == this){closePopup('#datePopup');}">
+        <div class="p-popup-wrapper bg-white" style="height: fit-content; overflow: hidden;">
+            <h2 class="text-center bg-white">Chọn ngày<span class="float-end" onclick="closePopup('#datePopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="20" width="20" /></span></h2>
+            
+            <div class="row">
+                <div class="border-div"></div>
+            </div>
+
+            <div class="filter-wrapper h-100">
+                <div class="filter-container h-book">
+                    <!--#region Datepicker-->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-3 srh-ctn">
+                        <input type="text" value="" class="d-none" placeholder="Ngày nhận phòng - Ngày trả phòng" id="datePickerHomeTourMb" />
+
+                        <!--#region Init Datepicker-->
+                        <script>
+                            var date = new Date();
+                            var checkinDate = new Date(date.getTime() + (24 * 60 * 60 * 1000));
+                            var checkoutDate = new Date(date.getTime() + (48 * 60 * 60 * 1000));
+                            var fromDateRange = checkinDate.getDate() + '/' + (checkinDate.getMonth() + 1) + '/' + checkinDate.getFullYear();
+                            var toDateRange = checkoutDate.getDate() + '/' + (checkoutDate.getMonth() + 1) + '/' + checkoutDate.getFullYear();
+
+                            var datePickerHomeTourMb = new HotelDatepicker(document.getElementById('datePickerHomeTourMb'), {
+                                i18n: {
+                                    selected: '',
+                                    night: 'Đêm',
+                                    nights: 'Đêm',
+                                    'day-names': ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
+                                    'month-names': ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
+                                },
+                                startDate: toDateRange,
+                                showTopbar: false,
+                                format: 'DD/MM/YYYY',
+                                enableCheckout: true,
+
+                                getValue: function (v) {
+                                    $('.datepicker__month-day').addClass('notranslate');
+                                }
+                            });
+                        </script>
+                        <!--#endregion-->
+                    </div>
+                    <!--#endregion-->
+    
+                    <script>
+                        function pickSortTypeMb(type) {
+                            if (type == 0) {
+                                $('#sortPopup').find('.dealtoday-checkbox input[type=radio]').each(function () {
+                                    $(this).removeAttr("checked");
+                                });
+    
+                                $('#btn-view-more').attr('sortType', 1);
+                            }
+                            else {
+                                $('#btn-view-more').attr('sortType', type);
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+    
+            <div class="filter-wrapper btn-filter p-0 flex-center bg-white">
+                <div class="row w-100">
+                    <div class="col-12 p-0">
+                        <div class="btn-general orange w-100" onclick="doWork();">
+                            Áp dụng
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
+    <!--#region Popup Quantity-->
+    <div class="p-popup-container" id="quantPopup" onclick="if(event.target == this){closePopup('#quantPopup');}">
+        <div class="p-popup-wrapper bg-white" style="height: fit-content; overflow: hidden;">
+            <h2 class="text-center bg-white">Bộ lọc<span class="float-end" onclick="closePopup('#quantPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="20" width="20" /></span></h2>
+            
+            <div class="row">
+                <div class="border-div"></div>
+            </div>
+
+            <div class="filter-wrapper h-100">
+                <div class="filter-container h-book quant position-relative">
+                    <!--#region Quantity Selector-->
+                    <div class="quant-sel d-block position-relative">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-inline-block float-start position-relative">
+                                    <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                        <div class="quantity flex-align-center quant-btn m-0">
+                                            <span class="q-title">
+                                                Chọn số lượng
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-inline-block float-end position-relative">
+                                    <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                        <div class="quantity flex-align-center quant-btn m-0">
+                                            <span class="select-quantity">
+                                                <span class="subtract">-</span>
+                                                <span class="quan" data-str="Người lớn" c-min="1" >1</span>
+                                                <span class="plus">+</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="d-inline-block float-start position-relative">
+                                    <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                        <div class="quantity flex-align-center quant-btn m-0">
+                                            <span class="q-title">
+                                                Trẻ em&nbsp;<span>(Từ 0 - 12 tuổi)</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-inline-block float-end position-relative">
+                                    <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                        <div class="quantity flex-align-center quant-btn m-0">
+                                            <span class="select-quantity">
+                                                <span class="subtract">-</span>
+                                                <span class="quan" data-str="Trẻ em" c-min="0" >0</span>
+                                                <span class="plus">+</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="d-inline-block float-start position-relative">
+                                    <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                        <div class="quantity flex-align-center quant-btn m-0">
+                                            <span class="q-title">
+                                                Phòng
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-inline-block float-end position-relative">
+                                    <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
+                                        <div class="quantity flex-align-center quant-btn m-0">
+                                            <span class="select-quantity">
+                                                <span class="subtract">-</span>
+                                                <span class="quan" data-str="Phòng" c-min="1" >1</span>
+                                                <span class="plus">+</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <script>
+                                $('.select-quantity .plus').click(function () {
+                                    var quan = $(this).parent().find('.quan').text();
+
+                                    if (quan < 20) {
+                                        quan = parseInt(quan) + 1;
+                                        $(this).parent().find('.quan').text(quan);
+
+                                        let str = "";
+                                        $('.quant-sel .quan').each(function() {
+                                            str = str + $(this).text() + ' ' + $(this).attr('data-str');
+
+                                            if($(this) != $('.quant-sel .quan').last())
+                                            {
+                                                str = str + ', ';
+                                            }
+                                        });
+                                        str = str.slice(0, -2);
+
+                                        $('#quant-val').val(str);
+                                    }
+                                    else {
+                                        alert("Số lượng tối đa là 20!")
+                                    }
+                                });
+                        
+                        
+                                $('.select-quantity .subtract').click(function () {
+                                    var quan = $(this).parent().find('.quan').text();
+
+                                    if (quan > parseInt($(this).parent().find('.quan').attr('c-min'))) {
+                                        quan = parseInt(quan) - 1;
+                                        $(this).parent().find('.quan').text(quan);
+
+                                        let str = "";
+                                        $('.quant-sel .quan').each(function() {
+                                            str = str + $(this).text() + ' ' + $(this).attr('data-str');
+
+                                            if($(this) != $('.quant-sel .quan').last())
+                                            {
+                                                str = str + ', ';
+                                            }
+                                        });
+                                        str = str.slice(0, -2);
+
+                                        $('#quant-val').val(str);
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <!--#endregion-->
+    
+                    <script>
+                        function pickSortTypeMb(type) {
+                            if (type == 0) {
+                                $('#sortPopup').find('.dealtoday-checkbox input[type=radio]').each(function () {
+                                    $(this).removeAttr("checked");
+                                });
+    
+                                $('#btn-view-more').attr('sortType', 1);
+                            }
+                            else {
+                                $('#btn-view-more').attr('sortType', type);
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+    
+            <div class="filter-wrapper btn-filter p-0 flex-center bg-white">
+                <div class="row w-100">
+                    <div class="col-12 p-0">
+                        <div class="btn-general orange w-100" onclick="doWork();">
+                            Áp dụng
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--#endregion-->
+
     <!--#region Popup functions-->
     <script>
         function openPopup(popup) {
@@ -2540,6 +2839,56 @@
     </script>
     <!--#endregion-->
 
+    <script>
+        $('.select-quantity .plus').click(function () {
+            var quan = $(this).parent().find('.quan').text();
+
+            if (quan < 20) {
+                quan = parseInt(quan) + 1;
+                $(this).parent().find('.quan').text(quan);
+
+                let str = "";
+                $('.quant-sel .quan').each(function() {
+                    str = str + $(this).text() + ' ' + $(this).attr('data-str');
+
+                    if($(this) != $('.quant-sel .quan').last())
+                    {
+                        str = str + ', ';
+                    }
+                });
+                str = str.slice(0, -2);
+
+                $('#quant-val').val(str);
+            }
+            else {
+                alert("Số lượng tối đa là 20!")
+            }
+        });
+
+
+        $('.select-quantity .subtract').click(function () {
+            var quan = $(this).parent().find('.quan').text();
+
+            if (quan > parseInt($(this).parent().find('.quan').attr('c-min'))) {
+                quan = parseInt(quan) - 1;
+                $(this).parent().find('.quan').text(quan);
+
+                let str = "";
+                $('.quant-sel .quan').each(function() {
+                    str = str + $(this).text() + ' ' + $(this).attr('data-str');
+
+                    if($(this) != $('.quant-sel .quan').last())
+                    {
+                        str = str + ', ';
+                    }
+                });
+                str = str.slice(0, -2);
+
+                $('#quant-val').val(str);
+            }
+        });
+    </script>
+
     <!--#region Load more items-->
     <script>
         //
@@ -2580,6 +2929,21 @@
         //         }
         //     });
         };
+    </script>
+
+    <script>
+        function pickSortTypeMb(type) {
+            if (type == 0) {
+                $('#sortPopup').find('.dealtoday-checkbox input[type=radio]').each(function () {
+                    $(this).removeAttr("checked");
+                });
+
+                $('#btn-view-more').attr('sortType', 1);
+            }
+            else {
+                $('#btn-view-more').attr('sortType', type);
+            }
+        }
     </script>
     <!--#endregion-->
 
