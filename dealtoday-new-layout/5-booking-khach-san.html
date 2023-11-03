@@ -474,6 +474,10 @@
     .product-box .p-locs img {
         margin-right: 3px;
     }
+
+    .border-round-0 {
+        border-radius: 0 !important;
+    }
 </style>
 <body>
     <!--#region Header-->
@@ -1744,7 +1748,7 @@
                                     <!--#endregion-->
                                     <input type="hidden" id="SelectedCategory" cateName="Vui chơi giải trí" cateId="158" />
 
-                                    <div class="col-12 flex-center">
+                                    <div class="col-12 flex-center border-round-0">
                                         <div class="btn-general"
                                             id="btn-view-more"
                                             totalDeal="16"
@@ -2189,10 +2193,14 @@
 
     <!--#region Popup Filter-->
     <div class="p-popup-container" id="filterPopup" onclick="if(event.target == this){closePopup('#filterPopup');}">
-        <div class="p-popup-wrapper h-100 top-0">
-            <h2 class="text-center">Bộ lọc<span class="float-end" onclick="closePopup('#filterPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="18" width="18" /></span></h2>
+        <div class="p-popup-wrapper h-100 bg-white border-round-0" style="height: fit-content; overflow: hidden;">
+            <h2 class="text-center bg-white">Bộ lọc<span class="float-end" onclick="closePopup('#filterPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="20" width="20" /></span></h2>
+            
+            <div class="row">
+                <div class="border-div"></div>
+            </div>
 
-            <div class="filter-wrapper">
+            <div class="filter-wrapper h-100" style="padding-top: 6px;">
                 <div class="filter-container">
                     <!--#region Thương hiệu(contains 1-lvl Searchbox)-->
                     <p class="drop-filter-title">Thương hiệu</p>
@@ -2400,7 +2408,7 @@
 
     <!--#region Popup Sorting-->
     <div class="p-popup-container" id="sortPopup" onclick="if(event.target == this){closePopup('#sortPopup');}">
-        <div class="p-popup-wrapper h-100 bg-white" style="height: fit-content; overflow: hidden;">
+        <div class="p-popup-wrapper h-100 bg-white border-round-0" style="height: fit-content; overflow: hidden;">
             <h2 class="text-center bg-white">Bộ lọc<span class="float-end" onclick="closePopup('#sortPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="20" width="20" /></span></h2>
             
             <div class="row">
@@ -2464,7 +2472,7 @@
     
     <!--#region Hotel Datepicker-->
     <div class="p-popup-container" id="datePopup" onclick="if(event.target == this){closePopup('#datePopup');}">
-        <div class="p-popup-wrapper bg-white" style="height: fit-content; overflow: hidden;">
+        <div class="p-popup-wrapper bg-white border-round-0" style="height: fit-content; overflow: hidden;">
             <h2 class="text-center bg-white">Chọn ngày<span class="float-end" onclick="closePopup('#datePopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="20" width="20" /></span></h2>
             
             <div class="row">
@@ -2539,8 +2547,8 @@
 
     <!--#region Popup Quantity-->
     <div class="p-popup-container" id="quantPopup" onclick="if(event.target == this){closePopup('#quantPopup');}">
-        <div class="p-popup-wrapper bg-white" style="height: fit-content; overflow: hidden;">
-            <h2 class="text-center bg-white">Bộ lọc<span class="float-end" onclick="closePopup('#quantPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="20" width="20" /></span></h2>
+        <div class="p-popup-wrapper bg-white border-round-0" style="height: fit-content; overflow: hidden;">
+            <h2 class="text-center bg-white">Chọn số lượng<span class="float-end" onclick="closePopup('#quantPopup')"><img src="assets/images/generals/close-icon-black.svg" alt="" height="20" width="20" /></span></h2>
             
             <div class="row">
                 <div class="border-div"></div>
@@ -2556,7 +2564,7 @@
                                     <div class="bg-transparent quantity-info d-detail-rg flex-align-center notranslate p-0">
                                         <div class="quantity flex-align-center quant-btn m-0">
                                             <span class="q-title">
-                                                Chọn số lượng
+                                                Người lớn
                                             </span>
                                         </div>
                                     </div>
@@ -2622,56 +2630,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <script>
-                                $('.select-quantity .plus').click(function () {
-                                    var quan = $(this).parent().find('.quan').text();
-
-                                    if (quan < 20) {
-                                        quan = parseInt(quan) + 1;
-                                        $(this).parent().find('.quan').text(quan);
-
-                                        let str = "";
-                                        $('.quant-sel .quan').each(function() {
-                                            str = str + $(this).text() + ' ' + $(this).attr('data-str');
-
-                                            if($(this) != $('.quant-sel .quan').last())
-                                            {
-                                                str = str + ', ';
-                                            }
-                                        });
-                                        str = str.slice(0, -2);
-
-                                        $('#quant-val').val(str);
-                                    }
-                                    else {
-                                        alert("Số lượng tối đa là 20!")
-                                    }
-                                });
-                        
-                        
-                                $('.select-quantity .subtract').click(function () {
-                                    var quan = $(this).parent().find('.quan').text();
-
-                                    if (quan > parseInt($(this).parent().find('.quan').attr('c-min'))) {
-                                        quan = parseInt(quan) - 1;
-                                        $(this).parent().find('.quan').text(quan);
-
-                                        let str = "";
-                                        $('.quant-sel .quan').each(function() {
-                                            str = str + $(this).text() + ' ' + $(this).attr('data-str');
-
-                                            if($(this) != $('.quant-sel .quan').last())
-                                            {
-                                                str = str + ', ';
-                                            }
-                                        });
-                                        str = str.slice(0, -2);
-
-                                        $('#quant-val').val(str);
-                                    }
-                                });
-                            </script>
                         </div>
                     </div>
                     <!--#endregion-->
