@@ -478,6 +478,341 @@
     .border-round-0 {
         border-radius: 0 !important;
     }
+
+
+
+
+
+
+
+    .h-book .h-i-til-t {
+        font-size: 28px;
+        font-weight: 500;
+    }
+
+    .x-tick {
+        position: absolute;
+        right: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 32px;
+        height: 32px;
+    }
+
+    .x-tick:before, .x-tick:after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        content: ' ';
+        height: 20px;
+        width: calc(7px / 1.6);;
+        background-color: #F6911e;
+        border-radius: 20px;
+    }
+
+    .x-tick:before {
+        transform: rotate(45deg);
+    }
+
+    .x-tick:after {
+        transform: rotate(-45deg);
+    }
+
+    .h-book .h-r-p {
+        color: #f6911e;
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .list-trans-tbl {
+        margin: 25px auto;
+        position: relative;
+    }
+
+    .list-trans-tbl table {
+        /* table-layout: fixed; */
+        border-collapse: separate;
+        border-spacing: 0;
+        border-bottom: 1px solid #eee;
+        border-left: 1px solid #eee;
+        margin: 0 auto;
+        text-align: center;
+        overflow: scroll;
+        display: table;
+        width: 100%;
+    }
+
+    .list-trans-tbl table, .list-trans-tbl table * {
+        position: relative;
+    }
+    
+    .list-trans-tbl th {
+        z-index: 1;
+        position: sticky;
+        top: 0;
+        background-color: #f5f5f5;
+    }
+    
+    /* width */
+    .list-trans-tbl table::-webkit-scrollbar {
+        height: 3px;
+        width: 3px;
+    }
+
+    /* Track */
+    .list-trans-tbl table::-webkit-scrollbar-track {
+        background: #fafafa;
+    }
+
+    /* Handle */
+    .list-trans-tbl table::-webkit-scrollbar-thumb {
+        background: #cdcdcd;
+    }
+
+    /* Handle on hover */
+    .list-trans-tbl table::-webkit-scrollbar-thumb:hover {
+        background: #cdcdcd;
+    }
+
+    .list-trans-tbl td, .list-trans-tbl th {
+        padding: 10px;
+        border-top: 1px solid #eee;
+        border-right: 1px solid #eee;
+        border-bottom: none;
+        border-left: none;
+    }
+
+    @media(max-width: 992px) {
+        .list-trans-tbl tbody {
+            display: table;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .list-trans-tbl tr {
+            background-color: #fff !important;
+        }
+
+        .list-trans-tbl table {
+            overflow-x: hidden;
+        }
+
+        table, table > *, table tr, table td, table th {
+            display: block;
+        }
+
+        table thead {
+            display: none;
+        }         
+
+        table tbody tr td {
+            text-align: left;
+            padding-left: 38% !important;
+        }
+
+        table tbody tr td:last-of-type {
+            padding-left: 0 !important;
+        }
+
+        table tbody tr td:before {
+            position: absolute;
+            font-weight: 700;
+            left: 10px;
+
+            content: attr(data-before);
+        }
+
+        .h-book .h-r-p {
+            font-size: 22px;
+        }
+
+        .btn-general.orange {
+            width: calc(100% - 10px);
+            margin: 0 10px;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .partner-swiper {
+        padding: 12px;
+        background-color: #fff;
+    }
+
+    .partner-swiper .swiper-pagination-bullet-active {
+        background: #F6911E !important;
+    }
+
+    .partner-swiper .swiper-pagination-bullet {
+        width: 15px !important;
+        height: 3px !important;
+        border-radius: 3px !important;
+    }
+
+    .partner-swiper .s-img img {
+        width: 100%;
+        height: unset;
+    }
+
+    .partner-swiper .swiper-button-next, .partner-swiper .swiper-button-prev {
+        background-image: none;
+    }
+
+    .partner-swiper .arr:hover {
+        opacity: 1;
+    }
+
+    .partner-swiper .right, .partner-swiper .left {
+        border: solid #fff;
+        background: #fff;
+        height: 48px;
+        width: 26px;
+        display: inline-block;
+        padding: 8px;
+        opacity: 0.68;
+        position: relative;
+        z-index: 25;
+    }
+
+    .partner-swiper .right {
+        right: -11px;
+    }
+
+    .partner-swiper .left {
+        left: -10px;
+    } 
+
+    .partner-swiper .right::after, .partner-swiper .left::after {
+        content: '';
+        border: solid #000;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 4px;
+        opacity: 1;
+        position: relative;
+        z-index: 25;
+    }
+
+    .partner-swiper .right::after {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        right: 4px;
+        top: 1px;
+    }
+
+    .partner-swiper .left::after {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        top: 1px;
+    }
+
+
+
+
+    .h-book .h-d-inf {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .h-book .h-d-til {
+        font-size: 22px;
+        font-weight: 600;
+        color: #000;
+    }
+
+    .h-book .h-d-loc {
+        font-weight: 400;
+        font-size: 14px;
+        color: #000;
+        opacity: 0.58;
+        line-height: 20px;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+
+    .h-book .h-d-loc:hover {
+        text-decoration: underline;
+    }
+
+    .h-book .h-d-loc img {
+        margin-top: -3px;
+    }
+
+    .h-book .h-d-price {
+        font-size: 28px;
+        font-weight: 600;
+        color: #F6911E;
+        line-height: 32px;
+
+    }
+
+    .h-book .h-d-rate img {
+        margin: -1px 3px 0 0;
+    }
+
+    .h-book .h-d-rate .rating-point {
+        font-size: 14px;
+        font-weight: 400;
+        color: #F6911E;
+        margin-right: 3px;
+    }
+
+    .h-book .h-d-rate .total-rating {
+        font-size: 14px;
+        font-weight: 400;
+        color: #9E9E9E;
+    }
+
+
+
+
+
+
+
+
+
 </style>
 <body>
     <!--#region Header-->
@@ -970,16 +1305,716 @@
                 <div class="gap-reg-20"></div>
 
                 <div class="col-12">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="h-til">FURAMA RESORT DANANG</div>
+                    <div class="row bg-white border-round-12">
+                        <div class="col-12 h-d-inf">
+                            <div class="h-d-til txt-line-limit-3">Saigon Morning Spring Hotel</div>
+                            <div class="h-d-rate">
+                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy=""><span class="rating-point">4.8</span><span class="total-rating">(128)</span>
+                            </div>
+                            <div class="h-d-loc txt-line-limit-1">
+                                <img src="assets/images/generals/icon-location-outline.svg" alt="" height="14" width="14">
+                                Số 6 Tôn Thất Tùng - Trung Liệt - Đống Đa - Hà Nội
+                            </div>
                         </div>
-                        FURAMA RESORT DANANG
-                        <div class="col-6"></div>
+
+                        <!--#region Slider Promo-->
+                        <div class="partner-swiper col-12 border-round-12">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper position-relative">
+                                    <div class="swiper-slide s-img">
+                                        <img src="assets/images/demo-imgs/hotel/hotel-1.jpg" alt="" width="500" height="334" />
+                                    </div>
+
+                                    <div class="swiper-slide s-img">
+                                        <img src="assets/images/demo-imgs/hotel/hotel-2.jpg" alt="" width="500" height="334" />
+                                    </div>
+
+                                    <div class="swiper-slide s-img">
+                                        <img src="assets/images/demo-imgs/hotel/hotel-1.jpg" alt="" width="500" height="334" />
+                                    </div>
+
+                                    <div class="swiper-slide s-img">
+                                        <img src="assets/images/demo-imgs/hotel/hotel-2.jpg" alt="" width="500" height="334" />
+                                    </div>
+
+                                    <div class="swiper-slide s-img">
+                                        <img src="assets/images/demo-imgs/hotel/hotel-1.jpg" alt="" width="500" height="334" />
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"><div class="arr right"></div></div>
+                                <div class="swiper-button-prev"><div class="arr left"></div></div>
+
+                                <!-- <div class="swiper-pagination"></div> -->
+                            </div>
+                        </div>
+                        <!--#endregion-->
                     </div>
                 </div>
 
                 <div class="gap-reg-20"></div>
+
+                <div class="col-12 bg-white border-round-12">
+                    <div class="w-100 text-center h-i-til-t">
+                        <div class="gap-reg-30"></div>
+                        THÔNG TIN LOẠI PHÒNG HIỆN CÓ
+                    </div>
+
+                    <div class="list-trans-tbl">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th style="table-layout: fixed; width: 200px">Loại phòng</th></th>
+                                    <th style="table-layout: fixed; width: 380px">Mô tả</th>
+                                    <th style="table-layout: fixed; width: 120px">Bữa ăn</th>
+                                    <th style="table-layout: fixed; width: 90px">Hoàn hủy</th>
+                                    <th style="table-layout: fixed; width: 200px">Giá phòng</th>
+                                    <th style="table-layout: fixed; width: 185px"></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td data-before="Loại phòng:" class="text-start">
+                                        <span class="room-name"> Garden</span>
+                                        <br>
+                                        double or twinx1 
+                                    </td>
+
+                                    <td data-before="Mô tả:" class="text-start">
+                                        Garden Room Double Or Twin Bed
+                                        Rate Notes: Hotel Tariff Notes: In event of no show or early check-out, 100% of original booking will be charged. IMPORTANT NOTE: The hotel is close until 9 august 2020.
+                                        
+                                        Phạt 100% nếu khách hàng hủy từ ngày 11/8/2023 8:00:00 AM +07:00 đến ngày 11/11/2023 7:00:00 AM +07:00.
+                                    </td>
+
+                                    <td data-before="Bữa ăn:">Room Only</td>
+
+                                    <td data-before="Hoàn hủy:"><div class="x-tick"></div></td>
+
+                                    <td data-before="Giá phòng:" class="h-r-p">5,298,000đ</td>
+
+                                    <td data-before="">
+                                        <div class="btn-general orange">
+                                            Đặt ngay
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="gap-reg-20 d-lg-none d-md-block d-sm-block d-block" style="background-color: #eee !important; padding: 15px 0"></tr>
+
+                                <tr>
+                                    <td data-before="Loại phòng:" class="text-start">
+                                        <span class="room-name"> Garden</span>
+                                        <br>
+                                        double or twinx1 
+                                    </td>
+
+                                    <td data-before="Mô tả:" class="text-start">
+                                        Garden Room Double Or Twin Bed
+                                        Rate Notes: Hotel Tariff Notes: In event of no show or early check-out, 100% of original booking will be charged. IMPORTANT NOTE: The hotel is close until 9 august 2020.
+                                        
+                                        Phạt 100% nếu khách hàng hủy từ ngày 11/8/2023 8:00:00 AM +07:00 đến ngày 11/11/2023 7:00:00 AM +07:00.
+                                    </td>
+
+                                    <td data-before="Bữa ăn:">Room Only</td>
+
+                                    <td data-before="Hoàn hủy:"><div class="x-tick"></div></td>
+
+                                    <td data-before="Giá phòng:" class="h-r-p">5,298,000đ</td>
+
+                                    <td data-before="">
+                                        <div class="btn-general orange">
+                                            Đặt ngay
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="gap-reg-20 d-lg-none d-md-block d-sm-block d-block" style="background-color: #eee !important; padding: 15px 0"></tr>
+
+                                <tr>
+                                    <td data-before="Loại phòng:" class="text-start">
+                                        <span class="room-name"> Garden</span>
+                                        <br>
+                                        double or twinx1 
+                                    </td>
+
+                                    <td data-before="Mô tả:" class="text-start">
+                                        Garden Room Double Or Twin Bed
+                                        Rate Notes: Hotel Tariff Notes: In event of no show or early check-out, 100% of original booking will be charged. IMPORTANT NOTE: The hotel is close until 9 august 2020.
+                                        
+                                        Phạt 100% nếu khách hàng hủy từ ngày 11/8/2023 8:00:00 AM +07:00 đến ngày 11/11/2023 7:00:00 AM +07:00.
+                                    </td>
+
+                                    <td data-before="Bữa ăn:">Room Only</td>
+
+                                    <td data-before="Hoàn hủy:"><div class="x-tick"></div></td>
+
+                                    <td data-before="Giá phòng:" class="h-r-p">5,298,000đ</td>
+
+                                    <td data-before="">
+                                        <div class="btn-general orange">
+                                            Đặt ngay
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="gap-reg-20 d-lg-none d-md-block d-sm-block d-block" style="background-color: #eee !important; padding: 15px 0"></tr>
+
+                                <tr>
+                                    <td data-before="Loại phòng:" class="text-start">
+                                        <span class="room-name"> Garden</span>
+                                        <br>
+                                        double or twinx1 
+                                    </td>
+
+                                    <td data-before="Mô tả:" class="text-start">
+                                        Garden Room Double Or Twin Bed
+                                        Rate Notes: Hotel Tariff Notes: In event of no show or early check-out, 100% of original booking will be charged. IMPORTANT NOTE: The hotel is close until 9 august 2020.
+                                        
+                                        Phạt 100% nếu khách hàng hủy từ ngày 11/8/2023 8:00:00 AM +07:00 đến ngày 11/11/2023 7:00:00 AM +07:00.
+                                    </td>
+
+                                    <td data-before="Bữa ăn:">Room Only</td>
+
+                                    <td data-before="Hoàn hủy:"><div class="x-tick"></div></td>
+
+                                    <td data-before="Giá phòng:" class="h-r-p">5,298,000đ</td>
+
+                                    <td data-before="">
+                                        <div class="btn-general orange">
+                                            Đặt ngay
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr class="gap-reg-20 d-lg-none d-md-block d-sm-block d-block" style="background-color: #eee !important; padding: 15px 0"></tr>
+
+                                <tr>
+                                    <td data-before="Loại phòng:" class="text-start">
+                                        <span class="room-name"> Garden</span>
+                                        <br>
+                                        double or twinx1 
+                                    </td>
+
+                                    <td data-before="Mô tả:" class="text-start">
+                                        Garden Room Double Or Twin Bed
+                                        Rate Notes: Hotel Tariff Notes: In event of no show or early check-out, 100% of original booking will be charged. IMPORTANT NOTE: The hotel is close until 9 august 2020.
+                                        
+                                        Phạt 100% nếu khách hàng hủy từ ngày 11/8/2023 8:00:00 AM +07:00 đến ngày 11/11/2023 7:00:00 AM +07:00.
+                                    </td>
+
+                                    <td data-before="Bữa ăn:">Room Only</td>
+
+                                    <td data-before="Hoàn hủy:"><div class="x-tick"></div></td>
+
+                                    <td data-before="Giá phòng:" class="h-r-p">5,298,000đ</td>
+
+                                    <td data-before="">
+                                        <div class="btn-general orange">
+                                            Đặt ngay
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="gap-reg-50"></div>
+
+                    <div class="border-div w-75"></div>
+
+                    <div class="w-100 text-center h-i-til-t">
+                        <div class="gap-reg-30"></div>
+                        THÔNG TIN VỀ FURAMA RESORT DANANG
+                        <div class="gap-reg-16"></div>
+                    </div>
+
+                    <div class="content-hotel-detail">
+                        <p>
+                            <b>Property Location</b> 
+                            <br>
+                            <span>With a stay at Furama Resort Danang in Da Nang (Ngũ Hành Sơn), you'll be within a 5-minute drive of My Khe Beach and Han River. 
+                                  This 5-star resort is 2.8 mi (4.4 km) from Dragon Bridge and 3 mi (4.9 km) from Tran Thi Ly Bridge.
+                            </span>
+                        </p>
+                        
+                        <p>
+                            <b>Rooms</b>
+                            <br>
+                            <span>Make yourself at home in one of the 198 air-conditioned rooms featuring fireplaces. Rooms have private balconies.
+                                  Wired and wireless Internet access is complimentary, while DVD players and satellite programming provide entertainment.
+                                  Conveniences include phones, as well as safes and desks.
+                            </span>
+                        </p>
+                        
+                        <p>
+                            <b>Amenities</b>
+                            <br>
+                            <span>Pamper yourself with a visit to the spa, which offers massages, body treatments, and facials. 
+                                  After dipping into one of the 2 outdoor swimming pools, you can spend some time at the private beach. 
+                                  This resort also features complimentary wireless Internet access, concierge services, and babysitting/childcare (surcharge). 
+                                  Getting to nearby attractions is a breeze with the area shuttle (surcharge) that operates within 22 kilometers.
+                            </span>
+                        </p>
+                        
+                        <p>
+                            <b>Business Amenities</b>
+                            <br>
+                            <span>Featured amenities include complimentary wired Internet access, a business center, and limo/town car service. 
+                                  A roundtrip airport shuttle is provided for a surcharge (available 24 hours), and free valet parking is available onsite.
+                            </span>
+                        </p>
+                        
+                        <p>
+                            <b>Dining</b>
+                            <br>
+                            <span>Enjoy Asian cuisine at Cafe Indochine, one of the resort's 3 restaurants, or stay in and take advantage of the 24-hour room service. 
+                                  Snacks are also available at the 3 coffee shops/cafés. 
+                                  When you are in need of a refreshing drink, visit the swim-up bar or one of 5 bars/lounges, or 2 poolside bars. 
+                                  Buffet breakfasts are available daily from 6:30 AM to 10 AM for a fee.
+                            </span>
+                        </p>
+                        
+                        <p>
+                            <b>Nearby Attractions</b>
+                            <br>
+                            <span>Distances are displayed to the nearest 0.1 mile and kilometer. <br></span>
+                        </p>
+                        
+                        <p>My Khe Beach - 0.5 km / 0.3 mi 
+                           <br> 
+                           Bac My An Beach - 0.5 km / 0.3 mi 
+                           <br> 
+                           Han River - 1.6 km / 1 mi 
+                           <br> 
+                           Asia Park - 3 km / 1.9 mi 
+                           <br> 
+                           Helio Night Food Zone - 3.3 km / 2.1 mi 
+                           <br> 
+                           Sun Wheel - 3.5 km / 2.2 mi 
+                           <br> 
+                           Tran Thi Ly Bridge - 3.6 km / 2.2 mi 
+                           <br> 
+                           East Sea Park - 3.6 km / 2.2 mi 
+                           <br> 
+                           Pham Van Dong Beach - 3.7 km / 2.3 mi 
+                           <br> 
+                           Non Nuoc Beach - 4 km / 2.5 mi 
+                           <br> 
+                           Dragon Carp Statue - 4.2 km / 2.6 mi 
+                           <br> 
+                           Da Nang Love Bridge - 4.2 km / 2.6 mi 
+                           <br> 
+                           Dragon Bridge - 4.4 km / 2.7 mi 
+                           <br> 
+                           Marble Mountains - 4.5 km / 2.8 mi 
+                           <br> Non Nuoc Pagoda - 4.6 km / 2.9 mi 
+                           <br>
+                        </p>
+                        
+                        <p>The preferred airport for Furama Resort Danang is Da Nang (DAD-Da Nang Intl.) - 7.2 km / 4.5 mi</p>
+                        
+                        <p>
+                            <b>Know Before You Go</b> 
+                            <br>
+                            <span></span>
+                        </p>
+                        
+                        <ul>
+                            <li>This property offers transfers from the airport (surcharges may apply). 
+                                Guests must contact the property with arrival details 24 hours prior to arrival, using the contact information on the booking confirmation.
+                            </li>
+                            
+                            <li>One child 3 years old or younger stays free when occupying the parent or guardian's room, using existing bedding.</li>
+                            <li>Only registered guests are allowed in the guestrooms.</li>
+                            <li>The property has connecting/adjoining rooms, which are subject to availability and can be requested by contacting the property using the number on the booking confirmation.</li>
+                        </ul>
+                        
+                        <p>
+                            <b>Check-in Instructions</b>
+                            <br>
+                            <span>Extra-person charges may apply and vary depending on property policy. 
+                                  <br>
+                                  Government-issued photo identification and a credit card or cash deposit are required at check-in for incidental charges. 
+                                  <br>
+                                  Special requests are subject to availability upon check-in and may incur additional charges. 
+                                  
+                                  Special requests cannot be guaranteed.
+                            </span>
+                        </p>
+                        
+                        <ul></ul>
+                        
+                        <p>
+                            <b>Special Instructions</b> 
+                            <br>
+                            <span>24-hour airport shuttle service is available on request. Fees may apply. Contact the property in advance to make arrangements.</span>
+                        </p>
+                        
+                        <p>
+                            <b>Mandatory Fees</b> 
+                            <br>
+                            <span></span>
+                        </p>
+                        
+                        <p>You'll be asked to pay the following charges at the property:</p>
+                        
+                        <ul>
+                            <li>Deposit: USD 100 per night</li>
+                            <li>Christmas Eve (24 December) Gala Dinner per adult: USD 155.93</li>
+                            <li>Christmas Eve (24 December) Gala Dinner per child: USD 115.5 (from 4 to 11 years old)</li>
+                            <li>New Year's Eve (31 December) Gala Dinner per adult: USD 236.78</li>
+                            <li>New Year's Eve (31 December) Gala Dinner per child: USD 179.03 (from 4 to 11 years old)</li>
+                        </ul>
+                        
+                        <p>We have included all charges provided to us by the property. However, charges can vary, for example, based on length of stay or the room you book.</p>
+                        
+                        <p>
+                            <b>Optional Fees</b> 
+                            <br>
+                            <span></span>
+                        </p>
+                        
+                        <p>The following fees and deposits are charged by the property at time of service, check-in, or check-out.</p>
+                        
+                        <ul>
+                            <li>Fee for buffet breakfast: USD 27 for adults and USD 14 for children (approximately)</li>
+                            <li>Airport shuttle fee: USD 24.00 per person (roundtrip)</li>
+                        </ul>
+                        
+                        <p>The above list may not be comprehensive. Fees and deposits may not include tax and are subject to change.</p>
+                    </div>
+                </div>
+                
+                <div class="gap-reg-30"></div>
+
+                <!--#region Ưu đãi bạn sẽ thích-->
+                <h2 class="col-12 reg-title p-sm-0 p-xs-0">
+                    Ưu đãi bạn sẽ thích
+                </h2>
+
+                <div class="gap-reg-20"></div>
+
+                <div class="col-12 lst-recommand p-sm-0 p-xs-0">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        <div class="p-rating"> 
+                                            <span>
+                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                            </span>
+                                            <span class="rating-point">
+                                                4.8
+                                            </span>
+                                            <span class="total-rating">
+                                                (541)
+                                            </span>
+                                        </div>
+                                        <div class="p-price">
+                                            <div class="sale-price">
+                                                500.000đ
+                                            </div>
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo2.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        <div class="p-rating"> 
+                                            <span>
+                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                            </span>
+                                            <span class="rating-point">
+                                                4.8
+                                            </span>
+                                            <span class="total-rating">
+                                                (541)
+                                            </span>
+                                        </div>
+                                        <div class="p-price">
+                                            <div class="sale-price">
+                                                500.000đ
+                                            </div>
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo3.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        <div class="p-rating"> 
+                                            <span>
+                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                            </span>
+                                            <span class="rating-point">
+                                                4.8
+                                            </span>
+                                            <span class="total-rating">
+                                                (541)
+                                            </span>
+                                        </div>
+                                        <div class="p-price">
+                                            <div class="sale-price">
+                                                500.000đ
+                                            </div>
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo4.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        <div class="p-rating"> 
+                                            <span>
+                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                            </span>
+                                            <span class="rating-point">
+                                                4.8
+                                            </span>
+                                            <span class="total-rating">
+                                                (541)
+                                            </span>
+                                        </div>
+                                        <div class="p-price">
+                                            <div class="sale-price">
+                                                500.000đ
+                                            </div>
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo5.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        <div class="p-rating"> 
+                                            <span>
+                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                            </span>
+                                            <span class="rating-point">
+                                                4.8
+                                            </span>
+                                            <span class="total-rating">
+                                                (541)
+                                            </span>
+                                        </div>
+                                        <div class="p-price">
+                                            <div class="sale-price">
+                                                500.000đ
+                                            </div>
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo6.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        <div class="p-rating"> 
+                                            <span>
+                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                            </span>
+                                            <span class="rating-point">
+                                                4.8
+                                            </span>
+                                            <span class="total-rating">
+                                                (541)
+                                            </span>
+                                        </div>
+                                        <div class="p-price">
+                                            <div class="sale-price">
+                                                500.000đ
+                                            </div>
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo7.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        <div class="p-rating"> 
+                                            <span>
+                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                            </span>
+                                            <span class="rating-point">
+                                                4.8
+                                            </span>
+                                            <span class="total-rating">
+                                                (541)
+                                            </span>
+                                        </div>
+                                        <div class="p-price">
+                                            <div class="sale-price">
+                                                500.000đ
+                                            </div>
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo8.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        <div class="p-rating"> 
+                                            <span>
+                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                            </span>
+                                            <span class="rating-point">
+                                                4.8
+                                            </span>
+                                            <span class="total-rating">
+                                                (541)
+                                            </span>
+                                        </div>
+                                        <div class="p-price">
+                                            <div class="sale-price">
+                                                500.000đ
+                                            </div>
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo9.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        <div class="p-rating"> 
+                                            <span>
+                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                            </span>
+                                            <span class="rating-point">
+                                                4.8
+                                            </span>
+                                            <span class="total-rating">
+                                                (541)
+                                            </span>
+                                        </div>
+                                        <div class="p-price">
+                                            <div class="sale-price">
+                                                500.000đ
+                                            </div>
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="#" class="swiper-slide col-lg-2 col-md-3 col-sm-4 col-6 p-contanier">
+                                <div class="product-box">
+                                    <div class="p-img">
+                                        <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo10.png" alt="" width="300" height="300" lazy />
+                                    </div>
+                                    <div class="sale-tag">50%</div>
+                                    <div class="p-info">
+                                        <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                        <div class="p-rating"> 
+                                            <span>
+                                                <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                            </span>
+                                            <span class="rating-point">
+                                                4.8
+                                            </span>
+                                            <span class="total-rating">
+                                                (541)
+                                            </span>
+                                        </div>
+                                        <div class="p-price">
+                                            <div class="sale-price">
+                                                500.000đ
+                                            </div>
+                                            <div class="original-price">
+                                                1.000.000đ                                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <!--#endregion-->
+                
+                <div class="gap-reg-40"></div>
 
             </div>
         </div>
@@ -2070,6 +3105,69 @@
     <!--#endregion-->
 
     <script>
+        var width = $(window).width();
+        if (width <= 768) {
+            //Promo
+            let promoSwiper = new Swiper('.partner-swiper .swiper-container', {
+                                    slidesPerView: 1,
+                                    spaceBetween: 10,
+                                    loop: false,
+                                    // pagination: {
+                                    //     el: '.partner-swiper .swiper-pagination',
+                                    //     clickable: true,
+                                    // },
+                                    navigation: {
+                                        nextEl: ".swiper-button-next",
+                                        prevEl: ".swiper-button-prev",
+                                    }
+                                }
+            );
+
+            //List images
+            let swiperRecommand = new Swiper('.lst-recommand .swiper-container', {
+                                    slidesPerView: 2,
+                                    spaceBetween: 10,
+                                    loop: false,
+                                    pagination: {
+                                        el: '.lst-recommand .swiper-pagination',
+                                        clickable: true,
+                                    },
+                                }
+            );
+        }
+        else {
+            //Promo
+            let promoSwiper = new Swiper('.partner-swiper .swiper-container', {
+                                    slidesPerView: 2,
+                                    spaceBetween: 10,
+                                    loop: false,
+                                    // pagination: {
+                                    //     el: '.partner-swiper .swiper-pagination',
+                                    //     clickable: true,
+                                    // },
+                                    navigation: {
+                                        nextEl: ".swiper-button-next",
+                                        prevEl: ".swiper-button-prev",
+                                    }
+                                }
+            );
+
+            //List images
+            let swiperRecommand = new Swiper('.lst-recommand .swiper-container', {
+                                    slidesPerView: 5,
+                                    spaceBetween: 10,
+                                    loop: false,
+                                    pagination: {
+                                        el: '.lst-recommand .swiper-pagination',
+                                        clickable: true,
+                                    },
+                                }
+            );
+        };
+    </script>
+
+    <!--#region Quantity Selector-->
+    <script>
         $('.select-quantity .plus').click(function () {
             var quan = $(this).parent().find('.quan').text();
 
@@ -2118,64 +3216,6 @@
             }
         });
     </script>
-
-    <!--#region Load more items-->
-    <script>
-        //
-        async function loadMoreItem() {
-        //     $('#btn-view-more').attr("curPage", parseInt($('#btn-view-more').attr("curPage")) + 1); //Set next page
-
-        //     let url = buildLink().replace("&pg=1", "&pg=" + $('#btn-view-more').attr("curPage"));
-
-        //     $('#btn-view-more').hide();
-
-        //     $('#loading').show(); $('body').attr('style', 'overflow: hidden;');
-
-        //     $.ajax({
-        //         url: url,
-        //         success: function (data) {
-        //             $('#loading').hide(); $('body').removeAttr('style');
-        //             if (data == "0") {
-        //                 $('#btn-view-more').hide();
-        //             } else {
-        //                 $("#loadedDeals").append(data);
-
-        //                 let totalDeal = parseInt($('#btn-view-more').attr('totalDeal'));
-        //                 let page = parseInt($('#btn-view-more').attr("curPage")) + 1;
-        //                 let pageSize = parseInt($('#btn-view-more').attr("pageSize"));
-
-        //                 if (totalDeal >= page * pageSize - pageSize) {
-        //                     $('#btn-view-more').show();
-        //                 }
-        //             }
-        //         },
-        //         failed: function (data) {
-        //             $('#loading').hide(); $('body').removeAttr('style');
-        //             alert("Có lỗi xảy ra, vui lòng thử lại sau!");
-        //         },
-        //         error: function () {
-        //             $('#loading').hide(); $('body').removeAttr('style');
-        //             alert("Có lỗi xảy ra, vui lòng thử lại sau!");
-        //         }
-        //     });
-        };
-    </script>
-
-    <script>
-        function pickSortTypeMb(type) {
-            if (type == 0) {
-                $('#sortPopup').find('.dealtoday-checkbox input[type=radio]').each(function () {
-                    $(this).removeAttr("checked");
-                });
-
-                $('#btn-view-more').attr('sortType', 1);
-            }
-            else {
-                $('#btn-view-more').attr('sortType', type);
-            }
-        }
-    </script>
     <!--#endregion-->
-
 </body>
 </html>
