@@ -275,6 +275,7 @@
         border: 1px solid rgba(0,0,0,.15);
         border-radius: 12px;
         box-shadow: rgba(0, 0, 0, 0.38) 0px 5px 15px 0px;
+        z-index: 5;
     }
 
     .h-book .datepicker__month-button {
@@ -487,7 +488,7 @@
 
     .h-book .h-i-til-t {
         font-size: 28px;
-        font-weight: 500;
+        font-weight: 600;
     }
 
     .x-tick {
@@ -616,24 +617,24 @@
             overflow-x: hidden;
         }
 
-        table, table > *, table tr, table td, table th {
+        .list-trans-tbl table, .list-trans-tbl table > *, .list-trans-tbl table tr, .list-trans-tbl table td, .list-trans-tbl table th {
             display: block;
         }
 
-        table thead {
+        .list-trans-tbl table thead {
             display: none;
         }         
 
-        table tbody tr td {
+        .list-trans-tbl table tbody tr td {
             text-align: left;
             padding-left: 38% !important;
         }
 
-        table tbody tr td:last-of-type {
+        .list-trans-tbl table tbody tr td:last-of-type {
             padding-left: 0 !important;
         }
 
-        table tbody tr td:before {
+        .list-trans-tbl table tbody tr td:before {
             position: absolute;
             font-weight: 700;
             left: 10px;
@@ -641,8 +642,12 @@
             content: attr(data-before);
         }
 
-        .h-book .h-r-p {
+        .h-book .h-r-p, .h-book .h-d-til {
             font-size: 22px;
+        }
+
+        .h-book .h-i-til-t {
+            font-size: 24px;
         }
 
         .btn-general.orange {
@@ -757,7 +762,7 @@
     }
 
     .h-book .h-d-til {
-        font-size: 22px;
+        font-size: 28px;
         font-weight: 600;
         color: #000;
     }
