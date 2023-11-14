@@ -1444,7 +1444,8 @@ a {
 }
 
 /* Ticket's Tags */
-.tags-ctn {
+/* Ticket's Tags */
+.tags-ctn, .locs-ctn {
     height: 24px;
     overflow: hidden;
     margin-bottom: 3px;
@@ -1452,11 +1453,23 @@ a {
 
 .tags-ctn .tag-item {
     font-size: 12px;
-	font-weight: 500;
-    color: #F0821B;
-	background-color: #FEF3E2;
+    font-weight: 500;
+    color: #757575;
+    background-color: #F5F5F5;
     margin-right: 5px;
     padding: 5px;
+}
+
+.locs-ctn .loc-item {
+    font-size: 12px;
+    font-weight: 500;
+    color: #F0821B;
+    background-color: #FEF3E2;
+    margin-right: 5px;
+    padding: 5px;
+    height: 24px;
+    overflow: hidden;
+    max-height: 24px;
 }
 /* -------------------------------------------------------------------------------------------- */
 
@@ -6779,3 +6792,17 @@ input#showFullDesc:checked ~ .col-12 .btn-general {
 	border-radius: 3px !important;
 }
 /* HDSD */
+
+
+.icon-gift {
+    background: #FEF3E2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 6px;
+    padding-left: 1px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
