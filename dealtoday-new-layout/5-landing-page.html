@@ -220,70 +220,64 @@
         }
     }
 
+    /* List brand - Infinite slide */
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
 
+        100% {
+            transform: translateX(calc(-250px * var(--total_logo)));
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* List brand - Editing */ 
-    .scroll-parent {
+    .i-slider {
+        background: transparent;
+        /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
+        height: 100px;
+        margin: auto;
+        overflow: hidden;
         position: relative;
         width: 100%;
-        height: 48px;
-        overflow-x: hidden;
     }
 
-    .scroll-element {
-        width: max-content;
-        height: inherit;
+    /* .i-slider::before, .i-slider::after {
+        background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
+        content: "";
+        height: 100px;
         position: absolute;
-        left: 0%;
-        top: 0%;
-        animation: primary 20s linear infinite;
-        display: inline-block;
-        overflow: hidden;
+        width: 200px;
+        z-index: 2;
+    }
+    
+    .i-slider::after {
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
     }
 
-    .scroll-element img {
-        height: 48px;
-        width: auto;
-        margin: 0 26px;
+    .i-slider::before {
+        left: 0;
+        top: 0;
+    } */
+
+    .i-slider .slide-track {
+        animation: scroll var(--logo-slide-time) linear infinite;
+        display: flex;
+        width: calc(250px * var(--total_logo) * 2);
     }
 
-    .primary {
-        animation: primary 20s linear infinite;
+    .i-slider .slide {
+        height: 100px;
+        width: 250px;
     }
 
-    .secondary {
-        animation: secondary 20s linear infinite;
-    }
-
-    @keyframes primary {
-        from {
-            left: 0%;
-        }
-        to {
-            left: calc(-100%);
-        }
-    }
-
-    @keyframes secondary {
-        from {
-            left: calc(100%);
-        }
-        to {
-            left: 0%;
-        }
+    .i-slider .slide img {
+        max-width: calc(100% - 50px);
+        width: 100%;
+        object-fit: contain;
+        margin: 0 auto;
+        display: block;
     }
 </style>
 <body>
@@ -1464,7 +1458,7 @@
                 <div class="gap-reg-30"></div>
             </div>
             <!--#endregion-->
-        
+            
             <!--#region Voucher Giá Tốt-->
             <div class="col-12" style="background-color: azure;">
                 <div class="gap-reg-30"></div>
@@ -1675,7 +1669,7 @@
                 <div class="gap-reg-30"></div>
             </div>
             <!--#endregion-->
-        
+            
             <!--#region Voucher E-Gift-->
             <div class="col-12" style="background-color:burlywood;">
                 <div class="gap-reg-30"></div>
@@ -1796,7 +1790,7 @@
                 <div class="gap-reg-30"></div>
             </div>
             <!--#endregion-->
-
+            
             <!--#region Voucher E-Ticket-->
             <div class="col-12" style="background-color:crimson;">
                 <div class="gap-reg-30"></div>
@@ -2141,7 +2135,7 @@
                 <div class="gap-reg-30"></div>
             </div>
             <!--#endregion-->
-        
+            
             <!--#region Danh sách đối tác-->
             <div class="col-12" style="background-color: bisque;">
                 <div class="gap-reg-30"></div>
@@ -2153,23 +2147,87 @@
 
                     <div class="row widen-col">
                         <div class="col-12">
-                        <div class="row scroll-parent">
-                            <div class="scroll-element primary">
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-9.png" height="100" width="auto" alt="" />
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-7.png" height="100" width="auto" alt="" />
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-8.png" height="100" width="auto" alt="" />
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-9.png" height="100" width="auto" alt="" />
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-10.png" height="100" width="auto" alt="" />
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-11.png" height="100" width="auto" alt="" />
-                            </div>
-                            <div class="scroll-element secondary">
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-9.png" height="100" width="auto" alt="" />
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-7.png" height="100" width="auto" alt="" />
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-8.png" height="100" width="auto" alt="" />
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-9.png" height="100" width="auto" alt="" />
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-10.png" height="100" width="auto" alt="" />
-                                <img src="assets/images/demo-imgs/logo-imgs/logo-11.png" height="100" width="auto" alt="" />
-                            </div>
+                            <div class="row">
+                                <div class="i-slider">
+                                    <div class="slide-track">
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-7.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-8.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-9.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-10.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-11.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-1.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-2.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-3.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-4.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-5.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-6.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-7.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-8.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-9.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-10.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-11.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-1.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-2.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-3.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-4.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-5.png" height="100" width="250" alt="" />
+                                        </div>
+                                        <div class="slide">
+                                            <img src="assets/images/demo-imgs/logo-imgs/logo-6.png" height="100" width="250" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <input type="hidden" id="total-logo" value="11" />
+                                <input type="hidden" id="logo-slide-time" value="38s" />
+                            
+                                <script>
+                                    $(document).ready(function () {
+                                        document.documentElement.style.setProperty('--total_logo', $('#total-logo').val());
+                                        document.documentElement.style.setProperty('--logo-slide-time', $('#logo-slide-time').val());
+                                    });
+                                </script>        
                             </div>
                         </div>
                     </div>
@@ -2178,7 +2236,7 @@
                 <div class="gap-reg-30"></div>
             </div>
             <!--#endregion-->
-    
+            
             <!--#region Thể lệ chương trình-->
             <div class="col-12" style="background-color:forestgreen;">
                 <div class="gap-reg-30"></div>
