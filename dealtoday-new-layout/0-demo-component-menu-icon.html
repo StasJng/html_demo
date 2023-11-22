@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="assets/plugins/bootstrap5.0.2/bootstrap.min.css">
+    <script src="assets/plugins/jquery2.2.4/jquery-2.2.4.min.js"></script>
+    
+    <meta name="title" content="@Html.Raw(ViewBag.MetaTitle)" />
+    <meta name="keywords" content="@Html.Raw(ViewBag.Keywords)" />
+    <meta name="description" content="@Html.Raw(ViewBag.Description)">
+
+    <script src="assets/plugins/swiper-slider/js/swiper.min.js"></script>
+    <link href="assets/plugins/swiper-slider/css/swiper.min.css" rel="stylesheet" />
+
+    <title>@ViewBag.Title</title>
+
+    <!--#region Google Transalte-->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'vi',
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+                autoDisplay: false,
+                includedLanguages: 'en,vi',
+                gaTrack: true,
+                gaId: 'AIzaSyAuk_NhmtJvsJXMB9PAy-jCSGv5sVhhxvM'
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
+    
+    <!-- Datepicker -->
+    <script src="assets/plugins/boostrap-datetime-picker-v4/moment.js"></script>
+    <script src="assets/plugins/boostrap-datetime-picker-v4/moment-with-locales.js"></script>
+    <script src="assets/plugins/boostrap-datetime-picker-v4/bootstrap-datetimepicker.min.js"></script>
+    <link href="assets/plugins/boostrap-datetime-picker-v4/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+    <script src="assets/plugins/boostrap3.3.7/bootstrap.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --menu-bar-width: 25px;
+        --menu-bar-thickness: 3px;
+        --menu-bar-gap: 5px;
+        --menu-bar-color: #F6911E;
+    }
+
+    .header-demo {
+        background-color: #FAFAFA;
+        padding: 5px 0;
+        background-image: url(assets/images/header/logo.png);
+        background-size: auto calc(100% - 10px);
+        background-position: center;
+        background-repeat: no-repeat;
+        position: sticky;
+        top: 0;
+    }
+
+    .header-demo .cart  {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+
+    .header-demo .cart img {
+        position: relative;
+        height: calc(100% - 10px);
+        width: auto;
+    }
+
+    .header-demo .cart::after {
+        content: "";
+        height: 10px;
+        width: 10px;
+        background-color: red;       
+        border-radius: 50%;
+    }
+
+    .header-demo .menu-icon-ctn {
+        width: fit-content;
+        position: relative;
+        margin: var(--menu-bar-gap) 0;
+    }
+
+    .header-demo .b1, .b2, .b3 {
+        width: var(--menu-bar-width);
+        height: var(--menu-bar-thickness);
+        background-color: var(--menu-bar-color);
+        margin: var(--menu-bar-gap);
+        transition: 0.3s;
+    }
+
+    .header-demo .onClose .b1 {
+        transform: translate(0, calc(var(--menu-bar-thickness) + var(--menu-bar-gap))) rotate(-45deg);
+    }
+
+    .header-demo .onClose .b2 {
+        background-color: transparent;
+    }
+
+    .header-demo .onClose .b3 {
+        transform: translate(0, calc((var(--menu-bar-thickness) + var(--menu-bar-gap)) * -1)) rotate(45deg);
+    }
+
+
+    /* Start Body */
+    .body {
+        height: 200vh; 
+        background-color: burlywood;
+        background-image: url(assets/images/header/logo.png);
+        background-size: auto 30px;
+        background-position: center;
+    }
+    /* Finish Body */
+</style>
+<body>
+    <div class="header-demo">
+        <div class="menu-icon-ctn" onclick="toggleMenu(this);">
+            <div class="b1"></div>
+            <div class="b2"></div>
+            <div class="b3"></div>
+        </div>
+
+        <div class="cart">
+            <img src="assets/images/header/icon-cart-orange.svg" alt="cart-icon" height="100" width="100" onclick="alert('Cliked Cart!')" totalItem="99" />
+        </div>
+    </div>
+
+    <div class="body"></div>
+
+    <script>
+        function toggleMenu(menu) {
+            menu.classList.toggle("onClose");
+        }
+    </script>
+</body>
+</html>

@@ -227,7 +227,7 @@
         }
 
         100% {
-            transform: translateX(calc(-250px * var(--total_logo)));
+            transform: translateX(calc(calc(var(--logo_width) * -1) * var(--total_logo)));
         }
     }
 
@@ -264,20 +264,22 @@
     .i-slider .slide-track {
         animation: scroll var(--logo-slide-time) linear infinite;
         display: flex;
-        width: calc(250px * var(--total_logo) * 2);
+        width: calc(var(--logo_width) * var(--total_logo) * 2);
     }
 
     .i-slider .slide {
         height: 100px;
-        width: 250px;
+        width: var(--logo_width);
+        user-select: none;
     }
 
     .i-slider .slide img {
-        max-width: calc(100% - 50px);
+        max-width: calc(100% - calc(var(--logo_padding) * 2));
         width: 100%;
         object-fit: contain;
         margin: 0 auto;
         display: block;
+        user-select: none;
     }
 </style>
 <body>
@@ -2122,7 +2124,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="gap-reg-8"></div>
+                                        <div class="gap-reg-8 d-xl-none d-lg-block d-md-block d-sm-block d-block"></div>
 
                                         <div class="swiper-pagination"></div>
                                     </div>
@@ -2220,12 +2222,16 @@
                                 </div>
                             
                                 <input type="hidden" id="total-logo" value="11" />
-                                <input type="hidden" id="logo-slide-time" value="38s" />
+                                <input type="hidden" id="logo-slide-time" value="50s" />
+                                <input type="hidden" id="logo_width" value="250px" />
+                                <input type="hidden" id="logo_padding" value="20px" />
                             
                                 <script>
                                     $(document).ready(function () {
                                         document.documentElement.style.setProperty('--total_logo', $('#total-logo').val());
                                         document.documentElement.style.setProperty('--logo-slide-time', $('#logo-slide-time').val());
+                                        document.documentElement.style.setProperty('--logo_width', $('#logo_width').val());
+                                        document.documentElement.style.setProperty('--logo_padding', $('#logo_padding').val());
                                     });
                                 </script>        
                             </div>
@@ -2781,7 +2787,7 @@
             );
 
             let guideSwiper = new Swiper('.guide .swiper-container', {
-                                    slidesPerView: 1.2,
+                                    slidesPerView: 1.5,
                                     spaceBetween: 0,
                                     loop: false,
                                     pagination: {
@@ -2919,11 +2925,7 @@
             let guideSwiper = new Swiper('.guide .swiper-container', {
                                     slidesPerView: 5,
                                     spaceBetween: 0,
-                                    loop: false,
-                                    pagination: {
-                                        el: '.guide .swiper-pagination',
-                                        clickable: true,
-                                    },
+                                    loop: false
                                 }
             );
         };
@@ -3028,5 +3030,6 @@
         }
     </script>
     <!--#endregion-->
+
 </body>
 </html>
