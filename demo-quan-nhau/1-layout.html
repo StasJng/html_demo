@@ -33,6 +33,11 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
     <!--#endregion-->
 </head>
+<style>
+    .card__img {
+        transition: all 0.3s ease-out !important;
+    }
+</style>
 <body>
     <!--#region Header-->
     <div class="header" id="header">
@@ -178,8 +183,8 @@
         <div class="cover-item moving-l-r-2">
             <img src="assets/images/quan-nhau/covers/home-layer-2_v2.webp">
         </div>
-        <div class="cover-item cards" style="z-index: 3;">
-            <img src="assets/images/quan-nhau/covers/home-layer-3_v2.webp" class="card__img">
+        <div class="cover-item" style="z-index: 3;">
+            <img src="assets/images/quan-nhau/covers/home-layer-3_v2.webp">
         </div>
         <div class="cover-item cards" style="z-index: 4;">
             <img src="assets/images/quan-nhau/covers/home-layer-4_v2.webp" class="card__img">
@@ -502,7 +507,7 @@
         const cards = document.querySelector(".cards");
         const images = document.querySelectorAll(".card__img");
         const backgrounds = document.querySelectorAll(".card__bg");
-        const range = 40;
+        const range = 80;
 
         // const calcValue = (a, b) => (((a * 100) / b) * (range / 100) -(range / 2)).toFixed(1);
         const calcValue = (a, b) => (a/b*range-range/2).toFixed(1) // thanks @alice-mx
@@ -517,10 +522,17 @@
                 const yValue = calcValue(y, window.innerHeight);
                 const xValue = calcValue(x, window.innerWidth);
 
-                cards.style.transform = `rotateX(${yValue}deg) rotateY(${xValue}deg)`;
+                //cards.style.transform = `rotateX(${yValue}deg) rotateY(${xValue}deg)`;
 
+                let i=1;
                 [].forEach.call(images, (image) => {
-                    image.style.transform = `translateX(${-xValue}px) translateY(${yValue}px)`;
+                    if(i % 2 == 0) {
+                        image.style.transform = `translateX(${-xValue/1.2}px) translateY(${yValue/1.2}px)`;
+                    }
+                    else {
+                        image.style.transform = `translateX(${-xValue/1.2*-1}px) translateY(${yValue/1.2*-1}px)`;
+                    }
+                    i = i + 1;
                 });
 
                 // [].forEach.call(backgrounds, (background) => {
