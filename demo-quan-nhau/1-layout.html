@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/plugins/bootstrap5.0.2/bootstrap.min.css">
+    <script src="assets/plugins/jquery2.2.4/jquery-2.2.4.min.js"></script>
     
     <meta name="title" content="@Html.Raw(ViewBag.MetaTitle)" />
     <meta name="keywords" content="@Html.Raw(ViewBag.Keywords)" />
@@ -43,7 +43,13 @@
     <div class="header" id="header">
         <div id="common-notification" class="col-12 top-noti-bar flex-center">
             Sinh nhật giảm tới 15% tổng hóa đơn
-            <img src="assets/images/popup/close-icon-black.svg" alt="" height="15" width="15" />
+            <img src="https://cdn.dealtoday.vn/assets/v2/images/generals/close-icon-black.svg" alt="" height="15" width="15" onclick="hideNoti()"/>
+
+            <script>
+                function hideNoti() {
+                    $('#common-notification').hide();
+                }
+            </script>
         </div>
 
         <div class="container p-sm-0 p-xs-0">
@@ -78,25 +84,9 @@
                             </defs>
                         </svg>
                     </div>
-                    <div>
-                        <span>HOTLINE</span>
-                        <span>08.8888.8888</span>
-                    </div>
                 </div>
                 <div class="col-6 right-rg flex-align-center" translate="no">
-                    <div>
-                        Thực đơn
-                    </div>
-                    <div>
-                        Cơ sở
-                    </div>
-                    <div>
-                        Tin tức 
-                    </div>
-                    <div>
-                        Liên hệ
-                    </div>
-                    <div>
+                    <div class="trans-box d-lg-flex d-md-none d-sm-none d-xs-none d-none">
                         <div class="h-translate">
                             <div id="google_translate_element" onclick="goTrans(this.id)"></div>
                         </div>
@@ -111,7 +101,7 @@
                                 mutations.forEach(function (mutation) {
                                     if (mutation.type === "attributes") {
                                         if ($('html').attr('lang') == 'en') {
-                                            $('.goog-te-combo').attr('style', 'background: url(https://www.dealtoday.vn/asset/images/ecode/flag-en-egift.png) no-repeat; background-position: left 10px center; background-color: white;');
+                                            $('.goog-te-combo').attr('style', 'background: url(https://cdn.dealtoday.vn/assets/v2/images/generals/flag-en-egift.png) no-repeat; background-position: left 10px center; background-color: white;');
                                         }
                                         else if ($('html').attr('lang') == 'vi') {
                                             //$('.goog-te-combo').attr('style', 'background: url(https://www.dealtoday.vn/AssetBooking/Images/flag_vn.jpg) no-repeat; background-position: left 10px center; background-color: white;');
@@ -139,7 +129,7 @@
                         </script>
                         <!--#endregion-->
                     </div>
-                    <div class="btn-general">
+                    <div class="btn-general btn-order-top d-lg-flex d-md-flex d-sm-flex d-xs-none d-none">
                         Đặt bàn
                     </div>
                 </div>
@@ -176,21 +166,21 @@
     <!--#endregion-->
     
     <!--#region -->
-    <div class="banner-covers card__bg" id="covers-reg">
+    <div class="banner-covers card__bg d-lg-block d-md-none d-sm-none d-xs-none d-none" id="covers-reg">
         <div class="cover-item moving-l-r-1">
-            <img src="assets/images/quan-nhau/covers/home-layer-1_v2.webp">
+            <img src="assets/images/quan-nhau/covers/home-layer-1_v2.png">
         </div>
         <div class="cover-item moving-l-r-2">
-            <img src="assets/images/quan-nhau/covers/home-layer-2_v2.webp">
+            <img src="assets/images/quan-nhau/covers/home-layer-2_v2.png">
         </div>
         <div class="cover-item" style="z-index: 3;">
-            <img src="assets/images/quan-nhau/covers/home-layer-3_v2.webp">
+            <img src="assets/images/quan-nhau/covers/home-layer-3_v2.png">
         </div>
         <div class="cover-item cards" style="z-index: 4;">
-            <img src="assets/images/quan-nhau/covers/home-layer-4_v2.webp" class="card__img">
+            <img src="assets/images/quan-nhau/covers/home-layer-4_v2.png" class="card__img">
         </div>
         <div class="cover-item cards" style="z-index: 5;">
-            <img src="assets/images/quan-nhau/covers/home-layer-5_v2.webp" class="card__img">
+            <img src="assets/images/quan-nhau/covers/home-layer-5_v2.png" class="card__img">
         </div>
         <div class="cover-item tv-box">
             <img src="assets/images/quan-nhau/covers/TV.png">
@@ -206,11 +196,6 @@
                 <div class="gap-reg-30"></div>
                 <div class="gap-reg-30"></div>
 
-                <div class="col-12 slogan-reg">
-                    <p>ta tự do trong</p>
-                    <p>thế giới của ta</p>
-                </div>
-
                 <div class="gap-reg-20"></div>
 
                 <div class="col-12 new-products-reg">
@@ -224,14 +209,14 @@
                                 <a href="#" class="swiper-slide col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
                                     <div class="product-box">
                                         <div class="p-img">
-                                            <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo1.png" alt="" width="300" height="300" lazy />
+                                            <img data-src="" src="https://storage.quannhautudo.com/data/thumb_400/Data/images/product/2023/09/20230906135259311.webp" alt="" width="300" height="300" lazy />
                                         </div>
-                                        <div class="sale-tag">50%</div>
+                                        <div class="sale-tag">23%</div>
                                         <div class="p-info">
-                                            <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                            <div class="p-title">Cơm cháy chấm paté</div>
                                             <div class="p-rating"> 
                                                 <span>
-                                                    <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    <img data-src="" src="https://cdn.dealtoday.vn/assets/v2/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
                                                 </span>
                                                 <span class="rating-point">
                                                     4.8
@@ -242,10 +227,10 @@
                                             </div>
                                             <div class="p-price">
                                                 <div class="sale-price">
-                                                    500.000đ
+                                                    99.000đ
                                                 </div>
                                                 <div class="original-price">
-                                                    1.000.000đ                                        
+                                                    129.000đ                                        
                                                 </div>
                                             </div>
                                         </div>
@@ -254,14 +239,14 @@
                                 <a href="#" class="swiper-slide col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
                                     <div class="product-box">
                                         <div class="p-img">
-                                            <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo2.png" alt="" width="300" height="300" lazy />
+                                            <img data-src="" src="https://storage.quannhautudo.com/data/thumb_400/Data/images/product/2023/09/20230906135259311.webp" alt="" width="300" height="300" lazy />
                                         </div>
-                                        <div class="sale-tag">50%</div>
+                                        <div class="sale-tag">23%</div>
                                         <div class="p-info">
-                                            <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                            <div class="p-title">Cơm cháy chấm paté</div>
                                             <div class="p-rating"> 
                                                 <span>
-                                                    <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    <img data-src="" src="https://cdn.dealtoday.vn/assets/v2/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
                                                 </span>
                                                 <span class="rating-point">
                                                     4.8
@@ -272,10 +257,10 @@
                                             </div>
                                             <div class="p-price">
                                                 <div class="sale-price">
-                                                    500.000đ
+                                                    99.000đ
                                                 </div>
                                                 <div class="original-price">
-                                                    1.000.000đ                                        
+                                                    129.000đ                                        
                                                 </div>
                                             </div>
                                         </div>
@@ -284,14 +269,14 @@
                                 <a href="#" class="swiper-slide col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
                                     <div class="product-box">
                                         <div class="p-img">
-                                            <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo3.png" alt="" width="300" height="300" lazy />
+                                            <img data-src="" src="https://storage.quannhautudo.com/data/thumb_400/Data/images/product/2023/09/20230906135259311.webp" alt="" width="300" height="300" lazy />
                                         </div>
-                                        <div class="sale-tag">50%</div>
+                                        <div class="sale-tag">23%</div>
                                         <div class="p-info">
-                                            <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                            <div class="p-title">Cơm cháy chấm paté</div>
                                             <div class="p-rating"> 
                                                 <span>
-                                                    <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    <img data-src="" src="https://cdn.dealtoday.vn/assets/v2/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
                                                 </span>
                                                 <span class="rating-point">
                                                     4.8
@@ -302,10 +287,10 @@
                                             </div>
                                             <div class="p-price">
                                                 <div class="sale-price">
-                                                    500.000đ
+                                                    99.000đ
                                                 </div>
                                                 <div class="original-price">
-                                                    1.000.000đ                                        
+                                                    129.000đ                                        
                                                 </div>
                                             </div>
                                         </div>
@@ -314,14 +299,14 @@
                                 <a href="#" class="swiper-slide col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
                                     <div class="product-box">
                                         <div class="p-img">
-                                            <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo4.png" alt="" width="300" height="300" lazy />
+                                            <img data-src="" src="https://storage.quannhautudo.com/data/thumb_400/Data/images/product/2023/09/20230906135259311.webp" alt="" width="300" height="300" lazy />
                                         </div>
-                                        <div class="sale-tag">50%</div>
+                                        <div class="sale-tag">23%</div>
                                         <div class="p-info">
-                                            <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                            <div class="p-title">Cơm cháy chấm paté</div>
                                             <div class="p-rating"> 
                                                 <span>
-                                                    <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    <img data-src="" src="https://cdn.dealtoday.vn/assets/v2/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
                                                 </span>
                                                 <span class="rating-point">
                                                     4.8
@@ -332,10 +317,10 @@
                                             </div>
                                             <div class="p-price">
                                                 <div class="sale-price">
-                                                    500.000đ
+                                                    99.000đ
                                                 </div>
                                                 <div class="original-price">
-                                                    1.000.000đ                                        
+                                                    129.000đ                                        
                                                 </div>
                                             </div>
                                         </div>
@@ -344,14 +329,14 @@
                                 <a href="#" class="swiper-slide col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
                                     <div class="product-box">
                                         <div class="p-img">
-                                            <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo5.png" alt="" width="300" height="300" lazy />
+                                            <img data-src="" src="https://storage.quannhautudo.com/data/thumb_400/Data/images/product/2023/09/20230906135259311.webp" alt="" width="300" height="300" lazy />
                                         </div>
-                                        <div class="sale-tag">50%</div>
+                                        <div class="sale-tag">23%</div>
                                         <div class="p-info">
-                                            <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                            <div class="p-title">Cơm cháy chấm paté</div>
                                             <div class="p-rating"> 
                                                 <span>
-                                                    <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    <img data-src="" src="https://cdn.dealtoday.vn/assets/v2/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
                                                 </span>
                                                 <span class="rating-point">
                                                     4.8
@@ -362,10 +347,10 @@
                                             </div>
                                             <div class="p-price">
                                                 <div class="sale-price">
-                                                    500.000đ
+                                                    99.000đ
                                                 </div>
                                                 <div class="original-price">
-                                                    1.000.000đ                                        
+                                                    129.000đ                                        
                                                 </div>
                                             </div>
                                         </div>
@@ -374,14 +359,14 @@
                                 <a href="#" class="swiper-slide col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
                                     <div class="product-box">
                                         <div class="p-img">
-                                            <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo6.png" alt="" width="300" height="300" lazy />
+                                            <img data-src="" src="https://storage.quannhautudo.com/data/thumb_400/Data/images/product/2023/09/20230906135259311.webp" alt="" width="300" height="300" lazy />
                                         </div>
-                                        <div class="sale-tag">50%</div>
+                                        <div class="sale-tag">23%</div>
                                         <div class="p-info">
-                                            <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                            <div class="p-title">Cơm cháy chấm paté</div>
                                             <div class="p-rating"> 
                                                 <span>
-                                                    <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    <img data-src="" src="https://cdn.dealtoday.vn/assets/v2/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
                                                 </span>
                                                 <span class="rating-point">
                                                     4.8
@@ -392,10 +377,10 @@
                                             </div>
                                             <div class="p-price">
                                                 <div class="sale-price">
-                                                    500.000đ
+                                                    99.000đ
                                                 </div>
                                                 <div class="original-price">
-                                                    1.000.000đ                                        
+                                                    129.000đ                                        
                                                 </div>
                                             </div>
                                         </div>
@@ -404,14 +389,14 @@
                                 <a href="#" class="swiper-slide col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
                                     <div class="product-box">
                                         <div class="p-img">
-                                            <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo7.png" alt="" width="300" height="300" lazy />
+                                            <img data-src="" src="https://storage.quannhautudo.com/data/thumb_400/Data/images/product/2023/09/20230906135259311.webp" alt="" width="300" height="300" lazy />
                                         </div>
-                                        <div class="sale-tag">50%</div>
+                                        <div class="sale-tag">23%</div>
                                         <div class="p-info">
-                                            <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                            <div class="p-title">Cơm cháy chấm paté</div>
                                             <div class="p-rating"> 
                                                 <span>
-                                                    <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    <img data-src="" src="https://cdn.dealtoday.vn/assets/v2/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
                                                 </span>
                                                 <span class="rating-point">
                                                     4.8
@@ -422,10 +407,10 @@
                                             </div>
                                             <div class="p-price">
                                                 <div class="sale-price">
-                                                    500.000đ
+                                                    99.000đ
                                                 </div>
                                                 <div class="original-price">
-                                                    1.000.000đ                                        
+                                                    129.000đ                                        
                                                 </div>
                                             </div>
                                         </div>
@@ -434,14 +419,14 @@
                                 <a href="#" class="swiper-slide col-lg-3 col-md-3 col-sm-4 col-6 p-contanier">
                                     <div class="product-box">
                                         <div class="p-img">
-                                            <img data-src="" src="assets/images/demo-imgs/deal-imgs/demo8.png" alt="" width="300" height="300" lazy />
+                                            <img data-src="" src="https://storage.quannhautudo.com/data/thumb_400/Data/images/product/2023/09/20230906135259311.webp" alt="" width="300" height="300" lazy />
                                         </div>
-                                        <div class="sale-tag">50%</div>
+                                        <div class="sale-tag">23%</div>
                                         <div class="p-info">
-                                            <div class="p-title">Vé vào cửa Vinwonder Nha Trang - Người lớn</div>
+                                            <div class="p-title">Cơm cháy chấm paté</div>
                                             <div class="p-rating"> 
                                                 <span>
-                                                    <img data-src="" src="assets/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
+                                                    <img data-src="" src="https://cdn.dealtoday.vn/assets/v2/images/generals/icon-star-rating.svg" alt="rating-star" width="14" height="14" lazy />
                                                 </span>
                                                 <span class="rating-point">
                                                     4.8
@@ -452,10 +437,10 @@
                                             </div>
                                             <div class="p-price">
                                                 <div class="sale-price">
-                                                    500.000đ
+                                                    99.000đ
                                                 </div>
                                                 <div class="original-price">
-                                                    1.000.000đ                                        
+                                                    129.000đ                                        
                                                 </div>
                                             </div>
                                         </div>
@@ -474,33 +459,10 @@
                 </div>
 
                 <div class="gap-reg-20"></div>
-
-                <div class="col-12 shop-locations-reg">
-
-                </div>
-
-                <div class="col-12 promotion-reg">
-                    <span><img src="" alt="" height="" width="" /></span>
-                    <span>Ưu đãi</span>                        
-                    <span>Promotion</span>
-                </div>
             </div>
         </div>
     </div>
     <!--#endregion-->
-
-    <!--#region Footer-->
-    <div class="footer">
-        <div class="container p-sm-0 p-xs-0">
-            <div class="row">
-                <!--#region-->
-                
-                <!--#endregion-->
-            </div>
-        </div>
-    </div>
-    <!--#endregion-->
-
 
     <!--#region-->
     <script>
