@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/plugins/bootstrap5.0.2/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style/style.css">
+
+    <script src="assets/plugins/jquery2.2.4/jquery-2.2.4.min.js"></script>
+    
+    <meta name="title" content="@Html.Raw(ViewBag.MetaTitle)" />
+    <meta name="keywords" content="@Html.Raw(ViewBag.Keywords)" />
+    <meta name="description" content="@Html.Raw(ViewBag.Description)">
+
+    <title>@ViewBag.Title</title>
+</head>
+<style>
+    .loc-box select {
+        height: 48px;
+        width: 150px;
+        font-size: 16px; 
+        font-weight: 500;
+        color: #000;
+        position: relative;
+        border-radius: 8px;
+        padding: 0 12px;
+        background-color: #FAFAFA;
+        border-color: #eee;
+    }
+
+    .loc-box select::after {
+        content: "";
+        background-image: url(assets/images/generals/arrows/arr-dropdown-down-black.svg);
+        background-repeat: no-repeat;
+        background-size: 32px 32px;
+        background-position: left 15px center;
+    }
+
+    .loc-box .selector-cover {
+        height: 100%;
+        width: 150px;
+        margin: 0 auto;
+        background-color: transparent;
+        position: relative;
+        top: -48px;
+        cursor: pointer;
+    }
+
+    .loc-box .selector-cover .lst-item {
+        background-color: #fff;
+        position: absolute;
+        display: none;
+        top: 100%;
+        left: 0;
+        cursor: pointer;
+        border-radius: 6px;
+        border: 1px solid #eee;
+        height: max-content;
+        width: 150px;
+        margin-top: 3px;
+    }
+
+    .loc-box .selector-cover .lst-item .item {
+        height: 50px;
+        color: #000;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 0 16px;
+    }
+
+    .loc-box .selector-cover .lst-item .item:hover {
+        background-color: #f5f5f5;
+    }
+
+    .loc-box .selector-cover .lst-item .item.selected {
+        background-image: url(assets/images/popup/icon-tick-location.svg);
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 24px 24px;
+    }
+</style>
+<body>
+    <!--#region Popup Location-->
+    <div class="loc-box d-flex" id="loc-box">
+        <div>
+            <select id="l-selector">
+                <option value="21">Toàn quốc</option>
+                <option value="24">Hà Nội</option>
+                <option value="25">Sài Gòn</option>
+                <option value="61">Đà Nẵng</option>
+            </select>
+            <div class="d-xl-block d-lg-block d-md-block d-sm-none d-xs-none d-none selector-cover" id="location-bx" onclick="showSelector('#loc-list')">
+                <div class="lst-item" id="loc-list">
+                    <div class="item flex-align-center selected" onclick="pickThisItem('#l-selector', this.id)" id-val="21" id="loc-toan-quoc">Toàn quốc</div>
+                    <div class="border-div w-100"></div>
+                    <div class="item flex-align-center" onclick="pickThisItem('#l-selector', this.id)" id-val="24" id="loc-ha-noi">Hà Nội</div>
+                    <div class="border-div w-100"></div>
+                    <div class="item flex-align-center" onclick="pickThisItem('#l-selector', this.id)" id-val="25" id="loc-sai-gon">Sài Gòn</div>
+                    <div class="border-div w-100"></div>
+                    <div class="item flex-align-center" onclick="pickThisItem('#l-selector', this.id)" id-val="61" id="loc-da-nang">Đà Nẵng</div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function showSelector(selectorId) {
+                $(selectorId).toggle();
+            }
+
+            function pickThisItem(selectorId, itemId) {
+                $('.lst-item .item').each(function () {
+                    $(this).removeClass('selected');
+                });
+
+                $('#' + itemId).addClass('selected');
+
+                $(selectorId).val($('#' + itemId).attr('id-val'));
+            }
+
+            document.addEventListener('click', function handleClickOutsideBox(event) {
+                const boxLocation = document.getElementById('location-bx');
+                const boxLocSelect = document.getElementById('loc-list');
+
+                if (!boxLocation.contains(event.target) && !boxLocSelect.contains(event.target)) {
+                    $('#loc-list').hide();
+                }
+            });
+        </script>
+    </div>
+    <!--#endregion-->
+</body>
+</html>
