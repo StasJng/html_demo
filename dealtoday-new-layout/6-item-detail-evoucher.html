@@ -41,6 +41,48 @@
     <script src="assets/plugins/boostrap3.3.7/bootstrap.min.js"></script>
 </head>
 
+<style>
+    .d-detail-rg .bounus-point {
+        font-size: 12px;
+    }
+
+    .d-detail-rg .sale-code .lst-code .code-info {
+        z-index: 1;
+    }
+
+    .d-detail-rg .deal-price .p-sale {
+        font-size: 28px;
+    }
+
+    .d-detail-rg .deal-price .p-sale .p-tag {
+        font-size: 12px;
+    }
+
+    .d-detail-rg .deal-price .p-sale .p-tag {
+        padding: 5px 8px;
+        top: 8px !important;
+        left: 165px !important;
+    }
+
+    .d-detail-rg .deal-price .p-sale .p-tag:before {
+        left: -56px;
+    }
+
+    .d-detail-rg .sale-code .lst-code {
+        padding: 8px 12px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+
+    .d-detail-rg .xpr-date {
+        font-weight: 600;
+    }
+
+    .main-swiper .swiper-slide.swiper-slide-prev, .main-swiper .swiper-slide.swiper-slide-next {
+        opacity: .5;
+    }
+</style>
+
 <body>
     <!--#region Header-->
     <div class="header" id="header">
@@ -341,7 +383,7 @@
                 <div class="gap-reg-20"></div>
 
                 <!--#region Images-->
-                <div class="col-12 p-sm-0 p-xs-0">
+                <div class="col-12 p-0">
                     <div class="row">
                         <div class="col-12">
                             <div class="detail-item-swiper-ctn main-banner">
@@ -364,13 +406,44 @@
                                             <img src="https://cdn.dealtoday.vn/img/s1200x600/Charming-da-nang-Show-4_23082023165312.jpg?sign=7DtXLBv7aEnUstumQZi4Yw" alt="" height="" width="" lazy />
                                         </div>
                                     </div>
+                                    <div class="swiper-pagination"></div>
+                                    <p class="counter">
+                                        <span class="current-slide">1</span><span>/</span><span class="total-slides">5</span>
+                                    <p>
                                 </div>
 
                                 <!-- Initialize Swiper -->
                                 <script>
-                                    var swiper2 = new Swiper(".mySwiper2", {
+                                    let slideCount = 1.5;
+                                    if(width <= 768) {
+                                        slideCount = 1;
+                                    }
+                                    var GallerySwiper = new Swiper('.mySwiper2', {
+                                        slidesPerView: slideCount,
+                                        nextButton: '.swiper-button-next',
+                                        prevButton: '.swiper-button-prev',
+                                        spaceBetween: 10,
+                                        centeredSlides: true,
                                         loop: true,
-                                        spaceBetween: 10
+                                        autoplay: {
+                                            delay: 2000,
+                                            disableOnInteraction: false,
+                                        },
+                                        pagination: {
+                                            el: '.mySwiper2 .swiper-pagination',
+                                            clickable: true,
+                                        },
+                                        on: {
+                                            slideChange: function () {
+                                                var currentSlide = this.realIndex + 1;
+                                                //console.log("currentSlide is:" + currentSlide);
+                                                document.querySelector('.mySwiper2 .current-slide').innerHTML = currentSlide;
+                                            },
+                                            beforeInit: function () {
+                                                let numOfSlides = this.wrapperEl.querySelectorAll(".mySwiper2 .swiper-slide").length;
+                                                document.querySelector('.mySwiper2 .total-slides').innerHTML = numOfSlides;
+                                            }
+                                        }
                                     });
                                 </script>
                             </div>
@@ -401,7 +474,7 @@
                                     <!--#endregion-->
                                     
                                     <!--#region Payment Info Wap-->
-                                    <div class="ev-box-r d-detail-rg d-block d-sm-block d-md-block d-lg-block d-xl-none w-100 m-0 p-0">
+                                    <div class="d-detail-rg d-block d-sm-block d-md-block d-lg-block d-xl-none w-100 m-0 p-0">
                                         <!--#region Countdown Timer-->
                                         <input type="hidden" id="countdowntTime" value="3/15/2024 12:02:32 AM" />
         
@@ -436,7 +509,7 @@
                                         </div>
                                         <!--#endregion-->
         
-                                        <div class="deal-price">
+                                        <div class="deal-price h-auto">
                                             <div class="d-price">
                                                 <div class="p-sale">
                                                     <span class="notranslate">500.000đ</span>
@@ -452,6 +525,8 @@
                                             </div>
                                         </div>
         
+                                        <div class="gap-reg-20"></div>
+
                                         <div class="col-12 bounus-point">
                                             <span>
                                                 <img src="assets/images/generals/icon-epoint.svg" alt="" height="14" width="14" />
@@ -461,6 +536,8 @@
                                             </span>
                                         </div>
         
+                                        <div class="gap-reg-20"></div>
+
                                         <div class="cb-d-info d-block d-xs-block d-sm-block d-md-block d-lg-none d-xl-none">
                                             <div class="d-title">Combo bao gồm:</div>
         
@@ -1238,8 +1315,10 @@
                             <div class="ev-box-r d-detail-rg">
                                 <style>
                                     .ev-box-r {
-                                        width: calc(100% - 20px);
-                                        margin-left: 20px;
+                                        width: calc(100% - 16px);
+                                        margin-left: 16px;
+                                        position: sticky;
+                                        top: 90px;
                                     }
                                 </style>
 
@@ -1247,7 +1326,7 @@
                                 <input type="hidden" id="countdowntTime" value="9/9/2023 11:53:32 AM" />
 
                                 <div class="col-12 detail-flash-countdown upcoming show-unit">
-                                    <div class="countdown-container">
+                                    <div class="countdown-container mt-0">
                                         <ul>
                                             <li class="time-left"><span>Bắt đầu sau</span></li>
                                             <li><i><span class="days-left"></span></i></li>
@@ -1262,7 +1341,7 @@
                                 </div>
 
                                 <div class="col-12 detail-flash-countdown show-unit">
-                                    <div class="countdown-container">
+                                    <div class="countdown-container mt-0">
                                         <ul>
                                             <li class="time-left"><span>Kết thúc trong</span></li>
                                             <li><i><span class="days-left"></span></i></li>
@@ -1277,7 +1356,7 @@
                                 </div>
                                 <!--#endregion-->
 
-                                <div class="deal-price">
+                                <div class="deal-price h-auto">
                                     <div class="d-price">
                                         <div class="p-sale">
                                             <span class="notranslate">500.000đ</span>
@@ -1293,6 +1372,8 @@
                                     </div>
                                 </div>
 
+                                <div class="gap-reg-20"></div>
+
                                 <div class="col-12 bounus-point">
                                     <span>
                                         <img src="assets/images/generals/icon-epoint.svg" alt="" height="14" width="14" />
@@ -1301,6 +1382,8 @@
                                         Tích lũy đến 2100 điểm thưởng
                                     </span>
                                 </div>
+
+                                <div class="gap-reg-20"></div>
 
                                 <div class="cb-d-info d-block d-xs-block d-sm-block d-md-block d-lg-none d-xl-none">
                                     <div class="d-title">Combo bao gồm:</div>
@@ -1371,9 +1454,7 @@
                                     </span>
                                 </div>
                                 
-                                <div class="gap-reg-10"></div>
-
-                                <div class="quantity  flex-align-center">
+                                <div class="quantity flex-align-center">
                                     <span class="title">
                                         Số lượng
                                     </span>
@@ -2471,7 +2552,7 @@
 
                 <div class="col-12 row d-detail-rg">
                     <div class="col-6">
-                        <div class="deal-price">
+                        <div class="deal-price h-auto">
                             <div class="d-price">
                                 <div class="p-sale">
                                     <span class="notranslate">500.000đ</span>
