@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 0;
+            min-height: 100vh;
+            font-size: 6rem;
+            background: #352c37;
+        }
+
+        @keyframes burn {
+            0%, 100% { border-radius: 5% 87% 45% 85%; width: 30em; }
+            10% { border-radius: 5% 85% 49% 82%; }
+            20% { border-radius: 0% 85% 45% 87%; width: 31em; }
+            30%, 90% { border-radius: 5% 85% 49% 82%; }
+            40% { border-radius: 0% 85% 45% 87%; width: 32em; }
+            50% { border-radius: 2% 87% 42% 90%; }
+            60% { border-radius: 5% 97% 45% 88%; }
+            70% { border-radius: 2% 87% 42% 90%; width: 31em}
+            80% { border-radius: 5% 97% 45% 88%; }
+        }
+
+        .toggle {
+            appearance: none;
+            position: relative;
+            font-size: 1em;
+            width: 3em;
+            aspect-ratio: 2.5;
+            border: max(1px, 0.05em) solid #000;
+            border-radius: 100vmax;
+            background: #0002;
+
+            &::before {
+                content: "";
+                position: absolute;
+                box-sizing: border-box;
+                width: 0.25em;
+                height: 0.925em;
+                -webkit-mask:
+                radial-gradient(40% 18% at 50% 14.5%, #000 80%, #0000 0),
+                conic-gradient(at 50% -50%, #0000 179deg, #000 0 181deg, #0000 0);
+                top: 50%;
+                left: 23%;
+                transform: translate(-50%, -50%) translate(0em) rotate(0deg);
+                transition: transform 0.5s;
+                border-radius: 100% / 20%;
+                background: red;
+                transition-delay: 0.5s, 0.5s;
+                background:
+                radial-gradient(circle at 55% 8%, #fee4, #fff0 10%),
+                radial-gradient(40% 18% at 50% 14.5%, #0000 30%, #0004 80%, #0000 0),
+                radial-gradient(40% 18% at 50% 14.5%, crimson 80%, #0000 0),
+                conic-gradient(at 50% -50%, #0000 180.1deg, #0005 181deg),
+                linear-gradient(#d68356 15%, #966336)
+            }
+
+            &::after {
+                animation: burn 4s infinite;
+                content: "";
+                opacity: 0;
+                transition: opacity 0.25s, transform 0.25s;
+                transition-delay: 0s;
+                font-size: 0.015em;
+                width: 30em;
+                aspect-ratio: 1;
+                background:
+                radial-gradient(100% 100% at 90% 90%, #251c2788, #251c2733 20%, #251c2700 50%),
+                radial-gradient(farthest-side at 110% 120%, #251c2788, #6318, #cb6c3b88, #0000),
+                radial-gradient(at 100% 100%, #fc08, #cb6c3b88, #eebd7600 60%),
+                linear-gradient(135deg, #fff0 20%, #ff08),
+                linear-gradient(#ffe, #ffe5)
+                ;
+                border-radius: 2% 87% 45% 85%;
+                box-shadow:
+                inset 2em 2em 2em -1.5em #f808,
+                inset -1em -1em 5em -3em #00f7,
+                inset 0em -1em 5em -3em #00f8,
+                inset -1em -1em 2em -2em #251c2788,
+                inset -1em -1em 3em -1em #251c2788,
+                inset -1em -1em 2em #fc08,
+                -4em -4em 20em 4em #fa03,
+                -0.5em -0.5em 1em #ff08,
+                -1em -1em 2em #ce8c47,
+                -2em -2em 10em 1em #251c27,
+                -6em -6em 35em 3em #fa06;
+                filter: blur(0.1em);
+                /* demo */
+                position: absolute;
+                top: 14%;
+                left: 77%;
+                transform: translate(-50%, -15em) rotate(45deg) scale(0);
+                aopacity: 0.6;
+                -awebkit-mask:
+                radial-gradient(at 70% 70%, #0008, #000 50%)
+            }
+
+            &:checked {
+                &::before {
+                    aleft: 77%;
+                    transform: translate(-50%, -50%) translate(1.575em) rotate(360deg);
+                    transition-delay: 0s;
+                }
+                &::after {
+                    opacity: 1;
+                    transform: translate(-50%, -15em) rotate(45deg) scale(1);
+                    transition-delay: 0.5s;
+                }
+            }
+
+            &[disabled] {
+                opacity: 0.25;
+            }
+            }
+
+            @media print {
+                .toggle {
+                    &, &::before, &::after {
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                    }
+            }
+        }
+
+        @media (prefers-reduced-motion) {
+            .toggle {
+                &, &::before, &::after {
+                transition: none !important;
+                animation: none !important;
+                }
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+        .toggle {
+            border-top: 0.275em solid crimson;
+            border-bottom: 0.65em solid darkorange;
+        }
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox" role="switch" class="toggle" />
+</body>
+</html>

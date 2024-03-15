@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: Poppins;
+            background: radial-gradient(circle at 50% 70%, rgb(248, 236, 217) 0%, rgba(106,91,69,1) 100%);
+
+            font-size: calc(var(--_size) * 0.01);
+            --_factor: min(600px, 80vh);
+            --_size: min(var(--_factor), 80vw);
+
+            --base-clr: #b7b5b4;
+
+            --toast-time: 0s;
+        }
+
+        .toaster-container {
+            position: relative;
+            width: 100em;
+            height: 100em;
+        }
+        .toaster-container * {
+            position: absolute; margin: auto;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        .toaster-clip {
+            width: 117.2%;
+            height: 10%;
+            scale: 2 2.5;
+            left: -4%;
+            bottom: -34%;
+            border-radius: 5%;
+            transform: skewx(283.1deg) rotate(7.6deg);
+            overflow: hidden;
+        }
+        .inset-toaster {
+            width: 27.8%;
+            height: 276%;
+            right: 0.4%;
+            top: 4%;
+            transform: rotate(-7.6deg) skewx(76.1deg) rotate(-13.7deg);
+            border-radius: 7%;
+            overflow: hidden;
+        }
+        .inset-toaster.btm .inset-inset-toaster{
+            background: transparent;
+            translate: 0 -2.4em;
+        }
+        .inset-toaster.btm .inset-inset-toaster::before {
+            width: 100%; height: 100%;
+            content: ''; display: block;
+            border-radius: 5%;
+            box-shadow: 
+            inset 0 -0.2em 0.1em 0 #fff5,
+            0 1.8em 0.2em -0.2em rgba(0, 0, 0, 0.1),
+            -0.3em 0.4em 0.2em -0.3em rgb(26, 26, 26),
+            -0.3em 2em 0.4em -0.4em rgb(77, 77, 77),
+            0 2.1em 0 0 rgb(51, 51, 51);
+        }
+        .inset-toaster.btm .inset-inset-toaster::after {
+            width: 48%; height: 21%;
+            content: '';
+            display: block;
+            position: absolute;
+            left: 53%;
+            top: 66%;
+            border-radius: 22%;
+            transform: rotate(336deg);
+            box-shadow: 
+            inset 0 -0.4em 0.1em -0.2em #fff5, 
+            0em 0.32em 0.1em -0.2em rgba(26, 26, 26,0.8), 
+            -0.3em 2em 0.4em -0.4em rgb(77, 77, 77), 
+            0 2.4em 0 -0.4em rgb(51, 51, 51);
+            clip-path: polygon(10% -100%, 200% -100%, 200% 200%, -4% 200%);
+        }
+        .inset-inset-toaster {
+            background: rgba(96,96,96,1);
+            background: linear-gradient(157deg, 
+            rgb(68,68,68) 18%, 
+            rgb(96,96,96) 28%,
+            rgb(96,96,96) 32%, 
+            rgb(111,111,111) 34%, 
+            rgb(189, 189, 189) 41%, 
+            rgb(189, 189, 189) 42%, 
+            rgb(59, 59, 59) 47%, 
+            rgb(59, 59, 59) 48%, 
+            rgb(90, 88, 87) 52%, 
+            rgb(223,211,197) 76%); 
+            width: 115.9%;
+            height: 77.4%;
+            bottom: 3%;
+            left: -7.9%;
+            border-radius: 10%;
+            transform: rotate(30deg) skewx(30.4deg);
+        }
+        .side-piece {
+            background: #8b8782;
+            background: linear-gradient(180deg, 
+            rgb(58, 58, 58) 0%, 
+            rgb(59, 59, 59) 7%, 
+            rgb(90, 88, 87) 16%, 
+            rgb(223,211,197) 81%,
+            rgb(223,211,197) 90%,
+            rgb(53 53 53) 100%);
+            width: 72.9%;
+            height: 51.8%;
+            bottom: 1%;
+            left: -37%;
+            border-radius: 14%;
+            transform: rotate(30deg) skewx(29.5deg);
+            box-shadow: 
+            -0.1em -1em 0.2em -1em #fff9,
+            -0.1em -1em 0.7em -1em #0009,
+            0 -1em 1em -1em #000,
+            inset 1em 0 1em -1.2em #000,
+            inset 0.1em 1em 0.2em -1em #fff9,
+            inset 4em -1em 3em -3em #fff8,
+            inset 0 0.6em 1em -0.3em rgba(0, 0, 0, 0.2),
+            inset 0 2.1em 0.4em -2em rgba(0, 0, 0, 0.4),
+            inset 0 2em 5em 4em rgba(0, 0, 0, 0.2);
+        }
+        .side-piece::before {
+            width: 10%; height: 94%;
+            content: '';
+            display: block;
+            position: absolute;
+            filter: blur(0.4em);
+            background: linear-gradient(0deg, transparent 0%, rgb(59, 59, 59) 90%),
+            linear-gradient(90deg, #fff 0%,rgb(104, 102, 102) 50%, #fff 100%);
+            bottom: 1%;
+            right: -3%;
+        }
+        .toaster-front {
+            width: 26%; height: 36%;
+            left: 49%;
+            top: 48%;
+            transform: rotateZ(-18deg) skew(-18deg);
+        }
+        .toaster-front .slider {
+            width: 2em; height: 64%;
+            border-radius: 10em;
+            box-shadow: 
+            inset -0.2em 0.2em 0.1em -0.1em #fff8,
+            inset -0.2em 0.2em 0.2em 0.2em #0006,
+            inset -0.8em 0.8em 1.4em 0em rgb(102, 102, 102),
+            inset -0.1em 0.3em 0.2em 10em #000;
+            cursor: pointer;
+        }
+        .toaster-front .slider .handle {
+            width: 280%;
+            height: 4em; 
+            background: rgb(65, 65, 65);
+            background: linear-gradient(0deg, #363636 24%,rgb(161, 161, 161) 80%, #6e6e6e 100%);
+            transform: rotateZ(0deg) skew(55deg);
+            border-radius: 0% 0% 50% 50%;
+            left: 40%;
+            bottom: 56%;
+            box-shadow: 
+            inset 0em 2.1em 0.4em -2em #fff6,
+            inset 0em -0.3em 0.4em -0.3em #fff9,
+            inset 0em 2.2em 6em -2em #000,
+            -0.3em 0em 0.1em -0.1em #000,
+            -0.4em 0.3em 0.1em -0.1em #000;
+            transition: translate 0.3s ease-in;
+        }
+        .toaster-front .slider .handle::before {
+            content: '';
+            display: block;
+            background: #000;
+            width: 8%; height: 60%;
+            rotate: -8deg;
+            border-radius: 1em;
+            left: -8%;
+            top: 6%;
+            position: absolute;
+        }
+        .active .toaster-front .slider .handle {
+            translate: 0 16em;
+        }
+        .toaster-front .timer-lights {
+            width: 2em; height: 40%;
+            left: 50%; bottom: 20%;
+            display: flex;
+            flex-direction: column;
+        }
+        .toaster-front .timer-lights .light {
+            width: 1.2em; height: 1.2em;
+            position: relative;
+            border-radius: 50%;
+            transition: box-shadow 0.2s ease-in-out;
+            box-shadow: 
+            inset 0 0 0.2em 0.1em #96360a80,
+            inset 0 0 0.3em 0.2em #ffbb0073,
+            inset 0 0 0 0.6em #ff910000, /* offlight */
+            inset 0 0 0 0.6em #000,
+            0 0 0.2em 0.1em #d8aa2b,
+            0 0 0.2em 0.2em #cf68143b,
+            0 0 0 0.3em #000,
+            0 0 0.3em 0.3em #ffffff88,
+            0 0 1em 0.3em #ee893700,/* offglow */
+            0 0 1em 0.1em #ee89373a;
+            filter: grayscale(0.5);
+        }
+        .toaster-front .timer-lights .light.level {
+            box-shadow: 
+            inset 0 0 0.2em 0.1em #96360a,
+            inset 0 0 0.3em 0.2em #ffbb00,
+            inset 0 0 0 0.6em #ff910000, /* offlight */
+            inset 0 0 0 0.6em #000,
+            0 0 0.2em 0.1em #d8aa2b,
+            0 0 0.2em 0.2em #cf6814,
+            0 0 0 0.3em #000,
+            0 0 0.3em 0.3em #fff,
+            0 0 1em 0.3em #ee893700,/* offglow */
+            0 0 1em 0.1em #ee8937;
+        }
+        .toaster-front .timer-lights .light::before {
+            display: block;
+            left: 224%;
+            top: -40%;
+            rotate: -5deg;
+            font-weight: 500;
+            color: #292929;
+            position: absolute;
+            font-size: 1.4em;
+            transform: skew(-6deg);
+        }
+        .toaster-front .timer-lights .light:nth-child(1)::before { content:"1";}
+        .toaster-front .timer-lights .light:nth-child(2)::before { content:"2"; left: 218%;}
+        .toaster-front .timer-lights .light:nth-child(3)::before { content:"3"; left: 212%;}
+        .toaster-front .timer-lights .light:nth-child(4)::before { content:"4"; left: 206%;}
+        .toaster-front .timer-lights .light.on {
+            width: 1.2em; height: 1.2em;
+            position: relative;
+            border-radius: 50%;
+            box-shadow: 
+            inset 0 0 0.2em 0.1em #96360a,
+            inset 0 0 0.3em 0.2em #ffbb00,
+            inset 0 0 0 0.6em #ff9100, /* onlight */
+            inset 0 0 0 0.6em #000,
+            0 0 0.2em 0.1em #d8aa2b,
+            0 0 0.2em 0.2em #cf6814,
+            0 0 0 0.3em #000,
+            0 0 0.3em 0.3em #fff,
+            0 0 1em 0.3em #ee8937,/* onglow */
+            0 0 1em 0.1em #ee8937;
+        }
+        .toaster-front .knob {
+            width: 8em; height: 8em;
+            left: 58%;
+            top: 44%;
+        }
+        .toaster-front .knob-depth {
+            background: linear-gradient(10deg, #70645e 0%, #100b00 40%, #948977 86%, #fff 100%);
+            width: 7.4em;
+            height: 5.5em;
+            border-radius: 10em;
+            rotate: 35deg;
+            box-shadow: 
+                -0.5em -0.3em 0.2em -0.3em #fff5,
+                inset 0 0 0.2em 0.1em #0005;
+        }
+        .toaster-front .knob-face {
+            --knob-rot: -80deg;
+            background: linear-gradient(164deg, #584d3c 0%,rgb(136, 136, 136) 100%);
+            width: 5em; height: 5em;
+            border-radius: 50%;
+            left: 28%;
+            top: 22%;
+            box-shadow: 
+            -0.2em -0.2em 0.2em 0.1em #fff5,
+            inset 0 0 0.2em 0.1em #0005;
+            cursor: pointer;
+        }
+        .toaster-front .knob-face::before {
+            content:''; display: block;
+            position: absolute;
+            width: 0.3em; height: 24%;
+            background: #fff2;
+            box-shadow: -0.1em 0 0.1em 0 #0009;
+            rotate: 0deg;
+            transform-origin: 0em 2.3em;
+            right: 44%;
+            top: 4%;
+            transition: all 0.2s ease-in-out;
+            rotate: var(--knob-rot);
+        }
+        .button-deco {
+            width: 7em; height: 3em;
+            display: flex;
+            right: 50%;
+            top: 60%;
+        }
+        .button-deco .button{
+            position: relative;
+            width: 1.4em;
+            height: 1.4em;
+            background: #555;
+            border-radius: 50%;
+            box-shadow: 
+            inset 0.2em 0.2em 0.5em 0 #000,
+            inset 0.2em 0.2em 0.3em 1em #fff5;
+        }
+        .toaster-top {
+            width: 34%;
+            height: 16%;
+            left: 8%;
+            top: -8%;
+            transform: rotateZ(201deg) skew(306deg);
+        }
+        .toaster-top .toast-slots {
+            display: flex;
+            flex-direction: column;
+            width: 100%; height: 70%;
+            top: 8%;
+        }
+        .toaster-top .toast-slots .slot {
+            position: relative;
+            width: 80%; height: 34%;
+            border-radius: 0.5em;
+            background: #000;
+            box-shadow: 
+            0.4em 0.2em 0.3em 0 #f7d9c1,
+            0.4em -0.2em 0.2em 0em #d8d3ce7c,
+            -0.4em 0.2em 0.3em 0.1em #d8d3cec9,
+            inset -0.5em -0.3em 0.2em 0.1em #000,
+            inset -0.5em -0.3em 0.2em 0.3em #d8d3ce;
+        }
+        .active .toaster-top .toast-slots .slot {
+            box-shadow: 
+            0.4em 0.2em 0.3em 0 #f7d9c1,
+            0.4em -0.2em 0.2em 0em #d8d3ce7c,
+            -0.4em 0.2em 0.3em 0.1em #d8d3cec9,
+            inset -0.5em -0.3em 0.2em 0.1em #000,
+            inset -0.5em -0.3em 0.2em 0.3em #d45535;
+        }
+        .shadow {
+            width: 42%; height: 14%; 
+            top: 75%; left: 4%;
+            transform: rotateZ(201deg) skew(306deg);
+            border-radius: 4em;
+            box-shadow: 
+            6em -5em 8em 2em #0009,
+            4em -4em 4em 2em #0003,
+            -1em -0.6em 1.8em 1.8em #0009;
+        }
+
+        .toast-inset-container {
+            pointer-events: none;
+            position: absolute;
+            margin: auto;
+            left: 0; right: 0; top: 0; bottom: 0;
+            width: 80em; height: 80em;
+            clip-path: polygon(-500% -500%, 111% -500%, 100% 43%, 62.4% 53.3%, 0 29.4%)
+        }
+        .toast-inset-container.two {
+            translate: 9.3em -2.5em;
+        }
+
+        .toast, .toast * { 
+            position: absolute;
+            transition: all 0.4s ease-out;
+        }
+        .toast {
+            width: 30em; height: 40em;
+            top: 30%; left: 28%;
+            --crust-thick: 0.6em;
+            pointer-events: all;
+            cursor: pointer;
+            
+            
+            --toast-var: 21; /* set to 0 for portrait view of toast */
+            --toast-ang: calc( var(--toast-var) * 1deg);
+            transform: rotateZ(var(--toast-ang)) skew(var(--toast-ang));
+            scale: calc(1 - (var(--toast-var) / 100));
+            
+        }
+        .toast-inset-container:not(.active) .toast:hover{
+            translate: 0 -4em;
+        }
+        .active .toast {
+            top: 42%;
+        }
+        .active .toast, .active .toast * { 
+            transition: all 1s ease-in-out;
+        }
+        .finished .toast {
+            top: -20%;
+        }
+        .toast.reset {
+            animation: 4s ease-in toastReset;
+        }
+        @keyframes toastReset {
+            0% {  }
+            50% { top: -65vh;}
+            70% { --toast-time: 0s;}
+            100% { top: 30%; --toast-var: 21; --toast-time: inherit;}
+        }
+
+        .toast.rotate {
+            --toast-var: 0;
+            top: -20%;
+        }
+
+        .toast .toast-top {
+            background: #ffeacd;
+            height: 33%; width: 100%;
+            border-radius: 50% 50% 50% 50% / 70% 70% 60% 60%;
+            box-shadow: 
+            var(--crust-thick) -0.2em 0 -0.2em #8e4e1d,
+            calc(-1 * var(--crust-thick)) -0.2em 0 -0.2em #8e4e1d,
+            0 calc(-1 * var(--crust-thick)) 0 -0.2em #8e4e1d,
+            inset -2em 0.4em 1em -1em #efb97c,
+            inset 2em 0.4em 1em -1em #efb97c,
+            inset 0 1em 1em 0em #efb97c;
+        }
+        .toast .toast-bottom {
+            background: #ffeacd;
+            top: 20%;
+            height: 80%; width: 100%;
+            border-radius: 30% 30% 10% 10% ;
+            box-shadow: 
+            var(--crust-thick) 0.3em 0 -0.2em #8e4e1d,
+            calc(-1 * var(--crust-thick)) 0.3em 0 -0.2em #8e4e1d,
+            0 var(--crust-thick) 0 -0.2em #8e4e1d,
+            inset -2em -0.4em 1em -1em #efb97c,
+            inset 2em -0.4em 1em -1em #efb97c,
+            inset 0 -1em 2em 0em #efb97c;
+        }
+        .toast-depth {
+            width: 100%; height: 100%;
+            left: 10%;
+            bottom: 2%;
+            scale: 1.1 1.05;
+        }
+        .toast .td-top {
+            background: linear-gradient(-30deg, #c2764a 10%, #6b4107 30%, #9a623b 50%, #eed0b0 90%);
+            height: 31%; width: 100%;
+            border-radius: 50% 50% 50% 50% / 70% 78% 78% 60%;
+            border-top-left-radius: 72% 100%;
+        }
+        .toast .td-bottom {
+            background: linear-gradient(-30deg, #c2764a 0%, #6b4107 10%, #9a623b 40%, #362000 100%);
+            top: 20%;
+            height: 80%; width: 100%;
+            border-radius: 30% 30% 10% 10%;
+            border-bottom-right-radius: 30% 16%;
+        }
+
+        .toast.rotate .toast-depth {
+            scale: 1.02;
+            left: 3%;
+            bottom: 0%;
+        }
+        .toast.rotate .toast-depth .td-top {
+            height: 33%;
+            border-radius: 70% 50% 50% 50% / 70% 100% 68% 60%;
+        }
+        .toast.rotate .toast-depth .td-bottom {
+            border-bottom-right-radius: 10%;
+        }
+
+        .toasted {
+            width: 100%; height: 100%;
+            left: 0%;
+            bottom: 2%;
+            scale: 0.7 0.8;
+            --toast-clr: #ffeacd;
+            filter: blur(4em) brightness(1);
+            transition: all var(--toast-time) linear !important;
+        }
+        .levelone .toasted { --toast-clr: #ffe7c5; }
+        .leveltwo .toasted { --toast-clr: #ffb54d; }
+        .levelthree .toasted { --toast-clr: #ff9400; filter: blur(4em) brightness(0.5);}
+        .levelfour .toasted { --toast-clr: #ff9400; filter: blur(4em) brightness(0.1);}
+        .toasted  .t-top,
+        .toasted  .t-bottom {
+            background: var(--toast-clr);
+            transition: all var(--toast-time) linear !important;
+        }
+        .toasted  .t-top {
+            height: 31%; width: 100%;
+            border-radius: 50% 50% 50% 50% / 70% 78% 78% 60%;
+        }
+        .toasted .t-bottom {
+            top: 20%;
+            height: 80%; width: 100%;
+            border-radius: 30% 30% 10% 10%;
+        }
+
+        .toast-notification-container {
+            font-size: max(12px, 2em);
+            position: fixed;
+            right: 0; bottom: 0.3em;
+            width: 24em;
+            height: fit-content;
+            display: flex; 
+            flex-direction: column;
+        }
+        .toast-notification-container .toast-notification {
+            --tn-clr1: #362000;
+            --tn-clr2: #ffd89f6e;
+            --tn-clr3: #9466226e;
+            --tn-clr4: #5e39019f;
+            color: var(--tn-clr1);
+            position: relative;
+            height: fit-content; width: 100%;
+            background: var(--tn-clr2);
+            border-top: 0.2em solid var(--tn-clr3);
+            border-left: 0.3em solid var(--tn-clr3);
+            border-bottom: 0.2em solid var(--tn-clr4);
+            padding: 1em 2em;
+            padding-right: 4em;
+            margin: 0.3em;
+            animation: 8s ease-in-out forwards toastNotifFade; 
+        }
+        .toast-notification-container .toast-notification::before {
+            content: ''; display: block;
+            height: 0.2em;
+            position: absolute;
+            left: 0; bottom: 0;
+            background: var(--tn-clr4);
+            width: 100%;
+            animation: 8s linear forwards toastNotifTime;
+        }
+        .toast-notification-container .toast-notification.alert {
+            --tn-clr1: #363100;
+            --tn-clr2: #fff19f6e;
+            --tn-clr3: #947f226e;
+            --tn-clr4: #5e58019f;
+        }
+        .toast-notification-container .toast-notification.warning {
+            --tn-clr1: #360000;
+            --tn-clr2: #ff9f9f6e;
+            --tn-clr3: #9422226e;
+            --tn-clr4: #5e01019f;
+        }
+        .toast-notification-container .toast-notification .x-icon {
+            position: absolute;
+            right: 1em; top: 0;
+            color: rgba(var(--tn-clr),1);
+            cursor: pointer;
+            padding: 1em;
+        }
+        @keyframes toastNotifFade {
+            94% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+        @keyframes toastNotifTime {
+            0% { width: 100%; }
+            100% { width: 0%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="toaster-container">
+    <div class="shadow"></div>
+    <div class="toaster-clip">
+        <div class="inset-toaster">
+        <div class="inset-inset-toaster"></div>
+        <div class="side-piece"></div>
+        </div>
+        <div class="inset-toaster btm">
+        <div class="inset-inset-toaster"></div>
+        </div>
+    </div>
+    <div class="toaster-top">
+        <div class="toast-slots">
+        <div class="slot"></div>
+        <div class="slot"></div>
+        </div>
+    </div>
+    <div class="toaster-front">
+        <div class="timer-lights">
+        <div class="light level"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        </div>
+        <div class="knob">
+        <div class="knob-depth"></div>
+        <div class="knob-face"></div>
+        </div>
+        <div class="slider">
+        <div class="handle"></div>
+        </div>
+        <div class="button-deco">
+        <div class="button"></div>
+        <div class="button"></div>
+        <div class="button"></div>
+        </div>
+    </div>
+    </div>
+
+    <div class="toast-inset-container two">
+    <div class="toast">
+        <div class="toast-depth">
+        <div class="td-bottom"></div>
+        <div class="td-top"></div>
+        </div>
+        <div class="toast-bottom"></div>
+        <div class="toast-top"></div>
+        <div class="toasted">
+        <div class="t-top"></div>
+        <div class="t-bottom"></div>
+        </div>
+    </div>
+    </div>
+    <div class="toast-inset-container">
+    <div class="toast">
+        <div class="toast-depth">
+        <div class="td-bottom"></div>
+        <div class="td-top"></div>
+        </div>
+        <div class="toast-bottom"></div>
+        <div class="toast-top"></div>
+        <div class="toasted">
+        <div class="t-top"></div>
+        <div class="t-bottom"></div>
+        </div>
+    </div>
+    </div>
+
+    <div class="toast-notification-container">
+    </div>
+
+    <script>
+        const toasterContainer = document.querySelector('.toaster-container');
+        const toastsContainer = document.querySelectorAll('.toast-inset-container');
+        const slider = document.querySelector('.slider');
+        const lights = document.querySelectorAll('.timer-lights .light');
+        const toasts = document.querySelectorAll('.toast');
+        let toastLevel = 1;
+        let breadState = 'bread';
+
+        slider.addEventListener('click', ()=>{
+            if (breadState == 'bread' && !toastsContainer[0].children[0].classList.contains('rotate')) {
+                toasterContainer.style.pointerEvents = 'none';
+                slider.style.pointerEvents = 'none';
+
+                toastLevel = knobState + 1;
+                toasterContainer.classList.add("active");
+                toastsContainer.forEach((toastContainer) => { toastContainer.classList.add("active"); });
+                
+                lights.forEach((light, i) => {
+                    if ( i < toastLevel){
+                        light.classList.add('on');
+                    }
+                    light.style.transitionDelay = '0s';
+                })
+            
+                document.body.style.setProperty('--toast-time', `${toastLevel*2}s`);
+                if (toastLevel == 1 ){ toasts.forEach((toast) => { toast.classList.add('levelone');});}
+                if (toastLevel == 2 ){ toasts.forEach((toast) => { toast.classList.add('leveltwo');});}
+                if (toastLevel == 3 ){ toasts.forEach((toast) => { toast.classList.add('levelthree');});}
+                if (toastLevel == 4 ){ toasts.forEach((toast) => { toast.classList.add('levelfour');});}
+            
+                setTimeout(() => {
+                    lights.forEach((light, i) => {
+                        light.style.transitionDelay = `${(toastLevel*2) - ((i+1)*2)}s`;
+                        light.classList.remove('on');
+                    })
+                    if (toastLevel == 1 ){ finishToast(); toastNotification('Warm bread.<br>Try adjusting the knob for toast.', 'normal') }
+                }, "2000");
+                setTimeout(() => {
+                    if (toastLevel == 2 ){ finishToast(); toastNotification('&#128076; Perfectly toasted', 'normal')}
+                }, "4000");
+                setTimeout(() => {
+                    if (toastLevel == 3 ){ finishToast(); toastNotification('Extra toasted', 'alert') }
+                }, "6000");
+                setTimeout(() => {
+                    if (toastLevel == 4 ){ finishToast();  toastNotification('A waste of bread...', 'warning') }
+                }, "8000");
+
+                breadState = 'toast';
+            } else if (breadState == 'bread' && toastsContainer[0].children[0].classList.contains('rotate')) {
+                toastsContainer[0].children[0].classList.remove('rotate');
+                toastsContainer[1].children[0].classList.remove('rotate');
+            } else if (breadState == 'toast') {
+                resetToast();
+            }
+        });
+
+        toasts.forEach((toast) => {
+            toast.addEventListener('click', ()=>{
+                if (toasterContainer.classList.contains('active')){
+                    toastNotification('Careful! Its not safe to stick your hand in the toaster when on...', 'warning');
+                } else if (toast.classList.contains('rotate')) {
+                    toastsContainer[0].children[0].classList.remove('rotate');
+                    toastsContainer[1].children[0].classList.remove('rotate');
+                    slider.style.pointerEvents = 'all';
+                } else {
+                    toastsContainer[0].children[0].classList.add('rotate');
+                    toastsContainer[1].children[0].classList.add('rotate');
+                    slider.style.pointerEvents = 'none';
+                }
+            });
+        })
+
+        function finishToast() {
+            toasterContainer.classList.remove("active");
+            toastsContainer.forEach((toastContainer) => { toastContainer.classList.remove("active"); })
+            
+            setTimeout(() => {
+                slider.style.pointerEvents = 'all';
+                toasterContainer.style.pointerEvents = 'all';
+            }, "1000");
+        }
+
+        function resetToast() {
+                slider.style.pointerEvents = 'none';
+            toasts.forEach((toast) => {
+                toast.classList.remove('levelone');
+                toast.classList.remove('leveltwo');
+                toast.classList.remove('levelthree');
+                toast.classList.remove('levelfour');
+                toast.classList.add('reset');
+                setTimeout(() => {
+                    toast.classList.remove('reset');
+                    slider.style.pointerEvents = 'all';
+                }, "4000");
+            })
+            breadState = 'bread';
+        }
+
+        const knob = document.querySelector( ".toaster-front .knob-face" );
+        let knobState = 0;
+        knob.addEventListener('click', ()=>{
+            if (knobState != 3) { knobState++ } else { knobState = 0 }
+            knob.style.setProperty('--knob-rot', `${knobState*40 - 80}deg`);
+            lights.forEach((light, i) => {
+                light.style.transitionDelay = '0s';
+                if ( i < knobState+1){
+                    light.classList.add('level');
+                } else {
+                    light.classList.remove('level');
+                }
+            })
+        });
+
+        const toastNotificationContainer = document.querySelector('.toast-notification-container');
+
+        function toastNotification(message, importance) {
+            const time = 10000;
+            const newToastNotif = document.createElement('div');
+            newToastNotif.classList.add('toast-notification', importance);
+            newToastNotif.innerHTML = `
+                <div class="message">${message}</div>
+                <div class="x-icon" onClick=''>&#10006;</div>
+            `;
+            const xIcon = newToastNotif.querySelector('.x-icon');
+            xIcon.addEventListener('click', function() {
+                toastNotificationContainer.removeChild(newToastNotif);
+            });
+            toastNotificationContainer.appendChild(newToastNotif);
+            setTimeout(() => {
+                toastNotificationContainer.removeChild(newToastNotif);
+            }, time);
+        }
+
+    </script>
+</body>
+</html>
