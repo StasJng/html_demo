@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    :root {
+    --radius: 50%;
+    --size: 2em;
+    --offset: 25px;
+    --background: #f5f5f7;
+    }
+
+    body {
+    display: grid;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background);
+    }
+
+    article {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    }
+
+    .dot-spinner {
+    display: grid;
+    place-items: center;
+    position: relative;
+    width: 4.25em;
+    height: 4.25em;
+    }
+    .dot-spinner:focus {
+    outline: 4px solid blue;
+    border-radius: var(--radius);
+    }
+
+    .spinner-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .container {
+    width: var(--size);
+    border-radius: var(--radius);
+    aspect-ratio: 1;
+    position: relative;
+    }
+
+    .dot {
+    --size: 1em;
+    --degrees: 0deg;
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: var(--radius);
+    width: var(--size);
+    background-color: #8e8e8e;
+    opacity: 0;
+    top: calc(var(--size) / 2);
+    left: calc(var(--size) / 2);
+    animation: animate-in;
+    animation-duration: 900ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: alternate;
+    animation-iteration-count: infinite;
+    }
+
+    .dot:nth-of-type(1) {
+    --degrees: 0 * 360deg / 8;
+    transform: translate(calc(cos(var(--degrees)) * var(--offset)), calc(sin(var(--degrees)) * var(--offset)));
+    animation-delay: calc(0 * 100ms);
+    }
+
+    .dot:nth-of-type(2) {
+    --degrees: 1 * 360deg / 8;
+    transform: translate(calc(cos(var(--degrees)) * var(--offset)), calc(sin(var(--degrees)) * var(--offset)));
+    animation-delay: calc(1 * 100ms);
+    }
+
+    .dot:nth-of-type(3) {
+    --degrees: 2 * 360deg / 8;
+    transform: translate(calc(cos(var(--degrees)) * var(--offset)), calc(sin(var(--degrees)) * var(--offset)));
+    animation-delay: calc(2 * 100ms);
+    }
+
+    .dot:nth-of-type(4) {
+    --degrees: 3 * 360deg / 8;
+    transform: translate(calc(cos(var(--degrees)) * var(--offset)), calc(sin(var(--degrees)) * var(--offset)));
+    animation-delay: calc(3 * 100ms);
+    }
+
+    .dot:nth-of-type(5) {
+    --degrees: 4 * 360deg / 8;
+    transform: translate(calc(cos(var(--degrees)) * var(--offset)), calc(sin(var(--degrees)) * var(--offset)));
+    animation-delay: calc(4 * 100ms);
+    }
+
+    .dot:nth-of-type(6) {
+    --degrees: 5 * 360deg / 8;
+    transform: translate(calc(cos(var(--degrees)) * var(--offset)), calc(sin(var(--degrees)) * var(--offset)));
+    animation-delay: calc(5 * 100ms);
+    }
+
+    .dot:nth-of-type(7) {
+    --degrees: 6 * 360deg / 8;
+    transform: translate(calc(cos(var(--degrees)) * var(--offset)), calc(sin(var(--degrees)) * var(--offset)));
+    animation-delay: calc(6 * 100ms);
+    }
+
+    .dot:nth-of-type(8) {
+    --degrees: 7 * 360deg / 8;
+    transform: translate(calc(cos(var(--degrees)) * var(--offset)), calc(sin(var(--degrees)) * var(--offset)));
+    animation-delay: calc(7 * 100ms);
+    }
+
+    @keyframes animate-in {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+    }
+</style>
+<body>
+    <article>
+        <section class="spinner-block">
+            <section class="dot-spinner" aria-label="dot spinner" tabindex="1">
+            <div class="container">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            </section>
+        </section>
+    </article>
+</body>
+</html>
